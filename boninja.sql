@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 15, 2018 at 04:21 PM
+-- Generation Time: Jul 19, 2018 at 03:03 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.1.18
 
@@ -25,39 +25,54 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bi_products`
+-- Table structure for table `bi_categories`
 --
 
-CREATE TABLE `bi_products` (
-  `id` int(11) NOT NULL,
-  `model` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `sku` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `upc` varchar(12) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ean` varchar(14) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `jan` varchar(13) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `isbn` varchar(17) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `mpn` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `location` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `quantity` int(11) NOT NULL DEFAULT '0',
-  `stock_status_id` int(11) NOT NULL,
+CREATE TABLE `bi_categories` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `parent_id` int(11) DEFAULT '0',
+  `language_id` int(11) DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `manufacturer_id` int(11) NOT NULL,
-  `shipping` tinyint(4) NOT NULL DEFAULT '1',
-  `price` decimal(10,0) NOT NULL DEFAULT '0',
-  `points` int(11) NOT NULL DEFAULT '0',
-  `tax_class_id` int(11) NOT NULL,
-  `date_available` date NOT NULL,
-  `weight` decimal(10,0) NOT NULL DEFAULT '0',
-  `weight_class_id` int(11) NOT NULL DEFAULT '0',
-  `length` decimal(10,0) NOT NULL DEFAULT '0',
-  `width` decimal(10,0) NOT NULL DEFAULT '0',
-  `height` decimal(10,0) NOT NULL DEFAULT '0',
-  `length_class_id` int(11) NOT NULL DEFAULT '0',
-  `subtract` tinyint(4) NOT NULL DEFAULT '1',
-  `minimum` int(11) NOT NULL DEFAULT '1',
-  `sort_order` int(11) NOT NULL DEFAULT '0',
-  `status` tinyint(4) NOT NULL DEFAULT '0',
-  `viewed` int(11) NOT NULL DEFAULT '0',
+  `sort_order` int(11) DEFAULT '0',
+  `top` tinyint(4) DEFAULT NULL,
+  `column` int(11) DEFAULT NULL,
+  `status` tinyint(4) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `bi_categories`
+--
+
+INSERT INTO `bi_categories` (`id`, `parent_id`, `language_id`, `name`, `description`, `image`, `sort_order`, `top`, `column`, `status`, `created_at`, `updated_at`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
+(1, NULL, NULL, 'services', NULL, NULL, NULL, NULL, NULL, 0, '2018-07-19 04:06:58', '2018-07-19 04:06:58', NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bi_coupons`
+--
+
+CREATE TABLE `bi_coupons` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `code` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `type` char(1) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `discount` decimal(10,0) DEFAULT NULL,
+  `logged` tinyint(4) DEFAULT NULL,
+  `shipping` tinyint(4) DEFAULT NULL,
+  `total` decimal(10,0) DEFAULT NULL,
+  `date_start` date DEFAULT NULL,
+  `date_end` date DEFAULT NULL,
+  `uses_total` int(11) DEFAULT NULL,
+  `uses_customer` varchar(11) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -65,31 +80,68 @@ CREATE TABLE `bi_products` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bi_product_attribute`
+-- Table structure for table `bi_products`
 --
 
-CREATE TABLE `bi_product_attribute` (
-  `product_id` int(11) NOT NULL,
-  `attribute_id` int(11) NOT NULL,
-  `language_id` int(11) NOT NULL,
-  `text` text COLLATE utf8mb4_unicode_ci NOT NULL
+CREATE TABLE `bi_products` (
+  `id` int(11) NOT NULL,
+  `language_id` int(11) DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `tag` text COLLATE utf8mb4_unicode_ci,
+  `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `model` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sku` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `upc` varchar(12) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ean` varchar(14) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `jan` varchar(13) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `isbn` varchar(17) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mpn` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `location` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `quantity` int(11) NOT NULL DEFAULT '0',
+  `stock_status_id` int(11) DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `manufacturer_id` int(11) DEFAULT NULL,
+  `shipping` tinyint(4) DEFAULT '1',
+  `price` decimal(10,0) NOT NULL DEFAULT '0',
+  `points` int(11) DEFAULT '0',
+  `tax_class_id` int(11) DEFAULT NULL,
+  `date_available` date DEFAULT NULL,
+  `weight` decimal(10,0) DEFAULT '0',
+  `weight_class_id` int(11) DEFAULT '0',
+  `length` decimal(10,0) DEFAULT '0',
+  `width` decimal(10,0) DEFAULT '0',
+  `height` decimal(10,0) DEFAULT '0',
+  `length_class_id` int(11) DEFAULT '0',
+  `subtract` tinyint(4) DEFAULT '1',
+  `minimum` int(11) DEFAULT '1',
+  `sort_order` int(11) DEFAULT '0',
+  `status` tinyint(4) DEFAULT '0',
+  `viewed` int(11) DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `bi_products`
+--
+
+INSERT INTO `bi_products` (`id`, `language_id`, `name`, `description`, `tag`, `meta_title`, `meta_description`, `meta_keyword`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `viewed`, `created_at`, `updated_at`) VALUES
+(1, NULL, 'h1', NULL, NULL, NULL, NULL, NULL, 'h2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10, NULL, NULL, NULL, 0, '12000', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, 0, NULL, 0, 0, NULL, '2018-07-19 03:33:05', '2018-07-19 03:33:05');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bi_product_descriptions`
+-- Table structure for table `bi_product_attributes`
 --
 
-CREATE TABLE `bi_product_descriptions` (
+CREATE TABLE `bi_product_attributes` (
   `product_id` int(11) NOT NULL,
+  `attribute_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tag` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `text` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -231,36 +283,36 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (148, 13, 'date_added', 'text', 'Date Added', 1, 1, 1, 1, 1, 1, NULL, 30),
 (149, 13, 'date_modified', 'text', 'Date Modified', 1, 1, 1, 1, 1, 1, NULL, 31),
 (150, 14, 'id', 'hidden', 'Id', 1, 0, 1, 1, 1, 0, NULL, 1),
-(151, 14, 'model', 'text', 'Model', 1, 1, 1, 1, 1, 1, '{\"null\":\"Nothing\"}', 3),
-(152, 14, 'sku', 'text', 'Sku', 1, 0, 1, 1, 1, 1, '{\"null\":\"Nothing\"}', 4),
-(153, 14, 'upc', 'text', 'Upc', 1, 0, 1, 1, 1, 1, '{\"null\":\"Nothing\"}', 5),
-(154, 14, 'ean', 'text', 'Ean', 1, 0, 1, 1, 1, 1, '{\"null\":\"Nothing\"}', 6),
-(155, 14, 'jan', 'text', 'Jan', 1, 0, 1, 1, 1, 1, '{\"null\":\"Nothing\"}', 7),
-(156, 14, 'isbn', 'text', 'Isbn', 1, 0, 1, 1, 1, 1, '{\"null\":\"Nothing\"}', 8),
-(157, 14, 'mpn', 'text', 'Mpn', 1, 0, 1, 1, 1, 1, '{\"null\":\"Nothing\"}', 9),
-(158, 14, 'location', 'text', 'Location', 1, 0, 1, 1, 1, 1, '{\"null\":\"Nothing\"}', 10),
-(159, 14, 'quantity', 'number', 'Quantity', 1, 1, 1, 1, 1, 1, NULL, 11),
-(160, 14, 'stock_status_id', 'number', 'Stock Status Id', 1, 0, 0, 0, 0, 0, NULL, 12),
-(161, 14, 'image', 'image', 'Image', 0, 1, 1, 1, 1, 1, NULL, 13),
-(162, 14, 'manufacturer_id', 'number', 'Manufacturer Id', 1, 0, 0, 0, 0, 0, NULL, 14),
-(163, 14, 'shipping', 'checkbox', 'Shipping', 1, 0, 1, 1, 1, 1, NULL, 15),
-(164, 14, 'price', 'number', 'Price', 1, 1, 1, 1, 1, 1, NULL, 16),
-(165, 14, 'points', 'number', 'Points', 1, 0, 1, 1, 1, 1, '{\"null\":\"Nothing\"}', 17),
-(166, 14, 'tax_class_id', 'number', 'Tax Class Id', 1, 0, 0, 0, 0, 0, NULL, 18),
-(167, 14, 'date_available', 'date', 'Date Available', 1, 0, 1, 1, 1, 1, NULL, 19),
-(168, 14, 'weight', 'number', 'Weight', 1, 0, 1, 1, 1, 1, '{\"null\":\"Nothing\"}', 20),
-(169, 14, 'weight_class_id', 'number', 'Weight Class Id', 1, 0, 0, 0, 0, 0, NULL, 21),
-(170, 14, 'length', 'number', 'Length', 1, 0, 1, 1, 1, 1, '{\"null\":\"Nothing\"}', 22),
-(171, 14, 'width', 'number', 'Width', 1, 0, 1, 1, 1, 1, '{\"null\":\"Nothing\"}', 23),
-(172, 14, 'height', 'number', 'Height', 1, 0, 1, 1, 1, 1, '{\"null\":\"Nothing\"}', 24),
-(173, 14, 'length_class_id', 'number', 'Length Class Id', 1, 0, 0, 0, 0, 0, NULL, 25),
-(174, 14, 'subtract', 'checkbox', 'Subtract', 1, 0, 1, 1, 1, 1, NULL, 26),
-(175, 14, 'minimum', 'number', 'Minimum', 1, 0, 1, 1, 1, 1, NULL, 27),
-(176, 14, 'sort_order', 'number', 'Sort Order', 1, 0, 0, 0, 0, 0, NULL, 28),
-(177, 14, 'status', 'checkbox', 'Status', 1, 1, 1, 1, 1, 1, NULL, 29),
-(178, 14, 'viewed', 'number', 'Viewed', 1, 0, 1, 1, 1, 1, NULL, 30),
-(179, 14, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 31),
-(180, 14, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 32),
+(151, 14, 'model', 'text', 'Model', 1, 1, 1, 1, 1, 1, '{\"null\":\" \"}', 4),
+(152, 14, 'sku', 'text', 'Sku', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 6),
+(153, 14, 'upc', 'text', 'Upc', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 8),
+(154, 14, 'ean', 'text', 'Ean', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 9),
+(155, 14, 'jan', 'text', 'Jan', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 11),
+(156, 14, 'isbn', 'text', 'Isbn', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 13),
+(157, 14, 'mpn', 'text', 'Mpn', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 15),
+(158, 14, 'location', 'text', 'Location', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 16),
+(159, 14, 'quantity', 'number', 'Quantity', 1, 1, 1, 1, 1, 1, NULL, 17),
+(160, 14, 'stock_status_id', 'number', 'Stock Status Id', 0, 0, 0, 0, 0, 0, NULL, 18),
+(161, 14, 'image', 'image', 'Image', 0, 1, 1, 1, 1, 1, NULL, 19),
+(162, 14, 'manufacturer_id', 'number', 'Manufacturer Id', 0, 0, 0, 0, 0, 0, NULL, 20),
+(163, 14, 'shipping', 'checkbox', 'Shipping', 0, 0, 1, 1, 1, 1, NULL, 21),
+(164, 14, 'price', 'number', 'Price', 1, 1, 1, 1, 1, 1, NULL, 22),
+(165, 14, 'points', 'number', 'Points', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 23),
+(166, 14, 'tax_class_id', 'number', 'Tax Class Id', 0, 0, 0, 0, 0, 0, NULL, 24),
+(167, 14, 'date_available', 'date', 'Date Available', 0, 0, 1, 1, 1, 1, NULL, 25),
+(168, 14, 'weight', 'number', 'Weight', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 26),
+(169, 14, 'weight_class_id', 'number', 'Weight Class Id', 0, 0, 0, 0, 0, 0, NULL, 27),
+(170, 14, 'length', 'number', 'Length', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 28),
+(171, 14, 'width', 'number', 'Width', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 29),
+(172, 14, 'height', 'number', 'Height', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 30),
+(173, 14, 'length_class_id', 'number', 'Length Class Id', 0, 0, 0, 0, 0, 0, NULL, 31),
+(174, 14, 'subtract', 'checkbox', 'Subtract', 0, 0, 1, 1, 1, 1, NULL, 32),
+(175, 14, 'minimum', 'number', 'Minimum', 0, 0, 1, 1, 1, 1, NULL, 33),
+(176, 14, 'sort_order', 'number', 'Sort Order', 0, 0, 0, 0, 0, 0, NULL, 34),
+(177, 14, 'status', 'checkbox', 'Status', 0, 1, 1, 1, 1, 1, NULL, 35),
+(178, 14, 'viewed', 'number', 'Viewed', 0, 0, 1, 1, 1, 1, NULL, 36),
+(179, 14, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 37),
+(180, 14, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 38),
 (181, 15, 'product_id', 'number', 'Product Id', 1, 1, 1, 1, 1, 1, NULL, 1),
 (182, 15, 'attribute_id', 'number', 'Attribute Id', 1, 1, 1, 1, 1, 1, NULL, 2),
 (183, 15, 'language_id', 'number', 'Language Id', 1, 1, 1, 1, 1, 1, NULL, 3),
@@ -273,7 +325,43 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (190, 16, 'meta_title', 'text', 'Meta Title', 1, 1, 1, 1, 1, 1, NULL, 6),
 (191, 16, 'meta_description', 'text', 'Meta Description', 1, 1, 1, 1, 1, 1, NULL, 7),
 (192, 16, 'meta_keyword', 'text', 'Meta Keyword', 1, 1, 1, 1, 1, 1, NULL, 8),
-(194, 14, 'bi_product_hasone_bi_product_description_relationship', 'relationship', 'name', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\BiProductDescription\",\"table\":\"bi_product_descriptions\",\"type\":\"hasOne\",\"column\":\"product_id\",\"key\":\"product_id\",\"label\":\"name\",\"pivot_table\":\"bi_product_attribute\",\"pivot\":\"0\",\"taggable\":\"0\"}', 2);
+(195, 14, 'language_id', 'number', 'Language Id', 0, 0, 0, 0, 0, 0, NULL, 3),
+(196, 14, 'name', 'text', 'Name', 1, 1, 1, 1, 1, 1, NULL, 2),
+(197, 14, 'description', 'rich_text_box', 'Description', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 5),
+(198, 14, 'tag', 'text', 'Tag', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 7),
+(199, 14, 'meta_title', 'text', 'Meta Title', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 10),
+(200, 14, 'meta_description', 'text', 'Meta Description', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 12),
+(201, 14, 'meta_keyword', 'text', 'Meta Keyword', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 14),
+(202, 17, 'id', 'hidden', 'Id', 1, 0, 1, 1, 1, 0, NULL, 1),
+(203, 17, 'image', 'text', 'Image', 0, 0, 1, 1, 1, 1, NULL, 4),
+(204, 17, 'parent_id', 'number', 'Parent Id', 0, 0, 1, 1, 1, 1, NULL, 5),
+(205, 17, 'top', 'number', 'Top', 0, 0, 1, 1, 1, 1, NULL, 6),
+(206, 17, 'column', 'number', 'Column', 0, 0, 1, 1, 1, 1, NULL, 7),
+(207, 17, 'sort_order', 'number', 'Sort Order', 0, 1, 1, 1, 1, 1, NULL, 8),
+(208, 17, 'status', 'checkbox', 'Status', 0, 1, 1, 1, 1, 1, NULL, 9),
+(209, 17, 'created_at', 'timestamp', 'Created At', 0, 0, 1, 1, 0, 1, NULL, 10),
+(210, 17, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 11),
+(211, 17, 'language_id', 'text', 'Language Id', 0, 0, 1, 1, 1, 1, NULL, 12),
+(212, 17, 'name', 'text', 'Name', 0, 1, 1, 1, 1, 1, NULL, 2),
+(213, 17, 'description', 'text', 'Description', 0, 1, 1, 1, 1, 1, NULL, 3),
+(214, 17, 'meta_title', 'text', 'Meta Title', 0, 0, 1, 1, 1, 1, NULL, 13),
+(215, 17, 'meta_description', 'text', 'Meta Description', 0, 0, 1, 1, 1, 1, NULL, 14),
+(216, 17, 'meta_keyword', 'text', 'Meta Keyword', 0, 0, 1, 1, 1, 1, NULL, 15),
+(217, 18, 'id', 'hidden', 'Id', 1, 0, 1, 1, 1, 0, NULL, 1),
+(218, 18, 'name', 'text', 'Name', 0, 1, 1, 1, 1, 1, NULL, 2),
+(219, 18, 'code', 'text', 'Code', 0, 1, 1, 1, 1, 1, NULL, 3),
+(220, 18, 'type', 'text', 'Type', 0, 0, 1, 1, 1, 1, NULL, 4),
+(221, 18, 'discount', 'number', 'Discount', 0, 1, 1, 1, 1, 1, NULL, 5),
+(222, 18, 'logged', 'checkbox', 'Logged', 0, 0, 1, 1, 1, 1, NULL, 6),
+(223, 18, 'shipping', 'checkbox', 'Shipping', 0, 0, 1, 1, 1, 1, NULL, 7),
+(224, 18, 'total', 'number', 'Total', 0, 0, 1, 1, 1, 1, NULL, 8),
+(225, 18, 'date_start', 'date', 'Date Start', 0, 1, 1, 1, 1, 1, NULL, 9),
+(226, 18, 'date_end', 'date', 'Date End', 0, 1, 1, 1, 1, 1, NULL, 10),
+(227, 18, 'uses_total', 'number', 'Uses Total', 0, 0, 1, 1, 1, 1, NULL, 11),
+(228, 18, 'uses_customer', 'text', 'Uses Customer', 0, 0, 1, 1, 1, 1, NULL, 12),
+(229, 18, 'status', 'checkbox', 'Status', 0, 1, 1, 1, 1, 1, NULL, 13),
+(230, 18, 'created_at', 'timestamp', 'Created At', 0, 0, 1, 1, 0, 1, NULL, 14),
+(231, 18, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 15);
 
 -- --------------------------------------------------------
 
@@ -311,9 +399,11 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (5, 'posts', 'posts', 'Post', 'Posts', 'voyager-news', 'TCG\\Voyager\\Models\\Post', 'TCG\\Voyager\\Policies\\PostPolicy', '', '', 1, 0, NULL, '2018-07-13 03:02:22', '2018-07-13 03:02:22'),
 (6, 'pages', 'pages', 'Page', 'Pages', 'voyager-file-text', 'TCG\\Voyager\\Models\\Page', NULL, '', '', 1, 0, NULL, '2018-07-13 03:02:22', '2018-07-13 03:02:22'),
 (13, 'oc_products', 'oc-products', 'Oc Product', 'Oc Products', NULL, 'App\\OcProduct', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-13 04:54:14', '2018-07-13 04:54:14'),
-(14, 'bi_products', 'bi-products', 'Bi Product', 'Bi Products', 'voyager-bag', 'App\\BiProduct', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-14 05:29:09', '2018-07-14 05:29:09'),
+(14, 'bi_products', 'bi-products', 'Bi Product', 'Bi Products', 'voyager-bag', 'App\\BiProduct', NULL, '\\App\\Http\\Controllers\\Voyager\\BiProductsController', NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-14 05:29:09', '2018-07-18 06:00:06'),
 (15, 'bi_product_attribute', 'bi-product-attribute', 'Bi Product Attribute', 'Bi Product Attributes', NULL, 'App\\BiProductAttribute', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-14 05:45:07', '2018-07-14 05:45:07'),
-(16, 'bi_product_description', 'bi-product-description', 'Bi Product Description', 'Bi Product Descriptions', NULL, 'App\\BiProductDescription', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-14 06:14:43', '2018-07-14 06:14:43');
+(16, 'bi_product_description', 'bi-product-description', 'Bi Product Description', 'Bi Product Descriptions', NULL, 'App\\BiProductDescription', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-14 06:14:43', '2018-07-14 06:14:43'),
+(17, 'bi_categories', 'bi-categories', 'Bi Category', 'Bi Categories', 'voyager-window-list', 'App\\BiCategory', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-19 04:02:15', '2018-07-19 04:02:15'),
+(18, 'bi_coupons', 'bi-coupons', 'Bi Coupon', 'Bi Coupons', 'voyager-dollar', 'App\\BiCoupon', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-19 05:08:55', '2018-07-19 05:08:55');
 
 -- --------------------------------------------------------
 
@@ -366,20 +456,20 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (2, 1, 'Media', '', '_self', 'voyager-images', NULL, NULL, 5, '2018-07-13 02:50:35', '2018-07-13 04:06:17', 'voyager.media.index', NULL),
 (3, 1, 'Users', '', '_self', 'voyager-person', NULL, NULL, 4, '2018-07-13 02:50:35', '2018-07-13 04:06:17', 'voyager.users.index', NULL),
 (4, 1, 'Roles', '', '_self', 'voyager-lock', NULL, NULL, 3, '2018-07-13 02:50:35', '2018-07-13 03:23:41', 'voyager.roles.index', NULL),
-(5, 1, 'Tools', '', '_self', 'voyager-tools', NULL, NULL, 9, '2018-07-13 02:50:35', '2018-07-14 05:30:07', NULL, NULL),
+(5, 1, 'Tools', '', '_self', 'voyager-tools', NULL, NULL, 9, '2018-07-13 02:50:35', '2018-07-19 05:10:00', NULL, NULL),
 (6, 1, 'Menu Builder', '', '_self', 'voyager-list', NULL, 5, 1, '2018-07-13 02:50:35', '2018-07-13 03:23:10', 'voyager.menus.index', NULL),
-(7, 1, 'Database', '', '_self', 'voyager-data', NULL, 5, 2, '2018-07-13 02:50:35', '2018-07-13 03:23:10', 'voyager.database.index', NULL),
-(8, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 5, 3, '2018-07-13 02:50:35', '2018-07-13 03:23:10', 'voyager.compass.index', NULL),
-(9, 1, 'BREAD', '', '_self', 'voyager-bread', NULL, 5, 4, '2018-07-13 02:50:35', '2018-07-13 03:23:10', 'voyager.bread.index', NULL),
-(10, 1, 'Settings', '', '_self', 'voyager-settings', NULL, NULL, 10, '2018-07-13 02:50:35', '2018-07-14 05:30:07', 'voyager.settings.index', NULL),
-(11, 1, 'Hooks', '', '_self', 'voyager-hook', NULL, 5, 5, '2018-07-13 02:50:37', '2018-07-13 03:23:10', 'voyager.hooks', NULL),
+(7, 1, 'Database', '', '_self', 'voyager-data', NULL, 5, 2, '2018-07-13 02:50:35', '2018-07-19 04:09:12', 'voyager.database.index', NULL),
+(8, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 5, 3, '2018-07-13 02:50:35', '2018-07-19 04:09:12', 'voyager.compass.index', NULL),
+(9, 1, 'BREAD', '', '_self', 'voyager-bread', NULL, 5, 4, '2018-07-13 02:50:35', '2018-07-19 04:09:12', 'voyager.bread.index', NULL),
+(10, 1, 'Settings', '', '_self', 'voyager-settings', NULL, NULL, 10, '2018-07-13 02:50:35', '2018-07-19 05:10:00', 'voyager.settings.index', NULL),
+(11, 1, 'Hooks', '', '_self', 'voyager-hook', NULL, 5, 5, '2018-07-13 02:50:37', '2018-07-19 04:09:12', 'voyager.hooks', NULL),
 (12, 1, 'Categories', '', '_self', 'voyager-categories', NULL, NULL, 8, '2018-07-13 03:02:21', '2018-07-13 04:06:17', 'voyager.categories.index', NULL),
 (13, 1, 'Posts', '', '_self', 'voyager-news', NULL, NULL, 6, '2018-07-13 03:02:22', '2018-07-13 04:06:17', 'voyager.posts.index', NULL),
 (14, 1, 'Pages', '', '_self', 'voyager-file-text', NULL, NULL, 7, '2018-07-13 03:02:22', '2018-07-13 04:06:17', 'voyager.pages.index', NULL),
 (15, 1, 'Catalog', '/admin', '_self', 'voyager-list', '#000000', NULL, 2, '2018-07-13 03:22:53', '2018-07-13 04:07:41', NULL, ''),
-(16, 1, 'Bi Products', '', '_self', 'voyager-bag', NULL, 15, 1, '2018-07-14 05:29:09', '2018-07-14 05:30:07', 'voyager.bi-products.index', NULL),
-(17, 1, 'Bi Product Attributes', '', '_self', NULL, NULL, NULL, 11, '2018-07-14 05:45:07', '2018-07-14 05:45:07', 'voyager.bi-product-attribute.index', NULL),
-(18, 1, 'Bi Product Descriptions', '', '_self', NULL, NULL, NULL, 12, '2018-07-14 06:14:43', '2018-07-14 06:14:43', 'voyager.bi-product-description.index', NULL);
+(16, 1, 'Bi Products', '', '_self', 'voyager-bag', NULL, 15, 2, '2018-07-14 05:29:09', '2018-07-19 04:09:12', 'voyager.bi-products.index', NULL),
+(19, 1, 'Bi Categories', '', '_self', 'voyager-window-list', NULL, 15, 1, '2018-07-19 04:02:15', '2018-07-19 04:09:12', 'voyager.bi-categories.index', NULL),
+(20, 1, 'Bi Coupons', '', '_self', 'voyager-dollar', NULL, 15, 3, '2018-07-19 05:08:55', '2018-07-19 05:10:00', 'voyager.bi-coupons.index', NULL);
 
 -- --------------------------------------------------------
 
@@ -539,7 +629,17 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (53, 'read_bi_product_description', 'bi_product_description', '2018-07-14 06:14:43', '2018-07-14 06:14:43'),
 (54, 'edit_bi_product_description', 'bi_product_description', '2018-07-14 06:14:43', '2018-07-14 06:14:43'),
 (55, 'add_bi_product_description', 'bi_product_description', '2018-07-14 06:14:43', '2018-07-14 06:14:43'),
-(56, 'delete_bi_product_description', 'bi_product_description', '2018-07-14 06:14:43', '2018-07-14 06:14:43');
+(56, 'delete_bi_product_description', 'bi_product_description', '2018-07-14 06:14:43', '2018-07-14 06:14:43'),
+(57, 'browse_bi_categories', 'bi_categories', '2018-07-19 04:02:15', '2018-07-19 04:02:15'),
+(58, 'read_bi_categories', 'bi_categories', '2018-07-19 04:02:15', '2018-07-19 04:02:15'),
+(59, 'edit_bi_categories', 'bi_categories', '2018-07-19 04:02:15', '2018-07-19 04:02:15'),
+(60, 'add_bi_categories', 'bi_categories', '2018-07-19 04:02:15', '2018-07-19 04:02:15'),
+(61, 'delete_bi_categories', 'bi_categories', '2018-07-19 04:02:15', '2018-07-19 04:02:15'),
+(62, 'browse_bi_coupons', 'bi_coupons', '2018-07-19 05:08:55', '2018-07-19 05:08:55'),
+(63, 'read_bi_coupons', 'bi_coupons', '2018-07-19 05:08:55', '2018-07-19 05:08:55'),
+(64, 'edit_bi_coupons', 'bi_coupons', '2018-07-19 05:08:55', '2018-07-19 05:08:55'),
+(65, 'add_bi_coupons', 'bi_coupons', '2018-07-19 05:08:55', '2018-07-19 05:08:55'),
+(66, 'delete_bi_coupons', 'bi_coupons', '2018-07-19 05:08:55', '2018-07-19 05:08:55');
 
 -- --------------------------------------------------------
 
@@ -612,7 +712,17 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (53, 1),
 (54, 1),
 (55, 1),
-(56, 1);
+(56, 1),
+(57, 1),
+(58, 1),
+(59, 1),
+(60, 1),
+(61, 1),
+(62, 1),
+(63, 1),
+(64, 1),
+(65, 1),
+(66, 1);
 
 -- --------------------------------------------------------
 
@@ -798,21 +908,27 @@ CREATE TABLE `user_roles` (
 --
 
 --
+-- Indexes for table `bi_categories`
+--
+ALTER TABLE `bi_categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `bi_coupons`
+--
+ALTER TABLE `bi_coupons`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `bi_products`
 --
 ALTER TABLE `bi_products`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `bi_product_attribute`
+-- Indexes for table `bi_product_attributes`
 --
-ALTER TABLE `bi_product_attribute`
-  ADD PRIMARY KEY (`product_id`);
-
---
--- Indexes for table `bi_product_descriptions`
---
-ALTER TABLE `bi_product_descriptions`
+ALTER TABLE `bi_product_attributes`
   ADD PRIMARY KEY (`product_id`);
 
 --
@@ -935,10 +1051,22 @@ ALTER TABLE `user_roles`
 --
 
 --
+-- AUTO_INCREMENT for table `bi_categories`
+--
+ALTER TABLE `bi_categories`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `bi_coupons`
+--
+ALTER TABLE `bi_coupons`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `bi_products`
 --
 ALTER TABLE `bi_products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -950,13 +1078,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=195;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=232;
 
 --
 -- AUTO_INCREMENT for table `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `menus`
@@ -968,7 +1096,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT for table `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -986,7 +1114,7 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT for table `posts`
