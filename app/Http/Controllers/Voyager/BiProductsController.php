@@ -23,7 +23,7 @@ class BiProductsController extends VoyagerBaseController
     //***************************************
     //               ____
     //              |  _ \
-    //     dd('salam');         | |_) |
+    //              | |_) |
     //              |  _ <
     //              | |_) |
     //              |____/
