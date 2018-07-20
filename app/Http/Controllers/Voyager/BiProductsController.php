@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Voyager;
 
-use App\Product;
-use App\Category;
-use App\CategoryProduct;
+use App\BiProduct;
+use App\BiCategory;
+use App\BiProductCategory;
 use Illuminate\Http\Request;
 use TCG\Voyager\Facades\Voyager;
 use Illuminate\Support\Facades\DB;
@@ -23,7 +23,7 @@ class BiProductsController extends VoyagerBaseController
     //***************************************
     //               ____
     //              |  _ \
-    //              | |_) |
+    //     dd('salam');         | |_) |
     //              |  _ <
     //              | |_) |
     //              |____/
@@ -34,6 +34,7 @@ class BiProductsController extends VoyagerBaseController
 
     public function index(Request $request)
     {
+        
         // GET THE SLUG, ex. 'posts', 'pages', etc.
         $slug = $this->getSlug($request);
 
@@ -198,13 +199,18 @@ class BiProductsController extends VoyagerBaseController
         // Check if BREAD is Translatable
         $isModelTranslatable = is_bread_translatable($dataTypeContent);
 
+        $allCategories = BiCategory::all();
+        
+        $product = BiProduct::find($id);
+        $categoriesForProduct = $product->categories()->get();
+
         $view = 'voyager::bread.edit-add';
 
         if (view()->exists("voyager::$slug.edit-add")) {
             $view = "voyager::$slug.edit-add";
         }
 
-        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable'));
+        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable', 'allCategories', 'categoriesForProduct'));
     }
 
     // POST BR(E)AD
