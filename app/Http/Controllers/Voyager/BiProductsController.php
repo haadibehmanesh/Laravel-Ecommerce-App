@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Voyager;
 
 use App\BiProduct;
 use App\BiCategory;
-use App\BiProductCategory;
+use App\BiCategoryProduct;
 use Illuminate\Http\Request;
 use TCG\Voyager\Facades\Voyager;
 use Illuminate\Support\Facades\DB;
@@ -237,6 +237,14 @@ class BiProductsController extends VoyagerBaseController
         }
 
         if (!$request->ajax()) {
+            $requestNew = $request;
+
+            //$requestNew['price'] = $request->price * 100;
+
+            BiCategoryProduct::where('bi_product_id', $id)->delete();
+            // Re-insert if there's at least one category checked
+            $this->updateProductCategories($request, $id);
+
             $this->insertUpdateData($request, $slug, $dataType->editRows, $data);
 
             event(new BreadDataUpdated($dataType, $data));
@@ -247,6 +255,18 @@ class BiProductsController extends VoyagerBaseController
                     'message'    => __('voyager::generic.successfully_updated')." {$dataType->display_name_singular}",
                     'alert-type' => 'success',
                 ]);
+        }
+    }
+
+    protected function updateProductCategories(Request $request, $id)
+    {
+        if ($request->category) {
+            foreach ($request->category as $category) {
+                BiCategoryProduct::create([
+                    'bi_product_id' => $id,
+                    'bi_category_id' => $category,
+                ]);
+            }
         }
     }
 
@@ -292,8 +312,12 @@ class BiProductsController extends VoyagerBaseController
         if (view()->exists("voyager::$slug.edit-add")) {
             $view = "voyager::$slug.edit-add";
         }
-
-        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable'));
+        
+        $allCategories = BiCategory::all();
+       
+        $categoriesForProduct = collect([]);
+        
+        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable', 'allCategories', 'categoriesForProduct'));
     }
 
     /**
@@ -320,9 +344,14 @@ class BiProductsController extends VoyagerBaseController
         }
 
         if (!$request->has('_validate')) {
-            $data = $this->insertUpdateData($request, $slug, $dataType->addRows, new $dataType->model_name());
+            $requestNew = $request;
+          //  $requestNew['price'] = $request->price * 100;
+
+            $data = $this->insertUpdateData($requestNew, $slug, $dataType->addRows, new $dataType->model_name());
 
             event(new BreadDataAdded($dataType, $data));
+
+            $this->updateProductCategories($request, $data->id);
 
             if ($request->ajax()) {
                 return response()->json(['success' => true, 'data' => $data]);
