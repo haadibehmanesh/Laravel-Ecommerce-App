@@ -200,8 +200,9 @@ class BiProductsController extends VoyagerBaseController
         $isModelTranslatable = is_bread_translatable($dataTypeContent);
 
         $allCategories = BiCategory::all();
-        
+       
         $product = BiProduct::find($id);
+       
         $categoriesForProduct = $product->categories()->get();
 
         $view = 'voyager::bread.edit-add';
