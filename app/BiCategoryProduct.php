@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class BiCategoryProduct extends Model
 {
-    protected $tabele = 'bi_category_bi_product';
+    protected $table = 'bi_category_bi_product';
 
-    protected $fillable = ['product_id', 'category_id'];
+    protected $fillable = ['bi_product_id', 'bi_category_id'];
 }
