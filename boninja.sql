@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 20, 2018 at 02:03 PM
+-- Generation Time: Jul 21, 2018 at 05:40 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.1.18
 
@@ -77,9 +77,8 @@ CREATE TABLE `bi_category_bi_product` (
 INSERT INTO `bi_category_bi_product` (`id`, `bi_product_id`, `bi_category_id`, `created_at`, `updated_at`) VALUES
 (11, 1, 1, '2018-07-20 07:11:45', '2018-07-20 07:11:45'),
 (12, 1, 3, '2018-07-20 07:11:45', '2018-07-20 07:11:45'),
-(17, 2, 1, '2018-07-20 07:32:05', '2018-07-20 07:32:05'),
-(18, 2, 2, '2018-07-20 07:32:05', '2018-07-20 07:32:05'),
-(19, 2, 3, '2018-07-20 07:32:05', '2018-07-20 07:32:05');
+(20, 2, 2, '2018-07-21 08:07:53', '2018-07-21 08:07:53'),
+(21, 2, 3, '2018-07-21 08:07:53', '2018-07-21 08:07:53');
 
 -- --------------------------------------------------------
 
@@ -104,6 +103,38 @@ CREATE TABLE `bi_coupons` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bi_customers`
+--
+
+CREATE TABLE `bi_customers` (
+  `customer_id` int(11) NOT NULL,
+  `customer_group_id` int(11) NOT NULL,
+  `store_id` int(11) NOT NULL DEFAULT '0',
+  `language_id` int(11) NOT NULL,
+  `firstname` varchar(32) NOT NULL,
+  `lastname` varchar(32) NOT NULL,
+  `email` varchar(96) NOT NULL,
+  `telephone` varchar(32) NOT NULL,
+  `fax` varchar(32) DEFAULT NULL,
+  `password` varchar(40) NOT NULL,
+  `salt` varchar(9) DEFAULT NULL,
+  `cart` text,
+  `wishlist` text,
+  `newsletter` tinyint(4) DEFAULT '0',
+  `address_id` int(11) NOT NULL DEFAULT '0',
+  `custom_field` text,
+  `ip` varchar(40) DEFAULT NULL,
+  `status` tinyint(4) DEFAULT NULL,
+  `safe` tinyint(4) DEFAULT NULL,
+  `token` text,
+  `code` varchar(40) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -311,33 +342,33 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (148, 13, 'date_added', 'text', 'Date Added', 1, 1, 1, 1, 1, 1, NULL, 30),
 (149, 13, 'date_modified', 'text', 'Date Modified', 1, 1, 1, 1, 1, 1, NULL, 31),
 (150, 14, 'id', 'hidden', 'Id', 1, 0, 1, 1, 1, 0, NULL, 1),
-(151, 14, 'model', 'text', 'Model', 1, 1, 1, 1, 1, 1, '{\"null\":\" \"}', 4),
-(152, 14, 'sku', 'text', 'Sku', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 6),
-(153, 14, 'upc', 'text', 'Upc', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 8),
-(154, 14, 'ean', 'text', 'Ean', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 9),
-(155, 14, 'jan', 'text', 'Jan', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 11),
-(156, 14, 'isbn', 'text', 'Isbn', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 13),
-(157, 14, 'mpn', 'text', 'Mpn', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 15),
-(158, 14, 'location', 'text', 'Location', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 16),
-(159, 14, 'quantity', 'number', 'Quantity', 1, 1, 1, 1, 1, 1, NULL, 17),
-(160, 14, 'stock_status_id', 'number', 'Stock Status Id', 0, 0, 0, 0, 0, 0, NULL, 18),
-(161, 14, 'image', 'image', 'Image', 0, 1, 1, 1, 1, 1, NULL, 19),
-(162, 14, 'manufacturer_id', 'number', 'Manufacturer Id', 0, 0, 0, 0, 0, 0, NULL, 20),
-(163, 14, 'shipping', 'checkbox', 'Shipping', 0, 0, 1, 1, 1, 1, NULL, 21),
-(164, 14, 'price', 'number', 'Price', 1, 1, 1, 1, 1, 1, NULL, 22),
-(165, 14, 'points', 'number', 'Points', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 23),
-(166, 14, 'tax_class_id', 'number', 'Tax Class Id', 0, 0, 0, 0, 0, 0, NULL, 24),
-(167, 14, 'date_available', 'date', 'Date Available', 0, 0, 1, 1, 1, 1, NULL, 25),
-(168, 14, 'weight', 'number', 'Weight', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 26),
-(169, 14, 'weight_class_id', 'number', 'Weight Class Id', 0, 0, 0, 0, 0, 0, NULL, 27),
-(170, 14, 'length', 'number', 'Length', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 28),
-(171, 14, 'width', 'number', 'Width', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 29),
-(172, 14, 'height', 'number', 'Height', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 30),
-(173, 14, 'length_class_id', 'number', 'Length Class Id', 0, 0, 0, 0, 0, 0, NULL, 31),
-(174, 14, 'subtract', 'checkbox', 'Subtract', 0, 0, 1, 1, 1, 1, NULL, 32),
-(175, 14, 'minimum', 'number', 'Minimum', 0, 0, 1, 1, 1, 1, NULL, 33),
-(176, 14, 'sort_order', 'number', 'Sort Order', 0, 0, 0, 0, 0, 0, NULL, 34),
-(177, 14, 'status', 'checkbox', 'Status', 0, 1, 1, 1, 1, 1, NULL, 35),
+(151, 14, 'model', 'text', 'Model', 1, 1, 1, 1, 1, 1, '{\"null\":\" \"}', 3),
+(152, 14, 'sku', 'text', 'Sku', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 14),
+(153, 14, 'upc', 'text', 'Upc', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 15),
+(154, 14, 'ean', 'text', 'Ean', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 16),
+(155, 14, 'jan', 'text', 'Jan', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 17),
+(156, 14, 'isbn', 'text', 'Isbn', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 18),
+(157, 14, 'mpn', 'text', 'Mpn', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 19),
+(158, 14, 'location', 'text', 'Location', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 20),
+(159, 14, 'quantity', 'number', 'Quantity', 1, 1, 1, 1, 1, 1, NULL, 11),
+(160, 14, 'stock_status_id', 'number', 'Stock Status Id', 0, 0, 0, 0, 0, 0, NULL, 21),
+(161, 14, 'image', 'image', 'Image', 0, 1, 1, 1, 1, 1, NULL, 9),
+(162, 14, 'manufacturer_id', 'number', 'Manufacturer Id', 0, 0, 0, 0, 0, 0, NULL, 22),
+(163, 14, 'shipping', 'checkbox', 'Shipping', 0, 0, 1, 1, 1, 1, NULL, 23),
+(164, 14, 'price', 'number', 'Price', 1, 1, 1, 1, 1, 1, NULL, 10),
+(165, 14, 'points', 'number', 'Points', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 24),
+(166, 14, 'tax_class_id', 'number', 'Tax Class Id', 0, 0, 0, 0, 0, 0, NULL, 25),
+(167, 14, 'date_available', 'date', 'Date Available', 0, 0, 1, 1, 1, 1, NULL, 26),
+(168, 14, 'weight', 'number', 'Weight', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 27),
+(169, 14, 'weight_class_id', 'number', 'Weight Class Id', 0, 0, 0, 0, 0, 0, NULL, 28),
+(170, 14, 'length', 'number', 'Length', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 29),
+(171, 14, 'width', 'number', 'Width', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 30),
+(172, 14, 'height', 'number', 'Height', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 31),
+(173, 14, 'length_class_id', 'number', 'Length Class Id', 0, 0, 0, 0, 0, 0, NULL, 32),
+(174, 14, 'subtract', 'checkbox', 'Subtract', 0, 0, 1, 1, 1, 1, NULL, 33),
+(175, 14, 'minimum', 'number', 'Minimum', 0, 0, 1, 1, 1, 1, NULL, 34),
+(176, 14, 'sort_order', 'number', 'Sort Order', 0, 0, 0, 0, 0, 0, NULL, 35),
+(177, 14, 'status', 'checkbox', 'Status', 0, 1, 1, 1, 1, 1, NULL, 12),
 (178, 14, 'viewed', 'number', 'Viewed', 0, 0, 1, 1, 1, 1, NULL, 36),
 (179, 14, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 37),
 (180, 14, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 38),
@@ -353,13 +384,13 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (190, 16, 'meta_title', 'text', 'Meta Title', 1, 1, 1, 1, 1, 1, NULL, 6),
 (191, 16, 'meta_description', 'text', 'Meta Description', 1, 1, 1, 1, 1, 1, NULL, 7),
 (192, 16, 'meta_keyword', 'text', 'Meta Keyword', 1, 1, 1, 1, 1, 1, NULL, 8),
-(195, 14, 'language_id', 'number', 'Language Id', 0, 0, 0, 0, 0, 0, NULL, 3),
+(195, 14, 'language_id', 'number', 'Language Id', 0, 0, 0, 0, 0, 0, NULL, 13),
 (196, 14, 'name', 'text', 'Name', 1, 1, 1, 1, 1, 1, NULL, 2),
-(197, 14, 'description', 'rich_text_box', 'Description', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 5),
-(198, 14, 'tag', 'text', 'Tag', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 7),
-(199, 14, 'meta_title', 'text', 'Meta Title', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 10),
-(200, 14, 'meta_description', 'text', 'Meta Description', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 12),
-(201, 14, 'meta_keyword', 'text', 'Meta Keyword', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 14),
+(197, 14, 'description', 'rich_text_box', 'Description', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 4),
+(198, 14, 'tag', 'text', 'Tag', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 5),
+(199, 14, 'meta_title', 'text', 'Meta Title', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 6),
+(200, 14, 'meta_description', 'text', 'Meta Description', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 7),
+(201, 14, 'meta_keyword', 'text', 'Meta Keyword', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 8),
 (202, 17, 'id', 'hidden', 'Id', 1, 0, 1, 1, 1, 0, NULL, 1),
 (203, 17, 'image', 'text', 'Image', 0, 0, 1, 1, 1, 1, NULL, 4),
 (204, 17, 'parent_id', 'number', 'Parent Id', 0, 0, 1, 1, 1, 1, '{\"default\":\"\",\"null\":\"\",\"options\":{\"\":\"-- None --\"},\"relationship\":{\"key\":\"id\",\"label\":\"name\"}}', 5),
@@ -390,7 +421,30 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (229, 18, 'status', 'checkbox', 'Status', 0, 1, 1, 1, 1, 1, NULL, 13),
 (230, 18, 'created_at', 'timestamp', 'Created At', 0, 0, 1, 1, 0, 1, NULL, 14),
 (231, 18, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 15),
-(232, 17, 'slug', 'text', 'Slug', 0, 1, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"name\"}}', 16);
+(232, 17, 'slug', 'text', 'Slug', 0, 1, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"name\"}}', 16),
+(233, 19, 'customer_id', 'hidden', 'Customer Id', 1, 0, 1, 1, 1, 0, NULL, 1),
+(234, 19, 'customer_group_id', 'number', 'Customer Group Id', 1, 0, 1, 1, 1, 0, NULL, 2),
+(235, 19, 'store_id', 'number', 'Store Id', 1, 0, 1, 1, 1, 0, NULL, 3),
+(236, 19, 'language_id', 'number', 'Language Id', 1, 0, 1, 1, 1, 0, NULL, 4),
+(237, 19, 'firstname', 'text', 'Firstname', 1, 1, 1, 1, 1, 1, NULL, 5),
+(238, 19, 'lastname', 'text', 'Lastname', 1, 1, 1, 1, 1, 1, NULL, 6),
+(239, 19, 'email', 'text', 'Email', 1, 1, 1, 1, 1, 1, NULL, 7),
+(240, 19, 'telephone', 'number', 'Telephone', 1, 0, 1, 1, 1, 1, NULL, 8),
+(241, 19, 'fax', 'number', 'Fax', 0, 0, 1, 1, 1, 1, NULL, 9),
+(242, 19, 'password', 'text', 'Password', 1, 0, 1, 1, 1, 1, NULL, 10),
+(243, 19, 'salt', 'text', 'Salt', 0, 0, 1, 1, 1, 1, NULL, 11),
+(244, 19, 'cart', 'text', 'Cart', 0, 0, 1, 1, 1, 1, NULL, 12),
+(245, 19, 'wishlist', 'text', 'Wishlist', 0, 0, 1, 1, 1, 1, NULL, 13),
+(246, 19, 'newsletter', 'checkbox', 'Newsletter', 0, 0, 1, 1, 1, 1, NULL, 14),
+(247, 19, 'address_id', 'number', 'Address Id', 1, 0, 1, 1, 1, 1, NULL, 15),
+(248, 19, 'custom_field', 'text', 'Custom Field', 0, 0, 1, 1, 1, 1, NULL, 16),
+(249, 19, 'ip', 'text', 'Ip', 0, 0, 1, 1, 1, 1, NULL, 17),
+(250, 19, 'status', 'checkbox', 'Status', 0, 1, 1, 1, 1, 1, NULL, 18),
+(251, 19, 'safe', 'checkbox', 'Safe', 0, 0, 1, 1, 1, 1, NULL, 19),
+(252, 19, 'token', 'text', 'Token', 0, 0, 1, 1, 1, 1, NULL, 20),
+(253, 19, 'code', 'text', 'Code', 0, 0, 1, 1, 1, 1, NULL, 21),
+(254, 19, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 22),
+(255, 19, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 23);
 
 -- --------------------------------------------------------
 
@@ -432,7 +486,8 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (15, 'bi_product_attribute', 'bi-product-attribute', 'Bi Product Attribute', 'Bi Product Attributes', NULL, 'App\\BiProductAttribute', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-14 05:45:07', '2018-07-14 05:45:07'),
 (16, 'bi_product_description', 'bi-product-description', 'Bi Product Description', 'Bi Product Descriptions', NULL, 'App\\BiProductDescription', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-14 06:14:43', '2018-07-14 06:14:43'),
 (17, 'bi_categories', 'bi-categories', 'Bi Category', 'Bi Categories', 'voyager-window-list', 'App\\BiCategory', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-19 04:02:15', '2018-07-19 04:02:15'),
-(18, 'bi_coupons', 'bi-coupons', 'Bi Coupon', 'Bi Coupons', 'voyager-dollar', 'App\\BiCoupon', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-19 05:08:55', '2018-07-19 05:08:55');
+(18, 'bi_coupons', 'bi-coupons', 'Bi Coupon', 'Bi Coupons', 'voyager-dollar', 'App\\BiCoupon', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-19 05:08:55', '2018-07-19 05:08:55'),
+(19, 'bi_customers', 'bi-customers', 'Bi Customer', 'Bi Customers', NULL, 'App\\BiCustomer', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-21 11:01:58', '2018-07-21 11:01:58');
 
 -- --------------------------------------------------------
 
@@ -482,23 +537,25 @@ CREATE TABLE `menu_items` (
 
 INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class`, `color`, `parent_id`, `order`, `created_at`, `updated_at`, `route`, `parameters`) VALUES
 (1, 1, 'Dashboard', '', '_self', 'voyager-boat', NULL, NULL, 1, '2018-07-13 02:50:35', '2018-07-13 02:50:35', 'voyager.dashboard', NULL),
-(2, 1, 'Media', '', '_self', 'voyager-images', NULL, NULL, 5, '2018-07-13 02:50:35', '2018-07-13 04:06:17', 'voyager.media.index', NULL),
-(3, 1, 'Users', '', '_self', 'voyager-person', NULL, NULL, 4, '2018-07-13 02:50:35', '2018-07-13 04:06:17', 'voyager.users.index', NULL),
-(4, 1, 'Roles', '', '_self', 'voyager-lock', NULL, NULL, 3, '2018-07-13 02:50:35', '2018-07-13 03:23:41', 'voyager.roles.index', NULL),
-(5, 1, 'Tools', '', '_self', 'voyager-tools', NULL, NULL, 9, '2018-07-13 02:50:35', '2018-07-19 05:10:00', NULL, NULL),
+(2, 1, 'Media', '', '_self', 'voyager-images', NULL, NULL, 6, '2018-07-13 02:50:35', '2018-07-21 11:03:16', 'voyager.media.index', NULL),
+(3, 1, 'Users', '', '_self', 'voyager-person', NULL, NULL, 5, '2018-07-13 02:50:35', '2018-07-21 11:03:16', 'voyager.users.index', NULL),
+(4, 1, 'Roles', '', '_self', 'voyager-lock', NULL, NULL, 4, '2018-07-13 02:50:35', '2018-07-21 11:03:16', 'voyager.roles.index', NULL),
+(5, 1, 'Tools', '', '_self', 'voyager-tools', NULL, NULL, 10, '2018-07-13 02:50:35', '2018-07-21 11:03:16', NULL, NULL),
 (6, 1, 'Menu Builder', '', '_self', 'voyager-list', NULL, 5, 1, '2018-07-13 02:50:35', '2018-07-13 03:23:10', 'voyager.menus.index', NULL),
 (7, 1, 'Database', '', '_self', 'voyager-data', NULL, 5, 2, '2018-07-13 02:50:35', '2018-07-19 04:09:12', 'voyager.database.index', NULL),
 (8, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 5, 3, '2018-07-13 02:50:35', '2018-07-19 04:09:12', 'voyager.compass.index', NULL),
 (9, 1, 'BREAD', '', '_self', 'voyager-bread', NULL, 5, 4, '2018-07-13 02:50:35', '2018-07-19 04:09:12', 'voyager.bread.index', NULL),
-(10, 1, 'Settings', '', '_self', 'voyager-settings', NULL, NULL, 10, '2018-07-13 02:50:35', '2018-07-19 05:10:00', 'voyager.settings.index', NULL),
+(10, 1, 'Settings', '', '_self', 'voyager-settings', NULL, NULL, 11, '2018-07-13 02:50:35', '2018-07-21 11:03:16', 'voyager.settings.index', NULL),
 (11, 1, 'Hooks', '', '_self', 'voyager-hook', NULL, 5, 5, '2018-07-13 02:50:37', '2018-07-19 04:09:12', 'voyager.hooks', NULL),
-(12, 1, 'Categories', '', '_self', 'voyager-categories', NULL, NULL, 8, '2018-07-13 03:02:21', '2018-07-13 04:06:17', 'voyager.categories.index', NULL),
-(13, 1, 'Posts', '', '_self', 'voyager-news', NULL, NULL, 6, '2018-07-13 03:02:22', '2018-07-13 04:06:17', 'voyager.posts.index', NULL),
-(14, 1, 'Pages', '', '_self', 'voyager-file-text', NULL, NULL, 7, '2018-07-13 03:02:22', '2018-07-13 04:06:17', 'voyager.pages.index', NULL),
+(12, 1, 'Categories', '', '_self', 'voyager-categories', NULL, NULL, 9, '2018-07-13 03:02:21', '2018-07-21 11:03:16', 'voyager.categories.index', NULL),
+(13, 1, 'Posts', '', '_self', 'voyager-news', NULL, NULL, 7, '2018-07-13 03:02:22', '2018-07-21 11:03:16', 'voyager.posts.index', NULL),
+(14, 1, 'Pages', '', '_self', 'voyager-file-text', NULL, NULL, 8, '2018-07-13 03:02:22', '2018-07-21 11:03:16', 'voyager.pages.index', NULL),
 (15, 1, 'Catalog', '/admin', '_self', 'voyager-list', '#000000', NULL, 2, '2018-07-13 03:22:53', '2018-07-13 04:07:41', NULL, ''),
-(16, 1, 'Bi Products', '', '_self', 'voyager-bag', NULL, 15, 2, '2018-07-14 05:29:09', '2018-07-19 04:09:12', 'voyager.bi-products.index', NULL),
-(19, 1, 'Bi Categories', '', '_self', 'voyager-window-list', NULL, 15, 1, '2018-07-19 04:02:15', '2018-07-19 04:09:12', 'voyager.bi-categories.index', NULL),
-(20, 1, 'Bi Coupons', '', '_self', 'voyager-dollar', NULL, 15, 3, '2018-07-19 05:08:55', '2018-07-19 05:10:00', 'voyager.bi-coupons.index', NULL);
+(16, 1, 'Bi Products', '', '_self', 'voyager-bag', NULL, 15, 2, '2018-07-14 05:29:09', '2018-07-21 10:43:26', 'voyager.bi-products.index', NULL),
+(19, 1, 'Bi Categories', '', '_self', 'voyager-window-list', NULL, 15, 1, '2018-07-19 04:02:15', '2018-07-21 10:43:26', 'voyager.bi-categories.index', NULL),
+(20, 1, 'Bi Coupons', '', '_self', 'voyager-dollar', NULL, 15, 3, '2018-07-19 05:08:55', '2018-07-21 10:43:26', 'voyager.bi-coupons.index', NULL),
+(21, 1, 'Customers', '/admin', '_self', 'voyager-group', '#000000', NULL, 3, '2018-07-21 10:43:05', '2018-07-21 11:05:33', NULL, ''),
+(22, 1, 'Bi Customers', '', '_self', 'voyager-people', '#000000', 21, 1, '2018-07-21 11:01:59', '2018-07-21 11:04:23', 'voyager.bi-customers.index', 'null');
 
 -- --------------------------------------------------------
 
@@ -668,7 +725,12 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (63, 'read_bi_coupons', 'bi_coupons', '2018-07-19 05:08:55', '2018-07-19 05:08:55'),
 (64, 'edit_bi_coupons', 'bi_coupons', '2018-07-19 05:08:55', '2018-07-19 05:08:55'),
 (65, 'add_bi_coupons', 'bi_coupons', '2018-07-19 05:08:55', '2018-07-19 05:08:55'),
-(66, 'delete_bi_coupons', 'bi_coupons', '2018-07-19 05:08:55', '2018-07-19 05:08:55');
+(66, 'delete_bi_coupons', 'bi_coupons', '2018-07-19 05:08:55', '2018-07-19 05:08:55'),
+(67, 'browse_bi_customers', 'bi_customers', '2018-07-21 11:01:58', '2018-07-21 11:01:58'),
+(68, 'read_bi_customers', 'bi_customers', '2018-07-21 11:01:58', '2018-07-21 11:01:58'),
+(69, 'edit_bi_customers', 'bi_customers', '2018-07-21 11:01:58', '2018-07-21 11:01:58'),
+(70, 'add_bi_customers', 'bi_customers', '2018-07-21 11:01:58', '2018-07-21 11:01:58'),
+(71, 'delete_bi_customers', 'bi_customers', '2018-07-21 11:01:58', '2018-07-21 11:01:58');
 
 -- --------------------------------------------------------
 
@@ -751,7 +813,12 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (63, 1),
 (64, 1),
 (65, 1),
-(66, 1);
+(66, 1),
+(67, 1),
+(68, 1),
+(69, 1),
+(70, 1),
+(71, 1);
 
 -- --------------------------------------------------------
 
@@ -957,6 +1024,12 @@ ALTER TABLE `bi_coupons`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `bi_customers`
+--
+ALTER TABLE `bi_customers`
+  ADD PRIMARY KEY (`customer_id`);
+
+--
 -- Indexes for table `bi_products`
 --
 ALTER TABLE `bi_products`
@@ -992,6 +1065,66 @@ ALTER TABLE `data_types`
   ADD UNIQUE KEY `data_types_slug_unique` (`slug`);
 
 --
+-- Indexes for table `menus`
+--
+ALTER TABLE `menus`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `menu_items`
+--
+ALTER TABLE `menu_items`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `migrations`
+--
+ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `pages`
+--
+ALTER TABLE `pages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `permissions`
+--
+ALTER TABLE `permissions`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `posts`
+--
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `roles`
+--
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `settings`
+--
+ALTER TABLE `settings`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `translations`
+--
+ALTER TABLE `translations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -1005,13 +1138,91 @@ ALTER TABLE `bi_categories`
 -- AUTO_INCREMENT for table `bi_category_bi_product`
 --
 ALTER TABLE `bi_category_bi_product`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT for table `bi_customers`
+--
+ALTER TABLE `bi_customers`
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `bi_products`
 --
 ALTER TABLE `bi_products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `data_rows`
+--
+ALTER TABLE `data_rows`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=256;
+
+--
+-- AUTO_INCREMENT for table `data_types`
+--
+ALTER TABLE `data_types`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `menus`
+--
+ALTER TABLE `menus`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `menu_items`
+--
+ALTER TABLE `menu_items`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- AUTO_INCREMENT for table `pages`
+--
+ALTER TABLE `pages`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `permissions`
+--
+ALTER TABLE `permissions`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+
+--
+-- AUTO_INCREMENT for table `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `settings`
+--
+ALTER TABLE `settings`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `translations`
+--
+ALTER TABLE `translations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
