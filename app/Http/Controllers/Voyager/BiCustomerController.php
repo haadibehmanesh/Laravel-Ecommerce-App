@@ -17,7 +17,7 @@ use TCG\Voyager\Database\Schema\SchemaManager;
 use TCG\Voyager\Http\Controllers\VoyagerBaseController;
 use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
 
-class BiCustomerController extends Controller
+class BiCustomerController extends VoyagerBaseController
 {
     use BreadRelationshipParser;
     //***************************************
