@@ -206,7 +206,7 @@ class BiCustomerController extends VoyagerBaseController
         $cGroupsForCustomer = $customer->c_groups()->get();
 
         $view = 'voyager::bread.edit-add';
-
+         
         if (view()->exists("voyager::$slug.edit-add")) {
             $view = "voyager::$slug.edit-add";
         }
