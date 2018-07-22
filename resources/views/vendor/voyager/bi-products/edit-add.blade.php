@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-md-12">
 
-                <div class="panel panel-bordered">
+                <!--<div class="panel panel-bordered">-->
                     <!-- form start -->
                     <form role="form"
                             class="form-edit-add"
@@ -32,66 +32,109 @@
 
                         <!-- CSRF TOKEN -->
                         {{ csrf_field() }}
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="panel panel-bordered panel-primary">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">
+                                                Product Details
+                                            </h3>
+                                        </div> 
+                                    <div class="panel-body">
 
-                        <div class="panel-body">
-
-                            @if (count($errors) > 0)
-                                <div class="alert alert-danger">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
-
-                            <!-- Adding / Editing -->
-                            @php
-                                $dataTypeRows = $dataType->{(!is_null($dataTypeContent->getKey()) ? 'editRows' : 'addRows' )};
-                            @endphp
-
-                            <!-- Add custom inputs -->
-                            <div class="form-group">
-                                <label>Categories</label>                                                      
-                                <ul style="list-style-type: none; padding-left: 0">
-                                @foreach ($allCategories as $category)
-                                    <li><label><input value="{{ $category->id }}" type="checkbox" name="category[]" style="margin-right: 5px;" {{ $categoriesForProduct->contains($category) ? 'checked' : '' }}>{{ $category->name }}</label></li>
-                                @endforeach
-                                </ul>
-                            </div> <!-- end form-group -->
-                            <!-- End custom inputs -->
-
-                            @foreach($dataTypeRows as $row)
-                                <!-- GET THE DISPLAY OPTIONS -->
-                                @php
-                                    $options = json_decode($row->details);
-                                    $display_options = isset($options->display) ? $options->display : NULL;
-                                @endphp
-                                @if ($options && isset($options->legend) && isset($options->legend->text))
-                                    <legend class="text-{{$options->legend->align or 'center'}}" style="background-color: {{$options->legend->bgcolor or '#f0f0f0'}};padding: 5px;">{{$options->legend->text}}</legend>
-                                @endif
-                                @if ($options && isset($options->formfields_custom))
-                                    @include('voyager::formfields.custom.' . $options->formfields_custom)
-                                @else
-                                    <div class="form-group @if($row->type == 'hidden') hidden @endif col-md-{{ $display_options->width or 12 }}" @if(isset($display_options->id)){{ "id=$display_options->id" }}@endif>
-                                        {{ $row->slugify }}
-                                        <label for="name">{{ $row->display_name }}</label>
-                                        @include('voyager::multilingual.input-hidden-bread-edit-add')
-                                        @if($row->type == 'relationship')
-                                            @include('voyager::formfields.relationship')
-                                        @else
-                                            {!! app('voyager')->formField($row, $dataType, $dataTypeContent) !!}
+                                        @if (count($errors) > 0)
+                                            <div class="alert alert-danger">
+                                                <ul>
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>{{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
                                         @endif
 
-                                        @foreach (app('voyager')->afterFormFields($row, $dataType, $dataTypeContent) as $after)
-                                            {!! $after->handle($row, $dataType, $dataTypeContent) !!}
+                                        <!-- Adding / Editing -->
+                                        @php
+                                            $dataTypeRows = $dataType->{(!is_null($dataTypeContent->getKey()) ? 'editRows' : 'addRows' )};
+                                        @endphp
+
+                                        @foreach($dataTypeRows as $row)
+                                            <!-- GET THE DISPLAY OPTIONS -->
+                                            @php
+                                                $options = json_decode($row->details);
+                                                $display_options = isset($options->display) ? $options->display : NULL;
+                                            @endphp
+                                            @if ($options && isset($options->legend) && isset($options->legend->text))
+                                                <legend class="text-{{$options->legend->align or 'center'}}" style="background-color: {{$options->legend->bgcolor or '#f0f0f0'}};padding: 5px;">{{$options->legend->text}}</legend>
+                                            @endif
+                                            @if ($options && isset($options->formfields_custom))
+                                                @include('voyager::formfields.custom.' . $options->formfields_custom)
+                                            @else
+                                                <div class="form-group @if($row->type == 'hidden') hidden @endif col-md-{{ $display_options->width or 12 }}" @if(isset($display_options->id)){{ "id=$display_options->id" }}@endif>
+                                                    {{ $row->slugify }}
+                                                    <label for="name">{{ $row->display_name }}</label>
+                                                    @include('voyager::multilingual.input-hidden-bread-edit-add')
+                                                    @if($row->type == 'relationship')
+                                                        @include('voyager::formfields.relationship')
+                                                    @else
+                                                        {!! app('voyager')->formField($row, $dataType, $dataTypeContent) !!}
+                                                    @endif
+
+                                                    @foreach (app('voyager')->afterFormFields($row, $dataType, $dataTypeContent) as $after)
+                                                        {!! $after->handle($row, $dataType, $dataTypeContent) !!}
+                                                    @endforeach
+                                                </div>
+                                            @endif
                                         @endforeach
-                                    </div>
-                                @endif
-                            @endforeach
 
-                        </div><!-- panel-body -->
-
+                                    </div><!-- panel-body -->
+                                </div>
+                            </div><!-- col-md-8 -->
+                            <div class="col-md-4">
+                                <div class="panel panel panel-bordered panel-warning">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">
+                                            Categories
+                                        </h3>
+                                        <div class="panel-actions">
+                                            <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
+                                        </div>
+                                    </div> 
+                                    <div class="panel-body">   
+                                            <!-- Add custom inputs -->
+                                            <div class="form-group">                                                     
+                                                <ul style="list-style-type: none; padding-left: 0">
+                                                @foreach ($allCategories as $category)
+                                                    <li><label><input value="{{ $category->id }}" type="checkbox" name="category[]" style="margin-right: 5px;" {{ $categoriesForProduct->contains($category) ? 'checked' : '' }}>{{ $category->name }}</label></li>
+                                                @endforeach
+                                                </ul>
+                                            </div> <!-- end form-group -->
+                                            <!-- End custom inputs -->
+                                    </div>   
+                                </div>
+                                <div class="panel panel-bordered panel-info">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title"><i class="icon wb-search"></i> SEO Content</h3>
+                                            <div class="panel-actions">
+                                                <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
+                                            </div>
+                                        </div>
+                                        <div class="panel-body" style="">
+                                            <div class="form-group">
+                                                <label for="meta_description">Meta Description</label>
+                                                    <textarea class="form-control" name="meta_description"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="meta_keywords">Meta Keywords</label>
+                                                    <textarea class="form-control" name="meta_keywords"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="seo_title">SEO Title</label>
+                                                <input type="text" class="form-control" name="seo_title" placeholder="SEO Title" value="">
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div><!-- row -->
                         <div class="panel-footer">
                             <button type="submit" class="btn btn-primary save">{{ __('voyager::generic.save') }}</button>
                         </div>
@@ -106,7 +149,7 @@
                         {{ csrf_field() }}
                     </form>
 
-                </div>
+                <!--</div>-->
             </div>
         </div>
     </div>
