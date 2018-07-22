@@ -8,7 +8,7 @@ class BiCustomer extends Model
 {
     protected $table = 'bi_customers';
 
-    public function cgroups()
+    public function c_groups()
     {
         return $this->belongsToMany('App\BiCGroup');
     }
