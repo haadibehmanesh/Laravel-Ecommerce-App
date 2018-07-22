@@ -241,9 +241,9 @@ class BiCustomerController extends Controller
 
             //$requestNew['price'] = $request->price * 100;
 
-            BiCategoryProduct::where('bi_product_id', $id)->delete();
+            BiCGroupCustomer::where('bi_customer_id', $id)->delete();
             // Re-insert if there's at least one category checked
-            $this->updateProductCategories($request, $id);
+            $this->updateCGroupCustomer($request, $id);
 
             $this->insertUpdateData($request, $slug, $dataType->editRows, $data);
 
@@ -258,13 +258,13 @@ class BiCustomerController extends Controller
         }
     }
 
-    protected function updateProductCategories(Request $request, $id)
+    protected function updateCGroupCustomer(Request $request, $id)
     {
-        if ($request->category) {
-            foreach ($request->category as $category) {
-                BiCategoryProduct::create([
-                    'bi_product_id' => $id,
-                    'bi_category_id' => $category,
+        if ($request->cGroup) {
+            foreach ($request->cGroup as $cGroup) {
+                BiCGroupCustomer::create([
+                    'bi_customer_id' => $id,
+                    'bi_c_group_id' => $cGroup,
                 ]);
             }
         }
@@ -313,11 +313,11 @@ class BiCustomerController extends Controller
             $view = "voyager::$slug.edit-add";
         }
         
-        $allCategories = BiCategory::all();
+        $allCGroups = BiCGroup::all();
        
-        $categoriesForProduct = collect([]);
+        $cGroupsForCustomer = collect([]);
         
-        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable', 'allCategories', 'categoriesForProduct'));
+        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable', 'allCGroups', 'cGroupsForCustomer'));
     }
 
     /**
@@ -351,7 +351,7 @@ class BiCustomerController extends Controller
 
             event(new BreadDataAdded($dataType, $data));
 
-            $this->updateProductCategories($request, $data->id);
+            $this->updateCGroupCustomer($request, $data->id);
 
             if ($request->ajax()) {
                 return response()->json(['success' => true, 'data' => $data]);
