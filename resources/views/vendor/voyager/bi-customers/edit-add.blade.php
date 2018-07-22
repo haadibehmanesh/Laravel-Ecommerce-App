@@ -111,28 +111,7 @@
                                             <!-- End custom inputs -->
                                     </div>   
                                 </div>
-                                <div class="panel panel-bordered panel-info">
-                                        <div class="panel-heading">
-                                            <h3 class="panel-title"><i class="icon wb-search"></i> SEO Content</h3>
-                                            <div class="panel-actions">
-                                                <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
-                                            </div>
-                                        </div>
-                                        <div class="panel-body" style="">
-                                            <div class="form-group">
-                                                <label for="meta_description">Meta Description</label>
-                                                    <textarea class="form-control" name="meta_description"></textarea>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="meta_keywords">Meta Keywords</label>
-                                                    <textarea class="form-control" name="meta_keywords"></textarea>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="seo_title">SEO Title</label>
-                                                <input type="text" class="form-control" name="seo_title" placeholder="SEO Title" value="">
-                                            </div>
-                                        </div>
-                                </div>
+                                
                             </div>
                         </div><!-- row -->
                         <div class="panel-footer">
