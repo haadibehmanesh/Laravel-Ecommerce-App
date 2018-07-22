@@ -37,7 +37,7 @@
                                 <div class="panel panel-bordered panel-primary">
                                         <div class="panel-heading">
                                             <h3 class="panel-title">
-                                                Product Details
+                                                Customer Details
                                             </h3>
                                         </div> 
                                     <div class="panel-body">
@@ -93,7 +93,7 @@
                                 <div class="panel panel panel-bordered panel-warning">
                                     <div class="panel-heading">
                                         <h3 class="panel-title">
-                                            Categories
+                                            Customer Groups
                                         </h3>
                                         <div class="panel-actions">
                                             <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
