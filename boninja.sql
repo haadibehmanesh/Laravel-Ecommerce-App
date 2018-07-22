@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 22, 2018 at 03:54 PM
+-- Generation Time: Jul 22, 2018 at 04:44 PM
 -- Server version: 5.7.22-0ubuntu0.16.04.1
 -- PHP Version: 7.0.30-0ubuntu0.16.04.1
 
@@ -183,6 +183,39 @@ CREATE TABLE `bi_c_group_bi_customer` (
 
 INSERT INTO `bi_c_group_bi_customer` (`id`, `bi_c_group_id`, `bi_customer_id`, `created_at`, `updated_at`) VALUES
 (5, 1, 3, '2018-07-22 11:20:41', '2018-07-22 11:20:41');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bi_merchants`
+--
+
+CREATE TABLE `bi_merchants` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `company_name` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `first_name` varchar(150) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `last_name` varchar(150) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tel` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mobile` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `image` text COLLATE utf8mb4_unicode_ci,
+  `geocode` varchar(150) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` text COLLATE utf8mb4_unicode_ci,
+  `city_id` int(11) DEFAULT NULL,
+  `postcode` varchar(18) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `country_id` int(11) DEFAULT NULL,
+  `region_id` int(11) DEFAULT NULL,
+  `account_id` int(11) DEFAULT NULL,
+  `password` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `start_date` datetime DEFAULT NULL,
+  `end_date` datetime DEFAULT NULL,
+  `contract_date` datetime DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `status` tinyint(4) DEFAULT NULL,
+  `ip` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -525,7 +558,31 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (285, 23, 'token', 'text', 'Token', 0, 0, 0, 0, 0, 0, NULL, 19),
 (286, 23, 'code', 'text', 'Code', 0, 0, 0, 0, 0, 0, NULL, 20),
 (287, 23, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 21),
-(288, 23, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 22);
+(288, 23, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 22),
+(289, 24, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
+(290, 24, 'company_name', 'text', 'Company Name', 1, 1, 1, 1, 1, 1, NULL, 2),
+(291, 24, 'email', 'text', 'Email', 1, 1, 1, 1, 1, 1, NULL, 3),
+(292, 24, 'first_name', 'text', 'First Name', 0, 1, 1, 1, 1, 1, NULL, 4),
+(293, 24, 'last_name', 'text', 'Last Name', 0, 1, 1, 1, 1, 1, NULL, 5),
+(294, 24, 'tel', 'text', 'Tel', 1, 1, 1, 1, 1, 1, NULL, 6),
+(295, 24, 'mobile', 'text', 'Mobile', 1, 1, 1, 1, 1, 1, NULL, 7),
+(296, 24, 'description', 'text', 'Description', 0, 1, 1, 1, 1, 1, NULL, 8),
+(297, 24, 'image', 'text', 'Image', 0, 1, 1, 1, 1, 1, NULL, 9),
+(298, 24, 'geocode', 'text', 'Geocode', 0, 1, 1, 1, 1, 1, NULL, 10),
+(299, 24, 'address', 'text', 'Address', 0, 1, 1, 1, 1, 1, NULL, 11),
+(300, 24, 'city_id', 'text', 'City Id', 0, 1, 1, 1, 1, 1, NULL, 12),
+(301, 24, 'postcode', 'text', 'Postcode', 0, 1, 1, 1, 1, 1, NULL, 13),
+(302, 24, 'country_id', 'text', 'Country Id', 0, 1, 1, 1, 1, 1, NULL, 14),
+(303, 24, 'region_id', 'text', 'Region Id', 0, 1, 1, 1, 1, 1, NULL, 15),
+(304, 24, 'account_id', 'text', 'Account Id', 0, 1, 1, 1, 1, 1, NULL, 16),
+(305, 24, 'password', 'text', 'Password', 1, 1, 1, 1, 1, 1, NULL, 17),
+(306, 24, 'start_date', 'text', 'Start Date', 0, 1, 1, 1, 1, 1, NULL, 18),
+(307, 24, 'end_date', 'text', 'End Date', 0, 1, 1, 1, 1, 1, NULL, 19),
+(308, 24, 'contract_date', 'text', 'Contract Date', 0, 1, 1, 1, 1, 1, NULL, 20),
+(309, 24, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 21),
+(310, 24, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 22),
+(311, 24, 'status', 'text', 'Status', 0, 1, 1, 1, 1, 1, NULL, 23),
+(312, 24, 'ip', 'text', 'Ip', 0, 1, 1, 1, 1, 1, NULL, 24);
 
 -- --------------------------------------------------------
 
@@ -569,7 +626,8 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (17, 'bi_categories', 'bi-categories', 'Bi Category', 'Bi Categories', 'voyager-window-list', 'App\\BiCategory', NULL, NULL, NULL, 1, 1, '{"order_column":null,"order_display_column":null}', '2018-07-19 04:02:15', '2018-07-19 04:02:15'),
 (18, 'bi_coupons', 'bi-coupons', 'Bi Coupon', 'Bi Coupons', 'voyager-dollar', 'App\\BiCoupon', NULL, NULL, NULL, 1, 1, '{"order_column":null,"order_display_column":null}', '2018-07-19 05:08:55', '2018-07-19 05:08:55'),
 (21, 'bi_c_group', 'bi-c-group', 'Bi C Group', 'Bi C Groups', NULL, 'App\\BiCGroup', NULL, NULL, NULL, 1, 1, '{"order_column":null,"order_display_column":null}', '2018-07-22 09:16:35', '2018-07-22 09:16:35'),
-(23, 'bi_customers', 'bi-customers', 'Bi Customer', 'Bi Customers', NULL, 'App\\BiCustomer', NULL, '\\App\\Http\\Controllers\\Voyager\\BiCustomerController', NULL, 1, 1, '{"order_column":null,"order_display_column":null}', '2018-07-22 11:08:34', '2018-07-22 11:08:34');
+(23, 'bi_customers', 'bi-customers', 'Bi Customer', 'Bi Customers', NULL, 'App\\BiCustomer', NULL, '\\App\\Http\\Controllers\\Voyager\\BiCustomerController', NULL, 1, 1, '{"order_column":null,"order_display_column":null}', '2018-07-22 11:08:34', '2018-07-22 11:08:34'),
+(24, 'bi_merchants', 'bi-merchants', 'Bi Merchant', 'Bi Merchants', NULL, 'App\\BiMerchant', NULL, NULL, NULL, 1, 1, '{"order_column":null,"order_display_column":null}', '2018-07-22 12:13:26', '2018-07-22 12:13:26');
 
 -- --------------------------------------------------------
 
@@ -639,7 +697,7 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (21, 1, 'Customers', '/admin', '_self', 'voyager-group', '#000000', NULL, 3, '2018-07-21 10:43:05', '2018-07-21 11:05:33', NULL, ''),
 (22, 1, 'Bi Customers', '', '_self', 'voyager-people', '#000000', 21, 1, '2018-07-21 11:01:59', '2018-07-21 11:04:23', 'voyager.bi-customers.index', 'null'),
 (23, 1, 'Bi C Groups', '', '_self', NULL, NULL, 21, 2, '2018-07-22 09:16:35', '2018-07-22 09:18:33', 'voyager.bi-c-group.index', NULL),
-(24, 1, 'Bi C Group Bi Customers', '', '_self', NULL, NULL, NULL, 13, '2018-07-22 09:26:09', '2018-07-22 09:26:09', 'voyager.bi-c-group-bi-customer.index', NULL);
+(25, 1, 'Bi Merchants', '', '_self', NULL, NULL, NULL, 13, '2018-07-22 12:13:26', '2018-07-22 12:13:26', 'voyager.bi-merchants.index', NULL);
 
 -- --------------------------------------------------------
 
@@ -819,7 +877,12 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (83, 'read_bi_customers', 'bi_customers', '2018-07-22 11:08:34', '2018-07-22 11:08:34'),
 (84, 'edit_bi_customers', 'bi_customers', '2018-07-22 11:08:34', '2018-07-22 11:08:34'),
 (85, 'add_bi_customers', 'bi_customers', '2018-07-22 11:08:34', '2018-07-22 11:08:34'),
-(86, 'delete_bi_customers', 'bi_customers', '2018-07-22 11:08:34', '2018-07-22 11:08:34');
+(86, 'delete_bi_customers', 'bi_customers', '2018-07-22 11:08:34', '2018-07-22 11:08:34'),
+(87, 'browse_bi_merchants', 'bi_merchants', '2018-07-22 12:13:26', '2018-07-22 12:13:26'),
+(88, 'read_bi_merchants', 'bi_merchants', '2018-07-22 12:13:26', '2018-07-22 12:13:26'),
+(89, 'edit_bi_merchants', 'bi_merchants', '2018-07-22 12:13:26', '2018-07-22 12:13:26'),
+(90, 'add_bi_merchants', 'bi_merchants', '2018-07-22 12:13:26', '2018-07-22 12:13:26'),
+(91, 'delete_bi_merchants', 'bi_merchants', '2018-07-22 12:13:26', '2018-07-22 12:13:26');
 
 -- --------------------------------------------------------
 
@@ -922,7 +985,12 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (83, 1),
 (84, 1),
 (85, 1),
-(86, 1);
+(86, 1),
+(87, 1),
+(88, 1),
+(89, 1),
+(90, 1),
+(91, 1);
 
 -- --------------------------------------------------------
 
@@ -1147,6 +1215,12 @@ ALTER TABLE `bi_c_group_bi_customer`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `bi_merchants`
+--
+ALTER TABLE `bi_merchants`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `bi_products`
 --
 ALTER TABLE `bi_products`
@@ -1271,6 +1345,11 @@ ALTER TABLE `bi_c_groups`
 ALTER TABLE `bi_c_group_bi_customer`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
+-- AUTO_INCREMENT for table `bi_merchants`
+--
+ALTER TABLE `bi_merchants`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `bi_products`
 --
 ALTER TABLE `bi_products`
@@ -1279,12 +1358,12 @@ ALTER TABLE `bi_products`
 -- AUTO_INCREMENT for table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=289;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=313;
 --
 -- AUTO_INCREMENT for table `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `menus`
 --
@@ -1294,7 +1373,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT for table `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 --
 -- AUTO_INCREMENT for table `migrations`
 --
@@ -1309,7 +1388,7 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 --
 -- AUTO_INCREMENT for table `posts`
 --
