@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 25, 2018 at 04:25 PM
+-- Generation Time: Jul 25, 2018 at 05:07 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.1.18
 
@@ -21,6 +21,24 @@ SET time_zone = "+00:00";
 --
 -- Database: `boninja`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bi_cart`
+--
+
+CREATE TABLE `bi_cart` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `api_id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `session_id` varchar(32) CHARACTER SET utf8 NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `recurring_id` int(11) NOT NULL,
+  `option` text CHARACTER SET utf8 NOT NULL,
+  `quantity` int(5) NOT NULL,
+  `date_added` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -1318,6 +1336,13 @@ CREATE TABLE `user_roles` (
 --
 
 --
+-- Indexes for table `bi_cart`
+--
+ALTER TABLE `bi_cart`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `cart_id` (`api_id`,`customer_id`,`session_id`,`product_id`,`recurring_id`);
+
+--
 -- Indexes for table `bi_categories`
 --
 ALTER TABLE `bi_categories`
@@ -1479,6 +1504,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `bi_cart`
+--
+ALTER TABLE `bi_cart`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `bi_categories`
