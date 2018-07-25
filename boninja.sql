@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 24, 2018 at 10:18 AM
+-- Generation Time: Jul 25, 2018 at 04:25 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.1.18
 
@@ -269,6 +269,76 @@ CREATE TABLE `bi_m_group_bi_merchant` (
 
 INSERT INTO `bi_m_group_bi_merchant` (`id`, `bi_merchant_id`, `bi_m_group_id`, `created_at`, `updated_at`) VALUES
 (2, 2, 1, '2018-07-24 03:47:02', '2018-07-24 03:47:02');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bi_orders`
+--
+
+CREATE TABLE `bi_orders` (
+  `id` int(11) NOT NULL,
+  `invoice_no` int(11) NOT NULL DEFAULT '0',
+  `invoice_prefix` varchar(26) CHARACTER SET utf8 NOT NULL,
+  `store_id` int(11) NOT NULL DEFAULT '0',
+  `store_name` varchar(64) CHARACTER SET utf8 NOT NULL,
+  `store_url` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `customer_id` int(11) NOT NULL DEFAULT '0',
+  `customer_group_id` int(11) NOT NULL DEFAULT '0',
+  `firstname` varchar(32) CHARACTER SET utf8 NOT NULL,
+  `lastname` varchar(32) CHARACTER SET utf8 NOT NULL,
+  `email` varchar(96) CHARACTER SET utf8 NOT NULL,
+  `telephone` varchar(32) CHARACTER SET utf8 NOT NULL,
+  `fax` varchar(32) CHARACTER SET utf8 NOT NULL,
+  `custom_field` text CHARACTER SET utf8 NOT NULL,
+  `payment_firstname` varchar(32) CHARACTER SET utf8 NOT NULL,
+  `payment_lastname` varchar(32) CHARACTER SET utf8 NOT NULL,
+  `payment_company` varchar(60) CHARACTER SET utf8 NOT NULL,
+  `payment_address_1` varchar(128) CHARACTER SET utf8 NOT NULL,
+  `payment_address_2` varchar(128) CHARACTER SET utf8 NOT NULL,
+  `payment_city` varchar(128) CHARACTER SET utf8 NOT NULL,
+  `payment_postcode` varchar(10) CHARACTER SET utf8 NOT NULL,
+  `payment_country` varchar(128) CHARACTER SET utf8 NOT NULL,
+  `payment_country_id` int(11) NOT NULL,
+  `payment_zone` varchar(128) CHARACTER SET utf8 NOT NULL,
+  `payment_zone_id` int(11) NOT NULL,
+  `payment_address_format` text CHARACTER SET utf8 NOT NULL,
+  `payment_custom_field` text CHARACTER SET utf8 NOT NULL,
+  `payment_method` varchar(128) CHARACTER SET utf8 NOT NULL,
+  `payment_code` varchar(128) CHARACTER SET utf8 NOT NULL,
+  `shipping_firstname` varchar(32) CHARACTER SET utf8 NOT NULL,
+  `shipping_lastname` varchar(32) CHARACTER SET utf8 NOT NULL,
+  `shipping_company` varchar(40) CHARACTER SET utf8 NOT NULL,
+  `shipping_address_1` varchar(128) CHARACTER SET utf8 NOT NULL,
+  `shipping_address_2` varchar(128) CHARACTER SET utf8 NOT NULL,
+  `shipping_city` varchar(128) CHARACTER SET utf8 NOT NULL,
+  `shipping_postcode` varchar(10) CHARACTER SET utf8 NOT NULL,
+  `shipping_country` varchar(128) CHARACTER SET utf8 NOT NULL,
+  `shipping_country_id` int(11) NOT NULL,
+  `shipping_zone` varchar(128) CHARACTER SET utf8 NOT NULL,
+  `shipping_zone_id` int(11) NOT NULL,
+  `shipping_address_format` text CHARACTER SET utf8 NOT NULL,
+  `shipping_custom_field` text CHARACTER SET utf8 NOT NULL,
+  `shipping_method` varchar(128) CHARACTER SET utf8 NOT NULL,
+  `shipping_code` varchar(128) CHARACTER SET utf8 NOT NULL,
+  `comment` text CHARACTER SET utf8 NOT NULL,
+  `total` decimal(15,4) NOT NULL DEFAULT '0.0000',
+  `order_status_id` int(11) NOT NULL DEFAULT '0',
+  `affiliate_id` int(11) NOT NULL,
+  `commission` decimal(15,4) NOT NULL,
+  `marketing_id` int(11) NOT NULL,
+  `tracking` varchar(64) CHARACTER SET utf8 NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `currency_id` int(11) NOT NULL,
+  `currency_code` varchar(3) CHARACTER SET utf8 NOT NULL,
+  `currency_value` decimal(15,8) NOT NULL DEFAULT '1.00000000',
+  `ip` varchar(40) CHARACTER SET utf8 NOT NULL,
+  `forwarded_ip` varchar(40) CHARACTER SET utf8 NOT NULL,
+  `user_agent` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `accept_language` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `date_added` datetime NOT NULL,
+  `date_modified` datetime NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -1306,6 +1376,12 @@ ALTER TABLE `bi_m_group_bi_merchant`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `bi_orders`
+--
+ALTER TABLE `bi_orders`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `bi_products`
 --
 ALTER TABLE `bi_products`
@@ -1451,6 +1527,12 @@ ALTER TABLE `bi_m_groups`
 --
 ALTER TABLE `bi_m_group_bi_merchant`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `bi_orders`
+--
+ALTER TABLE `bi_orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `bi_products`
