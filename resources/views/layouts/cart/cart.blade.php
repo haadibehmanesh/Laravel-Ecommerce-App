@@ -273,7 +273,115 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
     <section id="wrapper">
     <div class="container">
         <div class="row">
-                        <ol class="breadcrumb"><a href="http://localhost/takhfiftest">خانه</a> &#47; سبد خرید</ol>            <div class="post-content-page">
+                        <ol class="breadcrumb"><a href="http://localhost/takhfiftest">خانه</a> &#47; سبد خرید</ol>            
+                    
+                        <div class="post-content-page">
+                                        
+                            <!--title & discount & views-->
+                            <div class="title_post">
+                                <h1>سبد خرید</h1>
+                            </div>
+                                    <div class="woocommerce">
+        <form class="woocommerce-cart-form" action="http://demo.onliner.ir/takhfifat/cart/" method="post">
+            
+            <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th class="product-remove">&nbsp;</th>
+                        <th class="product-thumbnail">&nbsp;</th>
+                        <th class="product-name">محصول</th>
+                        <th class="product-price">قیمت</th>
+                        <th class="product-quantity">تعداد</th>
+                        <th class="product-subtotal">مجموع</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                                        <tr class="woocommerce-cart-form__cart-item cart_item">
+        
+                                <td class="product-remove">
+                                    <a href="http://demo.onliner.ir/takhfifat/cart/?remove_item=7ef605fc8dba5425d6965fbd4c8fbe1f&amp;_wpnonce=4e891f0432" class="remove" aria-label="حذف این آیتم" data-product_id="150" data-product_sku="">×</a>						</td>
+        
+                                <td class="product-thumbnail"><img width="400" height="400" src="//demo.onliner.ir/takhfifat/wp-content/uploads/2017/05/431416.e9b905600723e4c26750de76373ae0bd-400x400.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image" alt="" srcset="//demo.onliner.ir/takhfifat/wp-content/uploads/2017/05/431416.e9b905600723e4c26750de76373ae0bd-400x400.jpg 400w, //demo.onliner.ir/takhfifat/wp-content/uploads/2017/05/431416.e9b905600723e4c26750de76373ae0bd-100x100.jpg 100w, //demo.onliner.ir/takhfifat/wp-content/uploads/2017/05/431416.e9b905600723e4c26750de76373ae0bd-150x150.jpg 150w, //demo.onliner.ir/takhfifat/wp-content/uploads/2017/05/431416.e9b905600723e4c26750de76373ae0bd-275x275.jpg 275w" sizes="(max-width: 400px) 100vw, 400px"></td>
+        
+                                <td class="product-name" data-title="محصول">پیست کارتینگ پرند&nbsp;<dl class="variation">
+                    <dt class="variation-">فروشنده:</dt>
+                <dd class="variation-"><p>تست</p>
+        </dd>
+            </dl>
+        </td>
+        
+                                <td class="product-price" data-title="قیمت">
+                                    <span class="woocommerce-Price-amount amount">۲۰,۰۰۰&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>						</td>
+        
+                                <td class="product-quantity" data-title="تعداد">	<div class="quantity">
+                <label class="screen-reader-text" for="quantity_5b59c2f1b5176">تعداد</label>
+                <input type="number" id="quantity_5b59c2f1b5176" class="input-text qty text" step="1" min="0" max="" name="cart[7ef605fc8dba5425d6965fbd4c8fbe1f][qty]" value="1" title="تعداد" size="4" pattern="[0-9]*" inputmode="numeric" aria-labelledby="پیست کارتینگ پرند عدد">
+            </div>
+            </td>
+        
+                                <td class="product-subtotal" data-title="مجموع">
+                                    <span class="woocommerce-Price-amount amount">۲۰,۰۰۰&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>						</td>
+                            </tr>
+                            
+                    
+                    <tr>
+                        <td colspan="6" class="actions">
+        
+                            
+                            <button type="submit" class="button" name="update_cart" value="بروزرسانی سبد خرید" disabled="">بروزرسانی سبد خرید</button>
+        
+                            
+                            <input type="hidden" id="_wpnonce" name="_wpnonce" value="4e891f0432"><input type="hidden" name="_wp_http_referer" value="/takhfifat/cart/">				</td>
+                    </tr>
+        
+                            </tbody>
+            </table>
+            </form>
+        
+        <div class="cart-collaterals">
+            <div class="cart_totals ">
+        
+            
+            <h2>جمع کل سبد خرید</h2>
+        
+            <table cellspacing="0" class="shop_table shop_table_responsive">
+        
+                <tbody><tr class="cart-subtotal">
+                    <th> قیمت کل </th>
+                    <td data-title=" قیمت کل "><span class="woocommerce-Price-amount amount">۲۰,۰۰۰&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></td>
+                </tr>
+        
+                
+                
+                
+                
+                                    
+                <tr class="order-total">
+                    <th>مجموع</th>
+                    <td data-title="مجموع"><strong><span class="woocommerce-Price-amount amount">۲۰,۰۰۰&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></strong> </td>
+                </tr>
+        
+                
+            </tbody></table>
+        
+            <div class="wc-proceed-to-checkout">
+                
+        <a href="http://demo.onliner.ir/takhfifat/checkout/" class="checkout-button button alt wc-forward">
+            ادامه جهت تسویه حساب</a>
+            </div>
+        
+            
+        </div>
+        </div>
+        
+        </div>
+        
+                                                    
+                    </div>
+                    
+                    
+                        {{-- <div class="post-content-page">
                                         
                     <!--title & discount & views-->
                     <div class="title_post">
@@ -286,7 +394,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
 </div>
 
                                             
-            </div>
+            </div> --}}
 
         </div>
     </div>
