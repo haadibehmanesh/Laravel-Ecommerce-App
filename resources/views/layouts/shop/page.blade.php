@@ -269,15 +269,16 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
 <div class="block_posts box_single">
     <div class="title_block">
         <span>
-                         محصولات دسته                     </span>
+            محصولات دسته                     
+        </span>
     </div>
-                        		<div class="col-lg-4 col-md-4 col-sm-6">
-            <div class="box_offer">
-							<div class="time_out">
-                    <i class="fa fa-clock-o"></i>
-                    <ul class="deal-timer countdownqztft"></ul>
+    <div class="col-lg-4 col-md-4 col-sm-6">
+        <div class="box_offer">
+			<div class="time_out">
+                <i class="fa fa-clock-o"></i>
+                <ul class="deal-timer countdownqztft"></ul>
                 <script>
-				                    jQuery(function() {
+				    jQuery(function() {
                         var endDate = "2018-9-15 23:59:00";
                         jQuery('.countdownqztft').countdown({
                             date: endDate,
@@ -297,9 +298,9 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
                         });
                     });
                 </script>					
-                </div>
-			                <a href="../product/%d8%a2%d8%aa%d9%84%db%8c%d9%87-%d9%87%d9%86%d8%b1%d9%87%d8%a7%db%8c-%d8%aa%d8%ac%d8%b3%d9%85%db%8c-%d8%a7%d9%86%d8%b5%d8%a7%d8%b1%db%8c%d8%a7%d9%86/index.html" title="آتلیه هنرهای تجسمی انصاریان "><img src="../wp-content/uploads/2017/05/430845.4f73b08817e37709e66e3d2ff44f236c-400x400.jpg" title="آتلیه هنرهای تجسمی انصاریان "></a>
-                <!-- Discount -->
+            </div>
+			<a href="../product/%d8%a2%d8%aa%d9%84%db%8c%d9%87-%d9%87%d9%86%d8%b1%d9%87%d8%a7%db%8c-%d8%aa%d8%ac%d8%b3%d9%85%db%8c-%d8%a7%d9%86%d8%b5%d8%a7%d8%b1%db%8c%d8%a7%d9%86/index.html" title="آتلیه هنرهای تجسمی انصاریان "><img src="../wp-content/uploads/2017/05/430845.4f73b08817e37709e66e3d2ff44f236c-400x400.jpg" title="آتلیه هنرهای تجسمی انصاریان "></a>
+            <!-- Discount -->
                 <span class="Discount"><b>%100</b>تخفیف</span>
 				<span class="address"><i class="fa fa-map-marker"></i>امام خمینی</span>
                 <span>13<i class="fa fa-shopping-basket"></i></span>
@@ -309,7 +310,8 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
                     <span class="price"><span class="woocommerce-Price-amount amount">70,000&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></span>
                 </div>
             </div>
-        </div>        		<div class="col-lg-4 col-md-4 col-sm-6">
+        </div>
+                		<div class="col-lg-4 col-md-4 col-sm-6">
             <div class="box_offer">
 							<div class="time_out">
                     <i class="fa fa-clock-o"></i>
