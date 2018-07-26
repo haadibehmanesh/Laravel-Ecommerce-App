@@ -57,12 +57,18 @@ class ShopController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $product = BiProduct::where('slug', $slug)->firstOrFail();
+        $mightAlsoLike = BiProduct::where('slug', '!=', $slug)->mightAlsoLike()->get();
+
+        return view('product')->with([
+            'product' => $product,
+            'mightAlsoLike' => $mightAlsoLike
+        ]);
     }
 
     /**
