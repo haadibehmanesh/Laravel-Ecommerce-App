@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\BiProduct;
+use App\BiCategory;
 
 class ShopController extends Controller
 {
@@ -13,7 +15,22 @@ class ShopController extends Controller
      */
     public function index()
     {
-        //
+        $pagination = 9;
+        $categories = BiCategory::all();
+
+        if(request()->category) {
+            $products = BiProduct::with('categories')->whereHas('categories', function ($query) {
+                $query->where('slug', request()->category);
+            });
+            
+        } else {
+            $products = BiProduct::orderBy('id', 'desc')->paginate($pagination);
+        }
+
+        return view('shop')->with([
+            'products' => $products,
+            'categories' => $categories,            
+        ]);
     }
 
     /**
