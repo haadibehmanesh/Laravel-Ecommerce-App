@@ -14,9 +14,7 @@ Route::get('/', function () {
     return view('layouts/home');
 });
 
-Route::get('/cart', function () {
-    return view('layouts/cart/cart');
-});
+Route::get('/cart', 'CartController@index')->name('cart.index');
 
 
 
