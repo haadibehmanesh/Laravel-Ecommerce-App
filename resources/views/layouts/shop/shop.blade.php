@@ -267,6 +267,17 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
             </div>                <div class="clear"></div>
                 <!--related product -->
 <div class="block_posts box_single">
+        <div class="panel-body">   
+                <!-- Add custom inputs -->
+                <div class="form-group">                                                     
+                    <ul style="list-style-type: none; padding-left: 0">
+                    @foreach ($categories as $category)
+                        <li><label>{{ $category->name }}</label></li>
+                    @endforeach
+                    </ul>
+                </div> <!-- end form-group -->
+                <!-- End custom inputs -->
+        </div>
     <div class="title_block">
         <span>
             محصولات دسته                     
