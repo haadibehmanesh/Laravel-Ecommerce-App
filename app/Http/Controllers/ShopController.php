@@ -60,8 +60,9 @@ class ShopController extends Controller
      * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
-    {   $slug_db = explode('/', $slug);
+    public function show($slug, $category = '')
+    {  
+        $slug_db = explode('/', $slug);
        
         $product = BiProduct::where('slug', $slug_db)->firstOrFail();
 
@@ -73,6 +74,24 @@ class ShopController extends Controller
             'product' => $product,
             'mightAlsoLike' => $mightAlsoLike,
             'categoriesForProduct' => $categoriesForProduct,
+            'category' => $category,
+
+        ]);
+    }
+
+    public function showCategory($slug)
+    {  
+        $pagination = 9;
+        
+        $slug_db = explode('/', $slug);
+       
+        $category = BiCategory::where('slug', $slug_db)->firstOrFail();
+
+        $productsForCategories = $category->products()->orderBy('id', 'desc')->paginate($pagination);
+    
+        return view('layouts/categories/category')->with([
+            'category' => $category,
+            'productsForCategories' => $productsForCategories,
         ]);
     }
 
