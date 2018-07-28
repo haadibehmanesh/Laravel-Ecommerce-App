@@ -244,7 +244,7 @@ class BiProductsController extends VoyagerBaseController
             BiCategoryProduct::where('bi_product_id', $id)->delete();
             // Re-insert if there's at least one category checked
             $this->updateProductCategories($request, $id);
-
+            $this->updateProductSlug($request,$id);
             $this->insertUpdateData($request, $slug, $dataType->editRows, $data);
 
             event(new BreadDataUpdated($dataType, $data));
@@ -269,6 +269,14 @@ class BiProductsController extends VoyagerBaseController
             }
         }
     }
+    protected function updateProductSlug(Request $request, $id)
+    {   
+        if ($request->name) {
+            $slug_name = make_slug($request->name,'-');
+            BiProduct::where('id', $id)->update(array('slug' => $slug_name));
+        }
+    }
+       
 
     //***************************************
     //
@@ -352,6 +360,7 @@ class BiProductsController extends VoyagerBaseController
             event(new BreadDataAdded($dataType, $data));
 
             $this->updateProductCategories($request, $data->id);
+            $this->updateProductSlug($request, $data->id);
 
             if ($request->ajax()) {
                 return response()->json(['success' => true, 'data' => $data]);
