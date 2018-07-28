@@ -27,7 +27,7 @@ class ShopController extends Controller
             $products = BiProduct::orderBy('id', 'desc')->paginate($pagination);
         }
 
-        return view('layouts/shop/page')->with([
+        return view('layouts/shop/shop')->with([
             'products' => $products,
             'categories' => $categories,            
         ]);
@@ -61,11 +61,12 @@ class ShopController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($slug)
-    {
-        $product = BiProduct::where('slug', $slug)->firstOrFail();
-        $mightAlsoLike = BiProduct::where('slug', '!=', $slug)->mightAlsoLike()->get();
+    {   $slug_db = explode('/', $slug);
+       
+        $product = BiProduct::where('slug', $slug_db)->firstOrFail();
+        $mightAlsoLike = BiProduct::where('slug', '!=', $slug_db)->mightAlsoLike()->get();
 
-        return view('layouts/product')->with([
+        return view('layouts/product/product')->with([
             'product' => $product,
             'mightAlsoLike' => $mightAlsoLike
         ]);
