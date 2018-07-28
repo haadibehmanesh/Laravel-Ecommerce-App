@@ -65,10 +65,10 @@ class ShopController extends Controller
        
         $product = BiProduct::where('slug', $slug_db)->firstOrFail();
         $mightAlsoLike = BiProduct::where('slug', '!=', $slug_db)->mightAlsoLike()->get();
-
+        
         return view('layouts/product/product')->with([
             'product' => $product,
-            'mightAlsoLike' => $mightAlsoLike
+            'mightAlsoLike' => $mightAlsoLike,
         ]);
     }
 
