@@ -276,15 +276,15 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
                         <!-- Add custom inputs -->
                         <div class="form-group">                                                     
                             <ul style="list-style-type: none; padding-left: 0">
-                            @foreach ($categoriesForProduct as $category)
-                                <li><label><input value="{{ $category->id }}" type="checkbox" name="category[]" style="margin-right: 5px;" {{ $categoriesForProduct->contains($category) ? 'checked' : '' }}>{{ $category->name }}</label></li>
+                            @foreach ($categoriesForProduct as $categoryForProduct)
+                                <li><label><input value="{{ $categoryForProduct->id }}" type="checkbox" name="category[]" style="margin-right: 5px;" {{ $categoriesForProduct->contains($categoryForProduct) ? 'checked' : '' }}>{{ $categoryForProduct->name }}</label></li>
                             @endforeach
                             </ul>
                         </div> <!-- end form-group -->
                         <!-- End custom inputs -->
                 </div>
 
-                    <ol class="breadcrumb"><a href="/">خانه</a> &#47; <a href="../../product-category/beauty-and-cosmetics/index.html">زیبایی و آرایشی</a> &#47; {{ $product->name }}</ol>
+            <ol class="breadcrumb"><a href="/">خانه</a> &#47; <a href="/{{(empty($category)  ? 'products' : 'category/'.$category) }}">{{(empty($category)  ? 'products' : $category) }}</a> &#47; {{ $product->name }}</ol>
 					
                     <!--title & discount & views-->
 
