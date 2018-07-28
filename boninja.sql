@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 25, 2018 at 05:07 PM
+-- Generation Time: Jul 28, 2018 at 02:39 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.1.18
 
@@ -70,9 +70,10 @@ CREATE TABLE `bi_categories` (
 --
 
 INSERT INTO `bi_categories` (`id`, `parent_id`, `language_id`, `name`, `description`, `image`, `sort_order`, `top`, `column`, `status`, `created_at`, `updated_at`, `meta_title`, `meta_description`, `meta_keyword`, `slug`) VALUES
-(1, NULL, NULL, 'services', NULL, NULL, NULL, NULL, NULL, 0, '2018-07-19 04:06:58', '2018-07-19 04:06:58', NULL, NULL, NULL, NULL),
-(2, 0, NULL, 'Rest', 'Resturant', NULL, NULL, NULL, NULL, 1, '2018-07-19 09:34:08', '2018-07-19 09:34:08', NULL, NULL, NULL, 'rest'),
-(3, NULL, NULL, 'fastfood', NULL, NULL, NULL, NULL, NULL, 0, '2018-07-20 05:50:00', '2018-07-20 07:31:09', NULL, NULL, NULL, 'fastfood');
+(1, NULL, NULL, 'تفریحی و ورزشی', 'تفریحی و ورزشی', NULL, NULL, NULL, NULL, 1, '2018-07-19 04:06:00', '2018-07-28 06:39:34', NULL, NULL, NULL, 'تفریحی-و-ورزشی'),
+(2, 0, NULL, 'رستوران و فست فود', 'رستوران و فست فود', NULL, NULL, NULL, NULL, 1, '2018-07-19 09:34:00', '2018-07-28 06:40:29', NULL, NULL, NULL, 'رستوران-و-فست-فود'),
+(3, NULL, NULL, 'زیبایی و آرایشی', 'زیبایی و آرایشی', NULL, NULL, NULL, NULL, 1, '2018-07-20 05:50:00', '2018-07-28 06:40:12', NULL, NULL, NULL, 'زیبایی-و-آرایشی'),
+(4, NULL, NULL, 'پزشکی و سلامت', 'پزشکی و سلامت', NULL, NULL, NULL, NULL, 1, '2018-07-28 06:11:00', '2018-07-28 06:39:04', NULL, NULL, NULL, 'پزشکی-و-سلامت');
 
 -- --------------------------------------------------------
 
@@ -96,7 +97,9 @@ INSERT INTO `bi_category_bi_product` (`id`, `bi_product_id`, `bi_category_id`, `
 (11, 1, 1, '2018-07-20 07:11:45', '2018-07-20 07:11:45'),
 (12, 1, 3, '2018-07-20 07:11:45', '2018-07-20 07:11:45'),
 (20, 2, 2, '2018-07-21 08:07:53', '2018-07-21 08:07:53'),
-(21, 2, 3, '2018-07-21 08:07:53', '2018-07-21 08:07:53');
+(21, 2, 3, '2018-07-21 08:07:53', '2018-07-21 08:07:53'),
+(22, 6, 2, '2018-07-28 06:12:34', '2018-07-28 06:12:34'),
+(27, 7, 1, '2018-07-28 08:01:49', '2018-07-28 08:01:49');
 
 -- --------------------------------------------------------
 
@@ -402,15 +405,20 @@ CREATE TABLE `bi_products` (
   `status` tinyint(4) DEFAULT '0',
   `viewed` int(11) DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `slug` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `bi_products`
 --
 
-INSERT INTO `bi_products` (`id`, `language_id`, `name`, `description`, `tag`, `meta_title`, `meta_description`, `meta_keyword`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `viewed`, `created_at`, `updated_at`) VALUES
-(2, NULL, 'product4', NULL, NULL, NULL, NULL, NULL, 'p4', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 20, NULL, NULL, NULL, 0, '25000', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, 0, NULL, 0, 0, NULL, '2018-07-20 07:27:00', '2018-07-20 07:29:45');
+INSERT INTO `bi_products` (`id`, `language_id`, `name`, `description`, `tag`, `meta_title`, `meta_description`, `meta_keyword`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `viewed`, `created_at`, `updated_at`, `slug`) VALUES
+(3, NULL, 'آرایشگاه النا', '<p><span style=\"color: #707070; font-family: IRANSans; font-size: 21.3333px; background-color: #f2f2f2;\">&nbsp;</span></p>\r\n<h2 style=\"box-sizing: border-box; font-weight: normal; font-family: IRANSans; line-height: 29px; color: #000000; margin-top: 20px; margin-bottom: 10px; font-size: 16px; display: inline;\">کاشت ناخن درآرایشگاه النا با ۸۰% تخفیف</h2>', NULL, NULL, NULL, NULL, 'آرایشگاه النا', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 'bi-products\\July2018\\KKcrRb0idOkQWMNfvtW7.jpg', NULL, 0, '40000', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, 0, NULL, 0, 1, NULL, '2018-07-27 04:14:00', '2018-07-28 01:34:50', 'آرایشگاه-النا'),
+(4, NULL, 'آرایشگاه کاملیا', '<p><span style=\"color: #000000; font-family: IRANSans; font-size: 16px; background-color: #f2f2f2;\">کاشت مژه در آرایشگاه کاملیا با ۸۰% تخفیف</span></p>', NULL, NULL, NULL, NULL, 'آرایشگاه کاملیا', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 'bi-products\\July2018\\mYqwXdCUKmKMyCxzGHis.jpg', NULL, 0, '20000', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, 0, NULL, 0, 1, NULL, '2018-07-27 05:04:00', '2018-07-28 01:34:31', 'آرایشگاه-کاملیا'),
+(5, NULL, 'آرایشگاه مردانه اس تی پی STP', '<p><span style=\"color: #000000; font-family: IRANSans; font-size: 16px; background-color: #f2f2f2;\">کوتاهی ، شستشو و حالت دادن مو در آرایشگاه مردانه اس تی پی STP با ۸۶% تخفیف</span></p>', NULL, NULL, NULL, NULL, 'آرایشگاه مردانه اس تی پی STP', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 'bi-products\\July2018\\VJRSmbZJ7NCE6E3qt8Y5.jpg', NULL, 0, '40000', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, 0, NULL, 0, 1, NULL, '2018-07-27 05:06:00', '2018-07-28 01:33:25', 'آرایشگاه-مردانه-اس-تی-پی-stp'),
+(6, NULL, 'افتتاحیه بوفه شام رستوران بین المللی ۵ ستاره اسفندیار', '<p><span style=\"color: #000000; font-family: IRANSans; font-size: 16px; background-color: #f2f2f2;\">با موسیقی زنده با ۳۰% تخفیف و پرداخت تنها ۷۷,۰۰۰ تومان به جای ۱۱۰,۰۰۰ تومان</span></p>', NULL, NULL, NULL, NULL, 'افتتاحیه بوفه شام رستوران بین المللی ۵ ستاره اسفندیار', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 'bi-products\\July2018\\yC8LK59okjxt6KkVPDg5.jpg', NULL, 0, '100000', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, 0, NULL, 0, 1, NULL, '2018-07-28 01:39:00', '2018-07-28 06:12:34', 'افتتاحیه-بوفه-شام-رستوران-بین-المللی-ستاره-اسفندیار'),
+(7, NULL, 'دلفیناریوم برج میلاد', '<p><span style=\"color: #000000; font-family: IRANSans; font-size: 16px; background-color: #f2f2f2;\">اولین و تنهاترین دلفیناریوم غیر ساحلی در ایران و خاورمیانه تا ۶۰%&zwnj; تخفیف استثنائی</span></p>', NULL, NULL, NULL, NULL, 'دلفیناریوم برج میلاد', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 'bi-products\\July2018\\8QjoKtydxuuT3z3RMM7n.jpg', NULL, 0, '50000', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, 0, NULL, 0, 1, NULL, '2018-07-28 06:43:00', '2018-07-28 08:01:49', 'دلفیناریوم-برج-میلاد');
 
 -- --------------------------------------------------------
 
@@ -608,7 +616,7 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (192, 16, 'meta_keyword', 'text', 'Meta Keyword', 1, 1, 1, 1, 1, 1, NULL, 8),
 (195, 14, 'language_id', 'number', 'Language Id', 0, 0, 0, 0, 0, 0, NULL, 13),
 (196, 14, 'name', 'text', 'Name', 1, 1, 1, 1, 1, 1, NULL, 2),
-(197, 14, 'description', 'rich_text_box', 'Description', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 4),
+(197, 14, 'description', 'rich_text_box', 'Description', 0, 0, 1, 1, 1, 1, NULL, 4),
 (198, 14, 'tag', 'text', 'Tag', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 5),
 (199, 14, 'meta_title', 'text', 'Meta Title', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 6),
 (200, 14, 'meta_description', 'text', 'Meta Description', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 7),
@@ -643,7 +651,7 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (229, 18, 'status', 'checkbox', 'Status', 0, 1, 1, 1, 1, 1, NULL, 13),
 (230, 18, 'created_at', 'timestamp', 'Created At', 0, 0, 1, 1, 0, 1, NULL, 14),
 (231, 18, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 15),
-(232, 17, 'slug', 'text', 'Slug', 0, 1, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"name\"}}', 16),
+(232, 17, 'slug', 'text', 'Slug', 0, 1, 0, 0, 0, 0, NULL, 16),
 (233, 19, 'customer_id', 'hidden', 'Customer Id', 1, 0, 1, 1, 1, 0, NULL, 1),
 (234, 19, 'customer_group_id', 'number', 'Customer Group Id', 1, 0, 0, 0, 0, 0, NULL, 2),
 (235, 19, 'store_id', 'number', 'Store Id', 1, 0, 0, 0, 0, 0, NULL, 3),
@@ -729,7 +737,8 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (315, 25, 'description', 'text', 'Description', 0, 1, 1, 1, 1, 1, NULL, 3),
 (316, 25, 'language_id', 'number', 'Language Id', 0, 0, 0, 0, 0, 0, NULL, 4),
 (317, 25, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 5),
-(318, 25, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 6);
+(318, 25, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 6),
+(319, 14, 'slug', 'text', 'Slug', 0, 1, 0, 0, 0, 0, NULL, 39);
 
 -- --------------------------------------------------------
 
@@ -770,7 +779,7 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (14, 'bi_products', 'bi-products', 'Bi Product', 'Bi Products', 'voyager-bag', 'App\\BiProduct', NULL, '\\App\\Http\\Controllers\\Voyager\\BiProductsController', NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-14 05:29:09', '2018-07-19 10:27:20'),
 (15, 'bi_product_attribute', 'bi-product-attribute', 'Bi Product Attribute', 'Bi Product Attributes', NULL, 'App\\BiProductAttribute', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-14 05:45:07', '2018-07-14 05:45:07'),
 (16, 'bi_product_description', 'bi-product-description', 'Bi Product Description', 'Bi Product Descriptions', NULL, 'App\\BiProductDescription', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-14 06:14:43', '2018-07-14 06:14:43'),
-(17, 'bi_categories', 'bi-categories', 'Bi Category', 'Bi Categories', 'voyager-window-list', 'App\\BiCategory', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-19 04:02:15', '2018-07-19 04:02:15'),
+(17, 'bi_categories', 'bi-categories', 'Bi Category', 'Bi Categories', 'voyager-window-list', 'App\\BiCategory', NULL, '\\App\\Http\\Controllers\\Voyager\\BiCategoryController', NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-19 04:02:15', '2018-07-28 06:27:37'),
 (18, 'bi_coupons', 'bi-coupons', 'Bi Coupon', 'Bi Coupons', 'voyager-dollar', 'App\\BiCoupon', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-19 05:08:55', '2018-07-19 05:08:55'),
 (21, 'bi_c_group', 'bi-c-group', 'Bi C Group', 'Bi C Groups', NULL, 'App\\BiCGroup', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-22 09:16:35', '2018-07-22 09:16:35'),
 (23, 'bi_customers', 'bi-customers', 'Bi Customer', 'Bi Customers', NULL, 'App\\BiCustomer', NULL, '\\App\\Http\\Controllers\\Voyager\\BiCustomerController', NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-22 11:08:34', '2018-07-22 11:08:34'),
@@ -1515,13 +1524,13 @@ ALTER TABLE `bi_cart`
 -- AUTO_INCREMENT for table `bi_categories`
 --
 ALTER TABLE `bi_categories`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `bi_category_bi_product`
 --
 ALTER TABLE `bi_category_bi_product`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `bi_customers`
@@ -1569,13 +1578,13 @@ ALTER TABLE `bi_orders`
 -- AUTO_INCREMENT for table `bi_products`
 --
 ALTER TABLE `bi_products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=319;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=320;
 
 --
 -- AUTO_INCREMENT for table `data_types`
