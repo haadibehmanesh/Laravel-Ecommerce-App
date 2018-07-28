@@ -258,26 +258,6 @@ class BiProductsController extends VoyagerBaseController
         }
     }
 
-    protected function updateProductCategories(Request $request, $id)
-    {
-        if ($request->category) {
-            foreach ($request->category as $category) {
-                BiCategoryProduct::create([
-                    'bi_product_id' => $id,
-                    'bi_category_id' => $category,
-                ]);
-            }
-        }
-    }
-    protected function updateProductSlug(Request $request, $id)
-    {   
-        if ($request->name) {
-            $slug_name = make_slug($request->name,'-');
-            BiProduct::where('id', $id)->update(array('slug' => $slug_name));
-        }
-    }
-       
-
     //***************************************
     //
     //                   /\
@@ -554,4 +534,23 @@ class BiProductsController extends VoyagerBaseController
             $i->save();
         }
     }
+    protected function updateProductCategories(Request $request, $id)
+    {
+        if ($request->category) {
+            foreach ($request->category as $category) {
+                BiCategoryProduct::create([
+                    'bi_product_id' => $id,
+                    'bi_category_id' => $category,
+                ]);
+            }
+        }
+    }
+    protected function updateProductSlug(Request $request, $id)
+    {   
+        if ($request->name) {
+            $slug_name = make_slug($request->name,'-');
+            BiProduct::where('id', $id)->update(array('slug' => $slug_name));
+        }
+    }
+    
 }
