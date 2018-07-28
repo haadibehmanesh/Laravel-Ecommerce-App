@@ -18,8 +18,9 @@ Route::get('/', function () {
 Route::get('/cart', 'CartController@index')->name('cart.index');
 Route::post('/cart', 'CartController@store')->name('cart.store');
 
-Route::get('/shop', 'ShopController@index')->name('shop.index');
-Route::get('/shop/product/{product}', 'ShopController@show')->name('shop.show');
+Route::get('/products', 'ShopController@index')->name('shop.index');
+Route::get('/products/{product}/{category?}', 'ShopController@show')->name('shop.show');
+Route::get('/category/{category}', 'ShopController@showCategory')->name('shop.showCategory');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
