@@ -217,14 +217,10 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
 			
             <!--items cart-->
             <div class="content_mini_cart">
-                <a class="main_title_cart" href="javascript:void()" rel="nofollow"><i class="fa fa-shopping-cart" aria-hidden="true"></i>سبد خرید شما<span class="number_items_cart">0</span></a>
-                <div class="main_cart_list">
-					
-
-	<p class="woocommerce-mini-cart__empty-message">هیچ محصولی در سبد خرید نیست.</p>
-
-
-				</div>
+                <a class="main_title_cart" href="javascript:void()" rel="nofollow"><i class="fa fa-shopping-cart" aria-hidden="true"></i>سبد خرید شما<span class="number_items_cart">{{ Cart::content()->count() }}</span></a>
+              {{--  <div class="main_cart_list">
+	                <p class="woocommerce-mini-cart__empty-message">هیچ محصولی در سبد خرید نیست.</p>
+				</div>--}}
             </div>
 
         </div>
@@ -272,7 +268,7 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
     <div class="container">
 
         <div class="row">
-                <div class="panel-body">   
+                {{--<div class="panel-body">   
                         <!-- Add custom inputs -->
                         <div class="form-group">                                                     
                             <ul style="list-style-type: none; padding-left: 0">
@@ -282,7 +278,7 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
                             </ul>
                         </div> <!-- end form-group -->
                         <!-- End custom inputs -->
-                </div>
+                </div>--}}
 
             <ol class="breadcrumb"><a href="/">خانه</a> &#47; <a href="/{{(empty($category)  ? 'products' : 'category/'.$category) }}">{{(empty($category)  ? 'products' : $category) }}</a> &#47; {{ $product->name }}</ol>
 					
@@ -538,10 +534,6 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
 	
     <form class="cart" action="{{ route('cart.store') }}" method="post" enctype='multipart/form-data'>
         {{ csrf_field() }}
-	<div class="quantity">
-		<label class="screen-reader-text" for="quantity_5b2b5b685b0c0">تعداد</label>
-		<input type="number" id="quantity_5b2b5b685b0c0" class="input-text qty text" step="1" min="1" max="" name="quantity" value="1" title="تعداد" size="4" pattern="[0-9]*" inputmode="numeric" aria-labelledby="" />
-    </div>
     <input type="hidden" name="id" value="{{ $product->id }}">
     <input type="hidden" name="name" value="{{ $product->name }}">
     <input type="hidden" name="price" value="{{ $product->price }}">
