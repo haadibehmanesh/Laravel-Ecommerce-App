@@ -211,14 +211,14 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
 			
             <!--items cart-->
             <div class="content_mini_cart">
-                <a class="main_title_cart" href="javascript:void()" rel="nofollow"><i class="fa fa-shopping-cart" aria-hidden="true"></i>سبد خرید شما<span class="number_items_cart">0</span></a>
-                <div class="main_cart_list">
+                <a class="main_title_cart" href="javascript:void()" rel="nofollow"><i class="fa fa-shopping-cart" aria-hidden="true"></i>سبد خرید شما<span class="number_items_cart">{{ Cart::content()->count() }}</span></a>
+                {{--<div class="main_cart_list">
 					
 
 	<p class="woocommerce-mini-cart__empty-message">هیچ محصولی در سبد خرید نیست.</p>
 
 
-				</div>
+				</div>--}}
             </div>
 
         </div>
