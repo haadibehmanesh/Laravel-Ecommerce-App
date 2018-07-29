@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 28, 2018 at 02:39 PM
+-- Generation Time: Jul 29, 2018 at 09:16 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.1.18
 
@@ -99,7 +99,11 @@ INSERT INTO `bi_category_bi_product` (`id`, `bi_product_id`, `bi_category_id`, `
 (20, 2, 2, '2018-07-21 08:07:53', '2018-07-21 08:07:53'),
 (21, 2, 3, '2018-07-21 08:07:53', '2018-07-21 08:07:53'),
 (22, 6, 2, '2018-07-28 06:12:34', '2018-07-28 06:12:34'),
-(27, 7, 1, '2018-07-28 08:01:49', '2018-07-28 08:01:49');
+(27, 7, 1, '2018-07-28 08:01:49', '2018-07-28 08:01:49'),
+(29, 4, 3, '2018-07-28 09:40:56', '2018-07-28 09:40:56'),
+(30, 4, 4, '2018-07-28 09:40:56', '2018-07-28 09:40:56'),
+(31, 5, 3, '2018-07-28 09:41:50', '2018-07-28 09:41:50'),
+(32, 5, 4, '2018-07-28 09:41:50', '2018-07-28 09:41:50');
 
 -- --------------------------------------------------------
 
@@ -415,8 +419,8 @@ CREATE TABLE `bi_products` (
 
 INSERT INTO `bi_products` (`id`, `language_id`, `name`, `description`, `tag`, `meta_title`, `meta_description`, `meta_keyword`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `viewed`, `created_at`, `updated_at`, `slug`) VALUES
 (3, NULL, 'آرایشگاه النا', '<p><span style=\"color: #707070; font-family: IRANSans; font-size: 21.3333px; background-color: #f2f2f2;\">&nbsp;</span></p>\r\n<h2 style=\"box-sizing: border-box; font-weight: normal; font-family: IRANSans; line-height: 29px; color: #000000; margin-top: 20px; margin-bottom: 10px; font-size: 16px; display: inline;\">کاشت ناخن درآرایشگاه النا با ۸۰% تخفیف</h2>', NULL, NULL, NULL, NULL, 'آرایشگاه النا', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 'bi-products\\July2018\\KKcrRb0idOkQWMNfvtW7.jpg', NULL, 0, '40000', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, 0, NULL, 0, 1, NULL, '2018-07-27 04:14:00', '2018-07-28 01:34:50', 'آرایشگاه-النا'),
-(4, NULL, 'آرایشگاه کاملیا', '<p><span style=\"color: #000000; font-family: IRANSans; font-size: 16px; background-color: #f2f2f2;\">کاشت مژه در آرایشگاه کاملیا با ۸۰% تخفیف</span></p>', NULL, NULL, NULL, NULL, 'آرایشگاه کاملیا', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 'bi-products\\July2018\\mYqwXdCUKmKMyCxzGHis.jpg', NULL, 0, '20000', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, 0, NULL, 0, 1, NULL, '2018-07-27 05:04:00', '2018-07-28 01:34:31', 'آرایشگاه-کاملیا'),
-(5, NULL, 'آرایشگاه مردانه اس تی پی STP', '<p><span style=\"color: #000000; font-family: IRANSans; font-size: 16px; background-color: #f2f2f2;\">کوتاهی ، شستشو و حالت دادن مو در آرایشگاه مردانه اس تی پی STP با ۸۶% تخفیف</span></p>', NULL, NULL, NULL, NULL, 'آرایشگاه مردانه اس تی پی STP', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 'bi-products\\July2018\\VJRSmbZJ7NCE6E3qt8Y5.jpg', NULL, 0, '40000', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, 0, NULL, 0, 1, NULL, '2018-07-27 05:06:00', '2018-07-28 01:33:25', 'آرایشگاه-مردانه-اس-تی-پی-stp'),
+(4, NULL, 'آرایشگاه کاملیا', '<p><span style=\"color: #000000; font-family: IRANSans; font-size: 16px; background-color: #f2f2f2;\">کاشت مژه در آرایشگاه کاملیا با ۸۰% تخفیف</span></p>', NULL, NULL, NULL, NULL, 'آرایشگاه کاملیا', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 'bi-products\\July2018\\mYqwXdCUKmKMyCxzGHis.jpg', NULL, 0, '20000', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, 0, NULL, 0, 1, NULL, '2018-07-27 05:04:00', '2018-07-28 09:40:56', 'آرایشگاه-کاملیا'),
+(5, NULL, 'آرایشگاه مردانه اس تی پی STP', '<p><span style=\"color: #000000; font-family: IRANSans; font-size: 16px; background-color: #f2f2f2;\">کوتاهی ، شستشو و حالت دادن مو در آرایشگاه مردانه اس تی پی STP با ۸۶% تخفیف</span></p>', NULL, NULL, NULL, NULL, 'آرایشگاه مردانه اس تی پی STP', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 'bi-products\\July2018\\VJRSmbZJ7NCE6E3qt8Y5.jpg', NULL, 0, '40000', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, 0, NULL, 0, 1, NULL, '2018-07-27 05:06:00', '2018-07-28 09:41:50', 'آرایشگاه-مردانه-اس-تی-پی-stp'),
 (6, NULL, 'افتتاحیه بوفه شام رستوران بین المللی ۵ ستاره اسفندیار', '<p><span style=\"color: #000000; font-family: IRANSans; font-size: 16px; background-color: #f2f2f2;\">با موسیقی زنده با ۳۰% تخفیف و پرداخت تنها ۷۷,۰۰۰ تومان به جای ۱۱۰,۰۰۰ تومان</span></p>', NULL, NULL, NULL, NULL, 'افتتاحیه بوفه شام رستوران بین المللی ۵ ستاره اسفندیار', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 'bi-products\\July2018\\yC8LK59okjxt6KkVPDg5.jpg', NULL, 0, '100000', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, 0, NULL, 0, 1, NULL, '2018-07-28 01:39:00', '2018-07-28 06:12:34', 'افتتاحیه-بوفه-شام-رستوران-بین-المللی-ستاره-اسفندیار'),
 (7, NULL, 'دلفیناریوم برج میلاد', '<p><span style=\"color: #000000; font-family: IRANSans; font-size: 16px; background-color: #f2f2f2;\">اولین و تنهاترین دلفیناریوم غیر ساحلی در ایران و خاورمیانه تا ۶۰%&zwnj; تخفیف استثنائی</span></p>', NULL, NULL, NULL, NULL, 'دلفیناریوم برج میلاد', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 'bi-products\\July2018\\8QjoKtydxuuT3z3RMM7n.jpg', NULL, 0, '50000', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, 0, NULL, 0, 1, NULL, '2018-07-28 06:43:00', '2018-07-28 08:01:49', 'دلفیناریوم-برج-میلاد');
 
@@ -900,7 +904,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (23, '2016_01_01_000000_create_pages_table', 2),
 (24, '2016_01_01_000000_create_posts_table', 2),
 (25, '2016_02_15_204651_create_categories_table', 2),
-(26, '2017_04_11_000000_alter_post_nullable_fields_table', 2);
+(26, '2017_04_11_000000_alter_post_nullable_fields_table', 2),
+(27, '2018_07_29_164649_create_shoppingcart_table', 3);
 
 -- --------------------------------------------------------
 
@@ -1253,6 +1258,20 @@ INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `shoppingcart`
+--
+
+CREATE TABLE `shoppingcart` (
+  `identifier` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `instance` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `translations`
 --
 
@@ -1499,6 +1518,12 @@ ALTER TABLE `settings`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `shoppingcart`
+--
+ALTER TABLE `shoppingcart`
+  ADD PRIMARY KEY (`identifier`,`instance`);
+
+--
 -- Indexes for table `translations`
 --
 ALTER TABLE `translations`
@@ -1530,7 +1555,7 @@ ALTER TABLE `bi_categories`
 -- AUTO_INCREMENT for table `bi_category_bi_product`
 --
 ALTER TABLE `bi_category_bi_product`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `bi_customers`
@@ -1608,7 +1633,7 @@ ALTER TABLE `menu_items`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `pages`
