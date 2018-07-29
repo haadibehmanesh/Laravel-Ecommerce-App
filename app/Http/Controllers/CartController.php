@@ -34,9 +34,8 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        cart::add($request->id, $request->name, 1, $request->price)->associate('App\BiProduct');
-      
+    {   
+        Cart::add($request->id, $request->name, 1, $request->price)->associate('App\BiProduct');
         return redirect()->route('cart.index')->with('success_message', 'Item was added to your cart');
     }
 
