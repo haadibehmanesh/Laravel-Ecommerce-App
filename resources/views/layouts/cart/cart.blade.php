@@ -281,64 +281,84 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
                             <div class="title_post">
                                 <h1>سبد خرید</h1>
                             </div>
-                                    <div class="woocommerce">
-        <form class="woocommerce-cart-form" action="http://demo.onliner.ir/takhfifat/cart/" method="post">
-            
-            <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
-                <thead>
-                    <tr>
-                        <th class="product-remove">&nbsp;</th>
-                        <th class="product-thumbnail">&nbsp;</th>
-                        <th class="product-name">محصول</th>
-                        <th class="product-price">قیمت</th>
-                        <th class="product-quantity">تعداد</th>
-                        <th class="product-subtotal">مجموع</th>
-                    </tr>
-                </thead>
-                <tbody>
+                            <div class="woocommerce">
+                                @if (session()->has('success_message'))
+                                    <div class="alert alert-success">
+                                        {{ session()->get('success_message') }}
+                                    </div>
+                                @endif
                     
-                                        <tr class="woocommerce-cart-form__cart-item cart_item">
-        
-                                <td class="product-remove">
-                                    <a href="http://demo.onliner.ir/takhfifat/cart/?remove_item=7ef605fc8dba5425d6965fbd4c8fbe1f&amp;_wpnonce=4e891f0432" class="remove" aria-label="حذف این آیتم" data-product_id="150" data-product_sku="">×</a>						</td>
-        
-                                <td class="product-thumbnail"><img width="400" height="400" src="//demo.onliner.ir/takhfifat/wp-content/uploads/2017/05/431416.e9b905600723e4c26750de76373ae0bd-400x400.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image" alt="" srcset="//demo.onliner.ir/takhfifat/wp-content/uploads/2017/05/431416.e9b905600723e4c26750de76373ae0bd-400x400.jpg 400w, //demo.onliner.ir/takhfifat/wp-content/uploads/2017/05/431416.e9b905600723e4c26750de76373ae0bd-100x100.jpg 100w, //demo.onliner.ir/takhfifat/wp-content/uploads/2017/05/431416.e9b905600723e4c26750de76373ae0bd-150x150.jpg 150w, //demo.onliner.ir/takhfifat/wp-content/uploads/2017/05/431416.e9b905600723e4c26750de76373ae0bd-275x275.jpg 275w" sizes="(max-width: 400px) 100vw, 400px"></td>
-        
-                                <td class="product-name" data-title="محصول">پیست کارتینگ پرند&nbsp;<dl class="variation">
-                    <dt class="variation-">فروشنده:</dt>
-                <dd class="variation-"><p>تست</p>
-        </dd>
-            </dl>
-        </td>
-        
-                                <td class="product-price" data-title="قیمت">
-                                    <span class="woocommerce-Price-amount amount">۲۰,۰۰۰&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>						</td>
-        
-                                <td class="product-quantity" data-title="تعداد">	<div class="quantity">
-                <label class="screen-reader-text" for="quantity_5b59c2f1b5176">تعداد</label>
-                <input type="number" id="quantity_5b59c2f1b5176" class="input-text qty text" step="1" min="0" max="" name="cart[7ef605fc8dba5425d6965fbd4c8fbe1f][qty]" value="1" title="تعداد" size="4" pattern="[0-9]*" inputmode="numeric" aria-labelledby="پیست کارتینگ پرند عدد">
-            </div>
-            </td>
-        
-                                <td class="product-subtotal" data-title="مجموع">
-                                    <span class="woocommerce-Price-amount amount">۲۰,۰۰۰&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>						</td>
-                            </tr>
-                            
-                    
-                    <tr>
-                        <td colspan="6" class="actions">
-        
-                            
-                            <button type="submit" class="button" name="update_cart" value="بروزرسانی سبد خرید" disabled="">بروزرسانی سبد خرید</button>
-        
-                            
-                            <input type="hidden" id="_wpnonce" name="_wpnonce" value="4e891f0432"><input type="hidden" name="_wp_http_referer" value="/takhfifat/cart/">				</td>
-                    </tr>
-        
-                            </tbody>
-            </table>
-            </form>
-        
+                                @if(count($errors) > 0)
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+                                @if (Cart::count() > 0)
+                                    <h2>{{ Cart::count() }} item(s) in Shopping Cart</h2>
+
+                                    <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th class="product-remove">&nbsp;</th>
+                                                <th class="product-thumbnail">&nbsp;</th>
+                                                <th class="product-name">محصول</th>
+                                                <th class="product-price">قیمت</th>
+                                                <th class="product-quantity">تعداد</th>
+                                                <th class="product-subtotal">مجموع</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach (Cart::content() as $item )
+                                            <tr class="woocommerce-cart-form__cart-item cart_item">
+                                                        <td class="product-remove">
+                                                            
+                                                            <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
+                                                                    {{ csrf_field() }}
+                                                                    {{ method_field('DELETE') }}
+                                    
+                                                                    <button type="submit" class="cart-options">remove</button>
+                                                            </form>
+                                                        </td>
+                                                        <td class="product-thumbnail">
+                                                            <img width="400" height="400" src="{{ productImage($item->model->image) }}" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image" alt="" sizes="(max-width: 400px) 100vw, 400px">
+                                                        </td>
+                                                        <td class="product-name" data-title="محصول"><a href="{{ route('shop.show', $item->model->slug) }}">{{ $item->model->name }}</a>
+                                                            <dl class="variation">
+                                                                <dt class="variation-">فروشنده:</dt>
+                                                                <dd class="variation-"><p>سید محسن فاطمی</p>
+                                                                </dd>
+                                                            </dl>
+                                                        </td>
+                                                        <td class="product-price" data-title="قیمت">
+                                                            <span class="woocommerce-Price-amount amount">{{ $item->price }}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>
+                                                        </td>
+                                                        <td class="product-quantity" data-title="تعداد">
+                                                            <div class="quantity">
+                                                                    <select class="quantity" data-id="{{ $item->rowId }}">
+                                                                            @for ($i = 1; $i < 5 + 1 ; $i++)
+                                                                                <option {{ $item->qty == $i ? 'selected' : '' }}>{{ $i }}</option>
+                                                                            @endfor
+                                                                    </select>
+                                                            </div>
+                                                        </td>
+                                                        <td class="product-subtotal" data-title="مجموع">
+                                                            <span class="woocommerce-Price-amount amount">{{ $item->subtotal }}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>
+                                                        </td>
+                                            </tr>
+                                            @endforeach
+                                            <tr>
+                                                <td colspan="6" class="actions">
+                                                    <button type="submit" class="button" name="update_cart" value="بروزرسانی سبد خرید" disabled="">بروزرسانی سبد خرید</button>
+                                                    <input type="hidden" id="_wpnonce" name="_wpnonce" value="4e891f0432"><input type="hidden" name="_wp_http_referer" value="/takhfifat/cart/">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                
         <div class="cart-collaterals">
             <div class="cart_totals ">
         
@@ -380,21 +400,17 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
                                                     
                     </div>
                     
-                    
-                        {{-- <div class="post-content-page">
-                                        
-                    <!--title & discount & views-->
-                    <div class="title_post">
-                        <h1>سبد خرید</h1>
-                    </div>
-                            <div class="woocommerce"><p class="cart-empty">سبد خرید شما در حال حاضر خالی است.</p>	<p class="return-to-shop">
-		<a class="button wc-backward" href="../shop/index.html">
-			بازگشت به فروشگاه		</a>
-	</p>
-</div>
-
-                                            
-            </div> --}}
+            @else
+            <div class="post-content-page">
+                <div class="woocommerce">
+                    <p class="cart-empty">سبد خرید شما در حال حاضر خالی است.</p>
+                    <p class="return-to-shop">
+                        <a class="button wc-backward" href="{{ route('shop.index') }}">بازگشت به فروشگاه</a>
+                    </p>
+                </div>                                
+            </div>
+            @endif
+                        
 
         </div>
     </div>
