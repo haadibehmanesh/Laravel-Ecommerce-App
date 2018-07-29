@@ -536,15 +536,17 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
 
                                 <div>
 	
-	<form class="cart" action="{{ route('cart.store') }}" method="post" enctype='multipart/form-data'>
-			<div class="quantity">
+    <form class="cart" action="{{ route('cart.store') }}" method="post" enctype='multipart/form-data'>
+        {{ csrf_field() }}
+	<div class="quantity">
 		<label class="screen-reader-text" for="quantity_5b2b5b685b0c0">تعداد</label>
 		<input type="number" id="quantity_5b2b5b685b0c0" class="input-text qty text" step="1" min="1" max="" name="quantity" value="1" title="تعداد" size="4" pattern="[0-9]*" inputmode="numeric" aria-labelledby="" />
-	</div>
-	
-		<button type="submit" name="add-to-cart" value="96" class="single_add_to_cart_button button alt">افزودن به سبد خرید</button>
-
-			</form>
+    </div>
+    <input type="hidden" name="id" value="{{ $product->id }}">
+    <input type="hidden" name="name" value="{{ $product->name }}">
+    <input type="hidden" name="price" value="{{ $product->price }}">
+	<button type="submit" name="add-to-cart" value="96" class="single_add_to_cart_button button alt">افزودن به سبد خرید</button>
+    </form>
 
 	
 </div>
