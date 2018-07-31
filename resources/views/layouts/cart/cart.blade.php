@@ -48,7 +48,7 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/wp-admin\/admin-ajax.php","nonce":"9
 <script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
-var _zxcvbnSettings = {"src":"http:\/\/localhost\/wp-includes\/js\/zxcvbn.min.js"};
+var _zxcvbnSettings = {"src":"\/wp-includes\/js\/zxcvbn.min.js"};
 /* ]]> */
 </script>
 <script type='text/javascript' src='../wp-includes/js/zxcvbn-async.min5152.js?ver=1.0'></script>
@@ -132,7 +132,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/wp-includes\/js\/zxcvbn.min.js
 	{
 		border-color:#ff5a5f	}	
 		</style>
-	<script src="../wp-content/themes/takhfifat/js/parsinumber.min.js"></script>
+	<script src="../../wp-content/themes/takhfifat/js/parsinumber.min.js"></script>
 	<script>
 	function toPersianNum( num, dontTrim ) {
 		var i = 0,
@@ -152,14 +152,53 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/wp-includes\/js\/zxcvbn.min.js
 		return res;
 	}
     </script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
-        $(document).ready(function(){
-                alert('ok');
-          //  $('#quantity').change(function(){
-                
-            //});
+    jQuery(document).ready(function(){  
+        jQuery('.select-quantity').change(function() {
+            var qty = jQuery(this).attr('value');
+            var id = jQuery(this).attr('data-id');
+          
+            axios.patch(`/cart/${id}`, {
+                        quantity: this.value
+                    })
+                    .then(function (response) {
+                        // console.log(response);
+                        window.location.href = '{{ route('cart.index') }}'
+                    })
+                    .catch(function (error) {
+                        // console.log(error);
+                        window.location.href = '{{ route('cart.index') }}'
+             });      
         });
+    });
     </script>
+    {{--
+        <script>
+        (function(){
+            const classname = document.querySelectorAll('.quantity')
+            alert('hi');
+
+            Array.from(classname).forEach(function(element) {
+                element.addEventListener('change', function() {
+                    const id = element.getAttribute('data-id')
+                   //alert('hi');
+                    axios.patch(`/cart/${id}`, {
+                        quantity: this.value
+                    })
+                    .then(function (response) {
+                        // console.log(response);
+                        window.location.href = '{{ route('cart.index') }}'
+                    })
+                    .catch(function (error) {
+                        // console.log(error);
+                        window.location.href = '{{ route('cart.index') }}'
+                    });
+                })
+            })
+        })();
+    </script>
+    --}}
 </head>
 <body class="rtl page-template-default page page-id-8 woocommerce-cart woocommerce-page mega-menu-main-menu dokan-theme-takhfifat">
     <!----- Top Menu
@@ -306,7 +345,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/wp-includes\/js\/zxcvbn.min.js
                                     </div>
                                 @endif
                                 @if (Cart::count() > 0)
-                                    <h2>{{ Cart::content()->count() }} item(s) in Shopping Cart</h2>
+                                   {{-- <h2>{{ Cart::content()->count() }} item(s) in Shopping Cart</h2>--}}
 
                                     <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
                                         <thead>
@@ -327,7 +366,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/wp-includes\/js\/zxcvbn.min.js
                                                             <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
                                                                     {{ csrf_field() }}
                                                                     {{ method_field('DELETE') }}
-                                    
+                                                                   
                                                                     <button type="submit" class="remove">×</button>
                                                             </form>
                                                         </td>
@@ -345,14 +384,14 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/wp-includes\/js\/zxcvbn.min.js
                                                             <span class="woocommerce-Price-amount amount">{{ $item->price }}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>
                                                         </td>
                                                         <td class="product-quantity" data-title="تعداد">
-                                                            <div class="quantity" id="quantity">
+                                                            <div>
                                 
-                                                                <select class="quantity" data-id="{{ $item->rowId }}">
+                                                                <select class="select-quantity" data-id="{{ $item->rowId }}">
                                                                         @for ($i = 1; $i < 10 + 1 ; $i++)
-                                                                            <option {{ $item->qty == $i ? 'selected' : '' }}>{{ $i }}</option>
+                                                                        <option value="{{ $i }}" {{ $item->qty == $i ? 'selected' : '' }}>{{ $i }}</option>
                                                                         @endfor
                                                                 </select>
-                                                             {{--<input type="number" id="quantity" class="input-text qty text" step="1" min="1" max="" name="quantity" value="{{ $item->qty }}" title="تعداد" size="4" pattern="[0-9]*" inputmode="numeric" aria-labelledby="" />--}}
+                                
                                                             </div>
                                                         </td>
                                                         <td class="product-subtotal" data-title="مجموع">
@@ -361,10 +400,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/wp-includes\/js\/zxcvbn.min.js
                                             </tr>
                                             @endforeach
                                             <tr>
-                                                <td colspan="6" class="actions">
-                                                    <button type="submit" class="button" name="update_cart" value="بروزرسانی سبد خرید" disabled="">بروزرسانی سبد خرید</button>
-                                                    <input type="hidden" id="_wpnonce" name="_wpnonce" value="4e891f0432"><input type="hidden" name="_wp_http_referer" value="/takhfifat/cart/">
-                                                </td>
+                                                
                                             </tr>
                                         </tbody>
                                     </table>
@@ -398,7 +434,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/wp-includes\/js\/zxcvbn.min.js
             <div class="wc-proceed-to-checkout">
                 
         <a href="http://demo.onliner.ir/takhfifat/checkout/" class="checkout-button button alt wc-forward">
-            ادامه جهت تسویه حساب</a>
+            نهایی کردن خرید</a>
             </div>
         
             
