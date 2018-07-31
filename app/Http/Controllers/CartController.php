@@ -34,9 +34,9 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
+    {
         Cart::add($request->id, $request->name, 1, $request->price)->associate('App\BiProduct');
-        return redirect()->route('cart.index')->with('success_message', 'Item was added to your cart');
+        return redirect()->route('cart.index')->with('success_message', 'بن شما با موفقیت اضافه شد');
     }
 
     /**
@@ -69,18 +69,18 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
+    {  
         $validator = Validator::make($request->all(), [
-            'quantity' => 'required|numeric|between:1,5'
+            'quantity' => 'required|numeric|between:1,100'
         ]);
 
         if ($validator->fails()) {
-            session()->flash('errors', collect(['Quantity must be between 1 and 5.']));
+            session()->flash('errors', collect(['تعداد بیش از 100 عدد است']));
             return response()->json(['success' => false], 400);
         }
 
         Cart::update($id, $request->quantity);
-        session()->flash('success_message', 'Quantity was updated successfully!');
+        session()->flash('success_message', 'تعداد به خوبی بروز رسانی شد');
         return response()->json(['success' => true]);
     }
 
@@ -94,6 +94,6 @@ class CartController extends Controller
     {   
         Cart::remove($id);
 
-        return back()->with('success_message', 'Item has been removed!');
+        return back()->with('success_message', 'حذف با موفقیت انجام شد!');
     }
 }
