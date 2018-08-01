@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 29, 2018 at 09:16 PM
+-- Generation Time: Aug 01, 2018 at 03:09 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.1.18
 
@@ -62,18 +62,30 @@ CREATE TABLE `bi_categories` (
   `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `meta_description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `slug` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `icon` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `bi_categories`
 --
 
-INSERT INTO `bi_categories` (`id`, `parent_id`, `language_id`, `name`, `description`, `image`, `sort_order`, `top`, `column`, `status`, `created_at`, `updated_at`, `meta_title`, `meta_description`, `meta_keyword`, `slug`) VALUES
-(1, NULL, NULL, 'تفریحی و ورزشی', 'تفریحی و ورزشی', NULL, NULL, NULL, NULL, 1, '2018-07-19 04:06:00', '2018-07-28 06:39:34', NULL, NULL, NULL, 'تفریحی-و-ورزشی'),
-(2, 0, NULL, 'رستوران و فست فود', 'رستوران و فست فود', NULL, NULL, NULL, NULL, 1, '2018-07-19 09:34:00', '2018-07-28 06:40:29', NULL, NULL, NULL, 'رستوران-و-فست-فود'),
-(3, NULL, NULL, 'زیبایی و آرایشی', 'زیبایی و آرایشی', NULL, NULL, NULL, NULL, 1, '2018-07-20 05:50:00', '2018-07-28 06:40:12', NULL, NULL, NULL, 'زیبایی-و-آرایشی'),
-(4, NULL, NULL, 'پزشکی و سلامت', 'پزشکی و سلامت', NULL, NULL, NULL, NULL, 1, '2018-07-28 06:11:00', '2018-07-28 06:39:04', NULL, NULL, NULL, 'پزشکی-و-سلامت');
+INSERT INTO `bi_categories` (`id`, `parent_id`, `language_id`, `name`, `description`, `image`, `sort_order`, `top`, `column`, `status`, `created_at`, `updated_at`, `meta_title`, `meta_description`, `meta_keyword`, `slug`, `icon`) VALUES
+(1, NULL, NULL, 'تفریحی و ورزشی', 'تفریحی و ورزشی', NULL, 2, NULL, NULL, 1, '2018-07-19 04:06:00', '2018-08-01 08:17:25', NULL, NULL, NULL, 'تفریحی-و-ورزشی', 'fa-futbol-o'),
+(2, NULL, NULL, 'رستوران و کافی شاپ', 'رستوران و کافی شاپ', 'bi-categories\\August2018\\VtbdxGEx6zcKlT5o63VA.jpg', 1, NULL, NULL, 1, '2018-07-19 09:34:00', '2018-08-01 08:12:30', NULL, NULL, NULL, 'رستوران-و-کافی-شاپ', 'fa-cutlery'),
+(3, NULL, NULL, 'زیبایی و آرایشی', 'زیبایی و آرایشی', NULL, 6, NULL, NULL, 1, '2018-07-20 05:50:00', '2018-08-01 08:31:57', NULL, NULL, NULL, 'زیبایی-و-آرایشی', 'fa-scissors'),
+(4, NULL, NULL, 'پزشکی و سلامت', 'پزشکی و سلامت', NULL, 3, NULL, NULL, 1, '2018-07-28 06:11:00', '2018-08-01 08:21:34', NULL, NULL, NULL, 'پزشکی-و-سلامت', 'fa-heartbeat'),
+(7, NULL, NULL, 'هنر و تئاتر', 'هنر و تئاتر', NULL, 4, NULL, NULL, 1, '2018-08-01 04:45:00', '2018-08-01 08:24:14', NULL, NULL, NULL, 'هنر-و-تئاتر', 'fa-film'),
+(8, NULL, NULL, 'آموزشی', 'آموزشی', NULL, 5, NULL, NULL, 1, '2018-08-01 04:46:00', '2018-08-01 08:25:15', NULL, NULL, NULL, 'آموزشی', 'fa-graduation-cap'),
+(9, NULL, NULL, 'لحظه آخری', 'لحظه آخری', NULL, 7, NULL, NULL, 1, '2018-08-01 04:47:00', '2018-08-01 08:32:57', NULL, NULL, NULL, 'لحظه-آخری', 'fa-bullhorn'),
+(10, 2, NULL, 'غذای ایرانی و سنتی', 'غذای ایرانی و سنتی', NULL, NULL, NULL, NULL, 1, '2018-08-01 04:48:00', '2018-08-01 04:57:46', NULL, NULL, NULL, 'غذای-ایرانی-و-سنتی', NULL),
+(11, 2, NULL, 'غذای ایتالیایی و بین المللی', 'غذای ایتالیایی و بین المللی', NULL, NULL, NULL, NULL, 1, '2018-08-01 04:52:00', '2018-08-01 06:37:36', NULL, NULL, NULL, 'غذای-ایتالیایی-و-بین-المللی', NULL),
+(12, 2, NULL, 'فست فود', 'فست فود', NULL, NULL, NULL, NULL, 1, '2018-08-01 04:53:11', '2018-08-01 04:53:11', NULL, NULL, NULL, 'فست-فود', NULL),
+(13, 2, NULL, 'سفره خانه', 'سفره خانه', NULL, NULL, NULL, NULL, 1, '2018-08-01 04:53:32', '2018-08-01 04:53:32', NULL, NULL, NULL, 'سفره-خانه', NULL),
+(14, 2, NULL, 'بوفه', 'بوفه', NULL, NULL, NULL, NULL, 1, '2018-08-01 04:53:58', '2018-08-01 04:53:58', NULL, NULL, NULL, 'بوفه', NULL),
+(16, 2, NULL, 'کافی شاپ', 'کافی شاپ', NULL, NULL, NULL, NULL, 1, '2018-08-01 04:56:00', '2018-08-01 04:57:10', NULL, NULL, NULL, 'کافی-شاپ', NULL),
+(18, 2, NULL, 'صبحانه', 'صبحانه', NULL, NULL, NULL, NULL, 1, '2018-08-01 04:58:19', '2018-08-01 04:58:19', NULL, NULL, NULL, 'صبحانه', NULL),
+(19, 1, NULL, 'تورهای مسافرتی', 'تورهای مسافرتی', NULL, NULL, NULL, NULL, 1, '2018-08-01 07:51:16', '2018-08-01 07:51:17', NULL, NULL, NULL, 'تورهای-مسافرتی', NULL);
 
 -- --------------------------------------------------------
 
@@ -626,20 +638,20 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (200, 14, 'meta_description', 'text', 'Meta Description', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 7),
 (201, 14, 'meta_keyword', 'text', 'Meta Keyword', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 8),
 (202, 17, 'id', 'hidden', 'Id', 1, 0, 1, 1, 1, 0, NULL, 1),
-(203, 17, 'image', 'text', 'Image', 0, 0, 1, 1, 1, 1, NULL, 4),
-(204, 17, 'parent_id', 'number', 'Parent Id', 0, 0, 1, 1, 1, 1, '{\"default\":\"\",\"null\":\"\",\"options\":{\"\":\"-- None --\"},\"relationship\":{\"key\":\"id\",\"label\":\"name\"}}', 5),
+(203, 17, 'image', 'image', 'Image', 0, 0, 1, 1, 1, 1, NULL, 5),
+(204, 17, 'parent_id', 'select_dropdown', 'Parent Id', 0, 0, 1, 1, 1, 1, '{\"default\":\"\",\"null\":\"\",\"options\":{\"\":\"-- None --\"},\"relationship\":{\"key\":\"id\",\"label\":\"name\"}}', 18),
 (205, 17, 'top', 'number', 'Top', 0, 0, 1, 1, 1, 1, NULL, 6),
 (206, 17, 'column', 'number', 'Column', 0, 0, 1, 1, 1, 1, NULL, 7),
 (207, 17, 'sort_order', 'number', 'Sort Order', 0, 1, 1, 1, 1, 1, NULL, 8),
 (208, 17, 'status', 'checkbox', 'Status', 0, 1, 1, 1, 1, 1, NULL, 9),
-(209, 17, 'created_at', 'timestamp', 'Created At', 0, 0, 1, 1, 0, 1, NULL, 10),
-(210, 17, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 11),
-(211, 17, 'language_id', 'text', 'Language Id', 0, 0, 1, 1, 1, 1, NULL, 12),
+(209, 17, 'created_at', 'timestamp', 'Created At', 0, 0, 1, 1, 0, 1, NULL, 11),
+(210, 17, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 12),
+(211, 17, 'language_id', 'text', 'Language Id', 0, 0, 1, 1, 1, 1, NULL, 13),
 (212, 17, 'name', 'text', 'Name', 0, 1, 1, 1, 1, 1, NULL, 2),
 (213, 17, 'description', 'text', 'Description', 0, 1, 1, 1, 1, 1, NULL, 3),
-(214, 17, 'meta_title', 'text', 'Meta Title', 0, 0, 1, 1, 1, 1, NULL, 13),
-(215, 17, 'meta_description', 'text', 'Meta Description', 0, 0, 1, 1, 1, 1, NULL, 14),
-(216, 17, 'meta_keyword', 'text', 'Meta Keyword', 0, 0, 1, 1, 1, 1, NULL, 15),
+(214, 17, 'meta_title', 'text', 'Meta Title', 0, 0, 1, 1, 1, 1, NULL, 14),
+(215, 17, 'meta_description', 'text', 'Meta Description', 0, 0, 1, 1, 1, 1, NULL, 15),
+(216, 17, 'meta_keyword', 'text', 'Meta Keyword', 0, 0, 1, 1, 1, 1, NULL, 16),
 (217, 18, 'id', 'hidden', 'Id', 1, 0, 1, 1, 1, 0, NULL, 1),
 (218, 18, 'name', 'text', 'Name', 0, 1, 1, 1, 1, 1, NULL, 2),
 (219, 18, 'code', 'text', 'Code', 0, 1, 1, 1, 1, 1, NULL, 3),
@@ -655,7 +667,7 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (229, 18, 'status', 'checkbox', 'Status', 0, 1, 1, 1, 1, 1, NULL, 13),
 (230, 18, 'created_at', 'timestamp', 'Created At', 0, 0, 1, 1, 0, 1, NULL, 14),
 (231, 18, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 15),
-(232, 17, 'slug', 'text', 'Slug', 0, 1, 0, 0, 0, 0, NULL, 16),
+(232, 17, 'slug', 'text', 'Slug', 0, 1, 0, 0, 0, 0, NULL, 17),
 (233, 19, 'customer_id', 'hidden', 'Customer Id', 1, 0, 1, 1, 1, 0, NULL, 1),
 (234, 19, 'customer_group_id', 'number', 'Customer Group Id', 1, 0, 0, 0, 0, 0, NULL, 2),
 (235, 19, 'store_id', 'number', 'Store Id', 1, 0, 0, 0, 0, 0, NULL, 3),
@@ -742,7 +754,9 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (316, 25, 'language_id', 'number', 'Language Id', 0, 0, 0, 0, 0, 0, NULL, 4),
 (317, 25, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 5),
 (318, 25, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 6),
-(319, 14, 'slug', 'text', 'Slug', 0, 1, 0, 0, 0, 0, NULL, 39);
+(319, 14, 'slug', 'text', 'Slug', 0, 1, 0, 0, 0, 0, NULL, 39),
+(320, 17, 'bi_category_belongsto_bi_category_relationship', 'relationship', 'Category', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\BiCategory\",\"table\":\"bi_categories\",\"type\":\"belongsTo\",\"column\":\"parent_id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"bi_c_group_bi_customer\",\"pivot\":\"0\",\"taggable\":\"0\"}', 4),
+(321, 17, 'icon', 'text', 'Icon', 0, 0, 1, 1, 1, 1, NULL, 10);
 
 -- --------------------------------------------------------
 
@@ -1549,7 +1563,7 @@ ALTER TABLE `bi_cart`
 -- AUTO_INCREMENT for table `bi_categories`
 --
 ALTER TABLE `bi_categories`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `bi_category_bi_product`
@@ -1609,7 +1623,7 @@ ALTER TABLE `bi_products`
 -- AUTO_INCREMENT for table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=320;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=322;
 
 --
 -- AUTO_INCREMENT for table `data_types`
