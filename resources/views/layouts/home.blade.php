@@ -227,31 +227,36 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
 <nav>
     <div class="container">
         <div class="row">
-				<div id="mega-menu-wrap-main-menu" class="mega-menu-wrap"><div class="mega-menu-toggle" tabindex="0"><div class='mega-toggle-block mega-menu-toggle-block mega-toggle-block-right mega-toggle-block-3' id='mega-toggle-block-3'></div></div><ul id="mega-menu-main-menu" class="mega-menu mega-menu-horizontal mega-no-js" data-event="hover_intent" data-effect="fade_up" data-effect-speed="200" data-second-click="close" data-document-click="collapse" data-vertical-behaviour="standard" data-breakpoint="600" data-unbind="true"><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-current-menu-item mega-current_page_item mega-menu-item-home mega-align-bottom-left mega-menu-flyout mega-has-icon mega-menu-item-162' id='mega-menu-item-162'><a class=" fa fa-bullhorn  mega-menu-link" href="index.html" tabindex="0">صفحه اصلی</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_cat mega-align-bottom-left mega-menu-megamenu mega-has-icon mega-menu-item-156' id='mega-menu-item-156'><a class=" fa fa-bullseye  mega-menu-link" href="product-category/restaurant-and-coffee-shop/index.html" tabindex="0">رستوران و کافی شاپ</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_cat mega-align-bottom-left mega-menu-megamenu mega-has-icon mega-menu-item-157' id='mega-menu-item-157'><a class="dashicons-format-image mega-menu-link" href="product-category/arts-theater/index.html" tabindex="0">هنر و تئاتر</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_cat mega-align-bottom-left mega-menu-megamenu mega-has-icon mega-menu-item-158' id='mega-menu-item-158'><a class="dashicons-visibility mega-menu-link" href="product-category/beauty-and-cosmetics/index.html" tabindex="0">زیبایی و آرایشی</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_cat mega-align-bottom-left mega-menu-megamenu mega-has-icon mega-menu-item-159' id='mega-menu-item-159'><a class="dashicons-admin-site mega-menu-link" href="product-category/sports-and-recreation/index.html" tabindex="0">تفریحی و ورزشی</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_cat mega-align-bottom-left mega-menu-megamenu mega-has-icon mega-menu-item-160' id='mega-menu-item-160'><a class="dashicons-admin-users mega-menu-link" href="product-category/training/index.html" tabindex="0">آموزشی</a></li><li class='mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-product_cat mega-align-bottom-left mega-menu-megamenu mega-has-icon mega-menu-item-161' id='mega-menu-item-161'><a class="dashicons-plus-alt mega-menu-link" href="product-category/health-and-medicine/index.html" tabindex="0">سلامتی و پزشکی</a></li><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-has-icon mega-menu-item-235' id='mega-menu-item-235'><a class=" fa fa-check  mega-menu-link" href="#" aria-haspopup="true" tabindex="0">منوی آبشاری</a>
-<ul class="mega-sub-menu">
-<li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-236' id='mega-menu-item-236'><a class="mega-menu-link" href="#">آیتم منو</a></li><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-237' id='mega-menu-item-237'><a class="mega-menu-link" href="#">آیتم منو</a></li><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-item-238' id='mega-menu-item-238'><a class="mega-menu-link" href="#" aria-haspopup="true">آیتم منو</a>
-	<ul class="mega-sub-menu">
-<li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-239' id='mega-menu-item-239'><a class="mega-menu-link">تورها</a></li>	</ul>
-</li><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-240' id='mega-menu-item-240'><a class="mega-menu-link" href="#">آیتم منو</a></li></ul>
-</li><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-megamenu mega-has-icon mega-menu-item-241' id='mega-menu-item-241'><a class=" fa fa-check  mega-menu-link" href="#" aria-haspopup="true" tabindex="0">مگا منو</a>
-<ul class="mega-sub-menu">
-<li class='mega-menu-item mega-menu-item-type-widget widget_sp_image mega-menu-columns-1-of-4 mega-menu-item-widget_sp_image-2' id='mega-menu-item-widget_sp_image-2'><img width="100" height="100" class="attachment-shop_thumbnail" style="max-width: 100%;" srcset="http://localhost/takhfiftest/wp-content/uploads/2017/05/Credit_discount-100x100.jpg 100w, http://localhost/takhfiftest/wp-content/uploads/2017/05/Credit_discount-400x400.jpg 400w, http://localhost/takhfiftest/wp-content/uploads/2017/05/Credit_discount-150x150.jpg 150w, http://localhost/takhfiftest/wp-content/uploads/2017/05/Credit_discount-275x275.jpg 275w" sizes="(max-width: 100px) 100vw, 100px" src="wp-content/uploads/2017/05/Credit_discount-100x100.jpg" /></li><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-has-icon mega-menu-columns-1-of-4 mega-menu-item-242' id='mega-menu-item-242'><a class=" fa fa-chevron-left  mega-menu-link" href="#" aria-haspopup="true">آیتم منو</a>
-	<ul class="mega-sub-menu">
-<li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-243' id='mega-menu-item-243'><a class="mega-menu-link" href="#">آیتم منو</a></li><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-244' id='mega-menu-item-244'><a class="mega-menu-link" href="#">آیتم منو</a></li>	</ul>
-</li><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-has-icon mega-menu-columns-1-of-4 mega-menu-item-245' id='mega-menu-item-245'><a class=" fa fa-chevron-left  mega-menu-link" href="#" aria-haspopup="true">آیتم منو</a>
-	<ul class="mega-sub-menu">
-<li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-246' id='mega-menu-item-246'><a class="mega-menu-link" href="#">آیتم منو</a></li><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-247' id='mega-menu-item-247'><a class="mega-menu-link" href="#">آیتم منو</a></li>	</ul>
-</li><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-has-icon mega-menu-columns-1-of-4 mega-menu-item-248' id='mega-menu-item-248'><a class=" fa fa-chevron-left  mega-menu-link" href="#" aria-haspopup="true">آیتم منو</a>
-	<ul class="mega-sub-menu">
-<li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-249' id='mega-menu-item-249'><a class="mega-menu-link" href="#">آیتم منو</a></li><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-250' id='mega-menu-item-250'><a class="mega-menu-link" href="#">آیتم منو</a></li>	</ul>
-</li></ul>
-</li></ul></div><!--
-            <div class="box_button">
-                <button class="menu_icon" type="button"><i class="fa fa-bars"></i></button>
-                <button class="button_menu" type="button"><i class="fa fa-remove"></i></button>
+            <div id="mega-menu-wrap-main-menu" class="mega-menu-wrap">
+                <div class="mega-menu-toggle" tabindex="0">
+                    <div class='mega-toggle-block mega-menu-toggle-block mega-toggle-block-right mega-toggle-block-3' id='mega-toggle-block-3'>
+                    </div>
+                </div>
+                <ul id="mega-menu-main-menu" class="mega-menu mega-menu-horizontal mega-no-js" data-event="hover_intent" data-effect="fade_up" data-effect-speed="200" data-second-click="close" data-document-click="collapse" data-vertical-behaviour="standard" data-breakpoint="600" data-unbind="true">
+                    <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-current-menu-item mega-current_page_item mega-menu-item-home mega-align-bottom-left mega-menu-flyout mega-has-icon mega-menu-item-162' id='mega-menu-item-162'><a class=" fa fa-home  mega-menu-link" href="index.html" tabindex="0">صفحه اصلی</a></li>
+                    
+                    @foreach ($allcategories as $item)
+                   
+                        @if($item->children->count() > 0)
+                                <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-megamenu mega-has-icon mega-menu-item-241' id='mega-menu-item-241'><a class=" fa {{$item->icon}}  mega-menu-link" href="#" aria-haspopup="true" tabindex="0">{{ $item->name}}</a>
+                                    <ul class="mega-sub-menu">
+                                        <li class='mega-menu-item mega-menu-item-type-widget widget_sp_image mega-menu-columns-1-of-4 mega-menu-item-widget_sp_image-2' id='mega-menu-item-widget_sp_image-2'><img width="100" height="100" class="attachment-shop_thumbnail" style="max-width: 100%;" srcset="{{ categoryImage($item->image) }}" /></li>
+                                        {{-- <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-has-icon mega-menu-columns-1-of-4 mega-menu-item-242' id='mega-menu-item-242'><a class=" fa fa-chevron-left  mega-menu-link" href="#" aria-haspopup="true"></a>--}}
+                                            @foreach ( $item->children as $submenu )
+                                            <ul class="mega-sub-menu">
+                                                <li class='mega-menu-item' id='mega-menu-item-243'><a class="mega-menu-link" href="#">{{$submenu->name}}</a></li>
+                                            </ul>
+                                        </li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                        @elseif(empty($item->parent_id))
+                             <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-current-menu-item mega-current_page_item mega-menu-item-home mega-align-bottom-left mega-menu-flyout mega-has-icon mega-menu-item-162' id='mega-menu-item-162'><a class=" fa {{$item->icon}}  mega-menu-link" href="index.html" tabindex="0">{{$item->name}}</a></li>
+                        @endif
+                    @endforeach
+                </ul> 
             </div>
-            <ul class="multiple_menu"></ul>
--->	
+    
         </div>
     </div>
 
