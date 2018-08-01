@@ -13,5 +13,13 @@ class BiCategory extends Model
     {
         return $this->belongsToMany('App\BiProduct');
     }
+    public function parent()
+    {
+        return $this->belongsTo('App\BiCategory', 'parent_id');
+    }
+    public function children()
+    {
+        return $this->hasMany('App\BiCategory', 'parent_id');
+    }
     
 }
