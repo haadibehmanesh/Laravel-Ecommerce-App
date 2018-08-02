@@ -535,8 +535,7 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
     <form class="cart" action="{{ route('cart.store') }}" method="post" enctype='multipart/form-data'>
         {{ csrf_field() }}
     <input type="hidden" name="id" value="{{ $product->id }}">
-    <input type="hidden" name="name" value="{{ $product->name }}">
-    <input type="hidden" name="price" value="{{ $product->price }}">
+   
 	<button type="submit" name="add-to-cart" value="96" class="single_add_to_cart_button button alt">افزودن به سبد خرید</button>
     </form>
 
