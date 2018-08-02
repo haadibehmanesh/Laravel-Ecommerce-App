@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use App\BiProduct;
 
 class CartController extends Controller
 {
@@ -35,7 +36,10 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        Cart::add($request->id, $request->name, 1, $request->price)->associate('App\BiProduct');
+        $product = BiProduct::where('id', $request->id)->get();
+        
+        Cart::add($request->id, $product[0]->name, 1, $product[0]->price)->associate('App\BiProduct');
+
         return redirect()->route('cart.index')->with('success_message', 'بن شما با موفقیت اضافه شد');
     }
 
