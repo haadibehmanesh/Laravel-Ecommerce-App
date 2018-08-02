@@ -3,6 +3,8 @@ namespace App\Http\Controllers;
 
 use App\BiProduct;
 use App\BiCategory;
+use App\BiSlider;
+use App\BiSliderImage;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -16,8 +18,14 @@ class HomeController extends Controller
     {   
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
       //  $products = BiProduct::where('featured', true)->take(8)->inRandomOrder()->get();
-
-        return view('layouts/home')->with('allcategories', $allcategories);
+        $slider = BiSlider::where('name' , 'index')->get();
+     
+        $sliderimages = BiSliderImage::where('bi_slider_id', $slider[0]->id)->get();
+        
+        return view('layouts/home')->with([
+            'allcategories' => $allcategories,
+            'sliderimages' =>  $sliderimages
+        ]);
     }
 
     /**
