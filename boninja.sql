@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 01, 2018 at 03:09 PM
+-- Generation Time: Aug 02, 2018 at 01:50 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.1.18
 
@@ -452,6 +452,53 @@ CREATE TABLE `bi_product_attributes` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `bi_sliders`
+--
+
+CREATE TABLE `bi_sliders` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `bi_sliders`
+--
+
+INSERT INTO `bi_sliders` (`id`, `created_at`, `updated_at`, `name`) VALUES
+(3, '2018-08-02 04:51:31', '2018-08-02 04:51:31', 'index'),
+(4, '2018-08-02 07:13:48', '2018-08-02 07:13:48', 'category-slider');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bi_slider_images`
+--
+
+CREATE TABLE `bi_slider_images` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `url` text COLLATE utf8mb4_unicode_ci,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `bi_slider_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `bi_slider_images`
+--
+
+INSERT INTO `bi_slider_images` (`id`, `name`, `url`, `created_at`, `updated_at`, `image`, `bi_slider_id`) VALUES
+(8, '1', '/', '2018-08-02 07:04:00', '2018-08-02 07:18:44', 'bi-slider-images\\August2018\\9NINZJco7ofr16dD9ETi.jpg', 3),
+(10, '2', '/', '2018-08-02 07:07:00', '2018-08-02 07:18:24', 'bi-slider-images\\August2018\\uu0SybyPfnUW22LveLBH.jpg', 3),
+(11, '3', '/products', '2018-08-02 07:07:00', '2018-08-02 07:18:34', 'bi-slider-images\\August2018\\HQr3MTlMEzAUgOp4olR9.jpg', 3),
+(13, '5', '/products', '2018-08-02 07:14:00', '2018-08-02 07:17:33', 'bi-slider-images\\August2018\\fzvm98z2xm0aSmIfY6ZQ.jpg', 4);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `categories`
 --
 
@@ -756,7 +803,19 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (318, 25, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 6),
 (319, 14, 'slug', 'text', 'Slug', 0, 1, 0, 0, 0, 0, NULL, 39),
 (320, 17, 'bi_category_belongsto_bi_category_relationship', 'relationship', 'Category', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\BiCategory\",\"table\":\"bi_categories\",\"type\":\"belongsTo\",\"column\":\"parent_id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"bi_c_group_bi_customer\",\"pivot\":\"0\",\"taggable\":\"0\"}', 4),
-(321, 17, 'icon', 'text', 'Icon', 0, 0, 1, 1, 1, 1, NULL, 10);
+(321, 17, 'icon', 'text', 'Icon', 0, 0, 1, 1, 1, 1, NULL, 10),
+(322, 26, 'id', 'hidden', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
+(327, 26, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 7),
+(328, 26, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 8),
+(329, 26, 'name', 'text', 'Name', 1, 1, 1, 1, 1, 1, NULL, 2),
+(330, 27, 'id', 'hidden', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
+(331, 27, 'name', 'text', 'Name', 0, 1, 1, 1, 1, 1, NULL, 4),
+(332, 27, 'url', 'text', 'Url', 0, 1, 1, 1, 1, 1, NULL, 5),
+(333, 27, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 6),
+(334, 27, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 7),
+(335, 27, 'image', 'image', 'Image', 1, 1, 1, 1, 1, 1, NULL, 3),
+(336, 27, 'bi_slider_image_belongsto_bi_slider_relationship', 'relationship', 'slider name', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\BiSlider\",\"table\":\"bi_sliders\",\"type\":\"belongsTo\",\"column\":\"bi_slider_id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"bi_c_group_bi_customer\",\"pivot\":\"0\",\"taggable\":\"0\"}', 2),
+(337, 27, 'bi_slider_id', 'text', 'Bi Slider Id', 1, 1, 1, 1, 1, 1, NULL, 7);
 
 -- --------------------------------------------------------
 
@@ -802,7 +861,9 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (21, 'bi_c_group', 'bi-c-group', 'Bi C Group', 'Bi C Groups', NULL, 'App\\BiCGroup', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-22 09:16:35', '2018-07-22 09:16:35'),
 (23, 'bi_customers', 'bi-customers', 'Bi Customer', 'Bi Customers', NULL, 'App\\BiCustomer', NULL, '\\App\\Http\\Controllers\\Voyager\\BiCustomerController', NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-22 11:08:34', '2018-07-22 11:08:34'),
 (24, 'bi_merchants', 'bi-merchants', 'Bi Merchant', 'Bi Merchants', NULL, 'App\\BiMerchant', NULL, '\\App\\Http\\Controllers\\Voyager\\BiMerchantController', NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-22 12:13:26', '2018-07-24 03:37:56'),
-(25, 'bi_m_groups', 'bi-m-groups', 'Bi M Group', 'Bi M Groups', NULL, 'App\\BiMGroup', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-24 03:33:32', '2018-07-24 03:33:32');
+(25, 'bi_m_groups', 'bi-m-groups', 'Bi M Group', 'Bi M Groups', NULL, 'App\\BiMGroup', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-24 03:33:32', '2018-07-24 03:33:32'),
+(26, 'bi_sliders', 'bi-sliders', 'Bi Slider', 'Bi Sliders', NULL, 'App\\BiSlider', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-08-02 04:27:15', '2018-08-02 04:27:15'),
+(27, 'bi_slider_images', 'bi-slider-images', 'Bi Slider Image', 'Bi Slider Images', NULL, 'App\\BiSliderImage', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-08-02 04:47:45', '2018-08-02 04:47:45');
 
 -- --------------------------------------------------------
 
@@ -852,29 +913,32 @@ CREATE TABLE `menu_items` (
 
 INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class`, `color`, `parent_id`, `order`, `created_at`, `updated_at`, `route`, `parameters`) VALUES
 (1, 1, 'Dashboard', '', '_self', 'voyager-boat', NULL, NULL, 1, '2018-07-13 02:50:35', '2018-07-13 02:50:35', 'voyager.dashboard', NULL),
-(2, 1, 'Media', '', '_self', 'voyager-images', NULL, NULL, 8, '2018-07-13 02:50:35', '2018-07-24 03:34:57', 'voyager.media.index', NULL),
-(3, 1, 'Users', '', '_self', 'voyager-person', NULL, NULL, 7, '2018-07-13 02:50:35', '2018-07-24 03:34:57', 'voyager.users.index', NULL),
-(4, 1, 'Roles', '', '_self', 'voyager-lock', NULL, NULL, 6, '2018-07-13 02:50:35', '2018-07-24 03:34:57', 'voyager.roles.index', NULL),
-(5, 1, 'Tools', '', '_self', 'voyager-tools', NULL, NULL, 12, '2018-07-13 02:50:35', '2018-07-24 03:34:57', NULL, NULL),
+(2, 1, 'Media', '', '_self', 'voyager-images', NULL, NULL, 9, '2018-07-13 02:50:35', '2018-08-02 05:19:15', 'voyager.media.index', NULL),
+(3, 1, 'Users', '', '_self', 'voyager-person', NULL, NULL, 8, '2018-07-13 02:50:35', '2018-08-02 05:19:15', 'voyager.users.index', NULL),
+(4, 1, 'Roles', '', '_self', 'voyager-lock', NULL, NULL, 7, '2018-07-13 02:50:35', '2018-08-02 05:19:15', 'voyager.roles.index', NULL),
+(5, 1, 'Tools', '', '_self', 'voyager-tools', NULL, NULL, 13, '2018-07-13 02:50:35', '2018-08-02 05:19:15', NULL, NULL),
 (6, 1, 'Menu Builder', '', '_self', 'voyager-list', NULL, 5, 1, '2018-07-13 02:50:35', '2018-07-13 03:23:10', 'voyager.menus.index', NULL),
-(7, 1, 'Database', '', '_self', 'voyager-data', NULL, 5, 2, '2018-07-13 02:50:35', '2018-07-19 04:09:12', 'voyager.database.index', NULL),
-(8, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 5, 3, '2018-07-13 02:50:35', '2018-07-19 04:09:12', 'voyager.compass.index', NULL),
-(9, 1, 'BREAD', '', '_self', 'voyager-bread', NULL, 5, 4, '2018-07-13 02:50:35', '2018-07-19 04:09:12', 'voyager.bread.index', NULL),
-(10, 1, 'Settings', '', '_self', 'voyager-settings', NULL, NULL, 13, '2018-07-13 02:50:35', '2018-07-24 03:34:57', 'voyager.settings.index', NULL),
-(11, 1, 'Hooks', '', '_self', 'voyager-hook', NULL, 5, 5, '2018-07-13 02:50:37', '2018-07-19 04:09:12', 'voyager.hooks', NULL),
-(12, 1, 'Categories', '', '_self', 'voyager-categories', NULL, NULL, 11, '2018-07-13 03:02:21', '2018-07-24 03:34:57', 'voyager.categories.index', NULL),
-(13, 1, 'Posts', '', '_self', 'voyager-news', NULL, NULL, 9, '2018-07-13 03:02:22', '2018-07-24 03:34:57', 'voyager.posts.index', NULL),
-(14, 1, 'Pages', '', '_self', 'voyager-file-text', NULL, NULL, 10, '2018-07-13 03:02:22', '2018-07-24 03:34:57', 'voyager.pages.index', NULL),
-(15, 1, 'Catalog', '/admin', '_self', 'voyager-list', '#000000', NULL, 2, '2018-07-13 03:22:53', '2018-07-13 04:07:41', NULL, ''),
-(16, 1, 'Bi Products', '', '_self', 'voyager-bag', NULL, 15, 2, '2018-07-14 05:29:09', '2018-07-21 10:43:26', 'voyager.bi-products.index', NULL),
+(7, 1, 'Database', '', '_self', 'voyager-data', NULL, 5, 2, '2018-07-13 02:50:35', '2018-08-02 05:18:49', 'voyager.database.index', NULL),
+(8, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 5, 3, '2018-07-13 02:50:35', '2018-08-02 05:18:49', 'voyager.compass.index', NULL),
+(9, 1, 'BREAD', '', '_self', 'voyager-bread', NULL, 5, 4, '2018-07-13 02:50:35', '2018-08-02 05:18:49', 'voyager.bread.index', NULL),
+(10, 1, 'Settings', '', '_self', 'voyager-settings', NULL, NULL, 14, '2018-07-13 02:50:35', '2018-08-02 05:19:15', 'voyager.settings.index', NULL),
+(11, 1, 'Hooks', '', '_self', 'voyager-hook', NULL, 5, 5, '2018-07-13 02:50:37', '2018-08-02 05:18:49', 'voyager.hooks', NULL),
+(12, 1, 'Categories', '', '_self', 'voyager-categories', NULL, NULL, 12, '2018-07-13 03:02:21', '2018-08-02 05:19:15', 'voyager.categories.index', NULL),
+(13, 1, 'Posts', '', '_self', 'voyager-news', NULL, NULL, 10, '2018-07-13 03:02:22', '2018-08-02 05:19:15', 'voyager.posts.index', NULL),
+(14, 1, 'Pages', '', '_self', 'voyager-file-text', NULL, NULL, 11, '2018-07-13 03:02:22', '2018-08-02 05:19:15', 'voyager.pages.index', NULL),
+(15, 1, 'Catalog', '/admin', '_self', 'voyager-list', '#000000', NULL, 3, '2018-07-13 03:22:53', '2018-08-02 05:19:15', NULL, ''),
+(16, 1, 'Bi Products', '', '_self', 'voyager-bag', NULL, 15, 2, '2018-07-14 05:29:09', '2018-08-02 05:18:58', 'voyager.bi-products.index', NULL),
 (19, 1, 'Bi Categories', '', '_self', 'voyager-window-list', NULL, 15, 1, '2018-07-19 04:02:15', '2018-07-21 10:43:26', 'voyager.bi-categories.index', NULL),
-(20, 1, 'Bi Coupons', '', '_self', 'voyager-dollar', NULL, NULL, 5, '2018-07-19 05:08:55', '2018-07-24 03:34:57', 'voyager.bi-coupons.index', NULL),
-(21, 1, 'Customers', '/admin', '_self', 'voyager-group', '#000000', NULL, 3, '2018-07-21 10:43:05', '2018-07-21 11:05:33', NULL, ''),
-(22, 1, 'Bi Customers', '', '_self', 'voyager-people', '#000000', 21, 2, '2018-07-21 11:01:59', '2018-07-24 03:35:11', 'voyager.bi-customers.index', 'null'),
-(23, 1, 'Bi C Groups', '', '_self', NULL, NULL, 21, 1, '2018-07-22 09:16:35', '2018-07-24 03:35:11', 'voyager.bi-c-group.index', NULL),
+(20, 1, 'Bi Coupons', '', '_self', 'voyager-dollar', NULL, NULL, 6, '2018-07-19 05:08:55', '2018-08-02 05:19:15', 'voyager.bi-coupons.index', NULL),
+(21, 1, 'Customers', '/admin', '_self', 'voyager-group', '#000000', NULL, 4, '2018-07-21 10:43:05', '2018-08-02 05:19:15', NULL, ''),
+(22, 1, 'Bi Customers', '', '_self', 'voyager-people', '#000000', 21, 2, '2018-07-21 11:01:59', '2018-08-02 05:17:53', 'voyager.bi-customers.index', 'null'),
+(23, 1, 'Bi C Groups', '', '_self', NULL, NULL, 21, 1, '2018-07-22 09:16:35', '2018-08-02 05:17:53', 'voyager.bi-c-group.index', NULL),
 (25, 1, 'Bi Merchants', '', '_self', NULL, NULL, 26, 2, '2018-07-22 12:13:26', '2018-07-24 03:35:08', 'voyager.bi-merchants.index', NULL),
-(26, 1, 'Merchants', '/admin', '_self', 'voyager-shop', '#000000', NULL, 4, '2018-07-24 03:00:39', '2018-07-24 03:01:25', NULL, ''),
-(27, 1, 'Bi M Groups', '', '_self', NULL, NULL, 26, 1, '2018-07-24 03:33:32', '2018-07-24 03:35:08', 'voyager.bi-m-groups.index', NULL);
+(26, 1, 'Merchants', '/admin', '_self', 'voyager-shop', '#000000', NULL, 5, '2018-07-24 03:00:39', '2018-08-02 05:19:15', NULL, ''),
+(27, 1, 'Bi M Groups', '', '_self', NULL, NULL, 26, 1, '2018-07-24 03:33:32', '2018-07-24 03:35:08', 'voyager.bi-m-groups.index', NULL),
+(28, 1, 'Bi Sliders', '', '_self', NULL, NULL, 30, 1, '2018-08-02 04:27:15', '2018-08-02 05:18:58', 'voyager.bi-sliders.index', NULL),
+(29, 1, 'Bi Slider Images', '', '_self', NULL, NULL, 30, 2, '2018-08-02 04:47:46', '2018-08-02 05:20:01', 'voyager.bi-slider-images.index', NULL),
+(30, 1, 'Sliders', '/admin', '_self', NULL, '#000000', NULL, 2, '2018-08-02 05:17:37', '2018-08-02 05:17:53', NULL, '');
 
 -- --------------------------------------------------------
 
@@ -1065,7 +1129,17 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (93, 'read_bi_m_groups', 'bi_m_groups', '2018-07-24 03:33:32', '2018-07-24 03:33:32'),
 (94, 'edit_bi_m_groups', 'bi_m_groups', '2018-07-24 03:33:32', '2018-07-24 03:33:32'),
 (95, 'add_bi_m_groups', 'bi_m_groups', '2018-07-24 03:33:32', '2018-07-24 03:33:32'),
-(96, 'delete_bi_m_groups', 'bi_m_groups', '2018-07-24 03:33:32', '2018-07-24 03:33:32');
+(96, 'delete_bi_m_groups', 'bi_m_groups', '2018-07-24 03:33:32', '2018-07-24 03:33:32'),
+(97, 'browse_bi_sliders', 'bi_sliders', '2018-08-02 04:27:15', '2018-08-02 04:27:15'),
+(98, 'read_bi_sliders', 'bi_sliders', '2018-08-02 04:27:15', '2018-08-02 04:27:15'),
+(99, 'edit_bi_sliders', 'bi_sliders', '2018-08-02 04:27:15', '2018-08-02 04:27:15'),
+(100, 'add_bi_sliders', 'bi_sliders', '2018-08-02 04:27:15', '2018-08-02 04:27:15'),
+(101, 'delete_bi_sliders', 'bi_sliders', '2018-08-02 04:27:15', '2018-08-02 04:27:15'),
+(102, 'browse_bi_slider_images', 'bi_slider_images', '2018-08-02 04:47:46', '2018-08-02 04:47:46'),
+(103, 'read_bi_slider_images', 'bi_slider_images', '2018-08-02 04:47:46', '2018-08-02 04:47:46'),
+(104, 'edit_bi_slider_images', 'bi_slider_images', '2018-08-02 04:47:46', '2018-08-02 04:47:46'),
+(105, 'add_bi_slider_images', 'bi_slider_images', '2018-08-02 04:47:46', '2018-08-02 04:47:46'),
+(106, 'delete_bi_slider_images', 'bi_slider_images', '2018-08-02 04:47:46', '2018-08-02 04:47:46');
 
 -- --------------------------------------------------------
 
@@ -1178,7 +1252,17 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (93, 1),
 (94, 1),
 (95, 1),
-(96, 1);
+(96, 1),
+(97, 1),
+(98, 1),
+(99, 1),
+(100, 1),
+(101, 1),
+(102, 1),
+(103, 1),
+(104, 1),
+(105, 1),
+(106, 1);
 
 -- --------------------------------------------------------
 
@@ -1461,6 +1545,18 @@ ALTER TABLE `bi_product_attributes`
   ADD PRIMARY KEY (`product_id`);
 
 --
+-- Indexes for table `bi_sliders`
+--
+ALTER TABLE `bi_sliders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `bi_slider_images`
+--
+ALTER TABLE `bi_slider_images`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
@@ -1620,16 +1716,28 @@ ALTER TABLE `bi_products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT for table `bi_sliders`
+--
+ALTER TABLE `bi_sliders`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `bi_slider_images`
+--
+ALTER TABLE `bi_slider_images`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
 -- AUTO_INCREMENT for table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=322;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=338;
 
 --
 -- AUTO_INCREMENT for table `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `menus`
@@ -1641,7 +1749,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT for table `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -1659,7 +1767,7 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 
 --
 -- AUTO_INCREMENT for table `posts`
