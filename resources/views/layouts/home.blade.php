@@ -10,11 +10,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>
         تخفیف گروهی بن اینجا    </title>
-	<link rel='dns-prefetch' href='http://s.w.org/' />
-		<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.6"}};
-			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
-		</script>
+	
 		<style type="text/css">
 img.wp-smiley,
 img.emoji {
@@ -119,7 +115,11 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
 	input[type="submit"].dokan-btn-theme, a.dokan-btn-theme, .dokan-btn-theme
 	{
 		border-color:#ff5a5f	}	
-		</style>
+        </style>
+    <!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
+	<link rel="stylesheet" type="text/css" href="engine9/style.css" />
+	<script type="text/javascript" src="engine9/jquery.js"></script>
+    <!-- End WOWSlider.com HEAD section -->
 	<script src="wp-content/themes/takhfifat/js/parsinumber.min.js"></script>
 	<script>
 	function toPersianNum( num, dontTrim ) {
@@ -172,7 +172,7 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
         <div class="row">
 
             <!--logo-->
-                            <div class="logo" ><h1><a href="http://localhost/takhfiftest" title="تخفیف گروهی بن اینجا"></a></h1></div>
+                            <div class="logo" ><h1><a href="/" title="تخفیف گروهی بن اینجا"></a></h1></div>
             
             <!--select search-->
             <div id="form_header">
@@ -195,7 +195,7 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
                     </script>
                 </div>
                 <div class="main_input">
-                    <form action="http://localhost/takhfiftest/" id="searchform">
+                    <form action="/" id="searchform">
                         <i class="fa fa-search"></i>
                         <input type="text" value="" name="s" id="s"  placeholder="رستوران ، آموزش ، کالا ..." />
                         <input type="hidden" name="post_type" value="product">
@@ -267,450 +267,20 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
         <div class="container">
             <div class="row">
 			
-	<!--tab menu slider-->
-<div class="block_tab_menu">
-    <ul class="nav nav-tabs tabs">
-        <li class="active"><a data-toggle="tab" href="#home"><i class="fa fa-diamond"></i><span>پر طرفدارترین تخفیفـ</span> </a></li>
-        <li><a data-toggle="tab" href="#menu1"><i class="fa fa-trophy"></i><span>پر فـروش ترین تخفیفـ</span></a></li>
-        <li><a data-toggle="tab" href="#menu2"><i class="fa fa-hand-peace-o"></i><span>جـدیـد تـرین تخفیفـ</span> </a></li>
-        <li><a data-toggle="tab" href="#menu3"><i class="fa fa-bell-o"></i><span>پیشنهاد ویژه تخفیفاتـی</span></a></li>
-    </ul>
-
-    <div class="tab-content">
-
-        <!-- 1 Product - Most fan-->
-        
-                    <div id="home" class="tab-pane fade in active">
-
-				  <div class="gallery_item">
-                    <!--Map and views-->
-                    <div class="option_item_gallery">
-                        <span class="address"><i class="fa fa-map-marker"></i>امام خمینی</span><span class="number-sale"><i class="fa fa-shopping-basket"></i>52</span>
-                    </div>
-				<div class="time_out">
-                    <i class="fa fa-clock-o"></i>
-                    <ul class="deal-timer countdownhzabg_takhfifat"></ul>
-                <script>
-				                    jQuery(function() {
-                        var endDate = "2018-8-11 23:59:00";
-                        jQuery('.countdownhzabg_takhfifat').countdown({
-                            date: endDate,
-                            render: function(data) {
-                                if ( ! data.sec  ) { data.sec = 0 };
-								var days = toPersianNum(data.days);
-								var hours = toPersianNum(data.hours);
-								var min = toPersianNum(data.min);
-								var sec = toPersianNum(data.sec);
-                                jQuery(this.el).html(
-                                    '<li><span class="num">' + days +'</span><span class="text">  روز </span></li>'+
-                                    '<li><span class="num">' + hours +'</span><span class="text"> ساعت </span></li>'+
-                                    '<li><span class="num">' + min +'</span><span class="text"> دقیقه </span></li>'+
-                                    '<li><span class="num">' + sec +'</span><span class="text"> ثانیه </span></li>'
-                                );
-                            }
-                        });
-                    });
-                </script>					
-                </div>
-			            
-                    <!-- slider -->
-                    <div id="hzabg" class="carousel slide" data-ride="carousel">
-
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner" role="listbox">
-
-                            <div class="item active">
-                                <div class="img_item">
-                                    <a href="product/%d9%be%db%8c%d8%b3%d8%aa-%da%a9%d8%a7%d8%b1%d8%aa%db%8c%d9%86%da%af-%d9%be%d8%b1%d9%86%d8%af/index.html" title="پیست کارتینگ پرند "><img src="wp-content/uploads/2017/05/431416.e9b905600723e4c26750de76373ae0bd.jpg" title="پیست کارتینگ پرند " alt="پیست کارتینگ پرند "></a>
-                                </div>
-                            </div>
-
-                            
-                                <div class="item">
-                                    <div class="img_item">
-                                        <a href="product/%d9%be%db%8c%d8%b3%d8%aa-%da%a9%d8%a7%d8%b1%d8%aa%db%8c%d9%86%da%af-%d9%be%d8%b1%d9%86%d8%af/index.html" title="پیست کارتینگ پرند"><img src="wp-content/uploads/2017/05/431418.66f41cca4ab72ee926c43143a6a6773b.jpg" title="پیست کارتینگ پرند " alt="پیست کارتینگ پرند "></a>
-                                    </div>
-                                </div>
-
-                                
-                                <div class="item">
-                                    <div class="img_item">
-                                        <a href="product/%d9%be%db%8c%d8%b3%d8%aa-%da%a9%d8%a7%d8%b1%d8%aa%db%8c%d9%86%da%af-%d9%be%d8%b1%d9%86%d8%af/index.html" title="پیست کارتینگ پرند"><img src="wp-content/uploads/2017/05/431420.d1a2634161e3262e28af519f3c64929b.jpg" title="پیست کارتینگ پرند " alt="پیست کارتینگ پرند "></a>
-                                    </div>
-                                </div>
-
-                                
-                                <div class="item">
-                                    <div class="img_item">
-                                        <a href="product/%d9%be%db%8c%d8%b3%d8%aa-%da%a9%d8%a7%d8%b1%d8%aa%db%8c%d9%86%da%af-%d9%be%d8%b1%d9%86%d8%af/index.html" title="پیست کارتینگ پرند"><img src="wp-content/uploads/2017/05/431421.23d66d1bbc7de89bd337f43163c56b2d.jpg" title="پیست کارتینگ پرند " alt="پیست کارتینگ پرند "></a>
-                                    </div>
-                                </div>
-
-                                
-                                <div class="item">
-                                    <div class="img_item">
-                                        <a href="product/%d9%be%db%8c%d8%b3%d8%aa-%da%a9%d8%a7%d8%b1%d8%aa%db%8c%d9%86%da%af-%d9%be%d8%b1%d9%86%d8%af/index.html" title="پیست کارتینگ پرند"><img src="wp-content/uploads/2017/05/431424.71446b876396091f7e6c5afba6be94bd.jpg" title="پیست کارتینگ پرند " alt="پیست کارتینگ پرند "></a>
-                                    </div>
-                                </div>
-
-                                
-                        </div>
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators">
-                            <li data-target="#hzabg" data-slide-to="0" class="active"></li>
-                                                            <li data-target="#hzabg" data-slide-to="1"></li>
-                                                            <li data-target="#hzabg" data-slide-to="2"></li>
-                                                            <li data-target="#hzabg" data-slide-to="3"></li>
-                                                            <li data-target="#hzabg" data-slide-to="4"></li>
-                                                    </ol>
-                    </div>
-
-                </div>
-
-                <!--Details and Content-->
-                <div class="content_item">
-                    <span><a href="product/%d9%be%db%8c%d8%b3%d8%aa-%da%a9%d8%a7%d8%b1%d8%aa%db%8c%d9%86%da%af-%d9%be%d8%b1%d9%86%d8%af/index.html"><i class="fa fa-home"></i>پیست کارتینگ پرند </a></span>
-                    <span class="Discount"><b>%33</b>تخفیف</span>
-                    <h2><a href="product/%d9%be%db%8c%d8%b3%d8%aa-%da%a9%d8%a7%d8%b1%d8%aa%db%8c%d9%86%da%af-%d9%be%d8%b1%d9%86%d8%af/index.html">هیجان و سرعت در مجموعه کارتینگ بین المللی پرند تا 44% تخفیف و پرداخت از 17,700 تومان</a></h2>
-                    <table class="table_slider">
-                        <tr>
-                            <td colspan="2"><span class="price price_slider"><del><span class="woocommerce-Price-amount amount">30,000&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></del> <ins><span class="woocommerce-Price-amount amount">20,000&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></ins></span></td>
-                        </tr>
-                        <tr>
-                            <td><span>تعداد خریداری شده<b>52</b></span></td>
-                            <td><span>تعداد بازدید<b>2183</b></span></td>
-                        </tr>
-                    </table>
-                    <div class="eye_buy"><a href="product/%d9%be%db%8c%d8%b3%d8%aa-%da%a9%d8%a7%d8%b1%d8%aa%db%8c%d9%86%da%af-%d9%be%d8%b1%d9%86%d8%af/index.html" ><i class="fa fa-shopping-cart"></i>مشاهده و خرید</a></div>
-                </div>
-<script>
-jQuery(document).ready(function(){
-	jQuery('#hzabg').carousel();
-})
-</script>
-            </div>
-            
-
-
-        <!-- 2 Product - Most sales-->
-        
-                    <div id="menu1" class="tab-pane fade">
-                 <div class="gallery_item">
-                    <!--Map and views-->
-                    <div class="option_item_gallery">
-                        <span class="address"><i class="fa fa-map-marker"></i></span><span class="number-sale"><i class="fa fa-shopping-basket"></i>502</span>
-                    </div>
-				<div class="time_out">
-                    <i class="fa fa-clock-o"></i>
-                    <ul class="deal-timer countdownowbne_takhfifat"></ul>
-                <script>
-				                    jQuery(function() {
-                        var endDate = "2018-8-15 23:59:00";
-                        jQuery('.countdownowbne_takhfifat').countdown({
-                            date: endDate,
-                            render: function(data) {
-                                if ( ! data.sec  ) { data.sec = 0 };
-								var days = toPersianNum(data.days);
-								var hours = toPersianNum(data.hours);
-								var min = toPersianNum(data.min);
-								var sec = toPersianNum(data.sec);
-                                jQuery(this.el).html(
-                                    '<li><span class="num">' + days +'</span><span class="text">  روز </span></li>'+
-                                    '<li><span class="num">' + hours +'</span><span class="text"> ساعت </span></li>'+
-                                    '<li><span class="num">' + min +'</span><span class="text"> دقیقه </span></li>'+
-                                    '<li><span class="num">' + sec +'</span><span class="text"> ثانیه </span></li>'
-                                );
-                            }
-                        });
-                    });
-                </script>					
-                </div>
-			            
-                    <!-- slider -->
-                    <div id="owbne" class="carousel slide" data-ride="carousel">
-
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner" role="listbox">
-
-                            <div class="item active">
-                                <div class="img_item">
-                                    <a href="product/%da%a9%d8%a7%d9%81%db%8c-%d8%b4%d8%a7%d9%be-%d9%85%d8%af%d8%b1%d9%86/index.html" title="کافی شاپ مدرن "><img src="wp-content/uploads/2018/02/636156889693011715371132928_coffee-shop-article-775x517.jpg" title="کافی شاپ مدرن " alt="کافی شاپ مدرن "></a>
-                                </div>
-                            </div>
-
-                            
-                                <div class="item">
-                                    <div class="img_item">
-                                        <a href="product/%da%a9%d8%a7%d9%81%db%8c-%d8%b4%d8%a7%d9%be-%d9%85%d8%af%d8%b1%d9%86/index.html" title="کافی شاپ مدرن"><img src="wp-content/uploads/2018/02/HarrysCoffeeShop_newbrew-1-775x518.jpg" title="کافی شاپ مدرن " alt="کافی شاپ مدرن "></a>
-                                    </div>
-                                </div>
-
-                                
-                                <div class="item">
-                                    <div class="img_item">
-                                        <a href="product/%da%a9%d8%a7%d9%81%db%8c-%d8%b4%d8%a7%d9%be-%d9%85%d8%af%d8%b1%d9%86/index.html" title="کافی شاپ مدرن"><img src="wp-content/uploads/2018/02/coffee_shop_by_flobelebelebobele-d5o4398-775x511.jpg" title="کافی شاپ مدرن " alt="کافی شاپ مدرن "></a>
-                                    </div>
-                                </div>
-
-                                
-                        </div>
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators">
-                            <li data-target="#owbne" data-slide-to="0" class="active"></li>
-                                                            <li data-target="#owbne" data-slide-to="1"></li>
-                                                            <li data-target="#owbne" data-slide-to="2"></li>
-                                                    </ol>
-                    </div>
-
-                </div>
-
-                <!--Details and Content-->
-                <div class="content_item">
-                    <span><a href="product/%da%a9%d8%a7%d9%81%db%8c-%d8%b4%d8%a7%d9%be-%d9%85%d8%af%d8%b1%d9%86/index.html"><i class="fa fa-home"></i>کافی شاپ مدرن </a></span>
-                    <span class="Discount"><b>%16</b>تخفیف</span>
-                    <h2><a href="product/%da%a9%d8%a7%d9%81%db%8c-%d8%b4%d8%a7%d9%be-%d9%85%d8%af%d8%b1%d9%86/index.html">تخفیف فوق العاده برای تمام کافی شاپ های مدرن و شیک حومه قیطریه - این تخفیف برای تمام نوشیدنی های گرم</a></h2>
-                    <table class="table_slider">
-                        <tr>
-                            <td colspan="2"><span class="price price_slider"><del><span class="woocommerce-Price-amount amount">45,000&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></del> <ins><span class="woocommerce-Price-amount amount">38,000&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></ins></span></td>
-                        </tr>
-                        <tr>
-                            <td><span>تعداد خریداری شده<b>502</b></span></td>
-                            <td><span>تعداد بازدید<b>85</b></span></td>
-                        </tr>
-                    </table>
-                    <div class="eye_buy"><a href="product/%da%a9%d8%a7%d9%81%db%8c-%d8%b4%d8%a7%d9%be-%d9%85%d8%af%d8%b1%d9%86/index.html" ><i class="fa fa-shopping-cart"></i>مشاهده و خرید</a></div>
-                </div>
-<script>
-jQuery(document).ready(function(){
-	jQuery('#owbne').carousel();
-})
-</script>            </div>
-            
-
-
-        <!-- 3 Product - Newest Discounts -->
-        
-                    <div id="menu2" class="tab-pane fade">
-                 <div class="gallery_item">
-                    <!--Map and views-->
-                    <div class="option_item_gallery">
-                        <span class="address"><i class="fa fa-map-marker"></i></span><span class="number-sale"><i class="fa fa-shopping-basket"></i>0</span>
-                    </div>
-				<div class="time_out">
-                    <i class="fa fa-clock-o"></i>
-                    <ul class="deal-timer countdownnkjxp_takhfifat"></ul>
-                <script>
-				                    jQuery(function() {
-                        var endDate = "2018-12-25 23:59:00";
-                        jQuery('.countdownnkjxp_takhfifat').countdown({
-                            date: endDate,
-                            render: function(data) {
-                                if ( ! data.sec  ) { data.sec = 0 };
-								var days = toPersianNum(data.days);
-								var hours = toPersianNum(data.hours);
-								var min = toPersianNum(data.min);
-								var sec = toPersianNum(data.sec);
-                                jQuery(this.el).html(
-                                    '<li><span class="num">' + days +'</span><span class="text">  روز </span></li>'+
-                                    '<li><span class="num">' + hours +'</span><span class="text"> ساعت </span></li>'+
-                                    '<li><span class="num">' + min +'</span><span class="text"> دقیقه </span></li>'+
-                                    '<li><span class="num">' + sec +'</span><span class="text"> ثانیه </span></li>'
-                                );
-                            }
-                        });
-                    });
-                </script>					
-                </div>
-			            
-                    <!-- slider -->
-                    <div id="nkjxp" class="carousel slide" data-ride="carousel">
-
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner" role="listbox">
-
-                            <div class="item active">
-                                <div class="img_item">
-                                    <a href="product/%d9%81%d8%b1%d9%88%d8%b4-%d9%81%d9%88%d9%82-%d8%a7%d9%84%d8%b9%d8%a7%d8%af%d9%87-%d8%af%d9%88%da%86%d8%b1%d8%ae%d9%87-%d9%87%d8%a7%db%8c-%d8%ad%d8%b1%d9%81%d9%87-%d8%a7%db%8c/index.html" title="فروش فوق العاده دوچرخه های حرفه ای "><img src="wp-content/uploads/2018/02/696_20d30d-1-775x436.jpg" title="فروش فوق العاده دوچرخه های حرفه ای " alt="فروش فوق العاده دوچرخه های حرفه ای "></a>
-                                </div>
-                            </div>
-
-                            
-                                <div class="item">
-                                    <div class="img_item">
-                                        <a href="product/%d9%81%d8%b1%d9%88%d8%b4-%d9%81%d9%88%d9%82-%d8%a7%d9%84%d8%b9%d8%a7%d8%af%d9%87-%d8%af%d9%88%da%86%d8%b1%d8%ae%d9%87-%d9%87%d8%a7%db%8c-%d8%ad%d8%b1%d9%81%d9%87-%d8%a7%db%8c/index.html" title="فروش فوق العاده دوچرخه های حرفه ای"><img src="wp-content/uploads/2018/02/original-775x517.jpg" title="فروش فوق العاده دوچرخه های حرفه ای " alt="فروش فوق العاده دوچرخه های حرفه ای "></a>
-                                    </div>
-                                </div>
-
-                                
-                                <div class="item">
-                                    <div class="img_item">
-                                        <a href="product/%d9%81%d8%b1%d9%88%d8%b4-%d9%81%d9%88%d9%82-%d8%a7%d9%84%d8%b9%d8%a7%d8%af%d9%87-%d8%af%d9%88%da%86%d8%b1%d8%ae%d9%87-%d9%87%d8%a7%db%8c-%d8%ad%d8%b1%d9%81%d9%87-%d8%a7%db%8c/index.html" title="فروش فوق العاده دوچرخه های حرفه ای"><img src="wp-content/uploads/2018/02/nm-Cycling-in-mountain-775x484.jpg" title="فروش فوق العاده دوچرخه های حرفه ای " alt="فروش فوق العاده دوچرخه های حرفه ای "></a>
-                                    </div>
-                                </div>
-
-                                
-                                <div class="item">
-                                    <div class="img_item">
-                                        <a href="product/%d9%81%d8%b1%d9%88%d8%b4-%d9%81%d9%88%d9%82-%d8%a7%d9%84%d8%b9%d8%a7%d8%af%d9%87-%d8%af%d9%88%da%86%d8%b1%d8%ae%d9%87-%d9%87%d8%a7%db%8c-%d8%ad%d8%b1%d9%81%d9%87-%d8%a7%db%8c/index.html" title="فروش فوق العاده دوچرخه های حرفه ای"><img src="wp-content/uploads/2018/02/Pivot-Imgae-for-Blast-775x337.jpg" title="فروش فوق العاده دوچرخه های حرفه ای " alt="فروش فوق العاده دوچرخه های حرفه ای "></a>
-                                    </div>
-                                </div>
-
-                                
-                        </div>
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators">
-                            <li data-target="#nkjxp" data-slide-to="0" class="active"></li>
-                                                            <li data-target="#nkjxp" data-slide-to="1"></li>
-                                                            <li data-target="#nkjxp" data-slide-to="2"></li>
-                                                            <li data-target="#nkjxp" data-slide-to="3"></li>
-                                                    </ol>
-                    </div>
-
-                </div>
-
-                <!--Details and Content-->
-                <div class="content_item">
-                    <span><a href="product/%d9%81%d8%b1%d9%88%d8%b4-%d9%81%d9%88%d9%82-%d8%a7%d9%84%d8%b9%d8%a7%d8%af%d9%87-%d8%af%d9%88%da%86%d8%b1%d8%ae%d9%87-%d9%87%d8%a7%db%8c-%d8%ad%d8%b1%d9%81%d9%87-%d8%a7%db%8c/index.html"><i class="fa fa-home"></i>فروش فوق العاده دوچرخه های حرفه ای </a></span>
-                    <span class="Discount"><b>%12</b>تخفیف</span>
-                    <h2><a href="product/%d9%81%d8%b1%d9%88%d8%b4-%d9%81%d9%88%d9%82-%d8%a7%d9%84%d8%b9%d8%a7%d8%af%d9%87-%d8%af%d9%88%da%86%d8%b1%d8%ae%d9%87-%d9%87%d8%a7%db%8c-%d8%ad%d8%b1%d9%81%d9%87-%d8%a7%db%8c/index.html">این تخفیف فقط تا پایان امسال میباشد</a></h2>
-                    <table class="table_slider">
-                        <tr>
-                            <td colspan="2"><span class="price price_slider"><del><span class="woocommerce-Price-amount amount">780,000&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></del> <ins><span class="woocommerce-Price-amount amount">690,000&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></ins></span></td>
-                        </tr>
-                        <tr>
-                            <td><span>تعداد خریداری شده<b>0</b></span></td>
-                            <td><span>تعداد بازدید<b>119</b></span></td>
-                        </tr>
-                    </table>
-                    <div class="eye_buy"><a href="product/%d9%81%d8%b1%d9%88%d8%b4-%d9%81%d9%88%d9%82-%d8%a7%d9%84%d8%b9%d8%a7%d8%af%d9%87-%d8%af%d9%88%da%86%d8%b1%d8%ae%d9%87-%d9%87%d8%a7%db%8c-%d8%ad%d8%b1%d9%81%d9%87-%d8%a7%db%8c/index.html" ><i class="fa fa-shopping-cart"></i>مشاهده و خرید</a></div>
-                </div>
-<script>
-jQuery(document).ready(function(){
-	jQuery('#nkjxp').carousel();
-})
-</script>            </div>
-            
-
-        <!-- 4 Product - Featured Offers -->
-        
-                    <div id="menu3" class="tab-pane fade">
-                 <div class="gallery_item">
-                    <!--Map and views-->
-                    <div class="option_item_gallery">
-                        <span class="address"><i class="fa fa-map-marker"></i>امام خمینی</span><span class="number-sale"><i class="fa fa-shopping-basket"></i>22</span>
-                    </div>
-				<div class="time_out">
-                    <i class="fa fa-clock-o"></i>
-                    <ul class="deal-timer countdownabjbx_takhfifat"></ul>
-                <script>
-				                    jQuery(function() {
-                        var endDate = "2020-1-5 23:59:00";
-                        jQuery('.countdownabjbx_takhfifat').countdown({
-                            date: endDate,
-                            render: function(data) {
-                                if ( ! data.sec  ) { data.sec = 0 };
-								var days = toPersianNum(data.days);
-								var hours = toPersianNum(data.hours);
-								var min = toPersianNum(data.min);
-								var sec = toPersianNum(data.sec);
-                                jQuery(this.el).html(
-                                    '<li><span class="num">' + days +'</span><span class="text">  روز </span></li>'+
-                                    '<li><span class="num">' + hours +'</span><span class="text"> ساعت </span></li>'+
-                                    '<li><span class="num">' + min +'</span><span class="text"> دقیقه </span></li>'+
-                                    '<li><span class="num">' + sec +'</span><span class="text"> ثانیه </span></li>'
-                                );
-                            }
-                        });
-                    });
-                </script>					
-                </div>
-			            
-                    <!-- slider -->
-                    <div id="abjbx" class="carousel slide" data-ride="carousel">
-
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner" role="listbox">
-
-                            <div class="item active">
-                                <div class="img_item">
-                                    <a href="product/%d9%be%db%8c%d9%86%d8%aa-%d8%a8%d8%a7%d9%84-%d8%b1%d8%a7%d8%b2%db%8c/index.html" title="پینت بال رازی "><img src="wp-content/uploads/2017/05/16-1447761553.jpg" title="پینت بال رازی " alt="پینت بال رازی "></a>
-                                </div>
-                            </div>
-
-                            
-                                <div class="item">
-                                    <div class="img_item">
-                                        <a href="product/%d9%be%db%8c%d9%86%d8%aa-%d8%a8%d8%a7%d9%84-%d8%b1%d8%a7%d8%b2%db%8c/index.html" title="پینت بال رازی"><img src="wp-content/uploads/2017/05/435774.f5f44386d8ed209e52c8aee67049d92d.jpg" title="پینت بال رازی " alt="پینت بال رازی "></a>
-                                    </div>
-                                </div>
-
-                                
-                                <div class="item">
-                                    <div class="img_item">
-                                        <a href="product/%d9%be%db%8c%d9%86%d8%aa-%d8%a8%d8%a7%d9%84-%d8%b1%d8%a7%d8%b2%db%8c/index.html" title="پینت بال رازی"><img src="wp-content/uploads/2017/05/435775.9ac960911c8a0d9c6c947e30266a9e0d.jpg" title="پینت بال رازی " alt="پینت بال رازی "></a>
-                                    </div>
-                                </div>
-
-                                
-                                <div class="item">
-                                    <div class="img_item">
-                                        <a href="product/%d9%be%db%8c%d9%86%d8%aa-%d8%a8%d8%a7%d9%84-%d8%b1%d8%a7%d8%b2%db%8c/index.html" title="پینت بال رازی"><img src="wp-content/uploads/2017/05/435776.f4550c3bd8a97225f199e9c175e2ee5b.jpg" title="پینت بال رازی " alt="پینت بال رازی "></a>
-                                    </div>
-                                </div>
-
-                                
-                                <div class="item">
-                                    <div class="img_item">
-                                        <a href="product/%d9%be%db%8c%d9%86%d8%aa-%d8%a8%d8%a7%d9%84-%d8%b1%d8%a7%d8%b2%db%8c/index.html" title="پینت بال رازی"><img src="wp-content/uploads/2017/05/126654.6393dc4c9642b413984a9c5c87017266.jpg" title="پینت بال رازی " alt="پینت بال رازی "></a>
-                                    </div>
-                                </div>
-
-                                
-                                <div class="item">
-                                    <div class="img_item">
-                                        <a href="product/%d9%be%db%8c%d9%86%d8%aa-%d8%a8%d8%a7%d9%84-%d8%b1%d8%a7%d8%b2%db%8c/index.html" title="پینت بال رازی"><img src="wp-content/uploads/2017/05/191734.0f5fb49797bf3ac8a590a546cd46958a.jpg" title="پینت بال رازی " alt="پینت بال رازی "></a>
-                                    </div>
-                                </div>
-
-                                
-                        </div>
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators">
-                            <li data-target="#abjbx" data-slide-to="0" class="active"></li>
-                                                            <li data-target="#abjbx" data-slide-to="1"></li>
-                                                            <li data-target="#abjbx" data-slide-to="2"></li>
-                                                            <li data-target="#abjbx" data-slide-to="3"></li>
-                                                            <li data-target="#abjbx" data-slide-to="4"></li>
-                                                            <li data-target="#abjbx" data-slide-to="5"></li>
-                                                    </ol>
-                    </div>
-
-                </div>
-
-                <!--Details and Content-->
-                <div class="content_item">
-                    <span><a href="product/%d9%be%db%8c%d9%86%d8%aa-%d8%a8%d8%a7%d9%84-%d8%b1%d8%a7%d8%b2%db%8c/index.html"><i class="fa fa-home"></i>پینت بال رازی </a></span>
-                    <span class="Discount"><b>%13</b>تخفیف</span>
-                    <h2><a href="product/%d9%be%db%8c%d9%86%d8%aa-%d8%a8%d8%a7%d9%84-%d8%b1%d8%a7%d8%b2%db%8c/index.html">پینت بال رازی با ورودیه و 50 گلوله رایگان تا 90% تخفیف و پرداخت از 1.200 تومان</a></h2>
-                    <table class="table_slider">
-                        <tr>
-                            <td colspan="2"><span class="price price_slider"><del><span class="woocommerce-Price-amount amount">12,000&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></del> <ins><span class="woocommerce-Price-amount amount">10,400&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></ins></span></td>
-                        </tr>
-                        <tr>
-                            <td><span>تعداد خریداری شده<b>22</b></span></td>
-                            <td><span>تعداد بازدید<b>760</b></span></td>
-                        </tr>
-                    </table>
-                    <div class="eye_buy"><a href="product/%d9%be%db%8c%d9%86%d8%aa-%d8%a8%d8%a7%d9%84-%d8%b1%d8%a7%d8%b2%db%8c/index.html" ><i class="fa fa-shopping-cart"></i>مشاهده و خرید</a></div>
-                </div>
-<script>
-jQuery(document).ready(function(){
-	jQuery('#abjbx').carousel();
-})
-</script>            </div>
-            
-    </div>
-</div><div class="clear"></div><!--special offer -->
+    <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
+	<div id="wowslider-container9">
+        <div class="ws_images"><ul>
+            @foreach ( $sliderimages as  $sliderimage )
+                <li><a href="{{$sliderimage->url}}"><img src="{{ productImage($sliderimage->image) }}" alt="" title="" /></a></li>
+            @endforeach
+        </ul></div>
+    <div class="ws_script" style="position:absolute;left:-99%"></div>
+        <div class="ws_shadow"></div>
+        </div>	
+        <script type="text/javascript" src="engine9/wowslider.js"></script>
+        <script type="text/javascript" src="engine9/script.js"></script>
+        <!-- End WOWSlider.com BODY section --><div class="row">
+    <div class="clear"></div><!--special offer -->
 <div class="special_offer">
     <div class="title_block"><span>تخفیفات ویژه</span></div>
             		<div class="col-lg-4 col-md-4 col-sm-6">
