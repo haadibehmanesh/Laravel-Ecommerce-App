@@ -69,12 +69,15 @@ class ShopController extends Controller
         $categoriesForProduct = $product->categories()->get();
 
         $mightAlsoLike = BiProduct::where('slug', '!=', $slug_db)->mightAlsoLike()->get();
-        
+      
+        $category = BiCategory::where('slug', $category)->get();
+      
         return view('layouts/product/product')->with([
             'product' => $product,
             'mightAlsoLike' => $mightAlsoLike,
             'categoriesForProduct' => $categoriesForProduct,
-            'category' => $category,
+            'categoryslug' => $category[0]->slug,
+            'categoryname' => $category[0]->name,
 
         ]);
     }
@@ -86,7 +89,7 @@ class ShopController extends Controller
         $slug_db = explode('/', $slug);
        
         $category = BiCategory::where('slug', $slug_db)->firstOrFail();
-
+      
         $productsForCategories = $category->products()->orderBy('id', 'desc')->paginate($pagination);
     
         return view('layouts/categories/category')->with([
