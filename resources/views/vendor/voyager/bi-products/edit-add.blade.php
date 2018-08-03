@@ -104,7 +104,16 @@
                                             <div class="form-group">                                                     
                                                 <ul style="list-style-type: none; padding-left: 0">
                                                 @foreach ($allCategories as $category)
+                                                    @if($category->children->count() > 0)
                                                     <li><label><input value="{{ $category->id }}" type="checkbox" name="category[]" style="margin-right: 5px;" {{ $categoriesForProduct->contains($category) ? 'checked' : '' }}>{{ $category->name }}</label></li>
+                                                        @foreach ( $category->children as $subcategory )
+                                                            <ul class="mega-sub-menu">
+                                                                <li><label><input value="{{ $subcategory->id }}" type="checkbox" name="category[]" style="margin-right: 5px;" {{ $categoriesForProduct->contains($subcategory) ? 'checked' : '' }}>{{ $subcategory->name }}</label></li>
+                                                            </ul>
+                                                        @endforeach
+                                                    @elseif(empty($category->parent_id))
+                                                        <li><label><input value="{{ $category->id }}" type="checkbox" name="category[]" style="margin-right: 5px;" {{ $categoriesForProduct->contains($category) ? 'checked' : '' }}>{{ $category->name }}</label></li>
+                                                    @endif
                                                 @endforeach
                                                 </ul>
                                             </div> <!-- end form-group -->
