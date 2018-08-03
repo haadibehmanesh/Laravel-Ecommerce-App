@@ -238,7 +238,7 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
                     @foreach ($allcategories as $item)
                    
                         @if($item->children->count() > 0)
-                                <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-megamenu mega-has-icon mega-menu-item-241' id='mega-menu-item-241'><a class=" fa {{$item->icon}}  mega-menu-link" href="#" aria-haspopup="true" tabindex="0">{{ $item->name}}</a>
+                                <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-megamenu mega-has-icon mega-menu-item-241' id='mega-menu-item-241'><a class=" fa {{$item->icon}}  mega-menu-link" href="{{ route('shop.showCategory', $item->slug) }}" aria-haspopup="true" tabindex="0">{{ $item->name}}</a>
                                     <ul class="mega-sub-menu">
                                         <li class='mega-menu-item mega-menu-item-type-widget widget_sp_image mega-menu-columns-1-of-4 mega-menu-item-widget_sp_image-2' id='mega-menu-item-widget_sp_image-2'><img width="100" height="100" class="attachment-shop_thumbnail" style="max-width: 100%;" srcset="{{ categoryImage($item->image) }}" /></li>
                                         {{-- <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-has-icon mega-menu-columns-1-of-4 mega-menu-item-242' id='mega-menu-item-242'><a class=" fa fa-chevron-left  mega-menu-link" href="#" aria-haspopup="true"></a>--}}
@@ -251,7 +251,7 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
                                     </ul>
                                 </li>
                         @elseif(empty($item->parent_id))
-                             <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-current-menu-item mega-current_page_item mega-menu-item-home mega-align-bottom-left mega-menu-flyout mega-has-icon mega-menu-item-162' id='mega-menu-item-162'><a class=" fa {{$item->icon}}  mega-menu-link" href="index.html" tabindex="0">{{$item->name}}</a></li>
+                             <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-current-menu-item mega-current_page_item mega-menu-item-home mega-align-bottom-left mega-menu-flyout mega-has-icon mega-menu-item-162' id='mega-menu-item-162'><a class=" fa {{$item->icon}}  mega-menu-link" href="{{ route('shop.showCategory', $item->slug) }}" tabindex="0">{{$item->name}}</a></li>
                         @endif
                     @endforeach
                 </ul> 
