@@ -280,7 +280,7 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
                         <!-- End custom inputs -->
                 </div>--}}
 
-            <ol class="breadcrumb"><a href="/">خانه</a> &#47; <a href="/{{(empty($category)  ? 'products' : 'category/'.$category) }}">{{(empty($category)  ? 'products' : $category) }}</a> &#47; {{ $product->name }}</ol>
+            <ol class="breadcrumb"><a href="/">خانه</a> &#47; <a href="/{{(empty($categoryslug)  ? 'products' : 'category/'.$categoryslug) }}">{{(empty($categoryslug)  ? 'products' : $categoryname) }}</a> &#47; {{ $product->name }}</ol>
 					
                     <!--title & discount & views-->
 
