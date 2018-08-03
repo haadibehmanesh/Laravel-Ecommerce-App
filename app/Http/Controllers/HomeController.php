@@ -17,7 +17,7 @@ class HomeController extends Controller
     public function index()
     {   
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
-      //  $products = BiProduct::where('featured', true)->take(8)->inRandomOrder()->get();
+      
         $slider = BiSlider::where('name' , 'index')->get();
      
         $sliderimages = BiSliderImage::where('bi_slider_id', $slider[0]->id)->get();

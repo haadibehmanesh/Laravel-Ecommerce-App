@@ -5,6 +5,7 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\BiProduct;
+use App\BiCategory;
 
 class CartController extends Controller
 {
@@ -14,8 +15,9 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('layouts/cart/cart');
+    {  
+        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        return view('layouts/cart/cart')->with('allcategories', $allcategories);
     }
 
     /**

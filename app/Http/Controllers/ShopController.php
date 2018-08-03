@@ -16,7 +16,7 @@ class ShopController extends Controller
     public function index()
     {
         $pagination = 9;
-        $categories = BiCategory::all();
+        $allcategories = BiCategory::all();
 
         if(request()->category) {
             $products = BiProduct::with('categories')->whereHas('categories', function ($query) {
@@ -29,7 +29,7 @@ class ShopController extends Controller
         
         return view('layouts/shop/shop')->with([
             'products' => $products,
-            'categories' => $categories,            
+            'allcategories' => $allcategories,            
         ]);
     }
 
@@ -69,17 +69,29 @@ class ShopController extends Controller
         $categoriesForProduct = $product->categories()->get();
 
         $mightAlsoLike = BiProduct::where('slug', '!=', $slug_db)->mightAlsoLike()->get();
-      
-        $category = BiCategory::where('slug', $category)->get();
-      
-        return view('layouts/product/product')->with([
-            'product' => $product,
-            'mightAlsoLike' => $mightAlsoLike,
-            'categoriesForProduct' => $categoriesForProduct,
-            'categoryslug' => $category[0]->slug,
-            'categoryname' => $category[0]->name,
+        
+        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
 
-        ]);
+        if($category){
+            $category = BiCategory::where('slug', $category)->get();
+            return view('layouts/product/product')->with([
+                'product' => $product,
+                'mightAlsoLike' => $mightAlsoLike,
+                'categoriesForProduct' => $categoriesForProduct,
+                'categoryslug' => $category[0]->slug,
+                'categoryname' => $category[0]->name,
+                'allcategories' => $allcategories,
+            ]);
+        }else{
+            return view('layouts/product/product')->with([
+                'product' => $product,
+                'mightAlsoLike' => $mightAlsoLike,
+                'categoriesForProduct' => $categoriesForProduct,
+                'categoryslug' => $category,
+                'allcategories' => $allcategories,
+            ]);
+        }
+        
     }
 
     public function showCategory($slug)
@@ -91,10 +103,13 @@ class ShopController extends Controller
         $category = BiCategory::where('slug', $slug_db)->firstOrFail();
       
         $productsForCategories = $category->products()->orderBy('id', 'desc')->paginate($pagination);
-    
+        
+        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        
         return view('layouts/categories/category')->with([
             'category' => $category,
             'productsForCategories' => $productsForCategories,
+            'allcategories' => $allcategories,
         ]);
     }
 
