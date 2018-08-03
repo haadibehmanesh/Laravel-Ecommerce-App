@@ -317,13 +317,13 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
                 </div>
 			    <a href="{{ route('shop.show', $product->slug) }}" title="{{ $product->name }}"><img src="{{ productImage($product->image) }}" title="{{ $product->name }}"></a>
                 <!-- Discount -->
-                <span class="Discount"><b>%50</b>تخفیف</span>
+                <span class="Discount"><b>%{{ $product->discount }}</b>تخفیف</span>
 				<span class="address"><i class="fa fa-map-marker"></i>امام خمینی</span>
                 <span>1<i class="fa fa-shopping-basket"></i></span>
 				<!-- Info -->
                 <div class="Information">
                     <h2 class="ellipsis"><a href="#">{{ $product->name }} </a></h2>
-                    <span class="price"><del><span class="woocommerce-Price-amount amount">{{  $product->price }}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></del> <ins><span class="woocommerce-Price-amount amount">10000&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></ins></span>
+                    <span class="price"><del><span class="woocommerce-Price-amount amount">{{  $product->price }}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></del> <ins><span class="woocommerce-Price-amount amount">{{presentPrice($product->price,$product->discount)}}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></ins></span>
                 </div>
             </div>
         </div>        	

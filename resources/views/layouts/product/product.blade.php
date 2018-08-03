@@ -157,8 +157,8 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
             <ul class="menu_top_header">
                 <li id="menu-item-163" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-163"><a href="../../my-account/index.html">حساب کاربری من</a></li>
 <li id="menu-item-164" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164"><a href="../../checkout/index.html">تسویه حساب</a></li>
-<li id="menu-item-165" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-165"><a href="../../cart/index.html">سبد خرید</a></li>
-<li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-166"><a href="../../shop/index.html">فروشگاه</a></li>
+<li id="menu-item-165" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-165"><a href="/cart">سبد خرید</a></li>
+<li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-166"><a href="/products">فروشگاه</a></li>
             </ul>
             <!--phone-->
             <div class="phone"><span><i class="fa fa-book"></i>بانک جامع اطلاعاتی</span></div>
@@ -217,7 +217,7 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
 			
             <!--items cart-->
             <div class="content_mini_cart">
-                <a class="main_title_cart" href="javascript:void()" rel="nofollow"><i class="fa fa-shopping-cart" aria-hidden="true"></i>سبد خرید شما<span class="number_items_cart">{{ Cart::content()->count() }}</span></a>
+                <a class="main_title_cart" href="/cart" ><i class="fa fa-shopping-cart" aria-hidden="true"></i>سبد خرید شما<span class="number_items_cart">{{ Cart::content()->count() }}</span></a>
               {{--  <div class="main_cart_list">
 	                <p class="woocommerce-mini-cart__empty-message">هیچ محصولی در سبد خرید نیست.</p>
 				</div>--}}
@@ -294,7 +294,7 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
 
                         <h1>{{ $product->name }}</h1> | <h2> {{ strip_tags($product->description) }} </h2>
 
-                        <span class="Discount"><b>%50</b>تخفیف</span>
+                        <span class="Discount"><b>%{{ $product->discount }}</b>تخفیف</span>
 
                     </div>
 
@@ -491,7 +491,7 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
 							<span class="price price_slider price_slider_single">
 
 							
-                            <del><span class="woocommerce-Price-amount amount">{{$product->price}}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></del> <ins><span class="woocommerce-Price-amount amount">20,000&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></ins>
+                            <del><span class="woocommerce-Price-amount amount">{{$product->price}}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></del> <ins><span class="woocommerce-Price-amount amount">{{presentPrice($product->price,$product->discount)}}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></ins>
 							</span>
 
 							
@@ -913,10 +913,10 @@ var woocommerce_params = {"ajax_url":"\/takhfiftest\/wp-admin\/admin-ajax.php","
 <script type='text/javascript' src='../../wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min6765.js?ver=3.3.3'></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
-var wc_cart_fragments_params = {"ajax_url":"\/takhfiftest\/wp-admin\/admin-ajax.php","wc_ajax_url":"http:\/\/localhost\/takhfiftest\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_8a522b5bd2b8fa51ec6fe90baf0301d6","fragment_name":"wc_fragments_8a522b5bd2b8fa51ec6fe90baf0301d6"};
+
 /* ]]> */
 </script>
-<script type='text/javascript' src='../../wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min6765.js?ver=3.3.3'></script>
+{{--<script type='text/javascript' src='../../wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min6765.js?ver=3.3.3'></script>--}}
 <script type='text/javascript' src='../../wp-includes/js/jquery/ui/core.mine899.js?ver=1.11.4'></script>
 <script type='text/javascript' src='../../wp-includes/js/jquery/ui/widget.mine899.js?ver=1.11.4'></script>
 <script type='text/javascript' src='../../wp-includes/js/jquery/ui/mouse.mine899.js?ver=1.11.4'></script>
