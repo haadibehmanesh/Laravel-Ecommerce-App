@@ -16,7 +16,7 @@ class ShopController extends Controller
     public function index()
     {
         $pagination = 9;
-        $allcategories = BiCategory::all();
+        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
 
         if(request()->category) {
             $products = BiProduct::with('categories')->whereHas('categories', function ($query) {
