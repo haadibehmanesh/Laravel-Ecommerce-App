@@ -244,9 +244,9 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
                                         {{-- <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-has-icon mega-menu-columns-1-of-4 mega-menu-item-242' id='mega-menu-item-242'><a class=" fa fa-chevron-left  mega-menu-link" href="#" aria-haspopup="true"></a>--}}
                                             @foreach ( $item->children as $submenu )
                                             <ul class="mega-sub-menu">
-                                                <li class='mega-menu-item' id='mega-menu-item-243'><a class="mega-menu-link" href="#">{{$submenu->name}}</a></li>
+                                                <li class='mega-menu-item' id='mega-menu-item-243'><a class="mega-menu-link" href="{{ route('shop.showCategory', $submenu->slug) }}">{{$submenu->name}}</a></li>
                                             </ul>
-                                        </li>
+                                        {{--</li>--}}
                                         @endforeach
                                     </ul>
                                 </li>
