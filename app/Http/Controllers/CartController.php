@@ -40,7 +40,7 @@ class CartController extends Controller
     {
         $product = BiProduct::where('id', $request->id)->get();
         
-        Cart::add($request->id, $product[0]->name, 1, $product[0]->price)->associate('App\BiProduct');
+        Cart::add($request->id, $product[0]->name, 1, presentPrice($product[0]->price, $product[0]->discount))->associate('App\BiProduct');
 
         return redirect()->route('cart.index')->with('success_message', 'بن شما با موفقیت اضافه شد');
     }
