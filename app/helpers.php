@@ -60,3 +60,15 @@ function make_slug($string, $separator = '-')
 
 	return $string;
 }
+
+
+function randomDigits($length){
+    $numbers = range(1,9);
+    $digits = '';
+    shuffle($numbers);
+    for($i = 0; $i < $length; $i++){
+    	
+       	$digits .= $numbers[$i];
+    }
+    return $digits;
+}
