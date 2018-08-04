@@ -107,7 +107,7 @@ return [
 
         'decimal_point' => '.',
 
-        'thousand_seperator' => ','
+        'thousand_seperator' => ''
 
     ],
 
