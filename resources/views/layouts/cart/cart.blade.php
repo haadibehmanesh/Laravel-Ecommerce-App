@@ -413,7 +413,7 @@ var _zxcvbnSettings = {"src":"\/wp-includes\/js\/zxcvbn.min.js"};
         
             <div class="wc-proceed-to-checkout">
                 
-        <a href="http://demo.onliner.ir/takhfifat/checkout/" class="checkout-button button alt wc-forward">
+        <a href="/checkout" class="checkout-button button alt wc-forward">
             نهایی کردن خرید</a>
             </div>
         
