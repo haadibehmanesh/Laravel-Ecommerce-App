@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 02, 2018 at 01:50 PM
+-- Generation Time: Aug 04, 2018 at 02:50 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.1.18
 
@@ -85,7 +85,13 @@ INSERT INTO `bi_categories` (`id`, `parent_id`, `language_id`, `name`, `descript
 (14, 2, NULL, 'بوفه', 'بوفه', NULL, NULL, NULL, NULL, 1, '2018-08-01 04:53:58', '2018-08-01 04:53:58', NULL, NULL, NULL, 'بوفه', NULL),
 (16, 2, NULL, 'کافی شاپ', 'کافی شاپ', NULL, NULL, NULL, NULL, 1, '2018-08-01 04:56:00', '2018-08-01 04:57:10', NULL, NULL, NULL, 'کافی-شاپ', NULL),
 (18, 2, NULL, 'صبحانه', 'صبحانه', NULL, NULL, NULL, NULL, 1, '2018-08-01 04:58:19', '2018-08-01 04:58:19', NULL, NULL, NULL, 'صبحانه', NULL),
-(19, 1, NULL, 'تورهای مسافرتی', 'تورهای مسافرتی', NULL, NULL, NULL, NULL, 1, '2018-08-01 07:51:16', '2018-08-01 07:51:17', NULL, NULL, NULL, 'تورهای-مسافرتی', NULL);
+(19, 1, NULL, 'تورهای مسافرتی', 'تورهای مسافرتی', NULL, NULL, NULL, NULL, 1, '2018-08-01 07:51:16', '2018-08-01 07:51:17', NULL, NULL, NULL, 'تورهای-مسافرتی', NULL),
+(20, 1, NULL, 'هتل و اقامتگاه', 'هتل و اقامتگاه', NULL, NULL, NULL, NULL, 1, '2018-08-03 04:11:23', '2018-08-03 04:11:23', NULL, NULL, NULL, 'هتل-و-اقامتگاه', NULL),
+(21, 1, NULL, 'شهربازی و مراکز تفریحی', 'شهربازی و مراکز تفریحی', NULL, NULL, NULL, NULL, 1, '2018-08-03 04:12:28', '2018-08-03 04:12:28', NULL, NULL, NULL, 'شهربازی-و-مراکز-تفریحی', NULL),
+(22, 1, NULL, 'بازی های گروهی و زمین بازی', 'بازی های گروهی و زمین بازی', NULL, NULL, NULL, NULL, 1, '2018-08-03 04:12:56', '2018-08-03 04:12:56', NULL, NULL, NULL, 'بازی-های-گروهی-و-زمین-بازی', NULL),
+(23, 1, NULL, 'استخر و ورزش های آبی', 'استخر و ورزش های آبی', NULL, NULL, NULL, NULL, 1, '2018-08-03 04:13:23', '2018-08-03 04:13:23', NULL, NULL, NULL, 'استخر-و-ورزش-های-آبی', NULL),
+(24, 1, NULL, 'ورزش های هوایی', 'ورزش های هوایی', NULL, NULL, NULL, NULL, 1, '2018-08-03 04:42:39', '2018-08-03 04:42:39', NULL, NULL, NULL, 'ورزش-های-هوایی', NULL),
+(25, 1, NULL, 'باشگاه ورزشی', 'باشگاه ورزشی', NULL, NULL, NULL, NULL, 1, '2018-08-03 04:43:14', '2018-08-03 04:43:14', NULL, NULL, NULL, 'باشگاه-ورزشی', NULL);
 
 -- --------------------------------------------------------
 
@@ -110,12 +116,20 @@ INSERT INTO `bi_category_bi_product` (`id`, `bi_product_id`, `bi_category_id`, `
 (12, 1, 3, '2018-07-20 07:11:45', '2018-07-20 07:11:45'),
 (20, 2, 2, '2018-07-21 08:07:53', '2018-07-21 08:07:53'),
 (21, 2, 3, '2018-07-21 08:07:53', '2018-07-21 08:07:53'),
-(22, 6, 2, '2018-07-28 06:12:34', '2018-07-28 06:12:34'),
-(27, 7, 1, '2018-07-28 08:01:49', '2018-07-28 08:01:49'),
-(29, 4, 3, '2018-07-28 09:40:56', '2018-07-28 09:40:56'),
-(30, 4, 4, '2018-07-28 09:40:56', '2018-07-28 09:40:56'),
-(31, 5, 3, '2018-07-28 09:41:50', '2018-07-28 09:41:50'),
-(32, 5, 4, '2018-07-28 09:41:50', '2018-07-28 09:41:50');
+(35, 5, 3, '2018-08-03 03:49:13', '2018-08-03 03:49:13'),
+(36, 5, 4, '2018-08-03 03:49:13', '2018-08-03 03:49:13'),
+(37, 4, 3, '2018-08-03 03:49:30', '2018-08-03 03:49:30'),
+(38, 4, 4, '2018-08-03 03:49:30', '2018-08-03 03:49:30'),
+(41, 6, 2, '2018-08-03 04:09:45', '2018-08-03 04:09:45'),
+(42, 6, 11, '2018-08-03 04:09:45', '2018-08-03 04:09:45'),
+(43, 6, 14, '2018-08-03 04:09:45', '2018-08-03 04:09:45'),
+(51, 8, 2, '2018-08-03 06:08:49', '2018-08-03 06:08:49'),
+(52, 8, 12, '2018-08-03 06:08:49', '2018-08-03 06:08:49'),
+(55, 9, 2, '2018-08-03 06:45:10', '2018-08-03 06:45:10'),
+(56, 9, 12, '2018-08-03 06:45:10', '2018-08-03 06:45:10'),
+(60, 7, 1, '2018-08-03 06:56:44', '2018-08-03 06:56:44'),
+(61, 7, 21, '2018-08-03 06:56:44', '2018-08-03 06:56:44'),
+(62, 7, 23, '2018-08-03 06:56:44', '2018-08-03 06:56:44');
 
 -- --------------------------------------------------------
 
@@ -315,67 +329,153 @@ INSERT INTO `bi_m_group_bi_merchant` (`id`, `bi_merchant_id`, `bi_m_group_id`, `
 
 CREATE TABLE `bi_orders` (
   `id` int(11) NOT NULL,
-  `invoice_no` int(11) NOT NULL DEFAULT '0',
-  `invoice_prefix` varchar(26) CHARACTER SET utf8 NOT NULL,
-  `store_id` int(11) NOT NULL DEFAULT '0',
-  `store_name` varchar(64) CHARACTER SET utf8 NOT NULL,
-  `store_url` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `customer_id` int(11) NOT NULL DEFAULT '0',
-  `customer_group_id` int(11) NOT NULL DEFAULT '0',
-  `firstname` varchar(32) CHARACTER SET utf8 NOT NULL,
-  `lastname` varchar(32) CHARACTER SET utf8 NOT NULL,
-  `email` varchar(96) CHARACTER SET utf8 NOT NULL,
-  `telephone` varchar(32) CHARACTER SET utf8 NOT NULL,
-  `fax` varchar(32) CHARACTER SET utf8 NOT NULL,
-  `custom_field` text CHARACTER SET utf8 NOT NULL,
-  `payment_firstname` varchar(32) CHARACTER SET utf8 NOT NULL,
-  `payment_lastname` varchar(32) CHARACTER SET utf8 NOT NULL,
-  `payment_company` varchar(60) CHARACTER SET utf8 NOT NULL,
-  `payment_address_1` varchar(128) CHARACTER SET utf8 NOT NULL,
-  `payment_address_2` varchar(128) CHARACTER SET utf8 NOT NULL,
-  `payment_city` varchar(128) CHARACTER SET utf8 NOT NULL,
-  `payment_postcode` varchar(10) CHARACTER SET utf8 NOT NULL,
-  `payment_country` varchar(128) CHARACTER SET utf8 NOT NULL,
-  `payment_country_id` int(11) NOT NULL,
-  `payment_zone` varchar(128) CHARACTER SET utf8 NOT NULL,
-  `payment_zone_id` int(11) NOT NULL,
-  `payment_address_format` text CHARACTER SET utf8 NOT NULL,
-  `payment_custom_field` text CHARACTER SET utf8 NOT NULL,
-  `payment_method` varchar(128) CHARACTER SET utf8 NOT NULL,
-  `payment_code` varchar(128) CHARACTER SET utf8 NOT NULL,
-  `shipping_firstname` varchar(32) CHARACTER SET utf8 NOT NULL,
-  `shipping_lastname` varchar(32) CHARACTER SET utf8 NOT NULL,
-  `shipping_company` varchar(40) CHARACTER SET utf8 NOT NULL,
-  `shipping_address_1` varchar(128) CHARACTER SET utf8 NOT NULL,
-  `shipping_address_2` varchar(128) CHARACTER SET utf8 NOT NULL,
-  `shipping_city` varchar(128) CHARACTER SET utf8 NOT NULL,
-  `shipping_postcode` varchar(10) CHARACTER SET utf8 NOT NULL,
-  `shipping_country` varchar(128) CHARACTER SET utf8 NOT NULL,
-  `shipping_country_id` int(11) NOT NULL,
-  `shipping_zone` varchar(128) CHARACTER SET utf8 NOT NULL,
-  `shipping_zone_id` int(11) NOT NULL,
-  `shipping_address_format` text CHARACTER SET utf8 NOT NULL,
-  `shipping_custom_field` text CHARACTER SET utf8 NOT NULL,
-  `shipping_method` varchar(128) CHARACTER SET utf8 NOT NULL,
-  `shipping_code` varchar(128) CHARACTER SET utf8 NOT NULL,
-  `comment` text CHARACTER SET utf8 NOT NULL,
-  `total` decimal(15,4) NOT NULL DEFAULT '0.0000',
-  `order_status_id` int(11) NOT NULL DEFAULT '0',
-  `affiliate_id` int(11) NOT NULL,
-  `commission` decimal(15,4) NOT NULL,
-  `marketing_id` int(11) NOT NULL,
-  `tracking` varchar(64) CHARACTER SET utf8 NOT NULL,
-  `language_id` int(11) NOT NULL,
-  `currency_id` int(11) NOT NULL,
-  `currency_code` varchar(3) CHARACTER SET utf8 NOT NULL,
-  `currency_value` decimal(15,8) NOT NULL DEFAULT '1.00000000',
-  `ip` varchar(40) CHARACTER SET utf8 NOT NULL,
-  `forwarded_ip` varchar(40) CHARACTER SET utf8 NOT NULL,
-  `user_agent` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `accept_language` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `date_added` datetime NOT NULL,
-  `date_modified` datetime NOT NULL
+  `invoice_no` int(11) DEFAULT '0',
+  `invoice_prefix` varchar(26) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `store_id` int(11) DEFAULT '0',
+  `store_name` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `store_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `customer_id` int(11) DEFAULT '0',
+  `customer_group_id` int(11) DEFAULT '0',
+  `firstname` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `lastname` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(96) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `telephone` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `fax` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `custom_field` text COLLATE utf8mb4_unicode_ci,
+  `payment_firstname` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `payment_lastname` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `payment_company` varchar(60) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `payment_address_1` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `payment_address_2` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `payment_city` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `payment_postcode` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `payment_country` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `payment_country_id` int(11) DEFAULT NULL,
+  `payment_zone` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `payment_zone_id` int(11) DEFAULT NULL,
+  `payment_address_format` text COLLATE utf8mb4_unicode_ci,
+  `payment_custom_field` text COLLATE utf8mb4_unicode_ci,
+  `payment_method` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `payment_code` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `shipping_firstname` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `shipping_lastname` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `shipping_company` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `shipping_address_1` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `shipping_address_2` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `shipping_city` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `shipping_postcode` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `shipping_country` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `shipping_country_id` int(11) DEFAULT NULL,
+  `shipping_zone` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `shipping_zone_id` int(11) DEFAULT NULL,
+  `shipping_address_format` text COLLATE utf8mb4_unicode_ci,
+  `shipping_custom_field` text COLLATE utf8mb4_unicode_ci,
+  `shipping_method` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `shipping_code` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `comment` text COLLATE utf8mb4_unicode_ci,
+  `total` decimal(10,0) DEFAULT NULL,
+  `order_status_id` int(11) DEFAULT '0',
+  `affiliate_id` int(11) DEFAULT NULL,
+  `commission` decimal(15,4) DEFAULT NULL,
+  `marketing_id` int(11) DEFAULT NULL,
+  `tracking` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `language_id` int(11) DEFAULT NULL,
+  `currency_id` int(11) DEFAULT NULL,
+  `currency_code` varchar(3) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `currency_value` decimal(15,8) DEFAULT '1.00000000',
+  `ip` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `forwarded_ip` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_agent` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `accept_language` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `order_code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `bi_orders`
+--
+
+INSERT INTO `bi_orders` (`id`, `invoice_no`, `invoice_prefix`, `store_id`, `store_name`, `store_url`, `customer_id`, `customer_group_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `custom_field`, `payment_firstname`, `payment_lastname`, `payment_company`, `payment_address_1`, `payment_address_2`, `payment_city`, `payment_postcode`, `payment_country`, `payment_country_id`, `payment_zone`, `payment_zone_id`, `payment_address_format`, `payment_custom_field`, `payment_method`, `payment_code`, `shipping_firstname`, `shipping_lastname`, `shipping_company`, `shipping_address_1`, `shipping_address_2`, `shipping_city`, `shipping_postcode`, `shipping_country`, `shipping_country_id`, `shipping_zone`, `shipping_zone_id`, `shipping_address_format`, `shipping_custom_field`, `shipping_method`, `shipping_code`, `comment`, `total`, `order_status_id`, `affiliate_id`, `commission`, `marketing_id`, `tracking`, `language_id`, `currency_id`, `currency_code`, `currency_value`, `ip`, `forwarded_ip`, `user_agent`, `accept_language`, `created_at`, `updated_at`, `order_code`) VALUES
+(8, 481692, NULL, 0, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '275780', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1.00000000', NULL, NULL, NULL, NULL, '2018-08-04 07:08:42', '2018-08-04 07:08:42', '74316258');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bi_order_bi_order_item`
+--
+
+CREATE TABLE `bi_order_bi_order_item` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `bi_order_id` int(11) DEFAULT NULL,
+  `bi_order_item_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `bi_order_bi_order_item`
+--
+
+INSERT INTO `bi_order_bi_order_item` (`id`, `bi_order_id`, `bi_order_item_id`, `created_at`, `updated_at`) VALUES
+(20, 8, 72, '2018-08-04 07:08:42', '2018-08-04 07:08:42'),
+(21, 8, 73, '2018-08-04 07:08:42', '2018-08-04 07:08:42'),
+(22, 8, 74, '2018-08-04 07:08:42', '2018-08-04 07:08:42');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bi_order_bi_product`
+--
+
+CREATE TABLE `bi_order_bi_product` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `bi_order_id` int(11) DEFAULT NULL,
+  `bi_product_id` int(11) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `price` decimal(10,0) DEFAULT NULL,
+  `total` decimal(10,0) DEFAULT NULL,
+  `reward` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `bi_order_bi_product`
+--
+
+INSERT INTO `bi_order_bi_product` (`id`, `bi_order_id`, `bi_product_id`, `quantity`, `name`, `price`, `total`, `reward`, `created_at`, `updated_at`) VALUES
+(10, 8, 72, 2, 'فست فود داوین با منو باز غذاهای لذیذ', '7930', '15860', NULL, '2018-08-04 07:08:42', '2018-08-04 07:08:42'),
+(11, 8, 73, 9, 'آرایشگاه النا', '28000', '252000', NULL, '2018-08-04 07:08:42', '2018-08-04 07:08:42'),
+(12, 8, 74, 1, 'کافه پرستیژ با منو باز کافه، منو مزه یا غذایی', '7920', '7920', NULL, '2018-08-04 07:08:42', '2018-08-04 07:08:42');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bi_order_items`
+--
+
+CREATE TABLE `bi_order_items` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `price` decimal(10,0) DEFAULT NULL,
+  `total` decimal(10,0) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `bi_product_id` int(11) DEFAULT NULL,
+  `code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `bi_order_items`
+--
+
+INSERT INTO `bi_order_items` (`id`, `name`, `price`, `total`, `quantity`, `created_at`, `updated_at`, `bi_product_id`, `code`) VALUES
+(72, 'فست فود داوین با منو باز غذاهای لذیذ', '7930', '15860', 2, '2018-08-04 07:08:42', '2018-08-04 07:08:42', 9, '43195276'),
+(73, 'آرایشگاه النا', '28000', '252000', 9, '2018-08-04 07:08:42', '2018-08-04 07:08:42', 3, '37198625'),
+(74, 'کافه پرستیژ با منو باز کافه، منو مزه یا غذایی', '7920', '7920', 1, '2018-08-04 07:08:42', '2018-08-04 07:08:42', 8, '29547168');
 
 -- --------------------------------------------------------
 
@@ -392,7 +492,7 @@ CREATE TABLE `bi_products` (
   `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `meta_description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `meta_keyword` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `model` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `model` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `sku` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `upc` varchar(12) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ean` varchar(14) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -403,7 +503,7 @@ CREATE TABLE `bi_products` (
   `quantity` int(11) NOT NULL DEFAULT '0',
   `stock_status_id` int(11) DEFAULT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `manufacturer_id` int(11) DEFAULT NULL,
+  `bi_merchant_id` int(11) DEFAULT NULL,
   `shipping` tinyint(4) DEFAULT '1',
   `price` decimal(10,0) NOT NULL DEFAULT '0',
   `points` int(11) DEFAULT '0',
@@ -422,19 +522,22 @@ CREATE TABLE `bi_products` (
   `viewed` int(11) DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `slug` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `slug` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `discount` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `bi_products`
 --
 
-INSERT INTO `bi_products` (`id`, `language_id`, `name`, `description`, `tag`, `meta_title`, `meta_description`, `meta_keyword`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `viewed`, `created_at`, `updated_at`, `slug`) VALUES
-(3, NULL, 'آرایشگاه النا', '<p><span style=\"color: #707070; font-family: IRANSans; font-size: 21.3333px; background-color: #f2f2f2;\">&nbsp;</span></p>\r\n<h2 style=\"box-sizing: border-box; font-weight: normal; font-family: IRANSans; line-height: 29px; color: #000000; margin-top: 20px; margin-bottom: 10px; font-size: 16px; display: inline;\">کاشت ناخن درآرایشگاه النا با ۸۰% تخفیف</h2>', NULL, NULL, NULL, NULL, 'آرایشگاه النا', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 'bi-products\\July2018\\KKcrRb0idOkQWMNfvtW7.jpg', NULL, 0, '40000', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, 0, NULL, 0, 1, NULL, '2018-07-27 04:14:00', '2018-07-28 01:34:50', 'آرایشگاه-النا'),
-(4, NULL, 'آرایشگاه کاملیا', '<p><span style=\"color: #000000; font-family: IRANSans; font-size: 16px; background-color: #f2f2f2;\">کاشت مژه در آرایشگاه کاملیا با ۸۰% تخفیف</span></p>', NULL, NULL, NULL, NULL, 'آرایشگاه کاملیا', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 'bi-products\\July2018\\mYqwXdCUKmKMyCxzGHis.jpg', NULL, 0, '20000', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, 0, NULL, 0, 1, NULL, '2018-07-27 05:04:00', '2018-07-28 09:40:56', 'آرایشگاه-کاملیا'),
-(5, NULL, 'آرایشگاه مردانه اس تی پی STP', '<p><span style=\"color: #000000; font-family: IRANSans; font-size: 16px; background-color: #f2f2f2;\">کوتاهی ، شستشو و حالت دادن مو در آرایشگاه مردانه اس تی پی STP با ۸۶% تخفیف</span></p>', NULL, NULL, NULL, NULL, 'آرایشگاه مردانه اس تی پی STP', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 'bi-products\\July2018\\VJRSmbZJ7NCE6E3qt8Y5.jpg', NULL, 0, '40000', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, 0, NULL, 0, 1, NULL, '2018-07-27 05:06:00', '2018-07-28 09:41:50', 'آرایشگاه-مردانه-اس-تی-پی-stp'),
-(6, NULL, 'افتتاحیه بوفه شام رستوران بین المللی ۵ ستاره اسفندیار', '<p><span style=\"color: #000000; font-family: IRANSans; font-size: 16px; background-color: #f2f2f2;\">با موسیقی زنده با ۳۰% تخفیف و پرداخت تنها ۷۷,۰۰۰ تومان به جای ۱۱۰,۰۰۰ تومان</span></p>', NULL, NULL, NULL, NULL, 'افتتاحیه بوفه شام رستوران بین المللی ۵ ستاره اسفندیار', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 'bi-products\\July2018\\yC8LK59okjxt6KkVPDg5.jpg', NULL, 0, '100000', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, 0, NULL, 0, 1, NULL, '2018-07-28 01:39:00', '2018-07-28 06:12:34', 'افتتاحیه-بوفه-شام-رستوران-بین-المللی-ستاره-اسفندیار'),
-(7, NULL, 'دلفیناریوم برج میلاد', '<p><span style=\"color: #000000; font-family: IRANSans; font-size: 16px; background-color: #f2f2f2;\">اولین و تنهاترین دلفیناریوم غیر ساحلی در ایران و خاورمیانه تا ۶۰%&zwnj; تخفیف استثنائی</span></p>', NULL, NULL, NULL, NULL, 'دلفیناریوم برج میلاد', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 'bi-products\\July2018\\8QjoKtydxuuT3z3RMM7n.jpg', NULL, 0, '50000', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, 0, NULL, 0, 1, NULL, '2018-07-28 06:43:00', '2018-07-28 08:01:49', 'دلفیناریوم-برج-میلاد');
+INSERT INTO `bi_products` (`id`, `language_id`, `name`, `description`, `tag`, `meta_title`, `meta_description`, `meta_keyword`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `bi_merchant_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `viewed`, `created_at`, `updated_at`, `slug`, `discount`) VALUES
+(3, NULL, 'آرایشگاه النا', '<p><span style=\"color: #707070; font-family: IRANSans; font-size: 21.3333px; background-color: #f2f2f2;\">&nbsp;</span></p>\r\n<h2 style=\"box-sizing: border-box; font-weight: normal; font-family: IRANSans; line-height: 29px; color: #000000; margin-top: 20px; margin-bottom: 10px; font-size: 16px; display: inline;\">کاشت ناخن درآرایشگاه النا با ۸۰% تخفیف</h2>', NULL, NULL, NULL, NULL, 'آرایشگاه النا', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 'bi-products\\July2018\\KKcrRb0idOkQWMNfvtW7.jpg', NULL, 0, '40000', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, 0, NULL, 0, 1, NULL, '2018-07-27 04:14:00', '2018-08-03 03:49:43', 'آرایشگاه-النا', 30),
+(4, NULL, 'آرایشگاه کاملیا', '<p><span style=\"color: #000000; font-family: IRANSans; font-size: 16px; background-color: #f2f2f2;\">کاشت مژه در آرایشگاه کاملیا با ۸۰% تخفیف</span></p>', NULL, NULL, NULL, NULL, 'آرایشگاه کاملیا', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 'bi-products\\July2018\\mYqwXdCUKmKMyCxzGHis.jpg', NULL, 0, '20000', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, 0, NULL, 0, 1, NULL, '2018-07-27 05:04:00', '2018-08-03 03:49:30', 'آرایشگاه-کاملیا', 57),
+(5, NULL, 'آرایشگاه مردانه اس تی پی STP', '<p><span style=\"color: #000000; font-family: IRANSans; font-size: 16px; background-color: #f2f2f2;\">کوتاهی ، شستشو و حالت دادن مو در آرایشگاه مردانه اس تی پی STP با ۸۶% تخفیف</span></p>', NULL, NULL, NULL, NULL, 'آرایشگاه مردانه اس تی پی STP', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 'bi-products\\July2018\\VJRSmbZJ7NCE6E3qt8Y5.jpg', NULL, 0, '40000', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, 0, NULL, 0, 1, NULL, '2018-07-27 05:06:00', '2018-08-03 03:49:13', 'آرایشگاه-مردانه-اس-تی-پی-stp', 24),
+(6, NULL, 'افتتاحیه بوفه شام رستوران بین المللی ۵ ستاره اسفندیار', '<p><span style=\"color: #000000; font-family: IRANSans; font-size: 16px; background-color: #f2f2f2;\">با موسیقی زنده با ۳۰% تخفیف و پرداخت تنها ۷۷,۰۰۰ تومان به جای ۱۱۰,۰۰۰ تومان</span></p>', NULL, NULL, NULL, NULL, 'افتتاحیه بوفه شام رستوران بین المللی ۵ ستاره اسفندیار', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 'bi-products\\July2018\\yC8LK59okjxt6KkVPDg5.jpg', NULL, 0, '100000', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, 0, NULL, 0, 1, NULL, '2018-07-28 01:39:00', '2018-08-03 04:09:45', 'افتتاحیه-بوفه-شام-رستوران-بین-المللی-ستاره-اسفندیار', 50),
+(7, NULL, 'دلفیناریوم برج میلاد', '<p><span style=\"color: #000000; font-family: IRANSans; font-size: 16px; background-color: #f2f2f2;\">اولین و تنهاترین دلفیناریوم غیر ساحلی در ایران و خاورمیانه تا 60 درصد تخفیف استثنائی</span></p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 'bi-products\\July2018\\8QjoKtydxuuT3z3RMM7n.jpg', NULL, 0, '50000', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, 0, NULL, 0, 1, NULL, '2018-07-28 06:43:00', '2018-08-03 06:56:44', 'دلفیناریوم-برج-میلاد', 10),
+(8, NULL, 'کافه پرستیژ با منو باز کافه، منو مزه یا غذایی', '<p>کافه پرستیژ با منو باز کافه یا منو مزه یا غذاهای متنوع با 56% تخفیف و پرداخت تنها 7,920 تومان به جای 18,000 تومان</p>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 'bi-products\\August2018\\ntlvI0rVO6VLIyfU84lf.jpg', NULL, 0, '18000', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, 0, NULL, 0, 1, NULL, '2018-08-03 06:05:00', '2018-08-03 06:08:51', 'کافه-پرستیژ-با-منو-باز-کافه-منو-مزه-یا-غذایی', 56),
+(9, NULL, 'فست فود داوین با منو باز غذاهای لذیذ', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 'bi-products\\August2018\\UVJKG8Um0gSGzFEQXarV.jpg', 1, 0, '13000', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, 0, NULL, 0, 1, NULL, '2018-08-03 06:10:00', '2018-08-03 06:45:10', 'فست-فود-داوین-با-منو-باز-غذاهای-لذیذ', 39);
 
 -- --------------------------------------------------------
 
@@ -635,36 +738,35 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (148, 13, 'date_added', 'text', 'Date Added', 1, 1, 1, 1, 1, 1, NULL, 30),
 (149, 13, 'date_modified', 'text', 'Date Modified', 1, 1, 1, 1, 1, 1, NULL, 31),
 (150, 14, 'id', 'hidden', 'Id', 1, 0, 1, 1, 1, 0, NULL, 1),
-(151, 14, 'model', 'text', 'Model', 1, 1, 1, 1, 1, 1, '{\"null\":\" \"}', 3),
-(152, 14, 'sku', 'text', 'Sku', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 14),
-(153, 14, 'upc', 'text', 'Upc', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 15),
-(154, 14, 'ean', 'text', 'Ean', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 16),
-(155, 14, 'jan', 'text', 'Jan', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 17),
-(156, 14, 'isbn', 'text', 'Isbn', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 18),
-(157, 14, 'mpn', 'text', 'Mpn', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 19),
-(158, 14, 'location', 'text', 'Location', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 20),
-(159, 14, 'quantity', 'number', 'Quantity', 1, 1, 1, 1, 1, 1, NULL, 11),
-(160, 14, 'stock_status_id', 'number', 'Stock Status Id', 0, 0, 0, 0, 0, 0, NULL, 21),
-(161, 14, 'image', 'image', 'Image', 0, 1, 1, 1, 1, 1, NULL, 9),
-(162, 14, 'manufacturer_id', 'number', 'Manufacturer Id', 0, 0, 0, 0, 0, 0, NULL, 22),
-(163, 14, 'shipping', 'checkbox', 'Shipping', 0, 0, 1, 1, 1, 1, NULL, 23),
-(164, 14, 'price', 'number', 'Price', 1, 1, 1, 1, 1, 1, NULL, 10),
-(165, 14, 'points', 'number', 'Points', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 24),
-(166, 14, 'tax_class_id', 'number', 'Tax Class Id', 0, 0, 0, 0, 0, 0, NULL, 25),
-(167, 14, 'date_available', 'date', 'Date Available', 0, 0, 1, 1, 1, 1, NULL, 26),
-(168, 14, 'weight', 'number', 'Weight', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 27),
-(169, 14, 'weight_class_id', 'number', 'Weight Class Id', 0, 0, 0, 0, 0, 0, NULL, 28),
-(170, 14, 'length', 'number', 'Length', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 29),
-(171, 14, 'width', 'number', 'Width', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 30),
-(172, 14, 'height', 'number', 'Height', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 31),
-(173, 14, 'length_class_id', 'number', 'Length Class Id', 0, 0, 0, 0, 0, 0, NULL, 32),
-(174, 14, 'subtract', 'checkbox', 'Subtract', 0, 0, 1, 1, 1, 1, NULL, 33),
-(175, 14, 'minimum', 'number', 'Minimum', 0, 0, 1, 1, 1, 1, NULL, 34),
-(176, 14, 'sort_order', 'number', 'Sort Order', 0, 0, 0, 0, 0, 0, NULL, 35),
-(177, 14, 'status', 'checkbox', 'Status', 0, 1, 1, 1, 1, 1, NULL, 12),
-(178, 14, 'viewed', 'number', 'Viewed', 0, 0, 1, 1, 1, 1, NULL, 36),
-(179, 14, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 37),
-(180, 14, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 38),
+(151, 14, 'model', 'text', 'Model', 0, 0, 1, 1, 1, 1, NULL, 4),
+(152, 14, 'sku', 'text', 'Sku', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 16),
+(153, 14, 'upc', 'text', 'Upc', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 17),
+(154, 14, 'ean', 'text', 'Ean', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 18),
+(155, 14, 'jan', 'text', 'Jan', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 19),
+(156, 14, 'isbn', 'text', 'Isbn', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 20),
+(157, 14, 'mpn', 'text', 'Mpn', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 21),
+(158, 14, 'location', 'text', 'Location', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 23),
+(159, 14, 'quantity', 'number', 'Quantity', 1, 1, 1, 1, 1, 1, NULL, 13),
+(160, 14, 'stock_status_id', 'number', 'Stock Status Id', 0, 0, 0, 0, 0, 0, NULL, 24),
+(161, 14, 'image', 'image', 'Image', 0, 1, 1, 1, 1, 1, NULL, 10),
+(163, 14, 'shipping', 'checkbox', 'Shipping', 0, 0, 1, 1, 1, 1, NULL, 25),
+(164, 14, 'price', 'number', 'Price', 1, 1, 1, 1, 1, 1, NULL, 11),
+(165, 14, 'points', 'number', 'Points', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 26),
+(166, 14, 'tax_class_id', 'number', 'Tax Class Id', 0, 0, 0, 0, 0, 0, NULL, 27),
+(167, 14, 'date_available', 'date', 'Date Available', 0, 0, 1, 1, 1, 1, NULL, 28),
+(168, 14, 'weight', 'number', 'Weight', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 29),
+(169, 14, 'weight_class_id', 'number', 'Weight Class Id', 0, 0, 0, 0, 0, 0, NULL, 30),
+(170, 14, 'length', 'number', 'Length', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 31),
+(171, 14, 'width', 'number', 'Width', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 32),
+(172, 14, 'height', 'number', 'Height', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 33),
+(173, 14, 'length_class_id', 'number', 'Length Class Id', 0, 0, 0, 0, 0, 0, NULL, 34),
+(174, 14, 'subtract', 'checkbox', 'Subtract', 0, 0, 1, 1, 1, 1, NULL, 35),
+(175, 14, 'minimum', 'number', 'Minimum', 0, 0, 1, 1, 1, 1, NULL, 36),
+(176, 14, 'sort_order', 'number', 'Sort Order', 0, 0, 0, 0, 0, 0, NULL, 37),
+(177, 14, 'status', 'checkbox', 'Status', 0, 1, 1, 1, 1, 1, NULL, 14),
+(178, 14, 'viewed', 'number', 'Viewed', 0, 1, 1, 1, 1, 1, NULL, 38),
+(179, 14, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 39),
+(180, 14, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 40),
 (181, 15, 'product_id', 'number', 'Product Id', 1, 1, 1, 1, 1, 1, NULL, 1),
 (182, 15, 'attribute_id', 'number', 'Attribute Id', 1, 1, 1, 1, 1, 1, NULL, 2),
 (183, 15, 'language_id', 'number', 'Language Id', 1, 1, 1, 1, 1, 1, NULL, 3),
@@ -677,13 +779,13 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (190, 16, 'meta_title', 'text', 'Meta Title', 1, 1, 1, 1, 1, 1, NULL, 6),
 (191, 16, 'meta_description', 'text', 'Meta Description', 1, 1, 1, 1, 1, 1, NULL, 7),
 (192, 16, 'meta_keyword', 'text', 'Meta Keyword', 1, 1, 1, 1, 1, 1, NULL, 8),
-(195, 14, 'language_id', 'number', 'Language Id', 0, 0, 0, 0, 0, 0, NULL, 13),
-(196, 14, 'name', 'text', 'Name', 1, 1, 1, 1, 1, 1, NULL, 2),
-(197, 14, 'description', 'rich_text_box', 'Description', 0, 0, 1, 1, 1, 1, NULL, 4),
-(198, 14, 'tag', 'text', 'Tag', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 5),
-(199, 14, 'meta_title', 'text', 'Meta Title', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 6),
-(200, 14, 'meta_description', 'text', 'Meta Description', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 7),
-(201, 14, 'meta_keyword', 'text', 'Meta Keyword', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 8),
+(195, 14, 'language_id', 'number', 'Language Id', 0, 0, 0, 0, 0, 0, NULL, 15),
+(196, 14, 'name', 'text', 'Name', 1, 1, 1, 1, 1, 1, NULL, 3),
+(197, 14, 'description', 'rich_text_box', 'Description', 0, 0, 1, 1, 1, 1, NULL, 5),
+(198, 14, 'tag', 'text', 'Tag', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 6),
+(199, 14, 'meta_title', 'text', 'Meta Title', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 7),
+(200, 14, 'meta_description', 'text', 'Meta Description', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 8),
+(201, 14, 'meta_keyword', 'text', 'Meta Keyword', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 9),
 (202, 17, 'id', 'hidden', 'Id', 1, 0, 1, 1, 1, 0, NULL, 1),
 (203, 17, 'image', 'image', 'Image', 0, 0, 1, 1, 1, 1, NULL, 5),
 (204, 17, 'parent_id', 'select_dropdown', 'Parent Id', 0, 0, 1, 1, 1, 1, '{\"default\":\"\",\"null\":\"\",\"options\":{\"\":\"-- None --\"},\"relationship\":{\"key\":\"id\",\"label\":\"name\"}}', 18),
@@ -801,7 +903,7 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (316, 25, 'language_id', 'number', 'Language Id', 0, 0, 0, 0, 0, 0, NULL, 4),
 (317, 25, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 5),
 (318, 25, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 6),
-(319, 14, 'slug', 'text', 'Slug', 0, 1, 0, 0, 0, 0, NULL, 39),
+(319, 14, 'slug', 'text', 'Slug', 0, 0, 0, 0, 0, 0, NULL, 41),
 (320, 17, 'bi_category_belongsto_bi_category_relationship', 'relationship', 'Category', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\BiCategory\",\"table\":\"bi_categories\",\"type\":\"belongsTo\",\"column\":\"parent_id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"bi_c_group_bi_customer\",\"pivot\":\"0\",\"taggable\":\"0\"}', 4),
 (321, 17, 'icon', 'text', 'Icon', 0, 0, 1, 1, 1, 1, NULL, 10),
 (322, 26, 'id', 'hidden', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
@@ -815,7 +917,10 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (334, 27, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 7),
 (335, 27, 'image', 'image', 'Image', 1, 1, 1, 1, 1, 1, NULL, 3),
 (336, 27, 'bi_slider_image_belongsto_bi_slider_relationship', 'relationship', 'slider name', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\BiSlider\",\"table\":\"bi_sliders\",\"type\":\"belongsTo\",\"column\":\"bi_slider_id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"bi_c_group_bi_customer\",\"pivot\":\"0\",\"taggable\":\"0\"}', 2),
-(337, 27, 'bi_slider_id', 'text', 'Bi Slider Id', 1, 1, 1, 1, 1, 1, NULL, 7);
+(337, 27, 'bi_slider_id', 'text', 'Bi Slider Id', 1, 1, 1, 1, 1, 1, NULL, 7),
+(338, 14, 'discount', 'text', 'Discount', 1, 1, 1, 1, 1, 1, NULL, 12),
+(340, 14, 'bi_product_belongsto_bi_merchant_relationship', 'relationship', 'Merchant', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\BiMerchant\",\"table\":\"bi_merchants\",\"type\":\"belongsTo\",\"column\":\"bi_merchant_id\",\"key\":\"id\",\"label\":\"company_name\",\"pivot_table\":\"bi_c_group_bi_customer\",\"pivot\":\"0\",\"taggable\":\"0\"}', 2),
+(341, 14, 'bi_merchant_id', 'text', 'Bi Merchant Id', 0, 1, 1, 1, 1, 1, NULL, 22);
 
 -- --------------------------------------------------------
 
@@ -938,7 +1043,7 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (27, 1, 'Bi M Groups', '', '_self', NULL, NULL, 26, 1, '2018-07-24 03:33:32', '2018-07-24 03:35:08', 'voyager.bi-m-groups.index', NULL),
 (28, 1, 'Bi Sliders', '', '_self', NULL, NULL, 30, 1, '2018-08-02 04:27:15', '2018-08-02 05:18:58', 'voyager.bi-sliders.index', NULL),
 (29, 1, 'Bi Slider Images', '', '_self', NULL, NULL, 30, 2, '2018-08-02 04:47:46', '2018-08-02 05:20:01', 'voyager.bi-slider-images.index', NULL),
-(30, 1, 'Sliders', '/admin', '_self', NULL, '#000000', NULL, 2, '2018-08-02 05:17:37', '2018-08-02 05:17:53', NULL, '');
+(30, 1, 'Sliders', '/admin', '_self', 'voyager-images', '#000000', NULL, 2, '2018-08-02 05:17:37', '2018-08-02 08:58:11', NULL, '');
 
 -- --------------------------------------------------------
 
@@ -1533,6 +1638,24 @@ ALTER TABLE `bi_orders`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `bi_order_bi_order_item`
+--
+ALTER TABLE `bi_order_bi_order_item`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `bi_order_bi_product`
+--
+ALTER TABLE `bi_order_bi_product`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `bi_order_items`
+--
+ALTER TABLE `bi_order_items`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `bi_products`
 --
 ALTER TABLE `bi_products`
@@ -1659,13 +1782,13 @@ ALTER TABLE `bi_cart`
 -- AUTO_INCREMENT for table `bi_categories`
 --
 ALTER TABLE `bi_categories`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `bi_category_bi_product`
 --
 ALTER TABLE `bi_category_bi_product`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT for table `bi_customers`
@@ -1707,13 +1830,31 @@ ALTER TABLE `bi_m_group_bi_merchant`
 -- AUTO_INCREMENT for table `bi_orders`
 --
 ALTER TABLE `bi_orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `bi_order_bi_order_item`
+--
+ALTER TABLE `bi_order_bi_order_item`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `bi_order_bi_product`
+--
+ALTER TABLE `bi_order_bi_product`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `bi_order_items`
+--
+ALTER TABLE `bi_order_items`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- AUTO_INCREMENT for table `bi_products`
 --
 ALTER TABLE `bi_products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `bi_sliders`
@@ -1731,7 +1872,7 @@ ALTER TABLE `bi_slider_images`
 -- AUTO_INCREMENT for table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=338;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=342;
 
 --
 -- AUTO_INCREMENT for table `data_types`
