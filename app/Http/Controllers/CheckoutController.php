@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\BiOrder;
 use App\BiCategory;
 use App\BiOrderItem;
-use App\BiOrderBiProduct;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
@@ -57,7 +56,9 @@ class CheckoutController extends Controller
                 'quantity' => $item->qty,
                 'total' => $item->subtotal,
                 'bi_product_id' => $item->id,
-            ]);                       
+            ]);
+            
+            
             
         }
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
