@@ -63,14 +63,23 @@ class CheckoutController extends Controller
                     'total' => $item->subtotal,
                     'bi_product_id' => $item->id,
                 ]);
+
+                $product->quantity = $productCount;
+                $product->save();
+
+                $message = 'درحال انتقال به درگاه بانک';
+
             } else {
-                $error = 'موجودی کافی نیست';
+                $message = 'موجودی کافی نیست';
             }
             
             
         }
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
-        return back()->with('allcategories', $allcategories);
+        return back()->with([
+            'allcategories' => $allcategories,
+            'message' => $message
+            ]);
     }
 
     /**
