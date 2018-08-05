@@ -9,4 +9,9 @@ class BiOrder extends Model
     protected $table = 'bi_orders';
 
     protected $fillable = ['invoice_no', 'total', 'order_code'];
+
+    public function items()
+    {
+        return $this->hasMany('App\BiOrderItem');
+    }
 }
