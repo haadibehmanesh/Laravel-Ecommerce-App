@@ -53,7 +53,7 @@ class CheckoutController extends Controller
             $product = BiProduct::find( $item->id);
             $productSold = (($product->quantity-$product->sold) - $item->qty) >= 0 ? $product->sold + $item->qty : -1 ;
 
-            if( $productCount >= 0) {
+            if( $productSold >= 0) {
                 $orderitem = BiOrderItem::create([
                     'bi_order_id' => $order->id,
                     'code' => $code,
