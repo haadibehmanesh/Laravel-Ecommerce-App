@@ -6,7 +6,6 @@ use App\BiOrder;
 use App\BiCategory;
 use App\BiOrderItem;
 use App\BiOrderBiProduct;
-use App\BiOrderBiOrderItem;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
@@ -51,6 +50,7 @@ class CheckoutController extends Controller
         foreach (Cart::content() as $item) {
             $code = randomDigits(8);
             $orderitem = BiOrderItem::create([
+                'bi_order_id' => $order->id,
                 'code' => $code,
                 'name' => $item->name,
                 'price' => $item->price,
@@ -58,11 +58,7 @@ class CheckoutController extends Controller
                 'total' => $item->subtotal,
                 'bi_product_id' => $item->id,
             ]);
-
-            BiOrderBiOrderItem::create([
-                'bi_order_id' => $order->id,
-                'bi_order_item_id' => $orderitem->id,
-            ]);
+           
             BiOrderBiProduct::create([
                 'bi_order_id' => $order->id,
                 'bi_product_id' => $orderitem->id,
