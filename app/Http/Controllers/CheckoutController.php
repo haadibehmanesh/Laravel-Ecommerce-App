@@ -57,16 +57,7 @@ class CheckoutController extends Controller
                 'quantity' => $item->qty,
                 'total' => $item->subtotal,
                 'bi_product_id' => $item->id,
-            ]);
-           
-            BiOrderBiProduct::create([
-                'bi_order_id' => $order->id,
-                'bi_product_id' => $orderitem->id,
-                'quantity' => $orderitem->quantity,
-                'price' => $orderitem->price,
-                'name' =>  $orderitem->name,
-                'total' => $orderitem->total,
-            ]); 
+            ]);                       
             
         }
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
