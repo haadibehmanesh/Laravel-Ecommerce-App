@@ -13,11 +13,13 @@ function setActiveCategory($category, $output = 'active')
 
 function productImage($path)
 {
+    $path = str_replace('\\', '/', $path);
     return $path && file_exists('storage/'.$path) ? asset('storage/'.$path) : asset('img/not-found.jpg');
 }
 
 function categoryImage($path)
 {
+    $path = str_replace('\\', '/', $path);
     return $path && file_exists('storage/'.$path) ? asset('storage/'.$path) : asset('img/not-found.jpg');
 }
 
