@@ -67,18 +67,21 @@ class CheckoutController extends Controller
                 $product->sold = $productSold;
                 $product->save();
 
-                $message = 'درحال انتقال به درگاه بانک';
+                $success_message = 'درحال انتقال به درگاه بانک';
+                $error_message = null;
 
             } else {
-                $message = 'موجودی کافی نیست';
+                $success_message = null;
+                $error_message = 'موجودی کافی نیست';
             }
             
             
         }
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
-        return back()->with([
+        return view('layouts/cart/cart')->with([
             'allcategories' => $allcategories,
-            'message' => $message
+            'success_message' => $success_message,
+            'error_message' => $error_message
             ]);
     }
 
