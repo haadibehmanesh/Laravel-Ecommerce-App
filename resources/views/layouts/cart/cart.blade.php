@@ -324,6 +324,15 @@ var _zxcvbnSettings = {"src":"\/wp-includes\/js\/zxcvbn.min.js"};
                                         </ul>
                                     </div>
                                 @endif
+
+                                @if(isset($success_message))
+                                    <div class="alert alert-info">{{$success_message}}</div>
+                                @endif
+
+                                @if(isset($error_message))
+                                    <div class="alert alert-danger">{{$error_message}}</div>
+                                @endif
+
                                 @if (Cart::count() > 0)
                                    {{-- <h2>{{ Cart::content()->count() }} item(s) in Shopping Cart</h2>--}}
 
