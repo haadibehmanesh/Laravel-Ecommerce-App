@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\BiOrder;
 use App\BiCategory;
 use App\BiOrderItem;
+use App\BiProduct;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
@@ -48,16 +49,23 @@ class CheckoutController extends Controller
         ]); 
         foreach (Cart::content() as $item) {
             $code = randomDigits(8);
-            $orderitem = BiOrderItem::create([
-                'bi_order_id' => $order->id,
-                'code' => $code,
-                'name' => $item->name,
-                'price' => $item->price,
-                'quantity' => $item->qty,
-                'total' => $item->subtotal,
-                'bi_product_id' => $item->id,
-            ]);
-            
+
+            $product = BiProduct::find( $item->id);
+            $productCount = ($product->quantity - $item->qty) >= 0 ? $product->quantity - $item->qty : -1 ;
+
+            if( $productCount >= 0) {
+                $orderitem = BiOrderItem::create([
+                    'bi_order_id' => $order->id,
+                    'code' => $code,
+                    'name' => $item->name,
+                    'price' => $item->price,
+                    'quantity' => $item->qty,
+                    'total' => $item->subtotal,
+                    'bi_product_id' => $item->id,
+                ]);
+            } else {
+                $error = 'موجودی کافی نیست';
+            }
             
             
         }
@@ -66,7 +74,7 @@ class CheckoutController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specifieuse App\BiOrderBiProduct;d resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
