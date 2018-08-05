@@ -51,7 +51,7 @@ class CheckoutController extends Controller
             $code = randomDigits(8);
 
             $product = BiProduct::find( $item->id);
-            $productCount = ($product->quantity - $item->qty) >= 0 ? $product->quantity - $item->qty : -1 ;
+            $productSold = (($product->quantity-$product->sold) - $item->qty) >= 0 ? $product->sold + $item->qty : -1 ;
 
             if( $productCount >= 0) {
                 $orderitem = BiOrderItem::create([
@@ -64,7 +64,7 @@ class CheckoutController extends Controller
                     'bi_product_id' => $item->id,
                 ]);
 
-                $product->quantity = $productCount;
+                $product->sold = $productSold;
                 $product->save();
 
                 $message = 'درحال انتقال به درگاه بانک';
