@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\BiProduct;
 use App\BiCategory;
+use App\BiOrder;
+use App\BiOrderItem;
 
 class CartController extends Controller
 {
@@ -39,12 +41,31 @@ class CartController extends Controller
     public function store(Request $request)
     {
         $product = BiProduct::where('id', $request->id)->get();
-        $orderLimit = $product[0]->quantity - $product[0]->sold;
-        Cart::add($request->id, $product[0]->name, 1, presentPrice($product[0]->price, $product[0]->discount), [
-            'order_limit' => $orderLimit
-        ])->associate('App\BiProduct');
+        
+        $id = $request->id;
 
-        return redirect()->route('cart.index')->with('success_message', 'بن شما با موفقیت اضافه شد');
+        $orders = BiOrder::where('order_status_id', 1)->with(['items' => function ($q) use ($id) {
+            $q->where('bi_product_id', $id);
+        }])->get();
+
+        $processingRequests = 0;
+
+        foreach ($orders as $order) {
+            
+            if (isset($order->items[0]->quantity))
+                $processingRequests += $order->items[0]->quantity;                
+        } 
+
+        $orderLimit = $product[0]->quantity - $product[0]->sold - $processingRequests;
+
+        if ($orderLimit > 0) {
+            Cart::add($request->id, $product[0]->name, 1, presentPrice($product[0]->price, $product[0]->discount), [
+                'order_limit' => $orderLimit
+            ])->associate('App\BiProduct');
+            return redirect()->route('cart.index')->with('success_message', 'بن شما با موفقیت اضافه شد');
+        }
+        return redirect()->route('cart.index')->with('error_message', 'موجودی به اتمام رسیده است');
+        
     }
 
     /**
