@@ -374,9 +374,9 @@ var _zxcvbnSettings = {"src":"\/wp-includes\/js\/zxcvbn.min.js"};
                                                         </td>
                                                         <td class="product-quantity" data-title="تعداد">
                                                             <div>
-                                
+                                                               
                                                                 <select class="select-quantity" data-id="{{ $item->rowId }}">
-                                                                        @for ($i = 1; $i < 10 + 1 ; $i++)
+                                                                        @for ($i = 1; $i <= $item->options['order_limit'] ; $i++)
                                                                         <option value="{{ $i }}" {{ $item->qty == $i ? 'selected' : '' }}>{{ $i }}</option>
                                                                         @endfor
                                                                 </select>
