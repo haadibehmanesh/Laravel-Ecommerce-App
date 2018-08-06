@@ -14,4 +14,9 @@ class BiOrder extends Model
     {
         return $this->hasMany('App\BiOrderItem');
     }
+
+    public function status()
+    {
+        return $this->belongsTo('App\BiOrderStatus', 'order_status_id' );
+    }
 }
