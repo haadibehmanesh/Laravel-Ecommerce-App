@@ -314,6 +314,11 @@ var _zxcvbnSettings = {"src":"\/wp-includes\/js\/zxcvbn.min.js"};
                                         {{ session()->get('success_message') }}
                                     </div>
                                 @endif
+                                @if (session()->has('error_message'))
+                                    <div class="alert alert-danger">
+                                        {{ session()->get('error_message') }}
+                                    </div>
+                                @endif
                     
                                 @if(count($errors) > 0)
                                     <div class="alert alert-danger">
