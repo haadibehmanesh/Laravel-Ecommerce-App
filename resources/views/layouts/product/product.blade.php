@@ -539,8 +539,15 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
     <form class="cart" action="{{ route('cart.store') }}" method="post" enctype='multipart/form-data'>
         {{ csrf_field() }}
     <input type="hidden" name="id" value="{{ $product->id }}">
-   
-	<button type="submit" name="add-to-cart" value="96" class="single_add_to_cart_button button alt">افزودن به سبد خرید</button>
+   @if($product->quantity - $product->sold > 0)
+    <button type="submit" name="add-to-cart" value="96" class="single_add_to_cart_button button alt">افزودن به سبد خرید</button>
+    @else
+    <div class="alert alert-danger">
+        <p class="text-center">
+        موجود نیست
+        </p>
+    </div>
+    @endif
     </form>
 
 	
