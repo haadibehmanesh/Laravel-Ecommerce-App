@@ -12,7 +12,7 @@
 */
 
 
-Route::get('/', 'HomeController@index')->name('home.index');
+Route::get('/', 'MainpageController@index')->name('mainpage.index');
 
 Route::get('/cart', 'CartController@index')->name('cart.index');
 Route::post('/cart', 'CartController@store')->name('cart.store');
@@ -32,3 +32,7 @@ Route::get('/checkout', 'CheckoutController@store')->name('checkout.store');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
