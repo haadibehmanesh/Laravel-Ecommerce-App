@@ -54,6 +54,9 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
 	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
 	<style type="text/css">/** Mega Menu CSS Disabled **/</style>
     <!-- Bootstrap -->
+    <link rel="stylesheet" href="../../wp-content/themes/takhfifat/owl.carousel.min.css">
+    <link rel="stylesheet" href="../../wp-content/themes/takhfifat/owl.theme.default.min.css">
+    <link href="../../wp-content/themes/takhfifat/css/list.css" rel="stylesheet">
     <link href="../../wp-content/themes/takhfifat/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../wp-content/themes/takhfifat/css/bootstrap-rtl.css" rel="stylesheet">
     <link href="../../wp-content/themes/takhfifat/css/font-awesome.css" rel="stylesheet">
@@ -211,7 +214,7 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
 			
             <!--items cart-->
             <div class="content_mini_cart">
-                <a class="main_title_cart" href="/cart" rel="nofollow"><i class="fa fa-shopping-cart" aria-hidden="true"></i>سبد خرید شما<span class="number_items_cart">{{ Cart::content()->count() }}</span></a>
+                <a class="main_title_cart" href="/cart" rel="nofollow"><i class="fa fa-shopping-cart" aria-hidden="true"></i>سبد خرید شما<span class="number_items_cart">{{ toPersianNum(Cart::content()->count())  }}</span></a>
                 <div class="main_cart_list">
 					
 
@@ -272,13 +275,13 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
 
                 <!--option-->
                 <div class="option_item_gallery">
-                    <span class="address"><i class="fa fa-map-marker"></i></span> <span class="number-sale"><i class="fa fa-shopping-basket"></i>2</span>
+                <span class="address"><i class="fa fa-map-marker"></i></span> <span class="number-sale"><i class="fa fa-shopping-basket"></i>{{ toPersianNum(2)}}</span>
                 </div>
 				<div class="time_out">
                     <i class="fa fa-clock-o"></i>
                     <ul class="deal-timer countdown_takhfifat"></ul>
                 <script>
-				                    jQuery(function() {
+                    jQuery(function() {
                         var endDate = "2018-10-18 23:59:00";
                         jQuery('.countdown_takhfifat').countdown({
                             date: endDate,
@@ -337,15 +340,15 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
             </div>
             <div class="content_item">
                 <span><a href="../../product/%d8%aa%d8%ae%d9%81%db%8c%d9%81%db%8c-%d8%a8%db%8c-%d9%86%d8%b8%db%8c%d8%b1-%d8%af%d8%b1-%d8%aa%d9%85%d8%a7%d8%b4%d8%a7%d8%ae%d8%a7%d9%86%d9%87-%d8%aa%d9%87%d8%b1%d8%a7%d9%86/index.html"><i class="fa fa-home"></i>تخفیفی بی نظیر در تماشاخانه تهران </a></span>
-                <span class="Discount"><b>%25</b>تخفیف</span>
+                <span class="Discount"><b>%{{toPersianNum(25)}}</b>تخفیف</span>
                 <h2><a href="../../product/%d8%aa%d8%ae%d9%81%db%8c%d9%81%db%8c-%d8%a8%db%8c-%d9%86%d8%b8%db%8c%d8%b1-%d8%af%d8%b1-%d8%aa%d9%85%d8%a7%d8%b4%d8%a7%d8%ae%d8%a7%d9%86%d9%87-%d8%aa%d9%87%d8%b1%d8%a7%d9%86/index.html">با نمایش این تئاتر به هیجان می آیید</a></h2>
                     <table class="table_slider">
                         <tr>
-                            <td colspan="2"><span class="price price_slider"><del><span class="woocommerce-Price-amount amount">73,000&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></del> <ins><span class="woocommerce-Price-amount amount">55,000&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></ins></span></td>
+                        <td colspan="2"><span class="price price_slider"><del><span class="woocommerce-Price-amount amount">{{ toPersianNum(73000) }}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></del> <ins><span class="woocommerce-Price-amount amount">{{ toPersianNum(55000) }}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></ins></span></td>
                         </tr>
                         <tr>
-                            <td><span>تعداد خریداری شده<b>2</b></span></td>
-                            <td><span>تعداد بازدید<b>59</b></span></td>
+                        <td><span>تعداد خریداری شده<b>{{toPersianNum(2)}}</b></span></td>
+                            <td><span>تعداد بازدید<b>{{toPersianNum(59)}}</b></span></td>
                         </tr>
                     </table>
                 <div class="eye_buy"><a href="../../product/%d8%aa%d8%ae%d9%81%db%8c%d9%81%db%8c-%d8%a8%db%8c-%d9%86%d8%b8%db%8c%d8%b1-%d8%af%d8%b1-%d8%aa%d9%85%d8%a7%d8%b4%d8%a7%d8%ae%d8%a7%d9%86%d9%87-%d8%aa%d9%87%d8%b1%d8%a7%d9%86/index.html" ><i class="fa fa-shopping-cart"></i>مشاهده و خرید</a></div>
@@ -353,11 +356,68 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
                 </div>                <div class="clear"></div>
                 <!--related product -->
 <div class="block_posts box_single">
-    <div class="title_block">
-        <span>
-        {{ $category->name }}
-        </span>
-    </div>
+        <div class="list_title_block">
+                <div class="col-lg-4 col-md-4">
+                    <span>
+                            {{ $category->name }}                   
+                    </span>    
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    
+                        
+                    
+                </div>
+                <div class="col-lg-4 col-md-4">
+                        <span class="list-grid-button">
+                                <div id="btnContainer">
+                                        <button class="btn" id='listview'><i class="fa fa-bars"></i> </button> 
+                                        <button class="btn active" id='gridview'><i class="fa fa-th-large"></i></button>
+                                </div>
+    
+    
+                        </span>
+                        
+                        
+                </div>
+                
+            
+            
+            
+        </div>
+
+        <div class="cat-filter-box">
+                <div class="col-lg-12 col-md-12 cat-filter">
+                        <div class="owl-carousel">
+                        
+
+
+                            
+                                @if($category->children->count() > 0)
+                                <div class="item">
+                                        <div class="slide_item">
+                                                
+                                        <input id="all" class="deal-category filter-subcat" type="radio" value="restaurant" name="cat_filter" checked="checked">
+                                        <label for="all" class="nb-btn nb-btn-sm name label-cat-filter" >همه</label>
+                                                
+            
+                                        </div>
+                                    </div>
+                                    @foreach ( $category->children as $subcat )
+                                <div class="item">
+                                    <div class="slide_item">
+                                            
+                                                    <input id="{{ $subcat->name }}" class="deal-category filter-subcat" type="radio" value="restaurant" name="cat_filter" checked="checked">
+                                                    <label for="{{ $subcat->name }}" class="nb-btn nb-btn-sm name label-cat-filter">{{ $subcat->name }}</label>
+                                            
+        
+                                    </div>
+                                </div>
+                                    @endforeach
+                                @endif
+                            
+                              </div>
+                </div>
+            </div>
     @forelse ($productsForCategories as $product) 
         <div class="col-lg-4 col-md-4 col-sm-6">
             <div class="box_offer">
@@ -388,13 +448,13 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
                 </div>
 			    <a href="{{ route('shop.show', ['product' => $product->slug, 'category' => $category->slug] ) }}" title="{{ $product->name }}"><img src="{{ productImage($product->image) }}" title="{{ $product->name }}"></a>
                 <!-- Discount -->
-                <span class="Discount"><b>%{{ $product->discount }}</b>تخفیف</span>
+                <span class="Discount"><b>%{{ toPersianNum($product->discount)  }}</b>تخفیف</span>
 				<span class="address"><i class="fa fa-map-marker"></i>امام خمینی</span>
-                <span>0<i class="fa fa-shopping-basket"></i></span>
+            <span>{{toPersianNum(0)}}<i class="fa fa-shopping-basket"></i></span>
 				<!-- Info -->
                 <div class="Information">
                         <h2 class="ellipsis"><a href="#">{{ $product->name }} </a></h2>
-                        <span class="price"><del><span class="woocommerce-Price-amount amount">{{  $product->price }}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></del> <ins><span class="woocommerce-Price-amount amount">{{presentPrice($product->price,$product->discount)}}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></ins></span>
+                        <span class="price"><del><span class="woocommerce-Price-amount amount">{{ toPersianNum($product->price) }}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></del> <ins><span class="woocommerce-Price-amount amount">{{ toPersianNum(presentPrice($product->price,$product->discount)) }}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></ins></span>
                 </div>
             </div>
         </div>        	
@@ -504,6 +564,8 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
             </div>
         </div>
     </div>
+    <script src="../../wp-includes/js/jquery/jquery.min.js"></script>
+    <script src="../../wp-includes/js/jquery/owl.carousel.min.js"></script>
 </footer>
 
 <!--copyright-->
@@ -559,11 +621,58 @@ var wysijaAJAX = {"action":"wysija_ajax","controller":"subscribers","ajaxurl":"h
 /* ]]> */
 </script>
 <script type='text/javascript' src='../../wp-content/plugins/wysija-newsletters/js/front-subscribers4dc3.js?ver=2.8.2'></script>
-<script type="text/javascript">
-jQuery(document).ready(function(){
-	jQuery('.container').persiaNumber();
-});
+<script>
+    $( "#listview" ).click(function() {
+        $('.col-lg-4 col-md-4 col-sm-6').replaceWith( "<div>" + $( this ).text() + "</div>" );
+    });
+    
 </script>
+<script type="text/javascript">
+
+
+    jQuery(document).ready(function(){
+        function recalcCarouselWidth(carousel) {
+        var stage = carousel.find('.owl-stage');
+        stage.width(Math.ceil(stage.width()) + 1);
+        }
+
+        jQuery(window).on('resize', function(e){
+            recalcCarouselWidth(jQuery('.owl-carousel'));
+        }).resize();
+    });
+    
+    jQuery(document).ready(function(){
+       jQuery('.owl-carousel').owlCarousel({
+        rtl:true,
+        loop:false,
+        autoWidth:true,
+        margin:10,
+        responsiveClass:true,
+        
+        responsive:{
+            100:{
+                items:0,
+                nav:true,
+                navText: ["<a class='btn prev'><</a>","<a class='btn next'>></a>"]
+            },
+            600:{
+                items:3,
+                nav:false
+            },
+            700:{
+                items:7,
+                nav:true,
+                navText: ["<a class='btn prev'><</a>","<a class='btn next'>></a>"],
+                loop:false
+            }
+        }
+       
+        
+        })
+        
+    });
+    </script>
+    
 	</body>
 
 <!-- Mirrored from localhost/takhfiftest/product-category/arts-theater/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 21 Jun 2018 08:02:28 GMT -->
