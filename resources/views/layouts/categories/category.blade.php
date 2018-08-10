@@ -370,8 +370,8 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
                 <div class="col-lg-4 col-md-4">
                         <span class="list-grid-button">
                                 <div id="btnContainer">
-                                        <button class="btn" id='listview'><i class="fa fa-bars"></i> </button> 
-                                        <button class="btn active" id='gridview'><i class="fa fa-th-large"></i></button>
+                                        <button class="btn" onclick="listView()"><i class="fa fa-bars"></i> </button> 
+                                        <button class="btn active" onclick="gridView()"><i class="fa fa-th-large"></i></button>
                                 </div>
     
     
@@ -389,9 +389,6 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
                 <div class="col-lg-12 col-md-12 cat-filter">
                         <div class="owl-carousel">
                         
-
-
-                            
                                 @if($category->children->count() > 0)
                                 <div class="item">
                                         <div class="slide_item">
@@ -621,12 +618,7 @@ var wysijaAJAX = {"action":"wysija_ajax","controller":"subscribers","ajaxurl":"h
 /* ]]> */
 </script>
 <script type='text/javascript' src='../../wp-content/plugins/wysija-newsletters/js/front-subscribers4dc3.js?ver=2.8.2'></script>
-<script>
-    $( "#listview" ).click(function() {
-        $('.col-lg-4 col-md-4 col-sm-6').replaceWith( "<div>" + $( this ).text() + "</div>" );
-    });
-    
-</script>
+
 <script type="text/javascript">
 
 
@@ -636,9 +628,9 @@ var wysijaAJAX = {"action":"wysija_ajax","controller":"subscribers","ajaxurl":"h
         stage.width(Math.ceil(stage.width()) + 1);
         }
 
-        jQuery(window).on('resize', function(e){
-            recalcCarouselWidth(jQuery('.owl-carousel'));
-        }).resize();
+jQuery(window).on('resize', function(e){
+    recalcCarouselWidth(jQuery('.owl-carousel'));
+}).resize();
     });
     
     jQuery(document).ready(function(){
@@ -646,12 +638,11 @@ var wysijaAJAX = {"action":"wysija_ajax","controller":"subscribers","ajaxurl":"h
         rtl:true,
         loop:false,
         autoWidth:true,
-        margin:10,
+        margin:7,
         responsiveClass:true,
-        
         responsive:{
-            100:{
-                items:0,
+            0:{
+                items:1,
                 nav:true,
                 navText: ["<a class='btn prev'><</a>","<a class='btn next'>></a>"]
             },
@@ -659,8 +650,8 @@ var wysijaAJAX = {"action":"wysija_ajax","controller":"subscribers","ajaxurl":"h
                 items:3,
                 nav:false
             },
-            700:{
-                items:7,
+            1000:{
+                items:9,
                 nav:true,
                 navText: ["<a class='btn prev'><</a>","<a class='btn next'>></a>"],
                 loop:false
