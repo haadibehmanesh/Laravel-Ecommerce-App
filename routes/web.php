@@ -33,6 +33,10 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
+Route::get('/my-account', 'CostumerpanelController@index')->name('costumerpanel.index');
+Route::get('/my-account/orders', 'CostumerpanelController@orders')->name('costumerpanel.orders');
+Route::get('/my-account/editaccount', 'CostumerpanelController@edit')->name('costumerpanel.edit');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
