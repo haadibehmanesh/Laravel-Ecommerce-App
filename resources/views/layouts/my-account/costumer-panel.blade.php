@@ -177,8 +177,15 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
 <li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-166"><a href="../shop/index.html">فروشگاه</a></li>
             </ul>
             <!--phone-->
+            
             <div class="phone"><span><i class="fa fa-book"></i>بانک جامع اطلاعاتی</span></div>
-			            
+            <div class="block_login block_login_seller">
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a href="http://demo.onliner.ir/takhfifat/dashboard/"><i class="fa fa-user pull-right"></i> پنل فروشندگان <strong class="takhfifat_get_seller_balance">موجودی: <span class="woocommerce-Price-amount amount">3,816,000&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></strong></a>
+            </li>
+        </ul>
+</div>	
 			<!--social-->
             <div class="social_header">
                                         <a href="#" title="تلگرام"><i class="fa fa-send-o"></i></a>
@@ -229,8 +236,32 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
             
             <!--login-->
             <div class="block_login">
-                <a href="index.html" class="btn btn-default btn-lg login" id="myBtn"> ورود / عضویت <i class="fa fa-sign-in"></i></a>            </div>
-			
+                    <ul class="nav navbar-nav">
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">امیر غلامی<span class="fa fa-user pull-right"></span></a>
+            <ul class="dropdown-menu">
+                                                    <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard is-active">
+                        <a href="http://demo.onliner.ir/takhfifat/my-account/">پیشخوان</a>
+                    </li>
+                                                    <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
+                        <a href="http://demo.onliner.ir/takhfifat/my-account/orders/">سفارش ها</a>
+                    </li>
+                                                    <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--downloads">
+                        <a href="http://demo.onliner.ir/takhfifat/my-account/downloads/">دانلودها</a>
+                    </li>
+                                                    <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-address">
+                        <a href="http://demo.onliner.ir/takhfifat/my-account/edit-address/">آدرس ها</a>
+                    </li>
+                                                    <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
+                        <a href="http://demo.onliner.ir/takhfifat/my-account/edit-account/">جزئیات حساب</a>
+                    </li>
+                                                    <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout">
+                        <a href="http://demo.onliner.ir/takhfifat/my-account/customer-logout/?_wpnonce=f90172b7ad">خروج از سیستم</a>
+                    </li>
+                                             </ul>
+        </li>
+    </ul>
+                </div>
             <!--items cart-->
             <div class="content_mini_cart">
                 <a class="main_title_cart" href="/cart" rel="nofollow"><i class="fa fa-shopping-cart" aria-hidden="true"></i>سبد خرید شما<span class="number_items_cart">{{ Cart::content()->count() }}</span></a>
@@ -310,7 +341,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
 				<a href="http://demo.onliner.ir/takhfifat/my-account/edit-address/">آدرس ها</a>
 			</li>
 					<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
-				<a href="http://demo.onliner.ir/takhfifat/my-account/edit-account/">جزئیات حساب</a>
+				<a href="{{ route('costumerpanel.edit') }}">جزئیات حساب</a>
 			</li>
 					<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout">
 				<a href="http://demo.onliner.ir/takhfifat/my-account/customer-logout/?_wpnonce=ada5f843b4">خروج از سیستم</a>
