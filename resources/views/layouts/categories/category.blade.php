@@ -143,7 +143,31 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
 				res += num.charAt(i);
 		return res;
 	}
-	</script>
+    </script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+    </script>
+    
+    <script>
+   
+        function subcatview(slug){
+           
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                type:'POST',
+                url:'/getcategory/'+slug ,
+                data:'_token = <?php echo csrf_token() ?>',
+                success:function(data){
+                   $('.cat-list').html(data)
+                }
+            });
+            
+        }
+   
+    </script>
+        
 </head>
 <body class="rtl archive tax-product_cat term-arts-theater term-10 woocommerce woocommerce-page mega-menu-main-menu dokan-theme-takhfifat">
     <!----- Top Menu
@@ -385,6 +409,7 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
             
         </div>
 
+
         <div class="cat-filter-box">
                 <div class="col-lg-12 col-md-12 cat-filter">
                         <div class="owl-carousel">
@@ -393,7 +418,7 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
                                 <div class="item">
                                         <div class="slide_item">
                                                 
-                                        <input id="all" class="deal-category filter-subcat" type="radio" value="restaurant" name="cat_filter" checked="checked">
+                                        <input id="all" class="deal-category filter-subcat" type="radio"  name="{{ $category->slug }}" onClick="subcatview(this.name)">
                                         <label for="all" class="nb-btn nb-btn-sm name label-cat-filter" >همه</label>
                                                 
             
@@ -403,8 +428,8 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
                                 <div class="item">
                                     <div class="slide_item">
                                             
-                                                    <input id="{{ $subcat->name }}" class="deal-category filter-subcat" type="radio" value="restaurant" name="cat_filter" checked="checked">
-                                                    <label for="{{ $subcat->name }}" class="nb-btn nb-btn-sm name label-cat-filter">{{ $subcat->name }}</label>
+                                                    <input id="{{ $subcat->slug }}" class="deal-category filter-subcat" type="radio" value="{{ $subcat->slug }}" name="cat_filter" onClick="subcatview(this.id)" >
+                                                    <label for="{{ $subcat->slug }}" class="nb-btn nb-btn-sm name label-cat-filter">{{ $subcat->name }}</label>
                                             
         
                                     </div>
@@ -415,6 +440,8 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
                               </div>
                 </div>
             </div>
+            <div id="ajax-view">
+                    <div class="cat-list">
     @forelse ($productsForCategories as $product) 
         <div class="col-lg-4 col-md-4 col-sm-6">
             <div class="box_offer">
@@ -456,9 +483,14 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
             </div>
         </div>        	
         @empty
-        <div style="text-align: left">No items found</div>
+        <div style="text-align: left">موردی یافت نشد!</div>
         @endforelse 
+
             <div class="clear"></div>
+
+
+    </div>
+        </div>
 			    </div>                <div class="clear"></div>
                 
 <!--text_short_category-->
@@ -620,18 +652,6 @@ var wysijaAJAX = {"action":"wysija_ajax","controller":"subscribers","ajaxurl":"h
 <script type='text/javascript' src='../../wp-content/plugins/wysija-newsletters/js/front-subscribers4dc3.js?ver=2.8.2'></script>
 
 <script type="text/javascript">
-
-
-    jQuery(document).ready(function(){
-        function recalcCarouselWidth(carousel) {
-        var stage = carousel.find('.owl-stage');
-        stage.width(Math.ceil(stage.width()) + 1);
-        }
-
-jQuery(window).on('resize', function(e){
-    recalcCarouselWidth(jQuery('.owl-carousel'));
-}).resize();
-    });
     
     jQuery(document).ready(function(){
        jQuery('.owl-carousel').owlCarousel({
@@ -640,26 +660,12 @@ jQuery(window).on('resize', function(e){
         autoWidth:true,
         margin:7,
         responsiveClass:true,
-        responsive:{
-            0:{
-                items:1,
-                nav:true,
-                navText: ["<a class='btn prev'><</a>","<a class='btn next'>></a>"]
-            },
-            600:{
-                items:3,
-                nav:false
-            },
-            1000:{
-                items:9,
-                nav:true,
-                navText: ["<a class='btn prev'><</a>","<a class='btn next'>></a>"],
-                loop:false
-            }
-        }
+        navText : ['<i class="fa fa-chevron-right" aria-hidden="true"></i>','<i class="fa fa-chevron-left" aria-hidden="true"></i>'],
+        nav:true
        
         
         })
+        
         
     });
     </script>
