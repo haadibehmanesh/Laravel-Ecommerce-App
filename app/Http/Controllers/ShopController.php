@@ -112,6 +112,7 @@ class ShopController extends Controller
             'allcategories' => $allcategories,
         ]);
     }
+   
 
     /**
      * Show the form for editing the specified resource.
