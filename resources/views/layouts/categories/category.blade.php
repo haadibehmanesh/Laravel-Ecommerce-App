@@ -148,25 +148,47 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
     </script>
     
-    <script>
+<script>
+
+    function subcatview(slug){
+        
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type:'POST',
+            url:'/getcategory/'+slug ,
+            data:'_token = <?php echo csrf_token() ?>',
+            success:function(data){
+                $('.cat-list').html(data)
+            }
+        });
+        
+    }
    
-        function subcatview(slug){
-           
-            $.ajax({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                type:'POST',
-                url:'/getcategory/'+slug ,
-                data:'_token = <?php echo csrf_token() ?>',
-                success:function(data){
-                   $('.cat-list').html(data)
-                }
-            });
-            
+</script>
+<script>
+    function listView(){
+        var slug = $('#all').val();
+        if($('.filter-subcat').is(':checked')){
+            var slug = $('.filter-subcat:checked').val();
         }
-   
-    </script>
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type:'POST',
+            url:'/getlist/'+slug ,
+            data:'_token = <?php echo csrf_token() ?>',
+            success:function(data){
+                $('.cat-list').html(data)
+            }
+        });
+        
+    }
+       
+</script>
+    
         
 </head>
 <body class="rtl archive tax-product_cat term-arts-theater term-10 woocommerce woocommerce-page mega-menu-main-menu dokan-theme-takhfifat">
@@ -394,7 +416,7 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
                 <div class="col-lg-4 col-md-4">
                         <span class="list-grid-button">
                                 <div id="btnContainer">
-                                        <button class="btn" onclick="listView()"><i class="fa fa-bars"></i> </button> 
+                                        <button id="element" class="btn" onclick="listView()"><i class="fa fa-bars"></i> </button> 
                                         <button class="btn active" onclick="gridView()"><i class="fa fa-th-large"></i></button>
                                 </div>
     
@@ -418,7 +440,7 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
                                 <div class="item">
                                         <div class="slide_item">
                                                 
-                                        <input id="all" class="deal-category filter-subcat" type="radio"  name="{{ $category->slug }}" onClick="subcatview(this.name)">
+                                        <input id="all" class="filter-subcat" type="radio"  name="cat_filter" onClick="subcatview(this.value)" value="{{ $category->slug }}">
                                         <label for="all" class="nb-btn nb-btn-sm name label-cat-filter" >همه</label>
                                                 
             
@@ -428,7 +450,7 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
                                 <div class="item">
                                     <div class="slide_item">
                                             
-                                                    <input id="{{ $subcat->slug }}" class="deal-category filter-subcat" type="radio" value="{{ $subcat->slug }}" name="cat_filter" onClick="subcatview(this.id)" >
+                                                    <input id="{{ $subcat->slug }}" class="filter-subcat" type="radio" value="{{ $subcat->slug }}" name="cat_filter" onClick="subcatview(this.id)" >
                                                     <label for="{{ $subcat->slug }}" class="nb-btn nb-btn-sm name label-cat-filter">{{ $subcat->name }}</label>
                                             
         
@@ -483,7 +505,7 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
             </div>
         </div>        	
         @empty
-        <div style="text-align: left">موردی یافت نشد!</div>
+        <div style="text-align: center">موردی یافت نشد!</div>
         @endforelse 
 
             <div class="clear"></div>
