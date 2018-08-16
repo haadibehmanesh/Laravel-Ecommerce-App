@@ -264,3 +264,23 @@ float: left;
 margin-top: 10px;
 
 }
+.owl-stage{
+
+min-width: 919px !important;
+
+}
+.owl-nav .owl-prev {
+        right: 0px;
+        position: absolute;
+        top: 35px;
+        cursor: pointer;
+        z-index: 3;
+}
+
+.owl-nav .owl-next {
+    left: 0px;
+    position: absolute;
+    top: 35px ;
+    cursor: pointer;
+    z-index: 3 ;
+}
