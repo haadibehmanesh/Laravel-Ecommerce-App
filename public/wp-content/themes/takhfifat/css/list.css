@@ -198,6 +198,10 @@
     background-color: #f44336;
     border: solid 1px #f44336!important;
 }
+.cat-filter-box .cat-filter .slide_item input.all:checked+label {
+    background-color: #f44336;
+    border: solid 1px #f44336!important;
+}
 
 .cat-filter-box .cat-filter .slide_item input:checked+label {
     color: #fff!important;
@@ -266,7 +270,7 @@ margin-top: 10px;
 }
 .owl-stage{
 
-min-width: 919px !important;
+width: 1300px !important;
 
 }
 .owl-nav .owl-prev {
@@ -284,3 +288,10 @@ min-width: 919px !important;
     cursor: pointer;
     z-index: 3 ;
 }
+.alert-list {
+
+    margin-right: 10px;
+    margin-bottom: -10px;
+    border-radius: 4px;
+}
+
