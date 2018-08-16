@@ -45,3 +45,4 @@ Route::get('/dashboard/editaccount', 'MerchantpanelController@edit')->name('merc
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/getcategory/{category}','AjaxController@getCategory');
