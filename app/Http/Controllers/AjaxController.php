@@ -29,6 +29,26 @@ class AjaxController extends Controller {
         
     }
 
+    public function getList($slug)
+    {  
+        $pagination = 9;
+        
+        $slug_db = explode('/', $slug);
+       
+        $category = BiCategory::where('slug', $slug_db)->firstOrFail();
+        
+      
+        $productsForCategories = $category->products()->orderBy('id', 'desc')->paginate($pagination);
+        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        
+        return view('layouts/categories/ajaxlist')->with([
+            'category' => $category,
+            'productsForCategories' => $productsForCategories,
+            'allcategories' => $allcategories,
+        ])->render();
+        
+    }
+
 
     /**
      * Show the form for creating a new resource.
