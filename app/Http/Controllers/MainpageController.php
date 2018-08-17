@@ -21,10 +21,12 @@ class MainpageController extends Controller
         $slider = BiSlider::where('name' , 'index')->get();
      
         $sliderimages = BiSliderImage::where('bi_slider_id', $slider[0]->id)->get();
+        $featuredproducts = BiProduct::where('featured','1')->get();
         
         return view('layouts/mainpage')->with([
             'allcategories' => $allcategories,
-            'sliderimages' =>  $sliderimages
+            'sliderimages' =>  $sliderimages,
+            'featured' => $featuredproducts
         ]);
     }
 
