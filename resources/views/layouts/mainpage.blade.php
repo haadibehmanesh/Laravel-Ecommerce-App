@@ -179,6 +179,9 @@ function toPersianNum( num, dontTrim ) {
     <!--special offer -->
 <div class="special_offer">
     <div class="title_block"><span>تخفیفات ویژه</span></div>
+    @foreach ($featured as $featured)
+        
+    
         <div class="col-lg-4 col-md-4 col-sm-6">
             <div class="box_offer">
                 <div class="time_out">
@@ -206,18 +209,19 @@ function toPersianNum( num, dontTrim ) {
                     });
                 </script>					
                 </div>
-                    <a href="product/%d9%be%db%8c%d9%86%d8%aa-%d8%a8%d8%a7%d9%84-%d8%b1%d8%a7%d8%b2%db%8c/index.html" title="پینت بال رازی "><img src="wp-content/uploads/2017/05/16-1447761553-400x400.jpg" title="پینت بال رازی "></a>
+                    <a href="{{ route('shop.show', $featured->slug) }}" title="{{ $featured->name }}"><img src="{{ productImage($featured->image) }}" title="{{ $featured->name }}"></a>
                 <!-- Discount -->
-                <span class="Discount"><b>%13</b>تخفیف</span>
+                <span class="Discount"><b>%{{ toPersianNum($featured->discount)  }}</b>تخفیف</span>
 				<span class="address"><i class="fa fa-map-marker"></i>امام خمینی</span>
-                <span>22<i class="fa fa-shopping-basket"></i></span>
+                <span>{{toPersianNum($featured->sold)}}<i class="fa fa-shopping-basket"></i></span>
 				<!-- Info -->
                 <div class="Information">
-                    <h2 class="ellipsis"><a href="product/%d9%be%db%8c%d9%86%d8%aa-%d8%a8%d8%a7%d9%84-%d8%b1%d8%a7%d8%b2%db%8c/index.html">پینت بال رازی </a></h2>
-                    <span class="price"><del><span class="woocommerce-Price-amount amount">12,000&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></del> <ins><span class="woocommerce-Price-amount amount">10,400&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></ins></span>
+                    <h2 class="ellipsis"><a href="{{ route('shop.show', $featured->slug) }}" title="{{ $featured->name }}">{{ $featured->name }}</a></h2>
+                    <span class="price"><del><span class="woocommerce-Price-amount amount">{{ toPersianNum($featured->price) }}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></del> <ins><span class="woocommerce-Price-amount amount">{{ toPersianNum(presentPrice($featured->price,$featured->discount)) }}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></ins></span>
                 </div>
             </div>
         </div>
+        @endforeach
 </div>
     <div class="clear"></div>		
     <!--category-->
