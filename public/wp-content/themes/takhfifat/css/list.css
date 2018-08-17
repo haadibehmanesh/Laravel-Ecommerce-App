@@ -87,7 +87,7 @@
 .list-items .list-deal-details .bottom-panel>div>span {
     display: inline-block;
     width: 49.5%;
-    overflow: hidden;
+   /* overflow: hidden;*/
     height: 35px;
 }
 .list-items .list-deal-details .bottom-panel>div.bottom-bp .address {
@@ -293,5 +293,21 @@ width: 1300px !important;
     margin-right: 10px;
     margin-bottom: -10px;
     border-radius: 4px;
+}
+
+element.style {
+}
+.time_out_list {
+    overflow: hidden;
+    position: absolute;
+    top: -7px;
+    padding: 0 10px;
+    z-index: 1;
+}
+
+.time_out_list .fa {
+    float: right;
+    font-size: 25px;
+    padding: 5px 0 0 5px;
 }
 
