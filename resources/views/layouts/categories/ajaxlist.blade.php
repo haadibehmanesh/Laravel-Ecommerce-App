@@ -15,7 +15,7 @@
                 <div class="bottom-panel">
                     <div class="top-bp clearfix">
 
-                            <div class="time_out">
+                            <div class="time_out_list">
                                     <i class="fa fa-clock-o"></i>
                                     <ul class="deal-timer countdownhkfkk"></ul>
                                 <script>
@@ -48,7 +48,7 @@
                         </span>
                         <span class="deal-sell">
                             <i class="fa fa-shopping-basket"></i>
-                            3 خرید
+                            {{ toPersianNum(3)  }} خرید
                         </span>
                     </div>
                 </div>
