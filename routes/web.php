@@ -47,3 +47,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/getcategory/{category}','AjaxController@getCategory');
 Route::post('/getlist/{category}','AjaxController@getList');
+Route::post('/ajax/products', 'AjaxController@getProduct');
+
