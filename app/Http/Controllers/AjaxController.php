@@ -49,6 +49,14 @@ class AjaxController extends Controller {
         
     }
 
+    public function getProduct()
+    {  
+        $products = BiProduct::paginate(3);
+        return view('layouts/shop/ajax-products')->with([
+            'products' => $products         
+        ])->render();
+        
+    }
 
     /**
      * Show the form for creating a new resource.
