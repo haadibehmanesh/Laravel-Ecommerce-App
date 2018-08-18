@@ -140,7 +140,34 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
 				res += num.charAt(i);
 		return res;
 	}
-	</script>
+    </script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    
+    
+    <script>
+        jQuery(document).on('click','.pagination a', function(e){
+            e.preventDefault();
+            var page = jQuery(this).attr('href').split('page=')[1];
+            getProducts(page);
+        });
+        function getProducts(page){
+            
+            jQuery.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+                },
+                type:'POST',
+                url:'/ajax/products/?page='+page,
+                data:'_token = <?php echo csrf_token() ?>'
+
+            }).done(function(data){
+               
+                jQuery('.ajax_products').html(data);
+
+
+            });
+        }
+    </script>
 </head>
 <body class="rtl archive post-type-archive post-type-archive-product woocommerce woocommerce-page mega-menu-main-menu dokan-theme-takhfifat">
     <!----- Top Menu
@@ -287,6 +314,7 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
             همه بن ها                     
         </span>
     </div>   
+    <div class='ajax_products'>
     @forelse ($products as $product)     	
         	<div class="col-lg-4 col-md-4 col-sm-6">
             <div class="box_offer">
@@ -329,15 +357,14 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
         </div>        	
         @empty
           <div style="text-align: left">No items found</div>
-        @endforelse        	       	
+        @endforelse    
+        	       	
             <div class="clear"></div>
 			<div class="pagination_wrapper">
-                <div class="pagination">
-                    <span aria-current='page' class='page-numbers current'>1</span>
-                    <a class='page-numbers' href='page/2/index.html'>2</a>
-                    <a class="next page-numbers" href="page/2/index.html">»</a>                
-                </div>
+                        {{ $products->links() }}
+                
             </div>
+        </div>
                 </div>                
                 <div class="clear"></div>
                 
