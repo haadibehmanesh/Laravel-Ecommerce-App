@@ -18,6 +18,7 @@
 <link href="wp-content/themes/takhfifat/css/bootstrap-rtl.css" rel="stylesheet">
 <link href="wp-content/themes/takhfifat/css/font-awesome.css" rel="stylesheet">
 <link href="wp-content/themes/takhfifat/stylefc99.css?ver=2.6" rel="stylesheet">
+<link href="../../wp-content/themes/takhfifat/css/main-page.css" rel="stylesheet">
 
 
 <!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
@@ -44,6 +45,34 @@ function toPersianNum( num, dontTrim ) {
     return res;
 }
 </script>
+
+<script>
+       $(document).ready(function() {
+           
+			// grab the initial top offset of the navigation 
+		   	var stickyNavTop = $('.nav').offset().top;
+		   	
+		   	// our function that decides weather the navigation bar should have "fixed" css position or not.
+		   	var stickyNav = function(){
+			    var scrollTop = $(window).scrollTop(); // our current vertical position from the top
+			         
+			    // if we've scrolled more than the navigation, change its position to fixed to stick to top,
+			    // otherwise change it back to relative
+			    if (scrollTop > stickyNavTop) { 
+			        $('.nav').addClass('sticky');
+			    } else {
+			        $('.nav').removeClass('sticky'); 
+			    }
+			};
+
+			stickyNav();
+			// and run it again every time you scroll
+			$(window).scroll(function() {
+				stickyNav();
+			});
+		});
+</script>
+        
 </head>
 <body class="rtl home blog mega-menu-main-menu">
 <!--- Top Menu-->
@@ -121,7 +150,7 @@ function toPersianNum( num, dontTrim ) {
     </div>
 </header>
 <!-- / Header -->    <!--Nav-->
-<nav>
+<nav class="nav">
     <div class="container">
         <div class="row">
             <div id="mega-menu-wrap-main-menu" class="mega-menu-wrap">
@@ -475,6 +504,153 @@ function toPersianNum( num, dontTrim ) {
             </div>
         </div>        	
 </div><div class="clear"></div>
+
+<article id="float-cat-restaurant" class="cat-deal-color color-rescoffee active">
+        <h3 class="hx"><span class="ir"><i class="icon icon-burger"></i></span><a href="/tehran/c:restaurant/" class="article-h3">رستوران و کافی‌شاپ</a>
+        </h3>
+        </header>
+        <div class="main-row clearfix">
+        <div itemscope="" itemtype="http://schema.org/Offer" class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-bigbox">
+        <div class="cat-deal-box ">
+        <a href="/tehran/d/c:restaurant/126964/ناهار-در-رستوران-گردان-برج-میلاد/" class="figure" style="background-image: url(&quot;http://static.netbarg.com/img/responsive_large/deals/126964/369804550d51328701ccff85394444b8400b6c.jpg&quot;); background-size: cover;">
+        <ul class="deal-tag list-unstyled">
+        </ul>
+        <img data-src="http://static.netbarg.com/img/responsive_large/deals/126964/369804550d51328701ccff85394444b8400b6c.jpg" alt="ناهار در رستوران گردان برج میلاد" data-type="lazy" shema="1" itemprop="image" content="http://static.netbarg.com/img/responsive_large/deals/126964/369804550d51328701ccff85394444b8400b6c.jpg" class="sr-only" src="http://static.netbarg.com/img/responsive_large/deals/126964/369804550d51328701ccff85394444b8400b6c.jpg"> </a>
+        <div class="cat-deal-box-main clearfix">
+        <h4 itemprop="name" class="cdbm-title"><a itemprop="url" href="/tehran/d/c:restaurant/126964/ناهار-در-رستوران-گردان-برج-میلاد/" class="truncate">ناهار در رستوران گردان برج میلاد</a>
+        </h4>
+        <span class="cdbm-total-buy"><span class="ir"><i class="fa fa-shopping-basket"></i></span><span class="cdbm-tb-total">
+        779 </span></span>
+         </div>
+        <div class="cat-deal-box-footer clearfix"><span class="cdbf-takhfif"><span class="cdbft-shape"><span class="cdbft-shape-text">%20</span></span></span><a href="/tehran/d/c:restaurant/126964/ناهار-در-رستوران-گردان-برج-میلاد/" class="cdbf-buy-icon">
+        <button class="nb-btn nb-btn-icon nb-btn-success">مشاهده و خرید<i class="icon icon-shopping-cart2"></i></button>
+        </a><span class="cdbf-price">
+        <del class="cdbf-real-price"><span>۱۱۰,۰۰۰</span></del><ins class="cdbf-netbarg-price">
+        <span itemprop="price" content="880000">۸۸,۰۰۰ </span><span itemprop="priceCurrency" content="IRR"> تومان</span></ins></span></div>
+        </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
+        <div class="row">
+        
+        
+                <div class="list-items ">
+                        <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
+                        <a href="http://127.0.0.1:8000/products/%D9%81%D8%B3%D8%AA-%D9%81%D9%88%D8%AF-%D8%AF%D8%A7%D9%88%DB%8C%D9%86-%D8%A8%D8%A7-%D9%85%D9%86%D9%88-%D8%A8%D8%A7%D8%B2-%D8%BA%D8%B0%D8%A7%D9%87%D8%A7%DB%8C-%D9%84%D8%B0%DB%8C%D8%B0/%D8%B1%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D9%86-%D9%88-%DA%A9%D8%A7%D9%81%DB%8C-%D8%B4%D8%A7%D9%BE" class="figure clearfix" title="فست فود داوین با منو باز غذاهای لذیذ"><img src="http://127.0.0.1:8000/storage/bi-products/August2018/UVJKG8Um0gSGzFEQXarV.jpg" title="فست فود داوین با منو باز غذاهای لذیذ"></a>   
+                        
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
+                        <div class="list-deal-details">
+                            <div class="top-panel">
+                                
+                                <span>
+                                    <a href="http://127.0.0.1:8000/products/%D9%81%D8%B3%D8%AA-%D9%81%D9%88%D8%AF-%D8%AF%D8%A7%D9%88%DB%8C%D9%86-%D8%A8%D8%A7-%D9%85%D9%86%D9%88-%D8%A8%D8%A7%D8%B2-%D8%BA%D8%B0%D8%A7%D9%87%D8%A7%DB%8C-%D9%84%D8%B0%DB%8C%D8%B0/%D8%B1%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D9%86-%D9%88-%DA%A9%D8%A7%D9%81%DB%8C-%D8%B4%D8%A7%D9%BE" title="فست فود داوین با منو باز غذاهای لذیذ"><h3 class="small-title">فست فود داوین با منو باز غذاهای لذیذ</h3></a>
+                                </span>
+                            </div>
+                          
+                            <div class="bottom-panel">
+                            </div>
+                            <div class="price list-content list-price-single">
+                                    <span class="cdbf-takhfif"><span class="cdbft-shape"><span class="list-discount-tag">%50</span></span></span>               
+                                    <span class="price price_slider price_slider_single">
+                                            <del><span class="woocommerce-Price-amount amount">قیمت: ۱۳۰۰۰&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></del> <ins><span class="woocommerce-Price-amount amount">با تخفیف: ۷۹۳۰&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></ins>
+                                        </span>
+                                <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
+                                        <form class="cart" action="http://127.0.0.1:8000/cart" method="post" enctype="multipart/form-data">
+                                            <input type="hidden" name="_token" value="tlmeQZubHN7nCAoIcdqH4bSQwPNnxCiTiSvQadoi">
+                                        <input type="hidden" name="id" value="9">
+                                                              <button type="submit" name="add-to-cart" class="btn">افزودن به سبد خرید</button>
+                                                                </form>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
+                                                                <span class="cdbm-total-buy">
+                                                                        <i class="fa fa-shopping-basket"></i>
+                                                                        ۳ خرید
+                                                                </span>
+                                                            </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        
+                           
+                   
+
+                    </div>
+            
+        </div>
+        <div class="row">
+        
+        
+                <div class="list-items-second">
+                        <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
+                        <a href="http://127.0.0.1:8000/products/%D9%81%D8%B3%D8%AA-%D9%81%D9%88%D8%AF-%D8%AF%D8%A7%D9%88%DB%8C%D9%86-%D8%A8%D8%A7-%D9%85%D9%86%D9%88-%D8%A8%D8%A7%D8%B2-%D8%BA%D8%B0%D8%A7%D9%87%D8%A7%DB%8C-%D9%84%D8%B0%DB%8C%D8%B0/%D8%B1%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D9%86-%D9%88-%DA%A9%D8%A7%D9%81%DB%8C-%D8%B4%D8%A7%D9%BE" class="figure clearfix" title="فست فود داوین با منو باز غذاهای لذیذ"><img src="http://127.0.0.1:8000/storage/bi-products/August2018/UVJKG8Um0gSGzFEQXarV.jpg" title="فست فود داوین با منو باز غذاهای لذیذ"></a>   
+                        
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
+                        <div class="list-deal-details">
+                            <div class="top-panel">
+                                
+                                <span>
+                                    <a href="http://127.0.0.1:8000/products/%D9%81%D8%B3%D8%AA-%D9%81%D9%88%D8%AF-%D8%AF%D8%A7%D9%88%DB%8C%D9%86-%D8%A8%D8%A7-%D9%85%D9%86%D9%88-%D8%A8%D8%A7%D8%B2-%D8%BA%D8%B0%D8%A7%D9%87%D8%A7%DB%8C-%D9%84%D8%B0%DB%8C%D8%B0/%D8%B1%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D9%86-%D9%88-%DA%A9%D8%A7%D9%81%DB%8C-%D8%B4%D8%A7%D9%BE" title="فست فود داوین با منو باز غذاهای لذیذ"><h3 class="small-title">فست فود داوین با منو باز غذاهای لذیذ</h3></a>
+                                </span>
+                            </div>
+                          
+                            <div class="bottom-panel">
+                            </div>
+                            <div class="price list-content list-price-single">
+                                    <span class="cdbf-takhfif"><span class="cdbft-shape"><span class="list-discount-tag">%50</span></span></span>               
+                                    <span class="price price_slider price_slider_single">
+                                            <del><span class="woocommerce-Price-amount amount">قیمت: ۱۳۰۰۰&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></del> <ins><span class="woocommerce-Price-amount amount">با تخفیف: ۷۹۳۰&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></ins>
+                                        </span>
+                                <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
+                                        <form class="cart" action="http://127.0.0.1:8000/cart" method="post" enctype="multipart/form-data">
+                                            <input type="hidden" name="_token" value="tlmeQZubHN7nCAoIcdqH4bSQwPNnxCiTiSvQadoi">
+                                        <input type="hidden" name="id" value="9">
+                                                              <button type="submit" name="add-to-cart" class="btn">افزودن به سبد خرید</button>
+                                                                </form>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
+                                                                <span class="cdbm-total-buy">
+                                                                        <i class="fa fa-shopping-basket"></i>
+                                                                        ۳ خرید
+                                                                </span>
+                                                            </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="more_cat">
+                    <div class="row">
+                            <i class="fa fa-cutlery">
+                            </i>
+                    </div>
+                    <div class="row">
+                        <span>
+                                69 پیشنهاد رستوران و کافی شاپ
+                        </span>
+                    </div>
+                        <div class="button-all">
+                            <a href="/mashhad/c:restaurant/">
+                                <button class="nb-btn nb-btn-success">مشاهده همه</button>
+                            </a>
+                        </div>
+                    </div>
+            
+        </div>
+        </div>
+        </div>
+        </article>
+
+
+
+
+
+
             </div>
         </div>
     </section>
