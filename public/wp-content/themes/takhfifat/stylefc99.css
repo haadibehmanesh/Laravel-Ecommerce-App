@@ -73,7 +73,7 @@ body{font-family:IRANSans!important;cursor:default;font-weight:300}
 .social_header a{float:left;margin:6px 10px 0;color:#fff}
 .social_header a .fa{font-size: 25px;}
 .social_header a :hover{color:#ba1212}
-header{background:#fdfdfd}
+
 .logo{overflow:hidden;float:right;width:155px;height:103px;background:url(images/logo.png) no-repeat center}
 .logo h1,.logo h2{margin:0}
 .logo h1 a,.logo h2 a{display:block;height:103px;text-indent:-9999px}
