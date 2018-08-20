@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/customer/home';
+    protected $redirectTo = '/my-account';
 
     /**
      * Create a new controller instance.
@@ -50,7 +50,8 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:customers',
+            'email' => 'email|max:255|unique:customers|nullable',
+            'phone' => 'required|digits:11|unique:customers',
             'password' => 'required|min:6|confirmed',
         ]);
     }
@@ -62,10 +63,11 @@ class RegisterController extends Controller
      * @return Customer
      */
     protected function create(array $data)
-    {
+    { 
         return Customer::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'phone' => $data['phone'],
             'password' => bcrypt($data['password']),
         ]);
     }
@@ -77,7 +79,7 @@ class RegisterController extends Controller
      */
     public function showRegistrationForm()
     {
-        return view('customer.auth.register');
+        return view('layouts.my-account.authentication');
     }
 
     /**
