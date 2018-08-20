@@ -11,11 +11,7 @@
     <title>
         حساب کاربری من    </title>
 	<link rel='dns-prefetch' href='http://maps.google.com/' />
-<link rel='dns-prefetch' href='http://s.w.org/' />
-		<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.6"}};
-			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
-		</script>
+
 		<style type="text/css">
 img.wp-smiley,
 img.emoji {
@@ -44,11 +40,7 @@ img.emoji {
 <link rel='stylesheet' id='dokan-pro-style-css'  href='../wp-content/plugins/dokan-pro/assets/css/style8046.css?ver=1529567762' type='text/css' media='all' />
 <link rel='stylesheet' id='dokan-social-style-css'  href='../wp-content/plugins/dokan-pro/assets/css/jssocials8046.css?ver=1529567762' type='text/css' media='all' />
 <link rel='stylesheet' id='dokan-social-theme-flat-css'  href='../wp-content/plugins/dokan-pro/assets/css/jssocials-theme-flat8046.css?ver=1529567762' type='text/css' media='all' />
-<script type='text/javascript'>
-/* <![CDATA[ */
-var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.php","nonce":"93c8ead72f","ajax_loader":"http:\/\/localhost\/takhfiftest\/wp-content\/plugins\/dokan-lite\/assets\/images\/ajax-loader.gif","seller":{"available":"\u0645\u0648\u062c\u0648\u062f","notAvailable":"\u0646\u0627\u0645\u0648\u062c\u0648\u062f"},"delete_confirm":"\u0622\u06cc\u0627 \u0645\u0637\u0645\u0626\u0646\u06cc\u062f\u061f","wrong_message":"\u0645\u0634\u06a9\u0644\u06cc \u0628\u0647 \u0648\u062c\u0648\u062f \u0622\u0645\u062f. \u0644\u0637\u0641\u0627 \u062f\u0648\u0628\u0627\u0631\u0647 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646\u06cc\u062f.","vendor_percentage":"80","commission_type":"percentage","rounding_precision":"6","mon_decimal_point":".","i18n_choose_featured_img":"\u0622\u067e\u0644\u0648\u062f \u062a\u0635\u0648\u06cc\u0631 \u062f\u0644\u062e\u0648\u0627\u0647","i18n_choose_file":"\u0641\u0627\u06cc\u0644\u06cc \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f","i18n_choose_gallery":"\u0627\u0641\u0632\u0648\u062f\u0646 \u062a\u0635\u0627\u0648\u06cc\u0631 \u0628\u0647 \u06af\u0627\u0644\u0631\u06cc \u0645\u062d\u0635\u0648\u0644\u0627\u062a","i18n_choose_featured_img_btn_text":"\u062a\u0646\u0638\u06cc\u0645 \u062a\u0635\u0648\u06cc\u0631 \u062f\u0644\u062e\u0648\u0627\u0647","i18n_choose_file_btn_text":"\u0642\u0631\u0627\u0631 \u062f\u0627\u062f\u0646 \u0646\u0634\u0627\u0646\u06cc \u0641\u0627\u06cc\u0644","i18n_choose_gallery_btn_text":"\u0627\u0641\u0632\u0648\u062f\u0646 \u0628\u0647 \u06af\u0627\u0644\u0631\u06cc","duplicates_attribute_messg":"\u0645\u062a\u0627\u0633\u0641\u0627\u0646\u0647 \u0627\u06cc\u0646 \u06af\u0632\u06cc\u0646\u0647\u200c\u06cc \u0648\u06cc\u0698\u06af\u06cc \u0627\u0632 \u0642\u0628\u0644 \u0648\u062c\u0648\u062f \u062f\u0627\u0631\u062f\u060c \u06cc\u06a9\u06cc \u062f\u06cc\u06af\u0631 \u0631\u0627 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646\u06cc\u062f.","variation_unset_warning":"\u0647\u0634\u062f\u0627\u0631! \u0627\u06af\u0631 \u0627\u06cc\u0646 \u06af\u0632\u06cc\u0646\u0647 \u062a\u06cc\u06a9 \u0646\u062e\u0648\u0631\u062f \u0627\u06cc\u0646 \u0645\u062d\u0635\u0648\u0644 \u0647\u06cc\u0686\u06af\u0648\u0646\u0647 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a\u06cc \u0646\u062e\u0648\u0627\u0647\u062f \u062f\u0627\u0634\u062a.","new_attribute_prompt":"\u0646\u0627\u0645\u06cc \u0628\u0631\u0627\u06cc \u0648\u0627\u0698\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f \u0648\u06cc\u0698\u06af\u06cc \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f:","remove_attribute":"\u062d\u0630\u0641 \u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc\u061f","dokan_placeholder_img_src":"http:\/\/localhost\/takhfiftest\/wp-content\/plugins\/woocommerce\/assets\/images\/placeholder.png","add_variation_nonce":"36d46f1d4c","link_variation_nonce":"9a18bed7d8","delete_variations_nonce":"27d509f515","load_variations_nonce":"ac0183968a","save_variations_nonce":"f1e49906ca","bulk_edit_variations_nonce":"314ae4fa8a","i18n_link_all_variations":"\u0645\u0637\u0645\u0626\u0646\u06cc\u062f \u06a9\u0647 \u0645\u06cc\u062e\u0648\u0627\u0647\u06cc\u062f \u062a\u0645\u0627\u0645 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0631\u0627 \u067e\u06cc\u0648\u0646\u062f \u062f\u0647\u06cc\u062f\u061f \u0627\u06cc\u0646 \u06a9\u0627\u0631 \u062a\u063a\u06cc\u06cc\u0631\u06cc \u062c\u062f\u06cc\u062f \u0628\u0631\u0627\u06cc \u0647\u0631\u06af\u0648\u0646\u0647 \u062a\u0631\u06a9\u06cc\u0628 \u0645\u0645\u06a9\u0646 \u0627\u0632 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u062a\u063a\u06cc\u06cc\u0631 \u0627\u06cc\u062c\u0627\u062f \u062e\u0648\u0627\u0647\u062f \u06a9\u0631\u062f (\u062d\u062f\u0627\u06a9\u062b\u0631 50 \u062f\u0631 \u0647\u0631 \u0627\u062c\u0631\u0627).","i18n_enter_a_value":"\u0645\u0642\u062f\u0627\u0631\u06cc \u0631\u0627 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f","i18n_enter_menu_order":"\u062a\u0631\u062a\u06cc\u0628 \u0645\u0646\u0648\u06cc \u062a\u063a\u06cc\u06cc\u0631 (\u062a\u0639\u06cc\u06cc\u0646 \u0645\u06a9\u0627\u0646 \u062f\u0631 \u0641\u0647\u0631\u0633\u062a \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a)","i18n_enter_a_value_fixed_or_percent":"\u0645\u0642\u062f\u0627\u0631\u06cc \u0631\u0627 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f (\u062b\u0627\u0628\u062a \u06cc\u0627 %)","i18n_delete_all_variations":"\u0622\u06cc\u0627 \u0627\u0632 \u062d\u0630\u0641 \u062a\u0645\u0627\u0645 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0645\u0637\u0645\u0626\u0646\u06cc\u062f\u061f \u0627\u06cc\u0646 \u06a9\u0627\u0631 \u0642\u0627\u0628\u0644 \u0628\u0631\u06af\u0634\u062a \u0646\u0645\u06cc\u0628\u0627\u0634\u062f.","i18n_last_warning":"\u0622\u062e\u0631\u06cc\u0646 \u0647\u0634\u062f\u0627\u0631\u060c \u0622\u06cc\u0627 \u0645\u0637\u0645\u0626\u0646\u06cc\u062f\u061f","i18n_choose_image":"\u062a\u0635\u0648\u06cc\u0631\u06cc \u0631\u0627 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f","i18n_set_image":"\u0642\u0631\u0627\u0631 \u062f\u0627\u062f\u0646 \u062a\u0635\u0648\u06cc\u0631 \u062a\u063a\u06cc\u06cc\u0631","i18n_variation_added":"\u062a\u063a\u06cc\u06cc\u0631 \u0627\u0636\u0627\u0641\u0647 \u0634\u062f","i18n_variations_added":"\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0627\u0636\u0627\u0641\u0647 \u0634\u062f\u0646\u062f","i18n_no_variations_added":"\u0647\u06cc\u0686\u06af\u0648\u0646\u0647 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a\u06cc \u0627\u0636\u0627\u0641\u0647 \u0646\u0634\u062f","i18n_remove_variation":"\u0622\u06cc\u0627 \u0627\u0632 \u062d\u0630\u0641 \u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631 \u0645\u0637\u0645\u0626\u0646\u06cc\u062f\u061f","i18n_scheduled_sale_start":"\u062a\u0627\u0631\u06cc\u062e \u0634\u0631\u0648\u0639 \u0641\u0631\u0648\u0634 (\u0641\u0631\u0645\u062a \u0631\u0648\u0632-\u0645\u0627\u0647-\u0633\u0627\u0644 \u06cc\u0627 \u062e\u0627\u0644\u06cc \u0628\u06af\u0630\u0627\u0631\u06cc\u062f)","i18n_scheduled_sale_end":"\u062a\u0627\u0631\u06cc\u062e \u067e\u0627\u06cc\u0627\u0646 \u0641\u0631\u0648\u0634 (\u0641\u0631\u0645\u062a \u0631\u0648\u0632-\u0645\u0627\u0647-\u0633\u0627\u0644 \u06cc\u0627 \u062e\u0627\u0644\u06cc \u0628\u06af\u0630\u0627\u0631\u06cc\u062f)","i18n_edited_variations":"\u0642\u0628\u0644 \u0627\u0632 \u0639\u0648\u0636 \u06a9\u0631\u062f\u0646 \u0635\u0641\u062d\u0647\u060c \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0630\u062e\u06cc\u0631\u0647 \u0634\u0648\u0646\u062f\u061f","i18n_variation_count_single":"%qty% \u062a\u063a\u06cc\u06cc\u0631","i18n_variation_count_plural":"%qty% \u062a\u063a\u06cc\u06cc\u0631","i18n_no_result_found":"\u0646\u062a\u06cc\u062c\u0647 \u0627\u06cc \u06cc\u0627\u0641\u062a \u0646\u0634\u062f","variations_per_page":"10","store_banner_dimension":{"width":"625","height":"300","flex-width":true,"flex-height":true},"selectAndCrop":"\u0627\u0646\u062a\u062e\u0627\u0628 \u0648 \u0628\u0631\u0634","chooseImage":"\u0627\u0646\u062a\u062e\u0627\u0628 \u062a\u0635\u0648\u06cc\u0631","product_title_required":"\u0639\u0646\u0648\u0627\u0646 \u0645\u062d\u0635\u0648\u0644 \u0636\u0631\u0648\u0631\u06cc \u0627\u0633\u062a","product_category_required":"\u062f\u0633\u062a\u0647\u200c\u06cc \u0645\u062d\u0635\u0648\u0644 \u0636\u0631\u0648\u0631\u06cc \u0627\u0633\u062a","search_products_nonce":"f0747f918b"};
-/* ]]> */
-</script>
+
 <script type='text/javascript' src='../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
 <script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
 <script type='text/javascript'>
@@ -338,7 +330,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
     {{ csrf_field() }}
 
     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-        <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+        <label for="email" class="col-md-4 control-label">آدرس ایمیل</label>
 
         <div class="col-md-6">
             <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" autofocus>
@@ -352,7 +344,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
     </div>
 
     <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-        <label for="password" class="col-md-4 control-label">Password</label>
+        <label for="password" class="col-md-4 control-label">رمز ورود</label>
 
         <div class="col-md-6">
             <input id="password" type="password" class="form-control" name="password">
@@ -369,7 +361,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
         <div class="col-md-6 col-md-offset-4">
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" name="remember"> Remember Me
+                    <input type="checkbox" name="remember"> مرا بخاطر بسپار
                 </label>
             </div>
         </div>
@@ -377,42 +369,17 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
 
     <div class="form-group">
         <div class="col-md-8 col-md-offset-4">
-            <button type="submit" class="btn btn-primary">
-                Login
+            <button type="submit" class="woocommerce-Button button">
+                ورود
             </button>
 
             <a class="btn btn-link" href="{{ url('/customer/password/reset') }}">
-                Forgot Your Password?
+                آیا رمز خود را فراموش کرده اید؟
             </a>
         </div>
     </div>
 </form>
-{{--
-<form class="woocommerce-form woocommerce-form-login login" method="post">
 
-
-<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-    <label for="username">نام کاربری یا آدرس ایمیل <span class="required">*</span></label>
-    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="username" value="">			</p>
-<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-    <label for="password">گذرواژه <span class="required">*</span></label>
-    <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password">
-</p>
-
-
-<p class="form-row">
-    <input type="hidden" id="woocommerce-login-nonce" name="woocommerce-login-nonce" value="7fdca3af8d"><input type="hidden" name="_wp_http_referer" value="/takhfiftest/my-account/">				<button type="submit" class="woocommerce-Button button" name="login" value="ورود">ورود</button>
-    <label class="woocommerce-form__label woocommerce-form__label-for-checkbox inline">
-        <input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever"> <span>مرا به خاطر بسپار</span>
-    </label>
-</p>
-<p class="woocommerce-LostPassword lost_password">
-    <a href="lost-password/index.html">گذرواژه خود را فراموش کرده اید؟</a>
-</p>
-
-
-</form>
---}}
 
 
 </div>
@@ -424,7 +391,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
     {{ csrf_field() }}
 
     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-        <label for="name" class="col-md-4 control-label">Name</label>
+        <label for="name" class="col-md-4 control-label">نام کاربری</label>
 
         <div class="col-md-6">
             <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" autofocus>
@@ -437,7 +404,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
         </div>
     </div>
     <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
-        <label for="phone" class="col-md-4 control-label">phone</label>
+        <label for="phone" class="col-md-4 control-label">شماره همراه</label>
 
         <div class="col-md-6">
             <input id="phone" type="text" class="form-control" name="phone" value="{{ old('phone') }}">
@@ -450,7 +417,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
         </div>
     </div>
     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-        <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+        <label for="email" class="col-md-4 control-label">آدرس ایمیل (اختیاری)</label>
 
         <div class="col-md-6">
             <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
@@ -464,7 +431,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
     </div>
 
     <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-        <label for="password" class="col-md-4 control-label">Password</label>
+        <label for="password" class="col-md-4 control-label">رمز ورود</label>
 
         <div class="col-md-6">
             <input id="password" type="password" class="form-control" name="password">
@@ -478,7 +445,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
     </div>
 
     <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-        <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+        <label for="password-confirm" class="col-md-4 control-label">تکرار رمز ورود</label>
 
         <div class="col-md-6">
             <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
@@ -493,8 +460,8 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
 
     <div class="form-group">
         <div class="col-md-6 col-md-offset-4">
-            <button type="submit" class="btn btn-primary">
-                Register
+            <button type="submit" class="woocommerce-Button button">
+               ثبت نام
             </button>
         </div>
     </div>
