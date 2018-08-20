@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\CustomerAuth;
-
+use App\BiCategory;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
@@ -29,7 +29,9 @@ class LoginController extends Controller
      *
      * @var string
      */
-    public $redirectTo = '/customer/home';
+    // public $redirectTo = '/customer/home';
+    public $redirectTo = '/';
+    
 
     /**
      * Create a new controller instance.
@@ -48,7 +50,10 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
-        return view('customer.auth.login');
+        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        return view('layouts.my-account.authentication')->with([
+            'allcategories' => $allcategories,            
+        ]);
     }
 
     /**
