@@ -79,8 +79,8 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
 	.content_item .Discount:before,
 	.box_offer .Discount:before,
 	.box_offer .price del,
-	.title_post .Discount:before,
-	span.number_items_cart,
+    .title_post .Discount:before,
+    span.number_items_cart,
 	p.buttons a,
 	.wc-proceed-to-checkout .checkout-button,
 	.woocommerce a.remove:hover,
@@ -100,8 +100,8 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
 	.box_single .title_block span,
 	.option_item_gallery span.address .fa,
 	.item_terms_use p .fa,
-	.box_offer span.address i,
-	.cart_list.product_list_widget li.mini_cart_item a.remove,
+    .box_offer span.address i,
+    .cart_list.product_list_widget li.mini_cart_item a.remove,
 	.woocommerce a.remove,
 	.label_map
 	{
@@ -178,8 +178,8 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
             <ul class="menu_top_header">
                 <li id="menu-item-163" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-163"><a href="../my-account/index.html">حساب کاربری من</a></li>
 <li id="menu-item-164" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164"><a href="../checkout/index.html">تسویه حساب</a></li>
-<li id="menu-item-165" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-165"><a href="../cart/index.html">سبد خرید</a></li>
-<li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item menu-item-166"><a href="index.html">فروشگاه</a></li>
+<li id="menu-item-165" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-165"><a href="/cart">سبد خرید</a></li>
+<li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item menu-item-166"><a href="/products">همه پیشنهاد ها</a></li>
             </ul>
             <!--phone-->
             <div class="phone"><span><i class="fa fa-book"></i>بانک جامع اطلاعاتی</span></div>
@@ -277,7 +277,7 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
 			
             <!--items cart-->
             <div class="content_mini_cart">
-                <a class="main_title_cart" href="javascript:void()" rel="nofollow"><i class="fa fa-shopping-cart" aria-hidden="true"></i>سبد خرید شما<span class="number_items_cart">{{ Cart::content()->count() }}</span></a>
+                <a class="main_title_cart" href="/cart" rel="nofollow"><i class="fa fa-shopping-cart" aria-hidden="true"></i>سبد خرید شما<span class="number_items_cart">{{ Cart::content()->count() }}</span></a>
                 {{--<div class="main_cart_list">
 					
 
@@ -540,12 +540,7 @@ var woocommerce_params = {"ajax_url":"\/takhfiftest\/wp-admin\/admin-ajax.php","
 /* ]]> */
 </script>
 <script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min6765.js?ver=3.3.3'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var wc_cart_fragments_params = {"ajax_url":"\/takhfiftest\/wp-admin\/admin-ajax.php","wc_ajax_url":"http:\/\/localhost\/takhfiftest\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_8a522b5bd2b8fa51ec6fe90baf0301d6","fragment_name":"wc_fragments_8a522b5bd2b8fa51ec6fe90baf0301d6"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min6765.js?ver=3.3.3'></script>
+
 <script type='text/javascript' src='../wp-includes/js/hoverIntent.minc245.js?ver=1.8.1'></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
