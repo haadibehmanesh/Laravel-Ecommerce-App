@@ -33,6 +33,7 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
+Route::group(['middleware' => 'customer' ], function() {
 Route::get('/my-account', 'CostumerpanelController@index')->name('costumerpanel.index');
 Route::get('/my-account/orders', 'CostumerpanelController@orders')->name('costumerpanel.orders');
 Route::get('/my-account/editaccount', 'CostumerpanelController@edit')->name('costumerpanel.edit');
@@ -41,6 +42,7 @@ Route::get('/dashboard', 'MerchantpanelController@index')->name('merchantpanel.i
 Route::get('/dashboard/orders', 'MerchantpanelController@orders')->name('merchantpanel.orders');
 Route::get('/dashboard/products', 'MerchantpanelController@products')->name('merchantpanel.products');
 Route::get('/dashboard/editaccount', 'MerchantpanelController@edit')->name('merchantpanel.edit');
+});
 
 Auth::routes();
 
