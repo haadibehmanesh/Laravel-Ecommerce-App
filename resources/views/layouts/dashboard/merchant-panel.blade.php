@@ -242,33 +242,46 @@
             </div>
             
             <!--login-->
+            @if (!Auth::guard('customer')->check())
             <div class="block_login">
-                                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">امیر غلامی<span class="fa fa-user pull-right"></span></a>
-                            <ul class="dropdown-menu">
-																	<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard is-active">
-										<a href="http://demo.onliner.ir/takhfifat/my-account/">پیشخوان</a>
-									</li>
-																	<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
-										<a href="http://demo.onliner.ir/takhfifat/my-account/orders/">سفارش ها</a>
-									</li>
-																	<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--downloads">
-										<a href="http://demo.onliner.ir/takhfifat/my-account/downloads/">دانلودها</a>
-									</li>
-																	<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-address">
-										<a href="http://demo.onliner.ir/takhfifat/my-account/edit-address/">آدرس ها</a>
-									</li>
-																	<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
-										<a href="http://demo.onliner.ir/takhfifat/my-account/edit-account/">جزئیات حساب</a>
-									</li>
-																	<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout">
-										<a href="http://demo.onliner.ir/takhfifat/my-account/customer-logout/?_wpnonce=f90172b7ad">خروج از سیستم</a>
-									</li>
-								                             </ul>
-                        </li>
-                    </ul>
-                                </div>
+                <a href="{{url('customer/login')}}" class="btn btn-default btn-lg login" id="myBtn"> ورود / عضویت <i class="fa fa-sign-in"></i></a>           
+            </div>
+            @else
+            <div class="block_login">
+                <ul class="nav navbar-nav">
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{Auth::guard('customer')->user()->name}}<span class="fa fa-user pull-right"></span></a>
+        <ul class="dropdown-menu">
+                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard is-active">
+                                                <a href="{{url('/my-account')}}">پیشخوان</a>
+                </li>
+                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
+                    <a href="http://demo.onliner.ir/takhfifat/my-account/orders/">سفارش ها</a>
+                </li>
+                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--downloads">
+                    <a href="http://demo.onliner.ir/takhfifat/my-account/downloads/">دانلودها</a>
+                </li>
+                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-address">
+                    <a href="http://demo.onliner.ir/takhfifat/my-account/edit-address/">آدرس ها</a>
+                </li>
+                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
+                    <a href="http://demo.onliner.ir/takhfifat/my-account/edit-account/">جزئیات حساب</a>
+                </li>
+                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout"><a href="{{ url('/customer/logout') }}"
+                                                    onclick="event.preventDefault();
+                                                             document.getElementById('logout-form').submit();">
+                                                    خروج
+                                                </a>
+            
+                                                <form id="logout-form" action="{{ url('/customer/logout') }}" method="POST" style="display: none;">
+                                                    {{ csrf_field() }}
+                                                </form>
+                                            </li>
+                                         </ul>
+    </li>
+</ul>
+            </div>
+            @endif
 			
             <!--items cart-->
             <div class="content_mini_cart">
@@ -322,6 +335,8 @@
     </nav>
 <div class="clear"></div>
 <!-- / Nav -->    <!--wrapper-->
+@if(Auth::guard('customer')->user())
+    @if(Auth::guard('customer')->user()->is_merchant == 1)
     <section id="wrapper">
     <div class="container">
         <div class="row">
@@ -666,6 +681,12 @@
         </div>
     </div>
 </section>
+    @else
+    <div class="alert alert-danger" style="text-align: center" role="alert">
+       کاربر گرامی شما مجاز به مشاهده این صفحه نیستید!
+    </div>
+    @endif
+@endif
 <script>
         var first_html = jQuery('.dokan-withdraw-content .dokan-alert-warning').html().replace('Minimum Withdraw amount: ', 'حداقل موجودی لازم برای درخواست برداشت: ');
         jQuery('.dokan-withdraw-content .dokan-alert-warning').html(first_html);

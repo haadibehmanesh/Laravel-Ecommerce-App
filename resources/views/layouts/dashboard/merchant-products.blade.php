@@ -322,6 +322,8 @@
     </nav>
 <div class="clear"></div>
 <!-- / Nav -->    <!--wrapper-->
+@if(Auth::guard('customer')->user())
+    @if(Auth::guard('customer')->user()->is_merchant == 1)
     <section id="wrapper">
     <div class="container">
         <div class="row">
@@ -947,6 +949,12 @@
         </div>
     </div>
 </section>
+@else
+<div class="alert alert-danger" style="text-align: center" role="alert">
+   کاربر گرامی شما مجاز به مشاهده این صفحه نیستید!
+</div>
+@endif
+@endif
 <script>
         var first_html = jQuery('.dokan-withdraw-content .dokan-alert-warning').html().replace('Minimum Withdraw amount: ', 'حداقل موجودی لازم برای درخواست برداشت: ');
         jQuery('.dokan-withdraw-content .dokan-alert-warning').html(first_html);
