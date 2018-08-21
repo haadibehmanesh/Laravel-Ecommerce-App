@@ -154,7 +154,7 @@ img.emoji {
                 <li id="menu-item-163" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-163"><a href="../../my-account/index.html">حساب کاربری من</a></li>
 <li id="menu-item-164" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164"><a href="../../checkout/index.html">تسویه حساب</a></li>
 <li id="menu-item-165" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-165"><a href="/cart">سبد خرید</a></li>
-<li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-166"><a href="/products">فروشگاه</a></li>
+<li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-166"><a href="/products">همه پیشنهاد ها</a></li>
             </ul>
             <!--phone-->
             <div class="phone"><span><i class="fa fa-book"></i>بانک جامع اطلاعاتی</span></div>
@@ -208,12 +208,50 @@ img.emoji {
             </div>
             
             <!--login-->
+            @if (!Auth::guard('customer')->check())
             <div class="block_login">
-                <a href="../../my-account/index.html" class="btn btn-default btn-lg login" id="myBtn"> ورود / عضویت <i class="fa fa-sign-in"></i></a>            </div>
+                <a href="{{url('customer/login')}}" class="btn btn-default btn-lg login" id="myBtn"> ورود / عضویت <i class="fa fa-sign-in"></i></a>           
+            </div>
+            @else
+            <div class="block_login">
+                <ul class="nav navbar-nav">
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{Auth::guard('customer')->user()->name}}<span class="fa fa-user pull-right"></span></a>
+        <ul class="dropdown-menu">
+                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard is-active">
+                                                <a href="{{url('/my-account')}}">پیشخوان</a>
+                </li>
+                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
+                    <a href="http://demo.onliner.ir/takhfifat/my-account/orders/">سفارش ها</a>
+                </li>
+                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--downloads">
+                    <a href="http://demo.onliner.ir/takhfifat/my-account/downloads/">دانلودها</a>
+                </li>
+                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-address">
+                    <a href="http://demo.onliner.ir/takhfifat/my-account/edit-address/">آدرس ها</a>
+                </li>
+                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
+                    <a href="http://demo.onliner.ir/takhfifat/my-account/edit-account/">جزئیات حساب</a>
+                </li>
+                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout"><a href="{{ url('/customer/logout') }}"
+                                                    onclick="event.preventDefault();
+                                                             document.getElementById('logout-form').submit();">
+                                                    خروج
+                                                </a>
+            
+                                                <form id="logout-form" action="{{ url('/customer/logout') }}" method="POST" style="display: none;">
+                                                    {{ csrf_field() }}
+                                                </form>
+                                            </li>
+                                         </ul>
+    </li>
+</ul>
+            </div>
+            @endif
 			
             <!--items cart-->
             <div class="content_mini_cart">
-                <a class="main_title_cart" href="/cart" ><i class="fa fa-shopping-cart" aria-hidden="true"></i>سبد خرید شما<span class="number_items_cart">{{ Cart::content()->count() }}</span></a>
+                <a class="main_title_cart" href="/cart" rel="nofollow"><i class="fa fa-shopping-cart" aria-hidden="true"></i>سبد خرید شما<span class="number_items_cart">{{ Cart::content()->count() }}</span></a>
               {{--  <div class="main_cart_list">
 	                <p class="woocommerce-mini-cart__empty-message">هیچ محصولی در سبد خرید نیست.</p>
 				</div>--}}
@@ -280,7 +318,7 @@ img.emoji {
                         <!-- End custom inputs -->
                 </div>--}}
 
-            <ol class="breadcrumb"><a href="/">خانه</a> &#47; <a href="/{{(empty($categoryslug)  ? 'products' : 'category/'.$categoryslug) }}">{{(empty($categoryslug)  ? 'products' : $categoryname) }}</a> &#47; {{ $product->name }}</ol>
+            <ol class="breadcrumb"><a href="/">خانه</a> &#47; <a href="/{{(empty($categoryslug)  ? 'products' : 'category/'.$categoryslug) }}">{{(empty($categoryslug)  ? 'همه پیشنهاد ها' : $categoryname) }}</a> &#47; {{ $product->name }}</ol>
 					
                     <!--title & discount & views-->
 
@@ -930,11 +968,7 @@ jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeTex
 </script>
 <script type='text/javascript' src='../../wp-content/plugins/dokan-lite/assets/vendors/tooltips/tooltipsb246.js?ver=2.7.8'></script>
 <script type='text/javascript' src='../../wp-content/plugins/dokan-lite/assets/vendors/chosen/chosen.jquery.minb246.js?ver=2.7.8'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var DokanValidateMsg = {"required":"\u0627\u06cc\u0646 \u0641\u06cc\u0644\u062f \u0627\u0644\u0632\u0627\u0645\u06cc \u0627\u0633\u062a","remote":"\u0644\u0637\u0641\u0627 \u0627\u06cc\u0646 \u0641\u06cc\u0644\u062f \u0631\u0627 \u062f\u0631\u0633\u062a \u06a9\u0646\u06cc\u062f.","email":"\u0644\u0637\u0641\u0627 \u06cc\u06a9 \u0622\u062f\u0631\u0633 \u0627\u06cc\u0645\u06cc\u0644 \u0645\u0639\u062a\u0628\u0631 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","url":"\u0644\u0637\u0641\u0627 \u06cc\u06a9 \u0646\u0634\u0627\u0646\u06cc \u0645\u0639\u062a\u0628\u0631 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","date":"\u0644\u0637\u0641\u0627 \u06cc\u06a9 \u062a\u0627\u0631\u06cc\u062e \u0645\u0639\u062a\u0628\u0631 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","dateISO":"\u0644\u0637\u0641\u0627 \u06cc\u06a9 \u062a\u0627\u0631\u06cc\u062e \u0645\u0639\u062a\u0628\u0631 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f (ISO).","number":"\u0644\u0637\u0641\u0627 \u06cc\u06a9 \u0634\u0645\u0627\u0631\u0647 \u06cc \u0645\u0639\u062a\u0628\u0631 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","digits":"\u0644\u0637\u0641\u0627 \u0641\u0642\u0637 \u0627\u0631\u0642\u0627\u0645 \u0631\u0627 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","creditcard":"\u0644\u0637\u0641\u0627 \u0634\u0645\u0627\u0631\u0647 \u06a9\u0627\u0631\u062a \u0627\u0639\u062a\u0628\u0627\u0631\u06cc \u0645\u0639\u062a\u0628\u0631\u06cc \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","equalTo":"\u0644\u0637\u0641\u0627 \u0647\u0645\u0627\u0646 \u0645\u0642\u062f\u0627\u0631 \u0631\u0627 \u062f\u0648\u0628\u0627\u0631\u0647 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","maxlength_msg":"\u0644\u0637\u0641\u0627 \u0628\u06cc\u0634\u062a\u0631 \u0627\u0632 {0} \u06a9\u0627\u0631\u0627\u06a9\u062a\u0631 \u0648\u0627\u0631\u062f \u0646\u06a9\u0646\u06cc\u062f.","minlength_msg":"\u0644\u0637\u0641\u0627 \u062d\u062f\u0627\u0642\u0644 {0} \u06a9\u0627\u0631\u0627\u06a9\u062a\u0631 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","rangelength_msg":"\u0644\u0637\u0641\u0627 \u0645\u0642\u062f\u0627\u0631\u06cc \u0628\u06cc\u0646 {0} \u0648 {1} \u06a9\u0627\u0631\u0627\u06a9\u062a\u0631 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","range_msg":"\u0644\u0637\u0641\u0627 \u0645\u0642\u062f\u0627\u0631\u06cc \u0628\u06cc\u0646 {0} \u0648 {1} \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","max_msg":"\u0644\u0637\u0641\u0627 \u0645\u0642\u062f\u0627\u0631\u06cc \u06a9\u0645\u062a\u0631 \u0627\u0632 \u06cc\u0627 \u0645\u0633\u0627\u0648\u06cc \u0628\u0627 {0} \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","min_msg":"\u0644\u0637\u0641\u0627 \u0645\u0642\u062f\u0627\u0631\u06cc \u0628\u06cc\u0634\u062a\u0631 \u0627\u0632 \u0648 \u06cc\u0627 \u0645\u0633\u0627\u0648\u06cc \u0628\u0627 {0} \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f."};
-/* ]]> */
-</script>
+
 <script type='text/javascript' src='../../wp-content/plugins/dokan-lite/assets/vendors/form-validate/form-validateb246.js?ver=2.7.8'></script>
 <script type='text/javascript' src='../../wp-content/plugins/dokan-lite/assets/js/speakingurl.minb246.js?ver=2.7.8'></script>
 <script type='text/javascript' src='../../wp-includes/js/imgareaselect/jquery.imgareaselect.min1845.js?ver=4.9.6'></script>
