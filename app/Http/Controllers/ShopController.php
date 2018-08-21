@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\BiProduct;
 use App\BiCategory;
+use App\BiSlider;
+use App\BiSliderImage;
 
 class ShopController extends Controller
 {
@@ -106,9 +108,19 @@ class ShopController extends Controller
         
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
         
+        $slider = BiSlider::where('name' , $category->name )->get();
+        
+        if(empty($slider[0])){
+            
+            $slider = BiSlider::where('name' , 'index' )->get();
+        }
+     
+        $sliderimages = BiSliderImage::where('bi_slider_id', $slider[0]->id)->get();
+        
         return view('layouts/categories/category')->with([
             'category' => $category,
             'productsForCategories' => $productsForCategories,
+            'sliderimages' =>  $sliderimages,
             'allcategories' => $allcategories,
         ]);
     }
