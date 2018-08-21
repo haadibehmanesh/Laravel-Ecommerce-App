@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 20, 2018 at 02:12 PM
+-- Generation Time: Aug 21, 2018 at 02:19 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.1.18
 
@@ -520,7 +520,7 @@ CREATE TABLE `bi_sliders` (
 
 INSERT INTO `bi_sliders` (`id`, `created_at`, `updated_at`, `name`) VALUES
 (3, '2018-08-02 04:51:31', '2018-08-02 04:51:31', 'index'),
-(4, '2018-08-02 07:13:48', '2018-08-02 07:13:48', 'category-slider');
+(4, '2018-08-02 07:13:00', '2018-08-21 06:27:23', 'رستوران و کافی شاپ');
 
 -- --------------------------------------------------------
 
@@ -546,25 +546,9 @@ INSERT INTO `bi_slider_images` (`id`, `name`, `url`, `created_at`, `updated_at`,
 (8, '1', '/', '2018-08-02 07:04:00', '2018-08-02 07:18:44', 'bi-slider-images\\August2018\\9NINZJco7ofr16dD9ETi.jpg', 3),
 (10, '2', '/', '2018-08-02 07:07:00', '2018-08-02 07:18:24', 'bi-slider-images\\August2018\\uu0SybyPfnUW22LveLBH.jpg', 3),
 (11, '3', '/products', '2018-08-02 07:07:00', '2018-08-02 07:18:34', 'bi-slider-images\\August2018\\HQr3MTlMEzAUgOp4olR9.jpg', 3),
-(13, '5', '/products', '2018-08-02 07:14:00', '2018-08-02 07:17:33', 'bi-slider-images\\August2018\\fzvm98z2xm0aSmIfY6ZQ.jpg', 4);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `bi_users`
---
-
-CREATE TABLE `bi_users` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `username` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `is_merchant` tinyint(4) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+(14, NULL, '/', '2018-08-21 05:44:05', '2018-08-21 05:44:05', 'bi-slider-images\\August2018\\YcsYsFrd5irr9yRl7KTM.jpg', 4),
+(17, NULL, NULL, '2018-08-21 05:53:04', '2018-08-21 05:53:04', 'bi-slider-images\\August2018\\9UaCYbfFiug4ARxva8uf.jpg', 4),
+(18, NULL, NULL, '2018-08-21 05:56:59', '2018-08-21 05:56:59', 'bi-slider-images\\August2018\\8bZRebXbzYe6zfBJ1LhM.jpg', 4);
 
 -- --------------------------------------------------------
 
@@ -599,8 +583,10 @@ INSERT INTO `categories` (`id`, `parent_id`, `order`, `name`, `slug`, `created_a
 CREATE TABLE `customers` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `is_merchant` tinyint(4) NOT NULL DEFAULT '0',
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -610,9 +596,11 @@ CREATE TABLE `customers` (
 -- Dumping data for table `customers`
 --
 
-INSERT INTO `customers` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'hadi', 'haadibehmanesh@gmail.com', '$2y$10$bf5K5mSaouoRMBeFWiRCP.T7P3whA2G4XvP4E6dI5O5nI62u19d2O', 'T81Tk7VSVYl9lXqgGdkyH5nwnGL3p0tZdcW1bExNHJPyfIC58sXYTkhDp3Ph', '2018-08-20 04:45:59', '2018-08-20 04:45:59'),
-(2, 'hadi', 'hadi@boninja.com', '$2y$10$fyTxpVRJZCidDtvsBUvaEezNIVxmJWBclHlz.GIROGBRZzGIReuvm', 'mH8tAea4rpm1oJ9SyNYFYPCkkDm1rKSLWiAJ72ck6KeE9ERzSs2B10U63nRa', '2018-08-20 05:02:32', '2018-08-20 05:02:32');
+INSERT INTO `customers` (`id`, `name`, `phone`, `email`, `password`, `is_merchant`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'hadi', '09178145534', 'haadibehmanesh@gmail.com', '$2y$10$bf5K5mSaouoRMBeFWiRCP.T7P3whA2G4XvP4E6dI5O5nI62u19d2O', 1, '8r7lAtlKK15V5RC0dNsJrnS2uiLQUCULCAZ7K2l7OEJID1q8sccrSQkVdwhV', '2018-08-20 04:45:59', '2018-08-20 04:45:59'),
+(9, 'sss', '09178145535', 'demo@example.com', '$2y$10$.AC73Jokd1TTzaDcjK/uduvUKNl52Y1R/t2Dl25.AU9BH7P4ODkiS', 0, 'COyeW5sqidLO8YdoFkFysrzb2l6Ud1kcjYSzgYBu0VojipSMWpAOl0SyctM3', '2018-08-20 14:51:31', '2018-08-20 14:51:31'),
+(10, 'ff', '19178145534', NULL, '$2y$10$Q17iN32MYFqgojczKfi3WeMPfJux0zz3BQVdBsZrfX99nlH9kU7ta', 0, 'qlCBsRyUlrK2mDrVLeKvDcLKPajnDZKqdYR9YDPWJsSrFK6RpU1G8vID1sNx', '2018-08-20 15:05:44', '2018-08-20 15:05:44'),
+(11, 'hamid', '09355482921', NULL, '$2y$10$EXKdhYC22Btw2XBdFzyz0eTgTavs/bTZY2FCm121DNaDwxcZBMaL6', 0, '5TGH3gmFFWZilU0tqlfqpzk3sg0W87misGaX0ChyxdeMMH8ldWQkg9uIcs3M', '2018-08-21 02:25:22', '2018-08-21 02:25:22');
 
 -- --------------------------------------------------------
 
@@ -1590,7 +1578,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `password`, `remember_token`, `settings`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Admin', 'admin@admin.com', 'users/default.png', '$2y$10$kVU.s1c1XdNnW9KCspD1cuN1AhufvyO8VRXoGJ1FeSYB1MVZPL3Sm', 'wemPtGwQLfWXnaS6PSf4KTO49FxQiDOvfTDkoxe3YNLYUgPfc34BiAB2pyvq', NULL, '2018-07-13 03:02:21', '2018-07-13 03:02:21');
+(1, 1, 'Admin', 'admin@admin.com', 'users/default.png', '$2y$10$kVU.s1c1XdNnW9KCspD1cuN1AhufvyO8VRXoGJ1FeSYB1MVZPL3Sm', 'X6IDp5rdCMUQKZ8NwHRgnW9KeyOOTL3ed6JAFvgTo4GB1EOZ6reUTFRwFka7', NULL, '2018-07-13 03:02:21', '2018-07-13 03:02:21');
 
 -- --------------------------------------------------------
 
@@ -1716,14 +1704,6 @@ ALTER TABLE `bi_slider_images`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `bi_users`
---
-ALTER TABLE `bi_users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `bi_users_email_unique` (`email`),
-  ADD UNIQUE KEY `bi_users_phone_unique` (`phone`);
-
---
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
@@ -1736,6 +1716,7 @@ ALTER TABLE `categories`
 --
 ALTER TABLE `customers`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `phone` (`phone`),
   ADD UNIQUE KEY `customers_email_unique` (`email`);
 
 --
@@ -1918,19 +1899,13 @@ ALTER TABLE `bi_sliders`
 -- AUTO_INCREMENT for table `bi_slider_images`
 --
 ALTER TABLE `bi_slider_images`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
--- AUTO_INCREMENT for table `bi_users`
---
-ALTER TABLE `bi_users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `data_rows`
