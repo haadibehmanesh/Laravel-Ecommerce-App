@@ -35,6 +35,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::group(['middleware' => 'customer' ], function() {
 Route::get('/my-account', 'CostumerpanelController@index')->name('costumerpanel.index');
+Route::post('/my-account/{id}', 'CostumerpanelController@dashboard')->name('costumerpanel.dashboard');
 Route::post('/my-account/orders/{id}', 'CostumerpanelController@orders')->name('costumerpanel.orders');
 Route::post('/my-account/editaccount/{id}', 'CostumerpanelController@edit')->name('costumerpanel.edit');
 

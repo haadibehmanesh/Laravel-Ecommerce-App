@@ -190,6 +190,22 @@ jQuery.ajax({
     }
     });
 }
+
+function customerDashboard(id){
+
+jQuery.ajax({
+    headers: {
+        'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+    },
+    type:'POST',
+    url:'/my-account/'+id ,
+    data:'_token = <?php echo csrf_token() ?>',
+    success:function(data){
+        jQuery('#ajax-show').html(data)
+    }
+    });
+}
+
 </script>
 </head>
 <body class="rtl page-template-default page page-id-10 woocommerce-account woocommerce-page mega-menu-main-menu dokan-theme-takhfifat">
@@ -367,7 +383,7 @@ jQuery.ajax({
 <nav class="woocommerce-MyAccount-navigation">
 	<ul>
 					<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard is-active">
-				<a href="{{ route('costumerpanel.index') }}">پیشخوان</a>
+                            <a><span onclick='customerDashboard({{Auth::guard('customer')->user()->id}})'>پیشخوان</span></a>
 			</li>
             <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
 				<a><span onclick='orders({{Auth::guard('customer')->user()->id}})'>سفارش ها</span></a>

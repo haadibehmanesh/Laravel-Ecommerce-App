@@ -7,8 +7,8 @@
             <div class="woocommerce">
 <nav class="woocommerce-MyAccount-navigation">
 <ul>
-    <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard">
-<a href="{{ route('costumerpanel.index') }}">پیشخوان</a>
+        <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard">
+                <a><span onclick='customerDashboard({{Auth::guard('customer')->user()->id}})'>پیشخوان</span></a>
 </li>
 <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
         <a><span onclick='orders({{Auth::guard('customer')->user()->id}})'>سفارش ها</span></a>

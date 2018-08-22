@@ -94,4 +94,8 @@ class CostumerpanelController extends Controller
             'customerorders' => $customerorders,
             ])->render();
     }
+    public function dashboard($id)
+    {
+        return view('layouts/my-account/ajax-customerdashboard');
+    }
 }

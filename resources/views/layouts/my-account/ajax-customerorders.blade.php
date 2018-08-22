@@ -8,7 +8,7 @@
 <nav class="woocommerce-MyAccount-navigation">
 <ul>
         <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard">
-    <a href="{{ route('costumerpanel.index') }}">پیشخوان</a>
+                <a><span onclick='customerDashboard({{Auth::guard('customer')->user()->id}})'>پیشخوان</span></a>
 </li>
 <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders is-active">
         <a><span onclick='orders({{Auth::guard('customer')->user()->id}})'>سفارش ها</span></a>
@@ -17,8 +17,15 @@
         <a><span onclick='editAccount({{Auth::guard('customer')->user()->id}})'>جزئیات حساب</span></a>
         
     </li>
-        <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout">
-    <a href="http://demo.onliner.ir/takhfifat/my-account/customer-logout/?_wpnonce=ada5f843b4">خروج از سیستم</a>
+    <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout"><a href="{{ url('/customer/logout') }}"
+        onclick="event.preventDefault();
+                 document.getElementById('logout-form').submit();">
+        خروج
+    </a>
+
+    <form id="logout-form" action="{{ url('/customer/logout') }}" method="POST" style="display: none;">
+        {{ csrf_field() }}
+    </form>
 </li>
 </ul>
 </nav>
