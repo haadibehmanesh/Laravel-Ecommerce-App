@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\BiCategory;
+use App\Customer;
 use Illuminate\Http\Request;
 
 class CostumerpanelController extends Controller
@@ -55,10 +56,13 @@ class CostumerpanelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
-    {
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
-        return view('layouts/my-account/costumereditaccount')->with('allcategories', $allcategories);
+    public function edit($id)
+    {   
+        $customerinfo = Customer::where('id', $id)->get();
+
+        return view('layouts/my-account/ajax-customereditaccount')->with([
+            'customerinfo' => $customerinfo,
+            ])->render();
     }
 
     /**
