@@ -391,7 +391,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
     {{ csrf_field() }}
 
     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-        <label for="name" class="col-md-4 control-label">نام کاربری</label>
+        <label for="name" class="col-md-4 control-label">نام کاربری <span class="required">*</span></label>
 
         <div class="col-md-6">
             <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" autofocus>
@@ -404,7 +404,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
         </div>
     </div>
     <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
-        <label for="phone" class="col-md-4 control-label">شماره همراه</label>
+        <label for="phone" class="col-md-4 control-label">شماره همراه <span class="required">*</span></label>
 
         <div class="col-md-6">
             <input id="phone" type="text" class="form-control" name="phone" value="{{ old('phone') }}">
@@ -431,7 +431,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
     </div>
 
     <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-        <label for="password" class="col-md-4 control-label">رمز ورود</label>
+        <label for="password" class="col-md-4 control-label">رمز ورود <span class="required">*</span></label>
 
         <div class="col-md-6">
             <input id="password" type="password" class="form-control" name="password">
@@ -445,7 +445,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
     </div>
 
     <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-        <label for="password-confirm" class="col-md-4 control-label">تکرار رمز ورود</label>
+        <label for="password-confirm" class="col-md-4 control-label">تکرار رمز ورود <span class="required">*</span></label>
 
         <div class="col-md-6">
             <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
