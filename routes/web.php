@@ -36,7 +36,7 @@ Route::group(['prefix' => 'admin'], function () {
 Route::group(['middleware' => 'customer' ], function() {
 Route::get('/my-account', 'CostumerpanelController@index')->name('costumerpanel.index');
 Route::get('/my-account/orders', 'CostumerpanelController@orders')->name('costumerpanel.orders');
-Route::get('/my-account/editaccount', 'CostumerpanelController@edit')->name('costumerpanel.edit');
+Route::post('/my-account/editaccount/{id}', 'CostumerpanelController@edit')->name('costumerpanel.edit');
 
 Route::get('/dashboard', 'MerchantpanelController@index')->name('merchantpanel.index');
 Route::get('/dashboard/orders', 'MerchantpanelController@orders')->name('merchantpanel.orders');
@@ -50,6 +50,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/getcategory/{category}','AjaxController@getCategory');
 Route::post('/getlist/{category}','AjaxController@getList');
 Route::post('/ajax/products', 'AjaxController@getProduct');
+Route::post('/ajax/products/main', 'AjaxController@getProductMain');
 
 
 Route::group(['prefix' => 'customer'], function () {
