@@ -45,7 +45,33 @@ function toPersianNum( num, dontTrim ) {
     return res;
 }
 </script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    
+    
+    <script>
+        jQuery(document).on('click','.pagination a', function(e){
+            e.preventDefault();
+            var page = jQuery(this).attr('href').split('page=')[1];
+            getProducts(page);
+        });
+        function getProducts(page){
+            
+            jQuery.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+                },
+                type:'POST',
+                url:'/ajax/products/main/?page='+page,
+                data:'_token = <?php echo csrf_token() ?>'
 
+            }).done(function(data){
+               
+                jQuery('.ajax_products').html(data);
+
+
+            });
+        }
+    </script>
 <script>
        $(document).ready(function() {
            
@@ -246,8 +272,6 @@ function toPersianNum( num, dontTrim ) {
 <div class="special_offer">
     <div class="title_block"><span>تخفیفات ویژه</span></div>
     @foreach ($featured as $featured)
-        
-    
         <div class="col-lg-4 col-md-4 col-sm-6">
             <div class="box_offer">
                 <div class="time_out">
@@ -384,13 +408,15 @@ function toPersianNum( num, dontTrim ) {
 <div class="clear"></div><!--Discount other -->
 <div class="discount_other">
     <div class="title_block"><span>دیـگر تخــفیفـات</span></div>
+    <div class='ajax_products'>
+    @forelse ($products as $product) 
         <div class="col-lg-3 col-md-3 col-sm-6">
             <div class="box_offer box_offer_mini">
                 <div class="time_out">
                     <i class="fa fa-clock-o"></i>
                     <ul class="deal-timer countdownimxit"></ul>
                 <script>
-				                    jQuery(function() {
+				    jQuery(function() {
                         var endDate = "2018-12-25 23:59:00";
                         jQuery('.countdownimxit').countdown({
                             date: endDate,
@@ -411,135 +437,27 @@ function toPersianNum( num, dontTrim ) {
                     });
                 </script>					
                 </div>
-			                <a href="product/%d9%81%d8%b1%d9%88%d8%b4-%d9%81%d9%88%d9%82-%d8%a7%d9%84%d8%b9%d8%a7%d8%af%d9%87-%d8%af%d9%88%da%86%d8%b1%d8%ae%d9%87-%d9%87%d8%a7%db%8c-%d8%ad%d8%b1%d9%81%d9%87-%d8%a7%db%8c/index.html" title="فروش فوق العاده دوچرخه های حرفه ای "><img src="wp-content/uploads/2018/02/696_20d30d-1-400x400.jpg" title="فروش فوق العاده دوچرخه های حرفه ای "></a>
+			                <a href="{{ route('shop.show', $product->slug) }}" title="{{$product->name}}"><img src="{{ productImage($product->image) }}" title="{{$product->name}}"></a>
                 <!-- Discount -->
-                <span class="Discount"><b>%12</b>تخفیف</span>
+                <span class="Discount"><b>%{{ toPersianNum($product->discount)  }}</b>تخفیف</span>
 				<span class="address"><i class="fa fa-map-marker"></i></span>
-                <span class="total_sales_onliner">0<i class="fa fa-shopping-basket"></i></span>
+                <span class="total_sales_onliner">{{toPersianNum($product->sold)}}<i class="fa fa-shopping-basket"></i></span>
 				<!-- Info -->
                 <div class="Information">
-                    <h2 class="ellipsis"><a href="product/%d9%81%d8%b1%d9%88%d8%b4-%d9%81%d9%88%d9%82-%d8%a7%d9%84%d8%b9%d8%a7%d8%af%d9%87-%d8%af%d9%88%da%86%d8%b1%d8%ae%d9%87-%d9%87%d8%a7%db%8c-%d8%ad%d8%b1%d9%81%d9%87-%d8%a7%db%8c/index.html">فروش فوق العاده دوچرخه های حرفه ای </a></h2>
-                    <span class="price"><del><span class="woocommerce-Price-amount amount">780,000&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></del> <ins><span class="woocommerce-Price-amount amount">690,000&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></ins></span>
+                    <h2 class="ellipsis"><a href="{{ route('shop.show', $product->slug) }}" title="{{ $product->name }}">{{ $product->name }}</a></h2>
+                    <span class="price"><del><span class="woocommerce-Price-amount amount">{{ toPersianNum($product->price) }}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></del> <ins><span class="woocommerce-Price-amount amount">{{ toPersianNum(presentPrice($product->price,$product->discount)) }}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></ins></span>
                 </div>
             </div>
-        </div>        		
-        <div class="col-lg-3 col-md-3 col-sm-6">
-            <div class="box_offer box_offer_mini">
-							<div class="time_out">
-                    <i class="fa fa-clock-o"></i>
-                    <ul class="deal-timer countdownufjsy"></ul>
-                <script>
-				                    jQuery(function() {
-                        var endDate = "2018-10-16 23:59:00";
-                        jQuery('.countdownufjsy').countdown({
-                            date: endDate,
-                            render: function(data) {
-                                if ( ! data.sec  ) { data.sec = 0 };
-								var days = toPersianNum(data.days);
-								var hours = toPersianNum(data.hours);
-								var min = toPersianNum(data.min);
-								var sec = toPersianNum(data.sec);
-                                jQuery(this.el).html(
-                                    '<li><span class="num">' + days +'</span><span class="text">  روز </span></li>'+
-                                    '<li><span class="num">' + hours +'</span><span class="text"> ساعت </span></li>'+
-                                    '<li><span class="num">' + min +'</span><span class="text"> دقیقه </span></li>'+
-                                    '<li><span class="num">' + sec +'</span><span class="text"> ثانیه </span></li>'
-                                );
-                            }
-                        });
-                    });
-                </script>					
-                </div>
-			                <a href="product/%d9%be%da%a9-%d9%87%d8%a7-%d9%84%d9%88%d8%a7%d8%b2%d9%85-%d8%a8%d9%87%d8%af%d8%a7%d8%b4%d8%aa%db%8c-%d8%a2%d9%82%d8%a7%db%8c%d8%a7%d9%86-%d8%a8%d8%a7-%d8%aa%d8%ae%d9%81%db%8c%d9%81%db%8c-%d9%81%d9%88/index.html" title="پک ها لوازم بهداشتی آقایان با تخفیفی فوق العاده "><img src="wp-content/uploads/2018/02/o-Mens-skin-care-products-2017111165310471.jpg.png" title="پک ها لوازم بهداشتی آقایان با تخفیفی فوق العاده "></a>
-                <!-- Discount -->
-                <span class="Discount"><b>%37</b>تخفیف</span>
-				<span class="address"><i class="fa fa-map-marker"></i></span>
-                <span class="total_sales_onliner">1<i class="fa fa-shopping-basket"></i></span>
-				<!-- Info -->
-                <div class="Information">
-                    <h2 class="ellipsis"><a href="product/%d9%be%da%a9-%d9%87%d8%a7-%d9%84%d9%88%d8%a7%d8%b2%d9%85-%d8%a8%d9%87%d8%af%d8%a7%d8%b4%d8%aa%db%8c-%d8%a2%d9%82%d8%a7%db%8c%d8%a7%d9%86-%d8%a8%d8%a7-%d8%aa%d8%ae%d9%81%db%8c%d9%81%db%8c-%d9%81%d9%88/index.html">پک ها لوازم بهداشتی آقایان با تخفیفی فوق العاده </a></h2>
-                    <span class="price"><del><span class="woocommerce-Price-amount amount">155,000&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></del> <ins><span class="woocommerce-Price-amount amount">98,000&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></ins></span>
-                </div>
-            </div>
-        </div>        		
-        <div class="col-lg-3 col-md-3 col-sm-6">
-            <div class="box_offer box_offer_mini">
-							<div class="time_out">
-                    <i class="fa fa-clock-o"></i>
-                    <ul class="deal-timer countdownpvuea"></ul>
-                <script>
-				                    jQuery(function() {
-                        var endDate = "2018-10-18 23:59:00";
-                        jQuery('.countdownpvuea').countdown({
-                            date: endDate,
-                            render: function(data) {
-                                if ( ! data.sec  ) { data.sec = 0 };
-								var days = toPersianNum(data.days);
-								var hours = toPersianNum(data.hours);
-								var min = toPersianNum(data.min);
-								var sec = toPersianNum(data.sec);
-                                jQuery(this.el).html(
-                                    '<li><span class="num">' + days +'</span><span class="text">  روز </span></li>'+
-                                    '<li><span class="num">' + hours +'</span><span class="text"> ساعت </span></li>'+
-                                    '<li><span class="num">' + min +'</span><span class="text"> دقیقه </span></li>'+
-                                    '<li><span class="num">' + sec +'</span><span class="text"> ثانیه </span></li>'
-                                );
-                            }
-                        });
-                    });
-                </script>					
-                </div>
-			                <a href="product/%d8%aa%d8%ae%d9%81%db%8c%d9%81%db%8c-%d8%a8%db%8c-%d9%86%d8%b8%db%8c%d8%b1-%d8%af%d8%b1-%d8%aa%d9%85%d8%a7%d8%b4%d8%a7%d8%ae%d8%a7%d9%86%d9%87-%d8%aa%d9%87%d8%b1%d8%a7%d9%86/index.html" title="تخفیفی بی نظیر در تماشاخانه تهران "><img src="wp-content/uploads/2018/02/57624241-400x400.jpg" title="تخفیفی بی نظیر در تماشاخانه تهران "></a>
-                <!-- Discount -->
-                <span class="Discount"><b>%25</b>تخفیف</span>
-				<span class="address"><i class="fa fa-map-marker"></i></span>
-                <span class="total_sales_onliner">2<i class="fa fa-shopping-basket"></i></span>
-				<!-- Info -->
-                <div class="Information">
-                    <h2 class="ellipsis"><a href="product/%d8%aa%d8%ae%d9%81%db%8c%d9%81%db%8c-%d8%a8%db%8c-%d9%86%d8%b8%db%8c%d8%b1-%d8%af%d8%b1-%d8%aa%d9%85%d8%a7%d8%b4%d8%a7%d8%ae%d8%a7%d9%86%d9%87-%d8%aa%d9%87%d8%b1%d8%a7%d9%86/index.html">تخفیفی بی نظیر در تماشاخانه تهران </a></h2>
-                    <span class="price"><del><span class="woocommerce-Price-amount amount">73,000&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></del> <ins><span class="woocommerce-Price-amount amount">55,000&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></ins></span>
-                </div>
-            </div>
-        </div>        		
-        <div class="col-lg-3 col-md-3 col-sm-6">
-            <div class="box_offer box_offer_mini">
-							<div class="time_out">
-                    <i class="fa fa-clock-o"></i>
-                    <ul class="deal-timer countdownqgzcb"></ul>
-                <script>
-				                    jQuery(function() {
-                        var endDate = "2018-12-22 23:59:00";
-                        jQuery('.countdownqgzcb').countdown({
-                            date: endDate,
-                            render: function(data) {
-                                if ( ! data.sec  ) { data.sec = 0 };
-								var days = toPersianNum(data.days);
-								var hours = toPersianNum(data.hours);
-								var min = toPersianNum(data.min);
-								var sec = toPersianNum(data.sec);
-                                jQuery(this.el).html(
-                                    '<li><span class="num">' + days +'</span><span class="text">  روز </span></li>'+
-                                    '<li><span class="num">' + hours +'</span><span class="text"> ساعت </span></li>'+
-                                    '<li><span class="num">' + min +'</span><span class="text"> دقیقه </span></li>'+
-                                    '<li><span class="num">' + sec +'</span><span class="text"> ثانیه </span></li>'
-                                );
-                            }
-                        });
-                    });
-                </script>					
-                </div>
-			                <a href="product/%d8%aa%d8%ae%d9%81%db%8c%d9%81-%d9%81%d9%88%d9%82%d8%a7%d9%84%d8%b9%d8%a7%d8%af%d9%87-%d8%aa%d8%a6%d8%a7%d8%aa%d8%b1-%d8%b4%d9%88%d8%a7%db%8c%da%a9%d8%8c-%d8%b3%d8%b1%d8%a8%d8%a7%d8%b2-%d8%b3%d8%a7/index.html" title="تخفیف فوق العاده  تئاتر شوایک، سرباز ساده دل "><img src="wp-content/uploads/2018/02/1396072616055231612262914-400x400.jpg" title="تخفیف فوق العاده  تئاتر شوایک، سرباز ساده دل "></a>
-                <!-- Discount -->
-                <span class="Discount"><b>%16</b>تخفیف</span>
-				<span class="address"><i class="fa fa-map-marker"></i></span>
-                <span class="total_sales_onliner">0<i class="fa fa-shopping-basket"></i></span>
-				<!-- Info -->
-                <div class="Information">
-                    <h2 class="ellipsis"><a href="product/%d8%aa%d8%ae%d9%81%db%8c%d9%81-%d9%81%d9%88%d9%82%d8%a7%d9%84%d8%b9%d8%a7%d8%af%d9%87-%d8%aa%d8%a6%d8%a7%d8%aa%d8%b1-%d8%b4%d9%88%d8%a7%db%8c%da%a9%d8%8c-%d8%b3%d8%b1%d8%a8%d8%a7%d8%b2-%d8%b3%d8%a7/index.html">تخفیف فوق العاده  تئاتر شوایک، سرباز ساده دل </a></h2>
-                    <span class="price"><del><span class="woocommerce-Price-amount amount">68,000&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></del> <ins><span class="woocommerce-Price-amount amount">57,000&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></ins></span>
-                </div>
-            </div>
-        </div>        	
+        </div> 
+        @empty
+          <div style="text-align: left">موردی یافت نشد!</div>
+        @endforelse 
+        <div class="pagination_wrapper">
+            {{ $products->links() }}
+    
+        </div>  
+    </div>     		
+                	
 </div><div class="clear"></div>
 
 <article id="float-cat-restaurant" class="cat-deal-color color-rescoffee active">
