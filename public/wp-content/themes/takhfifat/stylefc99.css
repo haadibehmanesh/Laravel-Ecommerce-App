@@ -54,6 +54,11 @@ Version: 2.6
 		 url('fonts/woff/IRANSansWeb.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
 		 url('fonts/ttf/IRANSansWeb.ttf') format('truetype');
 }
+.required {
+    color: red;
+    font-weight: 700;
+    border: 0;
+}
 input{position:static !important;}
 *{font-weight:normal !important}
 a{text-decoration:none;-webkit-transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;transition:all .2s ease-in-out}
