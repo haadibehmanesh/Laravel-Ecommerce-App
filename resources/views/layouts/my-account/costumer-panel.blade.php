@@ -175,6 +175,21 @@ jQuery.ajax({
     }
     });
 }
+
+function orders(id){
+
+jQuery.ajax({
+    headers: {
+        'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+    },
+    type:'POST',
+    url:'/my-account/orders/'+id ,
+    data:'_token = <?php echo csrf_token() ?>',
+    success:function(data){
+        jQuery('#ajax-show').html(data)
+    }
+    });
+}
 </script>
 </head>
 <body class="rtl page-template-default page page-id-10 woocommerce-account woocommerce-page mega-menu-main-menu dokan-theme-takhfifat">
@@ -265,12 +280,8 @@ jQuery.ajax({
                                                   <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
                       <a href="http://demo.onliner.ir/takhfifat/my-account/orders/">سفارش ها</a>
                   </li>
-                                                  <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--downloads">
-                      <a href="http://demo.onliner.ir/takhfifat/my-account/downloads/">دانلودها</a>
-                  </li>
-                                                  <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-address">
-                      <a href="http://demo.onliner.ir/takhfifat/my-account/edit-address/">آدرس ها</a>
-                  </li>
+                   
+                  
                                                   <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
                       <a href="http://demo.onliner.ir/takhfifat/my-account/edit-account/">جزئیات حساب</a>
                   </li>
@@ -346,7 +357,7 @@ jQuery.ajax({
   <section id="wrapper">
     <div class="container">
         <div id="ajax-show" class="row">
-                        <ol class="breadcrumb"><a href="http://demo.onliner.ir/takhfifat">خانه</a> / حساب کاربری من</ol>            <div class="post-content-page">
+                        <ol class="breadcrumb"><a href="/">خانه</a> / حساب کاربری من</ol>            <div class="post-content-page">
                                         
                     <!--title & discount & views-->
                     <div class="title_post">
@@ -358,14 +369,8 @@ jQuery.ajax({
 					<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard is-active">
 				<a href="{{ route('costumerpanel.index') }}">پیشخوان</a>
 			</li>
-					<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
-				<a href="{{ route('costumerpanel.orders') }}">سفارش ها</a>
-			</li>
-					<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--downloads">
-				<a href="http://demo.onliner.ir/takhfifat/my-account/downloads/">دانلودها</a>
-			</li>
-					<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-address">
-				<a href="http://demo.onliner.ir/takhfifat/my-account/edit-address/">آدرس ها</a>
+            <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
+				<a><span onclick='orders({{Auth::guard('customer')->user()->id}})'>سفارش ها</span></a>
 			</li>
 			<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
                 <a><span onclick='editAccount({{Auth::guard('customer')->user()->id}})'>جزئیات حساب</span></a>
@@ -388,9 +393,8 @@ jQuery.ajax({
     @if(Auth::guard('customer')->user()->is_merchant == 1)
 <div class="woocommerce-MyAccount-content">
 	
-<p>سلام <strong>فروشنده آزمایشی</strong> ( <strong>فروشنده آزمایشی</strong> نیستید؟ <a href="http://demo.onliner.ir/takhfifat/my-account/customer-logout/?_wpnonce=ada5f843b4">خارج شوید</a>)</p>
+<p>سلام</p>
 
-<p>از طریق پیشخوان حساب کاربری تان، می توانید <a href="http://demo.onliner.ir/takhfifat/my-account/orders/">سفارش های اخیرتان</a> را مشاهده، <a href="http://demo.onliner.ir/takhfifat/my-account/edit-address/">آدرس های حمل و نقل و صورتحساب تان</a> را مدیریت و <a href="http://demo.onliner.ir/takhfifat/my-account/edit-account/">جزئیات حساب کاربری و کلمه عبور خود را ویرایش کنید</a>.</p>
 
 <p style="color:#4caf50">شما فروشنده هستید و اکانت شما تائید شده است </p><div class="eye_buy"><a style="color: #fff;float: right;padding: 3px 15px;margin: 10px 0 0 0;font-size: 15px;" href="/dashboard"><i class="fa fa-dashboard"></i>رفتن به پنل فروشندگان</a></div><p></p>
 </div>

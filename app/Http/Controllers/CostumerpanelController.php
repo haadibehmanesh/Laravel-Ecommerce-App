@@ -87,9 +87,11 @@ class CostumerpanelController extends Controller
     {
         //
     }
-    public function orders()
+    public function orders($id)
     {
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
-        return view('layouts/my-account/costumerorders')->with('allcategories', $allcategories);
+        $customerorders = Customer::where('id', $id)->get();
+        return view('layouts/my-account/ajax-customerorders')->with([
+            'customerorders' => $customerorders,
+            ])->render();
     }
 }

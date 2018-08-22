@@ -1,4 +1,4 @@
-<ol class="breadcrumb"><a href="http://demo.onliner.ir/takhfifat">خانه</a> / <a href="http://demo.onliner.ir/takhfifat/my-account/">حساب کاربری من</a> / جزئیات حساب</ol>            <div class="post-content-page">
+<ol class="breadcrumb"><a href="/">خانه</a> / <a href="/my-account">حساب کاربری من</a> / جزئیات حساب</ol>            <div class="post-content-page">
                                             
     <!--title & discount & views-->
     <div class="title_post">
@@ -10,15 +10,9 @@
     <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard">
 <a href="{{ route('costumerpanel.index') }}">پیشخوان</a>
 </li>
-    <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
-<a href="{{ route('costumerpanel.orders') }}">سفارش ها</a>
-</li>
-    <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--downloads">
-<a href="http://demo.onliner.ir/takhfifat/my-account/downloads/">دانلودها</a>
-</li>
-<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-address">
-<a href="http://demo.onliner.ir/takhfifat/my-account/edit-address/">آدرس ها</a>
-</li>
+<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
+        <a><span onclick='orders({{Auth::guard('customer')->user()->id}})'>سفارش ها</span></a>
+    </li>
 <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account is-active">
     <a><span onclick='editAccount({{Auth::guard('customer')->user()->id}})'>جزئیات حساب</span></a>
     

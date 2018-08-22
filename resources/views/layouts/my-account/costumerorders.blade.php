@@ -303,15 +303,10 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
                         <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders is-active">
                     <a href="{{ route('costumerpanel.orders') }}">سفارش ها</a>
                 </li>
-                        <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--downloads">
-                    <a href="http://demo.onliner.ir/takhfifat/my-account/downloads/">دانلودها</a>
-                </li>
-                        <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-address">
-                    <a href="http://demo.onliner.ir/takhfifat/my-account/edit-address/">آدرس ها</a>
-                </li>
-                        <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
-                    <a href="{{ route('costumerpanel.edit') }}">جزئیات حساب</a>
-                </li>
+                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
+                        <a><span onclick='editAccount({{Auth::guard('customer')->user()->id}})'>جزئیات حساب</span></a>
+                        
+                    </li>
                         <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout">
                     <a href="http://demo.onliner.ir/takhfifat/my-account/customer-logout/?_wpnonce=ada5f843b4">خروج از سیستم</a>
                 </li>
