@@ -51,8 +51,18 @@ class AjaxController extends Controller {
 
     public function getProduct()
     {  
-        $products = BiProduct::paginate(3);
+        $pagination = 3 ;
+        $products = BiProduct::orderBy('id', 'desc')->paginate($pagination);
         return view('layouts/shop/ajax-products')->with([
+            'products' => $products         
+        ])->render();
+        
+    }
+    public function getProductMain()
+    {   
+        $pagination = 4 ;
+        $products = BiProduct::orderBy('id', 'desc')->paginate($pagination);
+        return view('layouts/ajax-products-main')->with([
             'products' => $products         
         ])->render();
         
