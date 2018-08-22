@@ -15,15 +15,15 @@ class MainpageController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
+    {
+        $pagination = 4;
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
-      
         $slider = BiSlider::where('name' , 'index')->get();
-     
         $sliderimages = BiSliderImage::where('bi_slider_id', $slider[0]->id)->get();
         $featuredproducts = BiProduct::where('featured','1')->get();
-        
+        $products = BiProduct::orderBy('id', 'desc')->paginate($pagination);
         return view('layouts/mainpage')->with([
+            'products' => $products,
             'allcategories' => $allcategories,
             'sliderimages' =>  $sliderimages,
             'featured' => $featuredproducts
