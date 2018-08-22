@@ -44,11 +44,7 @@ img.emoji {
 <link rel='stylesheet' id='dokan-pro-style-css'  href='../wp-content/plugins/dokan-pro/assets/css/style8046.css?ver=1529567762' type='text/css' media='all' />
 <link rel='stylesheet' id='dokan-social-style-css'  href='../wp-content/plugins/dokan-pro/assets/css/jssocials8046.css?ver=1529567762' type='text/css' media='all' />
 <link rel='stylesheet' id='dokan-social-theme-flat-css'  href='../wp-content/plugins/dokan-pro/assets/css/jssocials-theme-flat8046.css?ver=1529567762' type='text/css' media='all' />
-<script type='text/javascript'>
-/* <![CDATA[ */
-var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.php","nonce":"93c8ead72f","ajax_loader":"http:\/\/localhost\/takhfiftest\/wp-content\/plugins\/dokan-lite\/assets\/images\/ajax-loader.gif","seller":{"available":"\u0645\u0648\u062c\u0648\u062f","notAvailable":"\u0646\u0627\u0645\u0648\u062c\u0648\u062f"},"delete_confirm":"\u0622\u06cc\u0627 \u0645\u0637\u0645\u0626\u0646\u06cc\u062f\u061f","wrong_message":"\u0645\u0634\u06a9\u0644\u06cc \u0628\u0647 \u0648\u062c\u0648\u062f \u0622\u0645\u062f. \u0644\u0637\u0641\u0627 \u062f\u0648\u0628\u0627\u0631\u0647 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646\u06cc\u062f.","vendor_percentage":"80","commission_type":"percentage","rounding_precision":"6","mon_decimal_point":".","i18n_choose_featured_img":"\u0622\u067e\u0644\u0648\u062f \u062a\u0635\u0648\u06cc\u0631 \u062f\u0644\u062e\u0648\u0627\u0647","i18n_choose_file":"\u0641\u0627\u06cc\u0644\u06cc \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f","i18n_choose_gallery":"\u0627\u0641\u0632\u0648\u062f\u0646 \u062a\u0635\u0627\u0648\u06cc\u0631 \u0628\u0647 \u06af\u0627\u0644\u0631\u06cc \u0645\u062d\u0635\u0648\u0644\u0627\u062a","i18n_choose_featured_img_btn_text":"\u062a\u0646\u0638\u06cc\u0645 \u062a\u0635\u0648\u06cc\u0631 \u062f\u0644\u062e\u0648\u0627\u0647","i18n_choose_file_btn_text":"\u0642\u0631\u0627\u0631 \u062f\u0627\u062f\u0646 \u0646\u0634\u0627\u0646\u06cc \u0641\u0627\u06cc\u0644","i18n_choose_gallery_btn_text":"\u0627\u0641\u0632\u0648\u062f\u0646 \u0628\u0647 \u06af\u0627\u0644\u0631\u06cc","duplicates_attribute_messg":"\u0645\u062a\u0627\u0633\u0641\u0627\u0646\u0647 \u0627\u06cc\u0646 \u06af\u0632\u06cc\u0646\u0647\u200c\u06cc \u0648\u06cc\u0698\u06af\u06cc \u0627\u0632 \u0642\u0628\u0644 \u0648\u062c\u0648\u062f \u062f\u0627\u0631\u062f\u060c \u06cc\u06a9\u06cc \u062f\u06cc\u06af\u0631 \u0631\u0627 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646\u06cc\u062f.","variation_unset_warning":"\u0647\u0634\u062f\u0627\u0631! \u0627\u06af\u0631 \u0627\u06cc\u0646 \u06af\u0632\u06cc\u0646\u0647 \u062a\u06cc\u06a9 \u0646\u062e\u0648\u0631\u062f \u0627\u06cc\u0646 \u0645\u062d\u0635\u0648\u0644 \u0647\u06cc\u0686\u06af\u0648\u0646\u0647 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a\u06cc \u0646\u062e\u0648\u0627\u0647\u062f \u062f\u0627\u0634\u062a.","new_attribute_prompt":"\u0646\u0627\u0645\u06cc \u0628\u0631\u0627\u06cc \u0648\u0627\u0698\u0647\u200c\u06cc \u062c\u062f\u06cc\u062f \u0648\u06cc\u0698\u06af\u06cc \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f:","remove_attribute":"\u062d\u0630\u0641 \u0627\u06cc\u0646 \u0648\u06cc\u0698\u06af\u06cc\u061f","dokan_placeholder_img_src":"http:\/\/localhost\/takhfiftest\/wp-content\/plugins\/woocommerce\/assets\/images\/placeholder.png","add_variation_nonce":"36d46f1d4c","link_variation_nonce":"9a18bed7d8","delete_variations_nonce":"27d509f515","load_variations_nonce":"ac0183968a","save_variations_nonce":"f1e49906ca","bulk_edit_variations_nonce":"314ae4fa8a","i18n_link_all_variations":"\u0645\u0637\u0645\u0626\u0646\u06cc\u062f \u06a9\u0647 \u0645\u06cc\u062e\u0648\u0627\u0647\u06cc\u062f \u062a\u0645\u0627\u0645 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0631\u0627 \u067e\u06cc\u0648\u0646\u062f \u062f\u0647\u06cc\u062f\u061f \u0627\u06cc\u0646 \u06a9\u0627\u0631 \u062a\u063a\u06cc\u06cc\u0631\u06cc \u062c\u062f\u06cc\u062f \u0628\u0631\u0627\u06cc \u0647\u0631\u06af\u0648\u0646\u0647 \u062a\u0631\u06a9\u06cc\u0628 \u0645\u0645\u06a9\u0646 \u0627\u0632 \u0648\u06cc\u0698\u06af\u06cc\u200c\u0647\u0627\u06cc \u062a\u063a\u06cc\u06cc\u0631 \u0627\u06cc\u062c\u0627\u062f \u062e\u0648\u0627\u0647\u062f \u06a9\u0631\u062f (\u062d\u062f\u0627\u06a9\u062b\u0631 50 \u062f\u0631 \u0647\u0631 \u0627\u062c\u0631\u0627).","i18n_enter_a_value":"\u0645\u0642\u062f\u0627\u0631\u06cc \u0631\u0627 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f","i18n_enter_menu_order":"\u062a\u0631\u062a\u06cc\u0628 \u0645\u0646\u0648\u06cc \u062a\u063a\u06cc\u06cc\u0631 (\u062a\u0639\u06cc\u06cc\u0646 \u0645\u06a9\u0627\u0646 \u062f\u0631 \u0641\u0647\u0631\u0633\u062a \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a)","i18n_enter_a_value_fixed_or_percent":"\u0645\u0642\u062f\u0627\u0631\u06cc \u0631\u0627 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f (\u062b\u0627\u0628\u062a \u06cc\u0627 %)","i18n_delete_all_variations":"\u0622\u06cc\u0627 \u0627\u0632 \u062d\u0630\u0641 \u062a\u0645\u0627\u0645 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0645\u0637\u0645\u0626\u0646\u06cc\u062f\u061f \u0627\u06cc\u0646 \u06a9\u0627\u0631 \u0642\u0627\u0628\u0644 \u0628\u0631\u06af\u0634\u062a \u0646\u0645\u06cc\u0628\u0627\u0634\u062f.","i18n_last_warning":"\u0622\u062e\u0631\u06cc\u0646 \u0647\u0634\u062f\u0627\u0631\u060c \u0622\u06cc\u0627 \u0645\u0637\u0645\u0626\u0646\u06cc\u062f\u061f","i18n_choose_image":"\u062a\u0635\u0648\u06cc\u0631\u06cc \u0631\u0627 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f","i18n_set_image":"\u0642\u0631\u0627\u0631 \u062f\u0627\u062f\u0646 \u062a\u0635\u0648\u06cc\u0631 \u062a\u063a\u06cc\u06cc\u0631","i18n_variation_added":"\u062a\u063a\u06cc\u06cc\u0631 \u0627\u0636\u0627\u0641\u0647 \u0634\u062f","i18n_variations_added":"\u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0627\u0636\u0627\u0641\u0647 \u0634\u062f\u0646\u062f","i18n_no_variations_added":"\u0647\u06cc\u0686\u06af\u0648\u0646\u0647 \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a\u06cc \u0627\u0636\u0627\u0641\u0647 \u0646\u0634\u062f","i18n_remove_variation":"\u0622\u06cc\u0627 \u0627\u0632 \u062d\u0630\u0641 \u0627\u06cc\u0646 \u062a\u063a\u06cc\u06cc\u0631 \u0645\u0637\u0645\u0626\u0646\u06cc\u062f\u061f","i18n_scheduled_sale_start":"\u062a\u0627\u0631\u06cc\u062e \u0634\u0631\u0648\u0639 \u0641\u0631\u0648\u0634 (\u0641\u0631\u0645\u062a \u0631\u0648\u0632-\u0645\u0627\u0647-\u0633\u0627\u0644 \u06cc\u0627 \u062e\u0627\u0644\u06cc \u0628\u06af\u0630\u0627\u0631\u06cc\u062f)","i18n_scheduled_sale_end":"\u062a\u0627\u0631\u06cc\u062e \u067e\u0627\u06cc\u0627\u0646 \u0641\u0631\u0648\u0634 (\u0641\u0631\u0645\u062a \u0631\u0648\u0632-\u0645\u0627\u0647-\u0633\u0627\u0644 \u06cc\u0627 \u062e\u0627\u0644\u06cc \u0628\u06af\u0630\u0627\u0631\u06cc\u062f)","i18n_edited_variations":"\u0642\u0628\u0644 \u0627\u0632 \u0639\u0648\u0636 \u06a9\u0631\u062f\u0646 \u0635\u0641\u062d\u0647\u060c \u062a\u063a\u06cc\u06cc\u0631\u0627\u062a \u0630\u062e\u06cc\u0631\u0647 \u0634\u0648\u0646\u062f\u061f","i18n_variation_count_single":"%qty% \u062a\u063a\u06cc\u06cc\u0631","i18n_variation_count_plural":"%qty% \u062a\u063a\u06cc\u06cc\u0631","i18n_no_result_found":"\u0646\u062a\u06cc\u062c\u0647 \u0627\u06cc \u06cc\u0627\u0641\u062a \u0646\u0634\u062f","variations_per_page":"10","store_banner_dimension":{"width":"625","height":"300","flex-width":true,"flex-height":true},"selectAndCrop":"\u0627\u0646\u062a\u062e\u0627\u0628 \u0648 \u0628\u0631\u0634","chooseImage":"\u0627\u0646\u062a\u062e\u0627\u0628 \u062a\u0635\u0648\u06cc\u0631","product_title_required":"\u0639\u0646\u0648\u0627\u0646 \u0645\u062d\u0635\u0648\u0644 \u0636\u0631\u0648\u0631\u06cc \u0627\u0633\u062a","product_category_required":"\u062f\u0633\u062a\u0647\u200c\u06cc \u0645\u062d\u0635\u0648\u0644 \u0636\u0631\u0648\u0631\u06cc \u0627\u0633\u062a","search_products_nonce":"f0747f918b"};
-/* ]]> */
-</script>
+
 <script type='text/javascript' src='../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
 <script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
 <script type='text/javascript'>
@@ -162,7 +158,24 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
 				res += num.charAt(i);
 		return res;
 	}
-	</script>
+    </script>
+     <meta name="csrf-token" content="{{ csrf_token() }}">
+<script>
+function editAccount(id){
+
+jQuery.ajax({
+    headers: {
+        'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+    },
+    type:'POST',
+    url:'/my-account/editaccount/'+id ,
+    data:'_token = <?php echo csrf_token() ?>',
+    success:function(data){
+        jQuery('#ajax-show').html(data)
+    }
+    });
+}
+</script>
 </head>
 <body class="rtl page-template-default page page-id-10 woocommerce-account woocommerce-page mega-menu-main-menu dokan-theme-takhfifat">
     <!----- Top Menu
@@ -332,7 +345,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
   <!--wrapper-->
   <section id="wrapper">
     <div class="container">
-        <div class="row">
+        <div id="ajax-show" class="row">
                         <ol class="breadcrumb"><a href="http://demo.onliner.ir/takhfifat">خانه</a> / حساب کاربری من</ol>            <div class="post-content-page">
                                         
                     <!--title & discount & views-->
@@ -354,12 +367,20 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
 					<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-address">
 				<a href="http://demo.onliner.ir/takhfifat/my-account/edit-address/">آدرس ها</a>
 			</li>
-					<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
-				<a href="{{ route('costumerpanel.edit') }}">جزئیات حساب</a>
-			</li>
-					<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout">
-				<a href="http://demo.onliner.ir/takhfifat/my-account/customer-logout/?_wpnonce=ada5f843b4">خروج از سیستم</a>
-			</li>
+			<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
+                <a><span onclick='editAccount({{Auth::guard('customer')->user()->id}})'>جزئیات حساب</span></a>
+                
+            </li>
+            <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout"><a href="{{ url('/customer/logout') }}"
+                onclick="event.preventDefault();
+                         document.getElementById('logout-form').submit();">
+                خروج
+            </a>
+
+            <form id="logout-form" action="{{ url('/customer/logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+            </form>
+        </li>
 			</ul>
 </nav>
 
