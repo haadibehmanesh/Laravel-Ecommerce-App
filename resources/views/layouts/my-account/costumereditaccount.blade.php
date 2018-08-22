@@ -228,9 +228,47 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
             </div>
             
             <!--login-->
+           
+            @if (!Auth::guard('customer')->check())
             <div class="block_login">
-                <a href="index.html" class="btn btn-default btn-lg login" id="myBtn"> ورود / عضویت <i class="fa fa-sign-in"></i></a>            </div>
-			
+                <a href="{{url('customer/login')}}" class="btn btn-default btn-lg login" id="myBtn"> ورود / عضویت <i class="fa fa-sign-in"></i></a>           
+            </div>
+            @else
+            <div class="block_login">
+                <ul class="nav navbar-nav">
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{Auth::guard('customer')->user()->name}}<span class="fa fa-user pull-right"></span></a>
+        <ul class="dropdown-menu">
+                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard is-active">
+                                                <a href="{{url('/my-account')}}">پیشخوان</a>
+                </li>
+                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
+                    <a href="http://demo.onliner.ir/takhfifat/my-account/orders/">سفارش ها</a>
+                </li>
+                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--downloads">
+                    <a href="http://demo.onliner.ir/takhfifat/my-account/downloads/">دانلودها</a>
+                </li>
+                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-address">
+                    <a href="http://demo.onliner.ir/takhfifat/my-account/edit-address/">آدرس ها</a>
+                </li>
+                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
+                    <a href="http://demo.onliner.ir/takhfifat/my-account/edit-account/">جزئیات حساب</a>
+                </li>
+                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout"><a href="{{ url('/customer/logout') }}"
+                                                    onclick="event.preventDefault();
+                                                             document.getElementById('logout-form').submit();">
+                                                    خروج
+                                                </a>
+            
+                                                <form id="logout-form" action="{{ url('/customer/logout') }}" method="POST" style="display: none;">
+                                                    {{ csrf_field() }}
+                                                </form>
+                                            </li>
+                                         </ul>
+    </li>
+</ul>
+            </div>
+            @endif			
             <!--items cart-->
             <div class="content_mini_cart">
                 <a class="main_title_cart" href="/cart" rel="nofollow"><i class="fa fa-shopping-cart" aria-hidden="true"></i>سبد خرید شما<span class="number_items_cart">{{ Cart::content()->count() }}</span></a>
@@ -306,14 +344,25 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
                         <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--downloads">
                     <a href="http://demo.onliner.ir/takhfifat/my-account/downloads/">دانلودها</a>
                 </li>
-                        <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-address">
+                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-address">
                     <a href="http://demo.onliner.ir/takhfifat/my-account/edit-address/">آدرس ها</a>
                 </li>
-                        <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account is-active">
+                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account is-active">
                     <a href="{{ route('costumerpanel.edit') }}">جزئیات حساب</a>
+                    <form id="edit_info" action="{{ route('costumerpanel.edit') }}" method="POST" enctype='multipart/form-data'>
+                        {{ csrf_field() }}
+                        <input type="hidden" name="id" value="{{ Auth::guard('customer')->user()->id }}">
+                    </form>
                 </li>
-                        <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout">
-                    <a href="http://demo.onliner.ir/takhfifat/my-account/customer-logout/?_wpnonce=ada5f843b4">خروج از سیستم</a>
+                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout"><a href="{{ url('/customer/logout') }}"
+                    onclick="event.preventDefault();
+                             document.getElementById('logout-form').submit();">
+                    خروج
+                </a>
+
+                <form id="logout-form" action="{{ url('/customer/logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
                 </li>
                 </ul>
     </nav>
@@ -325,18 +374,14 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
     
         
         <p class="woocommerce-form-row woocommerce-form-row--first form-row form-row-first">
-            <label for="account_first_name">نام <span class="required">*</span></label>
-            <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="account_first_name" id="account_first_name" value="امیر">
-        </p>
-        <p class="woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
-            <label for="account_last_name">نام خانوادگی <span class="required">*</span></label>
-            <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="account_last_name" id="account_last_name" value="غلامی">
+            <label for="account_first_name"> نام کاربری <span class="required">*</span></label>
+        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="account_first_name" id="account_first_name" value="{{ $customerinfo[0]->name }}">
         </p>
         <div class="clear"></div>
     
         <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
             <label for="account_email">آدرس ایمیل <span class="required">*</span></label>
-            <input type="email" class="woocommerce-Input woocommerce-Input--email input-text" name="account_email" id="account_email" value="demo@domin.com">
+            <input type="email" class="woocommerce-Input woocommerce-Input--email input-text" name="account_email" id="account_email" value="{{ $customerinfo[0]->email  }}">
         </p>
     
         <fieldset>
