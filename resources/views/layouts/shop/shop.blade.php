@@ -395,7 +395,7 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
             </div>
         </div>        	
         @empty
-          <div style="text-align: left">No items found</div>
+          <div style="text-align: left">موردی یافت نشد!</div>
         @endforelse    
         	       	
             <div class="clear"></div>
