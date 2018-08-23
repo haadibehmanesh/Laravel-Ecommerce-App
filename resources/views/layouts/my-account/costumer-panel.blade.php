@@ -161,6 +161,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
     </script>
      <meta name="csrf-token" content="{{ csrf_token() }}">
 <script>
+
 function editAccount(id){
 
 jQuery.ajax({
@@ -205,6 +206,7 @@ jQuery.ajax({
     }
     });
 }
+
 
 </script>
 </head>
@@ -377,8 +379,9 @@ jQuery.ajax({
                                         
                     <!--title & discount & views-->
                     <div class="title_post">
-                        <h1>حساب کاربری من</h1>
+                    <h1>حساب کاربری من</h1>
                     </div>
+                   
                             <div class="woocommerce">
 <nav class="woocommerce-MyAccount-navigation">
 	<ul>
