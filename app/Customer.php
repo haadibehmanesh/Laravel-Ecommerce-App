@@ -38,4 +38,10 @@ class Customer extends Authenticatable
     {
         $this->notify(new CustomerResetPassword($token));
     }
+
+    public function bicustomer(){
+
+        return $this->hasOne('App\BiCustomer' , 'customer_id');
+    }
+    
 }
