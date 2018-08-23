@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 use App\BiCategory;
+use App\BiCustomer;
 use App\Customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Validator;
 
 class CostumerpanelController extends Controller
 {
@@ -62,6 +65,48 @@ class CostumerpanelController extends Controller
 
         return view('layouts/my-account/ajax-customereditaccount')->with([
             'customerinfo' => $customerinfo,
+            ])->render();
+    }
+
+    public function editprofile(Request $request)
+    {   
+        $validatedData = Validator::make($request->all(), [
+            'account_first_name' => 'required|max:255',
+            'account_last_name' => 'required|max:255',
+            'account_email' => 'email|max:255|nullable',
+            'password' => 'min:6|confirmed|nullable',
+        ]);
+
+        $customerinfo = Customer::where('id', $request->id)->get();
+        $bicustomerinfo = Bicustomer::where('customer_id', $request->id)->get();
+        
+        if(!$validatedData->fails()){
+
+            if(!empty($request->account_first_name && $request->account_first_name != $bicustomerinfo[0]->firstname)){
+                $bicustomerinfo[0]->firstname = $request->account_first_name;
+                $bicustomerinfo[0]->save();
+            }
+            if(!empty($request->account_last_name && $request->account_last_name != $bicustomerinfo[0]->lastname)){
+                $bicustomerinfo[0]->lastname = $request->account_last_name;
+                $bicustomerinfo[0]->save();
+            }
+            if(!empty($request->account_email && $request->account_email != $customerinfo[0]->email)){
+                $customerinfo[0]->email = $request->account_email;
+                $customerinfo[0]->save();
+            }
+            if(!empty($request->password_current && !empty($request->password_1) && !empty($request->password_2) && $request->password_1 == $request->password_2)){            
+                
+                if(Hash::check($request->password_current, $customerinfo[0]->password) ){
+                    $customerinfo[0]->password = Hash::make($request->password_1);
+                    $customerinfo[0]->save();
+                }
+
+            }
+        }       
+        return view('layouts/my-account/ajax-customereditaccount')->with([
+            'customerinfo' => $customerinfo,
+            'bicustomerinfo' => $bicustomerinfo,
+            'errors' => $validatedData->errors(),
             ])->render();
     }
 
