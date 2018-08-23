@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\CustomerAuth;
-
+use App\BiCustomer;
 use App\Customer;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -64,12 +64,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     { 
-        return Customer::create([
+        $customer = Customer::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'phone' => $data['phone'],
             'password' => bcrypt($data['password']),
         ]);
+
+        BiCustomer::create([
+            'customer_id' => $customer->id,
+        ]);
+        return $customer;
     }
 
     /**
