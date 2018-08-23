@@ -296,12 +296,12 @@ jQuery.ajax({
                                                   <a href="{{url('/my-account')}}">پیشخوان</a>
                   </li>
                                                   <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
-                      <a href="http://demo.onliner.ir/takhfifat/my-account/orders/">سفارش ها</a>
+                      <a href="{{url('/my-account')}}">سفارش ها</a>
                   </li>
                    
                   
                                                   <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
-                      <a href="http://demo.onliner.ir/takhfifat/my-account/edit-account/">جزئیات حساب</a>
+                      <a href="{{url('/my-account')}}">جزئیات حساب</a>
                   </li>
                                                   <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout"><a href="{{ url('/customer/logout') }}"
                                                       onclick="event.preventDefault();
@@ -417,6 +417,14 @@ jQuery.ajax({
 
 <p style="color:#4caf50">شما فروشنده هستید و اکانت شما تائید شده است </p><div class="eye_buy"><a style="color: #fff;float: right;padding: 3px 15px;margin: 10px 0 0 0;font-size: 15px;" href="/dashboard"><i class="fa fa-dashboard"></i>رفتن به پنل فروشندگان</a></div><p></p>
 </div>
+    @else 
+    <div class="woocommerce-MyAccount-content">
+	
+            <p>سلام، کاربر گرامی</p>
+            
+            
+            <p style="color:#4caf50">به صفحه پروفایل خوش آمدید</p>
+    </div>
     @endif
 @endif
 </div>
