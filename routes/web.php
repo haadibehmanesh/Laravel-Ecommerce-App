@@ -38,6 +38,7 @@ Route::get('/my-account', 'CostumerpanelController@index')->name('costumerpanel.
 Route::post('/my-account/{id}', 'CostumerpanelController@dashboard')->name('costumerpanel.dashboard');
 Route::post('/my-account/orders/{id}', 'CostumerpanelController@orders')->name('costumerpanel.orders');
 Route::post('/my-account/editaccount/{id}', 'CostumerpanelController@edit')->name('costumerpanel.edit');
+Route::post('/my-account/editprofile/{id}', 'CostumerpanelController@editprofile')->name('costumerpanel.editprofile');
 
 Route::get('/dashboard', 'MerchantpanelController@index')->name('merchantpanel.index');
 Route::get('/dashboard/orders', 'MerchantpanelController@orders')->name('merchantpanel.orders');
