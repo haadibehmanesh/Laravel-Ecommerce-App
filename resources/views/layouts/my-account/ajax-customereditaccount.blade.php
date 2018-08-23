@@ -23,7 +23,7 @@ onclick="event.preventDefault();
 خروج
 </a>
 
-<form id="logout-form" action="{{ url('/customer/logout') }}" method="POST" style="display: none;">
+<form id="logout-form-dashboard" action="{{ url('/customer/logout') }}" method="POST" style="display: none;">
 {{ csrf_field() }}
 </form>
 </li>
@@ -33,41 +33,86 @@ onclick="event.preventDefault();
 
 <div class="woocommerce-MyAccount-content">
 
-<form class="woocommerce-EditAccountForm edit-account" action="" method="post">
-
+<form id="editprofile" class="woocommerce-EditAccountForm edit-account" >
+        
+<div class="form-group{{ $errors->has('account_first_name') ? ' has-error' : '' }}">
 
 <p class="woocommerce-form-row woocommerce-form-row--first form-row form-row-first">
-<label for="account_first_name"> نام کاربری <span class="required">*</span></label>
-<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="account_first_name" id="account_first_name" value="{{ $customerinfo[0]->name }}">
+<label for="account_first_name"> نام </label>
+<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="account_first_name" id="account_first_name" value="{{ Auth::guard('customer')->user()->bicustomer()->first()->firstname }}">
 </p>
+@if ($errors->has('account_first_name'))
+    <span class="help-block">
+        <strong>{{ $errors->first('account_first_name') }}</strong>
+    </span>
+@endif
+</div>
 <div class="clear"></div>
 
+<div class="form-group{{ $errors->has('account_last_name') ? ' has-error' : '' }}">
+<p class="woocommerce-form-row woocommerce-form-row--first form-row form-row-first">
+<label for="account_last_name"> نام خانوادگی </label>
+<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="account_last_name" id="account_last_name" value="{{  Auth::guard('customer')->user()->bicustomer()->first()->lastname }}">
+</p>
+@if ($errors->has('account_last_name'))
+    <span class="help-block">
+        <strong>{{ $errors->first('account_last_name') }}</strong>
+    </span>
+@endif
+</div>
+<div class="clear"></div>
+
+<div class="form-group{{ $errors->has('account_email') ? ' has-error' : '' }}">
 <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-<label for="account_email">آدرس ایمیل <span class="required">*</span></label>
+<label for="account_email">آدرس ایمیل </label>
 <input type="email" class="woocommerce-Input woocommerce-Input--email input-text" name="account_email" id="account_email" value="{{ $customerinfo[0]->email  }}">
 </p>
-
+@if ($errors->has('account_email'))
+    <span class="help-block">
+        <strong>{{ $errors->first('account_email') }}</strong>
+    </span>
+@endif
+</div>
 <fieldset>
+        <div class="form-group{{ $errors->has('account_email') ? ' has-error' : '' }}">
 <legend>تغییر گذرواژه</legend>
 
 <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 <label for="password_current">گذرواژه پیشین (در صورتی که قصد تغییر ندارید خالی بگذارید)</label>
 <input type="password" class="woocommerce-Input woocommerce-Input--password input-text" name="password_current" id="password_current">
 </p>
+@if ($errors->has('password_current'))
+    <span class="help-block">
+        <strong>{{ $errors->first('password_current') }}</strong>
+    </span>
+@endif
 <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-<label for="password_1">گذرواژه جدید (در صورتی که قصد تغییر ندارید خالی بگذارید)</label>
-<input type="password" class="woocommerce-Input woocommerce-Input--password input-text" name="password_1" id="password_1">
+<label for="password">گذرواژه جدید (در صورتی که قصد تغییر ندارید خالی بگذارید)</label>
+<input type="password" class="woocommerce-Input woocommerce-Input--password input-text" name="password" id="password">
 </p>
+@if ($errors->has('password'))
+    <span class="help-block">
+        <strong>{{ $errors->first('password') }}</strong>
+    </span>
+@endif
 <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-<label for="password_2">تکرار رمز تازه</label>
-<input type="password" class="woocommerce-Input woocommerce-Input--password input-text" name="password_2" id="password_2">
+<label for="password_confirmation">تکرار رمز تازه</label>
+<input type="password" class="woocommerce-Input woocommerce-Input--password input-text" name="password_confirmation" id="password_confirmation">
 </p>
+@if ($errors->has('password_confirmation'))
+    <span class="help-block">
+        <strong>{{ $errors->first('password_confirmation') }}</strong>
+    </span>
+@endif
+
+        </div>
 </fieldset>
 <div class="clear"></div>
 
 
 <p>
-<input type="hidden" id="_wpnonce" name="_wpnonce" value="2e7836571c"><input type="hidden" name="_wp_http_referer" value="/takhfifat/my-account/edit-account/">		<button type="submit" class="woocommerce-Button button" name="save_account_details" value="ذخیره تغییرات">ذخیره تغییرات</button>
+<input type="hidden" id="_wpnonce" name="_wpnonce" value="2e7836571c"><input type="hidden" name="_wp_http_referer" value="/takhfifat/my-account/edit-account/">		
+<input type="submit" onclick="editProfile(event, {{$customerinfo[0]->id  }})" class="" name="save_account_details" value="ذخیره تغییرات">
 <input type="hidden" name="action" value="save_account_details">
 </p>
 
@@ -78,3 +123,22 @@ onclick="event.preventDefault();
 
                             
 </div>
+<script>
+    
+function editProfile(e,id){
+    e.preventDefault();
+   
+    jQuery.ajax({
+        headers: {
+            'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+        },
+        type: 'POST',
+        url: '/my-account/editprofile/'+id,
+        data: jQuery('#editprofile').serialize() + '&_token=<?php echo csrf_token() ?>',
+        success:function(data){
+            jQuery('#ajax-show').html(data)
+        }
+    });        
+}
+</script>
+        
