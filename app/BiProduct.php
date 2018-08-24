@@ -25,8 +25,8 @@ class BiProduct extends Model
          */
         'columns' => [
             'bi_products.name' => 10,
-
-            
+            'bi_products.description' => 9,
+            'bi_products.location' => 9,
         ],
 
     ];
