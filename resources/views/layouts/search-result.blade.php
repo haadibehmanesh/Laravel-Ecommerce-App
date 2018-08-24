@@ -173,28 +173,26 @@ function toPersianNum( num, dontTrim ) {
     <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{Auth::guard('customer')->user()->name}}<span class="fa fa-user pull-right"></span></a>
         <ul class="dropdown-menu">
-                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard is-active">
-                                                <a href="{{url('/my-account')}}">پیشخوان</a>
+            <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard is-active">
+            <a href="{{url('/my-account')}}">پیشخوان</a>
                 </li>
-                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
+                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
                     <a href="{{url('/my-account')}}">سفارش ها</a>
                 </li>
-                 
-                
-                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
+                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
                     <a href="{{url('/my-account')}}">جزئیات حساب</a>
                 </li>
-                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout"><a href="{{ url('/customer/logout') }}"
-                                                    onclick="event.preventDefault();
-                                                             document.getElementById('logout-form').submit();">
-                                                    خروج
-                                                </a>
-            
-                                                <form id="logout-form" action="{{ url('/customer/logout') }}" method="POST" style="display: none;">
-                                                    {{ csrf_field() }}
-                                                </form>
-                                            </li>
-                                         </ul>
+                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout"><a href="{{ url('/customer/logout') }}"
+                    onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                    خروج
+                </a>
+
+                <form id="logout-form" action="{{ url('/customer/logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            </li>
+            </ul>
     </li>
 </ul>
             </div>

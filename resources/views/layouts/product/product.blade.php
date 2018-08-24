@@ -221,16 +221,12 @@ img.emoji {
                                                 <a href="{{url('/my-account')}}">پیشخوان</a>
                 </li>
                                                 <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
-                    <a href="http://demo.onliner.ir/takhfifat/my-account/orders/">سفارش ها</a>
+                    <a href="{{url('/my-account')}}">سفارش ها</a>
                 </li>
-                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--downloads">
-                    <a href="http://demo.onliner.ir/takhfifat/my-account/downloads/">دانلودها</a>
-                </li>
-                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-address">
-                    <a href="http://demo.onliner.ir/takhfifat/my-account/edit-address/">آدرس ها</a>
-                </li>
+                 
+                
                                                 <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
-                    <a href="http://demo.onliner.ir/takhfifat/my-account/edit-account/">جزئیات حساب</a>
+                    <a href="{{url('/my-account')}}">جزئیات حساب</a>
                 </li>
                                                 <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout"><a href="{{ url('/customer/logout') }}"
                                                     onclick="event.preventDefault();
