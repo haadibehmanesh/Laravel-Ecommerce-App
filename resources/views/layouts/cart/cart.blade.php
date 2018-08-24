@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="fa_IR">
 
-<!-- Mirrored from localhost/takhfiftest/cart/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 21 Jun 2018 08:01:28 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<!-- Boninja.com -->
+<!-- Boninja.com --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Boninja.com -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -664,5 +664,5 @@ jQuery(document).ready(function(){
 </script>
 	</body>
 
-<!-- Mirrored from localhost/takhfiftest/cart/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 21 Jun 2018 08:01:34 GMT -->
+<!-- Boninja.com -->
 </html>

@@ -818,5 +818,4 @@
     </script>
         </body>
     
-    <!-- Mirrored from localhost/takhfiftest/my-account/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 21 Jun 2018 08:01:28 GMT -->
     </html>

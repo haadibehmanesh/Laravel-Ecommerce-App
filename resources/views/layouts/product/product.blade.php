@@ -1001,6 +1001,4 @@ jQuery(document).ready(function(){
 });
 </script>
 	</body>
-
-<!-- Mirrored from localhost/takhfiftest/product/آرایشگاه-النا/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 21 Jun 2018 08:06:14 GMT -->
 </html>
