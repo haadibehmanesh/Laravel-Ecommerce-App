@@ -18,9 +18,7 @@ Route::get('/cart', 'CartController@index')->name('cart.index');
 Route::post('/cart', 'CartController@store')->name('cart.store');
 Route::patch('/cart/{product}', 'CartController@update')->name('cart.update');
 Route::delete('/cart/{product}', 'CartController@destroy')->name('cart.destroy');
-Route::get('/empty', function () {
-    Cart::destroy();
-});
+
 
 Route::get('/products', 'ShopController@index')->name('shop.index');
 Route::get('/products/{product}/{category?}', 'ShopController@show')->name('shop.show');
@@ -41,6 +39,7 @@ Route::post('/my-account/editaccount/{id}', 'CostumerpanelController@edit')->nam
 Route::post('/my-account/editprofile/{id}', 'CostumerpanelController@editprofile')->name('costumerpanel.editprofile');
 
 Route::get('/dashboard', 'MerchantpanelController@index')->name('merchantpanel.index');
+Route::post('/ajax/codeValidation', 'AjaxController@codeValidation')->name('merchantpanel.codeValidation');
 Route::get('/dashboard/orders', 'MerchantpanelController@orders')->name('merchantpanel.orders');
 Route::get('/dashboard/products', 'MerchantpanelController@products')->name('merchantpanel.products');
 Route::get('/dashboard/editaccount', 'MerchantpanelController@edit')->name('merchantpanel.edit');

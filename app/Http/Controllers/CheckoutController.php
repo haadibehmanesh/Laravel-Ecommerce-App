@@ -62,6 +62,7 @@ class CheckoutController extends Controller
                     'quantity' => $item->qty,
                     'total' => $item->subtotal,
                     'bi_product_id' => $item->id,
+                    'bi_merchant_id' => $item->options['bi_merchant_id']
                 ]);
 
                 $product->sold = $productSold;
@@ -69,6 +70,7 @@ class CheckoutController extends Controller
 
                 $success_message = 'درحال انتقال به درگاه بانک';
                 $error_message = null;
+                Cart::destroy();
 
             } else {
                 $success_message = null;

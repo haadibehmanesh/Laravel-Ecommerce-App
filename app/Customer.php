@@ -43,5 +43,10 @@ class Customer extends Authenticatable
 
         return $this->hasOne('App\BiCustomer' , 'customer_id');
     }
+
+    public function bimerchant(){
+
+        return $this->hasMany('App\BiMerchant' , 'customer_id');
+    }
     
 }

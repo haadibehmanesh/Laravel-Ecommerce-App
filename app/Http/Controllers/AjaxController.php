@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
+use App\BiOrderItem;
+use App\BiMerchant;
+use Illuminate\Support\Facades\Auth;
 
 class AjaxController extends Controller {
     
@@ -78,6 +81,36 @@ class AjaxController extends Controller {
             'products' => $products         
         ])->render();
         
+    }
+
+    public function codeValidation(Request $request){
+        $id = Auth::guard('customer')->user()->bimerchant()->first()->id;
+        $order_item = BiOrderItem::where('code', $request->code_offer)->with(['product.bimerchant'])->first();
+        $merchant_id = $order_item->product->bimerchant->id;
+        if($merchant_id == $id ){
+
+            $order_item_quantity = $order_item->quantity;
+            $order_item_quantity_used = $order_item->code_used_count;
+
+            if($request->code_used_count + $order_item_quantity_used <= $order_item_quantity ){
+                $order_item->code_used_count += $request->code_used_count;
+
+                $order_item->save();
+                dd('ok');
+            }
+            dd('ziyadi');
+        }else{
+dd('be shoma ni');
+
+            dd('not equal');
+        }
+
+
+
+        
+
+
+
     }
     /**
      * Show the form for creating a new resource.

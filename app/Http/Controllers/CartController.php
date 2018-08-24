@@ -60,7 +60,8 @@ class CartController extends Controller
 
         if ($orderLimit > 0) {
             Cart::add($request->id, $product[0]->name, 1, presentPrice($product[0]->price, $product[0]->discount), [
-                'order_limit' => $orderLimit
+                'order_limit' => $orderLimit,
+                'bi_merchant_id' => $product[0]->bi_merchant_id
             ])->associate('App\BiProduct');
             return redirect()->route('cart.index')->with('success_message', 'بن شما با موفقیت اضافه شد');
         }

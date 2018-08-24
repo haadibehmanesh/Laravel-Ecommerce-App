@@ -161,6 +161,31 @@
                     return res;
                 }
                 </script>
+                <meta name="csrf-token" content="{{ csrf_token() }}">
+                   <script>
+                    jQuery(document).ready(function(){
+                        jQuery('.check_code_offer').click(function(){
+                            jQuery('.result_ajax').html('لطفا صبر کنید');
+                            var code_used_count = jQuery('.code_used_count').val();
+                            var code_offer = jQuery('.code_offer').val() ;
+                            jQuery.ajax({
+                                headers: {
+                                    'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+                                },
+                                type:'POST',
+                                url:'/ajax/codeValidation',
+                                data:{
+                                    code_used_count : code_used_count , 
+                                    code_offer : code_offer                                    
+                            }}).done(function(data){
+                
+                                jQuery('.result_ajax').html(data);
+
+
+                            });
+                        });
+                    });
+                </script>
             </head>
 <body class="rtl page-template-default page page-id-12 logged-in mega-menu-main-menu dokan-dashboard dokan-theme-takhfifat">
     <!----- Top Menu
@@ -517,7 +542,7 @@
         <div class="widget-title">معتبر سازی کد تخفیف</div>
         <p>برای اطمینان از صحت خرید مشتری ، شماره سفارش و کد تخفیفی که مشتریان شما برای گرفتن خدمات به شما ارائه مینماید را در اینجا چک بفرمائید.</p>
         <div style="padding:10px">
-            <label>شماره سفارش:<br><input style="width:100%;box-sizing:border-box" type="number" name="number_order" class="number_order" /></label><br />
+            <label>تعداد:<br><input style="width:100%;box-sizing:border-box" type="number" name="code_used_count" class="code_used_count" /></label><br />
             <label>کد تخفیف:<br><input style="width:100%;box-sizing:border-box" type="number" name="code_offer" class="code_offer" /></label><br>
             <input type="button" class="check_code_offer" value="اعمال">
 			<div class="clear"></div>
@@ -526,23 +551,7 @@
 			<br>
         </div>
     </div>
-    <script>
-        jQuery(document).ready(function(){
-            jQuery('.check_code_offer').click(function(){
-                jQuery('.result_ajax').html('لطفا صبر کنید');
-                var number_order = jQuery('.number_order').val() ;
-                var code_offer = jQuery('.code_offer').val() ;
-                jQuery.post("http://demo.onliner.ir/takhfifat/wp-admin/admin-ajax.php",
-                    { 
-					action: 'check_code_offer',
-					number_order : number_order , 
-					code_offer : code_offer },
-                    function(data, status) {
-                        jQuery('.result_ajax').html(data);
-                    });
-            });
-        });
-    </script>
+ 
 
 <div class="dashboard-widget sells-graph">
     <div class="widget-title"><i class="fa fa-credit-card"></i> فروش این ماه</div>

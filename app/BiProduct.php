@@ -39,4 +39,8 @@ class BiProduct extends Model
     public function scopeMightAlsoLike($query) {
         return $query->inRandomOrder()->take(4);
     }
+
+    public function bimerchant() {
+        return $this->belongsTo('App\BiMerchant', 'bi_merchant_id');
+    }
 }
