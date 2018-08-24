@@ -364,7 +364,7 @@ ol.commentlist li ul.children li.depth-5{margin:20px 0 0}
 .price_item span{display:block;font:14pt/25pt IRANSans;color:#c1c1c1;white-space:nowrap}
 .price_item span ins{text-decoration:none}
 .price_item .price_discount{color:#49c668;font-size:19pt;margin-bottom:10px}
-.share_gift_bye{overflow:hidden;padding-top:4px;width: 100%;}
+.share_gift_bye{overflow:hidden;padding-top:4px;width: 100%;height: 165px;}
 .share_gift_bye .link_share{float:right;font:14pt/27pt IRANSans;color:#fff;border-radius:5px;background:#838282;padding:0 25px}
 .share_gift_bye .link_share .fa{float:right;padding:5px 0 0 8px;font-size:17pt}
 .share_gift_bye .link_share:hover{background:#706f6f}
