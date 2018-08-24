@@ -6,6 +6,7 @@ use App\BiCategory;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Input;
 
 class AjaxController extends Controller {
     
@@ -67,7 +68,17 @@ class AjaxController extends Controller {
         ])->render();
         
     }
-
+    public function search()
+    { 
+        $pagination = 3;
+        $query = Input::get('query');
+        $products = BiProduct::search($query)->paginate($pagination);
+        $products->appends(['query' => $query]);
+        return view('layouts/ajax-search-result')->with([
+            'products' => $products         
+        ])->render();
+        
+    }
     /**
      * Show the form for creating a new resource.
      *
