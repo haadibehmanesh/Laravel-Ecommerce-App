@@ -223,12 +223,11 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
                     </script>
                 </div>
                 <div class="main_input">
-                    <form action="http://localhost/takhfiftest/" id="searchform">
-                        <i class="fa fa-search"></i>
-                        <input type="text" value="" name="s" id="s"  placeholder="رستوران ، آموزش ، کالا ..." />
-                        <input type="hidden" name="post_type" value="product">
-                        <input type="submit" id="searchsubmit" value="جستجو" />
-                    </form>
+                        <form action="{{ route('search.index') }}" id="searchform">
+                                <i class="fa fa-search"></i>
+                        <input type="text" value="{{request()->input('query')}}" name="query" id="s"  placeholder="رستوران ، سرگرمی ، خدمات ..." />
+                                <input type="submit" id="searchsubmit" value="جستجو" />
+                        </form>
                 </div>
             </div>
             
@@ -332,7 +331,7 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
     <section id="wrapper">
         <div class="container">
             <div class="row">
-                <ol class="breadcrumb"><a href="http://localhost/takhfiftest">خانه</a> &#47; بن ها</ol>                <div class="block_gallery_archive">
+                <ol class="breadcrumb"><a href="/">خانه</a> &#47; بن ها</ol>                <div class="block_gallery_archive">
         
             </div>                <div class="clear"></div>
                 <!--related product -->

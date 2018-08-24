@@ -271,12 +271,11 @@ jQuery.ajax({
                     </script>
                 </div>
                 <div class="main_input">
-                    <form action="http://localhost/takhfiftest/" id="searchform">
-                        <i class="fa fa-search"></i>
-                        <input type="text" value="" name="s" id="s"  placeholder="رستوران ، آموزش ، کالا ..." />
-                        <input type="hidden" name="post_type" value="product">
-                        <input type="submit" id="searchsubmit" value="جستجو" />
-                    </form>
+                        <form action="{{ route('search.index') }}" id="searchform">
+                                <i class="fa fa-search"></i>
+                        <input type="text" value="{{request()->input('query')}}" name="query" id="s"  placeholder="رستوران ، سرگرمی ، خدمات ..." />
+                                <input type="submit" id="searchsubmit" value="جستجو" />
+                        </form>
                 </div>
             </div>
             
