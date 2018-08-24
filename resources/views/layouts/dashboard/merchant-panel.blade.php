@@ -360,7 +360,8 @@
     <section id="wrapper">
     <div class="container">
         <div class="row">
-                        <ol class="breadcrumb"><a href="http://demo.onliner.ir/takhfifat">خانه</a> &#47; پنل فروشندگان</ol>            <div class="post-content-page">
+            <ol class="breadcrumb"><a href="/">خانه</a> &#47; پنل فروشندگان</ol>    
+            <div class="post-content-page">
                                         
                     <!--title & discount & views-->
                     <div class="title_post">
@@ -378,17 +379,6 @@
 
         
         <article class="dashboard-content-area">
-
-            <div class="dokan-panel dokan-panel-default dokan-profile-completeness">
-    <div class="dokan-panel-body">
-    <div class="dokan-progress">
-        <div class="dokan-progress-bar dokan-progress-bar-info dokan-progress-bar-striped" role="progressbar"
-             aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:85%">
-            85% تکمیل پروفایل        </div>
-    </div>
-    <div class="dokan-alert dokan-alert-info dokan-panel-alert">یک روش پرداخت اضافه کنید تا پیشرفت 15% بدست آورید</div>
-   </div>
-</div>
 
             <div class="dokan-w6 dokan-dash-left">
 
@@ -536,7 +526,7 @@
             <div class="dokan-w6 dokan-dash-right">
                     <div class="dashboard-widget">
         <div class="widget-title">معتبر سازی کد تخفیف</div>
-        <p>برای اطمینان از صحت خرید مشتری ، شماره سفارش و کد تخفیفی که مشتریان شما برای گرفتن خدمات به شما ارائه مینماید را در اینجا چک بفرمائید.</p>
+        <p>برای اطمینان از صحت خرید مشتری ، تعداد بن مصرف شده و کد تخفیفی که مشتریان شما برای گرفتن خدمات به شما ارائه مینماید را در اینجا چک بفرمائید.</p>
         <div style="padding:10px">
             <label>تعداد:<br><input style="width:100%;box-sizing:border-box" type="number" name="code_used_count" class="code_used_count" /></label><br />
             <label>کد تخفیف:<br><input style="width:100%;box-sizing:border-box" type="number" name="code_offer" class="code_offer" /></label><br>

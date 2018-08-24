@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Input;
 use App\BiOrderItem;
 use App\BiMerchant;
 use Illuminate\Support\Facades\Auth;
+use Validator;
 
 class AjaxController extends Controller {
     
@@ -84,33 +85,61 @@ class AjaxController extends Controller {
     }
 
     public function codeValidation(Request $request){
-        $id = Auth::guard('customer')->user()->bimerchant()->first()->id;
-        $order_item = BiOrderItem::where('code', $request->code_offer)->with(['product.bimerchant'])->first();
-        $merchant_id = $order_item->product->bimerchant->id;
-        if($merchant_id == $id ){
 
-            $order_item_quantity = $order_item->quantity;
-            $order_item_quantity_used = $order_item->code_used_count;
+        $validatedData = Validator::make($request->all(), [
+            'code_used_count' => 'numeric|required|min:1|digits_between: 1,9',
+            'code_offer' => 'numeric|required|digits_between: 1,9',
+        ]);
+        if(!$validatedData->fails()){
+            $id = Auth::guard('customer')->user()->bimerchant()->first()->id;
+            $order_item = BiOrderItem::where('code', $request->code_offer)->with(['product.bimerchant'])->first();
+            
+            if($order_item){           
+                $merchant_id = $order_item->product->bimerchant->id;
+                if(!empty($merchant_id) && $merchant_id !='0' && $merchant_id == $id ){
+        
+                    $order_item_quantity = $order_item->quantity;
+                    $order_item_quantity_used = $order_item->code_used_count;
+        
+                    if($request->code_used_count + $order_item_quantity_used <= $order_item_quantity ){
+                        $order_item->code_used_count += $request->code_used_count;
+        
+                        $order_item->save();
+                        $message = '<p class="alert alert-success">
+                        کد تخفیف با موفقیت تایید شد!
+                        </p>
+                        ';
+                    }else{
+                        $message = '<p class="alert alert-danger">
+                        تعداد بن مصرف شده بیش از حد مجاز است!
+                        </p>
+                        ';
+                    }
+                
+                }else{
+                        $message = '<p class="alert alert-danger">
+                        دسترسی شما برای تایید کد تخفیف مجاز نیست!
+                        </p>
+                        ';
+                }
+            }else{ 
 
-            if($request->code_used_count + $order_item_quantity_used <= $order_item_quantity ){
-                $order_item->code_used_count += $request->code_used_count;
-
-                $order_item->save();
-                dd('ok');
+                        $message = '<p class="alert alert-danger">
+                        کد تخفیف معتبر نیست!
+                        </p>
+                        ';
             }
-            dd('ziyadi');
         }else{
-dd('be shoma ni');
 
-            dd('not equal');
+                        $message = '<p class="alert alert-danger">
+                        مقادیر وارد شده معتبر نیست!
+                        </p>
+                        ';
+
         }
 
-
-
-        
-
-
-
+        return  $message;
+            
     }
     /**
      * Show the form for creating a new resource.
