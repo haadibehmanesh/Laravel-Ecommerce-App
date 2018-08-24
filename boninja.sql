@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 21, 2018 at 02:19 PM
+-- Generation Time: Aug 24, 2018 at 10:24 AM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.1.18
 
@@ -166,12 +166,10 @@ CREATE TABLE `bi_customers` (
   `id` int(11) NOT NULL,
   `store_id` int(11) DEFAULT '0',
   `language_id` int(11) DEFAULT NULL,
-  `firstname` varchar(32) NOT NULL,
-  `lastname` varchar(32) NOT NULL,
-  `email` varchar(96) NOT NULL,
-  `telephone` varchar(32) NOT NULL,
+  `firstname` varchar(32) DEFAULT NULL,
+  `lastname` varchar(32) DEFAULT NULL,
+  `telephone` varchar(32) DEFAULT NULL,
   `fax` varchar(32) DEFAULT NULL,
-  `password` varchar(128) NOT NULL,
   `salt` varchar(9) DEFAULT NULL,
   `cart` text,
   `wishlist` text,
@@ -184,15 +182,18 @@ CREATE TABLE `bi_customers` (
   `token` text,
   `code` varchar(40) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `customer_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `bi_customers`
 --
 
-INSERT INTO `bi_customers` (`id`, `store_id`, `language_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `password`, `salt`, `cart`, `wishlist`, `newsletter`, `address_id`, `custom_field`, `ip`, `status`, `safe`, `token`, `code`, `created_at`, `updated_at`) VALUES
-(3, 0, NULL, 'Hamid', 'Alizadeh', 'hamid@hamid.hamid', '935', NULL, '$2y$10$zg452Zbl5WaK0IKVVemakOqXAyh7958rOF/2CKcEu5KtK/CHJeCoS', NULL, NULL, NULL, 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2018-07-22 11:20:00', '2018-07-22 11:20:41');
+INSERT INTO `bi_customers` (`id`, `store_id`, `language_id`, `firstname`, `lastname`, `telephone`, `fax`, `salt`, `cart`, `wishlist`, `newsletter`, `address_id`, `custom_field`, `ip`, `status`, `safe`, `token`, `code`, `created_at`, `updated_at`, `customer_id`) VALUES
+(3, 0, NULL, 'Hamid', 'Alizadeh', '935', NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2018-07-22 11:20:00', '2018-08-22 08:40:01', 11),
+(5, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2018-08-23 02:06:05', '2018-08-23 02:06:05', 15),
+(6, 0, NULL, 'hadi', 'behmanesh', NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-08-23 06:16:02', 1);
 
 -- --------------------------------------------------------
 
@@ -215,7 +216,8 @@ CREATE TABLE `bi_c_groups` (
 
 INSERT INTO `bi_c_groups` (`id`, `name`, `description`, `language_id`, `created_at`, `updated_at`) VALUES
 (1, 'VIP', 'Very Important People', NULL, '2018-07-22 10:13:32', '2018-07-22 10:13:32'),
-(2, 'vip 2', NULL, NULL, '2018-07-22 11:11:29', '2018-07-22 11:11:29');
+(2, 'vip 2', NULL, NULL, '2018-07-22 11:11:29', '2018-07-22 11:11:29'),
+(3, 'vip 3', 'vip 3', NULL, '2018-08-22 07:59:07', '2018-08-22 07:59:07');
 
 -- --------------------------------------------------------
 
@@ -236,7 +238,8 @@ CREATE TABLE `bi_c_group_bi_customer` (
 --
 
 INSERT INTO `bi_c_group_bi_customer` (`id`, `bi_c_group_id`, `bi_customer_id`, `created_at`, `updated_at`) VALUES
-(5, 1, 3, '2018-07-22 11:20:41', '2018-07-22 11:20:41');
+(12, 1, 3, '2018-08-22 08:40:32', '2018-08-22 08:40:32'),
+(13, 3, 3, '2018-08-22 08:40:32', '2018-08-22 08:40:32');
 
 -- --------------------------------------------------------
 
@@ -597,10 +600,9 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `name`, `phone`, `email`, `password`, `is_merchant`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'hadi', '09178145534', 'haadibehmanesh@gmail.com', '$2y$10$bf5K5mSaouoRMBeFWiRCP.T7P3whA2G4XvP4E6dI5O5nI62u19d2O', 1, '8r7lAtlKK15V5RC0dNsJrnS2uiLQUCULCAZ7K2l7OEJID1q8sccrSQkVdwhV', '2018-08-20 04:45:59', '2018-08-20 04:45:59'),
-(9, 'sss', '09178145535', 'demo@example.com', '$2y$10$.AC73Jokd1TTzaDcjK/uduvUKNl52Y1R/t2Dl25.AU9BH7P4ODkiS', 0, 'COyeW5sqidLO8YdoFkFysrzb2l6Ud1kcjYSzgYBu0VojipSMWpAOl0SyctM3', '2018-08-20 14:51:31', '2018-08-20 14:51:31'),
-(10, 'ff', '19178145534', NULL, '$2y$10$Q17iN32MYFqgojczKfi3WeMPfJux0zz3BQVdBsZrfX99nlH9kU7ta', 0, 'qlCBsRyUlrK2mDrVLeKvDcLKPajnDZKqdYR9YDPWJsSrFK6RpU1G8vID1sNx', '2018-08-20 15:05:44', '2018-08-20 15:05:44'),
-(11, 'hamid', '09355482921', NULL, '$2y$10$EXKdhYC22Btw2XBdFzyz0eTgTavs/bTZY2FCm121DNaDwxcZBMaL6', 0, '5TGH3gmFFWZilU0tqlfqpzk3sg0W87misGaX0ChyxdeMMH8ldWQkg9uIcs3M', '2018-08-21 02:25:22', '2018-08-21 02:25:22');
+(1, 'hadi', '09178145534', 'haadibehmanesh@gmail.com', '$2y$10$bf5K5mSaouoRMBeFWiRCP.T7P3whA2G4XvP4E6dI5O5nI62u19d2O', 1, 'RxIU7fWKM9Ei2vxPQNZjnRTu3vBD9IrTYODOdrTBsFmj7krqWqIr6QGDPw5v', '2018-08-20 04:45:59', '2018-08-23 06:11:09'),
+(11, 'hamid', '09355482921', 'hamid@boninja.com', '$2y$10$ym0udEXxnuOgfdP.iNjPd.KmecUW1oNg7cfhQsTm/ouDdXPFcG1Dy', 0, 'xcnsTBYyb6MpmzaMSsNVyFeLcQ6enmBaIHha9KaRZ7GlHla5pqpeWTUSvTD9', '2018-08-21 02:25:22', '2018-08-22 12:51:47'),
+(15, 'haadi', '09128145534', 'hadi@boninja.com', '$2y$10$IzL8b8SY8aJaM2RrsKzLF.MXtfPa5lpcHQge4xCoVMsAfqvVovxg.', 0, 'kwHoIeZbRGQC6N6BG4gSUX2kc8mCJ8J7WobIYzuD7lRow0nquksmpI4PwJ0U', '2018-08-23 02:06:05', '2018-08-23 02:06:05');
 
 -- --------------------------------------------------------
 
@@ -842,12 +844,11 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (264, 22, 'bi_customer_id', 'text', 'Bi Customer Id', 1, 1, 1, 1, 1, 1, NULL, 3),
 (265, 22, 'created_at', 'timestamp', 'Created At', 0, 0, 1, 1, 0, 1, NULL, 4),
 (266, 22, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 5),
-(267, 23, 'customer_id', 'hidden', 'Customer Id', 1, 0, 0, 0, 0, 0, NULL, 1),
+(267, 23, 'customer_id', 'text', 'Customer Id', 1, 1, 1, 1, 1, 1, NULL, 1),
 (268, 23, 'store_id', 'text', 'Store Id', 0, 0, 0, 0, 0, 0, NULL, 2),
 (269, 23, 'language_id', 'text', 'Language Id', 0, 0, 0, 0, 0, 0, NULL, 3),
 (270, 23, 'firstname', 'text', 'Firstname', 1, 1, 1, 1, 1, 1, NULL, 4),
 (271, 23, 'lastname', 'text', 'Lastname', 1, 1, 1, 1, 1, 1, NULL, 5),
-(272, 23, 'email', 'text', 'Email', 1, 1, 1, 1, 1, 1, NULL, 6),
 (273, 23, 'telephone', 'text', 'Telephone', 1, 1, 1, 1, 1, 1, NULL, 7),
 (274, 23, 'fax', 'text', 'Fax', 0, 0, 1, 1, 1, 1, NULL, 8),
 (275, 23, 'password', 'password', 'Password', 1, 0, 1, 1, 1, 1, NULL, 9),
@@ -916,15 +917,29 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (343, 28, 'id', 'hidden', 'Id', 1, 1, 1, 0, 0, 0, NULL, 1),
 (344, 28, 'name', 'text', 'Name', 0, 1, 1, 1, 1, 1, NULL, 2),
 (345, 14, 'featured', 'checkbox', 'Featured', 0, 1, 1, 1, 1, 1, NULL, 42),
-(346, 29, 'id', 'hidden', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
-(347, 29, 'username', 'text', 'Username', 1, 1, 1, 1, 1, 1, NULL, 2),
-(348, 29, 'phone', 'text', 'Phone', 1, 1, 1, 1, 1, 1, NULL, 3),
-(349, 29, 'email', 'text', 'Email', 0, 1, 1, 1, 1, 1, NULL, 4),
-(350, 29, 'password', 'password', 'Password', 1, 1, 1, 1, 1, 1, NULL, 5),
-(351, 29, 'remember_token', 'text', 'Remember Token', 0, 0, 0, 1, 1, 1, NULL, 6),
-(352, 29, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 7),
-(353, 29, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 8),
-(354, 29, 'is_merchant', 'checkbox', 'Is Merchant', 0, 1, 1, 1, 1, 1, NULL, 9);
+(352, 29, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 20),
+(353, 29, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 21),
+(355, 23, 'bi_customer_id', 'hidden', 'Bi Customer Id', 1, 0, 0, 0, 0, 0, NULL, 1),
+(357, 29, 'store_id', 'text', 'Store Id', 0, 1, 1, 1, 1, 1, NULL, 2),
+(358, 29, 'language_id', 'text', 'Language Id', 0, 1, 1, 1, 1, 1, NULL, 3),
+(359, 29, 'firstname', 'text', 'Firstname', 1, 1, 1, 1, 1, 1, NULL, 4),
+(360, 29, 'lastname', 'text', 'Lastname', 1, 1, 1, 1, 1, 1, NULL, 5),
+(361, 29, 'telephone', 'text', 'Telephone', 1, 1, 1, 1, 1, 1, NULL, 6),
+(362, 29, 'fax', 'text', 'Fax', 0, 1, 1, 1, 1, 1, NULL, 7),
+(363, 29, 'salt', 'text', 'Salt', 0, 1, 1, 1, 1, 1, NULL, 9),
+(364, 29, 'cart', 'text', 'Cart', 0, 1, 1, 1, 1, 1, NULL, 10),
+(365, 29, 'wishlist', 'text', 'Wishlist', 0, 1, 1, 1, 1, 1, NULL, 11),
+(366, 29, 'newsletter', 'text', 'Newsletter', 0, 1, 1, 1, 1, 1, NULL, 12),
+(367, 29, 'address_id', 'text', 'Address Id', 0, 1, 1, 1, 1, 1, NULL, 13),
+(368, 29, 'custom_field', 'text', 'Custom Field', 0, 1, 1, 1, 1, 1, NULL, 14),
+(369, 29, 'ip', 'text', 'Ip', 0, 1, 1, 1, 1, 1, NULL, 15),
+(370, 29, 'status', 'text', 'Status', 0, 1, 1, 1, 1, 1, NULL, 16),
+(371, 29, 'safe', 'text', 'Safe', 0, 1, 1, 1, 1, 1, NULL, 17),
+(372, 29, 'token', 'text', 'Token', 0, 1, 1, 1, 1, 1, NULL, 18),
+(373, 29, 'code', 'text', 'Code', 0, 1, 1, 1, 1, 1, NULL, 19),
+(374, 29, 'customer_id', 'text', 'Customer Id', 1, 1, 1, 1, 1, 1, NULL, 22),
+(375, 29, 'bi_customer_belongsto_customer_relationship', 'relationship', 'customers', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Customer\",\"table\":\"customers\",\"type\":\"belongsTo\",\"column\":\"customer_id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"bi_c_group_bi_customer\",\"pivot\":\"0\",\"taggable\":\"0\"}', 23),
+(376, 29, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -968,12 +983,12 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (17, 'bi_categories', 'bi-categories', 'Bi Category', 'Bi Categories', 'voyager-window-list', 'App\\BiCategory', NULL, '\\App\\Http\\Controllers\\Voyager\\BiCategoryController', NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-19 04:02:15', '2018-07-28 06:27:37'),
 (18, 'bi_coupons', 'bi-coupons', 'Bi Coupon', 'Bi Coupons', 'voyager-dollar', 'App\\BiCoupon', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-19 05:08:55', '2018-07-19 05:08:55'),
 (21, 'bi_c_group', 'bi-c-group', 'Bi C Group', 'Bi C Groups', NULL, 'App\\BiCGroup', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-22 09:16:35', '2018-07-22 09:16:35'),
-(23, 'bi_customers', 'bi-customers', 'Bi Customer', 'Bi Customers', NULL, 'App\\BiCustomer', NULL, '\\App\\Http\\Controllers\\Voyager\\BiCustomerController', NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-22 11:08:34', '2018-07-22 11:08:34'),
 (24, 'bi_merchants', 'bi-merchants', 'Bi Merchant', 'Bi Merchants', NULL, 'App\\BiMerchant', NULL, '\\App\\Http\\Controllers\\Voyager\\BiMerchantController', NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-22 12:13:26', '2018-07-24 03:37:56'),
 (25, 'bi_m_groups', 'bi-m-groups', 'Bi M Group', 'Bi M Groups', NULL, 'App\\BiMGroup', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-07-24 03:33:32', '2018-07-24 03:33:32'),
 (26, 'bi_sliders', 'bi-sliders', 'Bi Slider', 'Bi Sliders', NULL, 'App\\BiSlider', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-08-02 04:27:15', '2018-08-02 04:27:15'),
 (27, 'bi_slider_images', 'bi-slider-images', 'Bi Slider Image', 'Bi Slider Images', NULL, 'App\\BiSliderImage', NULL, NULL, NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null}', '2018-08-02 04:47:45', '2018-08-02 04:47:45'),
-(28, 'bi_order_status', 'bi-order-status', 'Bi Order Status', 'Bi Order Statuses', NULL, 'App\\BiOrderStatus', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null}', '2018-08-06 09:51:04', '2018-08-06 09:51:04');
+(28, 'bi_order_status', 'bi-order-status', 'Bi Order Status', 'Bi Order Statuses', NULL, 'App\\BiOrderStatus', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null}', '2018-08-06 09:51:04', '2018-08-06 09:51:04'),
+(29, 'bi_customers', 'bi-customers', 'Bi Customer', 'Bi Customers', NULL, 'App\\BiCustomer', NULL, '\\App\\Http\\Controllers\\Voyager\\BiCustomerController', NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null}', '2018-08-22 08:07:57', '2018-08-22 08:07:57');
 
 -- --------------------------------------------------------
 
@@ -1048,9 +1063,7 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (27, 1, 'Bi M Groups', '', '_self', NULL, NULL, 26, 1, '2018-07-24 03:33:32', '2018-07-24 03:35:08', 'voyager.bi-m-groups.index', NULL),
 (28, 1, 'Bi Sliders', '', '_self', NULL, NULL, 30, 1, '2018-08-02 04:27:15', '2018-08-02 05:18:58', 'voyager.bi-sliders.index', NULL),
 (29, 1, 'Bi Slider Images', '', '_self', NULL, NULL, 30, 2, '2018-08-02 04:47:46', '2018-08-02 05:20:01', 'voyager.bi-slider-images.index', NULL),
-(30, 1, 'Sliders', '/admin', '_self', 'voyager-images', '#000000', NULL, 2, '2018-08-02 05:17:37', '2018-08-02 08:58:11', NULL, ''),
-(31, 1, 'Bi Order Statuses', '', '_self', NULL, NULL, NULL, 15, '2018-08-06 09:51:04', '2018-08-06 09:51:04', 'voyager.bi-order-status.index', NULL),
-(32, 1, 'Bi Users', '', '_self', NULL, NULL, NULL, 16, '2018-08-19 11:33:27', '2018-08-19 11:33:27', 'voyager.bi-users.index', NULL);
+(30, 1, 'Sliders', '/admin', '_self', 'voyager-images', '#000000', NULL, 2, '2018-08-02 05:17:37', '2018-08-02 08:58:11', NULL, '');
 
 -- --------------------------------------------------------
 
@@ -1234,11 +1247,6 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (74, 'edit_bi_c_group', 'bi_c_group', '2018-07-22 09:16:35', '2018-07-22 09:16:35'),
 (75, 'add_bi_c_group', 'bi_c_group', '2018-07-22 09:16:35', '2018-07-22 09:16:35'),
 (76, 'delete_bi_c_group', 'bi_c_group', '2018-07-22 09:16:35', '2018-07-22 09:16:35'),
-(82, 'browse_bi_customers', 'bi_customers', '2018-07-22 11:08:34', '2018-07-22 11:08:34'),
-(83, 'read_bi_customers', 'bi_customers', '2018-07-22 11:08:34', '2018-07-22 11:08:34'),
-(84, 'edit_bi_customers', 'bi_customers', '2018-07-22 11:08:34', '2018-07-22 11:08:34'),
-(85, 'add_bi_customers', 'bi_customers', '2018-07-22 11:08:34', '2018-07-22 11:08:34'),
-(86, 'delete_bi_customers', 'bi_customers', '2018-07-22 11:08:34', '2018-07-22 11:08:34'),
 (87, 'browse_bi_merchants', 'bi_merchants', '2018-07-22 12:13:26', '2018-07-22 12:13:26'),
 (88, 'read_bi_merchants', 'bi_merchants', '2018-07-22 12:13:26', '2018-07-22 12:13:26'),
 (89, 'edit_bi_merchants', 'bi_merchants', '2018-07-22 12:13:26', '2018-07-22 12:13:26'),
@@ -1263,7 +1271,12 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (108, 'read_bi_order_status', 'bi_order_status', '2018-08-06 09:51:04', '2018-08-06 09:51:04'),
 (109, 'edit_bi_order_status', 'bi_order_status', '2018-08-06 09:51:04', '2018-08-06 09:51:04'),
 (110, 'add_bi_order_status', 'bi_order_status', '2018-08-06 09:51:04', '2018-08-06 09:51:04'),
-(111, 'delete_bi_order_status', 'bi_order_status', '2018-08-06 09:51:04', '2018-08-06 09:51:04');
+(111, 'delete_bi_order_status', 'bi_order_status', '2018-08-06 09:51:04', '2018-08-06 09:51:04'),
+(112, 'browse_bi_customers', 'bi_customers', '2018-08-22 08:07:58', '2018-08-22 08:07:58'),
+(113, 'read_bi_customers', 'bi_customers', '2018-08-22 08:07:58', '2018-08-22 08:07:58'),
+(114, 'edit_bi_customers', 'bi_customers', '2018-08-22 08:07:58', '2018-08-22 08:07:58'),
+(115, 'add_bi_customers', 'bi_customers', '2018-08-22 08:07:58', '2018-08-22 08:07:58'),
+(116, 'delete_bi_customers', 'bi_customers', '2018-08-22 08:07:58', '2018-08-22 08:07:58');
 
 -- --------------------------------------------------------
 
@@ -1392,6 +1405,11 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (109, 1),
 (110, 1),
 (111, 1),
+(112, 1),
+(113, 1),
+(114, 1),
+(115, 1),
+(116, 1),
 (112, 1),
 (113, 1),
 (114, 1),
@@ -1821,7 +1839,7 @@ ALTER TABLE `bi_cart`
 -- AUTO_INCREMENT for table `bi_categories`
 --
 ALTER TABLE `bi_categories`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `bi_category_bi_product`
@@ -1833,19 +1851,19 @@ ALTER TABLE `bi_category_bi_product`
 -- AUTO_INCREMENT for table `bi_customers`
 --
 ALTER TABLE `bi_customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `bi_c_groups`
 --
 ALTER TABLE `bi_c_groups`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `bi_c_group_bi_customer`
 --
 ALTER TABLE `bi_c_group_bi_customer`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `bi_merchants`
@@ -1905,13 +1923,13 @@ ALTER TABLE `bi_slider_images`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=355;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=377;
 
 --
 -- AUTO_INCREMENT for table `data_types`
@@ -1977,7 +1995,7 @@ ALTER TABLE `translations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
