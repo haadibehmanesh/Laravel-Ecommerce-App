@@ -53,6 +53,8 @@ Route::post('/getcategory/{category}','AjaxController@getCategory');
 Route::post('/getlist/{category}','AjaxController@getList');
 Route::post('/ajax/products', 'AjaxController@getProduct');
 Route::post('/ajax/products/main', 'AjaxController@getProductMain');
+Route::post('/ajax/search', 'AjaxController@search');
+Route::any('/search', 'SearchController@index')->name('search.index');
 
 
 Route::group(['prefix' => 'customer'], function () {
