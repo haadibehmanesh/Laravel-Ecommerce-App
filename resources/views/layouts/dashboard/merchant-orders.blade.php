@@ -169,17 +169,17 @@
     <div class="container">
         <div class="row">
             <ul class="menu_top_header">
-                <li id="menu-item-163" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-163"><a href="http://demo.onliner.ir/takhfifat/my-account/">حساب کاربری من</a></li>
-<li id="menu-item-164" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164"><a href="http://demo.onliner.ir/takhfifat/checkout/">تسویه حساب</a></li>
-<li id="menu-item-165" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-165"><a href="http://demo.onliner.ir/takhfifat/cart/">سبد خرید</a></li>
-<li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-166"><a href="http://demo.onliner.ir/takhfifat/shop/">فروشگاه</a></li>
+                <li id="menu-item-163" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-163"><a href="/my-account">حساب کاربری من</a></li>
+<li id="menu-item-164" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164"><a href="/checkout">تسویه حساب</a></li>
+<li id="menu-item-165" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-165"><a href="/cart">سبد خرید</a></li>
+<li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-166"><a href="/products">همه پیشنهادها</a></li>
             </ul>
             <!--phone-->
-            <div class="phone"><span><i class="fa fa-phone-square"></i> 051-38555815</span></div>
+            <div class="phone"><span><i class="fa fa-book"></i>بانک جامع اطلاعاتی</span></div>
 			            <div class="block_login block_login_seller">
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
-                            <a href="http://demo.onliner.ir/takhfifat/dashboard/"><i class="fa fa-user pull-right"></i> پنل فروشندگان <strong class="takhfifat_get_seller_balance">موجودی: <span class="woocommerce-Price-amount amount">3,816,000&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></strong></a>
+                            <a href="/dashboard"><i class="fa fa-user pull-right"></i> پنل فروشندگان <strong class="takhfifat_get_seller_balance">موجودی: <span class="woocommerce-Price-amount amount">3,816,000&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></strong></a>
 						</li>
                     </ul>
             </div>			
@@ -200,7 +200,7 @@
         <div class="row">
 
             <!--logo-->
-                            <div class="logo"  style="background: url(http://demo.onliner.ir/takhfifat/wp-content/themes/takhfifat/images/logo.png) no-repeat center;" ><h1><a href="http://demo.onliner.ir/takhfifat " title="تخفیف گروهی تخفیفات"></a></h1></div>
+                            <div class="logo"  style="background: url(/wp-content/themes/takhfifat/images/logo.png) no-repeat center;" ><h1><a href=" " title="تخفیف گروهی  بن اینجا"></a></h1></div>
             
             <!--select search-->
             <div id="form_header">
@@ -225,7 +225,7 @@
                         jQuery("#cities_list").on("change", function() {
                             var city_name_temp = jQuery(this).find("option:selected").text();
                             var city_name = jQuery('#cities_list').val()
-                            jQuery.post("http://demo.onliner.ir/takhfifat/wp-content/themes/takhfifat/includes/set-cookies.php", {city_name: city_name}, function(result){
+                            jQuery.post("/wp-content/themes/takhfifat/includes/set-cookies.php", {city_name: city_name}, function(result){
                                  jQuery("div.realoading").html(result);
                             });
                         });
@@ -335,7 +335,7 @@
     <section id="wrapper">
     <div class="container">
         <div class="row">
-                        <ol class="breadcrumb"><a href="http://demo.onliner.ir/takhfifat">خانه</a> &#47; پنل فروشندگان</ol>            <div class="post-content-page">
+                        <ol class="breadcrumb"><a href="">خانه</a> &#47; پنل فروشندگان</ol>            <div class="post-content-page">
                                         
                     <!--title & discount & views-->
                     <div class="title_post">
@@ -345,10 +345,18 @@
 
     
                             <div class="dokan-dash-sidebar">
-                                <ul class="dokan-dashboard-menu"><li class="dashboard"><a href="{{ route('merchantpanel.index')}}"><i class="fa fa-tachometer"></i> پیشخوان</a></li><li class="products"><a href="{{ route('merchantpanel.products')}}"><i class="fa fa-briefcase"></i> محصولات</a></li><li class="active orders"><a href="{{ route('merchantpanel.orders')}}"><i class="fa fa-shopping-cart"></i> سفارشات</a></li><li class="coupons"><a href="http://demo.onliner.ir/takhfifat/dashboard/coupons/"><i class="fa fa-gift"></i> کوپن‌ها</a></li><li class="reports"><a href="http://demo.onliner.ir/takhfifat/dashboard/reports/"><i class="fa fa-line-chart"></i> گزارشات</a></li><li class="reviews"><a href="http://demo.onliner.ir/takhfifat/dashboard/reviews/"><i class="fa fa-comments-o"></i> نظرات</a></li><li class="withdraw"><a href="http://demo.onliner.ir/takhfifat/dashboard/withdraw/"><i class="fa fa-upload"></i> برداشت</a></li><li class="settings"><a href="http://demo.onliner.ir/takhfifat/dashboard/settings/store/"><i class="fa fa-cog"></i> تنظیمات</a></li><li class="dokan-common-links dokan-clearfix">
-                                        <a title="" class="tips" data-placement="top" href="http://demo.onliner.ir/takhfifat/store/demo/" target="_blank" data-original-title="مشاهده‌ی فروشگاه"><i class="fa fa-external-link"></i></a>
-                                        <a title="" class="tips" data-placement="top" href="http://demo.onliner.ir/takhfifat/dashboard/edit-account/" data-original-title="ویرایش حساب کاربری"><i class="fa fa-user"></i></a>
-                                        <a title="" class="tips" data-placement="top" href="http://demo.onliner.ir/takhfifat/wp-login.php?action=logout&amp;redirect_to=http%3A%2F%2Fdemo.onliner.ir%2Ftakhfifat&amp;_wpnonce=3923b5fde4" data-original-title="خروج"><i class="fa fa-power-off"></i></a>
+                                <ul class="dokan-dashboard-menu"><li class="dashboard"><a href="{{ route('merchantpanel.index')}}"><i class="fa fa-tachometer"></i> پیشخوان</a></li><li class="products"><a href="{{ route('merchantpanel.products')}}"><i class="fa fa-briefcase"></i> محصولات</a></li><li class="active orders"><a href="{{ route('merchantpanel.orders')}}"><i class="fa fa-shopping-cart"></i> سفارشات</a></li><li class="coupons"><a href="#"><i class="fa fa-gift"></i> کوپن‌ها</a></li><li class="reports"><a href="#"><i class="fa fa-line-chart"></i> گزارشات</a></li><li class="reviews"><a href="#"><i class="fa fa-comments-o"></i> نظرات</a></li><li class="withdraw"><a href="#"><i class="fa fa-upload"></i> برداشت</a></li><li class="settings"><a href="#"><i class="fa fa-cog"></i> تنظیمات</a></li><li class="dokan-common-links dokan-clearfix">
+                                        <a title="" class="tips" data-placement="top" href="#" target="_blank" data-original-title="مشاهده‌ی فروشگاه"><i class="fa fa-external-link"></i></a>
+                                        <a title="" class="tips" data-placement="top" href="#" data-original-title="ویرایش حساب کاربری"><i class="fa fa-user"></i></a>
+                                        <a href="{{ url('/customer/logout') }}"
+                onclick="event.preventDefault();
+                         document.getElementById('logout-form').submit();">
+                
+                <i class="fa fa-power-off"></i></a>
+
+            <form id="logout-form" action="{{ url('/customer/logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+            </form>
                                     </li></ul></div>
                                 <div class="dokan-dashboard-content dokan-orders-content">
                             
@@ -359,37 +367,37 @@
                                         
                                 <ul class="list-inline order-statuses-filter">
                                     <li class="active">
-                                                    <a href="http://demo.onliner.ir/takhfifat/dashboard/orders/">
+                                                    <a href="//orders/">
                                             همه
                                         </a>
                                     </li>
                                     <li>
-                                                    <a href="http://demo.onliner.ir/takhfifat/dashboard/orders/?order_status=wc-completed">
+                                                    <a href="//orders/?order_status=wc-completed">
                                             تکمیل شده
                                         </a>
                                     </li>
                                     <li>
-                                                    <a href="http://demo.onliner.ir/takhfifat/dashboard/orders/?order_status=wc-processing">
+                                                    <a href="//orders/?order_status=wc-processing">
                                             درحال پردازش
                                         </a>
                                     </li>
                                     <li>
-                                                    <a href="http://demo.onliner.ir/takhfifat/dashboard/orders/?order_status=wc-on-hold">
+                                                    <a href="//orders/?order_status=wc-on-hold">
                                             در انتظار بررسی
                                         </a>
                                     </li>
                                     <li>
-                                                    <a href="http://demo.onliner.ir/takhfifat/dashboard/orders/?order_status=wc-pending">
+                                                    <a href="//orders/?order_status=wc-pending">
                                             در انتظار پرداخت
                                         </a>
                                     </li>
                                     <li>
-                                                    <a href="http://demo.onliner.ir/takhfifat/dashboard/orders/?order_status=wc-cancelled">
+                                                    <a href="//orders/?order_status=wc-cancelled">
                                             لغو شده
                                         </a>
                                     </li>
                                     <li>
-                                                    <a href="http://demo.onliner.ir/takhfifat/dashboard/orders/?order_status=wc-refunded">
+                                                    <a href="//orders/?order_status=wc-refunded">
                                             مسترد شده
                                         </a>
                                     </li>
@@ -429,7 +437,7 @@
                                     <tbody>
                                                         <tr>
                                                 <td class="dokan-order-id" data-title="سفارش">
-                                                                                <a href="http://demo.onliner.ir/takhfifat/dashboard/orders/?order_id=947&amp;_wpnonce=cf1b00d2b3"><strong>سفارش ۹۴۷</strong></a>                                            </td>
+                                                                                <a href="//orders/?order_id=947&amp;_wpnonce=cf1b00d2b3"><strong>سفارش ۹۴۷</strong></a>                                            </td>
                                                 <td class="dokan-order-total" data-title="جمع کل سفارش">
                                                     <span class="woocommerce-Price-amount amount">۲۵۰,۰۰۰&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>                    </td>
                                                 <td class="dokan-order-status" data-title="وضعیت">
@@ -439,13 +447,13 @@
                                                 <td class="dokan-order-date" data-title="تاریخ">
                                                     <abbr title="23 مرداد 1397 13:25">-۴۵۷ فروردین ۷۷۷</abbr>                    </td>
                                                                         <td class="dokan-order-action" width="17%" data-title="عمل">
-                                                        <a class="dokan-btn dokan-btn-default dokan-btn-sm tips" href="http://demo.onliner.ir/takhfifat/dashboard/orders/?order_id=947&amp;_wpnonce=cf1b00d2b3" data-toggle="tooltip" data-placement="top" title="" data-original-title="نمایش"><i class="fa fa-eye">&nbsp;</i></a>                         </td>
+                                                        <a class="dokan-btn dokan-btn-default dokan-btn-sm tips" href="//orders/?order_id=947&amp;_wpnonce=cf1b00d2b3" data-toggle="tooltip" data-placement="top" title="" data-original-title="نمایش"><i class="fa fa-eye">&nbsp;</i></a>                         </td>
                                                                     <td class="diviader"></td>
                                             </tr>
                             
                                                         <tr>
                                                 <td class="dokan-order-id" data-title="سفارش">
-                                                                                <a href="http://demo.onliner.ir/takhfifat/dashboard/orders/?order_id=941&amp;_wpnonce=cf1b00d2b3"><strong>سفارش ۹۴۱</strong></a>                                            </td>
+                                                                                <a href="//orders/?order_id=941&amp;_wpnonce=cf1b00d2b3"><strong>سفارش ۹۴۱</strong></a>                                            </td>
                                                 <td class="dokan-order-total" data-title="جمع کل سفارش">
                                                     <span class="woocommerce-Price-amount amount">۲۵۰,۰۰۰&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>                    </td>
                                                 <td class="dokan-order-status" data-title="وضعیت">
@@ -455,13 +463,13 @@
                                                 <td class="dokan-order-date" data-title="تاریخ">
                                                     <abbr title="23 مرداد 1397 13:25">-۴۵۹ فروردین ۷۷۷</abbr>                    </td>
                                                                         <td class="dokan-order-action" width="17%" data-title="عمل">
-                                                        <a class="dokan-btn dokan-btn-default dokan-btn-sm tips" href="http://demo.onliner.ir/takhfifat/dashboard/orders/?order_id=941&amp;_wpnonce=cf1b00d2b3" data-toggle="tooltip" data-placement="top" title="" data-original-title="نمایش"><i class="fa fa-eye">&nbsp;</i></a>                         </td>
+                                                        <a class="dokan-btn dokan-btn-default dokan-btn-sm tips" href="//orders/?order_id=941&amp;_wpnonce=cf1b00d2b3" data-toggle="tooltip" data-placement="top" title="" data-original-title="نمایش"><i class="fa fa-eye">&nbsp;</i></a>                         </td>
                                                                     <td class="diviader"></td>
                                             </tr>
                             
                                                         <tr>
                                                 <td class="dokan-order-id" data-title="سفارش">
-                                                                                <a href="http://demo.onliner.ir/takhfifat/dashboard/orders/?order_id=936&amp;_wpnonce=cf1b00d2b3"><strong>سفارش ۹۳۶</strong></a>                                            </td>
+                                                                                <a href="//orders/?order_id=936&amp;_wpnonce=cf1b00d2b3"><strong>سفارش ۹۳۶</strong></a>                                            </td>
                                                 <td class="dokan-order-total" data-title="جمع کل سفارش">
                                                     <span class="woocommerce-Price-amount amount">۲۵۰,۰۰۰&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>                    </td>
                                                 <td class="dokan-order-status" data-title="وضعیت">
@@ -471,13 +479,13 @@
                                                 <td class="dokan-order-date" data-title="تاریخ">
                                                     <abbr title="23 مرداد 1397 13:25">-۴۶۰ فروردین ۷۷۷</abbr>                    </td>
                                                                         <td class="dokan-order-action" width="17%" data-title="عمل">
-                                                        <a class="dokan-btn dokan-btn-default dokan-btn-sm tips" href="http://demo.onliner.ir/takhfifat/dashboard/orders/?order_id=936&amp;_wpnonce=cf1b00d2b3" data-toggle="tooltip" data-placement="top" title="" data-original-title="نمایش"><i class="fa fa-eye">&nbsp;</i></a>                         </td>
+                                                        <a class="dokan-btn dokan-btn-default dokan-btn-sm tips" href="//orders/?order_id=936&amp;_wpnonce=cf1b00d2b3" data-toggle="tooltip" data-placement="top" title="" data-original-title="نمایش"><i class="fa fa-eye">&nbsp;</i></a>                         </td>
                                                                     <td class="diviader"></td>
                                             </tr>
                             
                                                         <tr>
                                                 <td class="dokan-order-id" data-title="سفارش">
-                                                                                <a href="http://demo.onliner.ir/takhfifat/dashboard/orders/?order_id=914&amp;_wpnonce=cf1b00d2b3"><strong>سفارش ۹۱۴</strong></a>                                            </td>
+                                                                                <a href="//orders/?order_id=914&amp;_wpnonce=cf1b00d2b3"><strong>سفارش ۹۱۴</strong></a>                                            </td>
                                                 <td class="dokan-order-total" data-title="جمع کل سفارش">
                                                     <span class="woocommerce-Price-amount amount">۲,۲۵۰,۰۰۰&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>                    </td>
                                                 <td class="dokan-order-status" data-title="وضعیت">
@@ -487,13 +495,13 @@
                                                 <td class="dokan-order-date" data-title="تاریخ">
                                                     <abbr title="23 مرداد 1397 13:25">-۴۷۱ فروردین ۷۷۷</abbr>                    </td>
                                                                         <td class="dokan-order-action" width="17%" data-title="عمل">
-                                                        <a class="dokan-btn dokan-btn-default dokan-btn-sm tips" href="http://demo.onliner.ir/takhfifat/dashboard/orders/?order_id=914&amp;_wpnonce=cf1b00d2b3" data-toggle="tooltip" data-placement="top" title="" data-original-title="نمایش"><i class="fa fa-eye">&nbsp;</i></a>                         </td>
+                                                        <a class="dokan-btn dokan-btn-default dokan-btn-sm tips" href="//orders/?order_id=914&amp;_wpnonce=cf1b00d2b3" data-toggle="tooltip" data-placement="top" title="" data-original-title="نمایش"><i class="fa fa-eye">&nbsp;</i></a>                         </td>
                                                                     <td class="diviader"></td>
                                             </tr>
                             
                                                         <tr>
                                                 <td class="dokan-order-id" data-title="سفارش">
-                                                                                <a href="http://demo.onliner.ir/takhfifat/dashboard/orders/?order_id=913&amp;_wpnonce=cf1b00d2b3"><strong>سفارش ۹۱۳</strong></a>                                            </td>
+                                                                                <a href="//orders/?order_id=913&amp;_wpnonce=cf1b00d2b3"><strong>سفارش ۹۱۳</strong></a>                                            </td>
                                                 <td class="dokan-order-total" data-title="جمع کل سفارش">
                                                     <span class="woocommerce-Price-amount amount">۲۵۰,۰۰۰&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>                    </td>
                                                 <td class="dokan-order-status" data-title="وضعیت">
@@ -503,13 +511,13 @@
                                                 <td class="dokan-order-date" data-title="تاریخ">
                                                     <abbr title="23 مرداد 1397 13:25">-۴۷۱ فروردین ۷۷۷</abbr>                    </td>
                                                                         <td class="dokan-order-action" width="17%" data-title="عمل">
-                                                        <a class="dokan-btn dokan-btn-default dokan-btn-sm tips" href="http://demo.onliner.ir/takhfifat/dashboard/orders/?order_id=913&amp;_wpnonce=cf1b00d2b3" data-toggle="tooltip" data-placement="top" title="" data-original-title="نمایش"><i class="fa fa-eye">&nbsp;</i></a>                         </td>
+                                                        <a class="dokan-btn dokan-btn-default dokan-btn-sm tips" href="//orders/?order_id=913&amp;_wpnonce=cf1b00d2b3" data-toggle="tooltip" data-placement="top" title="" data-original-title="نمایش"><i class="fa fa-eye">&nbsp;</i></a>                         </td>
                                                                     <td class="diviader"></td>
                                             </tr>
                             
                                                         <tr>
                                                 <td class="dokan-order-id" data-title="سفارش">
-                                                                                <a href="http://demo.onliner.ir/takhfifat/dashboard/orders/?order_id=906&amp;_wpnonce=cf1b00d2b3"><strong>سفارش ۹۰۶</strong></a>                                            </td>
+                                                                                <a href="//orders/?order_id=906&amp;_wpnonce=cf1b00d2b3"><strong>سفارش ۹۰۶</strong></a>                                            </td>
                                                 <td class="dokan-order-total" data-title="جمع کل سفارش">
                                                     <span class="woocommerce-Price-amount amount">۵۰۰,۰۰۰&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>                    </td>
                                                 <td class="dokan-order-status" data-title="وضعیت">
@@ -519,13 +527,13 @@
                                                 <td class="dokan-order-date" data-title="تاریخ">
                                                     <abbr title="23 مرداد 1397 13:25">-۴۷۳ فروردین ۷۷۷</abbr>                    </td>
                                                                         <td class="dokan-order-action" width="17%" data-title="عمل">
-                                                        <a class="dokan-btn dokan-btn-default dokan-btn-sm tips" href="http://demo.onliner.ir/takhfifat/dashboard/orders/?order_id=906&amp;_wpnonce=cf1b00d2b3" data-toggle="tooltip" data-placement="top" title="" data-original-title="نمایش"><i class="fa fa-eye">&nbsp;</i></a>                         </td>
+                                                        <a class="dokan-btn dokan-btn-default dokan-btn-sm tips" href="//orders/?order_id=906&amp;_wpnonce=cf1b00d2b3" data-toggle="tooltip" data-placement="top" title="" data-original-title="نمایش"><i class="fa fa-eye">&nbsp;</i></a>                         </td>
                                                                     <td class="diviader"></td>
                                             </tr>
                             
                                                         <tr>
                                                 <td class="dokan-order-id" data-title="سفارش">
-                                                                                <a href="http://demo.onliner.ir/takhfifat/dashboard/orders/?order_id=905&amp;_wpnonce=cf1b00d2b3"><strong>سفارش ۹۰۵</strong></a>                                            </td>
+                                                                                <a href="//orders/?order_id=905&amp;_wpnonce=cf1b00d2b3"><strong>سفارش ۹۰۵</strong></a>                                            </td>
                                                 <td class="dokan-order-total" data-title="جمع کل سفارش">
                                                     <span class="woocommerce-Price-amount amount">۲۵۰,۰۰۰&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>                    </td>
                                                 <td class="dokan-order-status" data-title="وضعیت">
@@ -535,13 +543,13 @@
                                                 <td class="dokan-order-date" data-title="تاریخ">
                                                     <abbr title="23 مرداد 1397 13:25">-۴۷۳ فروردین ۷۷۷</abbr>                    </td>
                                                                         <td class="dokan-order-action" width="17%" data-title="عمل">
-                                                        <a class="dokan-btn dokan-btn-default dokan-btn-sm tips" href="http://demo.onliner.ir/takhfifat/dashboard/orders/?order_id=905&amp;_wpnonce=cf1b00d2b3" data-toggle="tooltip" data-placement="top" title="" data-original-title="نمایش"><i class="fa fa-eye">&nbsp;</i></a>                         </td>
+                                                        <a class="dokan-btn dokan-btn-default dokan-btn-sm tips" href="//orders/?order_id=905&amp;_wpnonce=cf1b00d2b3" data-toggle="tooltip" data-placement="top" title="" data-original-title="نمایش"><i class="fa fa-eye">&nbsp;</i></a>                         </td>
                                                                     <td class="diviader"></td>
                                             </tr>
                             
                                                         <tr>
                                                 <td class="dokan-order-id" data-title="سفارش">
-                                                                                <a href="http://demo.onliner.ir/takhfifat/dashboard/orders/?order_id=904&amp;_wpnonce=cf1b00d2b3"><strong>سفارش ۹۰۴</strong></a>                                            </td>
+                                                                                <a href="//orders/?order_id=904&amp;_wpnonce=cf1b00d2b3"><strong>سفارش ۹۰۴</strong></a>                                            </td>
                                                 <td class="dokan-order-total" data-title="جمع کل سفارش">
                                                     <span class="woocommerce-Price-amount amount">۲۵۰,۰۰۰&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>                    </td>
                                                 <td class="dokan-order-status" data-title="وضعیت">
@@ -551,13 +559,13 @@
                                                 <td class="dokan-order-date" data-title="تاریخ">
                                                     <abbr title="23 مرداد 1397 13:25">-۴۷۳ فروردین ۷۷۷</abbr>                    </td>
                                                                         <td class="dokan-order-action" width="17%" data-title="عمل">
-                                                        <a class="dokan-btn dokan-btn-default dokan-btn-sm tips" href="http://demo.onliner.ir/takhfifat/dashboard/orders/?order_id=904&amp;_wpnonce=cf1b00d2b3" data-toggle="tooltip" data-placement="top" title="" data-original-title="نمایش"><i class="fa fa-eye">&nbsp;</i></a>                         </td>
+                                                        <a class="dokan-btn dokan-btn-default dokan-btn-sm tips" href="//orders/?order_id=904&amp;_wpnonce=cf1b00d2b3" data-toggle="tooltip" data-placement="top" title="" data-original-title="نمایش"><i class="fa fa-eye">&nbsp;</i></a>                         </td>
                                                                     <td class="diviader"></td>
                                             </tr>
                             
                                                         <tr>
                                                 <td class="dokan-order-id" data-title="سفارش">
-                                                                                <a href="http://demo.onliner.ir/takhfifat/dashboard/orders/?order_id=893&amp;_wpnonce=cf1b00d2b3"><strong>سفارش ۸۹۳</strong></a>                                            </td>
+                                                                                <a href="//orders/?order_id=893&amp;_wpnonce=cf1b00d2b3"><strong>سفارش ۸۹۳</strong></a>                                            </td>
                                                 <td class="dokan-order-total" data-title="جمع کل سفارش">
                                                     <span class="woocommerce-Price-amount amount">۷۵۰,۰۰۰&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>                    </td>
                                                 <td class="dokan-order-status" data-title="وضعیت">
@@ -567,13 +575,13 @@
                                                 <td class="dokan-order-date" data-title="تاریخ">
                                                     <abbr title="23 مرداد 1397 13:25">-۴۷۶ فروردین ۷۷۷</abbr>                    </td>
                                                                         <td class="dokan-order-action" width="17%" data-title="عمل">
-                                                        <a class="dokan-btn dokan-btn-default dokan-btn-sm tips" href="http://demo.onliner.ir/takhfifat/dashboard/orders/?order_id=893&amp;_wpnonce=cf1b00d2b3" data-toggle="tooltip" data-placement="top" title="" data-original-title="نمایش"><i class="fa fa-eye">&nbsp;</i></a>                         </td>
+                                                        <a class="dokan-btn dokan-btn-default dokan-btn-sm tips" href="//orders/?order_id=893&amp;_wpnonce=cf1b00d2b3" data-toggle="tooltip" data-placement="top" title="" data-original-title="نمایش"><i class="fa fa-eye">&nbsp;</i></a>                         </td>
                                                                     <td class="diviader"></td>
                                             </tr>
                             
                                                         <tr>
                                                 <td class="dokan-order-id" data-title="سفارش">
-                                                                                <a href="http://demo.onliner.ir/takhfifat/dashboard/orders/?order_id=892&amp;_wpnonce=cf1b00d2b3"><strong>سفارش ۸۹۲</strong></a>                                            </td>
+                                                                                <a href="//orders/?order_id=892&amp;_wpnonce=cf1b00d2b3"><strong>سفارش ۸۹۲</strong></a>                                            </td>
                                                 <td class="dokan-order-total" data-title="جمع کل سفارش">
                                                     <span class="woocommerce-Price-amount amount">۷۵۰,۰۰۰&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>                    </td>
                                                 <td class="dokan-order-status" data-title="وضعیت">
@@ -583,7 +591,7 @@
                                                 <td class="dokan-order-date" data-title="تاریخ">
                                                     <abbr title="23 مرداد 1397 13:25">-۴۷۶ فروردین ۷۷۷</abbr>                    </td>
                                                                         <td class="dokan-order-action" width="17%" data-title="عمل">
-                                                        <a class="dokan-btn dokan-btn-default dokan-btn-sm tips" href="http://demo.onliner.ir/takhfifat/dashboard/orders/?order_id=892&amp;_wpnonce=cf1b00d2b3" data-toggle="tooltip" data-placement="top" title="" data-original-title="نمایش"><i class="fa fa-eye">&nbsp;</i></a>                         </td>
+                                                        <a class="dokan-btn dokan-btn-default dokan-btn-sm tips" href="//orders/?order_id=892&amp;_wpnonce=cf1b00d2b3" data-toggle="tooltip" data-placement="top" title="" data-original-title="نمایش"><i class="fa fa-eye">&nbsp;</i></a>                         </td>
                                                                     <td class="diviader"></td>
                                             </tr>
                             
@@ -594,8 +602,8 @@
                             
                                 <div class="pagination-wrap"><ul class="pagination">
                                 <li><span aria-current="page" class="page-numbers current">۱</span></li>
-                                <li><a class="page-numbers" href="http://demo.onliner.ir/takhfifat/dashboard/orders/?pagenum=2">۲</a></li>
-                                <li><a class="next page-numbers" href="http://demo.onliner.ir/takhfifat/dashboard/orders/?pagenum=2">بعدی »</a></li>
+                                <li><a class="page-numbers" href="//orders/?pagenum=2">۲</a></li>
+                                <li><a class="next page-numbers" href="//orders/?pagenum=2">بعدی »</a></li>
                             </ul>
                             </div>
                             

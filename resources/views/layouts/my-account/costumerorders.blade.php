@@ -170,10 +170,10 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
     <div class="container">
         <div class="row">
             <ul class="menu_top_header">
-                <li id="menu-item-163" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-10 current_page_item menu-item-163"><a href="index.html">حساب کاربری من</a></li>
-<li id="menu-item-164" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164"><a href="../checkout/index.html">تسویه حساب</a></li>
-<li id="menu-item-165" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-165"><a href="../cart/index.html">سبد خرید</a></li>
-<li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-166"><a href="../shop/index.html">فروشگاه</a></li>
+                <li id="menu-item-163" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-10 current_page_item menu-item-163"><a href="/my-account">حساب کاربری من</a></li>
+                <li id="menu-item-164" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164"><a href="/checkout">تسویه حساب</a></li>
+                <li id="menu-item-165" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-165"><a href="/cart">سبد خرید</a></li>
+                <li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-166"><a href="/products">همه پیشنهادها</a></li>
             </ul>
             <!--phone-->
             <div class="phone"><span><i class="fa fa-book"></i>بانک جامع اطلاعاتی</span></div>
@@ -194,7 +194,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
         <div class="row">
 
             <!--logo-->
-                            <div class="logo" ><h1><a href="http://localhost/takhfiftest" title="تخفیف گروهی بن اینجا"></a></h1></div>
+                            <div class="logo" ><h1><a href="/" title="تخفیف گروهی بن اینجا"></a></h1></div>
             
             <!--select search-->
             <div id="form_header">

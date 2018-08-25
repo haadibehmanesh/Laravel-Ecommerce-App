@@ -25,13 +25,14 @@ Route::get('/products/{product}/{category?}', 'ShopController@show')->name('shop
 
 Route::get('/category/{category}', 'ShopController@showCategory')->name('shop.showCategory');
 
-Route::get('/checkout', 'CheckoutController@store')->name('checkout.store');
 
 Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
+  Voyager::routes();
 });
 
 Route::group(['middleware' => 'customer' ], function() {
+Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
+Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
 Route::get('/my-account', 'CostumerpanelController@index')->name('costumerpanel.index');
 Route::post('/my-account/{id}', 'CostumerpanelController@dashboard')->name('costumerpanel.dashboard');
 Route::post('/my-account/orders/{id}', 'CostumerpanelController@orders')->name('costumerpanel.orders');
@@ -41,7 +42,7 @@ Route::post('/my-account/editprofile/{id}', 'CostumerpanelController@editprofile
 Route::get('/dashboard', 'MerchantpanelController@index')->name('merchantpanel.index');
 Route::post('/ajax/codeValidation', 'AjaxController@codeValidation')->name('merchantpanel.codeValidation');
 Route::get('/dashboard/orders', 'MerchantpanelController@orders')->name('merchantpanel.orders');
-Route::get('/dashboard/products', 'MerchantpanelController@products')->name('merchantpanel.products');
+Route::get('/dashboard/products', 'MerchantpanelController@index')->name('merchantpanel.products');
 Route::get('/dashboard/editaccount', 'MerchantpanelController@edit')->name('merchantpanel.edit');
 });
 
