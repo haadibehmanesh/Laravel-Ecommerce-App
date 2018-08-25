@@ -73,11 +73,14 @@ class ShopController extends Controller
         $mightAlsoLike = BiProduct::where('slug', '!=', $slug_db)->mightAlsoLike()->get();
         
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
-
+       
+        $merchant_name = $product->bimerchant()->first()->company_name;
+        
         if($category){
             $category = BiCategory::where('slug', $category)->get();
             return view('layouts/product/product')->with([
                 'product' => $product,
+                'merchant_name' => $merchant_name,
                 'mightAlsoLike' => $mightAlsoLike,
                 'categoriesForProduct' => $categoriesForProduct,
                 'categoryslug' => $category[0]->slug,
@@ -87,6 +90,7 @@ class ShopController extends Controller
         }else{
             return view('layouts/product/product')->with([
                 'product' => $product,
+                'merchant_name' => $merchant_name,
                 'mightAlsoLike' => $mightAlsoLike,
                 'categoriesForProduct' => $categoriesForProduct,
                 'categoryslug' => $category,
@@ -116,9 +120,21 @@ class ShopController extends Controller
         }
      
         $sliderimages = BiSliderImage::where('bi_slider_id', $slider[0]->id)->get();
-        
+        $featured_product = $category->products()->where('cat_featured', 1)->first();
+        if($featured_product){
+
+            $merchant_name = $featured_product->bimerchant()->first()->company_name;
+
+        }else{
+            $merchant_name = null;
+
+        }
+     //   $featured_product_name =$featured_product->products->id;
+        //dd($merchant_name);
         return view('layouts/categories/category')->with([
             'category' => $category,
+            'featured_product' => $featured_product,
+            'merchant_name' => $merchant_name,
             'productsForCategories' => $productsForCategories,
             'sliderimages' =>  $sliderimages,
             'allcategories' => $allcategories,
