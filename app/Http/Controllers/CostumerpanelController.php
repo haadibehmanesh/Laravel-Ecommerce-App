@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 use App\BiCategory;
+use App\BiOrder;
 use App\BiCustomer;
 use App\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Validator;
+use Illuminate\Support\Facades\Auth;
 
 class CostumerpanelController extends Controller
 {
@@ -133,8 +135,16 @@ class CostumerpanelController extends Controller
         //
     }
     public function orders($id)
-    {
-        $customerorders = Customer::where('id', $id)->get();
+    {   
+        if((Auth::guard('customer')->user()->id == $id)){
+            $customerorders = BiOrder::where('customer_id', $id)->get();
+           
+
+           // dd($customerorders);
+    
+           
+        }
+        //$customerorders = Customer::where('id', $id)->get();
         return view('layouts/my-account/ajax-customerorders')->with([
             'customerorders' => $customerorders,
             ])->render();
