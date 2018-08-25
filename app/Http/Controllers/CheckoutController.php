@@ -8,6 +8,7 @@ use App\BiOrderItem;
 use App\BiProduct;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\Auth;
 
 class CheckoutController extends Controller
 {
@@ -18,7 +19,8 @@ class CheckoutController extends Controller
      */
     public function index()
     {
-        //
+            return redirect()->route('shop.index');
+        
     }
 
     /**
@@ -39,6 +41,7 @@ class CheckoutController extends Controller
      */
     public function store()
     {  
+        $customer_id = Auth::guard('customer')->user()->id;
         $order_code = randomDigits(8);
         $invoice_no = randomDigits(6);
         $total = Cart::subtotal();
@@ -46,10 +49,10 @@ class CheckoutController extends Controller
             'invoice_no' => $invoice_no,
             'total' => $total,
             'order_code' => $order_code,
-        ]); 
+            'customer_id' => $customer_id
+        ]);
         foreach (Cart::content() as $item) {
             $code = randomDigits(8);
-
             $product = BiProduct::find( $item->id);
             $productSold = (($product->quantity-$product->sold) - $item->qty) >= 0 ? $product->sold + $item->qty : -1 ;
 
@@ -75,10 +78,12 @@ class CheckoutController extends Controller
             } else {
                 $success_message = null;
                 $error_message = 'موجودی کافی نیست';
+                Cart::destroy();
             }
             
             
         }
+        
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
         return view('layouts/cart/cart')->with([
             'allcategories' => $allcategories,
