@@ -380,7 +380,7 @@
         <div class="container">
             <div class="row">
                 <ol class="breadcrumb"><a href="/">خانه</a> &#47; {{ $category->name }}</ol> 
-                @if(!$category->parent_id)
+                @if(!$category->parent_id or empty($featured_product->gallery))
                 <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
                     <div id="wowslider-container9">
                         <div class="ws_images">
@@ -396,7 +396,8 @@
                         <script type="text/javascript" src="../../engine9/script.js"></script>
                         <!-- End WOWSlider.com BODY section -->
                         @else
-                        <div class="block_gallery">
+                        
+                        <div class="block_gallery_archive">
 
                             <!-- images -->
     
@@ -415,6 +416,31 @@
                                         <span class="number-sale"><i class="fa fa-shopping-basket"></i>۰</span>
     
                                 </div>
+                                <div class="time_out">
+                                    <i class="fa fa-clock-o"></i>
+                                    <ul class="deal-timer countdown_takhfifat"><li><span class="num">۷۱</span><span class="text">  روز </span></li><li><span class="num">۷</span><span class="text"> ساعت </span></li><li><span class="num">۵۸</span><span class="text"> دقیقه </span></li><li><span class="num">۳۶</span><span class="text"> ثانیه </span></li></ul>
+                                <script>
+                                                    jQuery(function() {
+                                        var endDate = "2018-11-4 23:59:00";
+                                        jQuery('.countdown_takhfifat').countdown({
+                                            date: endDate,
+                                            render: function(data) {
+                                                if ( ! data.sec  ) { data.sec = 0 };
+                                                var days = toPersianNum(data.days);
+                                                var hours = toPersianNum(data.hours);
+                                                var min = toPersianNum(data.min);
+                                                var sec = toPersianNum(data.sec);
+                                                jQuery(this.el).html(
+                                                    '<li><span class="num">' + days +'</span><span class="text">  روز </span></li>'+
+                                                    '<li><span class="num">' + hours +'</span><span class="text"> ساعت </span></li>'+
+                                                    '<li><span class="num">' + min +'</span><span class="text"> دقیقه </span></li>'+
+                                                    '<li><span class="num">' + sec +'</span><span class="text"> ثانیه </span></li>'
+                                                );
+                                            }
+                                        });
+                                    });
+                                </script>					
+                                </div>
     
     
     
@@ -428,82 +454,39 @@
     
     
     
-                                        <div class="item">
+                                        <div class="item active">
     
                                             <div class="img_item">
     
-                                                <a href="index.html" title="فست فود داوین با منو باز غذاهای لذیذ"><img src="../../wp-content/uploads/2017/05/432660.b00a6cc1b27bf01a23cd908945aaa98a.jpg" title="آرایشگاه النا " alt="آرایشگاه النا "></a>
+                                                <a href="{{ route('shop.show', $featured_product->slug) }}" title="{{ $featured_product->name }}"><img src="{{ productImage($featured_product->image) }}" title="{{ $featured_product->name }}" alt="{{ $featured_product->name }}"></a>
     
                                             </div>
     
                                         </div>
-    
-    
-    
-                                        
-    
-    
-                                            <div class="item active">
-    
-                                                <div class="img_item">
-    
-                                                    <a href="index.html" title="آرایشگاه النا"><img src="../../wp-content/uploads/2017/05/432661.71b5a90e18c4a2d5d3aa3e77f47243c9.jpg" title="آرایشگاه النا " alt=""></a>
-    
+                                        @if(!empty($featured_product->gallery))
+                                            <?php $i=0; ?>
+                                            @foreach (json_decode($featured_product->gallery, true) as $image)
+                                                <?php $i++; ?>
+                                                <div class="item">
+
+                                                    <div class="img_item">
+            
+                                                    <a href="{{ route('shop.show', $featured_product->slug) }}" title="{{ $featured_product->name }}"><img src="{{ productImage($image) }}" title="{{ $featured_product->name }}" alt="{{ $featured_product->name }}"></a>
+            
+                                                    </div>
+            
                                                 </div>
-    
-                                            </div>
-    
-    
-    
-                                            
-    
-    
-                                            <div class="item">
-    
-                                                <div class="img_item">
-    
-                                                    <a href="index.html" title="آرایشگاه النا"><img src="../../wp-content/uploads/2017/05/1__12_17_1.jpg" title="آرایشگاه النا " alt=""></a>
-    
-                                                </div>
-    
-                                            </div>
-    
-    
-    
-                                            
-    
-    
-                                            <div class="item">
-    
-                                                <div class="img_item">
-    
-                                                    <a href="index.html" title="آرایشگاه النا"><img src="../../wp-content/uploads/2017/05/first_50_18_1.jpg" title="آرایشگاه النا " alt=""></a>
-    
-                                                </div>
-    
-                                            </div>
-    
-    
-    
-                                            
-    
-    
+                                            @endforeach
+                                        @endif
                                     </div>
     
                                     <!-- Indicators -->
     
                                     <ol class="carousel-indicators">
-    
-                                        <li data-target="#myCarousel" data-slide-to="0" class=""></li>
-    
-                                        
-                                            <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
-    
-                                        
-                                            <li data-target="#myCarousel" data-slide-to="2" class=""></li>
-    
-                                        
-                                            <li data-target="#myCarousel" data-slide-to="3" class=""></li>
+                                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                        @for ($indicator = 1 ; $indicator <= $i ; $indicator++)
+                                            <li data-target="#myCarousel" data-slide-to="{{ $indicator }}"></li>
+                                        @endfor
     
                                         
                                     </ol>
@@ -511,136 +494,26 @@
                                 </div>
     
                             </div>
-    
+
+
     
     
                             <!--details-->
     
                             <div class="content_item">
-    
-                                <div class="Slogan"><span>سید رسول هاشم آبادی</span></div>
-    
-                                
-                                <div class="info-counter">
-    
-                                
-    
-    
-                    <div class="timer_farsi_single">
-    
-                     <i class="fa fa-clock-o"></i><ul class="countdown_single_product"><li><span class="num">۰</span> <span class="text">  روز </span></li><li><span class="num">۰</span> <span class="text"> ساعت </span></li><li><span class="num">۰</span> <span class="text"> دقیقه </span></li><li><span class="num">۰</span> <span class="text"> ثانیه </span></li></ul>
-    
-                    </div>
-    
-                    <script>
-    
-                    
-                        jQuery(function() {
-    
-                            var endDate = "2018-8-13 23:59:00";
-    
-                            jQuery('.countdown_single_product').countdown({
-    
-                                date: endDate,
-    
-                                render: function(data) {
-    
-                                    if ( ! data.sec  ) { data.sec = 0 };
-    
-                                    var days = toPersianNum(data.days);
-    
-                                    var hours = toPersianNum(data.hours);
-    
-                                    var min = toPersianNum(data.min);
-    
-                                    var sec = toPersianNum(data.sec);
-    
-                                    jQuery(this.el).html(
-    
-                                        '<li><span class="num">' + days +'</span> <span class="text">  روز </span></li>'+
-    
-                                        '<li><span class="num">' + hours +'</span> <span class="text"> ساعت </span></li>'+
-    
-                                        '<li><span class="num">' + min +'</span> <span class="text"> دقیقه </span></li>'+
-    
-                                        '<li><span class="num">' + sec +'</span> <span class="text"> ثانیه </span></li>'
-    
-                                    );
-    
-                                }
-    
-                            });
-    
-                        });
-    
-                    </script>   
-    
-                                
-    
-                                </div>
-    
-    
-    
-                                
-                                <span class="price price_slider price_slider_single">
-    
-                                
-                                <del><span class="woocommerce-Price-amount amount">۱۳۰۰۰&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></del> <ins><span class="woocommerce-Price-amount amount">۷۹۳۰&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></ins>
-                                </span>
-    
-                                
-    
-                                <div class="share_gift_bye">
-    
-                                    <div class="btn-group btn_social">
-    
-                                        <button type="button" class="btn btn-default link_share dropdown-toggle" data-toggle="dropdown"> اشتراک <i class="fa fa-share-alt"></i> </button>
-    
-                                        <ul class="dropdown-menu" id="shr_social">
-    
-                                            <ul class="list-inline" style="z-index: 9999">
-    
-                                                <li><a href="https://telegram.me/share/url?text=%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87%20%d8%a7%d9%84%d9%86%d8%a7&amp;url=http://localhost/takhfiftest/product/%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87-%d8%a7%d9%84%d9%86%d8%a7/" id=""><img src="../../wp-content/themes/takhfifat/images/social/telegram.png" alt="telegram"></a></li>
-    
-                                                <li><a href="https://www.instagram.com/http://localhost/takhfiftest" id=""><img src="../../wp-content/themes/takhfifat/images/social/instagram.png" alt="instagram"></a></li>
-    
-                                                <li><a href="http://www.facebook.com/sharer.php?u=http://localhost/takhfiftest/product/%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87-%d8%a7%d9%84%d9%86%d8%a7/&amp;t=%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87%20%d8%a7%d9%84%d9%86%d8%a7" title="Facebook" id=""><img src="../../wp-content/themes/takhfifat/images/social/facebook.png" alt=""></a></li>
-    
-                                                <li><a title="twitter" href="http://twitter.com/share/?url=http://localhost/takhfiftest/product/%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87-%d8%a7%d9%84%d9%86%d8%a7/&amp;text=%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87%20%d8%a7%d9%84%d9%86%d8%a7" id="twitter" target="_blank" class="twitter"><img src="../../wp-content/themes/takhfifat/images/social/twitter.png" alt=""></a></li>
-    
-                                                <li><a title="Google+" href="https://plus.google.com/share?url=http://localhost/takhfiftest/product/%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87-%d8%a7%d9%84%d9%86%d8%a7/&amp;title=%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87%20%d8%a7%d9%84%d9%86%d8%a7" id="GoogleP" target="_blank" class="googleplus"><img src="../../wp-content/themes/takhfifat/images/social/google%2b.png" alt=""></a></li>
-    
-                                                <li><a title="Google Bookmark" href="http://www.google.com/bookmarks/mark?op=edit&amp;bkmk=http://localhost/takhfiftest/product/%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87-%d8%a7%d9%84%d9%86%d8%a7/&amp;title=%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87%20%d8%a7%d9%84%d9%86%d8%a7" id="GoogleB" target="_blank" class="googlebookmark"><img src="../../wp-content/themes/takhfifat/images/social/dropbox.png" alt=""></a></li>
-    
-                                                <li><a title="linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://localhost/takhfiftest/product/%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87-%d8%a7%d9%84%d9%86%d8%a7/&amp;title=%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87%20%d8%a7%d9%84%d9%86%d8%a7" id="linkedin" target="_blank" class="linkedin"><img src="../../wp-content/themes/takhfifat/images/social/linkedin.png" alt=""></a></li>
-    
-                                                <li><a title="Email" href="mailto:?subject=آرایشگاه النا&amp;body= لطفا این لینک رو ببین: http://localhost/takhfiftest/product/%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87-%d8%a7%d9%84%d9%86%d8%a7/" id="Email" target="_blank" class="email"><img src="../../wp-content/themes/takhfifat/images/social/email.png" alt=""></a></li>
-    
-                                            </ul>
-    
-                                        </ul>
-    
-                                    </div>
-    
-                                    <a href="../../store/talash/index.html" class="link_gift">دیگرمحصولات<i class="fa fa-shopping-bag"></i></a>
-    
-                                    <br><br>
-    
-                                    <!-- <a href="" class="link_bye"><i class="fa fa-shopping-cart"></i>همین حالا خرید کنید</a> -->
-    
-                                    <div>
-        
-        <form class="cart" action="http://127.0.0.1:8000/cart" method="post" enctype="multipart/form-data">
-            <input type="hidden" name="_token" value="DqJSnw9CMWDSTHATzV7LHg501rDpJcW7Dsyz4KEg">
-        <input type="hidden" name="id" value="9">
-           <button type="submit" name="add-to-cart" value="96" class="single_add_to_cart_button button alt">افزودن به سبد خرید</button>
-            </form>
-    
-        
-    </div>
-    
-                                </div>
-    
+                                <span><a href="{{ route('shop.show', $featured_product->slug) }}" title="{{ $featured_product->name }}"><i class="fa fa-home"></i>{{ $featured_product->name }}</a></span>
+                                <span class="Discount"><b>%{{ toPersianNum($featured_product->discount)  }}</b>تخفیف</span>
+                            <h2><a href="{{ route('shop.show', $featured_product->slug) }}" title="{{ $featured_product->name }}">{{ toPersianNum($featured_product->description)}}</a></h2>
+                                    <table class="table_slider">
+                                        <tbody><tr>
+                                            <td colspan="2"><span class="price price_slider"><del><span class="woocommerce-Price-amount amount">{{toPersianNum($featured_product->price)}}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></del> <ins><span class="woocommerce-Price-amount amount">{{toPersianNum(presentPrice($featured_product->price,$featured_product->discount))}}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></ins></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span>تعداد خریداری شده<b>{{ toPersianNum($featured_product->sold)  }}</b></span></td>
+                                            <td><span>تعداد بازدید<b>{{ toPersianNum($featured_product->viewed)  }}</b></span></td>
+                                        </tr>
+                                    </tbody></table>
+                                <div class="eye_buy"><a href="{{ route('shop.show', ['product' => $featured_product->slug, 'category' => $category->slug] ) }}"><i class="fa fa-shopping-cart"></i>مشاهده و خرید</a></div>
                             </div>
     
     
@@ -767,15 +640,7 @@
 			    </div>                <div class="clear"></div>
                 
 <!--text_short_category-->
-<div class="text_short_category">
-    <div class="text">
-                <p>توضیحاتی درمورد دسته مورد نظر بهمراه آیکن در این قسمت قرار خواهد گرفت… توضیحاتی درمورد دسته مورد نظر بهمراه آیکن در این قسمت قرار خواهد گرفت… توضیحاتی درمورد دسته مورد نظر بهمراه آیکن در این قسمت قرار خواهد گرفت…<br />
-توضیحاتی درمورد دسته مورد نظر بهمراه آیکن در این قسمت قرار خواهد گرفت…</p>
-    </div>
-    <div class="label">
-        <a href="#">هنر و تئاتر<span style="background:url() no-repeat;opacity: 0.2;margin:0 20px 0 0;"></span></a>
-    </div>
-</div>
+
             </div>
         </div>
     </section>

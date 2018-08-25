@@ -344,7 +344,7 @@ img.emoji {
                             <div class="option_item_gallery">
 
 							
-                                <span class="address"><i class="fa fa-map-marker"></i> امام خمینی </span>
+                                <span class="address"><i class="fa fa-map-marker"></i>{{ $product->location}}</span>
 
 							
 									<span class="number-sale"><i class="fa fa-shopping-basket"></i>0</span>
@@ -361,68 +361,28 @@ img.emoji {
 
                                 <div class="carousel-inner" role="listbox">
 
-
-
                                     <div class="item active">
 
                                         <div class="img_item">
 
-                                            <a href="index.html" title="{{ $product->name }}"><img src="../../wp-content/uploads/2017/05/432660.b00a6cc1b27bf01a23cd908945aaa98a.jpg" title="آرایشگاه النا " alt="آرایشگاه النا "></a>
+                                        <a href="{{ route('shop.show', $product->slug) }}" title="{{ $product->name }}"><img src="{{ productImage($product->image) }}" title="{{ $product->name }}" alt="{{ $product->name }}"></a>
 
                                         </div>
 
                                     </div>
+                                    <?php $i=0; ?>
+                                @foreach (json_decode($product->gallery, true) as $image)
+                                    <?php $i++; ?>
+                                    <div class="item">
 
+                                        <div class="img_item">
 
-
-                                    
-
-
-                                        <div class="item">
-
-                                            <div class="img_item">
-
-                                                <a href="index.html" title="آرایشگاه النا"><img src="../../wp-content/uploads/2017/05/432661.71b5a90e18c4a2d5d3aa3e77f47243c9.jpg" title="آرایشگاه النا " alt=""></a>
-
-                                            </div>
+                                        <a href="{{ route('shop.show', $product->slug) }}" title="{{ $product->name }}"><img src="{{ productImage($image) }}" title="{{ $product->name }}" alt="{{ $product->name }}"></a>
 
                                         </div>
 
-
-
-                                        
-
-
-                                        <div class="item">
-
-                                            <div class="img_item">
-
-                                                <a href="index.html" title="آرایشگاه النا"><img src="../../wp-content/uploads/2017/05/1__12_17_1.jpg" title="آرایشگاه النا " alt=""></a>
-
-                                            </div>
-
-                                        </div>
-
-
-
-                                        
-
-
-                                        <div class="item">
-
-                                            <div class="img_item">
-
-                                                <a href="index.html" title="آرایشگاه النا"><img src="../../wp-content/uploads/2017/05/first_50_18_1.jpg" title="آرایشگاه النا " alt=""></a>
-
-                                            </div>
-
-                                        </div>
-
-
-
-                                        
-
-
+                                    </div>
+                                        @endforeach
                                 </div>
 
                                 <!-- Indicators -->
@@ -430,17 +390,10 @@ img.emoji {
                                 <ol class="carousel-indicators">
 
                                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-
-                                    
-                                        <li data-target="#myCarousel" data-slide-to="1"></li>
-
-                                    
-                                        <li data-target="#myCarousel" data-slide-to="2"></li>
-
-                                    
-                                        <li data-target="#myCarousel" data-slide-to="3"></li>
-
-                                    
+                                    @for ($indicator = 1 ; $indicator <= $i ; $indicator++)
+                                        <li data-target="#myCarousel" data-slide-to="{{ $indicator }}"></li>
+                                    @endfor
+                                                
                                 </ol>
 
                             </div>
@@ -453,7 +406,7 @@ img.emoji {
 
                         <div class="content_item">
 
-                            <div class="Slogan"><span>سید رسول هاشم آبادی</span></div>
+                        <div class="Slogan"><span>{{ $merchant_name }}</span></div>
 
                             
 							<div class="info-counter">
@@ -472,7 +425,7 @@ img.emoji {
 				
                     jQuery(function() {
 
-                        var endDate = "2018-8-13 23:59:00";
+                        var endDate = "2018-11-13 23:59:00";
 
                         jQuery('.countdown_single_product').countdown({
 
@@ -520,7 +473,7 @@ img.emoji {
 							<span class="price price_slider price_slider_single">
 
 							
-                            <del><span class="woocommerce-Price-amount amount">{{$product->price}}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></del> <ins><span class="woocommerce-Price-amount amount">{{presentPrice($product->price,$product->discount)}}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></ins>
+                            <del><span class="woocommerce-Price-amount amount">{{ toPersianNum($product->price) }}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></del> <ins><span class="woocommerce-Price-amount amount">{{toPersianNum(presentPrice($product->price,$product->discount))}}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></ins>
 							</span>
 
 							
@@ -557,7 +510,7 @@ img.emoji {
 
                                 </div>
 
-                                <a href="../../store/talash/index.html" class="link_gift">دیگرمحصولات<i class="fa fa-shopping-bag"></i></a>
+                                <a href="/" class="link_gift">دیگرمحصولات<i class="fa fa-shopping-bag"></i></a>
 
                                 <br><br>
 
@@ -582,13 +535,13 @@ img.emoji {
 	
 </div>
 
-                            </div>
+        </div>
 
-                        </div>
+    </div>
 
 
 
-                    </div>
+</div>
 
 
 
@@ -602,85 +555,41 @@ img.emoji {
 	<!--details more-->
 <div class="details_more box_single">
 	<div class="title_block"><span>توضیحات تکمیلی</span></div>
-	<p><strong>کاشت ناخن در آرایشگاه النا</strong></p>
+	<p><h2>{{ $product->name }}</h2></p>
 <div class="content description">
-<p>توجه به زیبایی ناخن‌ها و مراقبت از آنها همیشه مد نظر بوده است و ما با کمک سوهان ناخن همیشه سعی داشتیم شکل و فرم ناخن‌ها را زیبا کنیم و با استفاده از انواع محلول ها و توصیه‌ها در صدد راهی برای جلوگیری از شکستن ناخن‌ها بودیم. شکنندگی ناخن‌ها و بلند و کوتاه شدن اندازه آنها همیشه یکی از دغدغه‌ها بود به خصوص زمانی که مهمانی یا جشن بزرگی هم در پیش داشتیم و می‌خواستیم همه چیز و تمام جزئیات ظاهری ما در حد اعلایی باشد و زیبایی ناخن‌ها و دیزاین آن هم یکی از همین صدها گزینه مورد توجه بود. خلاصه اینکه داستان‌های شکنندگی و زیبایی و ظرافت ناخن‌ها همیشه داستان و دغدغه مورد توجه خانم بود تا اینکه روش‌های مختلف کاشت ناخن هم ابداع شد و به شدت شیوع پیدا کرد. به طور یقین با کمک کاشت ناخن شما تا حدودی از مرتب کردن ناخن‌ها و یا شکندگی‌شان خلاص می‌شوید و همه این موارد را به یک آرایشگر می‌سپارید، اما فراموش نکنید کاشت ناخن، چسب مورد استفاده و نحوه انجام کار و میزان سوهان کشیدن ناخن‌های طبیعی به منظور کاشت ناخن‌های جدید همه از مواردی است که باید مورد توجه دقیق قرار بگیرد.</p>
+{!!  $product->description_details !!}
 </div>
 </div><div class="clear"></div><!--Terms of Use-->
+<div class="row">
+<div class="col-lg-6 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
 <div class="Terms_Use box_single">
 		<div class="title_block"><span>شرایط استفاده</span></div>
 
-		<div class="col-box_use">
-			
-				<div class="col_2">
-					<img src="../../wp-content/uploads/2017/05/sd-1.jpg" title="" alt="">
-					<span>امکان استفاده از لحــــظه خـرید</span>
-				</div>
-
-
-			
-				<div class="col_2">
-					<img src="../../wp-content/uploads/2017/05/sd-1.jpg" title="" alt="">
-					<span>امکان استفاده از لحــــظه خـرید</span>
-				</div>
-
-
-			
-				<div class="col_2">
-					<img src="../../wp-content/uploads/2017/05/sd-1.jpg" title="" alt="">
-					<span>امکان استفاده از لحــــظه خـرید</span>
-				</div>
-
-
-			
-				<div class="col_2">
-					<img src="../../wp-content/uploads/2017/05/sd-1.jpg" title="" alt="">
-					<span>امکان استفاده از لحــــظه خـرید</span>
-				</div>
-
-
-					</div>
 		 <p>
 			 		 </p>
 		<div class="box_terms_use">
 		<div class="item_terms_use">
-			<p><i class="fa fa-clock-o"></i>زمان استفاده تا تاریخ: <span>4 روز  </span></p>
-			
-			<p><i class="fa fa-volume-control-phone"></i>ساعت پاسخگویی و سرویس دهی: <span>
-					تمام وقت				</span>
-			</p>
-			<p><i class="fa fa-calendar"></i>روزهای سرویس دهی: <span>
-					شنبه ، یکشنبه ، دوشنبه ، سه شنبه ، چهارشنبه ، پنجشنبه				</span></p>
-			<p><i class="fa fa-phone"></i>تلفن تماس: <span>05138555815</span></p>
-			<p><i class="fa fa-map-marker"></i>آدرس:
-				<span>
-					مشهد - خیابان امام خمینی - خیابان خرمشهر - خرمشهر 13				</span></p>
+			<?php
+$items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  ', explode('<p style="text-align: right;">', $product->usage_terms));
+?>
+{!! $items !!}
 		</div>
-		<div class="img_item"><img src="../../wp-content/uploads/2017/08/150Png-5.html" title="" alt=""></div>
+	
 	</div>
-</div><div class="clear"></div>	<!--Property-->
+</div>
+</div>
+
+
+<div class="col-lg-6 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
 	<div class="Property box_single">
 		<div class="title_block"><span>ویژگی ها</span></div>
-
-		<strong>- کاشت ناخن در آرایشگاه النا
-</strong>
-
-- با استفاده از پودرو مواد آمریکایی
-
-- با استفاده از مواد ضد قارچ
-
-- کاشت با استفاده از مواد درجه یک و مرغوب
-
-- کاشت با ماندگاری و دوام بالا
-
-- کاشت بدون ایجاد حساسیت
-
-- آرایشگاه النا ارائه خدمات با بالاترین کیفیت
-
-- آرایشگاه النا دارای محیطی بهداشتی و شیک
-
-- آرایشگاه النا دارای کادری مجرب و حرفه ای و خوش برخورد
-	</div>
+        <?php
+        $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  ', explode('<p style="text-align: right;">', $product->attributies));
+        ?>
+        {!! $items !!}
+    </div>
+</div>
+</div>
 <div class="clear"></div><!--address map-->
 <div class="address_map box_single">
 	<div class="title_block"><span>نقشه آدرس</span></div>
@@ -782,7 +691,7 @@ img.emoji {
 		<div id="review_form_wrapper">
 			<div id="review_form">
 					<div id="respond" class="comment-respond">
-		<span id="reply-title" class="comment-reply-title">اولین کسی باشید که دیدگاهی می نویسد  &ldquo;آرایشگاه النا&rdquo; <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">لغو پاسخ</a></small></span>			<form action="http://localhost/takhfiftest/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<form action="" method="post" id="commentform" class="comment-form">
 				<p class="comment-notes"><span id="email-notes">نشانی ایمیل شما منتشر نخواهد شد.</span> بخش‌های موردنیاز علامت‌گذاری شده‌اند <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">دیدگاه شما <span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" required></textarea></p><p class="comment-form-author"><label for="author">نام <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" aria-required="true" required /></p>
 <p class="comment-form-email"><label for="email">ایمیل <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" aria-required="true" required /></p>
 <p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="ثبت" /> <input type='hidden' name='comment_post_ID' value='96' id='comment_post_ID' />
