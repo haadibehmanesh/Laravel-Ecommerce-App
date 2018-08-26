@@ -245,8 +245,10 @@ class BiProductsController extends VoyagerBaseController
             // Re-insert if there's at least one category checked
             $this->updateProductCategories($request, $id);
             $this->updateProductSlug($request,$id);
+           
             $this->insertUpdateData($request, $slug, $dataType->editRows, $data);
-
+            
+            $this->updateMerchant($request->bi_merchant_id,$id);
             event(new BreadDataUpdated($dataType, $data));
 
             return redirect()
@@ -341,6 +343,7 @@ class BiProductsController extends VoyagerBaseController
 
             $this->updateProductCategories($request, $data->id);
             $this->updateProductSlug($request, $data->id);
+            $this->updateMerchant($request->bi_merchant_id,$data->id);
 
             if ($request->ajax()) {
                 return response()->json(['success' => true, 'data' => $data]);
@@ -550,6 +553,12 @@ class BiProductsController extends VoyagerBaseController
         if ($request->name) {
             $slug_name = make_slug($request->name,'-');
             BiProduct::where('id', $id)->update(array('slug' => $slug_name));
+        }
+    }
+    protected function updateMerchant($request, $id)
+    {   
+        if ($request) {
+            BiProduct::where('id', $id)->update(array('bi_merchant_id' => $request));
         }
     }
     
