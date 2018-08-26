@@ -74,7 +74,12 @@ class ShopController extends Controller
         
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
        
+        if(!empty($product->bimerchant()->first()->company_name)){
         $merchant_name = $product->bimerchant()->first()->company_name;
+        }else{
+        $merchant_name = 'بن اینجا';
+        }
+        
         
         if($category){
             $category = BiCategory::where('slug', $category)->get();
