@@ -349,6 +349,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
             @endif
         </div>
     </div>
+    
 
     <div class="form-group">
         <div class="col-md-6 col-md-offset-4">
@@ -446,6 +447,20 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
             @if ($errors->has('password_confirmation'))
                 <span class="help-block">
                     <strong>{{ $errors->first('password_confirmation') }}</strong>
+                </span>
+            @endif
+        </div>
+    </div>
+    <div class="form-group{{ $errors->has('captcha') ? ' has-error' : '' }}">
+        <label for="captcha" class="col-md-4 control-label">عبارت امنیتی فوق را بازنویسی نمائید</label>
+
+        <div class="col-md-6">
+            <p>{!! captcha_img() !!}</p>
+            <input id="captcha" type="text" class="form-control" name="captcha">
+
+            @if ($errors->has('captcha'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('captcha') }}</strong>
                 </span>
             @endif
         </div>

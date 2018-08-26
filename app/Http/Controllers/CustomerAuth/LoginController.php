@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Hesto\MultiAuth\Traits\LogsoutGuard;
-
+use Validator;
 class LoginController extends Controller
 {
     /*
@@ -48,6 +48,10 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+ 
+
+
     public function showLoginForm()
     {
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
