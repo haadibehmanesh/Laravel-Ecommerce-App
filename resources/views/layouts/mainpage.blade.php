@@ -460,8 +460,11 @@ function toPersianNum( num, dontTrim ) {
         </h3>
         </header>
         <div class="main-row clearfix">
-        <div itemscope="" itemtype="http://schema.org/Offer" class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-bigbox">
-        <div class="cat-deal-box ">
+        <div itemscope="" itemtype="http://schema.org/Offer" class="col-lg-12 col-md-12 col-sm-24 col-xs-24 ">
+        <div class="inner-box">
+        
+        <div class="cat-deal-bigbox">
+        <div class="cat-deal-box">
         <a href="/tehran/d/c:restaurant/126964/ناهار-در-رستوران-گردان-برج-میلاد/" class="figure" style="background-image: url(&quot;http://static.netbarg.com/img/responsive_large/deals/126964/369804550d51328701ccff85394444b8400b6c.jpg&quot;); background-size: cover;">
         <ul class="deal-tag list-unstyled">
         </ul>
@@ -479,8 +482,12 @@ function toPersianNum( num, dontTrim ) {
         <span itemprop="price" content="880000">۸۸,۰۰۰ </span><span itemprop="priceCurrency" content="IRR"> تومان</span></ins></span></div>
         </div>
         </div>
+        </div>
+        </div>
+
+
         <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
-        <div class="row">
+        <div class="small-box-row">
         
         
                 <div class="list-items ">
@@ -530,7 +537,7 @@ function toPersianNum( num, dontTrim ) {
                     </div>
             
         </div>
-        <div class="row">
+        <div class="small-box-row">
         
         
                 <div class="list-items-second">
