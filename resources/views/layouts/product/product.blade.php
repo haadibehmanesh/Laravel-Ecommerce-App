@@ -371,8 +371,8 @@ img.emoji {
 
                                     </div>
                                     <?php $i=0; ?>
-                                    @if(!empty($featured_product->gallery))
-                                @foreach (json_decode($product->gallery, true) as $image)
+                                    
+                                    @foreach (json_decode($product->gallery, true) as $image)
                                     <?php $i++; ?>
                                     <div class="item">
 
@@ -383,8 +383,8 @@ img.emoji {
                                         </div>
 
                                     </div>
-                                        @endforeach
-                                        @endif
+                                    @endforeach
+                                       
                                 </div>
 
                                 <!-- Indicators -->
