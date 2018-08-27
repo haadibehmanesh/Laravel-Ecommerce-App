@@ -174,7 +174,19 @@
                 $('.cat-list').html(data)
             }
         });
-        
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type:'POST',
+            url:'/getcategory-slider/'+slug ,
+            data:'_token = <?php echo csrf_token() ?>',
+            success:function(data){
+                $('.ajax-slider').html(data)
+            }
+        });
+
+
     }
    
 </script>
@@ -380,6 +392,7 @@
         <div class="container">
             <div class="row">
                 <ol class="breadcrumb"><a href="/">خانه</a> &#47; {{ $category->name }}</ol> 
+                <div class="ajax-slider">
                 @if(!$category->parent_id or empty($featured_product->gallery))
                 <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
                     <div id="wowslider-container9">
@@ -522,8 +535,8 @@
                         @endif
 
 
-
-                                        <div class="clear"></div>
+</div>
+ <div class="clear"></div>
                 <!--related product -->
 <div class="block_posts box_single">
         <div class="list_title_block">
@@ -560,7 +573,7 @@
                 <div class="col-lg-12 col-md-12 cat-filter">
                         <div class="owl-carousel">
                         
-                                @if($category->children->count() > 0)
+                               {{--   @if($category->children->count() > 0)  --}}
                                 <div class="item">
                                         <div class="slide_item">
                                                 
@@ -581,7 +594,7 @@
                                     </div>
                                 </div>
                                     @endforeach
-                                @endif
+                            {{--@endif--}}
                             
                               </div>
                 </div>
@@ -758,7 +771,7 @@
 <script src="../../wp-content/themes/takhfifat/js/bootstrap.min.js"></script>
 <script src="../../wp-content/themes/takhfifat/js/jquery.countdownTimer.js"></script>
 <script src="../../wp-content/themes/takhfifat/js/custom.js"></script>
-<script type="application/ld+json">{"@context":"https:\/\/schema.org\/","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":"1","item":{"name":"\u062e\u0627\u0646\u0647","@id":"http:\/\/localhost\/takhfiftest"}},{"@type":"ListItem","position":"2","item":{"name":"\u0647\u0646\u0631 \u0648 \u062a\u0626\u0627\u062a\u0631"}}]}</script><script type='text/javascript' src='../../wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min44fd.js?ver=2.70'></script>
+<script type='text/javascript' src='../../wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min44fd.js?ver=2.70'></script>
 <script type='text/javascript' src='../../wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min6b25.js?ver=2.1.4'></script>
 <script type='text/javascript'>
 /* <![CDATA[ */

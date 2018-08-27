@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\BiProduct;
 use App\BiCategory;
+use App\BiSlider;
+use App\BiSliderImage;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -34,6 +36,46 @@ class AjaxController extends Controller {
         
     }
 
+    public function getCategorySlider($slug)
+    {  
+        //$pagination = 9;
+        
+        $slug_db = explode('/', $slug);
+       
+        $category = BiCategory::where('slug', $slug_db)->firstOrFail();
+      
+        //$productsForCategories = $category->products()->orderBy('id', 'desc')->paginate($pagination);
+        
+        //$allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        
+        $slider = BiSlider::where('name' , $category->name )->get();
+       
+        if(empty($slider[0])){
+            
+            $slider = BiSlider::where('name' , 'index' )->get();
+        }
+        $sliderimages = BiSliderImage::where('bi_slider_id', $slider[0]->id)->get();
+        $featured_product = $category->products()->where('cat_featured', 1)->first();
+        if($featured_product){
+            
+            $merchant_name = $featured_product->bimerchant()->first()->company_name;
+            
+        }else{
+            $merchant_name = null;
+            
+        }
+       // dd($merchant_name);
+     //   $featured_product_name =$featured_product->products->id;
+       
+        return view('layouts/categories/ajaxslider')->with([
+            'category' => $category,
+            'featured_product' => $featured_product,
+            'merchant_name' => $merchant_name,
+            'sliderimages' =>  $sliderimages,
+          
+        ])->render();
+        
+    }
     public function getList($slug)
     {  
         $pagination = 9;

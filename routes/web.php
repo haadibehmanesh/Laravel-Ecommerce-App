@@ -50,6 +50,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/getcategory/{category}','AjaxController@getCategory');
+Route::post('/getcategory-slider/{category}','AjaxController@getCategorySlider');
 Route::post('/getlist/{category}','AjaxController@getList');
 Route::post('/ajax/products', 'AjaxController@getProduct');
 Route::post('/ajax/products/main', 'AjaxController@getProductMain');
