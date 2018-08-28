@@ -1,3 +1,4 @@
+
 @if(!$category->parent_id or empty($featured_product->gallery))
                 <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
                     <div id="wowslider-container9">

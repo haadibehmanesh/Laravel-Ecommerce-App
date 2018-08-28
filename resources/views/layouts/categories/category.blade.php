@@ -156,8 +156,7 @@
 	}
 	</script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
-    </script>
+    <script src = "../../js/jquery.min.js"></script>
     
 <script>
 
@@ -182,7 +181,10 @@
             url:'/getcategory-slider/'+slug ,
             data:'_token = <?php echo csrf_token() ?>',
             success:function(data){
-                $('.ajax-slider').html(data)
+                $('.ajax-slider').html(data);
+                $('#myCarousel').carousel({
+                    interval: 3000
+              });
             }
         });
 
