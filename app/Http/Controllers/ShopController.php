@@ -112,9 +112,19 @@ class ShopController extends Controller
         $slug_db = explode('/', $slug);
        
         $category = BiCategory::where('slug', $slug_db)->firstOrFail();
-      
-        $productsForCategories = $category->products()->orderBy('id', 'desc')->paginate($pagination);
+       // dd($category);
+        if(!empty($category->parent_id)){
+
+            $categoryParent = $category->parent;
+          //  $productsForCategories = $categoryParent->products()->orderBy('id', 'desc')->paginate($pagination);
+            
+        }else{
+
+            $categoryParent = null;
+        }
         
+        $productsForCategories = $category->products()->orderBy('id', 'desc')->paginate($pagination);
+        //dd($productsForCategories);
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
         
         $slider = BiSlider::where('name' , $category->name )->get();
@@ -137,6 +147,7 @@ class ShopController extends Controller
      //   $featured_product_name =$featured_product->products->id;
         //dd($merchant_name);
         return view('layouts/categories/category')->with([
+            'categoryParent' => $categoryParent,
             'category' => $category,
             'featured_product' => $featured_product,
             'merchant_name' => $merchant_name,
