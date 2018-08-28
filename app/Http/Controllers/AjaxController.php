@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Customer;
+use App\BiReview;
 use App\BiProduct;
 use App\BiCategory;
 use App\BiSlider;
@@ -38,16 +40,12 @@ class AjaxController extends Controller {
 
     public function getCategorySlider($slug)
     {  
-        //$pagination = 9;
+      
         
         $slug_db = explode('/', $slug);
        
         $category = BiCategory::where('slug', $slug_db)->firstOrFail();
       
-        //$productsForCategories = $category->products()->orderBy('id', 'desc')->paginate($pagination);
-        
-        //$allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
-        
         $slider = BiSlider::where('name' , $category->name )->get();
        
         if(empty($slider[0])){
@@ -64,8 +62,7 @@ class AjaxController extends Controller {
             $merchant_name = null;
             
         }
-       // dd($merchant_name);
-     //   $featured_product_name =$featured_product->products->id;
+   
        
         return view('layouts/categories/ajaxslider')->with([
             'category' => $category,
@@ -182,6 +179,67 @@ class AjaxController extends Controller {
 
         return  $message;
             
+    }
+
+
+
+    public function createReview(Request $request)
+    {   
+
+        $validatedData = Validator::make($request->all(), [
+            'comment' => 'required',
+            'email' => 'required|email|max:255',
+            'author' => 'required',
+        ]);
+        if(!$validatedData->fails()){
+            $id = Auth::guard('customer')->user()->id;
+            $customer = Customer::where('id',$id)->first();
+            if($customer->id == $id){
+                $review = BiReview::firstOrNew([
+                    'bi_product_id' =>  $request->product_id,
+                    'customer_id' => $id
+                ]);
+                $review->author = $request->author;
+                $review->email = $request->email;
+                $review->text = $request->comment;
+                $review->save();
+                
+                $message = '<p class="alert alert-success">
+                            نظر شما با موفقیت ثبت شد!
+                            </p>
+                            ';
+                $review = BiReview::where('bi_product_id', $request->product_id)->where('customer_id',$id)->firstOrFail();
+                   
+                }else{
+
+                    $message = 'کاربر گرامی دسترسی شما مجاز نیست! ';
+
+                }
+        }else{
+
+            $message = '<p class="alert alert-danger">
+                        مقادیر وارد شده معتبر نیست!
+                        </p>
+                        ';
+                        $review = null;
+        }
+        $reviews = BiReview::where('bi_product_id',$request->product_id)->orderBy('id', 'desc')->get();
+        if(empty($reviews)){
+            $reviews = null;
+
+
+        }
+        return view('layouts/product/ajax-product-review')->with([
+            'message' => $message,
+            'review' => $review,
+            'reviews' =>$reviews,
+        ])->render();
+           
+
+
+
+
+        
     }
     /**
      * Show the form for creating a new resource.

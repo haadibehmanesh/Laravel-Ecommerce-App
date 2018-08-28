@@ -7,6 +7,7 @@ use App\BiProduct;
 use App\BiCategory;
 use App\BiSlider;
 use App\BiSliderImage;
+use App\BiReview;
 
 class ShopController extends Controller
 {
@@ -73,11 +74,17 @@ class ShopController extends Controller
         $mightAlsoLike = BiProduct::where('slug', '!=', $slug_db)->mightAlsoLike()->get();
         
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $reviews = BiReview::where('bi_product_id',$product->id)->orderBy('id', 'desc')->get();
        
         if(!empty($product->bimerchant()->first()->company_name)){
         $merchant_name = $product->bimerchant()->first()->company_name;
         }else{
         $merchant_name = 'بن اینجا';
+        }
+        if(empty($reviews)){
+            $reviews = null;
+
+
         }
         
         
@@ -85,6 +92,7 @@ class ShopController extends Controller
             $category = BiCategory::where('slug', $category)->get();
             return view('layouts/product/product')->with([
                 'product' => $product,
+                'reviews' => $reviews,
                 'merchant_name' => $merchant_name,
                 'mightAlsoLike' => $mightAlsoLike,
                 'categoriesForProduct' => $categoriesForProduct,
@@ -95,6 +103,7 @@ class ShopController extends Controller
         }else{
             return view('layouts/product/product')->with([
                 'product' => $product,
+                'reviews' => $reviews,
                 'merchant_name' => $merchant_name,
                 'mightAlsoLike' => $mightAlsoLike,
                 'categoriesForProduct' => $categoriesForProduct,

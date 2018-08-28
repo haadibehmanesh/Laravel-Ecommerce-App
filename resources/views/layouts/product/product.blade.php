@@ -27,6 +27,7 @@ img.emoji {
 	padding: 0 !important;
 }
 </style>
+
 <link rel='stylesheet' id='validate-engine-css-css'  href='../../wp-content/plugins/wysija-newsletters/css/validationEngine.jquery4dc3.css?ver=2.8.2' type='text/css' media='all' />
 <link rel='stylesheet' id='woocommerce-layout-rtl-css'  href='../../wp-content/plugins/woocommerce/assets/css/woocommerce-layout-rtl6765.css?ver=3.3.3' type='text/css' media='all' />
 <link rel='stylesheet' id='woocommerce-smallscreen-rtl-css'  href='../../wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen-rtl6765.css?ver=3.3.3' type='text/css' media='only screen and (max-width: 768px)' />
@@ -142,7 +143,26 @@ img.emoji {
 				res += num.charAt(i);
 		return res;
 	}
-	</script>
+    </script>
+     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <script>
+
+    function createReview(e){
+        e.preventDefault();
+        
+        jQuery.ajax({
+            headers: {
+                'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+            },
+            type: 'POST',
+            url: '/product/review',
+            data: jQuery('#commentform').serialize() + '&_token=<?php echo csrf_token() ?>',
+            success:function(data){
+                jQuery('.customer-review').html(data)
+            }
+        });        
+    }
+    </script>
 </head>
 <body class="rtl product-template-default single single-product postid-96 woocommerce woocommerce-page mega-menu-main-menu dokan-theme-takhfifat">
     <!----- Top Menu
@@ -371,7 +391,7 @@ img.emoji {
 
                                     </div>
                                     <?php $i=0; ?>
-                                    
+                                    @if(!empty($product->gallery))
                                     @foreach (json_decode($product->gallery, true) as $image)
                                     <?php $i++; ?>
                                     <div class="item">
@@ -384,7 +404,7 @@ img.emoji {
 
                                     </div>
                                     @endforeach
-                                       
+                                       @endif
                                 </div>
 
                                 <!-- Indicators -->
@@ -670,40 +690,77 @@ $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  '
             </div>
         </div>    
         @empty
-        <div style="text-align: left">No items found</div>
+        <div style="text-align: left">موردی یافت نشد!</div>
         @endforelse       		
     </div>
     <div class="clear"></div>	
     <div class="question box_single">
         <div class="title_block">
-            <span> دیدگاها</span>
+            <span> نظرات</span>
         </div>
 	</div>
 	<!-- Comments -->
 	<div id="reviews" class="woocommerce-Reviews">
-	<div id="comments">
-		<h2 class="woocommerce-Reviews-title">نقد و بررسی ها</h2>
-
+        <div id="comments">
+            <h2 class="woocommerce-Reviews-title">نقد و بررسی ها ({{$reviews->count()}}) دیدگاه</h2>
+                <div class="customer-review">
+                    
+        @if($reviews->count()==0)
 		
 			<p class="woocommerce-noreviews">هیچ دیدگاهی برای این محصول نوشته نشده است .</p>
+        @else
+        @foreach ($reviews as $review)
+        <ol class="commentlist">
+                <li class="comment byuser comment-author-onliner even thread-even depth-1" id="li-comment-230">
+        
+        <div id="comment-230" class="comment_container">
+        
+        
+        <div class="comment-text">
+        
+        <strong class="woocommerce-review__author" style="color:#ff5a5f">{{$review->author}}</strong>
+        <p class="meta">
+        
+        <time class="woocommerce-review__published-date" style="color:green" datetime="1396-6-5 11:10:37 +04:30">۵ شهریور ۱۳۹۶</time>
+        </p>
+        
+        <div class="description"><p>{{$review->text}}</p>
+        </div>
+        </div>
+        </div>
+        </li><!-- #comment-## -->
+            </ol>  
+        @endforeach
+        @endif
 
-			</div>
 
-	
+    </div>
+
+
+
+
+</div>
+	@if(Auth::guard('customer')->check())
+
+
+
+    
 		<div id="review_form_wrapper">
 			<div id="review_form">
-					<div id="respond" class="comment-respond">
-				<form action="" method="post" id="commentform" class="comment-form">
-				<p class="comment-notes"><span id="email-notes">نشانی ایمیل شما منتشر نخواهد شد.</span> بخش‌های موردنیاز علامت‌گذاری شده‌اند <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">دیدگاه شما <span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" required></textarea></p><p class="comment-form-author"><label for="author">نام <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" aria-required="true" required /></p>
-<p class="comment-form-email"><label for="email">ایمیل <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" aria-required="true" required /></p>
-<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="ثبت" /> <input type='hidden' name='comment_post_ID' value='96' id='comment_post_ID' />
-<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
-</p>			</form>
-			</div><!-- #respond -->
-				</div>
+                <div id="respond" class="comment-respond">
+				<form method="post" id="commentform" class="comment-form">
+                    <p class="comment-notes"><span id="email-notes">نشانی ایمیل شما منتشر نخواهد شد.</span> بخش‌های موردنیاز علامت‌گذاری شده‌اند <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">دیدگاه شما <span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" required></textarea></p><p class="comment-form-author"><label for="author">نام <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" aria-required="true" required /></p>
+                    <p class="comment-form-email"><label for="email">ایمیل <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" aria-required="true" required /></p>
+                    <p class="form-submit"><input name="submit" type="submit" onclick="createReview(event)" id="submit" class="submit" value="ثبت" /> 
+                
+                    <input type='hidden' name='product_id' value='{{$product->id}}' />
+                    </p>
+                </form>
+			    </div><!-- #respond -->
+            </div>
 		</div>
 
-	
+	@endif
 	<div class="clear"></div>
 </div>
 <div class="clear"></div>

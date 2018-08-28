@@ -33,6 +33,7 @@ Route::group(['prefix' => 'admin'], function () {
 Route::group(['middleware' => 'customer' ], function() {
 Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
 Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
+Route::post('/product/review', 'AjaxController@createReview')->name('review.create');
 Route::get('/my-account', 'CostumerpanelController@index')->name('costumerpanel.index');
 Route::post('/my-account/{id}', 'CostumerpanelController@dashboard')->name('costumerpanel.dashboard');
 Route::post('/my-account/orders/{id}', 'CostumerpanelController@orders')->name('costumerpanel.orders');
