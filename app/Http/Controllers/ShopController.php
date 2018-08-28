@@ -112,11 +112,11 @@ class ShopController extends Controller
         $slug_db = explode('/', $slug);
        
         $category = BiCategory::where('slug', $slug_db)->firstOrFail();
-       // dd($category);
+       
         if(!empty($category->parent_id)){
 
             $categoryParent = $category->parent;
-          //  $productsForCategories = $categoryParent->products()->orderBy('id', 'desc')->paginate($pagination);
+       
             
         }else{
 
@@ -124,7 +124,7 @@ class ShopController extends Controller
         }
         
         $productsForCategories = $category->products()->orderBy('id', 'desc')->paginate($pagination);
-        //dd($productsForCategories);
+       
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
         
         $slider = BiSlider::where('name' , $category->name )->get();
