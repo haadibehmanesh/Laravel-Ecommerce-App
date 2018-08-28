@@ -543,8 +543,12 @@
 <div class="block_posts box_single">
         <div class="list_title_block">
                 <div class="col-lg-4 col-md-4">
-                    <span>
-                            {{ $category->name }}                   
+                    <span>@if(!empty($categoryParent))
+                        {{ $categoryParent->name }}
+                       
+                        @else
+                        {{ $category->name }}                   
+                        @endif
                     </span>    
                 </div>
                 <div class="col-lg-4 col-md-4">
@@ -576,27 +580,54 @@
                         <div class="owl-carousel">
                         
                                {{--   @if($category->children->count() > 0)  --}}
+                               @if(!empty($categoryParent))
+                               
                                 <div class="item">
                                         <div class="slide_item">
                                                 
-                                        <input id="all" class="filter-subcat" type="radio"  name="cat_filter" onClick="subcatview(this.value)" value="{{ $category->slug }}">
+                                        <input id="all" class="filter-subcat" type="radio"  name="cat_filter" onClick="subcatview(this.value)" value="{{ $categoryParent->slug }}">
                                         <label for="all" class="nb-btn nb-btn-sm name label-cat-filter" >همه</label>
                                                 
             
                                         </div>
                                     </div>
-                                    @foreach ( $category->children as $subcat )
+                                    @foreach ( $category->parent->children as $subcat )
                                 <div class="item">
                                     <div class="slide_item">
-                                            
-                                                    <input id="{{ $subcat->slug }}" class="filter-subcat" type="radio" value="{{ $subcat->slug }}" name="cat_filter" onClick="subcatview(this.id)" >
+                                            @if($category->slug == $subcat->slug)
+                                                    <input id="{{ $subcat->slug }}" class="filter-subcat" type="radio" value="{{ $subcat->slug }}" name="cat_filter" onClick="subcatview(this.id)" checked>
                                                     <label for="{{ $subcat->slug }}" class="nb-btn nb-btn-sm name label-cat-filter">{{ $subcat->name }}</label>
-                                            
-        
+                                            @else
+
+                                            <input id="{{ $subcat->slug }}" class="filter-subcat" type="radio" value="{{ $subcat->slug }}" name="cat_filter" onClick="subcatview(this.id)">
+                                            <label for="{{ $subcat->slug }}" class="nb-btn nb-btn-sm name label-cat-filter">{{ $subcat->name }}</label>
+
+                                            @endif
                                     </div>
                                 </div>
                                     @endforeach
-                            {{--@endif--}}
+                                    @else
+                                    <div class="item">
+                                            <div class="slide_item">
+                                                    
+                                            <input id="all" class="filter-subcat" type="radio"  name="cat_filter" onClick="subcatview(this.value)" value="{{ $category->slug }}">
+                                            <label for="all" class="nb-btn nb-btn-sm name label-cat-filter" >همه</label>
+                                                    
+                
+                                            </div>
+                                        </div>
+                                    @foreach ( $category->children as $subcat )
+                                    <div class="item">
+                                        <div class="slide_item">
+                                               
+                                                        <input id="{{ $subcat->slug }}" class="filter-subcat" type="radio" value="{{ $subcat->slug }}" name="cat_filter" onClick="subcatview(this.id)">
+                                                        <label for="{{ $subcat->slug }}" class="nb-btn nb-btn-sm name label-cat-filter">{{ $subcat->name }}</label>
+                                        </div>
+                                    </div>
+                                        @endforeach
+                                        @endif
+
+                                    {{--@endif--}}
                             
                               </div>
                 </div>
