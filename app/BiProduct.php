@@ -43,4 +43,9 @@ class BiProduct extends Model
     public function bimerchant() {
         return $this->belongsTo('App\BiMerchant', 'bi_merchant_id');
     }
+
+    public function reviews()
+    {
+        return $this->hasMany('App\BiReview');
+    }
 }

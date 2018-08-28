@@ -1,0 +1,19 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+
+class BiReview extends Model
+{
+    public function product()
+    {
+        return $this->belongsTo('App\BiReview','bi_product_id');
+    }
+
+    public function customer()
+    {
+        return $this->belongsTo('App\Customer','customer_id');
+    }
+}
