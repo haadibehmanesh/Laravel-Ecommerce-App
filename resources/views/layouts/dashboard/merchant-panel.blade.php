@@ -181,6 +181,23 @@
                             });
                         });
                     });
+
+                    
+function products(e){
+    e.preventDefault();
+
+jQuery.ajax({
+    headers: {
+        'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+    },
+    type:'POST',
+    url:'/dashboard/products/',
+    data:'_token = <?php echo csrf_token() ?>',
+    success:function(data){
+        jQuery('.post-content-page').html(data)
+    }
+    });
+}
                 </script>
             </head>
 <body class="rtl page-template-default page page-id-12 logged-in mega-menu-main-menu dokan-dashboard dokan-theme-takhfifat">
@@ -366,9 +383,9 @@
                             <div class="dokan-dashboard-wrap">
     
 <div class="dokan-dash-sidebar">
-<ul class="dokan-dashboard-menu"><li class="active dashboard"><a href="{{ route('merchantpanel.index')}}"><i class="fa fa-tachometer"></i> پیشخوان</a></li><li class="products"><a href="{{ route('merchantpanel.products')}}"><i class="fa fa-briefcase"></i> محصولات</a></li><li class="orders"><a href="{{ route('merchantpanel.orders')}}"><i class="fa fa-shopping-cart"></i> سفارشات</a></li><li class="coupons"><a href="/coupons/"><i class="fa fa-gift"></i> کوپن‌ها</a></li><li class="reports"><a href="/reports/"><i class="fa fa-line-chart"></i> گزارشات</a></li><li class="reviews"><a href="/reviews/"><i class="fa fa-comments-o"></i> نظرات</a></li><li class="withdraw"><a href="/withdraw/"><i class="fa fa-upload"></i> برداشت</a></li><li class="settings"><a href="/settings/store/"><i class="fa fa-cog"></i> تنظیمات</a></li><li class="dokan-common-links dokan-clearfix">
-            <a title="مشاهده‌ی فروشگاه" class="tips" data-placement="top" href="store/demo/" target="_blank"><i class="fa fa-external-link"></i></a>
-            <a title="ویرایش حساب کاربری" class="tips" data-placement="top" href="/edit-account/"><i class="fa fa-user"></i></a>
+<ul class="dokan-dashboard-menu"><li class="active dashboard"><a href="{{ route('merchantpanel.index')}}"><i class="fa fa-tachometer"></i> پیشخوان</a></li><li class="products"><a><i class="fa fa-briefcase"></i><span onclick="products(event)">محصولات</span> </a></li><li class="withdraw"><a href="/withdraw/"><i class="fa fa-upload"></i> برداشت</a></li><li class="settings"><a href="/settings/store/"><i class="fa fa-cog"></i> تنظیمات</a></li><li class="dokan-common-links dokan-clearfix">
+            
+            <a title="ویرایش حساب کاربری" class="tips" data-placement="top" href="/my-account"><i class="fa fa-user"></i></a>
             <a href="{{ url('/customer/logout') }}"
                 onclick="event.preventDefault();
                          document.getElementById('logout-form').submit();">
@@ -409,52 +426,7 @@
             </ul>
 </div> <!-- .big-counter -->
 
-<div class="dashboard-widget orders">
-    <div class="widget-title"><i class="fa fa-shopping-cart"></i> سفارشات</div>
 
-    <div class="content-half-part">
-        <ul class="list-unstyled list-count">
-            <li>
-                <a href="/orders/">
-                    <span class="title">کلی</span> <span class="count">13</span>
-                </a>
-            </li>
-            <li>
-                <a href="/orders/?order_status=wc-completed" style="color: #73a724">
-                    <span class="title">تکمیل شده</span> <span class="count">7</span>
-                </a>
-            </li>
-            <li>
-                <a href="/orders/?order_status=wc-pending" style="color: #999">
-                    <span class="title">در انتظار پرداخت</span> <span class="count">0</span>
-                </a>
-            </li>
-            <li>
-                <a href="/orders/?order_status=wc-processing" style="color: #21759b">
-                    <span class="title">درحال پردازش</span> <span class="count">6</span>
-                </a>
-            </li>
-            <li>
-                <a href="/orders/?order_status=wc-cancelled" style="color: #d54e21">
-                    <span class="title">لغو شده</span> <span class="count">0</span>
-                </a>
-            </li>
-            <li>
-                <a href="/orders/?order_status=wc-refunded" style="color: #e6db55">
-                    <span class="title">مسترد شده</span> <span class="count">0</span>
-                </a>
-            </li>
-            <li>
-                <a href="/orders/?order_status=wc-on-hold" style="color: #f0ad4e">
-                    <span class="title">در انتظار بررسی</span> <span class="count">0</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <div class="content-half-part">
-        <canvas id="order-stats"></canvas>
-    </div>
-</div> <!-- .orders -->
 
 <script type="text/javascript">
     jQuery(function($) {
@@ -465,65 +437,9 @@
     });
 </script>
 
-<div class="dashboard-widget reviews">
-    <div class="widget-title"><i class="fa fa-comments"></i> نظرات</div>
-
-    <ul class="list-unstyled list-count">
-        <li>
-            <a href="/reviews/">
-                <span class="title">همه</span> <span class="count">1</span>
-            </a>
-        </li>
-        <li>
-            <a href="/reviews/?comment_status=hold">
-                <span class="title">درحال انجام</span> <span class="count">0</span>
-            </a>
-        </li>
-        <li>
-            <a href="/reviews/?comment_status=spam">
-                <span class="title">هرزه‌نگار</span> <span class="count">0</span>
-            </a>
-        </li>
-        <li>
-            <a href="/reviews/?comment_status=trash">
-                <span class="title">سطل آشغال</span> <span class="count">0</span>
-            </a>
-        </li>
-    </ul>
-</div> <!-- .reviews -->
 
 
-<div class="dashboard-widget products">
-    <div class="widget-title">
-        <i class="fa fa-briefcase" aria-hidden="true"></i> محصولات
-        <span class="pull-right">
-            <a href="/new-product/">+ افزودن محصول جدید</a>
-        </span>
-    </div>
 
-    <ul class="list-unstyled list-count">
-        <li>
-            <a href="/products/">
-                <span class="title">کلی</span> <span class="count">10</span>
-            </a>
-        </li>
-        <li>
-            <a href="/products/?post_status=publish">
-                <span class="title">زنده</span> <span class="count">1</span>
-            </a>
-        </li>
-        <li>
-            <a href="/products/?post_status=draft">
-                <span class="title">آفلاین</span> <span class="count">0</span>
-            </a>
-        </li>
-        <li>
-            <a href="/products/?post_status=pending">
-                <span class="title">بررسی درحال انجام</span> <span class="count">9</span>
-            </a>
-        </li>
-    </ul>
-</div> <!-- .products -->
 
             </div> <!-- .col-md-6 -->
 

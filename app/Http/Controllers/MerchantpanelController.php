@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 use App\BiCategory;
+use App\BiProduct;
+use App\BiMerchant;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 class MerchantpanelController extends Controller
 {
     /**
@@ -82,14 +84,14 @@ class MerchantpanelController extends Controller
     {
         //
     }
-    public function products()
+    
+    public function products(Request $request)
     {
-
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
-        return view('layouts/dashboard/merchant-products')->with('allcategories', $allcategories);
-
-
+        $merchant_id = Auth::guard('customer')->user()->id;
+        $products = BiProduct::where('bi_merchant_id', $merchant_id)->orderBy('id', 'desc')->get();
+        return view('layouts/dashboard/ajax-merchant-products')->with('products', $products)->render();
     }
+
     public function orders()
     {
 
