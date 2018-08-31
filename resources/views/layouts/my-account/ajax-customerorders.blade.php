@@ -65,10 +65,10 @@
                                                 در حال انجام
                                         </td>
                                 <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-total" data-title="مجموع">
-                                                <span class="woocommerce-Price-amount amount">{{toPersianNum($order->total)}}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span> برای ۳ مورد
+                                                <span class="woocommerce-Price-amount amount">{{toPersianNum($order->total)}}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span> برای {{$order->items()->count()}} مورد
                                         </td>
                                 <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-actions" data-title="عملیات ها">
-                                                <a href="/my-account" class="woocommerce-button button view">نمایش </a>													</td>
+                                                <a onclick="orderInfo({{$order->invoice_no}})" class="woocommerce-button button view">نمایش </a>													</td>
                                 <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-discount-code" data-title="کد تخفیف">
                                 {{ $order->order_code }}
                                         </td>
@@ -88,3 +88,19 @@
 
                                 
 </div>
+<script>
+function orderInfo(invoice_no){
+
+        jQuery.ajax({
+            headers: {
+                'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+            },
+            type:'POST',
+            url:'/my-account/order-info/'+invoice_no ,
+            data:'_token = <?php echo csrf_token() ?>',
+            success:function(data){
+                jQuery('#ajax-show').html(data)
+            }
+            });
+        }
+</script>

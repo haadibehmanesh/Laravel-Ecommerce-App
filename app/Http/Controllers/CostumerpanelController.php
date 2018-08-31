@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\BiCategory;
+use App\BiOrderItem;
 use App\BiOrder;
 use App\BiCustomer;
 use App\Customer;
@@ -137,18 +138,39 @@ class CostumerpanelController extends Controller
     public function orders($id)
     {   
         if((Auth::guard('customer')->user()->id == $id)){
-            $customerorders = BiOrder::where('customer_id', $id)->get();
-           
-
-           // dd($customerorders);
-    
-           
+            $customerorders = BiOrder::where('customer_id', $id)->orderBy('id','desc')->get();
+            
         }
-        //$customerorders = Customer::where('id', $id)->get();
         return view('layouts/my-account/ajax-customerorders')->with([
             'customerorders' => $customerorders,
             ])->render();
     }
+    public function orderInfo($invoice_no)
+    {   
+        if($invoice_no){
+            $order = BiOrder::where('invoice_no', $invoice_no)->first();
+            $order_info = BiOrderItem::where('bi_order_id', $order->id)->get();
+          //dd($order);
+            
+        }
+        return view('layouts/my-account/ajax-customer-order-info')->with([
+            'order_info' => $order_info,
+            'order' => $order
+            ])->render();
+    }
+
+    public function orderitemInfo($id)
+    {   
+        if($id){
+            $order_item_info = BiOrderItem::where('id', $id)->first();
+          //dd($order);
+            
+        }
+        return view('layouts/my-account/ajax-customer-order-item-info')->with([
+            'order_item_info' => $order_item_info,
+            ])->render();
+    }
+
     public function dashboard($id)
     {
         return view('layouts/my-account/ajax-customerdashboard');

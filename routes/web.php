@@ -37,6 +37,8 @@ Route::post('/product/review', 'AjaxController@createReview')->name('review.crea
 Route::get('/my-account', 'CostumerpanelController@index')->name('costumerpanel.index');
 Route::post('/my-account/{id}', 'CostumerpanelController@dashboard')->name('costumerpanel.dashboard');
 Route::post('/my-account/orders/{id}', 'CostumerpanelController@orders')->name('costumerpanel.orders');
+Route::post('/my-account/order-info/{id}', 'CostumerpanelController@orderInfo')->name('costumerpanel.orderinfo');
+Route::post('/my-account/order-item-info/{id}', 'CostumerpanelController@orderitemInfo')->name('costumerpanel.orderiteminfo');
 Route::post('/my-account/editaccount/{id}', 'CostumerpanelController@edit')->name('costumerpanel.edit');
 Route::post('/my-account/editprofile/{id}', 'CostumerpanelController@editprofile')->name('costumerpanel.editprofile');
 
