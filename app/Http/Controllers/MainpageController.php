@@ -22,8 +22,10 @@ class MainpageController extends Controller
         $sliderimages = BiSliderImage::where('bi_slider_id', $slider[0]->id)->get();
         $featuredproducts = BiProduct::where('featured','1')->get();
         $products = BiProduct::orderBy('id', 'desc')->paginate($pagination);
+        $allproducts = BiProduct::where('index_gallery', 1)->orderBy('id', 'desc')->get();
         return view('layouts/mainpage')->with([
             'products' => $products,
+            'allproducts' => $allproducts,
             'allcategories' => $allcategories,
             'sliderimages' =>  $sliderimages,
             'featured' => $featuredproducts

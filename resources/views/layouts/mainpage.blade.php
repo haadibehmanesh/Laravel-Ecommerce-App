@@ -229,7 +229,7 @@ function toPersianNum( num, dontTrim ) {
                                             <ul class="mega-sub-menu">
                                                 <li class='mega-menu-item' id='mega-menu-item-243'><a class="mega-menu-link" href="{{ route('shop.showCategory', $submenu->slug) }}">{{$submenu->name}}</a></li>
                                             </ul>
-                                        @endforeach
+                                            @endforeach
                                     </ul>
                                 </li>
                         @elseif(empty($item->parent_id))
@@ -455,159 +455,184 @@ function toPersianNum( num, dontTrim ) {
                 	
 </div><div class="clear"></div>
 
-<article id="float-cat-restaurant" class="cat-deal-color color-rescoffee active">
-        <h3 class="hx"><span class="ir"><i class="icon icon-burger"></i></span><a href="/tehran/c:restaurant/" class="article-h3">رستوران و کافی‌شاپ</a>
+
+@foreach($allcategories as $category)
+    @if(!$category->parent && $category->products->where('index_gallery',1)->count() > 2)
+    
+    <article id="float-cat-restaurant" class="cat-deal-color color-rescoffee active">
+        <h3 class="hx"><span class="ir"><i class="icon icon-burger"></i></span><a href="{{ route('shop.showCategory', $category->slug) }}" class="article-h3">{{$category->name}}</a>
         </h3>
         </header>
-        <div class="main-row clearfix">
-        <div itemscope="" itemtype="http://schema.org/Offer" class="col-lg-12 col-md-12 col-sm-24 col-xs-24 ">
-        <div class="inner-box">
-        
-        <div class="cat-deal-bigbox">
-        <div class="cat-deal-box">
-        <a href="/tehran/d/c:restaurant/126964/ناهار-در-رستوران-گردان-برج-میلاد/" class="figure" style="background-image: url(&quot;http://static.netbarg.com/img/responsive_large/deals/126964/369804550d51328701ccff85394444b8400b6c.jpg&quot;); background-size: cover;">
-        <ul class="deal-tag list-unstyled">
-        </ul>
-        <img data-src="http://static.netbarg.com/img/responsive_large/deals/126964/369804550d51328701ccff85394444b8400b6c.jpg" alt="ناهار در رستوران گردان برج میلاد" data-type="lazy" shema="1" itemprop="image" content="http://static.netbarg.com/img/responsive_large/deals/126964/369804550d51328701ccff85394444b8400b6c.jpg" class="sr-only" src="http://static.netbarg.com/img/responsive_large/deals/126964/369804550d51328701ccff85394444b8400b6c.jpg"> </a>
-        <div class="cat-deal-box-main clearfix">
-        <h4 itemprop="name" class="cdbm-title"><a itemprop="url" href="/tehran/d/c:restaurant/126964/ناهار-در-رستوران-گردان-برج-میلاد/" class="truncate">ناهار در رستوران گردان برج میلاد</a>
-        </h4>
-        <span class="cdbm-total-buy"><span class="ir"><i class="fa fa-shopping-basket"></i></span><span class="cdbm-tb-total">
-        779 </span></span>
-         </div>
-        <div class="cat-deal-box-footer clearfix"><span class="cdbf-takhfif"><span class="cdbft-shape"><span class="cdbft-shape-text">%20</span></span></span><a href="/tehran/d/c:restaurant/126964/ناهار-در-رستوران-گردان-برج-میلاد/" class="cdbf-buy-icon">
-        <button class="nb-btn nb-btn-icon nb-btn-success">مشاهده و خرید<i class="icon icon-shopping-cart2"></i></button>
-        </a><span class="cdbf-price">
-        <del class="cdbf-real-price"><span>۱۱۰,۰۰۰</span></del><ins class="cdbf-netbarg-price">
-        <span itemprop="price" content="880000">۸۸,۰۰۰ </span><span itemprop="priceCurrency" content="IRR"> تومان</span></ins></span></div>
-        </div>
-        </div>
-        </div>
-        </div>
-
-
-        <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
-        <div class="small-box-row">
-        
-        
-                <div class="list-items ">
-                        <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
-                        <a href="http://127.0.0.1:8000/products/%D9%81%D8%B3%D8%AA-%D9%81%D9%88%D8%AF-%D8%AF%D8%A7%D9%88%DB%8C%D9%86-%D8%A8%D8%A7-%D9%85%D9%86%D9%88-%D8%A8%D8%A7%D8%B2-%D8%BA%D8%B0%D8%A7%D9%87%D8%A7%DB%8C-%D9%84%D8%B0%DB%8C%D8%B0/%D8%B1%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D9%86-%D9%88-%DA%A9%D8%A7%D9%81%DB%8C-%D8%B4%D8%A7%D9%BE" class="figure clearfix" title="فست فود داوین با منو باز غذاهای لذیذ"><img src="http://127.0.0.1:8000/storage/bi-products/August2018/UVJKG8Um0gSGzFEQXarV.jpg" title="فست فود داوین با منو باز غذاهای لذیذ"></a>   
+       
+            <div class="main-row clearfix">
+        @php ($itr = 1) 
+        @foreach ($category->products as $product)
+        @if($product->index_gallery == 1 )
+                @if($itr == 1)
+                <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 ">
+                    <div class="inner-box">
+    
+                    <div class="cat-deal-bigbox">
+                    <div class="cat-deal-box">
+                    <a href="{{ route('shop.show', ['product' => $product->slug, 'category' => $category->slug] ) }}" class="figure" title="{{ $product->name }}">
+                    <ul class="deal-tag list-unstyled">
+                    </ul>
+                    <img alt="{{ $product->name }}"  src="{{ productImage($product->image) }}" title="{{ $product->name }}"> </a>
+                    <div class="cat-deal-box-main clearfix">
+                    <h4 class="cdbm-title"><a href="{{ route('shop.show', ['product' => $product->slug, 'category' => $category->slug] ) }}" class="truncate">{{ $product->name }}</a>
+                    </h4>
+                    <span class="cdbm-total-buy"><span class="ir"><i class="fa fa-shopping-basket"></i></span><span class="cdbm-tb-total">
+                    {{toPersianNum($product->sold)}} </span></span>
+                     </div>
+                    <div class="cat-deal-box-footer clearfix"><span class="cdbf-takhfif"><span class="cdbft-shape"><span class="cdbft-shape-text">%{{toPersianNum($product->discount)}}</span></span></span><a href="{{ route('shop.show', ['product' => $product->slug, 'category' => $category->slug] ) }}" class="cdbf-buy-icon">
+                    <button class="nb-btn nb-btn-icon nb-btn-success">مشاهده و خرید<i class="icon icon-shopping-cart2"></i></button>
+                    </a><span class="cdbf-price">
+                    <del class="cdbf-real-price"><span>{{ toPersianNum($product->price) }}</span></del><ins class="cdbf-netbarg-price">
+                    <span itemprop="price" content="880000">{{ toPersianNum(presentPrice($product->price,$product->discount)) }}</span><span itemprop="priceCurrency" content="IRR"> تومان</span></ins></span></div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                @elseif($itr == 2)
+                <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
+                    <div class="small-box-row">
+                    
+                    
+                            <div class="list-items ">
+                                    <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
+                                    <a href="{{ route('shop.show', ['product' => $product->slug, 'category' => $category->slug] ) }}" class="figure" title="{{ $product->name }}" class="figure clearfix"><img src="{{ productImage($product->image) }}" title="{{ $product->name }}"></a>   
+                                    
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
+                                    <div class="list-deal-details">
+                                        <div class="top-panel">
+                                            
+                                            <span>
+                                                <a href="{{ route('shop.show', ['product' => $product->slug, 'category' => $category->slug] ) }}" title="{{ $product->name }}"><h3 class="small-title">{{ $product->name }}</h3></a>
+                                            </span>
+                                        </div>
+                                      
+                                        <div class="bottom-panel">
+                                        </div>
+                                        <div class="price list-content list-price-single">
+                                                <span class="cdbf-takhfif"><span class="cdbft-shape"><span class="list-discount-tag">%{{toPersianNum($product->discount)}}</span></span></span>               
+                                                <span class="price price_slider price_slider_single">
+                                                        <del><span class="woocommerce-Price-amount amount">قیمت: {{ toPersianNum($product->price) }}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></del> <ins><span class="woocommerce-Price-amount amount">با تخفیف: {{ toPersianNum(presentPrice($product->price,$product->discount)) }}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></ins>
+                                                    </span>
+                                            <div class="row">
+                                                    <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
+                                                            <form class="cart" action="{{ route('cart.store') }}" method="post" enctype='multipart/form-data'>
+                                                                {{ csrf_field() }}
+                                                            <input type="hidden" name="id" value="{{ $product->id }}">
+                                                           @if($product->quantity - $product->sold > 0)
+                                                            <button type="submit" name="add-to-cart" value="96" class="btn">افزودن به سبد خرید</button>
+                                                            @else
+                                                            <div class="alert alert-danger">
+                                                                <p class="text-center">
+                                                                موجود نیست
+                                                                </p>
+                                                            </div>
+                                                            @endif
+                                                            </form>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
+                                                                            <span class="cdbm-total-buy">
+                                                                                    <i class="fa fa-shopping-basket"></i>
+                                                                                    {{$product->sold}} خرید
+                                                                            </span>
+                                                                        </div>
+            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                    
+                                       
+                               
+            
+                                </div>
                         
                     </div>
-                    <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
-                        <div class="list-deal-details">
-                            <div class="top-panel">
-                                
-                                <span>
-                                    <a href="http://127.0.0.1:8000/products/%D9%81%D8%B3%D8%AA-%D9%81%D9%88%D8%AF-%D8%AF%D8%A7%D9%88%DB%8C%D9%86-%D8%A8%D8%A7-%D9%85%D9%86%D9%88-%D8%A8%D8%A7%D8%B2-%D8%BA%D8%B0%D8%A7%D9%87%D8%A7%DB%8C-%D9%84%D8%B0%DB%8C%D8%B0/%D8%B1%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D9%86-%D9%88-%DA%A9%D8%A7%D9%81%DB%8C-%D8%B4%D8%A7%D9%BE" title="فست فود داوین با منو باز غذاهای لذیذ"><h3 class="small-title">فست فود داوین با منو باز غذاهای لذیذ</h3></a>
-                                </span>
-                            </div>
-                          
-                            <div class="bottom-panel">
-                            </div>
-                            <div class="price list-content list-price-single">
-                                    <span class="cdbf-takhfif"><span class="cdbft-shape"><span class="list-discount-tag">%50</span></span></span>               
-                                    <span class="price price_slider price_slider_single">
-                                            <del><span class="woocommerce-Price-amount amount">قیمت: ۱۳۰۰۰&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></del> <ins><span class="woocommerce-Price-amount amount">با تخفیف: ۷۹۳۰&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></ins>
-                                        </span>
-                                <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
-                                        <form class="cart" action="http://127.0.0.1:8000/cart" method="post" enctype="multipart/form-data">
-                                            <input type="hidden" name="_token" value="tlmeQZubHN7nCAoIcdqH4bSQwPNnxCiTiSvQadoi">
-                                        <input type="hidden" name="id" value="9">
-                                                              <button type="submit" name="add-to-cart" class="btn">افزودن به سبد خرید</button>
-                                                                </form>
-                                        </div>
-                                        <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
-                                                                <span class="cdbm-total-buy">
-                                                                        <i class="fa fa-shopping-basket"></i>
-                                                                        ۳ خرید
-                                                                </span>
+                @elseif($itr == 3)
+                <div class="small-box-row">
+                
+                
+                    <div class="list-items-second">
+                            <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
+                            <a href="{{ route('shop.show', ['product' => $product->slug, 'category' => $category->slug] ) }}" class="figure clearfix"  title="{{ $product->name }}"><img src="{{ productImage($product->image) }}" title="{{ $product->name }}"></a>   
+                            
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
+                            <div class="list-deal-details">
+                                <div class="top-panel">
+                                    
+                                    <span>
+                                        <a href="{{ route('shop.show', ['product' => $product->slug, 'category' => $category->slug] ) }}" title="{{ $product->name }}"><h3 class="small-title">{{ $product->name }}</h3></a>
+                                    </span>
+                                </div>
+                              
+                                <div class="bottom-panel">
+                                </div>
+                                <div class="price list-content list-price-single">
+                                        <span class="cdbf-takhfif"><span class="cdbft-shape"><span class="list-discount-tag">%{{toPersianNum($product->discount)}}</span></span></span>               
+                                        <span class="price price_slider price_slider_single">
+                                                <del><span class="woocommerce-Price-amount amount">قیمت: {{ toPersianNum($product->price) }}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></del> <ins><span class="woocommerce-Price-amount amount">با تخفیف: {{ toPersianNum(presentPrice($product->price,$product->discount)) }}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></ins>
+                                            </span>
+                                    <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
+                                            <form class="cart" action="{{ route('cart.store') }}" method="post" enctype='multipart/form-data'>
+                                                                {{ csrf_field() }}
+                                                            <input type="hidden" name="id" value="{{ $product->id }}">
+                                                           @if($product->quantity - $product->sold > 0)
+                                                            <button type="submit" name="add-to-cart" value="96" class="btn">افزودن به سبد خرید</button>
+                                                            @else
+                                                            <div class="alert alert-danger">
+                                                                <p class="text-center">
+                                                                موجود نیست
+                                                                </p>
                                                             </div>
-
+                                                            @endif
+                                                            </form>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
+                                                                    <span class="cdbm-total-buy">
+                                                                            <i class="fa fa-shopping-basket"></i>
+                                                                            {{$product->sold}} خرید
+                                                                    </span>
+                                                                </div>
+    
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                        
-                           
-                   
-
-                    </div>
-            
-        </div>
-        <div class="small-box-row">
-        
-        
-                <div class="list-items-second">
-                        <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
-                        <a href="http://127.0.0.1:8000/products/%D9%81%D8%B3%D8%AA-%D9%81%D9%88%D8%AF-%D8%AF%D8%A7%D9%88%DB%8C%D9%86-%D8%A8%D8%A7-%D9%85%D9%86%D9%88-%D8%A8%D8%A7%D8%B2-%D8%BA%D8%B0%D8%A7%D9%87%D8%A7%DB%8C-%D9%84%D8%B0%DB%8C%D8%B0/%D8%B1%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D9%86-%D9%88-%DA%A9%D8%A7%D9%81%DB%8C-%D8%B4%D8%A7%D9%BE" class="figure clearfix" title="فست فود داوین با منو باز غذاهای لذیذ"><img src="http://127.0.0.1:8000/storage/bi-products/August2018/UVJKG8Um0gSGzFEQXarV.jpg" title="فست فود داوین با منو باز غذاهای لذیذ"></a>   
-                        
-                    </div>
-                    <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
-                        <div class="list-deal-details">
-                            <div class="top-panel">
-                                
-                                <span>
-                                    <a href="http://127.0.0.1:8000/products/%D9%81%D8%B3%D8%AA-%D9%81%D9%88%D8%AF-%D8%AF%D8%A7%D9%88%DB%8C%D9%86-%D8%A8%D8%A7-%D9%85%D9%86%D9%88-%D8%A8%D8%A7%D8%B2-%D8%BA%D8%B0%D8%A7%D9%87%D8%A7%DB%8C-%D9%84%D8%B0%DB%8C%D8%B0/%D8%B1%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D9%86-%D9%88-%DA%A9%D8%A7%D9%81%DB%8C-%D8%B4%D8%A7%D9%BE" title="فست فود داوین با منو باز غذاهای لذیذ"><h3 class="small-title">فست فود داوین با منو باز غذاهای لذیذ</h3></a>
-                                </span>
-                            </div>
-                          
-                            <div class="bottom-panel">
-                            </div>
-                            <div class="price list-content list-price-single">
-                                    <span class="cdbf-takhfif"><span class="cdbft-shape"><span class="list-discount-tag">%50</span></span></span>               
-                                    <span class="price price_slider price_slider_single">
-                                            <del><span class="woocommerce-Price-amount amount">قیمت: ۱۳۰۰۰&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></del> <ins><span class="woocommerce-Price-amount amount">با تخفیف: ۷۹۳۰&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></ins>
-                                        </span>
-                                <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
-                                        <form class="cart" action="http://127.0.0.1:8000/cart" method="post" enctype="multipart/form-data">
-                                            <input type="hidden" name="_token" value="tlmeQZubHN7nCAoIcdqH4bSQwPNnxCiTiSvQadoi">
-                                        <input type="hidden" name="id" value="9">
-                                                              <button type="submit" name="add-to-cart" class="btn">افزودن به سبد خرید</button>
-                                                                </form>
-                                        </div>
-                                        <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
-                                                                <span class="cdbm-total-buy">
-                                                                        <i class="fa fa-shopping-basket"></i>
-                                                                        ۳ خرید
-                                                                </span>
-                                                            </div>
-
-                                </div>
+                        </div>
+                        <div class="more_cat">
+                        <div class="row">
+                                <i class="fa fa-cutlery">
+                                </i>
+                        </div>
+                        <div class="row">
+                            <span>
+                                    {{$category->products->count()}} پیشنهاد {{$category->name}}
+                            </span>
+                        </div>
+                            <div class="button-all">
+                                <a href="{{ route('shop.showCategory', $category->slug) }}">
+                                    <button class="nb-btn nb-btn-success">مشاهده همه</button>
+                                </a>
                             </div>
                         </div>
-                    </div>
-                    </div>
-                    <div class="more_cat">
-                    <div class="row">
-                            <i class="fa fa-cutlery">
-                            </i>
-                    </div>
-                    <div class="row">
-                        <span>
-                                69 پیشنهاد رستوران و کافی شاپ
-                        </span>
-                    </div>
-                        <div class="button-all">
-                            <a href="/mashhad/c:restaurant/">
-                                <button class="nb-btn nb-btn-success">مشاهده همه</button>
-                            </a>
-                        </div>
-                    </div>
-            
-        </div>
-        </div>
-        </div>
-        </article>
-
-
-
-
-
-
+                
+            </div>
+            </div>
+                @endif
+                @php ($itr++)
+            @endif
+        @endforeach
+                </div>
+    </article>
+    @endif
+@endforeach
             </div>
         </div>
     </section>
