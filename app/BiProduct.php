@@ -48,4 +48,5 @@ class BiProduct extends Model
     {
         return $this->hasMany('App\BiReview');
     }
+    
 }
