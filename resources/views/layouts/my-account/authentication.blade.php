@@ -326,7 +326,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
         <label for="email" class="col-md-4 control-label">آدرس ایمیل</label>
 
         <div class="col-md-6">
-            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" autofocus>
+            <input type="text" class="form-control" name="email" value="{{ old('email') }}" autofocus>
 
             @if ($errors->has('email'))
                 <span class="help-block">
@@ -340,7 +340,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
         <label for="password" class="col-md-4 control-label">رمز ورود</label>
 
         <div class="col-md-6">
-            <input id="password" type="password" class="form-control" name="password">
+            <input type="password" class="form-control" name="password">
 
             @if ($errors->has('password'))
                 <span class="help-block">
@@ -349,8 +349,14 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
             @endif
         </div>
     </div>
-    
-
+    <div class="form-group">
+            <label class="col-md-4 control-label"></label>
+        <div class="col-md-6">
+        {!! NoCaptcha::renderJs() !!}
+        
+        {!! NoCaptcha::display() !!} 
+        </div>
+    </div>
     <div class="form-group">
         <div class="col-md-6 col-md-offset-4">
             <div class="checkbox">
@@ -451,18 +457,12 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
             @endif
         </div>
     </div>
-    <div class="form-group{{ $errors->has('captcha') ? ' has-error' : '' }}">
-        <label for="captcha" class="col-md-4 control-label">عبارت امنیتی فوق را بازنویسی نمائید</label>
-
+    <div class="form-group">
+            <label class="col-md-4 control-label"></label>
         <div class="col-md-6">
-            <p>{!! captcha_img() !!}</p>
-            <input id="captcha" type="text" class="form-control" name="captcha">
+        {!! NoCaptcha::renderJs() !!}
 
-            @if ($errors->has('captcha'))
-                <span class="help-block">
-                    <strong>{{ $errors->first('captcha') }}</strong>
-                </span>
-            @endif
+        {!! NoCaptcha::display() !!} 
         </div>
     </div>
 

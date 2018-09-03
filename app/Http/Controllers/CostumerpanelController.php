@@ -73,12 +73,17 @@ class CostumerpanelController extends Controller
 
     public function editprofile(Request $request)
     {   
+        $messages = [
+            'required' => 'پر کردن این فیلد اجباری است!',
+            'password.min' => 'گذر واژه باید حداقل شامل 6 کاراکتر باشد!',
+            'account_email.email' => 'ایمیل وارد شده صحیح نیست!',
+        ];
         $validatedData = Validator::make($request->all(), [
             'account_first_name' => 'required|max:255',
             'account_last_name' => 'required|max:255',
             'account_email' => 'email|max:255|nullable',
             'password' => 'min:6|confirmed|nullable',
-        ]);
+        ],$messages);
 
         $customerinfo = Customer::where('id', $request->id)->get();
         $bicustomerinfo = Bicustomer::where('customer_id', $request->id)->get();

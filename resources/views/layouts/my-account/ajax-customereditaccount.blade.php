@@ -8,13 +8,13 @@
 <nav class="woocommerce-MyAccount-navigation">
 <ul>
         <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard">
-                <a><span onclick='customerDashboard({{Auth::guard('customer')->user()->id}})'>پیشخوان</span></a>
+                <a><span onclick="customerDashboard({{Auth::guard('customer')->user()->id}})">پیشخوان</span></a>
 </li>
 <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
-        <a><span onclick='orders({{Auth::guard('customer')->user()->id}})'>سفارش ها</span></a>
+        <a><span onclick="orders({{Auth::guard('customer')->user()->id}})">سفارش ها</span></a>
     </li>
 <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account is-active">
-    <a><span onclick='editAccount({{Auth::guard('customer')->user()->id}})'>جزئیات حساب</span></a>
+    <a><span onclick="editAccount({{Auth::guard('customer')->user()->id}})">جزئیات حساب</span></a>
     
 </li>
 <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout"><a href="{{ url('/customer/logout') }}"
@@ -40,12 +40,13 @@ onclick="event.preventDefault();
 <p class="woocommerce-form-row woocommerce-form-row--first form-row form-row-first">
 <label for="account_first_name"> نام </label>
 <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="account_first_name" id="account_first_name" value="{{ Auth::guard('customer')->user()->bicustomer()->first()->firstname }}">
-</p>
 @if ($errors->has('account_first_name'))
     <span class="help-block">
         <strong>{{ $errors->first('account_first_name') }}</strong>
     </span>
 @endif
+</p>
+
 </div>
 <div class="clear"></div>
 
@@ -53,12 +54,12 @@ onclick="event.preventDefault();
 <p class="woocommerce-form-row woocommerce-form-row--first form-row form-row-first">
 <label for="account_last_name"> نام خانوادگی </label>
 <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="account_last_name" id="account_last_name" value="{{  Auth::guard('customer')->user()->bicustomer()->first()->lastname }}">
-</p>
 @if ($errors->has('account_last_name'))
     <span class="help-block">
         <strong>{{ $errors->first('account_last_name') }}</strong>
     </span>
 @endif
+</p>
 </div>
 <div class="clear"></div>
 
@@ -66,12 +67,12 @@ onclick="event.preventDefault();
 <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 <label for="account_email">آدرس ایمیل </label>
 <input type="email" class="woocommerce-Input woocommerce-Input--email input-text" name="account_email" id="account_email" value="{{ $customerinfo[0]->email  }}">
-</p>
 @if ($errors->has('account_email'))
     <span class="help-block">
         <strong>{{ $errors->first('account_email') }}</strong>
     </span>
 @endif
+</p>
 </div>
 <fieldset>
         <div class="form-group{{ $errors->has('account_email') ? ' has-error' : '' }}">
@@ -80,30 +81,30 @@ onclick="event.preventDefault();
 <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 <label for="password_current">گذرواژه پیشین (در صورتی که قصد تغییر ندارید خالی بگذارید)</label>
 <input type="password" class="woocommerce-Input woocommerce-Input--password input-text" name="password_current" id="password_current">
-</p>
 @if ($errors->has('password_current'))
     <span class="help-block">
         <strong>{{ $errors->first('password_current') }}</strong>
     </span>
 @endif
+</p>
 <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 <label for="password">گذرواژه جدید (در صورتی که قصد تغییر ندارید خالی بگذارید)</label>
 <input type="password" class="woocommerce-Input woocommerce-Input--password input-text" name="password" id="password">
-</p>
 @if ($errors->has('password'))
     <span class="help-block">
         <strong>{{ $errors->first('password') }}</strong>
     </span>
 @endif
+</p>
 <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 <label for="password_confirmation">تکرار رمز تازه</label>
 <input type="password" class="woocommerce-Input woocommerce-Input--password input-text" name="password_confirmation" id="password_confirmation">
-</p>
 @if ($errors->has('password_confirmation'))
     <span class="help-block">
         <strong>{{ $errors->first('password_confirmation') }}</strong>
     </span>
 @endif
+</p>
 
         </div>
 </fieldset>

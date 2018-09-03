@@ -47,15 +47,21 @@ class RegisterController extends Controller
      * @return \Illuminate\Contracts\Validation\Validator
      */
     
-     protected function validator(array $data)
+    protected function validator(array $data)
     {
+        $messages = [
+            'required' => 'پر کردن این فیلد اجباری است!',
+        ];
         return Validator::make($data, [
             'name' => 'required|max:255',
             'email' => 'email|max:255|unique:customers|nullable',
             'phone' => 'required|digits:11|unique:customers',
             'password' => 'required|min:6|confirmed',
-            'captcha' => 'required|captcha',
-        ]);
+            /*'g-recaptcha-response' => [
+                'required' => 'Please verify that you are not a robot.',
+                'captcha' => 'Captcha error! try again later or contact site admin.',
+            ],*/
+        ], $messages);
     }
 
     /**

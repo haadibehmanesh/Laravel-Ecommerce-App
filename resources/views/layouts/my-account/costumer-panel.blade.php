@@ -224,11 +224,15 @@ jQuery.ajax({
             
             <div class="phone"><span><i class="fa fa-book"></i>بانک جامع اطلاعاتی</span></div>
             <div class="block_login block_login_seller">
+        @if(Auth::guard('customer')->user())
+        @if(Auth::guard('customer')->user()->is_merchant == 1)
         <ul class="nav navbar-nav">
             <li class="dropdown">
                 <a href="/dashboard"><i class="fa fa-user pull-right"></i> پنل فروشندگان <strong class="takhfifat_get_seller_balance">موجودی: <span class="woocommerce-Price-amount amount">3,816,000&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></strong></a>
             </li>
         </ul>
+        @endif
+        @endif
 </div>	
 			<!--social-->
             <div class="social_header">

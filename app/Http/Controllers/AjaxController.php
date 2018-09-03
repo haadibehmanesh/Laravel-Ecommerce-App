@@ -124,11 +124,13 @@ class AjaxController extends Controller {
     }
 
     public function codeValidation(Request $request){
-
+        $messages = [
+            'required' => 'پر کردن این فیلد اجباری است!',
+        ];
         $validatedData = Validator::make($request->all(), [
             'code_used_count' => 'numeric|required|min:1|digits_between: 1,9',
             'code_offer' => 'numeric|required|digits_between: 1,9',
-        ]);
+        ],$messages);
         if(!$validatedData->fails()){
             $id = Auth::guard('customer')->user()->bimerchant()->first()->id;
             $order_item = BiOrderItem::where('code', $request->code_offer)->with(['product.bimerchant'])->first();
@@ -185,12 +187,14 @@ class AjaxController extends Controller {
 
     public function createReview(Request $request)
     {   
-
+        $messages = [
+            'required' => 'پر کردن این فیلد اجباری است!',
+        ];
         $validatedData = Validator::make($request->all(), [
             'comment' => 'required',
             'email' => 'required|email|max:255',
             'author' => 'required',
-        ]);
+        ],$messages);
         if(!$validatedData->fails()){
             $id = Auth::guard('customer')->user()->id;
             $customer = Customer::where('id',$id)->first();

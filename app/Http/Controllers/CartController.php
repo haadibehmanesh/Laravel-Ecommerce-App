@@ -100,9 +100,12 @@ class CartController extends Controller
      */
     public function update(Request $request, $id)
     {  
+        $messages = [
+            'required' => 'پر کردن این فیلد اجباری است!',
+        ];
         $validator = Validator::make($request->all(), [
             'quantity' => 'required|numeric|between:1,100'
-        ]);
+        ],$messages);
 
         if ($validator->fails()) {
             session()->flash('errors', collect(['تعداد بیش از 100 عدد است']));

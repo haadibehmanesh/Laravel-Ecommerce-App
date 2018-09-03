@@ -6,6 +6,7 @@ use App\BiProduct;
 use App\BiMerchant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\BiOrderItem;
 class MerchantpanelController extends Controller
 {
     /**
@@ -15,6 +16,10 @@ class MerchantpanelController extends Controller
      */
     public function index()
     {
+        $merchant_id = Auth::guard('customer')->user()->id;
+        //$merchant_order_items = BiProduct::where('bi_merchant_id', $merchant_id)->sum('total_sold');
+       
+       // dd($merchant_order_items);
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
         return view('layouts/dashboard/merchant-panel')->with('allcategories', $allcategories);
     }

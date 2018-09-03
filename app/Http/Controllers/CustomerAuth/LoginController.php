@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Hesto\MultiAuth\Traits\LogsoutGuard;
+use Illuminate\Http\Request;
 use Validator;
 class LoginController extends Controller
 {
@@ -68,5 +69,15 @@ class LoginController extends Controller
     protected function guard()
     {
         return Auth::guard('customer');
+    }
+    protected function credentials(Request $request)
+    {
+        if(is_numeric($request->get('email'))){
+        return ['phone'=>$request->get('email'),'password'=>$request->get('password')];
+        }
+        elseif (filter_var($request->get('email'), FILTER_VALIDATE_EMAIL)) {
+        return ['email' => $request->get('email'), 'password'=>$request->get('password')];
+        }
+        return ['name' => $request->get('email'), 'password'=>$request->get('password')];
     }
 }
