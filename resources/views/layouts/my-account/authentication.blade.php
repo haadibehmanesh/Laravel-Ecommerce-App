@@ -378,7 +378,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
     <div class="form-group">
             <label class="col-md-4 control-label"></label>
         <div class="col-md-6">
-        {!! NoCaptcha::renderJs() !!}
+        {!! NoCaptcha::renderJs('fa') !!}
         
         {!! NoCaptcha::display() !!} 
         </div>
