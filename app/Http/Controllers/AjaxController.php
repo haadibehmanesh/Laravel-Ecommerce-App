@@ -186,14 +186,14 @@ class AjaxController extends Controller {
 
 
     public function createReview(Request $request)
-    {   
+    {   //dd($request->all());
         $messages = [
             'required' => 'پر کردن این فیلد اجباری است!',
         ];
         $validatedData = Validator::make($request->all(), [
-            'comment' => 'required',
-            'email' => 'required|email|max:255',
             'author' => 'required',
+            'rating' => 'required',
+            'email' => 'email|nullable'
         ],$messages);
         if(!$validatedData->fails()){
             $id = Auth::guard('customer')->user()->id;
@@ -206,6 +206,7 @@ class AjaxController extends Controller {
                 $review->author = $request->author;
                 $review->email = $request->email;
                 $review->text = $request->comment;
+                $review->rating = ceil($request->rating);
                 $review->save();
                 
                 $message = '<p class="alert alert-success">
