@@ -6,13 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>{{ $product->name }}</title>
-	<link rel='dns-prefetch' href='http://maps.google.com/' />
-    <link rel='dns-prefetch' href='http://s.w.org/' />
-    <link rel="alternate" type="application/rss+xml" title="تخفیف گروهی بن اینجا &raquo; آرایشگاه النا خوراک دیدگاه‌ها" href="feed/index.html" />
-    <script type="text/javascript">
-        window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.6"}};
-        !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
-    </script>
 		<style type="text/css">
 img.wp-smiley,
 img.emoji {
@@ -41,24 +34,13 @@ img.emoji {
 
 <script type='text/javascript' src='../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
 <script type='text/javascript' src='../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
-<script type='text/javascript' src='http://maps.google.com/maps/api/js?key=AIzaSyCKCtow0jeZibeqGsBXNsKwQxm5N8TwbRE&amp;ver=4.9.6'></script>
-<!--[if lt IE 8]>
-<script type='text/javascript' src='http://localhost/takhfiftest/wp-includes/js/json2.min.js?ver=2015-05-03'></script>
-<![endif]-->
-<link rel='https://api.w.org/' href='../../wp-json/index.html' />
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../xmlrpc0db0.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../wp-includes/wlwmanifest.xml" /> 
-<meta name="generator" content="WordPress 4.9.6" />
-<meta name="generator" content="WooCommerce 3.3.3" />
-<link rel="canonical" href="index.html" />
-<link rel='shortlink' href='../../index6f72.html?p=96' />
-<link rel="alternate" type="application/json+oembed" href="../../wp-json/oembed/1.0/embedacd7.json?url=http%3A%2F%2Flocalhost%2Ftakhfiftest%2Fproduct%2F%25d8%25a2%25d8%25b1%25d8%25a7%25db%258c%25d8%25b4%25da%25af%25d8%25a7%25d9%2587-%25d8%25a7%25d9%2584%25d9%2586%25d8%25a7%2F" />
-<link rel="alternate" type="text/xml+oembed" href="../../wp-json/oembed/1.0/embed8cc4?url=http%3A%2F%2Flocalhost%2Ftakhfiftest%2Fproduct%2F%25d8%25a2%25d8%25b1%25d8%25a7%25db%258c%25d8%25b4%25da%25af%25d8%25a7%25d9%2587-%25d8%25a7%25d9%2584%25d9%2586%25d8%25a7%2F&amp;format=xml" />
-	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+{{--<script type='text/javascript' src='http://maps.google.com/maps/api/js?key=AIzaSyCKCtow0jeZibeqGsBXNsKwQxm5N8TwbRE&amp;ver=4.9.6'></script>--}}
+
 	<style type="text/css">/** Mega Menu CSS Disabled **/</style>
     <!-- Bootstrap -->
-    <link href="../../wp-content/themes/takhfifat/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../wp-content/themes/takhfifat/css/bootstrap-3.3.6.css" rel="stylesheet">
     <link href="../../wp-content/themes/takhfifat/css/bootstrap-rtl.css" rel="stylesheet">
+    <link href="../../wp-content/themes/takhfifat/css/star-rating.css" media="all" rel="stylesheet" type="text/css" />
     <link href="../../wp-content/themes/takhfifat/css/font-awesome.css" rel="stylesheet">
     <link href="../../wp-content/themes/takhfifat/stylefc99.css?ver=2.6" rel="stylesheet">
 
@@ -123,7 +105,15 @@ img.emoji {
 	input[type="submit"].dokan-btn-theme, a.dokan-btn-theme, .dokan-btn-theme
 	{
 		border-color:#ff5a5f	}	
-		</style>
+        </style>
+        <script>
+        jQuery( document ).ready(function() {
+          //  jQuery("#input-id").rating();
+        });
+        
+        
+        
+        </script>
 	<script src="../../wp-content/themes/takhfifat/js/parsinumber.min.js"></script>
 	<script>
 	function toPersianNum( num, dontTrim ) {
@@ -501,7 +491,8 @@ img.emoji {
 							
 
                             <div class="share_gift_bye">
-
+                                <div class="col-lg-6 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
+                                    
                                 <div class="btn-group btn_social">
 
                                     <button type="button" class="btn btn-default link_share dropdown-toggle" data-toggle="dropdown"> اشتراک <i class="fa fa-share-alt"></i> </button>
@@ -531,31 +522,35 @@ img.emoji {
                                     </ul>
 
                                 </div>
-
-                                <a href="/" class="link_gift">دیگرمحصولات<i class="fa fa-shopping-bag"></i></a>
+                                </div>
+                              
+                            {{--    <a href="/" class="link_gift">دیگرمحصولات<i class="fa fa-shopping-bag"></i></a>
 
                                 <br><br>
-
+--}}
                                 <!-- <a href="" class="link_bye"><i class="fa fa-shopping-cart"></i>همین حالا خرید کنید</a> -->
+                                <div class="col-lg-6 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
+                                <div class="row">
+                                   
+                                    <form class="cart" action="{{ route('cart.store') }}" method="post" enctype='multipart/form-data'>
+                                        {{ csrf_field() }}
+                                    <input type="hidden" name="id" value="{{ $product->id }}">
+                                  @if($product->quantity - $product->sold > 0)
+                                    <button type="submit" name="add-to-cart" value="96" class="btn btn-default">افزودن به سبد خرید</button>
+                                    @else
+                                    <div class="alert alert-danger">
+                                        <p class="text-center">
+                                        موجود نیست
+                                        </p>
+                                    </div>
+                                    @endif
+                                   
+                                    </form>
+                                   
 
-                                <div>
 	
-    <form class="cart" action="{{ route('cart.store') }}" method="post" enctype='multipart/form-data'>
-        {{ csrf_field() }}
-    <input type="hidden" name="id" value="{{ $product->id }}">
-   @if($product->quantity - $product->sold > 0)
-    <button type="submit" name="add-to-cart" value="96" class="single_add_to_cart_button button alt">افزودن به سبد خرید</button>
-    @else
-    <div class="alert alert-danger">
-        <p class="text-center">
-        موجود نیست
-        </p>
-    </div>
-    @endif
-    </form>
-
-	
-</div>
+                               </div>
+                               </div>
 
         </div>
 
@@ -576,8 +571,20 @@ img.emoji {
 
 	<!--details more-->
 <div class="details_more box_single">
-	<div class="title_block"><span>توضیحات تکمیلی</span></div>
-	<p><h2>{{ $product->name }}</h2></p>
+    <div class="title_block"><span>توضیحات تکمیلی</span></div>
+    <div class="col-lg-6 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox"><h2>{{ $product->name }}</h2></div>
+    <div class="col-lg-6 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
+        <p>
+            @if(Auth::guard('customer')->check())
+            <div class="star_rating">
+                    <input id="input-7-xs" class="rating rating-loading" value="5" data-min="0" data-max="5" data-step="0.9" data-size="xs"  data-show-caption="false">
+                    
+            </div><br>  
+            @endif
+        </p>
+    </div>
+   
+    
 <div class="content description">
 {!!  $product->description_details !!}
 </div>
@@ -889,46 +896,21 @@ $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  '
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../wp-content/themes/takhfifat/js/star-rating.js" type="text/javascript"></script>
 <script src="../../wp-content/themes/takhfifat/js/bootstrap.min.js"></script>
 <script src="../../wp-content/themes/takhfifat/js/jquery.countdownTimer.js"></script>
 <script src="../../wp-content/themes/takhfifat/js/custom.js"></script>
-<script type="application/ld+json">{"@context":"https:\/\/schema.org\/","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":"1","item":{"name":"\u062e\u0627\u0646\u0647","@id":"http:\/\/localhost\/takhfiftest"}},{"@type":"ListItem","position":"2","item":{"name":"\u0632\u06cc\u0628\u0627\u06cc\u06cc \u0648 \u0622\u0631\u0627\u06cc\u0634\u06cc","@id":"http:\/\/localhost\/takhfiftest\/product-category\/beauty-and-cosmetics\/"}},{"@type":"ListItem","position":"3","item":{"name":"\u0622\u0631\u0627\u06cc\u0634\u06af\u0627\u0647 \u0627\u0644\u0646\u0627"}}]}</script><script type="text/javascript">
-            jQuery(document).ready( function($) {
-                var data = {
-                    action: "dokan_pageview",
-                    _ajax_nonce: "7eb26d9f7e",
-                    post_id: 96,
-                }
-                $.post( "../../wp-admin/admin-ajax.html", data );
-            } );
-            </script><script type='text/javascript'>
-/* <![CDATA[ */
-var wc_single_product_params = {"i18n_required_rating_text":"\u0644\u0637\u0641\u0627 \u06cc\u06a9 \u0627\u0645\u062a\u06cc\u0627\u0632 \u0631\u0627 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f","review_rating_required":"yes","flexslider":{"rtl":true,"animation":"slide","smoothHeight":true,"directionNav":false,"controlNav":"thumbnails","slideshow":false,"animationSpeed":500,"animationLoop":false,"allowOneSlide":false},"zoom_enabled":"","zoom_options":[],"photoswipe_enabled":"","photoswipe_options":{"shareEl":false,"closeOnScroll":false,"history":false,"hideAnimationDuration":0,"showAnimationDuration":0},"flexslider_enabled":""};
-/* ]]> */
-</script>
 <script type='text/javascript' src='../../wp-content/plugins/woocommerce/assets/js/frontend/single-product.min6765.js?ver=3.3.3'></script>
 <script type='text/javascript' src='../../wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min44fd.js?ver=2.70'></script>
 <script type='text/javascript' src='../../wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min6b25.js?ver=2.1.4'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var woocommerce_params = {"ajax_url":"\/takhfiftest\/wp-admin\/admin-ajax.php","wc_ajax_url":"http:\/\/localhost\/takhfiftest\/?wc-ajax=%%endpoint%%"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='../../wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min6765.js?ver=3.3.3'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
 
-/* ]]> */
-</script>
 {{--<script type='text/javascript' src='../../wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min6765.js?ver=3.3.3'></script>--}}
 <script type='text/javascript' src='../../wp-includes/js/jquery/ui/core.mine899.js?ver=1.11.4'></script>
 <script type='text/javascript' src='../../wp-includes/js/jquery/ui/widget.mine899.js?ver=1.11.4'></script>
 <script type='text/javascript' src='../../wp-includes/js/jquery/ui/mouse.mine899.js?ver=1.11.4'></script>
 <script type='text/javascript' src='../../wp-includes/js/jquery/ui/sortable.mine899.js?ver=1.11.4'></script>
 <script type='text/javascript' src='../../wp-includes/js/jquery/ui/datepicker.mine899.js?ver=1.11.4'></script>
-<script type='text/javascript'>
-jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"\u0628\u0633\u062a\u0646","currentText":"\u0627\u0645\u0631\u0648\u0632","monthNames":["\u0698\u0627\u0646\u0648\u06cc\u0647","\u0641\u0648\u0631\u06cc\u0647","\u0645\u0627\u0631\u0633","\u0622\u0648\u0631\u06cc\u0644","\u0645\u06cc","\u0698\u0648\u0626\u0646","\u062c\u0648\u0644\u0627\u06cc","\u0622\u06af\u0648\u0633\u062a","\u0633\u067e\u062a\u0627\u0645\u0628\u0631","\u0627\u06a9\u062a\u0628\u0631","\u0646\u0648\u0627\u0645\u0628\u0631","\u062f\u0633\u0627\u0645\u0628\u0631"],"monthNamesShort":["\u0698\u0627\u0646\u0648\u06cc\u0647","\u0641\u0648\u0631\u06cc\u0647","\u0645\u0627\u0631\u0633","\u0622\u0648\u0631\u06cc\u0644","\u0645\u0647","\u0698\u0648\u0626\u0646","\u062c\u0648\u0644\u0627\u06cc","\u0622\u06af\u0648\u0633\u062a","\u0633\u067e\u062a\u0627\u0645\u0628\u0631","\u0627\u06a9\u062a\u0628\u0631","\u0646\u0648\u0627\u0645\u0628\u0631","\u062f\u0633\u0627\u0645\u0628\u0631"],"nextText":"\u0628\u0639\u062f","prevText":"\u0642\u0628\u0644\u06cc","dayNames":["\u06cc\u06a9\u0634\u0646\u0628\u0647","\u062f\u0648\u0634\u0646\u0628\u0647","\u0633\u0647 \u0634\u0646\u0628\u0647","\u0686\u0647\u0627\u0631 \u0634\u0646\u0628\u0647","\u067e\u0646\u062c\u0634\u0646\u0628\u0647","\u062c\u0645\u0639\u0647","\u0634\u0646\u0628\u0647"],"dayNamesShort":["\u06cc\u06a9","\u062f\u0648","\u0633\u0647","\u0686\u0647\u0627\u0631","\u067e\u0646\u062c","\u062c\u0645\u0639\u0647","\u0634\u0646\u0628\u0647"],"dayNamesMin":["\u06cc","\u062f","\u0633","\u0686","\u067e","\u062c","\u0634"],"dateFormat":"d MM yy","firstDay":6,"isRTL":true});});
-</script>
+
 <script type='text/javascript' src='../../wp-content/plugins/dokan-lite/assets/vendors/tooltips/tooltipsb246.js?ver=2.7.8'></script>
 <script type='text/javascript' src='../../wp-content/plugins/dokan-lite/assets/vendors/chosen/chosen.jquery.minb246.js?ver=2.7.8'></script>
 
@@ -939,7 +921,7 @@ jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeTex
 <script type='text/javascript' src='../../wp-includes/js/customize-base.min1845.js?ver=4.9.6'></script>
 <script type='text/javascript' src='../../wp-includes/js/backbone.min9632.js?ver=1.2.3'></script>
 <script type='text/javascript' src='../../wp-includes/js/customize-modelsb246.js?ver=2.7.8'></script>
-<script type='text/javascript' src='../../wp-content/plugins/dokan-lite/assets/js/dokanb246.js?ver=2.7.8'></script>
+{{--<script type='text/javascript' src='../../wp-content/plugins/dokan-lite/assets/js/dokanb246.js?ver=2.7.8'></script>--}}
 <script type='text/javascript' src='../../wp-content/plugins/dokan-lite/assets/vendors/select2/select2.full.minb246.js?ver=2.7.8'></script>
 <script type='text/javascript' src='../../wp-content/plugins/dokan-pro/assets/js/single-product-shipping.js'></script>
 <script type='text/javascript' src='../../wp-includes/js/hoverIntent.minc245.js?ver=1.8.1'></script>
