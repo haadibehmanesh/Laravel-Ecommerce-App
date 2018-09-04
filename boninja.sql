@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 29, 2018 at 09:06 AM
+-- Generation Time: Sep 04, 2018 at 05:25 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.1.18
 
@@ -119,9 +119,6 @@ INSERT INTO `bi_category_bi_product` (`id`, `bi_product_id`, `bi_category_id`, `
 (21, 2, 3, '2018-07-21 08:07:53', '2018-07-21 08:07:53'),
 (35, 5, 3, '2018-08-03 03:49:13', '2018-08-03 03:49:13'),
 (36, 5, 4, '2018-08-03 03:49:13', '2018-08-03 03:49:13'),
-(41, 6, 2, '2018-08-03 04:09:45', '2018-08-03 04:09:45'),
-(42, 6, 11, '2018-08-03 04:09:45', '2018-08-03 04:09:45'),
-(43, 6, 14, '2018-08-03 04:09:45', '2018-08-03 04:09:45'),
 (106, 9, 2, '2018-08-25 06:44:14', '2018-08-25 06:44:14'),
 (107, 9, 12, '2018-08-25 06:44:14', '2018-08-25 06:44:14'),
 (108, 7, 1, '2018-08-25 07:06:11', '2018-08-25 07:06:11'),
@@ -129,10 +126,13 @@ INSERT INTO `bi_category_bi_product` (`id`, `bi_product_id`, `bi_category_id`, `
 (110, 7, 23, '2018-08-25 07:06:12', '2018-08-25 07:06:12'),
 (115, 4, 3, '2018-08-26 09:23:33', '2018-08-26 09:23:33'),
 (116, 4, 4, '2018-08-26 09:23:33', '2018-08-26 09:23:33'),
-(167, 10, 2, '2018-08-26 10:10:39', '2018-08-26 10:10:39'),
-(168, 10, 16, '2018-08-26 10:10:39', '2018-08-26 10:10:39'),
-(169, 8, 2, '2018-08-26 10:12:17', '2018-08-26 10:12:17'),
-(170, 8, 12, '2018-08-26 10:12:17', '2018-08-26 10:12:17');
+(171, 10, 2, '2018-09-02 03:06:58', '2018-09-02 03:06:58'),
+(172, 10, 16, '2018-09-02 03:06:58', '2018-09-02 03:06:58'),
+(173, 8, 2, '2018-09-02 03:07:28', '2018-09-02 03:07:28'),
+(174, 8, 12, '2018-09-02 03:07:28', '2018-09-02 03:07:28'),
+(175, 6, 2, '2018-09-02 03:07:41', '2018-09-02 03:07:41'),
+(176, 6, 11, '2018-09-02 03:07:41', '2018-09-02 03:07:41'),
+(177, 6, 14, '2018-09-02 03:07:41', '2018-09-02 03:07:41');
 
 -- --------------------------------------------------------
 
@@ -193,11 +193,10 @@ CREATE TABLE `bi_customers` (
 --
 
 INSERT INTO `bi_customers` (`id`, `store_id`, `language_id`, `firstname`, `lastname`, `telephone`, `fax`, `salt`, `cart`, `wishlist`, `newsletter`, `address_id`, `custom_field`, `ip`, `status`, `safe`, `token`, `code`, `created_at`, `updated_at`, `customer_id`) VALUES
-(3, 0, NULL, 'Hamid', 'Alizadeh', '935', NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, 0, 0, NULL, NULL, '2018-07-22 11:20:00', '2018-08-22 08:40:01', 11),
-(5, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2018-08-23 02:06:05', '2018-08-23 02:06:05', 15),
-(6, 0, NULL, 'hadi', 'behmanesh', NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-08-23 06:16:02', 1),
-(7, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2018-08-26 11:52:45', '2018-08-26 11:52:45', 16),
-(8, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2018-08-26 12:21:35', '2018-08-26 12:21:35', 17);
+(10, 0, NULL, 'hadi', 'behmanesh', NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-09-03 11:25:36', 1),
+(11, 0, NULL, 'hamid', 'alizadeh', NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2018-09-03 10:48:49', 11),
+(12, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 15),
+(13, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 16);
 
 -- --------------------------------------------------------
 
@@ -406,6 +405,8 @@ CREATE TABLE `bi_orders` (
 
 INSERT INTO `bi_orders` (`id`, `invoice_no`, `invoice_prefix`, `store_id`, `store_name`, `store_url`, `customer_id`, `customer_group_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `custom_field`, `payment_firstname`, `payment_lastname`, `payment_company`, `payment_address_1`, `payment_address_2`, `payment_city`, `payment_postcode`, `payment_country`, `payment_country_id`, `payment_zone`, `payment_zone_id`, `payment_address_format`, `payment_custom_field`, `payment_method`, `payment_code`, `shipping_firstname`, `shipping_lastname`, `shipping_company`, `shipping_address_1`, `shipping_address_2`, `shipping_city`, `shipping_postcode`, `shipping_country`, `shipping_country_id`, `shipping_zone`, `shipping_zone_id`, `shipping_address_format`, `shipping_custom_field`, `shipping_method`, `shipping_code`, `comment`, `total`, `order_status_id`, `affiliate_id`, `commission`, `marketing_id`, `tracking`, `language_id`, `currency_id`, `currency_code`, `currency_value`, `ip`, `forwarded_ip`, `user_agent`, `accept_language`, `created_at`, `updated_at`, `order_code`) VALUES
 (76, 861734, NULL, 0, NULL, NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '7920', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1.00000000', NULL, NULL, NULL, NULL, '2018-08-25 11:13:08', '2018-08-25 11:13:08', '31246785'),
+(80, 782391, NULL, 0, NULL, NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '90000', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1.00000000', NULL, NULL, NULL, NULL, '2018-08-30 21:07:38', '2018-08-30 21:07:38', '62487135'),
+(81, 721639, NULL, 0, NULL, NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '8600', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1.00000000', NULL, NULL, NULL, NULL, '2018-09-03 02:26:40', '2018-09-03 02:26:40', '98654273'),
 (79, 138796, NULL, 0, NULL, NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '31720', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1.00000000', NULL, NULL, NULL, NULL, '2018-08-26 02:58:45', '2018-08-26 02:58:45', '12579486'),
 (78, 479163, NULL, 0, NULL, NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '7920', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1.00000000', NULL, NULL, NULL, NULL, '2018-08-25 11:58:29', '2018-08-25 11:58:29', '57461893'),
 (77, 352798, NULL, 0, NULL, NULL, 11, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '45000', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1.00000000', NULL, NULL, NULL, NULL, '2018-08-25 11:28:26', '2018-08-25 11:28:26', '98261437');
@@ -439,7 +440,10 @@ INSERT INTO `bi_order_items` (`id`, `bi_order_id`, `name`, `price`, `total`, `qu
 (17, 76, 'کافه پرستیژ با منو باز کافه، منو مزه یا غذایی', '7920', '7920', 1, '2018-08-25 11:13:08', '2018-08-25 11:13:08', 8, '98514273', 0, 3),
 (18, 77, 'دلفیناریوم برج میلاد', '45000', '45000', 1, '2018-08-25 11:28:26', '2018-08-25 11:28:26', 7, '23691457', 0, 1),
 (19, 78, 'کافه پرستیژ با منو باز کافه، منو مزه یا غذایی', '7920', '7920', 1, '2018-08-25 11:58:29', '2018-08-25 11:58:29', 8, '75324698', 0, 3),
-(20, 79, 'فست فود داوین با منو باز غذاهای لذیذ', '7930', '31720', 4, '2018-08-26 02:58:45', '2018-08-26 02:58:45', 9, '59412763', 0, 3);
+(20, 79, 'فست فود داوین با منو باز غذاهای لذیذ', '7930', '31720', 4, '2018-08-26 02:58:45', '2018-08-26 02:58:45', 9, '59412763', 0, 3),
+(21, 80, 'کافه هنر شیراز', '15000', '45000', 3, '2018-08-30 21:07:38', '2018-08-30 21:07:38', 10, '75943862', 0, 2),
+(22, 80, 'دلفیناریوم برج میلاد', '45000', '45000', 1, '2018-08-30 21:07:38', '2018-08-30 21:07:38', 7, '95872143', 0, 1),
+(23, 81, 'آرایشگاه کاملیا', '8600', '8600', 1, '2018-09-03 02:26:40', '2018-09-03 02:26:40', 4, '27614859', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -492,22 +496,23 @@ CREATE TABLE `bi_products` (
   `end_date` datetime DEFAULT NULL,
   `usage_terms` text COLLATE utf8mb4_unicode_ci,
   `description_details` text COLLATE utf8mb4_unicode_ci,
-  `cat_featured` tinyint(4) DEFAULT NULL
+  `cat_featured` tinyint(4) DEFAULT NULL,
+  `index_gallery` tinyint(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `bi_products`
 --
 
-INSERT INTO `bi_products` (`id`, `language_id`, `name`, `description`, `tag`, `meta_title`, `meta_description`, `meta_keyword`, `model`, `location`, `quantity`, `image`, `bi_merchant_id`, `shipping`, `price`, `points`, `date_available`, `minimum`, `sort_order`, `status`, `viewed`, `created_at`, `updated_at`, `slug`, `discount`, `sold`, `featured`, `gallery`, `attributies`, `start_date`, `end_date`, `usage_terms`, `description_details`, `cat_featured`) VALUES
-(3, NULL, 'آرایشگاه النا', '<p><span style=\"color: #707070; font-family: IRANSans; font-size: 21.3333px; background-color: #f2f2f2;\">&nbsp;</span></p>\r\n<h2 style=\"box-sizing: border-box; font-weight: normal; font-family: IRANSans; line-height: 29px; color: #000000; margin-top: 20px; margin-bottom: 10px; font-size: 16px; display: inline;\">کاشت ناخن درآرایشگاه النا با ۸۰% تخفیف</h2>', NULL, NULL, NULL, NULL, 'آرایشگاه النا', NULL, 20, 'bi-products\\July2018\\KKcrRb0idOkQWMNfvtW7.jpg', 3, 0, '40000', NULL, NULL, NULL, 0, 1, NULL, '2018-07-27 04:14:00', '2018-08-06 09:31:05', 'آرایشگاه-النا', 30, 5, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, NULL, 'آرایشگاه کاملیا', '<p><span style=\"color: #000000; font-family: IRANSans; font-size: 16px; background-color: #f2f2f2;\">کاشت مژه در آرایشگاه کاملیا با ۸۰% تخفیف</span></p>', NULL, NULL, NULL, NULL, 'آرایشگاه کاملیا', NULL, 10, 'bi-products\\July2018\\mYqwXdCUKmKMyCxzGHis.jpg', 1, 0, '20000', NULL, NULL, NULL, 0, 1, NULL, '2018-07-27 05:04:00', '2018-08-26 09:23:33', 'آرایشگاه-کاملیا', 57, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0),
-(5, NULL, 'آرایشگاه مردانه اس تی پی STP', '<p><span style=\"color: #000000; font-family: IRANSans; font-size: 16px; background-color: #f2f2f2;\">کوتاهی ، شستشو و حالت دادن مو در آرایشگاه مردانه اس تی پی STP با ۸۶% تخفیف</span></p>', NULL, NULL, NULL, NULL, 'آرایشگاه مردانه اس تی پی STP', NULL, 20, 'bi-products\\July2018\\VJRSmbZJ7NCE6E3qt8Y5.jpg', 2, 0, '40000', NULL, NULL, NULL, 0, 1, NULL, '2018-07-27 05:06:00', '2018-08-03 03:49:13', 'آرایشگاه-مردانه-اس-تی-پی-stp', 24, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(6, NULL, 'افتتاحیه بوفه شام رستوران بین المللی ۵ ستاره اسفندیار', '<p><span style=\"color: #000000; font-family: IRANSans; font-size: 16px; background-color: #f2f2f2;\">با موسیقی زنده با ۳۰% تخفیف و پرداخت تنها ۷۷,۰۰۰ تومان به جای ۱۱۰,۰۰۰ تومان</span></p>', NULL, NULL, NULL, NULL, 'افتتاحیه بوفه شام رستوران بین المللی ۵ ستاره اسفندیار', NULL, 10, 'bi-products\\July2018\\yC8LK59okjxt6KkVPDg5.jpg', 3, 0, '100000', NULL, NULL, NULL, 0, 1, NULL, '2018-07-28 01:39:00', '2018-08-03 04:09:45', 'افتتاحیه-بوفه-شام-رستوران-بین-المللی-ستاره-اسفندیار', 50, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(7, NULL, 'دلفیناریوم برج میلاد', '<p><span style=\"color: #000000; font-family: IRANSans; font-size: 16px; background-color: #f2f2f2;\">اولین و تنهاترین دلفیناریوم غیر ساحلی در ایران و خاورمیانه تا 60 درصد تخفیف استثنائی</span></p>', NULL, NULL, NULL, NULL, NULL, NULL, 10, 'bi-products\\July2018\\8QjoKtydxuuT3z3RMM7n.jpg', 1, 0, '50000', NULL, NULL, NULL, 0, 1, NULL, '2018-07-28 06:43:00', '2018-08-25 11:28:26', 'دلفیناریوم-برج-میلاد', 10, 2, 1, NULL, NULL, NULL, NULL, NULL, NULL, 1),
-(8, NULL, 'کافه پرستیژ با منو باز کافه، منو مزه یا غذایی', '<p>کافه پرستیژ با منو باز کافه یا منو مزه یا غذاهای متنوع با 56% تخفیف و پرداخت تنها 7,920 تومان به جای 18,000 تومان</p>', NULL, NULL, NULL, NULL, NULL, NULL, 13, 'bi-products\\August2018\\ntlvI0rVO6VLIyfU84lf.jpg', 1, 0, '18000', NULL, NULL, NULL, 0, 1, NULL, '2018-08-03 06:05:00', '2018-08-26 10:12:17', 'کافه-پرستیژ-با-منو-باز-کافه-منو-مزه-یا-غذایی', 56, 13, 0, NULL, NULL, NULL, NULL, NULL, NULL, 0),
-(9, NULL, 'فست فود داوین با منو باز غذاهای لذیذ', 'کافه پرستیژ با منو باز کافه یا منو مزه یا غذاهای متنوع با 56% تخفیف و پرداخت تنها 7,920 تومان به جای 18,000 تومان', NULL, NULL, NULL, NULL, NULL, NULL, 28, 'bi-products\\August2018\\UVJKG8Um0gSGzFEQXarV.jpg', 3, 0, '13000', NULL, NULL, NULL, 0, 1, NULL, '2018-08-03 06:10:00', '2018-08-26 02:58:45', 'فست-فود-داوین-با-منو-باز-غذاهای-لذیذ', 39, 9, 1, '[\"bi-products\\\\August2018\\\\IaOeEGZ9eoaR732awWDz.jpg\",\"bi-products\\\\August2018\\\\AWYfRUlhiNaGEAUHmI92.jpg\"]', '<p style=\"text-align: right;\">&nbsp;بدون محدودیت در خرید</p>\r\n<p style=\"text-align: right;\">&nbsp;سانس آزاد بانوان</p>\r\n<p style=\"text-align: right;\">&nbsp;روزهای شنبه تا پنجشنبه &nbsp;ساعت 9 صبح الی 15:45</p>\r\n<p style=\"text-align: right;\">جمعه 9 الی 14:45</p>\r\n<p style=\"text-align: right;\">سانس آزاد آقایان</p>\r\n<p style=\"text-align: right;\">همه روزه 17 الی 23</p>\r\n<p style=\"text-align: right;\">&nbsp;مراجعه با هماهنگی و رزرو قبلی با تلفن : 44713219 - 44711155</p>\r\n<p style=\"text-align: right;\">قبل از خرید نت برگ بررسی های لازم را به عمل آورید</p>\r\n<p style=\"text-align: right;\">نت برگ خریداری شده قابل استرداد نمی باشد</p>\r\n<p style=\"text-align: right;\">&nbsp;نت برگی عزیز، استفاده از نت برگ خود را به روزهای پایانی موکول نفرمایید</p>\r\n<p style=\"text-align: right;\">رزرو و هماهنگی حداکثر تا دوهفته قبل از پایان مهلت استفاده</p>', NULL, NULL, '<p style=\"text-align: right;\">زمان استفاده تا تاریخ: 25 شهریورماه</p>\r\n<p style=\"text-align: right;\">ساعت پاسخگویی و سرویس دهی:&nbsp;<span style=\"box-sizing: border-box; color: #020a19;\">تمام وقت</span></p>\r\n<p style=\"text-align: right;\">روزهای سرویس دهی:&nbsp;<span style=\"box-sizing: border-box; color: #020a19;\">شنبه ، یکشنبه ، دوشنبه ، سه شنبه ، چهارشنبه ، پنجشنبه</span></p>\r\n<p style=\"text-align: right;\">تلفن تماس:&nbsp;<span style=\"box-sizing: border-box; color: #020a19;\">۰۵۱۳۸۵۵۵۸۱۵</span></p>\r\n<p style=\"text-align: right;\">آدرس:&nbsp;<span style=\"box-sizing: border-box; color: #020a19;\">مشهد - خیابان امام خمینی - خیابان خرمشهر - خرمشهر ۱۳</span></p>', '<p style=\"text-align: right;\">تا بحال به کافه زیبا و دنج&nbsp;<strong style=\"box-sizing: border-box; font-size: 1.4rem;\">پرستیژ</strong>&nbsp;رفته اید؟</p>\r\n<p style=\"text-align: right;\">اگر در نزدیکی میدان انقلاب هستید پیشنهاد نت برگ به شما کافه دنج و زیبا<strong style=\"box-sizing: border-box; font-size: 1.4rem;\">&nbsp;پرستیژ</strong>&nbsp;است. مطابق با ذائقه و سلیقه شما لیستی بلند بالا از منو کافه، منو مزه ها و غذایی را در&nbsp;<strong style=\"box-sizing: border-box; font-size: 1.4rem;\">کافه پرستیژ&nbsp;</strong>دور هم جمع آوری کرده است. سفارش دهید و به موسیقی گوش نوازی که در فضای&nbsp;<strong style=\"box-sizing: border-box; font-size: 1.4rem;\">کافه پرستیژ</strong>&nbsp;است گوش دهید و لذت ببرید</p>\r\n<p style=\"text-align: right;\">لحظاتی خوش را در&nbsp;<strong style=\"box-sizing: border-box; font-size: 1.4rem;\">کافه پرستیژ</strong>&nbsp;بگذرانید</p>', 1),
-(10, NULL, 'کافه هنر شیراز', 'کافه هنر شیراز', NULL, NULL, NULL, NULL, NULL, 'شیراز', 100, 'bi-products\\August2018\\lCywQoyP04kgrkiRjIjJ.jpg', 2, 1, '30000', 0, NULL, NULL, 0, 1, NULL, '2018-08-26 03:30:00', '2018-08-26 10:10:39', 'کافه-هنر-شیراز', 50, 0, 0, '[\"bi-products\\\\August2018\\\\6wQ4clslHT7gzp8B3qJ6.jpg\",\"bi-products\\\\August2018\\\\UXTlkuLx78TnEbBKsZQH.jpg\"]', '<p style=\"text-align: right;\">خرید نا محدود</p>', '2018-08-27 00:00:00', '2018-09-30 00:00:00', '<p style=\"text-align: right;\">روزهای نوبت دهی شنبه</p>', NULL, 0);
+INSERT INTO `bi_products` (`id`, `language_id`, `name`, `description`, `tag`, `meta_title`, `meta_description`, `meta_keyword`, `model`, `location`, `quantity`, `image`, `bi_merchant_id`, `shipping`, `price`, `points`, `date_available`, `minimum`, `sort_order`, `status`, `viewed`, `created_at`, `updated_at`, `slug`, `discount`, `sold`, `featured`, `gallery`, `attributies`, `start_date`, `end_date`, `usage_terms`, `description_details`, `cat_featured`, `index_gallery`) VALUES
+(3, NULL, 'آرایشگاه النا', '<p><span style=\"color: #707070; font-family: IRANSans; font-size: 21.3333px; background-color: #f2f2f2;\">&nbsp;</span></p>\r\n<h2 style=\"box-sizing: border-box; font-weight: normal; font-family: IRANSans; line-height: 29px; color: #000000; margin-top: 20px; margin-bottom: 10px; font-size: 16px; display: inline;\">کاشت ناخن درآرایشگاه النا با ۸۰% تخفیف</h2>', NULL, NULL, NULL, NULL, 'آرایشگاه النا', NULL, 20, 'bi-products\\July2018\\KKcrRb0idOkQWMNfvtW7.jpg', 3, 0, '40000', NULL, NULL, NULL, 0, 1, NULL, '2018-07-27 04:14:00', '2018-08-06 09:31:05', 'آرایشگاه-النا', 30, 5, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(4, NULL, 'آرایشگاه کاملیا', '<p><span style=\"color: #000000; font-family: IRANSans; font-size: 16px; background-color: #f2f2f2;\">کاشت مژه در آرایشگاه کاملیا با ۸۰% تخفیف</span></p>', NULL, NULL, NULL, NULL, 'آرایشگاه کاملیا', NULL, 10, 'bi-products\\July2018\\mYqwXdCUKmKMyCxzGHis.jpg', 1, 0, '20000', NULL, NULL, NULL, 0, 1, NULL, '2018-07-27 05:04:00', '2018-09-03 02:26:41', 'آرایشگاه-کاملیا', 57, 2, 1, NULL, NULL, NULL, NULL, NULL, NULL, 0, 1),
+(5, NULL, 'آرایشگاه مردانه اس تی پی STP', '<p><span style=\"color: #000000; font-family: IRANSans; font-size: 16px; background-color: #f2f2f2;\">کوتاهی ، شستشو و حالت دادن مو در آرایشگاه مردانه اس تی پی STP با ۸۶% تخفیف</span></p>', NULL, NULL, NULL, NULL, 'آرایشگاه مردانه اس تی پی STP', NULL, 20, 'bi-products\\July2018\\VJRSmbZJ7NCE6E3qt8Y5.jpg', 2, 0, '40000', NULL, NULL, NULL, 0, 1, NULL, '2018-07-27 05:06:00', '2018-08-03 03:49:13', 'آرایشگاه-مردانه-اس-تی-پی-stp', 24, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(6, NULL, 'افتتاحیه بوفه شام رستوران بین المللی ۵ ستاره اسفندیار', '<p><span style=\"color: #000000; font-family: IRANSans; font-size: 16px; background-color: #f2f2f2;\">با موسیقی زنده با ۳۰% تخفیف و پرداخت تنها ۷۷,۰۰۰ تومان به جای ۱۱۰,۰۰۰ تومان</span></p>', NULL, NULL, NULL, NULL, 'افتتاحیه بوفه شام رستوران بین المللی ۵ ستاره اسفندیار', NULL, 10, 'bi-products\\July2018\\yC8LK59okjxt6KkVPDg5.jpg', 1, 0, '100000', NULL, NULL, NULL, 0, 1, NULL, '2018-07-28 01:39:00', '2018-09-02 03:07:41', 'افتتاحیه-بوفه-شام-رستوران-بین-المللی-ستاره-اسفندیار', 50, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, 0, 1),
+(7, NULL, 'دلفیناریوم برج میلاد', '<p><span style=\"color: #000000; font-family: IRANSans; font-size: 16px; background-color: #f2f2f2;\">اولین و تنهاترین دلفیناریوم غیر ساحلی در ایران و خاورمیانه تا 60 درصد تخفیف استثنائی</span></p>', NULL, NULL, NULL, NULL, NULL, NULL, 10, 'bi-products\\July2018\\8QjoKtydxuuT3z3RMM7n.jpg', 1, 0, '50000', NULL, NULL, NULL, 0, 1, NULL, '2018-07-28 06:43:00', '2018-08-30 21:07:39', 'دلفیناریوم-برج-میلاد', 10, 3, 1, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1),
+(8, NULL, 'کافه پرستیژ با منو باز کافه، منو مزه یا غذایی', '<p>کافه پرستیژ با منو باز کافه یا منو مزه یا غذاهای متنوع با 56% تخفیف و پرداخت تنها 7,920 تومان به جای 18,000 تومان</p>', NULL, NULL, NULL, NULL, NULL, NULL, 130, 'bi-products\\August2018\\ntlvI0rVO6VLIyfU84lf.jpg', 1, 0, '18000', NULL, NULL, NULL, 0, 1, NULL, '2018-08-03 06:05:00', '2018-09-02 03:07:28', 'کافه-پرستیژ-با-منو-باز-کافه-منو-مزه-یا-غذایی', 56, 13, 0, NULL, NULL, NULL, NULL, NULL, NULL, 0, 1),
+(9, NULL, 'فست فود داوین با منو باز غذاهای لذیذ', 'فست فود داوین با منو باز غذاهای لذیذ', NULL, NULL, NULL, NULL, NULL, NULL, 28, 'bi-products\\August2018\\UVJKG8Um0gSGzFEQXarV.jpg', 3, 0, '13000', NULL, NULL, NULL, 0, 1, NULL, '2018-08-03 06:10:00', '2018-08-26 02:58:45', 'فست-فود-داوین-با-منو-باز-غذاهای-لذیذ', 39, 28, 1, '[\"bi-products\\\\August2018\\\\IaOeEGZ9eoaR732awWDz.jpg\",\"bi-products\\\\August2018\\\\AWYfRUlhiNaGEAUHmI92.jpg\"]', '<p style=\"text-align: right;\">&nbsp;بدون محدودیت در خرید</p>\r\n<p style=\"text-align: right;\">&nbsp;سانس آزاد بانوان</p>\r\n<p style=\"text-align: right;\">&nbsp;روزهای شنبه تا پنجشنبه &nbsp;ساعت 9 صبح الی 15:45</p>\r\n<p style=\"text-align: right;\">جمعه 9 الی 14:45</p>\r\n<p style=\"text-align: right;\">سانس آزاد آقایان</p>\r\n<p style=\"text-align: right;\">همه روزه 17 الی 23</p>\r\n<p style=\"text-align: right;\">&nbsp;مراجعه با هماهنگی و رزرو قبلی با تلفن : 44713219 - 44711155</p>\r\n<p style=\"text-align: right;\">قبل از خرید نت برگ بررسی های لازم را به عمل آورید</p>\r\n<p style=\"text-align: right;\">نت برگ خریداری شده قابل استرداد نمی باشد</p>\r\n<p style=\"text-align: right;\">&nbsp;نت برگی عزیز، استفاده از نت برگ خود را به روزهای پایانی موکول نفرمایید</p>\r\n<p style=\"text-align: right;\">رزرو و هماهنگی حداکثر تا دوهفته قبل از پایان مهلت استفاده</p>', NULL, NULL, '<p style=\"text-align: right;\">زمان استفاده تا تاریخ: 25 شهریورماه</p>\r\n<p style=\"text-align: right;\">ساعت پاسخگویی و سرویس دهی:&nbsp;<span style=\"box-sizing: border-box; color: #020a19;\">تمام وقت</span></p>\r\n<p style=\"text-align: right;\">روزهای سرویس دهی:&nbsp;<span style=\"box-sizing: border-box; color: #020a19;\">شنبه ، یکشنبه ، دوشنبه ، سه شنبه ، چهارشنبه ، پنجشنبه</span></p>\r\n<p style=\"text-align: right;\">تلفن تماس:&nbsp;<span style=\"box-sizing: border-box; color: #020a19;\">۰۵۱۳۸۵۵۵۸۱۵</span></p>\r\n<p style=\"text-align: right;\">آدرس:&nbsp;<span style=\"box-sizing: border-box; color: #020a19;\">مشهد - خیابان امام خمینی - خیابان خرمشهر - خرمشهر ۱۳</span></p>', '<p style=\"text-align: right;\">تا بحال به کافه زیبا و دنج&nbsp;<strong style=\"box-sizing: border-box; font-size: 1.4rem;\">پرستیژ</strong>&nbsp;رفته اید؟</p>\r\n<p style=\"text-align: right;\">اگر در نزدیکی میدان انقلاب هستید پیشنهاد نت برگ به شما کافه دنج و زیبا<strong style=\"box-sizing: border-box; font-size: 1.4rem;\">&nbsp;پرستیژ</strong>&nbsp;است. مطابق با ذائقه و سلیقه شما لیستی بلند بالا از منو کافه، منو مزه ها و غذایی را در&nbsp;<strong style=\"box-sizing: border-box; font-size: 1.4rem;\">کافه پرستیژ&nbsp;</strong>دور هم جمع آوری کرده است. سفارش دهید و به موسیقی گوش نوازی که در فضای&nbsp;<strong style=\"box-sizing: border-box; font-size: 1.4rem;\">کافه پرستیژ</strong>&nbsp;است گوش دهید و لذت ببرید</p>\r\n<p style=\"text-align: right;\">لحظاتی خوش را در&nbsp;<strong style=\"box-sizing: border-box; font-size: 1.4rem;\">کافه پرستیژ</strong>&nbsp;بگذرانید</p>', 1, NULL),
+(10, NULL, 'کافه هنر شیراز', 'کافه هنر شیراز', NULL, NULL, NULL, NULL, NULL, 'شیراز', 100, 'bi-products\\August2018\\lCywQoyP04kgrkiRjIjJ.jpg', 2, 1, '30000', 0, NULL, NULL, 0, 1, NULL, '2018-08-26 03:30:00', '2018-09-02 03:06:58', 'کافه-هنر-شیراز', 50, 3, 0, '[\"bi-products\\\\August2018\\\\6wQ4clslHT7gzp8B3qJ6.jpg\",\"bi-products\\\\August2018\\\\UXTlkuLx78TnEbBKsZQH.jpg\"]', '<p style=\"text-align: right;\">خرید نا محدود</p>', '2018-08-27 00:00:00', '2018-09-30 00:00:00', '<p style=\"text-align: right;\">روزهای نوبت دهی شنبه</p>', NULL, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -546,12 +551,14 @@ CREATE TABLE `bi_reviews` (
 --
 
 INSERT INTO `bi_reviews` (`id`, `bi_product_id`, `customer_id`, `author`, `text`, `rating`, `status`, `created_at`, `updated_at`, `email`) VALUES
-(11, 9, 1, 'hhhh', 'dsdsdsds', NULL, NULL, '2018-08-28 07:08:38', '2018-08-28 07:09:12', 'hamid@boninja.com'),
+(11, 9, 1, 'hadi', NULL, 3, NULL, '2018-08-28 07:08:38', '2018-09-04 10:17:27', NULL),
 (12, 4, 1, 'sds', 'sdsd', NULL, NULL, '2018-08-28 07:11:07', '2018-08-28 09:36:42', 'demo@example.com'),
 (13, 7, 1, 'sss', 'sss', NULL, NULL, '2018-08-28 09:39:36', '2018-08-28 09:44:06', 'admin@admin.com'),
 (14, 7, 11, 'ddddddddd', 'ddddddddddd', NULL, NULL, '2018-08-28 09:45:17', '2018-08-28 09:50:22', 'admin@admin.com'),
 (15, 8, 11, 'هادی', 'خیلی عالی بود', NULL, NULL, '2018-08-28 09:51:26', '2018-08-28 09:51:26', 'haadibehmanesh@gmail.com'),
-(16, 4, 11, 'ggggg', 'lkkllklklklkl', NULL, NULL, '2018-08-28 10:03:01', '2018-08-28 10:04:15', 'haadibehmanesh@gmail.com');
+(16, 4, 11, 'ggggg', 'lkkllklklklkl', NULL, NULL, '2018-08-28 10:03:01', '2018-08-28 10:04:15', 'haadibehmanesh@gmail.com'),
+(17, 10, 1, 'هادی', 'خیلی خوب بود', NULL, NULL, '2018-09-03 10:14:09', '2018-09-03 10:14:09', 'haadibehmanesh@gmail.com'),
+(18, 9, 11, 'حمید', 'خیلی عالی بود', 5, NULL, '2018-09-04 10:21:00', '2018-09-04 10:21:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -650,9 +657,10 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `name`, `phone`, `email`, `password`, `is_merchant`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'hadi', '09178145534', 'haadibehmanesh@gmail.com', '$2y$10$bf5K5mSaouoRMBeFWiRCP.T7P3whA2G4XvP4E6dI5O5nI62u19d2O', 1, 'MkgcFzyawEAu9Fq8a2me2wVlyQgvBmclTCB8eHQ0KcGplWg0qZYUkuZzvZBK', '2018-08-20 04:45:59', '2018-08-23 06:11:09'),
-(11, 'hamid', '09355482921', 'hamid@boninja.com', '$2y$10$ym0udEXxnuOgfdP.iNjPd.KmecUW1oNg7cfhQsTm/ouDdXPFcG1Dy', 0, 'jdKOJnADmzajnenF1VLOQPTdQ8oc3YnBcBO06TDXtcJWkXRDXI3BpRSRK8A3', '2018-08-21 02:25:22', '2018-08-22 12:51:47'),
-(15, 'haadi', '09128145534', 'hadi@boninja.com', '$2y$10$IzL8b8SY8aJaM2RrsKzLF.MXtfPa5lpcHQge4xCoVMsAfqvVovxg.', 0, 'kwHoIeZbRGQC6N6BG4gSUX2kc8mCJ8J7WobIYzuD7lRow0nquksmpI4PwJ0U', '2018-08-23 02:06:05', '2018-08-23 02:06:05');
+(1, 'hadi', '09178145534', 'haadibehmanesh@gmail.com', '$2y$10$bf5K5mSaouoRMBeFWiRCP.T7P3whA2G4XvP4E6dI5O5nI62u19d2O', 1, 'U4CstHWlQ17j6J6PNP5BIVpJqJ2OIFvd8Vz3LyOV71kYNRFpVveSTFT9DE67', '2018-08-20 04:45:59', '2018-08-23 06:11:09'),
+(11, 'hamid', '09355482921', 'hamid@boninja.com', '$2y$10$ym0udEXxnuOgfdP.iNjPd.KmecUW1oNg7cfhQsTm/ouDdXPFcG1Dy', 0, 'Hay8TCkrO1p5L20H4DBYaRDC4BnfwSAV0IPurhGHOOtv6OgbhfjtNngQuay5', '2018-08-21 02:25:22', '2018-08-22 12:51:47'),
+(15, 'haadi', '09128145534', 'hadi@boninja.com', '$2y$10$IzL8b8SY8aJaM2RrsKzLF.MXtfPa5lpcHQge4xCoVMsAfqvVovxg.', 0, 'kwHoIeZbRGQC6N6BG4gSUX2kc8mCJ8J7WobIYzuD7lRow0nquksmpI4PwJ0U', '2018-08-23 02:06:05', '2018-08-23 02:06:05'),
+(16, 'data', '09178145566', NULL, '$2y$10$ZDa6vX7yEiDOkn9B40ekeOtGxHe4S9eWd5SUvkdF7f/rem9gzXBCi', 0, '5qPH9lUEBQJavkzaHMm4RasTGjbtpvMznPp07KQeMBvh4IxrW3wN4mcAnCoX', '2018-09-03 09:25:26', '2018-09-03 09:25:26');
 
 -- --------------------------------------------------------
 
@@ -788,10 +796,10 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (163, 14, 'shipping', 'checkbox', 'Shipping', 0, 0, 0, 0, 0, 0, NULL, 19),
 (164, 14, 'price', 'number', 'Price', 1, 1, 1, 1, 1, 1, NULL, 12),
 (165, 14, 'points', 'number', 'Points', 0, 0, 0, 0, 0, 0, '{\"null\":\" \"}', 20),
-(167, 14, 'date_available', 'date', 'Date Available', 0, 0, 1, 1, 1, 1, NULL, 21),
+(167, 14, 'date_available', 'date', 'Date Available', 0, 0, 0, 0, 0, 0, NULL, 21),
 (175, 14, 'minimum', 'number', 'Minimum', 0, 0, 1, 1, 1, 1, NULL, 28),
 (176, 14, 'sort_order', 'number', 'Sort Order', 0, 0, 0, 0, 0, 0, NULL, 29),
-(177, 14, 'status', 'checkbox', 'Status', 0, 1, 1, 1, 1, 1, NULL, 15),
+(177, 14, 'status', 'checkbox', 'Status', 0, 0, 1, 1, 1, 1, NULL, 15),
 (178, 14, 'viewed', 'number', 'Viewed', 0, 1, 1, 1, 1, 1, NULL, 30),
 (179, 14, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 31),
 (180, 14, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 32),
@@ -810,7 +818,7 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (195, 14, 'language_id', 'number', 'Language Id', 0, 0, 0, 0, 0, 0, NULL, 16),
 (196, 14, 'name', 'text', 'Name', 1, 1, 1, 1, 1, 1, NULL, 3),
 (197, 14, 'description', 'text', 'Description', 0, 0, 1, 1, 1, 1, NULL, 5),
-(198, 14, 'tag', 'text', 'Tag', 0, 0, 1, 1, 1, 1, '{\"null\":\" \"}', 6),
+(198, 14, 'tag', 'text', 'Tag', 0, 0, 1, 0, 0, 1, '{\"null\":\" \"}', 6),
 (199, 14, 'meta_title', 'text', 'Meta Title', 0, 0, 1, 0, 0, 1, '{\"null\":\" \"}', 7),
 (200, 14, 'meta_description', 'text', 'Meta Description', 0, 0, 1, 0, 0, 1, '{\"null\":\" \"}', 8),
 (201, 14, 'meta_keyword', 'text', 'Meta Keyword', 0, 0, 1, 0, 0, 1, '{\"null\":\" \"}', 9),
@@ -990,7 +998,8 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (393, 30, 'rating', 'number', 'Rating', 0, 1, 1, 1, 1, 1, NULL, 6),
 (394, 30, 'status', 'checkbox', 'Status', 0, 1, 1, 1, 1, 1, NULL, 7),
 (395, 30, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 8),
-(396, 30, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 9);
+(396, 30, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 9),
+(397, 14, 'index_gallery', 'checkbox', 'index Gallery', 0, 0, 1, 1, 1, 1, NULL, 35);
 
 -- --------------------------------------------------------
 
@@ -1914,13 +1923,13 @@ ALTER TABLE `bi_categories`
 -- AUTO_INCREMENT for table `bi_category_bi_product`
 --
 ALTER TABLE `bi_category_bi_product`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=171;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=178;
 
 --
 -- AUTO_INCREMENT for table `bi_customers`
 --
 ALTER TABLE `bi_customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `bi_c_groups`
@@ -1956,13 +1965,13 @@ ALTER TABLE `bi_m_group_bi_merchant`
 -- AUTO_INCREMENT for table `bi_orders`
 --
 ALTER TABLE `bi_orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT for table `bi_order_items`
 --
 ALTER TABLE `bi_order_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `bi_order_status`
@@ -1980,7 +1989,7 @@ ALTER TABLE `bi_products`
 -- AUTO_INCREMENT for table `bi_reviews`
 --
 ALTER TABLE `bi_reviews`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `bi_sliders`
@@ -1998,13 +2007,13 @@ ALTER TABLE `bi_slider_images`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=397;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=398;
 
 --
 -- AUTO_INCREMENT for table `data_types`
