@@ -151,8 +151,35 @@ img.emoji {
                 jQuery('.customer-review').html(data)
             }
         });        
+
     }
     </script>
+    <script>
+            jQuery(document).ready(function() {
+               
+                 // grab the initial top offset of the navigation 
+                    var stickyNavTop = jQuery('.nav').offset().top;
+                    
+                    // our function that decides weather the navigation bar should have "fixed" css position or not.
+                    var stickyNav = function(){
+                     var scrollTop = jQuery(window).scrollTop(); // our current vertical position from the top
+                          
+                     // if we've scrolled more than the navigation, change its position to fixed to stick to top,
+                     // otherwise change it back to relative
+                     if (scrollTop > stickyNavTop) { 
+                        jQuery('.nav').addClass('sticky');
+                     } else {
+                        jQuery('.nav').removeClass('sticky'); 
+                     }
+                 };
+     
+                 stickyNav();
+                 // and run it again every time you scroll
+                 jQuery(window).scroll(function() {
+                     stickyNav();
+                 });
+             });
+     </script>
 </head>
 <body class="rtl product-template-default single single-product postid-96 woocommerce woocommerce-page mega-menu-main-menu dokan-theme-takhfifat">
     <!----- Top Menu
@@ -266,7 +293,7 @@ img.emoji {
     </div>
 </header>
 <!-- / Header -->    <!--Nav-->
-<nav>
+<nav class="nav">
     <div class="container">
         <div class="row">
             <div id="mega-menu-wrap-main-menu" class="mega-menu-wrap">
@@ -575,12 +602,12 @@ img.emoji {
     <div class="col-lg-6 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox"><h2>{{ $product->name }}</h2></div>
     <div class="col-lg-6 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
         <p>
-            @if(Auth::guard('customer')->check())
+           {{--   @if(Auth::guard('customer')->check())--}}
             <div class="star_rating">
-                    <input id="input-7-xs" class="rating rating-loading" value="5" data-min="0" data-max="5" data-step="0.9" data-size="xs"  data-show-caption="false">
+            <input id="input-7-xs" class="rating rating-loading" value="{{ $reviews->avg('rating')*0.9}}" data-min="0" data-max="5" data-step="0.9" data-size="xs"  data-show-caption="false" data-show-clear="false" data-display-only="true">
                     
             </div><br>  
-            @endif
+            {{--@endif--}}
         </p>
     </div>
    
@@ -710,6 +737,36 @@ $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  '
 	<div id="reviews" class="woocommerce-Reviews">
         <div id="comments">
             <h2 class="woocommerce-Reviews-title">نقد و بررسی ها ({{$reviews->count()}}) دیدگاه</h2>
+            @if(Auth::guard('customer')->check())
+
+
+
+    
+            <div id="review_form_wrapper">
+                <div id="review_form">
+                    <div id="respond" class="comment-respond">
+                    <form method="post" id="commentform" class="comment-form">
+                            <p class="comment-notes"><span id="email-notes">نشانی ایمیل شما منتشر نخواهد شد.</span> بخش‌های موردنیاز علامت‌گذاری شده‌اند <span class="required">*</span></p>
+                        <p>
+                            <div class="star_rating">
+                                
+                                <input id="rating" class="rating rating-loading" name="rating" value="5" data-min="0" data-max="5" data-step="0.9" data-size="xs"  data-show-caption="false"
+                                data-show-clear="false">        
+                            </div>
+                        </p>
+                        <p class="comment-form-comment"><label for="comment">دیدگاه شما </label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" required></textarea></p><p class="comment-form-author"><label for="author">نام <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" aria-required="true" required /></p>
+                        <p class="comment-form-email"><label for="email">ایمیل</label> <input id="email" name="email" type="email" value="" size="30" /></p>
+                        <p class="form-submit"><input name="submit" type="submit" onclick="createReview(event)" id="submit" class="submit" value="ثبت" /> 
+                    
+                        <input type='hidden' name='product_id' value='{{$product->id}}' />
+                        </p>
+                    </form>
+                    </div><!-- #respond -->
+                </div>
+            </div>
+    
+        @endif
+        <div class="clear"></div>
                 <div class="customer-review">
                     
         @if($reviews->count()==0)
@@ -730,7 +787,11 @@ $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  '
         
         <time class="woocommerce-review__published-date" style="color:green" datetime="1396-6-5 11:10:37 +04:30">۵ شهریور ۱۳۹۶</time>
         </p>
-        
+        <p>
+                <div class="star_rating">
+                <input id="rating" class="rating rating-loading" name="rating" value="{{$review->rating*0.9}}" data-min="0" data-max="5" data-step="0.9" data-size="xs"  data-show-caption="false" data-display-only="true">        
+                </div>
+        </p>
         <div class="description"><p>{{$review->text}}</p>
         </div>
         </div>
@@ -747,28 +808,7 @@ $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  '
 
 
 </div>
-	@if(Auth::guard('customer')->check())
 
-
-
-    
-		<div id="review_form_wrapper">
-			<div id="review_form">
-                <div id="respond" class="comment-respond">
-				<form method="post" id="commentform" class="comment-form">
-                    <p class="comment-notes"><span id="email-notes">نشانی ایمیل شما منتشر نخواهد شد.</span> بخش‌های موردنیاز علامت‌گذاری شده‌اند <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">دیدگاه شما <span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" required></textarea></p><p class="comment-form-author"><label for="author">نام <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" aria-required="true" required /></p>
-                    <p class="comment-form-email"><label for="email">ایمیل <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" aria-required="true" required /></p>
-                    <p class="form-submit"><input name="submit" type="submit" onclick="createReview(event)" id="submit" class="submit" value="ثبت" /> 
-                
-                    <input type='hidden' name='product_id' value='{{$product->id}}' />
-                    </p>
-                </form>
-			    </div><!-- #respond -->
-            </div>
-		</div>
-
-	@endif
-	<div class="clear"></div>
 </div>
 <div class="clear"></div>
 

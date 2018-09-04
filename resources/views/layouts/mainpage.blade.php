@@ -317,9 +317,9 @@ function toPersianNum( num, dontTrim ) {
 				<!--Top-->
 				<div class="col-lg-12 col-md-12 col-sm-6 col3">
 					<div class="box_category">
-						<h2><a href="product-category/health-and-medicine/index.html" style="background-color:#0dc575 !important;"><b>پزشکی</b>  <img src="wp-content/uploads/2017/05/icon-cofpy-1.png" style="width: 45px;height: 45px;margin:60px -43px 0 0;position: absolute;"></a></h2>
+						<h2><a href="/" style="background-color:#0dc575 !important;"><b>پزشکی</b>  <img src="wp-content/uploads/2017/05/icon-cofpy-1.png" style="width: 45px;height: 45px;margin:60px -43px 0 0;position: absolute;"></a></h2>
 						<div class="imgLabel">
-							<a href="product-category/health-and-medicine/index.html"  ><img src="wp-content/uploads/2017/05/a-1-1.jpg"></a>
+							<a href="/"  ><img src="wp-content/uploads/2017/05/a-1-1.jpg"></a>
 							<span style="color:#0dc575 !important;">  تخفیفــ <small style="background-color:#0dc575 !important;">تا 56%</small></span>
 						</div>
 					</div>
@@ -328,13 +328,13 @@ function toPersianNum( num, dontTrim ) {
 				<div class="col-lg-12 col-md-12 col-sm-6 col4">
 					<div class="box_category">
 						<div class="imgLabel">
-							<a href="product-category/beauty-and-cosmetics/index.html" title="" ><img src="wp-content/uploads/2017/05/b-1.jpg"></a>
+							<a href="/" title="" ><img src="wp-content/uploads/2017/05/b-1.jpg"></a>
 								<span style="color:#e02c6d !important;">  تخفیفــ <small style="background-color:#e02c6d !important;">تا 50%</small></span>
 							<div class="details">
-								<a href="product-category/beauty-and-cosmetics/index.html"  style="background-color: #e02c6d;border-bottom-color: white;" class="aye_sale">مشاهـده تخفیفات</a>
+								<a href="/"  style="background-color: #e02c6d;border-bottom-color: white;" class="aye_sale">مشاهـده تخفیفات</a>
 							</div>
 						</div>
-						<h2><a href="product-category/beauty-and-cosmetics/index.html" style="background-color: #e02c6d !important;"><b>زیبایی و آرایشی</b><img src="wp-content/uploads/2017/05/icoopy-1.png" style="width: 45px;height: 45px;margin:-5px 100px 0 0;position: absolute;"></a></h2>
+						<h2><a href="/" style="background-color: #e02c6d !important;"><b>زیبایی و آرایشی</b><img src="wp-content/uploads/2017/05/icoopy-1.png" style="width: 45px;height: 45px;margin:-5px 100px 0 0;position: absolute;"></a></h2>
 					</div>
 				</div>
             </div>
@@ -344,45 +344,45 @@ function toPersianNum( num, dontTrim ) {
 				<div class="col-lg-12 col-md-12 col-sm-12 col5">
 					<div class="box_category">
 						<div class="imgLabel">
-							<a href="product-category/arts-theater/index.html" title="هنر و تئاتر " ><img src="wp-content/uploads/2017/05/c-1-1.jpg"></a>
+							<a href="/" title="هنر و تئاتر " ><img src="wp-content/uploads/2017/05/c-1-1.jpg"></a>
 								
 								<span style="color:#f86161 !important;">  تخفیفــ <small style="background-color:#f86161 !important;">تا 100%</small></span>
 								
 							<div class="details">
 								<p>توضیحاتی در مورد این دسته اینجا قرار خواهد گرفت ...</p>
-								<a href="product-category/arts-theater/index.html" style="background-color: #f86161;border-bottom-color: white;" class="aye_sale">مشاهـده تخفیفات</a>
+								<a href="/" style="background-color: #f86161;border-bottom-color: white;" class="aye_sale">مشاهـده تخفیفات</a>
 							</div>
 						</div>
-						<h2><a href="product-category/arts-theater/index.html" style="background-color: #f86161 !important;"><b>فرهنگی هنری</b><img src="wp-content/uploads/2017/05/icon-copy-2.png" style="width: 85px;height: 85px;margin:100px -107px 0 0;position: absolute;"></a></h2>
+						<h2><a href="/" style="background-color: #f86161 !important;"><b>فرهنگی هنری</b><img src="wp-content/uploads/2017/05/icon-copy-2.png" style="width: 85px;height: 85px;margin:100px -107px 0 0;position: absolute;"></a></h2>
 					</div>
 				</div>
                 <!--Bottom right-->
 				<div class="col-lg-3 col-md-3 col-sm-3 col6">
 					<div class="box_category">
 						<div class="imgLabel">
-							<a href="product-category/training/index.html" title="آموزشی " ><img src="wp-content/uploads/2017/05/onlinelearning_1920-1920x620-1.jpg"></a>
+							<a href="/" title="آموزشی " ><img src="wp-content/uploads/2017/05/onlinelearning_1920-1920x620-1.jpg"></a>
 							
 								<span style="color:#c334c5 !important;">  تخفیفــ <small style="background-color:#c334c5 !important;">تا 100%</small></span>
 								
 						</div>
-						<h2><a href="product-category/training/index.html" style="background-color: #c334c5 !important;"><b>آموزشی</b><img src="wp-content/uploads/2017/05/icon-copfgy-1.png" style="width: 45px;height: 45px;margin:50px -60px 0 0;position: absolute;"></a></h2>
+						<h2><a href="/" style="background-color: #c334c5 !important;"><b>آموزشی</b><img src="wp-content/uploads/2017/05/icon-copfgy-1.png" style="width: 45px;height: 45px;margin:50px -60px 0 0;position: absolute;"></a></h2>
 					</div>
 				</div>
                 <!--Bottom left-->
 				<div class="col-lg-9 col-md-9 col-sm-9 col7">
 					<div class="box_category">
 						<div class="imgLabel">
-							<a href="product-category/sports-and-recreation/index.html" title="تفریحی و ورزشی " ><img src="wp-content/uploads/2017/05/download-1-1.jpg"></a>
+							<a href="/" title="تفریحی و ورزشی " ><img src="wp-content/uploads/2017/05/download-1-1.jpg"></a>
 							
 
 							<span style="color:#008ba0 !important;">  تخفیفــ <small style="background-color:#008ba0 !important;">تا 79%</small></span>
 								
 							<div class="details">
 																	<p> </p>
-																	<a href="product-category/sports-and-recreation/index.html" style="background-color: #008ba0;border-bottom-color: white;" class="aye_sale">مشاهـده تخفیفات</a>
+																	<a href="/" style="background-color: #008ba0;border-bottom-color: white;" class="aye_sale">مشاهـده تخفیفات</a>
 							</div>
 						</div>
-						<h2><a href="product-category/sports-and-recreation/index.html" style="background-color: #008ba0 !important;"><b>تفریحی و ورزشی</b><img src="wp-content/uploads/2017/05/icoggf-1.png" style="width: 50px;height: 50px;margin:50px -100px 0 0;position: absolute;"></a></h2>
+						<h2><a href="/" style="background-color: #008ba0 !important;"><b>تفریحی و ورزشی</b><img src="wp-content/uploads/2017/05/icoggf-1.png" style="width: 50px;height: 50px;margin:50px -100px 0 0;position: absolute;"></a></h2>
 					</div>
 				</div>
             </div>

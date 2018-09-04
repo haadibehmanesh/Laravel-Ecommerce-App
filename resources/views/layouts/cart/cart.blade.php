@@ -152,9 +152,10 @@ var _zxcvbnSettings = {"src":"\/wp-includes\/js\/zxcvbn.min.js"};
 		return res;
 	}
     </script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="../wp-content/themes/takhfifat/js/axios.js"></script>
     <script>
     jQuery(document).ready(function(){  
+        //alert('h');
         jQuery('.select-quantity').change(function() {
             var qty = jQuery(this).attr('value');
             var id = jQuery(this).attr('data-id');
@@ -173,6 +174,33 @@ var _zxcvbnSettings = {"src":"\/wp-includes\/js\/zxcvbn.min.js"};
         });
     });
     </script>
+
+<script>
+        jQuery(document).ready(function() {
+           
+             // grab the initial top offset of the navigation 
+                var stickyNavTop = jQuery('.nav').offset().top;
+                
+                // our function that decides weather the navigation bar should have "fixed" css position or not.
+                var stickyNav = function(){
+                 var scrollTop = jQuery(window).scrollTop(); // our current vertical position from the top
+                      
+                 // if we've scrolled more than the navigation, change its position to fixed to stick to top,
+                 // otherwise change it back to relative
+                 if (scrollTop > stickyNavTop) { 
+                    jQuery('.nav').addClass('sticky');
+                 } else {
+                    jQuery('.nav').removeClass('sticky'); 
+                 }
+             };
+ 
+             stickyNav();
+             // and run it again every time you scroll
+             jQuery(window).scroll(function() {
+                 stickyNav();
+             });
+         });
+ </script>
 
 </head>
 <body class="rtl page-template-default page page-id-8 woocommerce-cart woocommerce-page mega-menu-main-menu dokan-theme-takhfifat">
@@ -291,7 +319,7 @@ var _zxcvbnSettings = {"src":"\/wp-includes\/js\/zxcvbn.min.js"};
     </div>
 </header>
 <!-- / Header -->    <!--Nav-->
-<nav>
+<nav class="nav">
     <div class="container">
         <div class="row">
             <div id="mega-menu-wrap-main-menu" class="mega-menu-wrap">
@@ -606,6 +634,7 @@ jQuery('.dokan-withdraw-content .dokan-alert-warning').html(first_html);
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../wp-content/themes/takhfifat/js/bootstrap.min.js"></script>
 <script src="../wp-content/themes/takhfifat/js/jquery.countdownTimer.js"></script>
+
 <script src="../wp-content/themes/takhfifat/js/custom.js"></script>
 
 <script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/frontend/country-select.min6765.js?ver=3.3.3'></script>
