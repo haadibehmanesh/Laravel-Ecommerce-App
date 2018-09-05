@@ -239,7 +239,7 @@ jQuery.ajax({
 <li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-166"><a href="/products">همه پیشنهادها</a></li>
             </ul>
             <!--phone-->
-            <div class="phone"><span><i class="fa fa-book"></i>بانک جامع اطلاعاتی</span></div>
+           {{--<div class="phone"><span><i class="fa fa-book"></i>بانک جامع اطلاعاتی</span></div>--}}
 			            <div class="block_login block_login_seller">
                     <ul class="nav navbar-nav">
                         <li class="dropdown">

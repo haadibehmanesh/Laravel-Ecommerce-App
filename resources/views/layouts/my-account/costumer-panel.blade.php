@@ -248,7 +248,7 @@ jQuery.ajax({
             </ul>
             <!--phone-->
             
-            <div class="phone"><span><i class="fa fa-book"></i>بانک جامع اطلاعاتی</span></div>
+           {{--<div class="phone"><span><i class="fa fa-book"></i>بانک جامع اطلاعاتی</span></div>--}}
             <div class="block_login block_login_seller">
         @if(Auth::guard('customer')->user())
         @if(Auth::guard('customer')->user()->is_merchant == 1)

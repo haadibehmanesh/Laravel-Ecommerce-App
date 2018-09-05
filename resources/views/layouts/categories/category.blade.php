@@ -275,7 +275,7 @@
 <li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-166"><a href="/products">همه پیشنهاد ها</a></li>
             </ul>
             <!--phone-->
-            <div class="phone"><span><i class="fa fa-book"></i>بانک جامع اطلاعاتی</span></div>
+           {{--<div class="phone"><span><i class="fa fa-book"></i>بانک جامع اطلاعاتی</span></div>--}}
 			            
 			<!--social-->
             <div class="social_header">
