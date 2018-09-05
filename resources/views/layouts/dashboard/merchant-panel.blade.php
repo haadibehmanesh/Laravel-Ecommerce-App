@@ -243,7 +243,7 @@ jQuery.ajax({
 			            <div class="block_login block_login_seller">
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
-                            <a href="/"><i class="fa fa-user pull-right"></i> پنل فروشندگان <strong class="takhfifat_get_seller_balance">موجودی: <span class="woocommerce-Price-amount amount">3,816,000&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></strong></a>
+                            <a href="/"><i class="fa fa-user pull-right"></i> پنل فروشندگان <strong class="takhfifat_get_seller_balance">موجودی : <span class="woocommerce-Price-amount amount">&nbsp;{{toPersianNum($totalRevenue)}}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></strong></a>
 						</li>
                     </ul>
             </div>			
@@ -433,20 +433,20 @@ jQuery.ajax({
     <ul class="list-inline">
          <li>
             <div class="title">فروش‌ها</div>
-            <div class="count"><span class="woocommerce-Price-amount amount">5,810,000&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></div>
+            <div class="count"><span class="woocommerce-Price-amount amount">{{toPersianNum($totalSell)}}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></div>
         </li>
         <li>
             <div class="title">درآمد</div>
-            <div class="count"><span class="woocommerce-Price-amount amount">3,816,000&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></div>
+            <div class="count"><span class="woocommerce-Price-amount amount">{{toPersianNum($totalRevenue)}}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></div>
         </li>
         <li>
             <div class="title">نمایش صفحه</div>
-            <div class="count">87</div>
+            <div class="count">{{toPersianNum(87)}}</div>
         </li>
         <li>
             <div class="title">سفارش</div>
             <div class="count">
-                7            </div>
+                {{toPersianNum(7)}}            </div>
         </li>
 
             </ul>
