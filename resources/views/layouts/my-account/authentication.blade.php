@@ -375,14 +375,14 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
             @endif
         </div>
     </div>
-    <div class="form-group">
+ {{--   <div class="form-group">
             <label class="col-md-4 control-label"></label>
         <div class="col-md-6">
         {!! NoCaptcha::renderJs('fa') !!}
         
         {!! NoCaptcha::display() !!} 
         </div>
-    </div>
+    </div>--}}
     <div class="form-group">
         <div class="col-md-6 col-md-offset-4">
             <div class="checkbox">
@@ -483,14 +483,14 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
             @endif
         </div>
     </div>
-    <div class="form-group">
+  {{--  <div class="form-group">
             <label class="col-md-4 control-label"></label>
         <div class="col-md-6">
         {!! NoCaptcha::renderJs() !!}
 
         {!! NoCaptcha::display() !!} 
         </div>
-    </div>
+    </div>--}}
 
     <div class="form-group">
         <div class="col-md-6 col-md-offset-4">
