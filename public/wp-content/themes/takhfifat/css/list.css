@@ -43,7 +43,7 @@
 .list-discount-tag {
     height: 36px;
     width: 83px;
-    background-color: #ff5a5f;
+    background-color: #13ac9b;
     color: #fff;
     position: absolute;
     left: 15px;
@@ -172,7 +172,7 @@
 .list_title_block{overflow:hidden;position:relative;text-align:right;margin:40px 0 0}
 .list_title_block span{display:inline-block;width:314px;height:43px;background:url(images/bg-title.png) no-repeat center #fff;font:21px/43px IRANSans;color:#b8b7b7;z-index:1;position:relative}
 .list_title_block:after{content:"";width:100%;height:3px;background:#e5e5e5;position:absolute;top:20px;right:0;z-index:0}
-.box_single .list_title_block span{color:#df0d0d;font-weight:700;background:url(images/bg-title2.png) no-repeat center #fff;width:260px}
+.box_single .list_title_block span{color:#13ac9b;font-weight:700;background:url(images/bg-title2.png) no-repeat center #fff;width:260px}
 .block_posts .list_title_block span{background-size:100% 100%;width:auto;padding:0 24px;font-size:14pt}
 
 .cat-filter-box .cat-filter {
@@ -197,12 +197,12 @@
 }
 
 .cat-filter-box .cat-filter .slide_item input.filter-subcat:checked+label {
-    background-color: #f44336;
-    border: solid 1px #f44336!important;
+    background-color: #13ac9b;
+    border: solid 1px #13ac9b!important;
 }
 .cat-filter-box .cat-filter .slide_item input.all:checked+label {
-    background-color: #f44336;
-    border: solid 1px #f44336!important;
+    background-color: #13ac9b;
+    border: solid 1px #13ac9b!important;
 }
 
 .cat-filter-box .cat-filter .slide_item input:checked+label {

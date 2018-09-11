@@ -1,6 +1,6 @@
 
 .cat-deal-color.color-rescoffee .section-header {
-    border-bottom-color: #f44336;
+    border-bottom-color: #f57e20;
 }
 
 .cat-deal-color .section-header {
@@ -12,7 +12,7 @@
     border-bottom: 1px solid #dcdcdc;
 }
 .cat-deal-color.color-rescoffee .section-header .hx {
-    border-bottom-color: #f44336;
+    border-bottom-color: #f57e20;
 }
 
 .section-header .hx {
@@ -144,12 +144,12 @@ img, .figure img, .page-deal #dealProperty .modal-body .dealProp.done img {
 }
 
 .cat-deal-color.color-rescoffee .main-row .cat-deal-box-footer .cdbf-takhfif .cdbft-shape {
-    background-color: #f44336;
+    background-color: #f57e20;
 }
 
 .cat-deal-color .main-row .cat-deal-box .cat-deal-box-footer .cdbf-takhfif .cdbft-shape {
     position: relative;
-    background-color: #f44336;
+    background-color: #f57e20;
     -webkit-border-radius: 25px;
     -moz-border-radius: 25px;
     border-radius: 25px;
@@ -442,6 +442,7 @@ img {
 }
 img {
     border: 0;
+    border-radius: 10px;
 }
 .small-title{
     width: 77%;
@@ -477,7 +478,7 @@ img {
 .list-discount-tag {
     height: 36px;
     width: 83px;
-    background-color: #ff5a5f;
+    background-color: #f57e20;
     color: #fff;
     position: absolute;
     margin-left: 0px;
@@ -506,6 +507,7 @@ img {
 .button-all{
 margin-top: 10px;
 }
+@media (min-width: 780px) {
 .sticky {
     position: fixed;
     width: 100%;
@@ -514,6 +516,7 @@ margin-top: 10px;
     z-index: 100;
     border-top: 0;
   }
+}
   .inner-box{
 
     border-radius: 15px;

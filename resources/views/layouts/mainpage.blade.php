@@ -265,7 +265,7 @@ function toPersianNum( num, dontTrim ) {
     <div class="clear"></div>
     <!--special offer -->
 <div class="special_offer">
-    <div class="title_block"><span>تخفیفات ویژه</span></div>
+    <div class="title_block"><span>بن های ویژه</span></div>
     @foreach ($featured as $featured)
         <div class="col-lg-4 col-md-4 col-sm-6">
             <div class="box_offer">
@@ -331,7 +331,7 @@ function toPersianNum( num, dontTrim ) {
 							<a href="/" title="" ><img src="wp-content/uploads/2017/05/b-1.jpg"></a>
 								<span style="color:#e02c6d !important;">  تخفیفــ <small style="background-color:#e02c6d !important;">تا 50%</small></span>
 							<div class="details">
-								<a href="/"  style="background-color: #e02c6d;border-bottom-color: white;" class="aye_sale">مشاهـده تخفیفات</a>
+								<a href="/"  style="background-color: #e02c6d;border-bottom-color: white;" class="aye_sale">مشاهـده بن ها</a>
 							</div>
 						</div>
 						<h2><a href="/" style="background-color: #e02c6d !important;"><b>زیبایی و آرایشی</b><img src="wp-content/uploads/2017/05/icoopy-1.png" style="width: 45px;height: 45px;margin:-5px 100px 0 0;position: absolute;"></a></h2>
@@ -350,7 +350,7 @@ function toPersianNum( num, dontTrim ) {
 								
 							<div class="details">
 								<p>توضیحاتی در مورد این دسته اینجا قرار خواهد گرفت ...</p>
-								<a href="/" style="background-color: #f86161;border-bottom-color: white;" class="aye_sale">مشاهـده تخفیفات</a>
+								<a href="/" style="background-color: #f86161;border-bottom-color: white;" class="aye_sale">مشاهـده بن ها</a>
 							</div>
 						</div>
 						<h2><a href="/" style="background-color: #f86161 !important;"><b>فرهنگی هنری</b><img src="wp-content/uploads/2017/05/icon-copy-2.png" style="width: 85px;height: 85px;margin:100px -107px 0 0;position: absolute;"></a></h2>
@@ -379,7 +379,7 @@ function toPersianNum( num, dontTrim ) {
 								
 							<div class="details">
 																	<p> </p>
-																	<a href="/" style="background-color: #008ba0;border-bottom-color: white;" class="aye_sale">مشاهـده تخفیفات</a>
+																	<a href="/" style="background-color: #008ba0;border-bottom-color: white;" class="aye_sale">مشاهـده بن ها</a>
 							</div>
 						</div>
 						<h2><a href="/" style="background-color: #008ba0 !important;"><b>تفریحی و ورزشی</b><img src="wp-content/uploads/2017/05/icoggf-1.png" style="width: 50px;height: 50px;margin:50px -100px 0 0;position: absolute;"></a></h2>
@@ -402,7 +402,7 @@ function toPersianNum( num, dontTrim ) {
 		</div>		
 <div class="clear"></div><!--Discount other -->
 <div class="discount_other">
-    <div class="title_block"><span>دیـگر تخــفیفـات</span></div>
+    <div class="title_block"><span>دیـگر بن ها</span></div>
     <div class='ajax_products'>
     @forelse ($products as $product) 
         <div class="col-lg-3 col-md-3 col-sm-6">
@@ -485,7 +485,7 @@ function toPersianNum( num, dontTrim ) {
                     {{toPersianNum($product->sold)}} </span></span>
                      </div>
                     <div class="cat-deal-box-footer clearfix"><span class="cdbf-takhfif"><span class="cdbft-shape"><span class="cdbft-shape-text">%{{toPersianNum($product->discount)}}</span></span></span><a href="{{ route('shop.show', ['product' => $product->slug, 'category' => $category->slug] ) }}" class="cdbf-buy-icon">
-                    <button class="nb-btn nb-btn-icon nb-btn-success">مشاهده و خرید<i class="icon icon-shopping-cart2"></i></button>
+                    <button class="nb-btn">مشاهده و خرید<i class="icon icon-shopping-cart2"></i></button>
                     </a><span class="cdbf-price">
                     <del class="cdbf-real-price"><span>{{ toPersianNum($product->price) }}</span></del><ins class="cdbf-netbarg-price">
                     <span itemprop="price" content="880000">{{ toPersianNum(presentPrice($product->price,$product->discount)) }}</span><span itemprop="priceCurrency" content="IRR"> تومان</span></ins></span></div>
@@ -525,7 +525,7 @@ function toPersianNum( num, dontTrim ) {
                                                                 {{ csrf_field() }}
                                                             <input type="hidden" name="id" value="{{ $product->id }}">
                                                            @if($product->quantity - $product->sold > 0)
-                                                            <button type="submit" name="add-to-cart" value="96" class="btn">افزودن به سبد خرید</button>
+                                                            <button type="submit" name="add-to-cart" value="96" class="nb-btn">افزودن به سبد خرید</button>
                                                             @else
                                                             <div class="alert alert-danger">
                                                                 <p class="text-center">
@@ -584,7 +584,7 @@ function toPersianNum( num, dontTrim ) {
                                                                 {{ csrf_field() }}
                                                             <input type="hidden" name="id" value="{{ $product->id }}">
                                                            @if($product->quantity - $product->sold > 0)
-                                                            <button type="submit" name="add-to-cart" value="96" class="btn">افزودن به سبد خرید</button>
+                                                            <button type="submit" name="add-to-cart" value="96" class="nb-btn">افزودن به سبد خرید</button>
                                                             @else
                                                             <div class="alert alert-danger">
                                                                 <p class="text-center">

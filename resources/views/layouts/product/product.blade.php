@@ -51,7 +51,7 @@ img.emoji {
     <script src="http://localhost/takhfiftest/wp-content/themes/takhfifat/js/respond.min.js"></script>
     <![endif]-->
 
-            	<style>
+            	{{--<style>
 	span.price del:before{ content:'قیمت: '; }
 	span.price ins:before{ content:'با تخفیف: '; }
 			.phone,
@@ -105,7 +105,7 @@ img.emoji {
 	input[type="submit"].dokan-btn-theme, a.dokan-btn-theme, .dokan-btn-theme
 	{
 		border-color:#ff5a5f	}	
-        </style>
+        </style>--}}
         <script>
         jQuery( document ).ready(function() {
           //  jQuery("#input-id").rating();
@@ -522,7 +522,7 @@ img.emoji {
                                     
                                 <div class="btn-group btn_social">
 
-                                    <button type="button" class="btn btn-default link_share dropdown-toggle" data-toggle="dropdown"> اشتراک <i class="fa fa-share-alt"></i> </button>
+                                    <button type="button" class="nb-btn" data-toggle="dropdown"> اشتراک <i class="fa fa-share-alt"></i> </button>
 
                                     <ul class="dropdown-menu" id="shr_social">
 
@@ -563,7 +563,7 @@ img.emoji {
                                         {{ csrf_field() }}
                                     <input type="hidden" name="id" value="{{ $product->id }}">
                                   @if($product->quantity - $product->sold > 0)
-                                    <button type="submit" name="add-to-cart" value="96" class="btn btn-default">افزودن به سبد خرید</button>
+                                    <button type="submit" name="add-to-cart" value="96" class="nb-btn">افزودن به سبد خرید</button>
                                     @else
                                     <div class="alert alert-danger">
                                         <p class="text-center">

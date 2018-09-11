@@ -255,7 +255,7 @@
   border-bottom: 0px solid #fff;
   outline: none;
   text-decoration: none;
-  padding: 0px 10px 0px 10px;
+  padding: 0px 12px 0px 0px;
   line-height: 100%;
   font-weight: normal;
   height: 100%;
@@ -840,12 +840,12 @@
   content: '\f153';
 }
 #mega-menu-wrap-main-menu .mega-menu-toggle .mega-toggle-block-3:after {
-  content: 'منو';
+  content: 'دسته بندی ها';
   color: #555;
   float: left;
 }
 #mega-menu-wrap-main-menu .mega-menu-toggle.mega-menu-open .mega-toggle-block-3:after {
-  content: 'منو';
+  content: 'دسته بندی ها';
 }
 #mega-menu-wrap-main-menu {
   clear: both;

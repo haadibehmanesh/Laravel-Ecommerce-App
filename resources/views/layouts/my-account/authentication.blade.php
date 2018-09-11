@@ -78,7 +78,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
     <script src="http://localhost/takhfiftest/wp-content/themes/takhfifat/js/respond.min.js"></script>
     <![endif]-->
 
-            	<style>
+            {{--	<style>
 	span.price del:before{ content:'قیمت: '; }
 	span.price ins:before{ content:'با تخفیف: '; }
 			.phone,
@@ -132,7 +132,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
 	input[type="submit"].dokan-btn-theme, a.dokan-btn-theme, .dokan-btn-theme
 	{
 		border-color:#ff5a5f	}	
-		</style>
+		</style>--}}
 	<script src="../wp-content/themes/takhfifat/js/parsinumber.min.js"></script>
 	<script>
 	function toPersianNum( num, dontTrim ) {
@@ -395,7 +395,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
 
     <div class="form-group">
         <div class="col-md-8 col-md-offset-4">
-            <button type="submit" class="woocommerce-Button button">
+            <button type="submit" class="btn">
                 ورود
             </button>
 
@@ -494,7 +494,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
 
     <div class="form-group">
         <div class="col-md-6 col-md-offset-4">
-            <button type="submit" class="woocommerce-Button button">
+            <button type="submit" class="btn">
                ثبت نام
             </button>
         </div>

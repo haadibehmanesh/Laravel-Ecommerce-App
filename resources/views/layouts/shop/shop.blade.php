@@ -64,7 +64,7 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
     <script src="http://localhost/takhfiftest/wp-content/themes/takhfifat/js/respond.min.js"></script>
     <![endif]-->
 
-            	<style>
+            	{{--<style>
 	span.price del:before{ content:'قیمت: '; }
 	span.price ins:before{ content:'با تخفیف: '; }
 			.phone,
@@ -118,7 +118,7 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
 	input[type="submit"].dokan-btn-theme, a.dokan-btn-theme, .dokan-btn-theme
 	{
 		border-color:#ff5a5f	}	
-		</style>
+		</style>--}}
 	<script src="../wp-content/themes/takhfifat/js/parsinumber.min.js"></script>
 	<script>
 	function toPersianNum( num, dontTrim ) {
