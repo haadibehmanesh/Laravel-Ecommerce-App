@@ -1,6 +1,6 @@
 
 .cat-deal-color.color-rescoffee .section-header {
-    border-bottom-color: #f57e20;
+    border-bottom-color: #f6861f;
 }
 
 .cat-deal-color .section-header {
@@ -12,7 +12,7 @@
     border-bottom: 1px solid #dcdcdc;
 }
 .cat-deal-color.color-rescoffee .section-header .hx {
-    border-bottom-color: #f57e20;
+    border-bottom-color: #f6861f;
 }
 
 .section-header .hx {
@@ -31,10 +31,12 @@
 
 
 .cat-deal-color .main-row {
-    border: 1px solid #dcdcdc;
+    /* border: 1px solid #dcdcdc;*/
     border-radius: 15px;
     background-color: #fff;
     padding: 10px 0;
+    box-shadow: 0 0 5px rgba(0,0,0,0.6);
+    margin-bottom: 5px;
 }
 @media (min-width: 1200px){
 .cat-deal-color .main-row .col-lg-12 {
@@ -144,12 +146,12 @@ img, .figure img, .page-deal #dealProperty .modal-body .dealProp.done img {
 }
 
 .cat-deal-color.color-rescoffee .main-row .cat-deal-box-footer .cdbf-takhfif .cdbft-shape {
-    background-color: #f57e20;
+    background-color: #f6861f;
 }
 
 .cat-deal-color .main-row .cat-deal-box .cat-deal-box-footer .cdbf-takhfif .cdbft-shape {
     position: relative;
-    background-color: #f57e20;
+    background-color: #f6861f;
     -webkit-border-radius: 25px;
     -moz-border-radius: 25px;
     border-radius: 25px;
@@ -410,22 +412,24 @@ img, .figure img, .page-deal #dealProperty .modal-body .dealProp.done img {
 }
 
 .list-items {
+    box-shadow: 0 0 5px rgba(0,0,0,0.6);
     /*border-right: 1px solid #dcdcdc;
     border-bottom: 1px solid #dcdcdc;*/
     border-radius: 15px;
     /* padding: 10px; */
-    border: 1px solid #dcdcdc;
+   /* border: 1px solid #dcdcdc;*/
     padding: 10px;
     background-color: #fff;
     display: table;
     width: 100%;
 }
 .list-items-second{
+    box-shadow: 0 0 5px rgba(0,0,0,0.6);
     /*border-right: 1px solid #dcdcdc;*/
     border-radius: 15px;
     /* padding: 10px; */
     margin-top: 10px;
-    border: 1px solid #dcdcdc;
+   /* border: 1px solid #dcdcdc;*/
     padding: 10px;
     background-color: #fff;
     display: table;
@@ -478,7 +482,7 @@ img {
 .list-discount-tag {
     height: 36px;
     width: 83px;
-    background-color: #f57e20;
+    background-color: #f6861f;
     color: #fff;
     position: absolute;
     margin-left: 0px;
@@ -492,6 +496,7 @@ img {
 
 
 .more_cat {
+    box-shadow: 0 0 5px rgba(0,0,0,0.6);
     margin-top: 10px;
     background: url(../images/pattern-1.png) repeat 0 0!important;
     height: 0;
@@ -499,7 +504,7 @@ img {
     padding-bottom: 90px;
     /*border-top: 1px solid #dcdcdc;
     border-right: 1px solid #dcdcdc;*/
-    border: 1px solid #dcdcdc;
+    /* border: 1px solid #dcdcdc;*/
     border-radius: 15px;
     text-align: center;
     overflow: hidden;
@@ -518,9 +523,9 @@ margin-top: 10px;
   }
 }
   .inner-box{
-
+    box-shadow: 0 0 5px rgba(0,0,0,0.6);
     border-radius: 15px;
     padding: 10px 15px 64px 15px;
     margin-bottom: 10px;
-    border: 1px solid #dcdcdc;
+    /* border: 1px solid #dcdcdc;*/
   }

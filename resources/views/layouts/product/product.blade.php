@@ -212,7 +212,7 @@ img.emoji {
         <div class="row">
 
             <!--logo-->
-            <div class="logo" ><h1><a href="/" title="تخفیف گروهی بن اینجا"></a></h1></div>
+            <div class="logo" ><h1><a href="/" title="سامانه خرید و تخفیف گروهی بن اینجا"></a></h1></div>
             
             <!--select search-->
             <div id="form_header">
@@ -563,7 +563,7 @@ img.emoji {
                                         {{ csrf_field() }}
                                     <input type="hidden" name="id" value="{{ $product->id }}">
                                   @if($product->quantity - $product->sold > 0)
-                                    <button type="submit" name="add-to-cart" value="96" class="nb-btn">افزودن به سبد خرید</button>
+                                    <button type="submit" name="add-to-cart" value="96" class="nb-btn">افزودن به سبد</button>
                                     @else
                                     <div class="alert alert-danger">
                                         <p class="text-center">
@@ -870,11 +870,19 @@ $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  '
                 <a target="_blank" href="#" title="" class="facebook"></a>
             </div>
 
-            <!--concession-->
-            <div class="concession">
-                <div class="post-content">
-                    <p><img class="alignnone size-full wp-image-627" src="../../wp-content/uploads/2017/05/Enamad-1.png" alt="" width="237" height="159" /></p>                </div>
+           <!--concession-->
+           <div class="concession">
+            <div class="post-content">
+                <p><img id='jxlzesgtjxlzrgvjnbqergvjrgvj' style='cursor:pointer' onclick='window.open("https://logo.samandehi.ir/Verify.aspx?id=1013233&p=rfthobpdrfthxlaouiwkxlaoxlao", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")' alt='logo-samandehi' src='https://logo.samandehi.ir/logo.aspx?id=1013233&p=nbpdlymanbpdqftiodrfqftiqfti'/></p>
             </div>
+        </div>
+        <!--concession-->
+        <div class="concession">
+            <div class="post-content">
+                <p><img src="https://trustseal.enamad.ir/logo.aspx?id=102812&amp;p=kKwVU4anvepH2HDY" alt="" onclick="window.open(&quot;https://trustseal.enamad.ir/Verify.aspx?id=102812&amp;p=kKwVU4anvepH2HDY&quot;, &quot;Popup&quot;,&quot;toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=580, height=600, top=30&quot;)" style="cursor:pointer" id="kKwVU4anvepH2HDY"></p>
+
+            </div>
+        </div>
 
         </div>
     </div>
@@ -920,8 +928,8 @@ $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  '
 <section id="copyright">
     <div class="container">
         <div class="row">
-            <p class="copyright_super_admin"><p>تمامی حقوق سایت متعلق به قالب تخفیف گروهی بن اینجا می باشد.</p></p>
-            <span class="copyright_takhfifat"><img src="../../wp-content/themes/takhfifat/images/copyright.png" /></span>
+            <p class="copyright_super_admin"><p>تمامی حقوق سایت متعلق به سامانه خرید و تخفیف گروهی بن اینجا می باشد.</p></p>
+            <span class="copyright_takhfifat"></span>
         </div>
     </div>
 </section>

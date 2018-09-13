@@ -84,7 +84,7 @@
                         <tr class="woocommerce-table__line-item order_item">
             
                 <td class="woocommerce-table__product-name product-name">
-                    <a href="http://demo.onliner.ir/takhfifat/product/%d8%ae%d8%b1%db%8c%d8%af-%da%a9%d8%a7%d9%84%d8%a7%db%8c-%d8%b9%d8%b1%d9%88%d8%b3%db%8c/">{{ $order_item_info->product()->first()->name }} </a> <strong class="product-quantity">× {{$order_item_info->quantity}}</strong>	</td>
+                    <a href="{{ route('shop.show', $order_item_info->product()->first()->slug) }}">{{ $order_item_info->product()->first()->name }} </a> <strong class="product-quantity">× {{$order_item_info->quantity}}</strong>	</td>
             
                 <td class="woocommerce-table__product-total product-total">
                     <span class="woocommerce-Price-amount amount">{{$order_item_info->total}}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>	</td>

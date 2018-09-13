@@ -264,7 +264,7 @@ jQuery.ajax({
         <div class="row">
 
             <!--logo-->
-                            <div class="logo"  style="background: url(/wp-content/themes/takhfifat/images/logo.png) no-repeat center;" ><h1><a href=" " title="تخفیف گروهی بن اینجا"></a></h1></div>
+                            <div class="logo"  style="background: url(/wp-content/themes/takhfifat/images/logo.png) no-repeat center;" ><h1><a href=" " title="سامانه خرید و تخفیف گروهی بن اینجا"></a></h1></div>
             
             <!--select search-->
             <div id="form_header">
@@ -409,7 +409,7 @@ jQuery.ajax({
                             <div class="dokan-dashboard-wrap">
     
 <div class="dokan-dash-sidebar">
-<ul class="dokan-dashboard-menu"><li class="active dashboard"><a href="{{ route('merchantpanel.index')}}"><i class="fa fa-tachometer"></i> پیشخوان</a></li><li class="products"><a><i class="fa fa-briefcase"></i><span onclick="products(event)">محصولات</span> </a></li><li class="withdraw"><a href="/withdraw/"><i class="fa fa-upload"></i> برداشت</a></li><li class="settings"><a href="/settings/store/"><i class="fa fa-cog"></i> تنظیمات</a></li><li class="dokan-common-links dokan-clearfix">
+<ul class="dokan-dashboard-menu"><li class="active dashboard"><a href="{{ route('merchantpanel.index')}}"><i class="fa fa-tachometer"></i> پیشخوان</a></li><li class="products"><a><i class="fa fa-briefcase"></i><span onclick="products(event)">محصولات</span> </a></li><li class="withdraw"><a href="#"><i class="fa fa-upload"></i> برداشت</a></li><li class="settings"><a href="#"><i class="fa fa-cog"></i> تنظیمات</a></li><li class="dokan-common-links dokan-clearfix">
             
             <a title="ویرایش حساب کاربری" class="tips" data-placement="top" href="/my-account"><i class="fa fa-user"></i></a>
             <a href="{{ url('/customer/logout') }}"
@@ -472,7 +472,7 @@ jQuery.ajax({
             <div class="dokan-w6 dokan-dash-right">
                     <div class="dashboard-widget">
         <div class="widget-title">معتبر سازی کد تخفیف</div>
-        <p>برای اطمینان از صحت خرید مشتری ، تعداد بن مصرف شده و کد تخفیفی که مشتریان شما برای گرفتن خدمات به شما ارائه مینماید را در اینجا چک بفرمائید.</p>
+        <p>برای اطمینان از صحت خرید مشتری ، تعداد بن مصرف شده و کد تخفیفی که مشتریان شما برای گرفتن خدمات به شما ارائه می نمایند را در اینجا چک بفرمائید.</p>
         <div style="padding:10px">
             <label>تعداد:<br><input style="width:100%;box-sizing:border-box" type="number" name="code_used_count" class="code_used_count" /></label><br />
             <label>کد تخفیف:<br><input style="width:100%;box-sizing:border-box" type="number" name="code_offer" class="code_offer" /></label><br>
@@ -585,13 +585,13 @@ jQuery.ajax({
     <div class="widget-title">
         <i class="fa fa-bullhorn" aria-hidden="true"></i> جدیدترین اعلان
         <span class="pull-right">
-            <a href="/announcement/">مشاهده‌ی همه</a>
+            <a href="#">مشاهده‌ی همه</a>
         </span>
     </div>
                 <ul class="list-unstyled">
                                             <li>
                     <div class="dokan-dashboard-announce-content dokan-left">
-                        <a href="/single-announcement/977/"><h3>اطلاعیه شماره یک</h3></a>
+                        <a href="#"><h3>اطلاعیه شماره یک</h3></a>
                         سیب                    </div>
                     <div class="dokan-dashboard-announce-date dokan-right dokan-dashboard-announce-read">
                         <div class="announce-day">19</div>
@@ -674,11 +674,19 @@ jQuery.ajax({
                         <a target="_blank" href="#" title="" class="facebook"></a>
                     </div>
         
-                    <!--concession-->
-                    <div class="concession">
-                        <div class="post-content">
-                            <p><img class="alignnone size-full wp-image-627" src="../wp-content/uploads/2017/05/Enamad-1.png" alt="" width="237" height="159" /></p>                </div>
-                    </div>
+                   <!--concession-->
+            <div class="concession">
+                <div class="post-content">
+                    <p><img id='jxlzesgtjxlzrgvjnbqergvjrgvj' style='cursor:pointer' onclick='window.open("https://logo.samandehi.ir/Verify.aspx?id=1013233&p=rfthobpdrfthxlaouiwkxlaoxlao", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")' alt='logo-samandehi' src='https://logo.samandehi.ir/logo.aspx?id=1013233&p=nbpdlymanbpdqftiodrfqftiqfti'/></p>
+                </div>
+            </div>
+            <!--concession-->
+            <div class="concession">
+                <div class="post-content">
+                    <p><img src="https://trustseal.enamad.ir/logo.aspx?id=102812&amp;p=kKwVU4anvepH2HDY" alt="" onclick="window.open(&quot;https://trustseal.enamad.ir/Verify.aspx?id=102812&amp;p=kKwVU4anvepH2HDY&quot;, &quot;Popup&quot;,&quot;toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=580, height=600, top=30&quot;)" style="cursor:pointer" id="kKwVU4anvepH2HDY"></p>
+    
+                </div>
+            </div>
         
                 </div>
             </div>
@@ -724,8 +732,8 @@ jQuery.ajax({
     <section id="copyright">
         <div class="container">
             <div class="row">
-                <p class="copyright_super_admin"><p>تمامی حقوق سایت متعلق به قالب تخفیف گروهی بن اینجا می باشد.</p></p>
-                <span class="copyright_takhfifat"><img src="../wp-content/themes/takhfifat/images/copyright.png" /></span>
+                <p class="copyright_super_admin"><p>تمامی حقوق سایت متعلق به سامانه خرید و تخفیف گروهی بن اینجا می باشد.</p></p>
+                <span class="copyright_takhfifat"></span>
             </div>
         </div>
     </section>

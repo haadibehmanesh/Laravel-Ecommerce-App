@@ -64,7 +64,7 @@
                             {{ csrf_field() }}
                         <input type="hidden" name="id" value="{{ $product->id }}">
                        @if($product->quantity - $product->sold > 0)
-                       <button type="submit" name="add-to-cart" class="btn">افزودن به سبد خرید</button>
+                       <button type="submit" name="add-to-cart" class="btn">افزودن به سبد</button>
                         @else
                         <div class="alert-list alert-danger">
                             <p class="text-center">

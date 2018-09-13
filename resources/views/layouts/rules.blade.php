@@ -52,23 +52,21 @@ function toPersianNum( num, dontTrim ) {
         jQuery(document).on('click','.pagination a', function(e){
             e.preventDefault();
             var page = jQuery(this).attr('href').split('page=')[1];
-            var query = jQuery('#s').attr('value');
-           // alert(query);
-            search(page,query);
+            getProducts(page);
         });
-        function search(page,query){
+        function getProducts(page){
             
             jQuery.ajax({
                 headers: {
                     'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
                 },
                 type:'POST',
-                url:'/ajax/search/?query='+query+'&page='+page,
+                url:'/ajax/products/main/?page='+page,
                 data:'_token = <?php echo csrf_token() ?>'
 
             }).done(function(data){
                
-                jQuery('.ajax_search').html(data);
+                jQuery('.ajax_products').html(data);
 
 
             });
@@ -100,32 +98,6 @@ function toPersianNum( num, dontTrim ) {
 			});
 		});
 </script>
-  <script>
-        jQuery(document).ready(function() {
-           
-             // grab the initial top offset of the navigation 
-                var stickyNavTop = jQuery('.nav').offset().top;
-                
-                // our function that decides weather the navigation bar should have "fixed" css position or not.
-                var stickyNav = function(){
-                 var scrollTop = jQuery(window).scrollTop(); // our current vertical position from the top
-                      
-                 // if we've scrolled more than the navigation, change its position to fixed to stick to top,
-                 // otherwise change it back to relative
-                 if (scrollTop > stickyNavTop) { 
-                    jQuery('.nav').addClass('sticky');
-                 } else {
-                    jQuery('.nav').removeClass('sticky'); 
-                 }
-             };
- 
-             stickyNav();
-             // and run it again every time you scroll
-             jQuery(window).scroll(function() {
-                 stickyNav();
-             });
-         });
- </script>
         
 </head>
 <body class="rtl home blog mega-menu-main-menu">
@@ -199,26 +171,28 @@ function toPersianNum( num, dontTrim ) {
     <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{Auth::guard('customer')->user()->name}}<span class="fa fa-user pull-right"></span></a>
         <ul class="dropdown-menu">
-            <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard is-active">
-            <a href="{{url('/my-account')}}">پیشخوان</a>
+                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard is-active">
+                                                <a href="{{url('/my-account')}}">پیشخوان</a>
                 </li>
-                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
+                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
                     <a href="{{url('/my-account')}}">سفارش ها</a>
                 </li>
-                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
+                 
+                
+                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
                     <a href="{{url('/my-account')}}">جزئیات حساب</a>
                 </li>
-                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout"><a href="{{ url('/customer/logout') }}"
-                    onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">
-                    خروج
-                </a>
-
-                <form id="logout-form" action="{{ url('/customer/logout') }}" method="POST" style="display: none;">
-                    {{ csrf_field() }}
-                </form>
-            </li>
-            </ul>
+                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout"><a href="{{ url('/customer/logout') }}"
+                                                    onclick="event.preventDefault();
+                                                             document.getElementById('logout-form').submit();">
+                                                    خروج
+                                                </a>
+            
+                                                <form id="logout-form" action="{{ url('/customer/logout') }}" method="POST" style="display: none;">
+                                                    {{ csrf_field() }}
+                                                </form>
+                                            </li>
+                                         </ul>
     </li>
 </ul>
             </div>
@@ -251,11 +225,11 @@ function toPersianNum( num, dontTrim ) {
                                 <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-megamenu mega-has-icon mega-menu-item-241' id='mega-menu-item-241'><a class=" fa {{$item->icon}}  mega-menu-link" href="{{ route('shop.showCategory', $item->slug) }}" aria-haspopup="true" tabindex="0">{{ $item->name}}</a>
                                     <ul class="mega-sub-menu">
                                         <li class='mega-menu-item mega-menu-item-type-widget widget_sp_image mega-menu-columns-1-of-4 mega-menu-item-widget_sp_image-2' id='mega-menu-item-widget_sp_image-2'><img width="100" height="100" class="attachment-shop_thumbnail" style="max-width: 100%;" srcset="{{ categoryImage($item->image) }}" /></li>
-                                        @foreach ( $item->children->sortBy('sort_order') as $submenu )
+                                            @foreach ( $item->children->sortBy('sort_order') as $submenu )
                                             <ul class="mega-sub-menu">
-                                                <li class='mega-menu-item' id='mega-menu-item-243'><a class="mega-menu-link" href="{{ route('shop.showCategory', $submenu->slug) }}">{{$submenu->name}}</a></li>
+                                            <li class='mega-menu-item' id='mega-menu-item-243'><a class="mega-menu-link" href="{{ route('shop.showCategory', $submenu->slug) }}">{{$submenu->name}}</a></li>
                                             </ul>
-                                        @endforeach
+                                            @endforeach
                                     </ul>
                                 </li>
                         @elseif(empty($item->parent_id))
@@ -270,71 +244,8 @@ function toPersianNum( num, dontTrim ) {
 </nav>
 <div class="clear"></div>
 <!-- / Nav -->    <!--wrapper-->
-    <section id="wrapper">
-            <div class="container">
-        <div class="row">
-        <ol class="breadcrumb"><a href="/">خانه</a> / <a href="/products">فروشگاه</a> / نتیجه جستجو برای “{{ $query }}”</ol>
-
-        <div class="block_posts box_single">
-                <div class="title_block">
-                    <span>
-                        نتایج جستجو برای    "{{ $query }}"                     
-                    </span>
-                </div>
-                </div>
-    <div class='ajax_search'>
-            @forelse ($products as $product)     	
-        	<div class="col-lg-4 col-md-4 col-sm-6">
-            <div class="box_offer">
-							<div class="time_out">
-                    <i class="fa fa-clock-o"></i>
-                    <ul class="deal-timer countdownyfggr"></ul>
-                <script>
-				                    jQuery(function() {
-                        var endDate = "2018-8-4 23:59:00";
-                        jQuery('.countdownyfggr').countdown({
-                            date: endDate,
-                            render: function(data) {
-                                if ( ! data.sec  ) { data.sec = 0 };
-								var days = toPersianNum(data.days);
-								var hours = toPersianNum(data.hours);
-								var min = toPersianNum(data.min);
-								var sec = toPersianNum(data.sec);
-                                jQuery(this.el).html(
-                                    '<li><span class="num">' + days +'</span><span class="text">  روز </span></li>'+
-                                    '<li><span class="num">' + hours +'</span><span class="text"> ساعت </span></li>'+
-                                    '<li><span class="num">' + min +'</span><span class="text"> دقیقه </span></li>'+
-                                    '<li><span class="num">' + sec +'</span><span class="text"> ثانیه </span></li>'
-                                );
-                            }
-                        });
-                    });
-                </script>					
-                </div>
-			    <a href="{{ route('shop.show', $product->slug) }}" title="{{ $product->name }}"><img src="{{ productImage($product->image) }}" title="{{ $product->name }}"></a>
-                <!-- Discount -->
-                <span class="Discount"><b>%{{ $product->discount }}</b>تخفیف</span>
-				<span class="address"><i class="fa fa-map-marker"></i>امام خمینی</span>
-                <span>1<i class="fa fa-shopping-basket"></i></span>
-				<!-- Info -->
-                <div class="Information">
-                    <h2 class="ellipsis"><a href="#">{{ $product->name }} </a></h2>
-                    <span class="price"><del><span class="woocommerce-Price-amount amount">{{ toPersianNum($product->price) }}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></del> <ins><span class="woocommerce-Price-amount amount">{{ toPersianNum(presentPrice($product->price,$product->discount)) }}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></ins></span>
-                </div>
-            </div>
-        </div>        	
-        @empty
-          <div style="text-align: center">موردی یافت نشد!</div>
-        @endforelse  
-        <div class="clear"></div>
-			<div class="pagination_wrapper">
-                        {{ $products->links() }}
-                
-            </div>  
-            </div>
-        </div>
-            </div>
-    </section>
+ 
+<div class="clear"></div>
 
 <!--social &  Subscription-->
 <section id="social">
@@ -379,6 +290,12 @@ function toPersianNum( num, dontTrim ) {
                 <a target="_blank" href="#" title="" class="facebook"></a>
             </div>
 
+            <!--concession-->
+            <div class="concession">
+                <div class="post-content">
+                    <p><img id='jxlzesgtjxlzrgvjnbqergvjrgvj' style='cursor:pointer' onclick='window.open("https://logo.samandehi.ir/Verify.aspx?id=1013233&p=rfthobpdrfthxlaouiwkxlaoxlao", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")' alt='logo-samandehi' src='https://logo.samandehi.ir/logo.aspx?id=1013233&p=nbpdlymanbpdqftiodrfqftiqfti'/></p>
+                </div>
+            </div>
            <!--concession-->
            <div class="concession">
             <div class="post-content">

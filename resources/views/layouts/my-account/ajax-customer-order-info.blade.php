@@ -100,7 +100,7 @@
         
         <tr class="order">
                 <td class="order-number">
-                    <a href="http://demo.onliner.ir/takhfifat/my-account/view-order/1048/">
+                    <a href="{{ route('shop.show', $item->product()->first()->slug) }}">
                         {{ $item->product()->first()->name }}                   </a>
                 </td>
                 <td class="order-status" style="text-align:left; white-space:nowrap;">

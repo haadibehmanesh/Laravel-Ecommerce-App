@@ -13,6 +13,7 @@
 
 
 Route::get('/', 'MainpageController@index')->name('mainpage.index');
+Route::get('/rules', 'RulesController@index')->name('rules.index');
 
 Route::get('/cart', 'CartController@index')->name('cart.index');
 Route::post('/cart', 'CartController@store')->name('cart.store');
