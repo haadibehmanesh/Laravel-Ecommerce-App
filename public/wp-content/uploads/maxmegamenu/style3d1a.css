@@ -807,7 +807,8 @@
   margin-right: 3px;
 }
 #mega-menu-wrap-main-menu .mega-menu-toggle .mega-toggle-block-right {
-  float: right;
+  /*float: right;*/
+  float: center;
   margin-right: 6px;
 }
 @media only screen and (max-width: 600px) {

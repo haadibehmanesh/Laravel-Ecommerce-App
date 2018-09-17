@@ -187,12 +187,16 @@ img.emoji {
 <section class="top_header">
     <div class="container">
         <div class="row">
-            <ul class="menu_top_header">
-                <li id="menu-item-163" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-163"><a href="/my-account">حساب کاربری من</a></li>
-                <li id="menu-item-164" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164"><a href="/checkout">تسویه حساب</a></li>
-                <li id="menu-item-165" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-165"><a href="/cart">سبد خرید</a></li>
-                <li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-166"><a href="/products">همه پیشنهادها</a></li>
-            </ul>
+                <ul class="menu_top_header">
+                        @if (!Auth::guard('customer')->check())
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-163"><a href="/my-account">ورود/عضویت</a></li>
+                        @else
+                        <li id="menu-item-163" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-163"><a href="/my-account">حساب کاربری من</a></li>
+                        @endif
+                        <li id="menu-item-164" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164"><a href="/checkout">تسویه حساب</a></li>
+                        <li id="menu-item-165" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-165"><a href="/cart">سبد خرید</a></li>
+                        {{--<li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-166"><a href="/products">همه پیشنهادها</a></li>--}}
+                    </ul>
             <!--phone-->
             {{--<div class="phone"><span><i class="fa fa-book"></i>بانک جامع اطلاعاتی</span></div>--}}
 			            
@@ -518,7 +522,7 @@ img.emoji {
 							
 
                             <div class="share_gift_bye">
-                                <div class="col-lg-6 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
+                                <div class="share_btn">
                                     
                                 <div class="btn-group btn_social">
 
@@ -556,7 +560,7 @@ img.emoji {
                                 <br><br>
 --}}
                                 <!-- <a href="" class="link_bye"><i class="fa fa-shopping-cart"></i>همین حالا خرید کنید</a> -->
-                                <div class="col-lg-6 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
+                                <div class="add_btn">
                                 <div class="row">
                                    
                                     <form class="cart" action="{{ route('cart.store') }}" method="post" enctype='multipart/form-data'>
@@ -894,13 +898,13 @@ $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  '
 <footer>
     <div class="container">
         <div class="row">
-            <!--about us-->
-            <div class="col-lg-4 col-md-4">
+             <!--about us-->
+            {{--<div class="col-lg-4 col-md-4">
                 <div class="about_us">
                     <span class="title_about_us"><img src="#" alt=""></span>
                     <p></p>
                 </div>
-            </div>
+            </div>--}}
             <!--Service-->
             <div class="col-lg-5 col-md-5 block_service">
                 <div class="service"><span>فهرست</span><div class="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-container"><ul id="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7" class="menu"><li id="menu-item-187" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-187"><a href="#">آموزش مفید</a></li>
