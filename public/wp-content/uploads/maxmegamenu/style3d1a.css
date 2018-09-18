@@ -835,14 +835,14 @@
   font-family: 'dashicons';
   font-size: 24px;
   margin: 0 0 0 5px;
-  color: #555;
+  color: #e2e2e2;
 }
 #mega-menu-wrap-main-menu .mega-menu-toggle.mega-menu-open .mega-toggle-block-3:before {
   content: '\f153';
 }
 #mega-menu-wrap-main-menu .mega-menu-toggle .mega-toggle-block-3:after {
   content: 'دسته بندی ها';
-  color: #555;
+  color: #e2e2e2;
   float: left;
 }
 #mega-menu-wrap-main-menu .mega-menu-toggle.mega-menu-open .mega-toggle-block-3:after {

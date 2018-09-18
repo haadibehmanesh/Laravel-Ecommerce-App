@@ -129,7 +129,7 @@ white-space: normal;}
 .modal-content{color:#606060}
 .modal-content label .fa{padding-left:7px}
 .modal-content p{text-align:right}
-nav{background:#dedede;box-shadow:0 6px 15px 0 #bfbfbf;height:59px;border-top:1px solid #e8e8e8;background:#f5f5f5;border-bottom:1px solid #ccc;box-shadow:1px 3px 8px #ccc}
+nav{background:#dedede;box-shadow:0 6px 15px 0 #bfbfbf;height:59px;border-top:1px solid #e8e8e8;background:#19499c;border-bottom:1px solid #ccc;box-shadow:1px 3px 8px #ccc}
 .table{display:table;width:100%;padding:0;margin:15px 0;white-space:normal}
 #wrapper{overflow:hidden;margin:30px 0}
 .block_tab_menu,.block_gallery_archive{overflow:hidden;border-radius:7px;border:1px solid #f2f2f2}
@@ -630,7 +630,8 @@ p.buttons a:hover{background:#c50303}
 .dashicons-admin-appearance a.mega-menu-link:before{font-family:dashicons!important;}
 a.fa.mega-menu-link:before{font:normal normal normal 17px/55px FontAwesome!important;}
 #mega-menu-wrap-main-menu #mega-menu-main-menu li.mega-menu-item a.mega-menu-link:before{margin:0 0 0 5px !important}
-ul#mega-menu-main-menu > li > a {line-height: 58px !important;color: #6B6B6B !important;}
+ul#mega-menu-main-menu > li > a {line-height: 58px !important;color: #e2e2e2 !important;}
+ul#mega-menu-main-menu > li > a:hover {color: #f6861f !important;}
 #mega-menu-wrap-main-menu, #mega-menu-wrap-main-menu #mega-menu-main-menu, #mega-menu-wrap-main-menu #mega-menu-main-menu ul.mega-sub-menu, #mega-menu-wrap-main-menu #mega-menu-main-menu li.mega-menu-item, #mega-menu-wrap-main-menu #mega-menu-main-menu a.mega-menu-link{
 	text-align:right;
 }
