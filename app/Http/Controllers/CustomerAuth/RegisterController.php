@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Auth;
 
+use Melipayamak;
 class RegisterController extends Controller
 {
     /*
@@ -73,6 +74,20 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     { 
+        
+       /* try{
+
+            $sms = Melipayamak::sms();
+            $to = $data['phone'];
+            $from = '500010606390';
+            $text = randomDigits(4);
+            $response = $sms->send($to,$from,$text);
+            $json = json_decode($response);
+            echo $json->Value; //RecId or Error Number 
+        }catch(Exception $e){
+            echo $e->getMessage();
+        }
+        dd($sms);*/
         $customer = Customer::create([
             'name' => $data['name'],
             'email' => $data['email'],
