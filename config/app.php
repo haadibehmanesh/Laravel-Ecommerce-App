@@ -150,6 +150,9 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        //phplusir\smsir\SmsirServiceProvider::class,
+        //Pamenary\LaravelSms\Laravel\SmsServiceProvider::class,
+        Melipayamak\Laravel\ServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -218,6 +221,9 @@ return [
        // 'Captcha' => Mews\Captcha\Facades\Captcha::class,
         'Wishlist'=> Bhavinjr\Wishlist\Facades\Wishlist::class,
         'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
+        //'Smsir' => phplusir\smsir\SmsirFacade::class,
+        //'Sms' => Pamenary\LaravelSms\Laravel\Facade\Sms::class,
+        'Melipayamak' => Melipayamak\Laravel\Facade::class,
     ],
 
 ];
