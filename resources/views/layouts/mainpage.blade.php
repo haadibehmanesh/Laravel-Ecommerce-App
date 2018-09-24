@@ -120,7 +120,7 @@ function toPersianNum( num, dontTrim ) {
 			            
 			<!--social-->
             <div class="social_header">
-                <a href="#" title="تلگرام"><i class="fa fa-send-o"></i></a>
+                <a href="" title="تلگرام"><i class="fa fa-send-o"></i></a>
                 <a href="#" title="اینستاگرام"><i class="fa fa-instagram"></i></a>
             </div>
         </div>
@@ -521,7 +521,7 @@ function toPersianNum( num, dontTrim ) {
                                         <div class="price list-content list-price-single">
                                                 <span class="cdbf-takhfif"><span class="cdbft-shape"><span class="list-discount-tag">%{{toPersianNum($product->discount)}}</span></span></span>               
                                                 <span class="price price_slider price_slider_single">
-                                                        <del><span class="woocommerce-Price-amount amount">قیمت: {{ toPersianNum($product->price) }}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></del> <ins><span class="woocommerce-Price-amount amount">با تخفیف: {{ toPersianNum(presentPrice($product->price,$product->discount)) }}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></ins>
+                                                        <del><span class="woocommerce-Price-amount amount">{{ toPersianNum($product->price) }}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></del> <ins><span class="woocommerce-Price-amount amount">{{ toPersianNum(presentPrice($product->price,$product->discount)) }}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></ins>
                                                     </span>
                                             <div class="row">
                                                     <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
@@ -580,7 +580,7 @@ function toPersianNum( num, dontTrim ) {
                                 <div class="price list-content list-price-single">
                                         <span class="cdbf-takhfif"><span class="cdbft-shape"><span class="list-discount-tag">%{{toPersianNum($product->discount)}}</span></span></span>               
                                         <span class="price price_slider price_slider_single">
-                                                <del><span class="woocommerce-Price-amount amount">قیمت: {{ toPersianNum($product->price) }}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></del> <ins><span class="woocommerce-Price-amount amount">با تخفیف: {{ toPersianNum(presentPrice($product->price,$product->discount)) }}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></ins>
+                                                <del><span class="woocommerce-Price-amount amount">{{ toPersianNum($product->price) }}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></del> <ins><span class="woocommerce-Price-amount amount">{{ toPersianNum(presentPrice($product->price,$product->discount)) }}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></ins>
                                             </span>
                                     <div class="row">
                                             <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">

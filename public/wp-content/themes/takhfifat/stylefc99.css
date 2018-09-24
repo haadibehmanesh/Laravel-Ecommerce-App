@@ -1151,3 +1151,6 @@ span.total_sales_onliner i{
 button#insert-media-button{color:#fff;border: 0;}
 .product-edit-container .wp-editor-wrap{border:0}
 .product-edit-container .dokan-feat-image-upload a.close{width:100%}
+
+span.price del:before{ content:'قیمت: '; }
+span.price ins:before{ content:'با تخفیف: '; }
