@@ -43,7 +43,7 @@
 * html #wowslider-container9{ width:1200px }
 #wowslider-container9 .ws_images ul{
 	position:relative;
-	width: 10000%; 
+	width: 100%; 
 	height:100%;
 	left:0;
 	list-style:none;
