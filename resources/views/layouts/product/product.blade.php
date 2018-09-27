@@ -652,19 +652,19 @@ $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  '
 </div>
 <div class="clear"></div><!--address map-->
 <div class="address_map box_single">
-	<div class="title_block"><span>نقشه آدرس</span></div>
+	<div class="title_block"><span>آدرس</span></div>
 	<div class="box_map">
 		<!--map-->
 		<div id="map_sellers" style="width:100%;height:400px;"></div>
 		<div class="label_map"><i class="fa fa-map-o"></i><span>مشاهده آدرس روی نقشه</span></div>
 	</div>
 </div>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKCtow0jeZibeqGsBXNsKwQxm5N8TwbRE"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfrK1E0GsP0vPKQLNAHbN4fqa1bjb7I7I"></script>
 <script>
 	function single_product_map() {
 		var mapOptions_sellers = {
-			center: new google.maps.LatLng(36.2604623,59.61675489999993),
-			zoom: 15,
+			center: new google.maps.LatLng(29.6297833,52.5086218),
+			zoom: 17,
 			mapTypeId: google.maps.MapTypeId.terrain,
 			mapTypeControl: true,
 			panControl: true,
@@ -676,9 +676,9 @@ $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  '
 		};
 		var map_sellers = new google.maps.Map(document.getElementById("map_sellers"), mapOptions_sellers);
 		var marker_sellers = new google.maps.Marker({
-			position: new google.maps.LatLng(36.2604623,59.61675489999993),
+			position: new google.maps.LatLng(29.6297833,52.5086218),
 			map: map_sellers,
-			title: 'سید رسول هاشم آبادی'
+			title: 'سامانه خرید و تخفیف گروهی بن اینجا'
 		});
 	}
 	single_product_map();
@@ -896,38 +896,35 @@ $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  '
 
 <!--footer-->
 <footer>
-    <div class="container">
-        <div class="row">
-             <!--about us-->
-            {{--<div class="col-lg-4 col-md-4">
-                <div class="about_us">
-                    <span class="title_about_us"><img src="#" alt=""></span>
-                    <p></p>
+        <div class="container">
+            <div class="row">
+                <!--about us-->
+                {{--<div class="col-lg-4 col-md-4">
+                    <div class="about_us">
+                        <span class="title_about_us"><img src="#" alt=""></span>
+                        <p></p>
+                    </div>
+                </div>--}}
+                <!--Service-->
+                <div class="col-lg-5 col-md-5 block_service">
+                <div class="service"><span>درباره بن اینجا</span><div class="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-container"><ul id="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7" class="menu"><li id="menu-item-187" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-187"><a href="{{route('aboutus.index')}}">درباره ما</a></li>
+                    <li id="menu-item-188" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188"><a href="#">قوانین و مقررات</a></li>
+                    <li id="menu-item-191" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-191"><a href="#">تماس با ما</a></li>
+                    </ul></div></div><div class="service"><span>راهنما</span><div class="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-container"><ul id="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-1" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-187"><a href="#">آموزش مفید</a></li>
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188"><a href="#">نحوه خرید</a></li>
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-189"><a href="#">نحوه فروش</a></li>
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-190"><a href="#">کجا پیدا میشه</a></li>
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-191"><a href="#">تماس با ما</a></li>
+                    </ul></div></div>            </div>
+                <!--map-->
+                <div class="col-lg-3 col-md-3">
+                    <div class="map">
+                            <img src="{{asset('wp-content/uploads/2017/05/naghshe-1.jpg') }}" />
+                    </div>
                 </div>
-            </div>--}}
-            <!--Service-->
-            <div class="col-lg-5 col-md-5 block_service">
-                <div class="service"><span>فهرست</span><div class="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-container"><ul id="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7" class="menu"><li id="menu-item-187" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-187"><a href="#">آموزش مفید</a></li>
-<li id="menu-item-188" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188"><a href="#">نحوه خرید</a></li>
-<li id="menu-item-189" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-189"><a href="#">نحوه فروش</a></li>
-<li id="menu-item-190" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-190"><a href="#">کجا پیدا میشه</a></li>
-<li id="menu-item-191" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-191"><a href="#">تماس با ما</a></li>
-</ul></div></div><div class="service"><span>راهنما</span><div class="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-container"><ul id="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-1" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-187"><a href="#">آموزش مفید</a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188"><a href="#">نحوه خرید</a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-189"><a href="#">نحوه فروش</a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-190"><a href="#">کجا پیدا میشه</a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-191"><a href="#">تماس با ما</a></li>
-</ul></div></div>            </div>
-            <!--map-->
-            <div class="col-lg-3 col-md-3">
-                <div class="map">
-									<img src="../../wp-content/uploads/2017/05/naghshe-1.jpg" />
-				                </div>
             </div>
         </div>
-    </div>
-</footer>
-
+    </footer>
 <!--copyright-->
 <section id="copyright">
     <div class="container">
