@@ -57,7 +57,7 @@ jQuery(document).ready(function($) {
 
 
 //cart_list
-
+/*
     $(".content_mini_cart a").click(function (e) {
         $("div.main_cart_list").fadeIn();
     });
@@ -82,7 +82,7 @@ jQuery(document).ready(function($) {
         e.stopPropagation();
     });
 
-
+*/
     // Note the window height + offset
     if (($(window).height() + 100) < $(document).height()) {
         $('#top-link-block').removeClass('hidden').affix({
