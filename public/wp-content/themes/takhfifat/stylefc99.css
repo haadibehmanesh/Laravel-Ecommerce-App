@@ -111,7 +111,7 @@ body{font-family:IRANSans!important;cursor:default;font-weight:300}
 .main_input .fa{font-size:20px;float:right;padding:8px 11px 0 7px}
 .main_input input{border:0;background:none;color:#c8c5c5;outline:0;height:34px;float:right}
 .main_input input[type="text"]{width:220px}
-input[type="submit"],input[type="button"], button{background: #f6861f;border-radius:24px;color:#fdefef;padding:0 30px;font-size: 13px;font-family: IRANSans !important;float: none !important;/* height: 34px; */border: none;line-height: 34px;font-weight: normal !important;}
+input[type="submit"],input[type="button"], button{background: #f6861f;border-radius:24px;color:#fdefef;padding:0 15px;font-size: 13px;font-family: IRANSans !important;float: none !important;/* height: 34px; */border: none;line-height: 34px;font-weight: normal !important;}
 .block_login{float:left;margin:40px 0 0}
 #myBtn,#myBtn2{float: left;
 font: 15px/25px IRANSans;

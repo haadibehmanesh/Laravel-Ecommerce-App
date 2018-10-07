@@ -9,8 +9,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>
           {{ $category->name }}    </title>
-          <link rel='dns-prefetch' href='http://maps.google.com/' />
-          <link rel='dns-prefetch' href='http://s.w.org/' />
+          <link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">
           <link rel="alternate" type="application/rss+xml" title="تخفیف گروهی بن اینجا &raquo; آرایشگاه النا خوراک دیدگاه‌ها" href="feed/index.html" />
           <script type="text/javascript">
               window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.6"}};

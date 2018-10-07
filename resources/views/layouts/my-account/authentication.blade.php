@@ -8,7 +8,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>
         حساب کاربری من    </title>
-	<link rel='dns-prefetch' href='http://maps.google.com/' />
+        <link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">
 
 		<style type="text/css">
 img.wp-smiley,

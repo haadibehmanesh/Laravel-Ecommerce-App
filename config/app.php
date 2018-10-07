@@ -153,7 +153,8 @@ return [
         //phplusir\smsir\SmsirServiceProvider::class,
         //Pamenary\LaravelSms\Laravel\SmsServiceProvider::class,
         Melipayamak\Laravel\ServiceProvider::class,
-
+        Larabookir\Gateway\GatewayServiceProvider::class, 
+    
         /*
          * Package Service Providers...
          */
@@ -224,6 +225,7 @@ return [
         //'Smsir' => phplusir\smsir\SmsirFacade::class,
         //'Sms' => Pamenary\LaravelSms\Laravel\Facade\Sms::class,
         'Melipayamak' => Melipayamak\Laravel\Facade::class,
+        'Gateway' => Larabookir\Gateway\Gateway::class,
     ],
 
 ];

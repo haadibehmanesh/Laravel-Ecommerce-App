@@ -8,7 +8,7 @@ class BiOrder extends Model
 {
     protected $table = 'bi_orders';
 
-    protected $fillable = ['invoice_no', 'total', 'order_code','customer_id'];
+    protected $fillable = ['invoice_no', 'total', 'order_code','customer_id','status','ref_id'];
 
     public function items()
     {

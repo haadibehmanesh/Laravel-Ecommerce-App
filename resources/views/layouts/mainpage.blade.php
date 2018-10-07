@@ -8,7 +8,7 @@
     <title>
         سامانه خرید و تخفیف گروهی بن اینجا    
     </title>
-
+<link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">
 <link rel='stylesheet' id='validate-engine-css-css'  href='wp-content/plugins/wysija-newsletters/css/validationEngine.jquery4dc3.css?ver=2.8.2' type='text/css' media='all' />
 <link rel='stylesheet' id='megamenu-css'  href='wp-content/uploads/maxmegamenu/style3d1a.css?ver=f3e515' type='text/css' media='all' />
 <link rel='stylesheet' id='dashicons-css'  href='wp-includes/css/dashicons.min1845.css?ver=4.9.6' type='text/css' media='all' />
