@@ -42,20 +42,23 @@ class CheckoutController extends Controller
     public function store()
     {  
         $customer_id = Auth::guard('customer')->user()->id;
-        $order_code = randomDigits(8);
-        $invoice_no = randomDigits(6);
-        $total = Cart::subtotal();
-        $order = BiOrder::create([
-            'invoice_no' => $invoice_no,
-            'total' => $total,
-            'order_code' => $order_code,
-            'customer_id' => $customer_id
-        ]);
+        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
         foreach (Cart::content() as $item) {
             $code = randomDigits(8);
-            $product = BiProduct::find( $item->id);
+            $total = Cart::subtotal();
+            $product = BiProduct::find($item->id);
+            $order_code = randomDigits(8);
+            $invoice_no = randomDigits(6);
+            $order_status = 'pending';
+            $order = BiOrder::create([
+                'invoice_no' => $invoice_no,
+                'status' => $order_status,
+                'total' => $total,
+                'order_code' => $order_code,
+                'customer_id' => $customer_id,
+            ]);
             $productSold = (($product->quantity-$product->sold) - $item->qty) >= 0 ? $product->sold + $item->qty : -1 ;
-
+            
             if( $productSold >= 0) {
                 $orderitem = BiOrderItem::create([
                     'bi_order_id' => $order->id,
@@ -66,32 +69,68 @@ class CheckoutController extends Controller
                     'total' => $item->subtotal,
                     'bi_product_id' => $item->id,
                     'bi_merchant_id' => $item->options['bi_merchant_id']
-                ]);
-
-                $product->sold = $productSold;
-                $product->save();
-
-                $success_message = 'درحال انتقال به درگاه بانک';
-                $error_message = null;
-                Cart::destroy();
-
-            } else {
-                $success_message = null;
-                $error_message = 'موجودی کافی نیست';
-                Cart::destroy();
-            }
-            
-            
-        }
-        
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
-        return view('layouts/cart/cart')->with([
-            'allcategories' => $allcategories,
-            'success_message' => $success_message,
-            'error_message' => $error_message
+                    ]);
+                    
+                    //$product->sold = $productSold;
+                    //$product->save();
+                    
+                    //  $success_message = 'درحال انتقال به درگاه بانک';
+                    //  $error_message = null;
+                    //Cart::destroy();
+                    
+                } else {
+                    $success_message = null;
+                    $error_message = 'موجودی بن کافی نیست';
+                    return view('layouts/cart/cart')->with([
+                        'allcategories' => $allcategories,
+                        'success_message' => $success_message,
+                        'error_message' => $error_message
+                    ]);
+                    //Cart::destroy();
+                } 
+            } 
+           
+            try {
+            $gateway = \Gateway::mellat();
+            $gateway->setCallback(url('callback/from/bank'));
+            $gateway->price($total*10)->ready();
+            $refId =  $gateway->refId();
+            $transID = $gateway->transactionId();
+            // Your code here
+            $order->update(['ref_id' => $refId]); 
+            return $gateway->redirect();
+        } catch (Exception $e) {
+            $message = $e->getMessage();
+            return view('layouts/checkout/bankresult')->with([
+                'allcategories' => $allcategories,
+                'message' => $message
             ]);
+        }
     }
 
+
+
+    public function callback(){
+        
+        try {
+        $gateway = \Gateway::verify();
+        $trackingCode = $gateway->trackingCode();
+        $refId = $gateway->refId();
+        $cardNumber = $gateway->cardNumber();
+        
+        // عملیات خرید با موفقیت انجام شده است
+        // در اینجا کالا درخواستی را به کاربر ارائه میکنم
+        $order_status = 'completed';
+        
+        $order = BiOrder::where('ref_id', $refId)->update(['status' => $order_status]);
+        Cart::destroy();
+
+        } catch (Exception $e) {
+            $order_status = 'notverified';
+            $order = BiOrder::where('ref_id', $refId)->update(['status' => $order_status]);
+            echo $e->getMessage();
+        }
+    }
     /**
      * Display the specifieuse App\BiOrderBiProduct;d resource.
      *

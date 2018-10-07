@@ -1,5 +1,10 @@
 <?php
-
+use App\BiOrder;
+use App\BiOrderItem;
+use App\BiProduct;
+use App\BiCategory;
+use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,7 +16,43 @@
 |
 */
 
-
+Route::any('callback/from/bank',function(){
+  $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+  try {
+    $gateway = \Gateway::verify();
+    $trackingCode = $gateway->trackingCode();
+    $refId = $gateway->refId();
+    $cardNumber = $gateway->cardNumber();
+    $order_status = 'completed';
+    $order = BiOrder::where('ref_id', $refId)->first();
+    $order->update(['status' => $order_status]);     
+    
+    foreach (Cart::content() as $item) {
+      $product = BiProduct::find($item->id);
+      $productSold = (($product->quantity-$product->sold) - $item->qty) >= 0 ? $product->sold + $item->qty : -1 ;
+      if( $productSold >= 0) {
+              $product->sold = $productSold;
+              $product->save();     
+          } 
+    }
+    Cart::destroy();  
+    $message = 'پرداخت با موفقیت انجام شد!<br> 
+     کد تراکنش شما : '.$trackingCode.' <br>
+     برای پیگیری های بعدی این کد را نزد خود نگه دارید. ';
+    return view('layouts/checkout/bankresult')->with([
+      'allcategories' => $allcategories,
+      'message' => $message
+      ]);
+  } catch (Exception $e) {
+    //$order_status = 'unsuccessful';
+    $message = $e->getMessage();
+    //$order->update(['status' => $order_status]); 
+    return view('layouts/checkout/bankresult')->with([
+      'allcategories' => $allcategories,
+      'message' => $message
+      ]);
+  }
+});
 Route::get('/', 'MainpageController@index')->name('mainpage.index');
 Route::get('/rules', 'RulesController@index')->name('rules.index');
 Route::get('/aboutus', 'AboutusController@index')->name('aboutus.index');
