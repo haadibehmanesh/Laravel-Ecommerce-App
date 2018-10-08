@@ -30,7 +30,13 @@
     </ul>
     </nav>
 <div class="woocommerce-MyAccount-content">
-	<p>سفارش #<mark class="order-number">{{$order->invoice_no}}</mark> در تاریخ <mark class="order-date">۶ شهریور ۱۳۹۷</mark> ثبت شده است و در حال حاضر در وضعیت <mark class="order-status">در حال انجام</mark> می باشد .</p>
+	<p>سفارش #<mark class="order-number">{{$order->invoice_no}}</mark> در تاریخ <mark class="order-date"><?php 
+        $ydate = date('Y', strtotime($order->created_at));  
+        $mdate = date('m', strtotime($order->created_at));  
+        $ddate = date('d', strtotime($order->created_at));  
+       $date = g2p($ydate,$mdate ,$ddate);
+   ?>
+   {{$date[0]}}/{{$date[1]}}/{{$date[2]}}</mark> ثبت شده است .</p>
 
 <section class="woocommerce-order-details">
 	
@@ -52,7 +58,7 @@
 			<tr class="woocommerce-table__line-item order_item">
 
 	<td class="woocommerce-table__product-name product-name">
-		<a href="{{ route('shop.show', $item->product()->first()->slug) }}" title="{{ $item->product()->first()->name }}">{{$item->product()->first()->name}}</a> <strong class="product-quantity">× {{$item->quantity}} عدد</strong>	</td>
+		<a href="{{ route('shop.show', $item->product()->first()->slug) }}" title="{{ $item->product()->first()->name }}">{{$item->product()->first()->name}}</a> &nbsp;&nbsp;<strong class="product-quantity"> ×&nbsp;&nbsp; {{$item->quantity}}&nbsp;عدد</strong>	</td>
 
 	<td class="woocommerce-table__product-total product-total">
 		<span class="woocommerce-Price-amount amount">{{$item->total}}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>	</td>
@@ -89,8 +95,8 @@
     <thead>
         <tr>
             <th class="order-number"><span class="nobr">سفارش</span></th>
-            <th class="order-status"><span class="nobr">وضعیت</span></th>
-            <th class="order-total"><span class="nobr">کلی</span></th>
+            <th class="order-status"><span class="nobr">تعداد</span></th>
+            <th class="order-total"><span class="nobr">مجموع</span></th>
             <th class="order-actions">&nbsp;</th>
         </tr>
     </thead>
@@ -103,10 +109,11 @@
                     <a href="{{ route('shop.show', $item->product()->first()->slug) }}">
                         {{ $item->product()->first()->name }}                   </a>
                 </td>
-                <td class="order-status" style="text-align:left; white-space:nowrap;">
+                <td class="order-status">
+                        {{$item->quantity}}
                     </td>
                 <td class="order-total">
-                    <span class="woocommerce-Price-amount amount">{{$item->total}}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span> برای {{$item->quantity}} اقلام                </td>
+                    <span class="woocommerce-Price-amount amount">{{$item->total}}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span> </td>
                 <td class="order-actions">
                     <a onclick="orderitemInfo({{$item->id}})" class="button view">نمایش</a>                </td>
             </tr>

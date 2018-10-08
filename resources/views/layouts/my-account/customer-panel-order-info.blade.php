@@ -9,7 +9,10 @@
     <title>
         حساب کاربری من    </title>
         <link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">
-
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.6"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
 		<style type="text/css">
 img.wp-smiley,
 img.emoji {
@@ -70,6 +73,69 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
     <link href="../wp-content/themes/takhfifat/css/bootstrap-rtl.css" rel="stylesheet">
     <link href="../wp-content/themes/takhfifat/css/font-awesome.css" rel="stylesheet">
     <link href="../wp-content/themes/takhfifat/stylefc99.css?ver=2.6" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://localhost/takhfiftest/wp-content/themes/takhfifat/js/html5shiv.min.js"></script>
+    <script src="http://localhost/takhfiftest/wp-content/themes/takhfifat/js/respond.min.js"></script>
+    <![endif]-->
+
+          {{--  	<style>
+	span.price del:before{ content:'قیمت: '; }
+	span.price ins:before{ content:'با تخفیف: '; }
+			.phone,
+	input[type="submit"], input[type="button"], button,
+	.nav-tabs>li.active>a .fa, .nav-tabs>li.active>a:focus .fa, .nav-tabs>li.active>a:hover .fa,
+	.eye_buy a,
+	.price span.with_discount,
+	.title_post span.like,
+	.block_gallery .content_item .Slogan span,
+	.content_item .Discount:before,
+	.box_offer .Discount:before,
+	.box_offer .price del,
+	.title_post .Discount:before,
+	span.number_items_cart,
+	p.buttons a,
+	.wc-proceed-to-checkout .checkout-button,
+	.woocommerce a.remove:hover,
+	.post-content input[type="submit"],
+	input[type="submit"].dokan-btn-theme, a.dokan-btn-theme, .dokan-btn-theme
+	{
+		background-color:#ff5a5f !important;
+	}
+	.box_offer .price del:after{
+		border-right-color: #ff5a5f;
+	}
+	input[type="submit"]:hover, input[type="button"]:hover, button:hover,
+	.eye_buy a:hover,
+	{
+		background-color:#ff5a5f	}
+	.content_item > span a .fa,
+	.box_single .title_block span,
+	.option_item_gallery span.address .fa,
+	.item_terms_use p .fa,
+	.box_offer span.address i,
+	.cart_list.product_list_widget li.mini_cart_item a.remove,
+	.woocommerce a.remove,
+	.label_map
+	{
+		color:#ff5a5f !important
+	}
+	.top_header,
+	.title_post span.like:before,
+	.top_header, 
+	.title_post span.like:before, 
+	.nav-tabs>li.active>a, 
+	.nav-tabs>li.active>a:hover,
+	.title_post,
+	.phone,
+	.label_map,
+	.post-content input[type="submit"],
+	input[type="submit"].dokan-btn-theme, a.dokan-btn-theme, .dokan-btn-theme
+	{
+		border-color:#ff5a5f	}	
+		</style>--}}
 	<script src="../wp-content/themes/takhfifat/js/parsinumber.min.js"></script>
 	<script>
 	function toPersianNum( num, dontTrim ) {
@@ -90,32 +156,82 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
 		return res;
 	}
     </script>
-      <script>
-            jQuery(document).ready(function() {
-               
-                 // grab the initial top offset of the navigation 
-                    var stickyNavTop = jQuery('.nav').offset().top;
-                    
-                    // our function that decides weather the navigation bar should have "fixed" css position or not.
-                    var stickyNav = function(){
-                     var scrollTop = jQuery(window).scrollTop(); // our current vertical position from the top
-                          
-                     // if we've scrolled more than the navigation, change its position to fixed to stick to top,
-                     // otherwise change it back to relative
-                     if (scrollTop > stickyNavTop) { 
-                        jQuery('.nav').addClass('sticky');
-                     } else {
-                        jQuery('.nav').removeClass('sticky'); 
-                     }
-                 };
-     
+     <meta name="csrf-token" content="{{ csrf_token() }}">
+<script>
+
+function editAccount(id){
+
+jQuery.ajax({
+    headers: {
+        'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+    },
+    type:'POST',
+    url:'/my-account/editaccount/'+id ,
+    data:'_token = <?php echo csrf_token() ?>',
+    success:function(data){
+        jQuery('#ajax-show').html(data)
+    }
+    });
+}
+
+function orders(id){
+
+jQuery.ajax({
+    headers: {
+        'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+    },
+    type:'POST',
+    url:'/my-account/orders/'+id ,
+    data:'_token = <?php echo csrf_token() ?>',
+    success:function(data){
+        jQuery('#ajax-show').html(data)
+    }
+    });
+}
+
+function customerDashboard(id){
+
+jQuery.ajax({
+    headers: {
+        'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+    },
+    type:'POST',
+    url:'/my-account/'+id ,
+    data:'_token = <?php echo csrf_token() ?>',
+    success:function(data){
+        jQuery('#ajax-show').html(data)
+    }
+    });
+}
+
+
+</script>
+  <script>
+        jQuery(document).ready(function() {
+           
+             // grab the initial top offset of the navigation 
+                var stickyNavTop = jQuery('.nav').offset().top;
+                
+                // our function that decides weather the navigation bar should have "fixed" css position or not.
+                var stickyNav = function(){
+                 var scrollTop = jQuery(window).scrollTop(); // our current vertical position from the top
+                      
+                 // if we've scrolled more than the navigation, change its position to fixed to stick to top,
+                 // otherwise change it back to relative
+                 if (scrollTop > stickyNavTop) { 
+                    jQuery('.nav').addClass('sticky');
+                 } else {
+                    jQuery('.nav').removeClass('sticky'); 
+                 }
+             };
+ 
+             stickyNav();
+             // and run it again every time you scroll
+             jQuery(window).scroll(function() {
                  stickyNav();
-                 // and run it again every time you scroll
-                 jQuery(window).scroll(function() {
-                     stickyNav();
-                 });
              });
-     </script>
+         });
+ </script>
 </head>
 <body class="rtl page-template-default page page-id-10 woocommerce-account woocommerce-page mega-menu-main-menu dokan-theme-takhfifat">
     <!----- Top Menu
@@ -134,8 +250,19 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
                         {{--<li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-166"><a href="/products">همه پیشنهادها</a></li>--}}
                     </ul>
             <!--phone-->
+            
            {{--<div class="phone"><span><i class="fa fa-book"></i>بانک جامع اطلاعاتی</span></div>--}}
-			            
+            <div class="block_login block_login_seller">
+        @if(Auth::guard('customer')->user())
+        @if(Auth::guard('customer')->user()->is_merchant == 1)
+        {{--<ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a href="/dashboard"><i class="fa fa-user pull-right"></i> پنل فروشندگان <strong class="takhfifat_get_seller_balance">موجودی: <span class="woocommerce-Price-amount amount">3,816,000&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></strong></a>
+            </li>
+        </ul>--}}
+        @endif
+        @endif
+</div>	
 			<!--social-->
             <div class="social_header">
                                         <a href="#" title="تلگرام"><i class="fa fa-send-o"></i></a>
@@ -150,8 +277,9 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
 <header>
     <div class="container">
         <div class="row">
+
             <!--logo-->
-            <div class="logo" ><h1><a href="/" title="سامانه خرید و تخفیف گروهی بن اینجا"></a></h1></div>
+                            <div class="logo" ><h1><a href="/" title="سامانه خرید و تخفیف گروهی بن اینجا"></a></h1></div>
             
             <!--select search-->
             <div id="form_header">
@@ -162,12 +290,12 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
                             <option value="all" >همه شهر ها</option>
                             <option value='تهران' >تهران (9)</option><option value='مشهد' >مشهد (40)</option><option value='اصفهان' >اصفهان (0)</option><option value='کرج' >کرج (2)</option><option value='شیراز' >شیراز (0)</option><option value='تبریز' >تبریز (0)</option>                        </select>
                     </form>
-                    <div class="realoading"></div>
+                                        <div class="realoading"></div>
                     <script>
                         jQuery("#cities_list").on("change", function() {
                             var city_name_temp = jQuery(this).find("option:selected").text();
                             var city_name = jQuery('#cities_list').val()
-                            jQuery.post("wp-content/themes/takhfifat/includes/set-cookies.html", {city_name: city_name}, function(result){
+                            jQuery.post("../wp-content/themes/takhfifat/includes/set-cookies.html", {city_name: city_name}, function(result){
                                  jQuery("div.realoading").html(result);
                             });
                         });
@@ -182,49 +310,55 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
                 </div>
             </div>
             
-            <!--login-->
+              <!--login-->
            
-            @if (!Auth::guard('customer')->check())
-            <div class="block_login">
-                <a href="{{url('customer/login')}}" class="btn btn-default btn-lg login" id="myBtn"> ورود / عضویت <i class="fa fa-sign-in"></i></a>           
-            </div>
-            @else
-            <div class="block_login">
-                <ul class="nav navbar-nav">
-    <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{Auth::guard('customer')->user()->name}}<span class="fa fa-user pull-right"></span></a>
-        <ul class="dropdown-menu">
-                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard is-active">
-                                                <a href="{{url('/my-account')}}">پیشخوان</a>
-                </li>
-                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
-                    <a href="{{url('/my-account')}}">سفارش ها</a>
-                </li>
-                 
-                
-                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
-                    <a href="{{url('/my-account')}}">جزئیات حساب</a>
-                </li>
-                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout"><a href="{{ url('/customer/logout') }}"
-                                                    onclick="event.preventDefault();
-                                                             document.getElementById('logout-form').submit();">
-                                                    خروج
-                                                </a>
-            
-                                                <form id="logout-form" action="{{ url('/customer/logout') }}" method="POST" style="display: none;">
-                                                    {{ csrf_field() }}
-                                                </form>
-                                            </li>
-                                         </ul>
-    </li>
-</ul>
-            </div>
-            @endif
-
+              @if (!Auth::guard('customer')->check())
+              <div class="block_login">
+                  <a href="{{url('customer/login')}}" class="btn btn-default btn-lg login" id="myBtn"> ورود / عضویت <i class="fa fa-sign-in"></i></a>           
+              </div>
+              @else
+              <div class="block_login">
+                  <ul class="nav navbar-nav">
+      <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{Auth::guard('customer')->user()->name}}<span class="fa fa-user pull-right"></span></a>
+          <ul class="dropdown-menu">
+                                                  <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard is-active">
+                                                  <a href="{{url('/my-account')}}">پیشخوان</a>
+                  </li>
+                                                  <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
+                      <a href="{{url('/my-account')}}">سفارش ها</a>
+                  </li>
+                   
+                  
+                                                  <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
+                      <a href="{{url('/my-account')}}">جزئیات حساب</a>
+                  </li>
+                                                  <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout"><a href="{{ url('/customer/logout') }}"
+                                                      onclick="event.preventDefault();
+                                                               document.getElementById('logout-form').submit();">
+                                                      خروج
+                                                  </a>
+              
+                                                  <form id="logout-form" action="{{ url('/customer/logout') }}" method="POST" style="display: none;">
+                                                      {{ csrf_field() }}
+                                                  </form>
+                                              </li>
+                                           </ul>
+      </li>
+  </ul>
+              </div>
+              @endif
             <!--items cart-->
             <div class="content_mini_cart">
                 <a class="main_title_cart" href="/cart" rel="nofollow"><i class="fa fa-shopping-cart" aria-hidden="true"></i>سبد خرید شما<span class="number_items_cart">{{ Cart::content()->count() }}</span></a>
                 
+            </div>
+					
+
+	
+
+
+				</div>
             </div>
 
         </div>
@@ -233,7 +367,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
 <!-- / Header -->    <!--Nav-->
 <nav class="nav">
     <div class="container">
-        <div class="row">
+    <div class="row">
             <div id="mega-menu-wrap-main-menu" class="mega-menu-wrap">
                 <div class="mega-menu-toggle" tabindex="0">
                     <div class='mega-toggle-block mega-menu-toggle-block mega-toggle-block-right mega-toggle-block-3' id='mega-toggle-block-3'>
@@ -266,259 +400,128 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
 
 </nav>
 <div class="clear"></div>
-<!-- / Nav -->    <!--wrapper-->
-    <section id="wrapper">
+<!-- / Nav --> 
+  <!--wrapper-->
+  <section id="wrapper">
     <div class="container">
-        <div class="row">
-            <ol class="breadcrumb"><a href="http://localhost/takhfiftest">خانه</a> / حساب کاربری من</ol>            <div class="post-content-page">
+        <div id="ajax-show" class="row">
+                <ol class="breadcrumb"><a href="/">خانه</a> / <a href="/my-account">حساب کاربری من</a> / سفارش ها</ol>            
+                <div class="post-content-page">
+                                            
+                        <!--title & discount & views-->
+                        <div class="title_post">
+                            <h1>سفارش ها</h1>
+                        </div>
+                                <div class="woocommerce">
+                <nav class="woocommerce-MyAccount-navigation">
+                <ul>
+                        <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard">
+                                <a><span onclick="customerDashboard({{Auth::guard('customer')->user()->id}})">پیشخوان</span></a>
+                </li>
+                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders is-active">
+                        <a><span onclick="orders({{Auth::guard('customer')->user()->id}})">سفارش ها</span></a>
+                    </li>
+                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
+                        <a><span onclick="editAccount({{Auth::guard('customer')->user()->id}})">جزئیات حساب</span></a>
+                        
+                    </li>
+                    <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout"><a href="{{ url('/customer/logout') }}"
+                        onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();">
+                        خروج
+                    </a>
+                
+                    <form id="logout-form" action="{{ url('/customer/logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                </li>
+                </ul>
+                </nav>
+                
+                
+                <div class="woocommerce-MyAccount-content">
+                
+                
+                <table class="woocommerce-orders-table woocommerce-MyAccount-orders shop_table shop_table_responsive my_account_orders account-orders-table">
+                <thead>
+                <tr>
+                                        <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-number"><span class="nobr">سفارش</span></th>
+                                        
+                                        <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-date"><span class="nobr">تاریخ خرید</span></th>
+                                        
+                                        <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-total"><span class="nobr">مجموع</span></th>
+                                        <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-actions"><span class="nobr">عملیات ها</span></th>
+                                        <th class="woocommerce-orders-table__header woocommerce-orders-table__header-discount-code"><span class="nobr">کد تخفیف</span></th>
+                                </tr>
+                </thead>
+                
+                <tbody>
+                
+                        @foreach ($customerorders as $order)
                             
-        <!--title & discount & views-->
-        <div class="title_post">
-            <h1>حساب کاربری من</h1>
-        </div>
-                <div class="woocommerce">
-
-
-
-<div class="u-columns col2-set" id="customer_login">
-
-<div class="u-column1 col-1">
-
-
-<h2>ورود</h2>
-<form class="form-horizontal" role="form" method="POST" action="{{ url('/customer/login') }}">
-    {{ csrf_field() }}
-
-    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-        <label for="email" class="col-md-4 control-label"> شماره همراه یا آدرس ایمیل</label>
-
-        <div class="col-md-6">
-            <input type="text" class="form-control" name="email" value="{{ old('email') }}" autofocus>
-
-            @if ($errors->has('email'))
-                <span class="help-block">
-                    <strong>{{ $errors->first('email') }}</strong>
-                </span>
-            @endif
-        </div>
-    </div>
-
-    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-        <label for="password" class="col-md-4 control-label">رمز ورود</label>
-
-        <div class="col-md-6">
-            <input type="password" class="form-control" name="password">
-
-            @if ($errors->has('password'))
-                <span class="help-block">
-                    <strong>{{ $errors->first('password') }}</strong>
-                </span>
-            @endif
-        </div>
-    </div>
- {{--   <div class="form-group">
-            <label class="col-md-4 control-label"></label>
-        <div class="col-md-6">
-        {!! NoCaptcha::renderJs('fa') !!}
-        
-        {!! NoCaptcha::display() !!} 
-        </div>
-    </div>--}}
-    <div class="form-group">
-        <div class="col-md-6 col-md-offset-4">
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" name="remember"> مرا بخاطر بسپار
-                </label>
-            </div>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-md-8 col-md-offset-4">
-            <button type="submit" class="btn">
-                ورود
-            </button>
-
-            <a class="btn btn-link" href="{{ url('/customer/password/reset') }}">
-                آیا رمز خود را فراموش کرده اید؟
-            </a>
-        </div>
-    </div>
-</form>
-
-
-
-</div>
-
-<div class="u-column2 col-2">
-
-<h2>عضویت</h2>
-<form class="form-horizontal" role="form" method="POST" action="{{ url('/customer/register') }}">
-    {{ csrf_field() }}
-
-    <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-        <label for="name" class="col-md-4 control-label">نام و نام خانوادگی <span class="required">*</span></label>
-
-        <div class="col-md-6">
-            <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" autofocus>
-
-            @if ($errors->has('name'))
-                <span class="help-block">
-                    <strong>{{ $errors->first('name') }}</strong>
-                </span>
-            @endif
-        </div>
-    </div>
-    <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
-        <label for="phone" class="col-md-4 control-label">شماره همراه <span class="required">*</span></label>
-
-        <div class="col-md-6">
-            <input id="phone" type="text" class="form-control" name="phone" value="{{ old('phone') }}">
-
-            @if ($errors->has('phone'))
-                <span class="help-block">
-                    <strong>{{ $errors->first('phone') }}</strong>
-                </span>
-            @endif
-        </div>
-    </div>
-    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-        <label for="email" class="col-md-4 control-label">آدرس ایمیل (اختیاری)</label>
-
-        <div class="col-md-6">
-            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
-
-            @if ($errors->has('email'))
-                <span class="help-block">
-                    <strong>{{ $errors->first('email') }}</strong>
-                </span>
-            @endif
-        </div>
-    </div>
-
-    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-        <label for="password" class="col-md-4 control-label">رمز ورود <span class="required">*</span></label>
-
-        <div class="col-md-6">
-            <input id="password" type="password" class="form-control" name="password">
-
-            @if ($errors->has('password'))
-                <span class="help-block">
-                    <strong>{{ $errors->first('password') }}</strong>
-                </span>
-            @endif
-        </div>
-    </div>
-
-    <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-        <label for="password-confirm" class="col-md-4 control-label">تکرار رمز ورود <span class="required">*</span></label>
-
-        <div class="col-md-6">
-            <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
-
-            @if ($errors->has('password_confirmation'))
-                <span class="help-block">
-                    <strong>{{ $errors->first('password_confirmation') }}</strong>
-                </span>
-            @endif
-        </div>
-    </div>
-  {{--  <div class="form-group">
-            <label class="col-md-4 control-label"></label>
-        <div class="col-md-6">
-        {!! NoCaptcha::renderJs() !!}
-
-        {!! NoCaptcha::display() !!} 
-        </div>
-    </div>--}}
-
-    <div class="form-group">
-        <div class="col-md-6 col-md-offset-4">
-            <button type="submit" class="btn">
-               ثبت نام
-            </button>
-        </div>
-    </div>
-</form>
-{{--
-<form method="post" class="register" action="{{ url('/customer/register') }}" novalidate="novalidate">
-
-    {{ csrf_field() }}
-
-<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-    <label for="reg_email">آدرس ایمیل <span class="required">*</span></label>
-    <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="reg_email" value="">			</p>
-
-
-    <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-        <label for="reg_password">گذرواژه <span class="required">*</span></label>
-        <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" id="reg_password">
-    </p>
-
-
-
-<div class="show_if_seller" style="display:none">
-
-<div class="split-row form-row-wide">
-<p class="form-row form-group">
-<label for="first-name">نام <span class="required">*</span></label>
-<input type="text" class="input-text form-control" name="fname" id="first-name" value="" required="required">
-</p>
-
-<p class="form-row form-group">
-<label for="last-name">نام خانوادگی <span class="required">*</span></label>
-<input type="text" class="input-text form-control" name="lname" id="last-name" value="" required="required">
-</p>
-</div>
-
-<p class="form-row form-group form-row-wide">
-<label for="company-name">نام مغازه <span class="required">*</span></label>
-<input type="text" class="input-text form-control" name="shopname" id="company-name" value="" required="required">
-</p>
-
-<p class="form-row form-group form-row-wide">
-<label for="seller-url" class="pull-left">آدرس مغازه <span class="required">*</span></label>
-<strong id="url-alart-mgs" class="pull-right"></strong>
-<input type="text" class="input-text form-control" name="shopurl" id="seller-url" value="" required="required">
-<small>http://localhost/takhfiftest/store/<strong id="url-alart"></strong></small>
-</p>
-
-<p class="form-row form-group form-row-wide">
-<label for="shop-phone">شماره تلفن<span class="required">*</span></label>
-<input type="text" class="input-text form-control" name="phone" id="shop-phone" value="" required="required">
-</p>
-
-</div>
-
-
-<p class="form-row form-group user-role">
-<label class="radio">
-<input type="radio" name="role" value="customer" checked="checked">
-من مشتری هستم    </label>
-
-<label class="radio">
-<input type="radio" name="role" value="seller">
-من فروشنده هستم    </label>
-</p>
-
-<p class="woocommerce-FormRow form-row">
-    <input type="hidden" id="woocommerce-register-nonce" name="woocommerce-register-nonce" value="9f36650c9b"><input type="hidden" name="_wp_http_referer" value="/takhfiftest/my-account/">				<button type="submit" class="woocommerce-Button button" name="register" value="عضویت">عضویت</button>
-</p>
-
-
-</form>--}}
-
-</div>
-
-</div>
-
-</div>
-
+                      
+                                <tr class="woocommerce-orders-table__row woocommerce-orders-table__row--status-processing order">
+                                                <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-number" data-title="َشماره فاکتور">
+                                                                <a href="/my-account">
+                                        #{{$order->invoice_no}}								</a>
+                
+                                                        </td>
+                                                        
+                                                <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-date" data-title="تاریخ">
+                                                <time>
+                                                    <?php 
+                                                         $ydate = date('Y', strtotime($order->created_at));  
+                                                         $mdate = date('m', strtotime($order->created_at));  
+                                                         $ddate = date('d', strtotime($order->created_at));  
+                                                        $date = g2p($ydate,$mdate ,$ddate);
+                                                    ?>
+                                                    {{$date[0]}}/{{$date[1]}}/{{$date[2]}}
+                                                </time>
+                
+                                                        </td>
+                                                
+                                                <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-total" data-title="مجموع">
+                                                                <span class="woocommerce-Price-amount amount">{{toPersianNum($order->total)}}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span> برای {{$order->items()->count()}} مورد
+                                                        </td>
+                                                <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-actions" data-title="عملیات ها">
+                                                                <a onclick="orderInfo({{$order->invoice_no}})" class="woocommerce-button button view">نمایش </a>													</td>
+                                                <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-discount-code" data-title="کد تخفیف">
+                                                {{ $order->order_code }}
+                                                        </td>
+                                        </tr>
+                                        @endforeach
                                 
-</div>
+                                
+                        </tbody>
+                </table>
+                
+                
+                
+                
+                
+                </div>
+                </div>
+                
+                                                
+                </div>
+                <script>
+                function orderInfo(invoice_no){
+                
+                        jQuery.ajax({
+                            headers: {
+                                'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+                            },
+                            type:'POST',
+                            url:'/my-account/order-info/'+invoice_no ,
+                            data:'_token = <?php echo csrf_token() ?>',
+                            success:function(data){
+                                jQuery('#ajax-show').html(data)
+                            }
+                            });
+                        }
+                </script>        
 
-</div>
+        </div>
     </div>
 </section>
 <script>
@@ -568,19 +571,19 @@ jQuery('.dokan-withdraw-content .dokan-alert-warning').html(first_html);
                 <a target="_blank" href="#" title="" class="facebook"></a>
             </div>
 
-           <!--concession-->
-           <div class="concession">
-            <div class="post-content">
-                <p><img id='jxlzesgtjxlzrgvjnbqergvjrgvj' style='cursor:pointer' onclick='window.open("https://logo.samandehi.ir/Verify.aspx?id=1013233&p=rfthobpdrfthxlaouiwkxlaoxlao", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")' alt='logo-samandehi' src='https://logo.samandehi.ir/logo.aspx?id=1013233&p=nbpdlymanbpdqftiodrfqftiqfti'/></p>
+            <!--concession-->
+            <div class="concession">
+                <div class="post-content">
+                    <p><img id='jxlzesgtjxlzrgvjnbqergvjrgvj' style='cursor:pointer' onclick='window.open("https://logo.samandehi.ir/Verify.aspx?id=1013233&p=rfthobpdrfthxlaouiwkxlaoxlao", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")' alt='logo-samandehi' src='https://logo.samandehi.ir/logo.aspx?id=1013233&p=nbpdlymanbpdqftiodrfqftiqfti'/></p>
+                </div>
             </div>
-        </div>
-        <!--concession-->
-        <div class="concession">
-            <div class="post-content">
-                <p><img src="https://trustseal.enamad.ir/logo.aspx?id=102812&amp;p=kKwVU4anvepH2HDY" alt="" onclick="window.open(&quot;https://trustseal.enamad.ir/Verify.aspx?id=102812&amp;p=kKwVU4anvepH2HDY&quot;, &quot;Popup&quot;,&quot;toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=580, height=600, top=30&quot;)" style="cursor:pointer" id="kKwVU4anvepH2HDY"></p>
-
+            <!--concession-->
+            <div class="concession">
+                <div class="post-content">
+                    <p><img src="https://trustseal.enamad.ir/logo.aspx?id=102812&amp;p=kKwVU4anvepH2HDY" alt="" onclick="window.open(&quot;https://trustseal.enamad.ir/Verify.aspx?id=102812&amp;p=kKwVU4anvepH2HDY&quot;, &quot;Popup&quot;,&quot;toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=580, height=600, top=30&quot;)" style="cursor:pointer" id="kKwVU4anvepH2HDY"></p>
+    
+                </div>
             </div>
-        </div>
 
         </div>
     </div>

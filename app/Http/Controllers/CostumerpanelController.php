@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Validator;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Console\Presets\React;
 
 class CostumerpanelController extends Controller
 {
@@ -21,7 +22,9 @@ class CostumerpanelController extends Controller
     public function index()
     {
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
-        return view('layouts/my-account/costumer-panel')->with('allcategories', $allcategories);
+        return view('layouts/my-account/costumer-panel')->with([
+        'allcategories' => $allcategories,
+        ]);
     }
 
     /**
@@ -143,7 +146,7 @@ class CostumerpanelController extends Controller
     public function orders($id)
     {   
         if((Auth::guard('customer')->user()->id == $id)){
-            $customerorders = BiOrder::where('customer_id', $id)->orderBy('id','desc')->get();
+            $customerorders = BiOrder::where('customer_id', $id)->where('status','completed')->orderBy('id','desc')->get();
             
         }
         return view('layouts/my-account/ajax-customerorders')->with([
@@ -155,7 +158,7 @@ class CostumerpanelController extends Controller
         if($invoice_no){
             $order = BiOrder::where('invoice_no', $invoice_no)->first();
             $order_info = BiOrderItem::where('bi_order_id', $order->id)->get();
-          //dd($order);
+         
             
         }
         return view('layouts/my-account/ajax-customer-order-info')->with([
@@ -179,5 +182,18 @@ class CostumerpanelController extends Controller
     public function dashboard($id)
     {
         return view('layouts/my-account/ajax-customerdashboard');
+    }
+    public function showsold()
+    {
+        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $id = Auth::guard('customer')->user()->id;
+        $customerorders = BiOrder::where('customer_id', $id)->where('status','completed')->orderBy('id','desc')->get();
+        //dd($customerorders->id);
+       // $order_info = BiOrderItem::where('bi_order_id', $customerorders->id)->get();
+        return view('layouts/my-account/customer-panel-order-info')->with([
+        //'order_info' => $order_info,
+        'customerorders' => $customerorders,
+        'allcategories'=> $allcategories
+        ]);
     }
 }

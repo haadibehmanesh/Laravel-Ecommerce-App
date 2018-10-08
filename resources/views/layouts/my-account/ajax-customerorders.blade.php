@@ -37,12 +37,13 @@
 <table class="woocommerce-orders-table woocommerce-MyAccount-orders shop_table shop_table_responsive my_account_orders account-orders-table">
 <thead>
 <tr>
-                        <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-number"><span class="nobr">سفارش</span></th>
-                        <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-date"><span class="nobr">تاریخ</span></th>
-                        <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-status"><span class="nobr">وضعیت</span></th>
+                        <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-number"><span class="nobr">شماره سفارش</span></th>
+                        <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-date"><span class="nobr">تاریخ خرید</span></th>
+                        
                         <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-total"><span class="nobr">مجموع</span></th>
                         <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-actions"><span class="nobr">عملیات ها</span></th>
-                        <th class="woocommerce-orders-table__header woocommerce-orders-table__header-discount-code"><span class="nobr">کد تخفیف</span></th>
+                        {{--
+                        <th class="woocommerce-orders-table__header woocommerce-orders-table__header-discount-code"><span class="nobr">کد تخفیف</span></th>--}}
                 </tr>
 </thead>
 
@@ -58,20 +59,24 @@
 
                                         </td>
                                 <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-date" data-title="تاریخ">
-                                                <time datetime="2018-07-24T15:45:37+00:00">۲ مرداد ۱۳۹۷</time>
+                                                <time><?php 
+                                                        $ydate = date('Y', strtotime($order->created_at));  
+                                                        $mdate = date('m', strtotime($order->created_at));  
+                                                        $ddate = date('d', strtotime($order->created_at));  
+                                                       $date = g2p($ydate,$mdate ,$ddate);
+                                                   ?>
+                                                   {{$date[0]}}/{{$date[1]}}/{{$date[2]}}</time>
 
                                         </td>
-                                <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-status" data-title="وضعیت">
-                                                در حال انجام
-                                        </td>
+                
                                 <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-total" data-title="مجموع">
                                                 <span class="woocommerce-Price-amount amount">{{toPersianNum($order->total)}}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span> برای {{$order->items()->count()}} مورد
                                         </td>
                                 <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-actions" data-title="عملیات ها">
-                                                <a onclick="orderInfo({{$order->invoice_no}})" class="woocommerce-button button view">نمایش </a>													</td>
-                                <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-discount-code" data-title="کد تخفیف">
+                                                <a onclick="orderInfo({{$order->invoice_no}})" class="woocommerce-button button view">نمایش بن </a>													</td>
+                                {{--<td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-discount-code" data-title="کد تخفیف">
                                 {{ $order->order_code }}
-                                        </td>
+                                        </td>--}}
                         </tr>
                         @endforeach
                 

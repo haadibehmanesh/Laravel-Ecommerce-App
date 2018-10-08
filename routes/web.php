@@ -38,11 +38,13 @@ Route::any('callback/from/bank',function(){
     Cart::destroy();  
     $message = 'پرداخت با موفقیت انجام شد!<br> 
      کد تراکنش شما : '.$trackingCode.' <br>
-     برای پیگیری های بعدی این کد را نزد خود نگه دارید. ';
-    return view('layouts/checkout/bankresult')->with([
+     برای پیگیری های بعدی این کد را نزد خود نگه دارید. 
+     ';
+     return view('layouts/checkout/bankresult')->with([
       'allcategories' => $allcategories,
       'message' => $message
       ]);
+    
   } catch (Exception $e) {
     //$order_status = 'unsuccessful';
     $message = $e->getMessage();
@@ -78,6 +80,7 @@ Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
 Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
 Route::post('/product/review', 'AjaxController@createReview')->name('review.create');
 Route::get('/my-account', 'CostumerpanelController@index')->name('costumerpanel.index');
+Route::get('/my-account/customer', 'CostumerpanelController@showsold')->name('costumerpanel.showsold');
 Route::post('/my-account/{id}', 'CostumerpanelController@dashboard')->name('costumerpanel.dashboard');
 Route::post('/my-account/orders/{id}', 'CostumerpanelController@orders')->name('costumerpanel.orders');
 Route::post('/my-account/order-info/{id}', 'CostumerpanelController@orderInfo')->name('costumerpanel.orderinfo');

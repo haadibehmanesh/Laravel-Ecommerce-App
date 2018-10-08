@@ -344,6 +344,7 @@ img.emoji {
 
                                             
                     {!!$message!!}
+                    <input type="button" class="btn" value="مشاهده سفارش" onclick="window.location.href='{{route('costumerpanel.showsold')}}'">
             </div>
         </div>
     </div>
