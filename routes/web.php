@@ -5,6 +5,7 @@ use App\BiProduct;
 use App\BiCategory;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Request;
+//use Melipayamak;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,7 +27,7 @@ Route::any('callback/from/bank',function(){
     $order_status = 'completed';
     $order = BiOrder::where('ref_id', $refId)->first();
     $order->update(['status' => $order_status]);     
-    
+    $order_items = BiOrderItem::where('bi_order_id', $order->id)->get();
     foreach (Cart::content() as $item) {
       $product = BiProduct::find($item->id);
       $productSold = (($product->quantity-$product->sold) - $item->qty) >= 0 ? $product->sold + $item->qty : -1 ;
@@ -35,11 +36,25 @@ Route::any('callback/from/bank',function(){
               $product->save();     
           } 
     }
+    foreach($order_items as $order_item){
+      try{
+        $sms = \Melipayamak::sms();
+        $to = Auth::guard('customer')->user()->phone;
+        $from = '500010606390';
+        $text = $order_item->code;
+        $response = $sms->send($to,$from,$text);
+        $json = json_decode($response);
+        echo $json->Value; //RecId or Error Number 
+      }catch(Exception $e){
+        echo $e->getMessage();
+      }    
+    }
     Cart::destroy();  
     $message = 'پرداخت با موفقیت انجام شد!<br> 
      کد تراکنش شما : '.$trackingCode.' <br>
      برای پیگیری های بعدی این کد را نزد خود نگه دارید. 
      ';
+
      return view('layouts/checkout/bankresult')->with([
       'allcategories' => $allcategories,
       'message' => $message
