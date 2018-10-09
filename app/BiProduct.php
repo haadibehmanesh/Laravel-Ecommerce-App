@@ -48,5 +48,13 @@ class BiProduct extends Model
     {
         return $this->hasMany('App\BiReview');
     }
+    public function parent()
+    {
+        return $this->belongsTo('App\BiProduct', 'parent_id');
+    }
+    public function children()
+    {
+        return $this->hasMany('App\BiProduct', 'parent_id');
+    }
     
 }
