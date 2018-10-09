@@ -169,6 +169,8 @@ class CostumerpanelController extends Controller
 
     public function orderitemInfo($id)
     {   
+
+        
         if($id){
             $order_item_info = BiOrderItem::where('id', $id)->first();
           //dd($order);
