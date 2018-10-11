@@ -8,10 +8,10 @@
 <nav class="woocommerce-MyAccount-navigation">
 <ul>
         <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard">
-                <a><span onclick="customerDashboard({{Auth::guard('customer')->user()->id}})">پیشخوان</span></a>
+                <a href="{{url('/my-account')}}"><span>پیشخوان</span></a>
 </li>
 <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
-        <a><span onclick="orders({{Auth::guard('customer')->user()->id}})">سفارش ها</span></a>
+        <a href="{{url('/my-account/orders')}}"><span>سفارش ها</span></a>
     </li>
 <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account is-active">
     <a><span onclick="editAccount({{Auth::guard('customer')->user()->id}})">جزئیات حساب</span></a>

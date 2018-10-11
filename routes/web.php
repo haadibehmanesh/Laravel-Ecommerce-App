@@ -40,7 +40,7 @@ Route::any('callback/from/bank',function(){
       try{
         $sms = \Melipayamak::sms();
         $to = Auth::guard('customer')->user()->phone;
-        $from = '500010606390';
+        $from = '200020001090';
         $text = $order_item->code;
         $response = $sms->send($to,$from,$text);
         $json = json_decode($response);
@@ -96,10 +96,11 @@ Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
 Route::post('/product/review', 'AjaxController@createReview')->name('review.create');
 Route::get('/my-account', 'CostumerpanelController@index')->name('costumerpanel.index');
 Route::get('/my-account/customer', 'CostumerpanelController@showsold')->name('costumerpanel.showsold');
-Route::post('/my-account/{id}', 'CostumerpanelController@dashboard')->name('costumerpanel.dashboard');
-Route::post('/my-account/orders/{id}', 'CostumerpanelController@orders')->name('costumerpanel.orders');
-Route::post('/my-account/order-info/{id}', 'CostumerpanelController@orderInfo')->name('costumerpanel.orderinfo');
-Route::post('/my-account/order-item-info/{id}', 'CostumerpanelController@orderitemInfo')->name('costumerpanel.orderiteminfo');
+//Route::post('/my-account/{id}', 'CostumerpanelController@dashboard')->name('costumerpanel.dashboard');
+Route::get('/my-account/orders', 'CostumerpanelController@orders')->name('costumerpanel.orders');
+Route::post('/my-account/orderDetail', 'CostumerpanelController@orderitem')->name('costumerpanel.orderitem');
+//Route::post('/my-account/order-info', 'CostumerpanelController@orderInfo')->name('costumerpanel.orderinfo');
+//Route::post('/my-account/order-item-info/{id}', 'CostumerpanelController@orderitemInfo')->name('costumerpanel.orderiteminfo');
 Route::post('/my-account/editaccount/{id}', 'CostumerpanelController@edit')->name('costumerpanel.edit');
 Route::post('/my-account/editprofile/{id}', 'CostumerpanelController@editprofile')->name('costumerpanel.editprofile');
 

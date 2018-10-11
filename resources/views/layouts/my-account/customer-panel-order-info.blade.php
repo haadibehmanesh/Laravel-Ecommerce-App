@@ -9,10 +9,7 @@
     <title>
         حساب کاربری من    </title>
         <link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">
-		<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.6"}};
-			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
-		</script>
+        
 		<style type="text/css">
 img.wp-smiley,
 img.emoji {
@@ -44,12 +41,8 @@ img.emoji {
 
 <script type='text/javascript' src='../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
 <script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/zxcvbn.min.js"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='../wp-includes/js/zxcvbn-async.min5152.js?ver=1.0'></script>
+
+
 <script type='text/javascript' src='http://maps.google.com/maps/api/js?key=AIzaSyCKCtow0jeZibeqGsBXNsKwQxm5N8TwbRE&amp;ver=4.9.6'></script>
 <!--[if lt IE 8]>
 <script type='text/javascript' src='http://localhost/takhfiftest/wp-includes/js/json2.min.js?ver=2015-05-03'></script>
@@ -74,68 +67,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
     <link href="../wp-content/themes/takhfifat/css/font-awesome.css" rel="stylesheet">
     <link href="../wp-content/themes/takhfifat/stylefc99.css?ver=2.6" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="http://localhost/takhfiftest/wp-content/themes/takhfifat/js/html5shiv.min.js"></script>
-    <script src="http://localhost/takhfiftest/wp-content/themes/takhfifat/js/respond.min.js"></script>
-    <![endif]-->
-
-          {{--  	<style>
-	span.price del:before{ content:'قیمت: '; }
-	span.price ins:before{ content:'با تخفیف: '; }
-			.phone,
-	input[type="submit"], input[type="button"], button,
-	.nav-tabs>li.active>a .fa, .nav-tabs>li.active>a:focus .fa, .nav-tabs>li.active>a:hover .fa,
-	.eye_buy a,
-	.price span.with_discount,
-	.title_post span.like,
-	.block_gallery .content_item .Slogan span,
-	.content_item .Discount:before,
-	.box_offer .Discount:before,
-	.box_offer .price del,
-	.title_post .Discount:before,
-	span.number_items_cart,
-	p.buttons a,
-	.wc-proceed-to-checkout .checkout-button,
-	.woocommerce a.remove:hover,
-	.post-content input[type="submit"],
-	input[type="submit"].dokan-btn-theme, a.dokan-btn-theme, .dokan-btn-theme
-	{
-		background-color:#ff5a5f !important;
-	}
-	.box_offer .price del:after{
-		border-right-color: #ff5a5f;
-	}
-	input[type="submit"]:hover, input[type="button"]:hover, button:hover,
-	.eye_buy a:hover,
-	{
-		background-color:#ff5a5f	}
-	.content_item > span a .fa,
-	.box_single .title_block span,
-	.option_item_gallery span.address .fa,
-	.item_terms_use p .fa,
-	.box_offer span.address i,
-	.cart_list.product_list_widget li.mini_cart_item a.remove,
-	.woocommerce a.remove,
-	.label_map
-	{
-		color:#ff5a5f !important
-	}
-	.top_header,
-	.title_post span.like:before,
-	.top_header, 
-	.title_post span.like:before, 
-	.nav-tabs>li.active>a, 
-	.nav-tabs>li.active>a:hover,
-	.title_post,
-	.phone,
-	.label_map,
-	.post-content input[type="submit"],
-	input[type="submit"].dokan-btn-theme, a.dokan-btn-theme, .dokan-btn-theme
-	{
-		border-color:#ff5a5f	}	
-		</style>--}}
+  
 	<script src="../wp-content/themes/takhfifat/js/parsinumber.min.js"></script>
 	<script>
 	function toPersianNum( num, dontTrim ) {
@@ -174,35 +106,6 @@ jQuery.ajax({
     });
 }
 
-function orders(id){
-
-jQuery.ajax({
-    headers: {
-        'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
-    },
-    type:'POST',
-    url:'/my-account/orders/'+id ,
-    data:'_token = <?php echo csrf_token() ?>',
-    success:function(data){
-        jQuery('#ajax-show').html(data)
-    }
-    });
-}
-
-function customerDashboard(id){
-
-jQuery.ajax({
-    headers: {
-        'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
-    },
-    type:'POST',
-    url:'/my-account/'+id ,
-    data:'_token = <?php echo csrf_token() ?>',
-    success:function(data){
-        jQuery('#ajax-show').html(data)
-    }
-    });
-}
 
 
 </script>
@@ -405,121 +308,128 @@ jQuery.ajax({
   <section id="wrapper">
     <div class="container">
         <div id="ajax-show" class="row">
-                <ol class="breadcrumb"><a href="/">خانه</a> / <a href="/my-account">حساب کاربری من</a> / سفارش ها</ol>            
-                <div class="post-content-page">
-                                            
-                        <!--title & discount & views-->
-                        <div class="title_post">
-                            <h1>سفارش ها</h1>
-                        </div>
-                                <div class="woocommerce">
-                <nav class="woocommerce-MyAccount-navigation">
-                <ul>
-                        <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard">
-                                <a><span onclick="customerDashboard({{Auth::guard('customer')->user()->id}})">پیشخوان</span></a>
-                </li>
-                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders is-active">
-                        <a><span onclick="orders({{Auth::guard('customer')->user()->id}})">سفارش ها</span></a>
-                    </li>
-                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
-                        <a><span onclick="editAccount({{Auth::guard('customer')->user()->id}})">جزئیات حساب</span></a>
-                        
-                    </li>
-                    <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout"><a href="{{ url('/customer/logout') }}"
-                        onclick="event.preventDefault();
-                                 document.getElementById('logout-form').submit();">
-                        خروج
-                    </a>
-                
-                    <form id="logout-form" action="{{ url('/customer/logout') }}" method="POST" style="display: none;">
-                        {{ csrf_field() }}
-                    </form>
-                </li>
-                </ul>
-                </nav>
-                
-                
-                <div class="woocommerce-MyAccount-content">
-                
-                
-                <table class="woocommerce-orders-table woocommerce-MyAccount-orders shop_table shop_table_responsive my_account_orders account-orders-table">
-                <thead>
-                <tr>
-                                        <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-number"><span class="nobr">سفارش</span></th>
+                        <ol class="breadcrumb"><a href="/">خانه</a> / حساب کاربری من</ol>            <div class="post-content-page">
                                         
-                                        <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-date"><span class="nobr">تاریخ خرید</span></th>
-                                        
-                                        <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-total"><span class="nobr">مجموع</span></th>
-                                        <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-actions"><span class="nobr">عملیات ها</span></th>
-                                        <th class="woocommerce-orders-table__header woocommerce-orders-table__header-discount-code"><span class="nobr">کد تخفیف</span></th>
-                                </tr>
-                </thead>
+                    <!--title & discount & views-->
+                    <div class="title_post">
+                    <h1>حساب کاربری من</h1>
+                    </div>
+                   
+                            <div class="woocommerce">
+<nav class="woocommerce-MyAccount-navigation">
+	<ul>
+					<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard ">
+                            <a href="{{url('/my-account')}}"><span>پیشخوان</span></a>
+			</li>
+            <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders is-active">
+				<a href="{{url('/my-account/orders')}}"><span>سفارش ها</span></a>
+			</li>
+			<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
+                <a><span onclick='editAccount({{Auth::guard('customer')->user()->id}})'>جزئیات حساب</span></a>
                 
-                <tbody>
-                
-                        @foreach ($customerorders as $order)
+            </li>
+            <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout"><a href="{{ url('/customer/logout') }}"
+                onclick="event.preventDefault();
+                         document.getElementById('logout-form').submit();">
+                خروج
+            </a>
+
+          {{--  <form id="logout-form" action="{{ url('/customer/logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+            </form>--}}
+        </li>
+			</ul>
+</nav>
+
+    @if(Auth::guard('customer')->user())
+<div class="woocommerce-MyAccount-content">
+    @foreach ($customerorders as $order )
+        @foreach ($order->items as $item)
+        <div class="panel-body">
+            <div class="col-sm-9">
+                <div class="col-sm-12 " style="margin-bottom:7px;border-bottom: dashed 1px #c0c0c0;">
+                    <div class=" hidden-md hidden-lg col-xs-12 col-sm-12 pull-left img-pos">
+                        <a title="مشاهده آفر" href="https://shiraztakhfif.com/offer">
+                            <img src="https://shiraztakhfif.com/upload/entity/bedec76a7842670e8608970ed110068b.jpg?w=200" width="100%" class="img-responsive" alt="تصویر آفر">
+                        </a>
+                    </div>
+                    <div class="col-md-8 col-xs-12" style="padding-left: 0px">
+                                                    <label>
+                                <h4><a title="مشاهده آفر" href="https://shiraztakhfif.com/offer/45918 " class="black-color none-decoration">
+                                    {{$item->name}}
+                                    </a>
+                                </h4>
+                            </label>
                             
-                      
-                                <tr class="woocommerce-orders-table__row woocommerce-orders-table__row--status-processing order">
-                                                <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-number" data-title="َشماره فاکتور">
-                                                                <a href="/my-account">
-                                        #{{$order->invoice_no}}								</a>
-                
-                                                        </td>
-                                                        
-                                                <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-date" data-title="تاریخ">
-                                                <time>
-                                                    <?php 
-                                                         $ydate = date('Y', strtotime($order->created_at));  
-                                                         $mdate = date('m', strtotime($order->created_at));  
-                                                         $ddate = date('d', strtotime($order->created_at));  
-                                                        $date = g2p($ydate,$mdate ,$ddate);
-                                                    ?>
-                                                    {{$date[0]}}/{{$date[1]}}/{{$date[2]}}
-                                                </time>
-                
-                                                        </td>
-                                                
-                                                <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-total" data-title="مجموع">
-                                                                <span class="woocommerce-Price-amount amount">{{toPersianNum($order->total)}}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span> برای {{$order->items()->count()}} مورد
-                                                        </td>
-                                                <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-actions" data-title="عملیات ها">
-                                                                <a onclick="orderInfo({{$order->invoice_no}})" class="woocommerce-button button view">نمایش </a>													</td>
-                                                <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-discount-code" data-title="کد تخفیف">
-                                                {{ $order->order_code }}
-                                                        </td>
-                                        </tr>
-                                        @endforeach
-                                
-                                
-                        </tbody>
-                </table>
-                
-                
-                
-                
-                
+                                                </div>
+                    <div class="col-md-4 col-xs-12 pull-left rate-pos" style="margin-bottom: 18px;padding-right: 0px">                  
+                    </div>
                 </div>
+                <div class="col-md-12">
+                    <div class="col-xs-12 mb-20 mt-20">
+                        <span class="coupon-box">
+                            <span class="text-bold">کد تخفیف:</span>
+                                <span class="coupon-code">{{$item->code}}</span>
+                        </span>
+                    </div>
                 </div>
-                
-                                                
+                <div class="col-md-12">
+                    <div class="col-sm-6">
+                    </div>
+                    <div class="col-sm-6">
+                    </div>
                 </div>
-                <script>
-                function orderInfo(invoice_no){
-                
-                        jQuery.ajax({
-                            headers: {
-                                'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
-                            },
-                            type:'POST',
-                            url:'/my-account/order-info/'+invoice_no ,
-                            data:'_token = <?php echo csrf_token() ?>',
-                            success:function(data){
-                                jQuery('#ajax-show').html(data)
-                            }
-                            });
-                        }
-                </script>        
+                <div class="col-md-12">
+                    <p class="col-sm-6"><strong>تاریخ خرید:</strong>
+                        <span><?php 
+                            $ydate = date('Y', strtotime($item->updated_at));  
+                            $mdate = date('m', strtotime($item->updated_at));  
+                            $ddate = date('d', strtotime($item->updated_at));  
+                           $date = g2p($ydate,$mdate ,$ddate);
+                       ?>
+                       {{$date[0]}}/{{$date[1]}}/{{$date[2]}} </span>
+                    </p>
+                                            <p class="col-sm-6"><strong>تاریخ انقضا:</strong>
+                            <span><?php 
+                                $ydate = date('Y', strtotime($item->product->date_available));  
+                                $mdate = date('m', strtotime($item->product->date_available));  
+                                $ddate = date('d', strtotime($item->product->date_available));  
+                               $date = g2p($ydate,$mdate ,$ddate);
+                           ?>
+                           {{$date[0]}}/{{$date[1]}}/{{$date[2]}} </span>
+                        </p>
+                                    </div>
+                <div class="col-md-12">
+                    <p class="col-sm-4">
+                        <strong>تعداد کل : {{$item->quantity}} </strong>
+                    </p>
+                    <p class="col-sm-10">
+                        <strong>مبلغ :  {{$item->total}}  تومان </strong>
+                        <form class="cart" method="POST" action="{{route('costumerpanel.orderitem')}}" enctype='multipart/form-data'>
+                            {{ csrf_field() }}
+                       <input type="hidden" name="id" value="{{ $item->id }}">
+                  
+                        <button type="submit" value="" class="btn-round-gray">مشاهده جزئیات</button>
+                    </form>
+                    </p>
+                </div>
+                            </div>
+            <div class=" hidden-xs hidden-sm col-md-3 pull-left img-pos">
+                <a title="مشاهده آفر" href="https://shiraztakhfif.com/offer">
+                    <img src="https://shiraztakhfif.com/upload/entity/bedec76a7842670e8608970ed110068b.jpg?w=200" width="200" class="img-responsive" style="border-radius:4px" alt="تصویر آفر">
+                </a>
+            </div>
+
+        </div>
+            
+        @endforeach
+    @endforeach
+</div>
+    @endif
+</div>
+
+                                            
+            </div>
 
         </div>
     </div>
@@ -655,11 +565,6 @@ var pwsL10n = {"unknown":"\u0642\u062f\u0631\u062a \u0631\u0645\u0632 \u0646\u06
 /* ]]> */
 </script>
 <script type='text/javascript' src='../wp-admin/js/password-strength-meter.min1845.js?ver=4.9.6'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var wc_password_strength_meter_params = {"min_password_strength":"3","i18n_password_error":"\u0644\u0637\u0641\u0627 \u06cc\u06a9 \u06af\u0630\u0631\u0648\u0627\u0698\u0647 \u0642\u0648\u06cc \u062a\u0631 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f .","i18n_password_hint":"\u0631\u0627\u0647\u0646\u0645\u0627\u06cc\u06cc: \u0631\u0645\u0632 \u0628\u0627\u06cc\u062f \u062f\u0633\u062a\u06a9\u0645 \u06f7 \u062d\u0631\u0641 \u0628\u0627\u0634\u062f. \u0628\u0631\u0627\u06cc \u0642\u0648\u06cc\u200c\u062a\u0631 \u06a9\u0631\u062f\u0646 \u0622\u0646\u060c \u0627\u0632 \u062d\u0631\u0648\u0641 \u06a9\u0648\u0686\u06a9 \u0648 \u0628\u0632\u0631\u06af \u0627\u0646\u06af\u0644\u06cc\u0633\u06cc\u060c \u0627\u0639\u062f\u0627\u062f \u0648 \u0646\u0645\u0627\u062f\u0647\u0627\u06cc\u06cc \u0645\u0627\u0646\u0646\u062f ! \" \u061f $ % ^ & ) \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646\u06cc\u062f."};
-/* ]]> */
-</script>
 <script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/frontend/password-strength-meter.min6765.js?ver=3.3.3'></script>
 <script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min44fd.js?ver=2.70'></script>
 <script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min6b25.js?ver=2.1.4'></script>
@@ -674,37 +579,12 @@ var woocommerce_params = {"ajax_url":"\/takhfiftest\/wp-admin\/admin-ajax.php","
 var wc_cart_fragments_params = {"ajax_url":"\/takhfiftest\/wp-admin\/admin-ajax.php","wc_ajax_url":"http:\/\/localhost\/takhfiftest\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_8a522b5bd2b8fa51ec6fe90baf0301d6","fragment_name":"wc_fragments_8a522b5bd2b8fa51ec6fe90baf0301d6"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min6765.js?ver=3.3.3'></script>
-<script type='text/javascript' src='../wp-includes/js/jquery/ui/core.mine899.js?ver=1.11.4'></script>
-<script type='text/javascript' src='../wp-includes/js/jquery/ui/widget.mine899.js?ver=1.11.4'></script>
-<script type='text/javascript' src='../wp-includes/js/jquery/ui/mouse.mine899.js?ver=1.11.4'></script>
-<script type='text/javascript' src='../wp-includes/js/jquery/ui/sortable.mine899.js?ver=1.11.4'></script>
+
 <script type='text/javascript' src='../wp-includes/js/jquery/ui/datepicker.mine899.js?ver=1.11.4'></script>
-<script type='text/javascript'>
-jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"\u0628\u0633\u062a\u0646","currentText":"\u0627\u0645\u0631\u0648\u0632","monthNames":["\u0698\u0627\u0646\u0648\u06cc\u0647","\u0641\u0648\u0631\u06cc\u0647","\u0645\u0627\u0631\u0633","\u0622\u0648\u0631\u06cc\u0644","\u0645\u06cc","\u0698\u0648\u0626\u0646","\u062c\u0648\u0644\u0627\u06cc","\u0622\u06af\u0648\u0633\u062a","\u0633\u067e\u062a\u0627\u0645\u0628\u0631","\u0627\u06a9\u062a\u0628\u0631","\u0646\u0648\u0627\u0645\u0628\u0631","\u062f\u0633\u0627\u0645\u0628\u0631"],"monthNamesShort":["\u0698\u0627\u0646\u0648\u06cc\u0647","\u0641\u0648\u0631\u06cc\u0647","\u0645\u0627\u0631\u0633","\u0622\u0648\u0631\u06cc\u0644","\u0645\u0647","\u0698\u0648\u0626\u0646","\u062c\u0648\u0644\u0627\u06cc","\u0622\u06af\u0648\u0633\u062a","\u0633\u067e\u062a\u0627\u0645\u0628\u0631","\u0627\u06a9\u062a\u0628\u0631","\u0646\u0648\u0627\u0645\u0628\u0631","\u062f\u0633\u0627\u0645\u0628\u0631"],"nextText":"\u0628\u0639\u062f","prevText":"\u0642\u0628\u0644\u06cc","dayNames":["\u06cc\u06a9\u0634\u0646\u0628\u0647","\u062f\u0648\u0634\u0646\u0628\u0647","\u0633\u0647 \u0634\u0646\u0628\u0647","\u0686\u0647\u0627\u0631 \u0634\u0646\u0628\u0647","\u067e\u0646\u062c\u0634\u0646\u0628\u0647","\u062c\u0645\u0639\u0647","\u0634\u0646\u0628\u0647"],"dayNamesShort":["\u06cc\u06a9","\u062f\u0648","\u0633\u0647","\u0686\u0647\u0627\u0631","\u067e\u0646\u062c","\u062c\u0645\u0639\u0647","\u0634\u0646\u0628\u0647"],"dayNamesMin":["\u06cc","\u062f","\u0633","\u0686","\u067e","\u062c","\u0634"],"dateFormat":"d MM yy","firstDay":6,"isRTL":true});});
-</script>
-<script type='text/javascript' src='../wp-content/plugins/dokan-lite/assets/vendors/tooltips/tooltipsb246.js?ver=2.7.8'></script>
-<script type='text/javascript' src='../wp-content/plugins/dokan-lite/assets/vendors/chosen/chosen.jquery.minb246.js?ver=2.7.8'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var DokanValidateMsg = {"required":"\u0627\u06cc\u0646 \u0641\u06cc\u0644\u062f \u0627\u0644\u0632\u0627\u0645\u06cc \u0627\u0633\u062a","remote":"\u0644\u0637\u0641\u0627 \u0627\u06cc\u0646 \u0641\u06cc\u0644\u062f \u0631\u0627 \u062f\u0631\u0633\u062a \u06a9\u0646\u06cc\u062f.","email":"\u0644\u0637\u0641\u0627 \u06cc\u06a9 \u0622\u062f\u0631\u0633 \u0627\u06cc\u0645\u06cc\u0644 \u0645\u0639\u062a\u0628\u0631 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","url":"\u0644\u0637\u0641\u0627 \u06cc\u06a9 \u0646\u0634\u0627\u0646\u06cc \u0645\u0639\u062a\u0628\u0631 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","date":"\u0644\u0637\u0641\u0627 \u06cc\u06a9 \u062a\u0627\u0631\u06cc\u062e \u0645\u0639\u062a\u0628\u0631 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","dateISO":"\u0644\u0637\u0641\u0627 \u06cc\u06a9 \u062a\u0627\u0631\u06cc\u062e \u0645\u0639\u062a\u0628\u0631 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f (ISO).","number":"\u0644\u0637\u0641\u0627 \u06cc\u06a9 \u0634\u0645\u0627\u0631\u0647 \u06cc \u0645\u0639\u062a\u0628\u0631 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","digits":"\u0644\u0637\u0641\u0627 \u0641\u0642\u0637 \u0627\u0631\u0642\u0627\u0645 \u0631\u0627 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","creditcard":"\u0644\u0637\u0641\u0627 \u0634\u0645\u0627\u0631\u0647 \u06a9\u0627\u0631\u062a \u0627\u0639\u062a\u0628\u0627\u0631\u06cc \u0645\u0639\u062a\u0628\u0631\u06cc \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","equalTo":"\u0644\u0637\u0641\u0627 \u0647\u0645\u0627\u0646 \u0645\u0642\u062f\u0627\u0631 \u0631\u0627 \u062f\u0648\u0628\u0627\u0631\u0647 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","maxlength_msg":"\u0644\u0637\u0641\u0627 \u0628\u06cc\u0634\u062a\u0631 \u0627\u0632 {0} \u06a9\u0627\u0631\u0627\u06a9\u062a\u0631 \u0648\u0627\u0631\u062f \u0646\u06a9\u0646\u06cc\u062f.","minlength_msg":"\u0644\u0637\u0641\u0627 \u062d\u062f\u0627\u0642\u0644 {0} \u06a9\u0627\u0631\u0627\u06a9\u062a\u0631 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","rangelength_msg":"\u0644\u0637\u0641\u0627 \u0645\u0642\u062f\u0627\u0631\u06cc \u0628\u06cc\u0646 {0} \u0648 {1} \u06a9\u0627\u0631\u0627\u06a9\u062a\u0631 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","range_msg":"\u0644\u0637\u0641\u0627 \u0645\u0642\u062f\u0627\u0631\u06cc \u0628\u06cc\u0646 {0} \u0648 {1} \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","max_msg":"\u0644\u0637\u0641\u0627 \u0645\u0642\u062f\u0627\u0631\u06cc \u06a9\u0645\u062a\u0631 \u0627\u0632 \u06cc\u0627 \u0645\u0633\u0627\u0648\u06cc \u0628\u0627 {0} \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","min_msg":"\u0644\u0637\u0641\u0627 \u0645\u0642\u062f\u0627\u0631\u06cc \u0628\u06cc\u0634\u062a\u0631 \u0627\u0632 \u0648 \u06cc\u0627 \u0645\u0633\u0627\u0648\u06cc \u0628\u0627 {0} \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f."};
-/* ]]> */
-</script>
-<script type='text/javascript' src='../wp-content/plugins/dokan-lite/assets/vendors/form-validate/form-validateb246.js?ver=2.7.8'></script>
-<script type='text/javascript' src='../wp-content/plugins/dokan-lite/assets/js/speakingurl.minb246.js?ver=2.7.8'></script>
-<script type='text/javascript' src='../wp-includes/js/imgareaselect/jquery.imgareaselect.min1845.js?ver=4.9.6'></script>
-<script type='text/javascript' src='../wp-includes/js/underscore.min4511.js?ver=1.8.3'></script>
-<script type='text/javascript' src='../wp-includes/js/customize-base.min1845.js?ver=4.9.6'></script>
-<script type='text/javascript' src='../wp-includes/js/backbone.min9632.js?ver=1.2.3'></script>
-<script type='text/javascript' src='../wp-includes/js/customize-modelsb246.js?ver=2.7.8'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var dokan_refund = {"mon_decimal_point":".","remove_item_notice":"\u0622\u06cc\u0627 \u0627\u0632 \u062d\u0630\u0641 \u0627\u0642\u0644\u0627\u0645 \u0627\u0646\u062a\u062e\u0627\u0628 \u0634\u062f\u0647 \u0645\u0637\u0645\u0626\u0646\u06cc\u062f\u061f \u0627\u06af\u0631 \u0642\u0628\u0644\u0627 \u0645\u0648\u062c\u0648\u062f\u06cc \u0627\u06cc\u0646 \u0642\u0644\u0645 \u0631\u0627 \u06a9\u0627\u0647\u0634 \u062f\u0627\u062f\u0647\u200c\u0627\u06cc\u062f \u06cc\u0627 \u0627\u06cc\u0646 \u0633\u0641\u0627\u0631\u0634 \u062a\u0648\u0633\u0637 \u06cc\u06a9 \u0645\u0634\u062a\u0631\u06cc \u062b\u0628\u062a \u0634\u062f\u0647\u060c \u0628\u0627\u06cc\u062f \u0628\u0647 \u0635\u0648\u0631\u062a \u062f\u0633\u062a\u06cc \u0645\u0648\u062c\u0648\u062f\u06cc \u0642\u0644\u0645 \u0631\u0627 \u0628\u0627\u0632\u06af\u0631\u062f\u0627\u0646\u06cc \u06a9\u0646\u06cc\u062f.","i18n_select_items":"\u0644\u0637\u0641\u0627 \u0627\u0642\u0644\u0627\u0645\u06cc \u0631\u0627 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f.","i18n_do_refund":"\u0622\u06cc\u0627 \u0627\u0632 \u067e\u0631\u062f\u0627\u0632\u0634 \u0627\u06cc\u0646 \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0628\u0627\u0632\u067e\u0631\u062f\u0627\u062e\u062a \u0645\u0637\u0645\u0626\u0646\u06cc\u062f\u061f \u0627\u06cc\u0646 \u06a9\u0627\u0631 \u0642\u0627\u0628\u0644 \u0628\u0631\u06af\u0634\u062a \u0646\u0645\u06cc\u0628\u0627\u0634\u062f.","i18n_delete_refund":"\u0622\u06cc\u0627 \u0627\u0632 \u062d\u0630\u0641 \u0627\u06cc\u0646 \u0628\u0627\u0632\u067e\u0631\u062f\u0627\u062e\u062a \u0645\u0637\u0645\u0626\u0646\u06cc\u062f\u061f \u0627\u06cc\u0646 \u06a9\u0627\u0631 \u0642\u0627\u0628\u0644 \u0628\u0631\u06af\u0634\u062a \u0646\u0645\u06cc\u0628\u0627\u0634\u062f.","remove_item_meta":"\u062d\u0630\u0641 \u0645\u062a\u0627\u06cc \u0627\u06cc\u0646 \u0645\u0648\u0627\u0631\u062f\u061f","ajax_url":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.php","order_item_nonce":"2f64292964","post_id":"","currency_format_num_decimals":"0","currency_format_symbol":"\u062a\u0648\u0645\u0627\u0646","currency_format_decimal_sep":".","currency_format_thousand_sep":",","currency_format":"%v\u00a0%s","rounding_precision":"6"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='../wp-content/plugins/dokan-lite/assets/js/dokanb246.js?ver=2.7.8'></script>
+
+
 <script type='text/javascript' src='../wp-content/plugins/dokan-lite/assets/vendors/select2/select2.full.minb246.js?ver=2.7.8'></script>
-<script type='text/javascript' src='../wp-content/plugins/dokan-pro/assets/js/dokan-pro.js'></script>
+
 <script type='text/javascript' src='../wp-includes/js/hoverIntent.minc245.js?ver=1.8.1'></script>
 <script type='text/javascript'>
 /* <![CDATA[ */

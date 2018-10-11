@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>{{ $product->name }}</title>
-		<style type="text/css">
+        <style type="text/css">
 img.wp-smiley,
 img.emoji {
 	display: inline !important;
@@ -155,6 +155,10 @@ img.emoji {
     }
     </script>
     <script>
+        jQuery(".modal-wide").on("show.bs.modal", function() {
+  var height = jQuery(window).height() - 200;
+  jQuery(this).find(".modal-body").css("max-height", height);
+});
             jQuery(document).ready(function() {
                
                  // grab the initial top offset of the navigation 
@@ -567,7 +571,76 @@ img.emoji {
                                         {{ csrf_field() }}
                                     <input type="hidden" name="id" value="{{ $product->id }}">
                                   @if($product->quantity - $product->sold > 0)
-                                    <button type="submit" name="add-to-cart" value="96" class="nb-btn">افزودن به سبد</button>
+                    
+                                    @if($product->children->count() > 0)
+                                    <a data-toggle="modal" href="#normalModal" class="btn btn-primary">انتخاب کنید</a>
+                                    @else
+                                    <button type="submit" name="add-to-cart" value="96" class="btn">افزودن به سبد</button>
+                                    @endif
+                                    <div id="normalModal" class="modal fade">
+                                            <div class="modal-dialog">
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+                                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                  <h4 class="modal-title">انتخاب ها</h4>
+                                                </div>
+                                                @if($product->children->count() > 0)
+                                                <div class="modal-body">
+                                                        @foreach ( $product->children as $subproduct )
+                                                        <div class="row">
+                                                                <div class="col-md-3 col-xs-3">
+                                                                    <img width="150" class="choose-child-img loading" alt="{{$subproduct->name}}" src="{{ productImage($subproduct->image) }}" title="{{$subproduct->name}}" data-was-processed="true">
+                                                                </div>
+                                                                <div class="col-xs-7 hidden-md hidden-lg mb-5 mr-20">
+                                                                    <span class="badge background-color-orange pull-right">%{{ toPersianNum($subproduct->discount)  }}</span>
+                                                                    <b class="pull-right offer-child-title">{{$subproduct->name}}</b>
+                                                                    <br>
+                                                                    <small class="text-danger modal-child-presentPrice">
+                                                                        <del>{{ toPersianNum($subproduct->price) }} تومان</del>
+                                                                    </small>
+                                                                    <b class="text-success modal-child-offPrice">{{ toPersianNum(presentPrice($subproduct->price,$subproduct->discount)) }} تومان</b>
+                                                                </div>
+                                                                <div class="col-md-9 col-xs-12">
+                                                                    <div class="row hidden-sm hidden-xs">
+                                                                        <span class="badge background-color-orange pull-right">%{{ toPersianNum($subproduct->discount)  }}</span>
+                                                                        <b class="pull-right offer-child-title">&nbsp{{$subproduct->name}}</b>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-md-9 hidden-sm hidden-xs">
+                                                                            <small class="text-danger modal-child-presentPrice">
+                                                                                <del>{{ toPersianNum($subproduct->price) }} تومان</del>
+                                                                            </small>
+                                                                            <b class="text-success modal-child-offPrice">{{ toPersianNum(presentPrice($subproduct->price,$subproduct->discount)) }} تومان</b>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-sm-4 col-xs-4 m-t-10">
+                                                                            
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-8 col-xs-8 m-t-10">
+                                                                            <form method="post" action="{{ route('cart.store') }}">
+                                                                            
+                                                                                <input type="hidden" name="id" value="{{ $subproduct->id }}">
+                                                                                <button type="submit" name="submit" class="btn btn-green btn-md white-color width-100">
+                                                                                    <i class="fa fa-shopping-cart rtl-cart m-l-8 fs-18"></i>
+                                                                                    همین حالا خرید کنید
+                                                                                </button>
+                                                                            </form>
+                                                                        </div>
+                                    
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <hr>
+                                                            @endforeach
+                                                        
+                                              
+                                                </div>
+                                                @endif
+                                            
+                                              </div><!-- /.modal-content -->
+                                            </div><!-- /.modal-dialog -->
+                                          </div><!-- /.modal -->
+
+                                
                                     @else
                                     <div class="alert alert-danger">
                                         <p class="text-center">
@@ -789,7 +862,13 @@ $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  '
         <strong class="woocommerce-review__author" style="color:#ff5a5f">{{$review->author}}</strong>
         <p class="meta">
         
-        <time class="woocommerce-review__published-date" style="color:green" datetime="1396-6-5 11:10:37 +04:30">۵ شهریور ۱۳۹۶</time>
+        <time class="woocommerce-review__published-date" style="color:green"><?php 
+            $ydate = date('Y', strtotime($review->created_at));  
+            $mdate = date('m', strtotime($review->created_at));  
+            $ddate = date('d', strtotime($review->created_at));  
+           $date = g2p($ydate,$mdate ,$ddate);
+       ?>
+       {{$date[0]}}/{{$date[1]}}/{{$date[2]}}</time>
         </p>
         <p>
                 <div class="star_rating">

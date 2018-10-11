@@ -143,48 +143,48 @@ class CostumerpanelController extends Controller
     {
         //
     }
-    public function orders($id)
+    public function orders()
     {   
-        if((Auth::guard('customer')->user()->id == $id)){
-            $customerorders = BiOrder::where('customer_id', $id)->where('status','completed')->orderBy('id','desc')->get();
-            
-        }
-        return view('layouts/my-account/ajax-customerorders')->with([
+        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $id = Auth::guard('customer')->user()->id;
+        $customerorders = BiOrder::where('customer_id', $id)->where('status','completed')->orderBy('id','desc')->get();
+        return view('layouts/my-account/customer-orders')->with([
             'customerorders' => $customerorders,
-            ])->render();
+            'allcategories' => $allcategories
+            ]);
     }
-    public function orderInfo($invoice_no)
+    /*public function orderInfo(Request $request)
     {   
-        if($invoice_no){
-            $order = BiOrder::where('invoice_no', $invoice_no)->first();
-            $order_info = BiOrderItem::where('bi_order_id', $order->id)->get();
-         
-            
-        }
+        dd($request);
+        
+        $customerorders = BiOrder::where('customer_id', $id)->where('status','completed')->orderBy('id','desc')->get();
+        //$order = BiOrder::where('invoice_no', $invoice_no)->first();
+        $order_info = BiOrderItem::where('bi_order_id', $customerorders->id)->get();
         return view('layouts/my-account/ajax-customer-order-info')->with([
             'order_info' => $order_info,
-            'order' => $order
             ])->render();
     }
-
-    public function orderitemInfo($id)
+*/
+    public function orderitem(Request $request)
     {   
-
-        
+        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $id = $request->id;
+       // dd($id);
         if($id){
             $order_item_info = BiOrderItem::where('id', $id)->first();
-          //dd($order);
             
         }
-        return view('layouts/my-account/ajax-customer-order-item-info')->with([
+        return view('layouts/my-account/customer-order-item-info')->with([
             'order_item_info' => $order_item_info,
-            ])->render();
+            'allcategories' => $allcategories
+            ]);
     }
 
-    public function dashboard($id)
+    /*public function dashboard($id)
     {
         return view('layouts/my-account/ajax-customerdashboard');
     }
+    */
     public function showsold()
     {
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();

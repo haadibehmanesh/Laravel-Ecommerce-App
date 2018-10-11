@@ -3004,7 +3004,7 @@ html {
   }
   .btn {
     display: inline-block;
-    padding: 6px 12px;
+    padding: 6px 36px;
     margin-bottom: 0;
     font-size: 14px;
     font-weight: normal;
@@ -4913,6 +4913,7 @@ html {
     background-color: #c9302c;
   }
   .badge {
+    margin-right: 15px;
     display: inline-block;
     min-width: 10px;
     padding: 3px 7px;
@@ -4923,7 +4924,7 @@ html {
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
-    background-color: #777;
+    background-color: #f6861f;
     border-radius: 10px;
   }
   .badge:empty {

@@ -106,36 +106,7 @@ jQuery.ajax({
     });
 }
 
-/*function orders(id){
 
-jQuery.ajax({
-    headers: {
-        'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
-    },
-    type:'POST',
-    url:'/my-account/orders/'+id ,
-    data:'_token = <?php echo csrf_token() ?>',
-    success:function(data){
-        jQuery('#ajax-show').html(data)
-    }
-    });
-}
-
-function customerDashboard(id){
-
-jQuery.ajax({
-    headers: {
-        'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
-    },
-    type:'POST',
-    url:'/my-account/'+id ,
-    data:'_token = <?php echo csrf_token() ?>',
-    success:function(data){
-        jQuery('#ajax-show').html(data)
-    }
-    });
-}
-*/
 
 </script>
   <script>
@@ -258,7 +229,7 @@ jQuery.ajax({
                                                   <a href="{{url('/my-account')}}">پیشخوان</a>
                   </li>
                                                   <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
-                      <a href="{{url('/my-account/orders')}}">سفارش ها</a>
+                      <a href="{{url('/my-account')}}">سفارش ها</a>
                   </li>
                    
                   
@@ -347,10 +318,10 @@ jQuery.ajax({
                             <div class="woocommerce">
 <nav class="woocommerce-MyAccount-navigation">
 	<ul>
-					<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard is-active">
+					<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard ">
                             <a href="{{url('/my-account')}}"><span>پیشخوان</span></a>
 			</li>
-            <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
+            <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders is-active">
 				<a href="{{url('/my-account/orders')}}"><span>سفارش ها</span></a>
 			</li>
 			<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
@@ -363,32 +334,100 @@ jQuery.ajax({
                 خروج
             </a>
 
-            <form id="logout-form" action="{{ url('/customer/logout') }}" method="POST" style="display: none;">
+          {{--  <form id="logout-form" action="{{ url('/customer/logout') }}" method="POST" style="display: none;">
                 {{ csrf_field() }}
-            </form>
+            </form>--}}
         </li>
 			</ul>
 </nav>
 
- @if(Auth::guard('customer')->user())
-    @if(Auth::guard('customer')->user()->is_merchant == 1)
+    @if(Auth::guard('customer')->user())
 <div class="woocommerce-MyAccount-content">
-	
-<p>سلام</p>
+    @foreach ($customerorders as $order )
+        @foreach ($order->items as $item)
+        <div class="panel-body">
+            <div class="col-sm-9">
+                <div class="col-sm-12 " style="margin-bottom:7px;border-bottom: dashed 1px #c0c0c0;">
+                    <div class=" hidden-md hidden-lg col-xs-12 col-sm-12 pull-left img-pos">
+                        <a href="{{ route('shop.show', $item->product->slug) }}" title="{{ $item->product->name }}">
+                            <img src="{{ productImage($item->product->image) }}" title="{{ $item->product->name }}" width="100%" class="img-responsive" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-8 col-xs-12" style="padding-left: 0px">
+                                                    <label>
+                                <h4><a href="{{ route('shop.show', $item->product->slug) }}" title="{{ $item->product->name }}" class="black-color none-decoration">
+                                    {{$item->product->name}}
+                                    </a>
+                                </h4>
+                            </label>
+                            
+                                                </div>
+                    <div class="col-md-4 col-xs-12 pull-left rate-pos" style="margin-bottom: 18px;padding-right: 0px">                  
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-xs-12 mb-20 mt-20">
+                        <span class="coupon-box">
+                            <span class="text-bold">کد تخفیف:</span>
+                                <span class="coupon-code">{{$item->code}}</span>
+                        </span>
+                        &nbsp;
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    &nbsp;
+                    <div class="col-sm-6">
+                    </div>
+                    <div class="col-sm-6">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <p class="col-sm-6"><strong>تاریخ خرید:</strong>
+                        <span><?php 
+                            $ydate = date('Y', strtotime($item->updated_at));  
+                            $mdate = date('m', strtotime($item->updated_at));  
+                            $ddate = date('d', strtotime($item->updated_at));  
+                           $date = g2p($ydate,$mdate ,$ddate);
+                       ?>
+                       {{$date[0]}}/{{$date[1]}}/{{$date[2]}} </span>
+                    </p>
+                                            <p class="col-sm-6"><strong>تاریخ انقضا:</strong>
+                            <span><?php 
+                                $ydate = date('Y', strtotime($item->product->date_available));  
+                                $mdate = date('m', strtotime($item->product->date_available));  
+                                $ddate = date('d', strtotime($item->product->date_available));  
+                               $date = g2p($ydate,$mdate ,$ddate);
+                           ?>
+                           {{$date[0]}}/{{$date[1]}}/{{$date[2]}} </span>
+                        </p>
+                                    </div>
+                <div class="col-md-12">
+                    <p class="col-sm-4">
+                        <strong>تعداد کل : {{$item->quantity}} </strong>
+                    </p>
+                    <p class="col-sm-10">
+                        <strong>مبلغ :  {{$item->total}}  تومان </strong>
+                        <form class="cart" method="POST" action="{{route('costumerpanel.orderitem')}}" enctype='multipart/form-data'>
+                            {{ csrf_field() }}
+                       <input type="hidden" name="id" value="{{ $item->id }}">
+                  
+                        <button type="submit" value="" class="btn-round-gray">مشاهده جزئیات</button>
+                    </form>
+                    </p>
+                </div>
+                            </div>
+            <div class=" hidden-xs hidden-sm col-md-3 pull-left img-pos">
+                    <a href="{{ route('shop.show', $item->product->slug) }}" title="{{ $item->product->name }}">
+                            <img src="{{ productImage($item->product->image) }}" title="{{ $item->product->name }}" width="100%" class="img-responsive" alt="">
+                        </a>
+            </div>
 
-
-<p style="color:#4caf50">شما فروشنده هستید و اکانت شما تائید شده است </p><div class="eye_buy"><a style="color: #fff;float: right;padding: 3px 15px;margin: 10px 0 0 0;font-size: 15px;" href="/dashboard"><i class="fa fa-dashboard"></i>رفتن به پنل فروشندگان</a></div><p></p>
+        </div>
+            
+        @endforeach
+    @endforeach
 </div>
-    @else 
-    <div class="woocommerce-MyAccount-content">
-	
-            <p>سلام، کاربر گرامی</p>
-            
-            
-            <p style="color:#4caf50">به صفحه پروفایل خوش آمدید</p>
-    </div>
     @endif
-@endif
 </div>
 
                                             
