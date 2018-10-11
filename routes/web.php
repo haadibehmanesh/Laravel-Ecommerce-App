@@ -36,15 +36,19 @@ Route::any('callback/from/bank',function(){
               $product->save();     
           } 
     }
-    foreach($order_items as $order_item){
+    foreach($order_items as $order_item){ 
+          $ydate = date('Y', strtotime($order_item->product->date_available));  
+          $mdate = date('m', strtotime($order_item->product->date_available));  
+          $ddate = date('d', strtotime($order_item->product->date_available));  
+          $date = g2p($ydate,$mdate ,$ddate);
       try{
         $sms = \Melipayamak::sms();
         $to = Auth::guard('customer')->user()->phone;
         $from = '200020001090';
-        $text = $order_item->code;
+        $text = $order_item->name."\n".$order_item->product->parent->name."\n"."تعداد : ".$order_item->quantity."\n"."کد تخفیف شما : ".$order_item->code."\n"."مهلت استفاده : ".$date[0]."/".$date[1]."/".$date[2]."\n"."بن اینجا"."\n"."http://www.boninja.com/my-account";
         $response = $sms->send($to,$from,$text);
         $json = json_decode($response);
-        echo $json->Value; //RecId or Error Number 
+        //echo $json->Value; //RecId or Error Number 
       }catch(Exception $e){
         echo $e->getMessage();
       }    
@@ -61,9 +65,7 @@ Route::any('callback/from/bank',function(){
       ]);
     
   } catch (Exception $e) {
-    //$order_status = 'unsuccessful';
     $message = $e->getMessage();
-    //$order->update(['status' => $order_status]); 
     return view('layouts/checkout/bankresult')->with([
       'allcategories' => $allcategories,
       'message' => $message

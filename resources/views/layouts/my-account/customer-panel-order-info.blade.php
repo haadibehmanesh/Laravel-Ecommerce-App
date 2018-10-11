@@ -308,11 +308,11 @@ jQuery.ajax({
   <section id="wrapper">
     <div class="container">
         <div id="ajax-show" class="row">
-                        <ol class="breadcrumb"><a href="/">خانه</a> / حساب کاربری من</ol>            <div class="post-content-page">
+                        <ol class="breadcrumb"><a href="/">خانه</a> / سفارش ها</ol>            <div class="post-content-page">
                                         
                     <!--title & discount & views-->
                     <div class="title_post">
-                    <h1>حساب کاربری من</h1>
+                    <h1>سفارش ها</h1>
                     </div>
                    
                             <div class="woocommerce">
@@ -349,14 +349,14 @@ jQuery.ajax({
             <div class="col-sm-9">
                 <div class="col-sm-12 " style="margin-bottom:7px;border-bottom: dashed 1px #c0c0c0;">
                     <div class=" hidden-md hidden-lg col-xs-12 col-sm-12 pull-left img-pos">
-                        <a title="مشاهده آفر" href="https://shiraztakhfif.com/offer">
-                            <img src="https://shiraztakhfif.com/upload/entity/bedec76a7842670e8608970ed110068b.jpg?w=200" width="100%" class="img-responsive" alt="تصویر آفر">
+                        <a href="{{ route('shop.show', $item->product->slug) }}" title="{{ $item->product->name }}">
+                            <img src="{{ productImage($item->product->image) }}" title="{{ $item->product->name }}" width="100%" class="img-responsive" alt="">
                         </a>
                     </div>
                     <div class="col-md-8 col-xs-12" style="padding-left: 0px">
                                                     <label>
-                                <h4><a title="مشاهده آفر" href="https://shiraztakhfif.com/offer/45918 " class="black-color none-decoration">
-                                    {{$item->name}}
+                                <h4><a href="{{ route('shop.show', $item->product->slug) }}" title="{{ $item->product->name }}" class="black-color none-decoration">
+                                    {{$item->product->name}}
                                     </a>
                                 </h4>
                             </label>
@@ -371,9 +371,11 @@ jQuery.ajax({
                             <span class="text-bold">کد تخفیف:</span>
                                 <span class="coupon-code">{{$item->code}}</span>
                         </span>
+                        &nbsp;
                     </div>
                 </div>
                 <div class="col-md-12">
+                    &nbsp;
                     <div class="col-sm-6">
                     </div>
                     <div class="col-sm-6">
@@ -415,9 +417,9 @@ jQuery.ajax({
                 </div>
                             </div>
             <div class=" hidden-xs hidden-sm col-md-3 pull-left img-pos">
-                <a title="مشاهده آفر" href="https://shiraztakhfif.com/offer">
-                    <img src="https://shiraztakhfif.com/upload/entity/bedec76a7842670e8608970ed110068b.jpg?w=200" width="200" class="img-responsive" style="border-radius:4px" alt="تصویر آفر">
-                </a>
+                    <a href="{{ route('shop.show', $item->product->slug) }}" title="{{ $item->product->name }}">
+                            <img src="{{ productImage($item->product->image) }}" title="{{ $item->product->name }}" width="100%" class="img-responsive" alt="">
+                        </a>
             </div>
 
         </div>

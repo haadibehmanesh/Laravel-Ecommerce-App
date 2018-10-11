@@ -308,11 +308,11 @@ jQuery.ajax({
   <section id="wrapper">
     <div class="container">
         <div id="ajax-show" class="row">
-                        <ol class="breadcrumb"><a href="/">خانه</a> / حساب کاربری من</ol>            <div class="post-content-page">
+                        <ol class="breadcrumb"><a href="/">خانه</a> / سفارش ها</ol>            <div class="post-content-page">
                                         
                     <!--title & discount & views-->
                     <div class="title_post">
-                    <h1>حساب کاربری من</h1>
+                    <h1>سفارش ها</h1>
                     </div>
                    
                             <div class="woocommerce">
