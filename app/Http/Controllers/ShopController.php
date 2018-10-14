@@ -72,12 +72,16 @@ class ShopController extends Controller
         $product = BiProduct::where('slug', $slug_db)->firstOrFail();
         
         $ProductId = $product->id;
-
-        $id = Auth::guard('customer')->user()->id;
+        if(Auth::guard('customer')->check()){
+            $id = Auth::guard('customer')->user()->id;
         
-        $CustomerOrderItems = BiOrder::where('customer_id', $id)->where('status','completed')->with(['items']) ->whereHas('items', function($q) use ($ProductId){
-            $q->where('bi_product_id',$ProductId); 
-        })->first();
+            $CustomerOrderItems = BiOrder::where('customer_id', $id)->where('status','completed')->with(['items']) ->whereHas('items', function($q) use ($ProductId){
+                $q->where('bi_product_id',$ProductId); 
+            })->first();
+        }else{
+            $CustomerOrderItems = null;
+        }
+        
 
         $categoriesForProduct = $product->categories()->get();
 
