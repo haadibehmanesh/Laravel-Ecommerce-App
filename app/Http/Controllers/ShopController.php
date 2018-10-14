@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\BiOrder;
 use Illuminate\Http\Request;
 use App\BiProduct;
 use App\BiCategory;
 use App\BiSlider;
 use App\BiSliderImage;
 use App\BiReview;
-
+use Illuminate\Support\Facades\Auth;
 class ShopController extends Controller
 {
     /**
@@ -65,9 +65,19 @@ class ShopController extends Controller
      */
     public function show($slug, $category = '')
     {  
+
+       
         $slug_db = explode('/', $slug);
        
         $product = BiProduct::where('slug', $slug_db)->firstOrFail();
+        
+        $ProductId = $product->id;
+
+        $id = Auth::guard('customer')->user()->id;
+        
+        $CustomerOrderItems = BiOrder::where('customer_id', $id)->where('status','completed')->with(['items']) ->whereHas('items', function($q) use ($ProductId){
+            $q->where('bi_product_id',$ProductId); 
+        })->first();
 
         $categoriesForProduct = $product->categories()->get();
 
@@ -99,6 +109,7 @@ class ShopController extends Controller
                 'categoryslug' => $category[0]->slug,
                 'categoryname' => $category[0]->name,
                 'allcategories' => $allcategories,
+                'CustomerOrderItems' => $CustomerOrderItems,
             ]);
         }else{
             return view('layouts/product/product')->with([
@@ -109,6 +120,7 @@ class ShopController extends Controller
                 'categoriesForProduct' => $categoriesForProduct,
                 'categoryslug' => $category,
                 'allcategories' => $allcategories,
+                'CustomerOrderItems' => $CustomerOrderItems,
             ]);
         }
         

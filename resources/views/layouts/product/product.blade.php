@@ -814,11 +814,7 @@ $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  '
 	<div id="reviews" class="woocommerce-Reviews">
         <div id="comments">
             <h2 class="woocommerce-Reviews-title">نقد و بررسی ها ({{$reviews->count()}}) دیدگاه</h2>
-            @if(Auth::guard('customer')->check())
-
-
-
-    
+            @if(Auth::guard('customer')->check() && !empty($CustomerOrderItems->id))
             <div id="review_form_wrapper">
                 <div id="review_form">
                     <div id="respond" class="comment-respond">
