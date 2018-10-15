@@ -90,7 +90,6 @@ class CostumerpanelController extends Controller
 
         $customerinfo = Customer::where('id', $request->id)->get();
         $bicustomerinfo = Bicustomer::where('customer_id', $request->id)->get();
-        
         if(!$validatedData->fails()){
 
             if(!empty($request->account_first_name && $request->account_first_name != $bicustomerinfo[0]->firstname)){
@@ -105,10 +104,10 @@ class CostumerpanelController extends Controller
                 $customerinfo[0]->email = $request->account_email;
                 $customerinfo[0]->save();
             }
-            if(!empty($request->password_current && !empty($request->password_1) && !empty($request->password_2) && $request->password_1 == $request->password_2)){            
+            if(!empty($request->password_current && !empty($request->password) && !empty($request->password_confirmation) && $request->password == $request->password_confirmation)){            
                 
                 if(Hash::check($request->password_current, $customerinfo[0]->password) ){
-                    $customerinfo[0]->password = Hash::make($request->password_1);
+                    $customerinfo[0]->password = Hash::make($request->password);
                     $customerinfo[0]->save();
                 }
 

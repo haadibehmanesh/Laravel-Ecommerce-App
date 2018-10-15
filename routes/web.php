@@ -133,8 +133,10 @@ Route::group(['prefix' => 'customer'], function () {
   Route::get('/register', 'CustomerAuth\RegisterController@showRegistrationForm')->name('register');
   Route::post('/register', 'CustomerAuth\RegisterController@register');
 
-  Route::post('/password/email', 'CustomerAuth\ForgotPasswordController@sendResetLinkEmail')->name('password.request');
-  Route::post('/password/reset', 'CustomerAuth\ResetPasswordController@reset')->name('password.email');
+  //Route::post('/password/email', 'CustomerAuth\ForgotPasswordController@sendResetLinkEmail')->name('password.request');
+  Route::post('/password', 'CustomerAuth\ForgotPasswordController@sendResetSms')->name('password.request');
+ // Route::post('/password/reset', 'CustomerAuth\ResetPasswordController@reset')->name('password.email');
+  Route::post('/password/reset', 'CustomerAuth\ForgotPasswordController@passChange')->name('password.change');
   Route::get('/password/reset', 'CustomerAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
   Route::get('/password/reset/{token}', 'CustomerAuth\ResetPasswordController@showResetForm');
 });
