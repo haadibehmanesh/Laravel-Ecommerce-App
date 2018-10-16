@@ -61,6 +61,8 @@
 @media all and (max-width:400px) {
 	#wowslider-container1 .ws_images{
 		border-radius: 10px !important;
+	
+	
 	}
 }
 
@@ -68,7 +70,8 @@
 	position: relative;
 	left:0;
 	top:0;
-	border-radius: 50px ;
+	border-top-left-radius: 40px ;
+	border-bottom-right-radius: 40px ;
 	height:100%;
 	max-height:360px;
 	max-width: 1200px;
@@ -86,11 +89,14 @@
 @media all and (max-width:400px) {
 	#wowslider-container1 img{
 		border-radius: 10px !important;
+		
 	}
 }
 #wowslider-container1 img{
 	max-width: none !important;
-	border-radius: 50px ;
+	border-top-left-radius: 40px ;
+	border-bottom-right-radius: 40px ;
+
 }
 #wowslider-container1 .ws_images .ws_list img,
 #wowslider-container1 .ws_images > div > img{

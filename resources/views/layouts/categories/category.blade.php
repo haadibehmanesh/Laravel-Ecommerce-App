@@ -63,8 +63,8 @@
 
     
 <!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
-<link rel="stylesheet" type="text/css" href="../../engine9/style.css" />
-<script type="text/javascript" src="../../engine9/jquery.js"></script>
+<link rel="stylesheet" type="text/css" href="../../engine1/style.css" />
+<script type="text/javascript" src="../../engine1/jquery.js"></script>
 <!-- End WOWSlider.com HEAD section -->
     <link href="../../wp-content/themes/takhfifat/css/list.css" rel="stylesheet">
     <link href="../../wp-content/themes/takhfifat/css/bootstrap.min.css" rel="stylesheet">
@@ -425,7 +425,7 @@
                 <div class="ajax-slider">
                 @if(!$category->parent_id or empty($featured_product->gallery))
                 <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
-                    <div id="wowslider-container9">
+                    <div id="wowslider-container1">
                         <div class="ws_images">
                             <ul>
                                 @foreach ( $sliderimages as  $sliderimage )
@@ -435,8 +435,8 @@
                     <div class="ws_script" style="position:absolute;left:-99%"></div>
                         <div class="ws_shadow"></div>
                         </div>	
-                        <script type="text/javascript" src="../../engine9/wowslider.js"></script>
-                        <script type="text/javascript" src="../../engine9/script.js"></script>
+                        <script type="text/javascript" src="../../engine1/wowslider.js"></script>
+                        <script type="text/javascript" src="../../engine1/script.js"></script>
                         <!-- End WOWSlider.com BODY section -->
                         @else
                         

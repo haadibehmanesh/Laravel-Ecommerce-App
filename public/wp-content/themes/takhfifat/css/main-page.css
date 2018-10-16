@@ -440,11 +440,9 @@ img, .figure img, .page-deal #dealProperty .modal-body .dealProp.done img {
     color: transparent!important;
 }
 
-img {
+.main-row img {
     vertical-align: middle;
     width: 100%;
-}
-img {
     border: 0;
     border-radius: 10px;
 }
