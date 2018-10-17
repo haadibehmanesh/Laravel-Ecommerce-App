@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>
-            بازیابی رمز ورود</title>
+        حساب کاربری من</title>
         <link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">
 
 		<style type="text/css">
@@ -270,7 +270,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
     <section id="wrapper">
     <div class="container">
         <div class="row">
-            <ol class="breadcrumb"><a href="/">خانه</a> / بازیابی رمز ورود</ol>            <div class="post-content-page">
+            <ol class="breadcrumb"><a href="/">خانه</a> / حساب کاربری من</ol>            <div class="post-content-page">
                             
         <!--title & discount & views-->
         <div class="title_post">
