@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fa_IR">
         <head>
@@ -9,24 +8,8 @@
                 <title>
                     حساب کاربری من    </title>
                     <link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">
-                    <script type="text/javascript">
-                        window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.6"}};
-                        !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
-                    </script>
-                    <style type="text/css">
-            img.wp-smiley,
-            img.emoji {
-                display: inline !important;
-                border: none !important;
-                box-shadow: none !important;
-                height: 1em !important;
-                width: 1em !important;
-                margin: 0 .07em !important;
-                vertical-align: -0.1em !important;
-                background: none !important;
-                padding: 0 !important;
-            }
-            </style>
+                   
+            
             <link rel='stylesheet' id='validate-engine-css-css'  href='../wp-content/plugins/wysija-newsletters/css/validationEngine.jquery4dc3.css?ver=2.8.2' type='text/css' media='all' />
             <link rel='stylesheet' id='select2-css'  href='../wp-content/plugins/woocommerce/assets/css/select26765.css?ver=3.3.3' type='text/css' media='all' />
             <link rel='stylesheet' id='woocommerce-layout-rtl-css'  href='../wp-content/plugins/woocommerce/assets/css/woocommerce-layout-rtl6765.css?ver=3.3.3' type='text/css' media='all' />
@@ -44,28 +27,8 @@
           
             <script type='text/javascript' src='../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
             <script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
-            <script type='text/javascript'>
-            /* <![CDATA[ */
-            var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/zxcvbn.min.js"};
-            /* ]]> */
-            </script>
-            <script type='text/javascript' src='../wp-includes/js/zxcvbn-async.min5152.js?ver=1.0'></script>
-            <script type='text/javascript' src='http://maps.google.com/maps/api/js?key=AIzaSyCKCtow0jeZibeqGsBXNsKwQxm5N8TwbRE&amp;ver=4.9.6'></script>
-            <!--[if lt IE 8]>
-            <script type='text/javascript' src='http://localhost/takhfiftest/wp-includes/js/json2.min.js?ver=2015-05-03'></script>
-            <![endif]-->
             <script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/accounting/accounting.minaffb.js?ver=0.4.2'></script>
             <script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/jquery-serializejson/jquery.serializejson.minc141.js?ver=2.6.1'></script>
-            <link rel='https://api.w.org/' href='../wp-json/index.html' />
-            <link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.php?rsd" />
-            <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../wp-includes/wlwmanifest.xml" /> 
-            <meta name="generator" content="WordPress 4.9.6" />
-            <meta name="generator" content="WooCommerce 3.3.3" />
-            <link rel="canonical" href="index.html" />
-            <link rel='shortlink' href='../index64b4.html?p=10' />
-            <link rel="alternate" type="application/json+oembed" href="../wp-json/oembed/1.0/embedafc8.json?url=http%3A%2F%2Flocalhost%2Ftakhfiftest%2Fmy-account%2F" />
-            <link rel="alternate" type="text/xml+oembed" href="../wp-json/oembed/1.0/embedfda5?url=http%3A%2F%2Flocalhost%2Ftakhfiftest%2Fmy-account%2F&amp;format=xml" />
-                <noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
                 <meta name='robots' content='noindex,follow' />
             <style type="text/css">/** Mega Menu CSS Disabled **/</style>
                 <!-- Bootstrap -->
@@ -73,69 +36,6 @@
                 <link href="../wp-content/themes/takhfifat/css/bootstrap-rtl.css" rel="stylesheet">
                 <link href="../wp-content/themes/takhfifat/css/font-awesome.css" rel="stylesheet">
                 <link href="../wp-content/themes/takhfifat/stylefc99.css?ver=2.6" rel="stylesheet">
-            
-                <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-                <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-                <!--[if lt IE 9]>
-                <script src="http://localhost/takhfiftest/wp-content/themes/takhfifat/js/html5shiv.min.js"></script>
-                <script src="http://localhost/takhfiftest/wp-content/themes/takhfifat/js/respond.min.js"></script>
-                <![endif]-->
-            
-                    {{--        <style>
-                span.price del:before{ content:'قیمت: '; }
-                span.price ins:before{ content:'با تخفیف: '; }
-                        .phone,
-                input[type="submit"], input[type="button"], button,
-                .nav-tabs>li.active>a .fa, .nav-tabs>li.active>a:focus .fa, .nav-tabs>li.active>a:hover .fa,
-                .eye_buy a,
-                .price span.with_discount,
-                .title_post span.like,
-                .block_gallery .content_item .Slogan span,
-                .content_item .Discount:before,
-                .box_offer .Discount:before,
-                .box_offer .price del,
-                .title_post .Discount:before,
-                span.number_items_cart,
-                p.buttons a,
-                .wc-proceed-to-checkout .checkout-button,
-                .woocommerce a.remove:hover,
-                .post-content input[type="submit"],
-                input[type="submit"].dokan-btn-theme, a.dokan-btn-theme, .dokan-btn-theme
-                {
-                    background-color:#ff5a5f !important;
-                }
-                .box_offer .price del:after{
-                    border-right-color: #ff5a5f;
-                }
-                input[type="submit"]:hover, input[type="button"]:hover, button:hover,
-                .eye_buy a:hover,
-                {
-                    background-color:#ff5a5f	}
-                .content_item > span a .fa,
-                .box_single .title_block span,
-                .option_item_gallery span.address .fa,
-                .item_terms_use p .fa,
-                .box_offer span.address i,
-                .cart_list.product_list_widget li.mini_cart_item a.remove,
-                .woocommerce a.remove,
-                .label_map
-                {
-                    color:#ff5a5f !important
-                }
-                .top_header,
-                .title_post span.like:before,
-                .top_header, 
-                .title_post span.like:before, 
-                .nav-tabs>li.active>a, 
-                .nav-tabs>li.active>a:hover,
-                .title_post,
-                .phone,
-                .label_map,
-                .post-content input[type="submit"],
-                input[type="submit"].dokan-btn-theme, a.dokan-btn-theme, .dokan-btn-theme
-                {
-                    border-color:#ff5a5f	}	
-                    </style>--}}
                 <script src="../wp-content/themes/takhfifat/js/parsinumber.min.js"></script>
                 <script>
                 function toPersianNum( num, dontTrim ) {
@@ -157,31 +57,30 @@
                 }
                 </script>
                 <meta name="csrf-token" content="{{ csrf_token() }}">
-                   <script>
-                    jQuery(document).ready(function(){
-                        jQuery('.check_code_offer').click(function(){
-                            jQuery('.result_ajax').html('لطفا صبر کنید');
-                            var code_used_count = jQuery('.code_used_count').val();
-                            var code_offer = jQuery('.code_offer').val() ;
-                            jQuery.ajax({
-                                headers: {
-                                    'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
-                                },
-                                type:'POST',
-                                url:'/ajax/codeValidation',
-                                data:{
-                                    code_used_count : code_used_count , 
-                                    code_offer : code_offer                                    
-                            }}).done(function(data){
-                
-                                jQuery('.result_ajax').html(data);
+                <script>
+                 jQuery(document).ready(function(){
+                     jQuery('.check_code_offer').click(function(){
+                         jQuery('.result_ajax').html('لطفا صبر کنید...');
+                         var code_offer = jQuery('.code_offer').val() ;
+                         jQuery.ajax({
+                             headers: {
+                                 'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+                             },
+                             type:'POST',
+                             url:'/ajax/couponshow',
+                             data:{
+                                 code_offer : code_offer                                    
+                         }}).done(function(data){
+             
+                             jQuery('.result_ajax').html(data);
 
 
-                            });
-                        });
-                    });
-
-                    
+                         });
+                     });
+                 });
+                </script>
+                  
+                    <script>
 function products(e){
     e.preventDefault();
 
@@ -457,14 +356,7 @@ jQuery.ajax({
 
 
 
-<script type="text/javascript">
-    jQuery(function($) {
-        var order_stats = [{"value":7,"color":"#73a724"},{"value":0,"color":"#999"},{"value":6,"color":"#21759b"},{"value":0,"color":"#d54e21"},{"value":0,"color":"#e6db55"},{"value":0,"color":"#f0ad4e"}];
 
-        var ctx = $("#order-stats").get(0).getContext("2d");
-        new Chart(ctx).Doughnut(order_stats);
-    });
-</script>
 
 
 
@@ -476,135 +368,20 @@ jQuery.ajax({
                     <div class="dashboard-widget">
         <div class="widget-title">معتبر سازی کد تخفیف</div>
         <p>برای اطمینان از صحت خرید مشتری ، تعداد بن مصرف شده و کد تخفیفی که مشتریان شما برای گرفتن خدمات به شما ارائه می نمایند را در اینجا چک بفرمائید.</p>
-        <div style="padding:10px">
-            <label>تعداد:<br><input style="width:100%;box-sizing:border-box" type="number" name="code_used_count" class="code_used_count" /></label><br />
-            <label>کد تخفیف:<br><input style="width:100%;box-sizing:border-box" type="number" name="code_offer" class="code_offer" /></label><br>
-            <input type="button" class="check_code_offer" value="اعمال">
+        <div style="padding:10px">{{--
+            <label>تعداد:<br><input style="width:100%;box-sizing:border-box" type="number" name="code_used_count" class="code_used_count" /></label><br />--}}
+            <label>کد تخفیف:<br><input style="width:100%;box-sizing:border-box" type="text" name="code_offer" class="code_offer" /></label><br>
+            <input type="button" class="check_code_offer" value="اعتبار سنجی">
 			<div class="clear"></div>
 			<br><br>
-            <div class="result_ajax" style="width:100%"></div>
+            
 			<br>
         </div>
     </div>
+    <div class="result_ajax" style="width:100%"></div>
  
 
-<div class="dashboard-widget sells-graph">
-    <div class="widget-title"><i class="fa fa-credit-card"></i> فروش این ماه</div>
-
-        <div class="chart-container">
-        <div class="chart-placeholder main" style="width: 100%; height: 350px;"></div>
-    </div>
-
-    <script type="text/javascript">
-        jQuery(function($) {
-
-            var order_data = jQuery.parseJSON( '{"order_counts":[["1533065400000",0],["1533151800000",0],["1533238200000",0],["1533324600000",0],["1533411000000",0],["1533497400000",0],["1533583800000",0],["1533670200000",0],["1533756600000",0],["1533843000000",0]],"order_amounts":[["1533065400000",0],["1533151800000",0],["1533238200000",0],["1533324600000",0],["1533411000000",0],["1533497400000",0],["1533583800000",0],["1533670200000",0],["1533756600000",0],["1533843000000",0]]}' );
-            var isRtl = '1';
-            var series = [
-                {
-                    label: "فروش کلی",
-                    data: order_data.order_amounts,
-                    shadowSize: 0,
-                    hoverable: true,
-                    points: { show: true, radius: 5, lineWidth: 1, fillColor: '#fff', fill: true },
-                    lines: { show: true, lineWidth: 2, fill: false },
-                    shadowSize: 0,
-                    prepend_tooltip: "&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;"
-                },
-                {
-                    label: "تعداد سفارشات",
-                    data: order_data.order_counts,
-                    shadowSize: 0,
-                    hoverable: true,
-                    points: { show: true, radius: 5, lineWidth: 2, fillColor: '#fff', fill: true },
-                    lines: { show: true, lineWidth: 3, fill: false },
-                    shadowSize: 0,
-                    append_tooltip: " فروش‌ها"
-                },
-            ];
-
-            var main_chart = jQuery.plot(
-                jQuery('.chart-placeholder.main'),
-                series,
-                {
-                    legend: {
-                        show: true,
-                        position: 'nw'
-                    },
-                    series: {
-                        lines: { show: true, lineWidth: 4, fill: false },
-                        points: { show: true }
-                    },
-                    grid: {
-                        borderColor: '#eee',
-                        color: '#aaa',
-                        borderWidth: 1,
-                        hoverable: true,
-                        show: true,
-                        aboveData: false,
-                    },
-                    xaxis: {
-                        color: '#aaa',
-                        position: "bottom",
-                        tickColor: 'transparent',
-                        mode: "time",
-                        timeformat: "%d %b",
-                        monthNames: ["\u0698\u0627\u0646\u0648\u06cc\u0647","\u0641\u0648\u0631\u06cc\u0647","\u0645\u0627\u0631\u0633","\u0622\u0648\u0631\u06cc\u0644","\u0645\u0647","\u0698\u0648\u0626\u0646","\u062c\u0648\u0644\u0627\u06cc","\u0622\u06af\u0648\u0633\u062a","\u0633\u067e\u062a\u0627\u0645\u0628\u0631","\u0627\u06a9\u062a\u0628\u0631","\u0646\u0648\u0627\u0645\u0628\u0631","\u062f\u0633\u0627\u0645\u0628\u0631"],
-                        tickLength: 1,
-                        minTickSize: [1, "day"],
-                        font: {
-                            color: "#aaa"
-                        },
-                        transform: function (v) { return ( isRtl == '1' ) ? -v : v; },
-                        inverseTransform: function (v) { return ( isRtl == '1' ) ? -v : v; }
-                    },
-                    yaxes: [
-                        {
-                            position: ( isRtl == '1' ) ? "right" : "left",
-                            min: 0,
-                            minTickSize: 1,
-                            tickDecimals: 0,
-                            color: '#d4d9dc',
-                            font: { color: "#aaa" }
-                        },
-                        {
-                            position: ( isRtl == '1' ) ? "right" : "left",
-                            min: 0,
-                            tickDecimals: 2,
-                            alignTicksWithAxis: 1,
-                            color: 'transparent',
-                            font: { color: "#aaa" }
-                        }
-                    ],
-                    colors: ["#3498db", "#1abc9c"]
-                }
-            );
-
-            jQuery('.chart-placeholder').resize();
-        });
-
-    </script>
-    </div> <!-- .sells-graph --> <div class="dashboard-widget dokan-announcement-widget">
-    <div class="widget-title">
-        <i class="fa fa-bullhorn" aria-hidden="true"></i> جدیدترین اعلان
-        <span class="pull-right">
-            <a href="#">مشاهده‌ی همه</a>
-        </span>
-    </div>
-                <ul class="list-unstyled">
-                                            <li>
-                    <div class="dokan-dashboard-announce-content dokan-left">
-                        <a href="#"><h3>اطلاعیه شماره یک</h3></a>
-                        سیب                    </div>
-                    <div class="dokan-dashboard-announce-date dokan-right dokan-dashboard-announce-read">
-                        <div class="announce-day">19</div>
-                        <div class="announce-month">Thursday</div>
-                        <div class="announce-year">2018</div>
-                    </div>
-                    <div class="dokan-clearfix"></div>
-                </li>
-                    </ul>
-    </div> <!-- .products -->
+ <!-- .products -->
 
             </div>
 
@@ -630,10 +407,6 @@ jQuery.ajax({
     </div>
     @endif
 @endif
-<script>
-        var first_html = jQuery('.dokan-withdraw-content .dokan-alert-warning').html().replace('Minimum Withdraw amount: ', 'حداقل موجودی لازم برای درخواست برداشت: ');
-        jQuery('.dokan-withdraw-content .dokan-alert-warning').html(first_html);
-        </script>
         <!--social &  Subscription-->
         <section id="social">
             <div class="container">
@@ -754,61 +527,23 @@ jQuery.ajax({
     <script src="../wp-content/themes/takhfifat/js/bootstrap.min.js"></script>
     <script src="../wp-content/themes/takhfifat/js/jquery.countdownTimer.js"></script>
     <script src="../wp-content/themes/takhfifat/js/custom.js"></script>
-    <script type="application/ld+json">{"@context":"https:\/\/schema.org\/","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":"1","item":{"name":"\u062e\u0627\u0646\u0647","@id":"http:\/\/localhost\/takhfiftest"}},{"@type":"ListItem","position":"2","item":{"name":"\u062d\u0633\u0627\u0628 \u06a9\u0627\u0631\u0628\u0631\u06cc \u0645\u0646"}}]}</script><script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/selectWoo/selectWoo.full.min20b9.js?ver=1.0.2'></script>
-    <script type='text/javascript'>
-    /* <![CDATA[ */
-    var pwsL10n = {"unknown":"\u0642\u062f\u0631\u062a \u0631\u0645\u0632 \u0646\u0627\u0645\u0634\u062e\u0635","short":"\u0628\u0633\u06cc\u0627\u0631 \u0633\u0633\u062a","bad":"\u0633\u0633\u062a","good":"\u0645\u062a\u0648\u0633\u0637","strong":"\u0642\u0648\u06cc","mismatch":"\u0646\u0627\u0647\u0645\u0633\u0627\u0646"};
-    /* ]]> */
-    </script>
-    <script type='text/javascript' src='../wp-admin/js/password-strength-meter.min1845.js?ver=4.9.6'></script>
-    <script type='text/javascript'>
-    /* <![CDATA[ */
-    var wc_password_strength_meter_params = {"min_password_strength":"3","i18n_password_error":"\u0644\u0637\u0641\u0627 \u06cc\u06a9 \u06af\u0630\u0631\u0648\u0627\u0698\u0647 \u0642\u0648\u06cc \u062a\u0631 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f .","i18n_password_hint":"\u0631\u0627\u0647\u0646\u0645\u0627\u06cc\u06cc: \u0631\u0645\u0632 \u0628\u0627\u06cc\u062f \u062f\u0633\u062a\u06a9\u0645 \u06f7 \u062d\u0631\u0641 \u0628\u0627\u0634\u062f. \u0628\u0631\u0627\u06cc \u0642\u0648\u06cc\u200c\u062a\u0631 \u06a9\u0631\u062f\u0646 \u0622\u0646\u060c \u0627\u0632 \u062d\u0631\u0648\u0641 \u06a9\u0648\u0686\u06a9 \u0648 \u0628\u0632\u0631\u06af \u0627\u0646\u06af\u0644\u06cc\u0633\u06cc\u060c \u0627\u0639\u062f\u0627\u062f \u0648 \u0646\u0645\u0627\u062f\u0647\u0627\u06cc\u06cc \u0645\u0627\u0646\u0646\u062f ! \" \u061f $ % ^ & ) \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646\u06cc\u062f."};
-    /* ]]> */
-    </script>
-    <script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/frontend/password-strength-meter.min6765.js?ver=3.3.3'></script>
+    
     <script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min44fd.js?ver=2.70'></script>
     <script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min6b25.js?ver=2.1.4'></script>
-    <script type='text/javascript'>
-    /* <![CDATA[ */
-    var woocommerce_params = {"ajax_url":"\/takhfiftest\/wp-admin\/admin-ajax.php","wc_ajax_url":"http:\/\/localhost\/takhfiftest\/?wc-ajax=%%endpoint%%"};
-    /* ]]> */
-    </script>
+    
     <script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min6765.js?ver=3.3.3'></script>
-    <script type='text/javascript'>
-    /* <![CDATA[ */
-    var wc_cart_fragments_params = {"ajax_url":"\/takhfiftest\/wp-admin\/admin-ajax.php","wc_ajax_url":"http:\/\/localhost\/takhfiftest\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_8a522b5bd2b8fa51ec6fe90baf0301d6","fragment_name":"wc_fragments_8a522b5bd2b8fa51ec6fe90baf0301d6"};
-    /* ]]> */
-    </script>
+    
     <script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min6765.js?ver=3.3.3'></script>
     <script type='text/javascript' src='../wp-includes/js/jquery/ui/core.mine899.js?ver=1.11.4'></script>
     <script type='text/javascript' src='../wp-includes/js/jquery/ui/widget.mine899.js?ver=1.11.4'></script>
     <script type='text/javascript' src='../wp-includes/js/jquery/ui/mouse.mine899.js?ver=1.11.4'></script>
     <script type='text/javascript' src='../wp-includes/js/jquery/ui/sortable.mine899.js?ver=1.11.4'></script>
     <script type='text/javascript' src='../wp-includes/js/jquery/ui/datepicker.mine899.js?ver=1.11.4'></script>
-    <script type='text/javascript'>
-    jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"\u0628\u0633\u062a\u0646","currentText":"\u0627\u0645\u0631\u0648\u0632","monthNames":["\u0698\u0627\u0646\u0648\u06cc\u0647","\u0641\u0648\u0631\u06cc\u0647","\u0645\u0627\u0631\u0633","\u0622\u0648\u0631\u06cc\u0644","\u0645\u06cc","\u0698\u0648\u0626\u0646","\u062c\u0648\u0644\u0627\u06cc","\u0622\u06af\u0648\u0633\u062a","\u0633\u067e\u062a\u0627\u0645\u0628\u0631","\u0627\u06a9\u062a\u0628\u0631","\u0646\u0648\u0627\u0645\u0628\u0631","\u062f\u0633\u0627\u0645\u0628\u0631"],"monthNamesShort":["\u0698\u0627\u0646\u0648\u06cc\u0647","\u0641\u0648\u0631\u06cc\u0647","\u0645\u0627\u0631\u0633","\u0622\u0648\u0631\u06cc\u0644","\u0645\u0647","\u0698\u0648\u0626\u0646","\u062c\u0648\u0644\u0627\u06cc","\u0622\u06af\u0648\u0633\u062a","\u0633\u067e\u062a\u0627\u0645\u0628\u0631","\u0627\u06a9\u062a\u0628\u0631","\u0646\u0648\u0627\u0645\u0628\u0631","\u062f\u0633\u0627\u0645\u0628\u0631"],"nextText":"\u0628\u0639\u062f","prevText":"\u0642\u0628\u0644\u06cc","dayNames":["\u06cc\u06a9\u0634\u0646\u0628\u0647","\u062f\u0648\u0634\u0646\u0628\u0647","\u0633\u0647 \u0634\u0646\u0628\u0647","\u0686\u0647\u0627\u0631 \u0634\u0646\u0628\u0647","\u067e\u0646\u062c\u0634\u0646\u0628\u0647","\u062c\u0645\u0639\u0647","\u0634\u0646\u0628\u0647"],"dayNamesShort":["\u06cc\u06a9","\u062f\u0648","\u0633\u0647","\u0686\u0647\u0627\u0631","\u067e\u0646\u062c","\u062c\u0645\u0639\u0647","\u0634\u0646\u0628\u0647"],"dayNamesMin":["\u06cc","\u062f","\u0633","\u0686","\u067e","\u062c","\u0634"],"dateFormat":"d MM yy","firstDay":6,"isRTL":true});});
-    </script>
-    <script type='text/javascript' src='../wp-content/plugins/dokan-lite/assets/vendors/tooltips/tooltipsb246.js?ver=2.7.8'></script>
-    <script type='text/javascript' src='../wp-content/plugins/dokan-lite/assets/vendors/chosen/chosen.jquery.minb246.js?ver=2.7.8'></script>
-    <script type='text/javascript'>
-    /* <![CDATA[ */
-    var DokanValidateMsg = {"required":"\u0627\u06cc\u0646 \u0641\u06cc\u0644\u062f \u0627\u0644\u0632\u0627\u0645\u06cc \u0627\u0633\u062a","remote":"\u0644\u0637\u0641\u0627 \u0627\u06cc\u0646 \u0641\u06cc\u0644\u062f \u0631\u0627 \u062f\u0631\u0633\u062a \u06a9\u0646\u06cc\u062f.","email":"\u0644\u0637\u0641\u0627 \u06cc\u06a9 \u0622\u062f\u0631\u0633 \u0627\u06cc\u0645\u06cc\u0644 \u0645\u0639\u062a\u0628\u0631 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","url":"\u0644\u0637\u0641\u0627 \u06cc\u06a9 \u0646\u0634\u0627\u0646\u06cc \u0645\u0639\u062a\u0628\u0631 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","date":"\u0644\u0637\u0641\u0627 \u06cc\u06a9 \u062a\u0627\u0631\u06cc\u062e \u0645\u0639\u062a\u0628\u0631 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","dateISO":"\u0644\u0637\u0641\u0627 \u06cc\u06a9 \u062a\u0627\u0631\u06cc\u062e \u0645\u0639\u062a\u0628\u0631 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f (ISO).","number":"\u0644\u0637\u0641\u0627 \u06cc\u06a9 \u0634\u0645\u0627\u0631\u0647 \u06cc \u0645\u0639\u062a\u0628\u0631 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","digits":"\u0644\u0637\u0641\u0627 \u0641\u0642\u0637 \u0627\u0631\u0642\u0627\u0645 \u0631\u0627 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","creditcard":"\u0644\u0637\u0641\u0627 \u0634\u0645\u0627\u0631\u0647 \u06a9\u0627\u0631\u062a \u0627\u0639\u062a\u0628\u0627\u0631\u06cc \u0645\u0639\u062a\u0628\u0631\u06cc \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","equalTo":"\u0644\u0637\u0641\u0627 \u0647\u0645\u0627\u0646 \u0645\u0642\u062f\u0627\u0631 \u0631\u0627 \u062f\u0648\u0628\u0627\u0631\u0647 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","maxlength_msg":"\u0644\u0637\u0641\u0627 \u0628\u06cc\u0634\u062a\u0631 \u0627\u0632 {0} \u06a9\u0627\u0631\u0627\u06a9\u062a\u0631 \u0648\u0627\u0631\u062f \u0646\u06a9\u0646\u06cc\u062f.","minlength_msg":"\u0644\u0637\u0641\u0627 \u062d\u062f\u0627\u0642\u0644 {0} \u06a9\u0627\u0631\u0627\u06a9\u062a\u0631 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","rangelength_msg":"\u0644\u0637\u0641\u0627 \u0645\u0642\u062f\u0627\u0631\u06cc \u0628\u06cc\u0646 {0} \u0648 {1} \u06a9\u0627\u0631\u0627\u06a9\u062a\u0631 \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","range_msg":"\u0644\u0637\u0641\u0627 \u0645\u0642\u062f\u0627\u0631\u06cc \u0628\u06cc\u0646 {0} \u0648 {1} \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","max_msg":"\u0644\u0637\u0641\u0627 \u0645\u0642\u062f\u0627\u0631\u06cc \u06a9\u0645\u062a\u0631 \u0627\u0632 \u06cc\u0627 \u0645\u0633\u0627\u0648\u06cc \u0628\u0627 {0} \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f.","min_msg":"\u0644\u0637\u0641\u0627 \u0645\u0642\u062f\u0627\u0631\u06cc \u0628\u06cc\u0634\u062a\u0631 \u0627\u0632 \u0648 \u06cc\u0627 \u0645\u0633\u0627\u0648\u06cc \u0628\u0627 {0} \u0648\u0627\u0631\u062f \u06a9\u0646\u06cc\u062f."};
-    /* ]]> */
-    </script>
+    
     <script type='text/javascript' src='../wp-content/plugins/dokan-lite/assets/vendors/form-validate/form-validateb246.js?ver=2.7.8'></script>
     <script type='text/javascript' src='../wp-content/plugins/dokan-lite/assets/js/speakingurl.minb246.js?ver=2.7.8'></script>
     <script type='text/javascript' src='../wp-includes/js/imgareaselect/jquery.imgareaselect.min1845.js?ver=4.9.6'></script>
-    <script type='text/javascript' src='../wp-includes/js/underscore.min4511.js?ver=1.8.3'></script>
-    <script type='text/javascript' src='../wp-includes/js/customize-base.min1845.js?ver=4.9.6'></script>
-    <script type='text/javascript' src='../wp-includes/js/backbone.min9632.js?ver=1.2.3'></script>
-    <script type='text/javascript' src='../wp-includes/js/customize-modelsb246.js?ver=2.7.8'></script>
-    <script type='text/javascript'>
-    /* <![CDATA[ */
-    var dokan_refund = {"mon_decimal_point":".","remove_item_notice":"\u0622\u06cc\u0627 \u0627\u0632 \u062d\u0630\u0641 \u0627\u0642\u0644\u0627\u0645 \u0627\u0646\u062a\u062e\u0627\u0628 \u0634\u062f\u0647 \u0645\u0637\u0645\u0626\u0646\u06cc\u062f\u061f \u0627\u06af\u0631 \u0642\u0628\u0644\u0627 \u0645\u0648\u062c\u0648\u062f\u06cc \u0627\u06cc\u0646 \u0642\u0644\u0645 \u0631\u0627 \u06a9\u0627\u0647\u0634 \u062f\u0627\u062f\u0647\u200c\u0627\u06cc\u062f \u06cc\u0627 \u0627\u06cc\u0646 \u0633\u0641\u0627\u0631\u0634 \u062a\u0648\u0633\u0637 \u06cc\u06a9 \u0645\u0634\u062a\u0631\u06cc \u062b\u0628\u062a \u0634\u062f\u0647\u060c \u0628\u0627\u06cc\u062f \u0628\u0647 \u0635\u0648\u0631\u062a \u062f\u0633\u062a\u06cc \u0645\u0648\u062c\u0648\u062f\u06cc \u0642\u0644\u0645 \u0631\u0627 \u0628\u0627\u0632\u06af\u0631\u062f\u0627\u0646\u06cc \u06a9\u0646\u06cc\u062f.","i18n_select_items":"\u0644\u0637\u0641\u0627 \u0627\u0642\u0644\u0627\u0645\u06cc \u0631\u0627 \u0627\u0646\u062a\u062e\u0627\u0628 \u06a9\u0646\u06cc\u062f.","i18n_do_refund":"\u0622\u06cc\u0627 \u0627\u0632 \u067e\u0631\u062f\u0627\u0632\u0634 \u0627\u06cc\u0646 \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u0628\u0627\u0632\u067e\u0631\u062f\u0627\u062e\u062a \u0645\u0637\u0645\u0626\u0646\u06cc\u062f\u061f \u0627\u06cc\u0646 \u06a9\u0627\u0631 \u0642\u0627\u0628\u0644 \u0628\u0631\u06af\u0634\u062a \u0646\u0645\u06cc\u0628\u0627\u0634\u062f.","i18n_delete_refund":"\u0622\u06cc\u0627 \u0627\u0632 \u062d\u0630\u0641 \u0627\u06cc\u0646 \u0628\u0627\u0632\u067e\u0631\u062f\u0627\u062e\u062a \u0645\u0637\u0645\u0626\u0646\u06cc\u062f\u061f \u0627\u06cc\u0646 \u06a9\u0627\u0631 \u0642\u0627\u0628\u0644 \u0628\u0631\u06af\u0634\u062a \u0646\u0645\u06cc\u0628\u0627\u0634\u062f.","remove_item_meta":"\u062d\u0630\u0641 \u0645\u062a\u0627\u06cc \u0627\u06cc\u0646 \u0645\u0648\u0627\u0631\u062f\u061f","ajax_url":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.php","order_item_nonce":"2f64292964","post_id":"","currency_format_num_decimals":"0","currency_format_symbol":"\u062a\u0648\u0645\u0627\u0646","currency_format_decimal_sep":".","currency_format_thousand_sep":",","currency_format":"%v\u00a0%s","rounding_precision":"6"};
-    /* ]]> */
-    </script>
-    <script type='text/javascript' src='../wp-content/plugins/dokan-lite/assets/js/dokanb246.js?ver=2.7.8'></script>
+    
     <script type='text/javascript' src='../wp-content/plugins/dokan-lite/assets/vendors/select2/select2.full.minb246.js?ver=2.7.8'></script>
     <script type='text/javascript' src='../wp-content/plugins/dokan-pro/assets/js/dokan-pro.js'></script>
     <script type='text/javascript' src='../wp-includes/js/hoverIntent.minc245.js?ver=1.8.1'></script>
@@ -822,12 +557,7 @@ jQuery.ajax({
     <script type='text/javascript' src='../wp-includes/js/comment-reply.min1845.js?ver=4.9.6'></script>
     <script type='text/javascript' src='../wp-content/plugins/wysija-newsletters/js/validate/languages/jquery.validationEngine-fa4dc3.js?ver=2.8.2'></script>
     <script type='text/javascript' src='../wp-content/plugins/wysija-newsletters/js/validate/jquery.validationEngine4dc3.js?ver=2.8.2'></script>
-    <script type='text/javascript'>
-    /* <![CDATA[ */
-    var wysijaAJAX = {"action":"wysija_ajax","controller":"subscribers","ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.php","loadingTrans":"\u062f\u0631 \u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc...","is_rtl":"1"};
-    /* ]]> */
-    </script>
-    <script type='text/javascript' src='../wp-content/plugins/wysija-newsletters/js/front-subscribers4dc3.js?ver=2.8.2'></script>
+    
     <script type="text/javascript">
     jQuery(document).ready(function(){
         jQuery('.container').persiaNumber();

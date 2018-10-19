@@ -108,6 +108,7 @@ Route::post('/my-account/editprofile/{id}', 'CostumerpanelController@editprofile
 
 Route::get('/dashboard', 'MerchantpanelController@index')->name('merchantpanel.index');
 Route::post('/ajax/codeValidation', 'AjaxController@codeValidation')->name('merchantpanel.codeValidation');
+Route::post('/ajax/couponshow', 'AjaxController@couponShow')->name('merchantpanel.couponShow');
 Route::get('/dashboard/orders', 'MerchantpanelController@orders')->name('merchantpanel.orders');
 Route::any('/dashboard/products', 'MerchantpanelController@products')->name('merchantpanel.products');
 Route::get('/dashboard/editaccount', 'MerchantpanelController@edit')->name('merchantpanel.edit');

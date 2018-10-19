@@ -102,8 +102,9 @@ class MerchantpanelController extends Controller
     
     public function products(Request $request)
     {
-        $merchant_id = Auth::guard('customer')->user()->id;
-        $products = BiProduct::where('bi_merchant_id', $merchant_id)->orderBy('id', 'desc')->get();
+        $customer_id = Auth::guard('customer')->user()->id;
+        $merchant = BiMerchant::where('customer_id',$customer_id)->first();
+        $products = BiProduct::where('bi_merchant_id', $merchant->id)->orderBy('id', 'desc')->get();
         return view('layouts/dashboard/ajax-merchant-products')->with('products', $products)->render();
     }
 

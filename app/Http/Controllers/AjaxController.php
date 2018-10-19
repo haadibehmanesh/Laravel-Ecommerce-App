@@ -122,14 +122,59 @@ class AjaxController extends Controller {
         ])->render();
         
     }
+    public function couponShow(Request $request){
 
-    public function codeValidation(Request $request){
         $messages = [
-            'required' => 'پر کردن این فیلد اجباری است!',
+            'required' => 'پر کردن فیلد کد تخفیف اجباری است!',
+            'numeric' => 'کد تخفیف باید عدد باشد!',
+            'digits_between' => ' ارقام کد تخفیف باید بین 1 تا 9 باشد!',
+            'not_in' => ' ارقام کد تخفیف باید بین 1 تا 9 باشد!',
+            'min' => 'کد تخفیف باید حداقل 8 رقم داشته باشد!',
         ];
         $validatedData = Validator::make($request->all(), [
-            'code_used_count' => 'numeric|required|min:1|digits_between: 1,9',
-            'code_offer' => 'numeric|required|digits_between: 1,9',
+            'code_offer' => 'required|min:8|integer|digits_between: 1,9|not_in:0',
+        ],$messages);
+        if(!$validatedData->fails()){
+            $id = Auth::guard('customer')->user()->bimerchant()->first()->id;
+            $order_item = BiOrderItem::where('code', $request->code_offer)->with(['product.bimerchant'])->first();
+            if($order_item){       
+                $merchant_id = $order_item->product->bimerchant->id;
+              
+                if(!empty($merchant_id) && $merchant_id !='0' && $merchant_id == $id ){
+                    return view('layouts/dashboard/ajax-merchant-bon')->with([
+                        'item' => $order_item         
+                    ])->render();
+                }else{
+                    $errors = $validatedData->errors()->add('notmatch', 'کاربر گرامی شما مجاز به ابطال این کد تخفیف نیستید!');
+                    return view('layouts/dashboard/ajax-merchant-bon')->with([
+                        'errors' => $errors
+                    ])->render();        
+                }
+            }else{
+                $errors = $validatedData->errors()->add('notmatch', 'کاربر گرامی شما مجاز به ابطال این کد تخفیف نیستید!');
+                return view('layouts/dashboard/ajax-merchant-bon')->with([
+                    'errors' => $errors
+                ])->render();        
+            }
+        }else{
+            $errors = $validatedData->errors();
+           
+            return view('layouts/dashboard/ajax-merchant-bon')->with([
+                'errors' => $errors
+            ])->render();
+        }
+
+    }
+    public function codeValidation(Request $request){
+    
+        $messages = [
+            'required' => 'پر کردن فیلد تعداد مصرف فعلی، اجباری است!',
+            'not_in' => 'تعداد مصرف فعلی نمی تواند 0 باشد!',
+            'min' => 'تعداد مصرف فعلی، باید حداقل 1 رقم داشته باشد!',
+            'integer' => 'تعداد بایستی به صورت عددی باشد!',
+        ];
+        $validatedData = Validator::make($request->all(), [
+            'code_used_count' => 'required|min:1|integer|not_in:0',
         ],$messages);
         if(!$validatedData->fails()){
             $id = Auth::guard('customer')->user()->bimerchant()->first()->id;
@@ -138,21 +183,19 @@ class AjaxController extends Controller {
             if($order_item){           
                 $merchant_id = $order_item->product->bimerchant->id;
                 if(!empty($merchant_id) && $merchant_id !='0' && $merchant_id == $id ){
-        
                     $order_item_quantity = $order_item->quantity;
                     $order_item_quantity_used = $order_item->code_used_count;
-        
-                    if($request->code_used_count + $order_item_quantity_used <= $order_item_quantity ){
+                    if(!empty($request->code_used_count) && $request->code_used_count + $order_item_quantity_used <= $order_item_quantity ){
                         $order_item->code_used_count += $request->code_used_count;
         
                         $order_item->save();
                         $message = '<p class="alert alert-success">
-                        کد تخفیف با موفقیت تایید شد!
+                        کد تخفیف با موفقیت ابطال شد!
                         </p>
                         ';
                     }else{
                         $message = '<p class="alert alert-danger">
-                        تعداد بن مصرف شده بیش از حد مجاز است!
+                        تعداد وارد شده بیش از حد مجاز است!
                         </p>
                         ';
                     }
@@ -163,24 +206,16 @@ class AjaxController extends Controller {
                         </p>
                         ';
                 }
-            }else{ 
-
-                        $message = '<p class="alert alert-danger">
-                        کد تخفیف معتبر نیست!
-                        </p>
-                        ';
             }
+            return  $message;    
         }else{
-
-                        $message = '<p class="alert alert-danger">
-                        مقادیر وارد شده معتبر نیست!
-                        </p>
-                        ';
-
-        }
-
-        return  $message;
-            
+            $message = $validatedData->errors()->first();
+            $message = '<p class="alert alert-danger">'
+                       .$message.
+                        '</p>';
+           // dd($message);
+            return  $message;
+        }            
     }
 
 

@@ -364,7 +364,7 @@ jQuery.ajax({
             <nav class="woocommerce-MyAccount-navigation">
                 <ul>
                         <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard">
-                        <a><span onclick="">پیشخوان</span></a>
+                        <a href="{{url('/my-account')}}"><span>پیشخوان</span></a>
                 </li>
                 <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders is-active">
                         <a href="{{url('/my-account/orders')}}"><span>سفارش ها</span></a>
@@ -431,7 +431,15 @@ jQuery.ajax({
                                             
                                             
                                            <br> </td>
-                                        <td colspan="2"><i class="fa fa-calendar-minus-o"></i> تاریخ پایان: {{$order_item_info->product->date_available}}</td>
+                                        <td colspan="2"><i class="fa fa-calendar-minus-o"></i> تاریخ پایان: 
+                                            <?php 
+                $ydate = date('Y', strtotime($order_item_info->product->date_available));  
+                $mdate = date('m', strtotime($order_item_info->product->date_available));  
+                $ddate = date('d', strtotime($order_item_info->product->date_available));  
+               $date = g2p($ydate,$mdate ,$ddate);
+           ?>
+           {{$date[0]}}/{{$date[1]}}/{{$date[2]}}
+                                           </td>
                                         </tr>
                                 
                                     </tbody></table>
