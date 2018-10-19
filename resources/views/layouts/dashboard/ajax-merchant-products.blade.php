@@ -29,8 +29,10 @@
 <thead>
 <tr>
                     <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-number"><span class="nobr">نام بن</span></th>
-                    <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-date"><span class="nobr">تعداد فروخته شده</span></th>
+                    <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-date"><span class="nobr">تعداد</span></th>
                     <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-status"><span class="nobr">قیمت واحد</span></th>
+                    <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-status"><span class="nobr">سهم فروشگاه</span></th>
+                    <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-status"><span class="nobr">سهم بن اینجا</span></th>
                     <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-total"><span class="nobr">مجموع</span></th>
                     <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-actions"><span class="nobr">عملیات ها</span></th>
                 
@@ -43,20 +45,26 @@
         
   
             <tr class="woocommerce-orders-table__row woocommerce-orders-table__row--status-processing order">
-                            <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-number" data-title="َشماره فاکتور">
+                            <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-number" data-title="َنام بن">
                             <a href="{{ route('shop.show', ['product' => $product->slug])}}">
                     #{{$product->name}}								</a>
 
                                     </td>
-                            <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-date" data-title="تاریخ">
-                            <time datetime="2018-07-24T15:45:37+00:00">{{ toPersianNum($product->sold)  }}</time>
+                            <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-date" data-title="تعداد">
+                            {{ toPersianNum($product->orderitems->sum('code_used_count'))  }}
 
                                     </td>
-                            <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-status" data-title="وضعیت">
+                            <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-status" data-title="قیمت واحد">
                                             {{toPersianNum($product->price)}}
                                     </td>
+                                    <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-total" data-title="سهم فروشگاه">
+                                        <span class="woocommerce-Price-amount amount">{{toPersianNum($product->price-($product->price*(($product->boninja_percent+$product->discount)/100)))}}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>
+                                </td>
+                                <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-total" data-title="سهم بن اینجا">
+                                        <span class="woocommerce-Price-amount amount">{{toPersianNum($product->price*($product->boninja_percent/100))}}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>
+                                </td>
                             <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-total" data-title="مجموع">
-                                            <span class="woocommerce-Price-amount amount">{{toPersianNum($product->sold*$product->price)}}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>
+                                            <span class="woocommerce-Price-amount amount">{{toPersianNum($product->orderitems->sum('code_used_count')*($product->price-($product->price*(($product->boninja_percent+$product->discount)/100))))}}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>
                                     </td>
                             <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-actions" data-title="عملیات ها">
                                             <a href="{{ route('shop.show', ['product' => $product->slug])}} "class="woocommerce-button button view">نمایش </a>													</td>

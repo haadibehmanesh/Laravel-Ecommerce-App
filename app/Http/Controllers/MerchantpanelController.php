@@ -16,16 +16,20 @@ class MerchantpanelController extends Controller
      */
     public function index()
     {
-        $merchant_id = Auth::guard('customer')->user()->id;
-        $products = BiProduct::where('bi_merchant_id', $merchant_id)->get();
-        $totalSell = $products->sum(function ($product) {
-            return $product->price * $product->sold;
+        $customer_id = Auth::guard('customer')->user()->id;
+       
+        $merchant = BiMerchant::where('customer_id',$customer_id)->first();
+       
+        $orderItem = BiOrderItem::where('bi_merchant_id', $merchant->id)->get();
+
+        $totalSell = $orderItem->sum(function ($item) {
+            return $item->price * $item->code_used_count;
         });
-        $boninja = $products->sum(function ($product) {
-            return ($product->price*($product->boninja_percent/100))* $product->sold;
+        $boninja = $orderItem->sum(function ($item) {
+            return ($item->product->price*($item->product->boninja_percent/100))* $item->code_used_count;
         });
+        
         $totalRevenue = $totalSell - $boninja ;
-       // dd($totalRevenue);
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
         return view('layouts/dashboard/merchant-panel')->with([
             'totalSell' => $totalSell,

@@ -56,5 +56,9 @@ class BiProduct extends Model
     {
         return $this->hasMany('App\BiProduct', 'parent_id');
     }
+    public function orderitems()
+    {
+        return $this->hasMany('App\BiOrderItem');
+    }
     
 }
