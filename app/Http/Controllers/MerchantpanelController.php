@@ -19,15 +19,29 @@ class MerchantpanelController extends Controller
         $customer_id = Auth::guard('customer')->user()->id;
        
         $merchant = BiMerchant::where('customer_id',$customer_id)->first();
+       // dd($merchant->pre_discount);
+       
        
         $orderItem = BiOrderItem::where('bi_merchant_id', $merchant->id)->get();
 
         $totalSell = $orderItem->sum(function ($item) {
             return $item->price * $item->code_used_count;
         });
-        $boninja = $orderItem->sum(function ($item) {
-            return ($item->product->price*($item->product->boninja_percent/100))* $item->code_used_count;
-        });
+        
+        if(!empty($merchant->pre_discount) && $merchant->pre_discount == 1){
+
+            $boninja = $orderItem->sum(function ($item) {
+                return ($item->product->price*($item->product->boninja_percent/100))* $item->code_used_count;
+            });
+
+        }else{
+
+            $boninja = $orderItem->sum(function ($item) {
+                return ($item->price*($item->product->boninja_percent/100))* $item->code_used_count;
+            });
+        }
+
+        
         
         $totalRevenue = $totalSell - $boninja ;
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
@@ -35,6 +49,7 @@ class MerchantpanelController extends Controller
             'totalSell' => $totalSell,
             'totalRevenue' => $totalRevenue,
             'allcategories' => $allcategories,
+            'orderitem' => $orderItem
         ]);
     }
 
@@ -108,8 +123,14 @@ class MerchantpanelController extends Controller
     {
         $customer_id = Auth::guard('customer')->user()->id;
         $merchant = BiMerchant::where('customer_id',$customer_id)->first();
-        $products = BiProduct::where('bi_merchant_id', $merchant->id)->orderBy('id', 'desc')->get();
-        return view('layouts/dashboard/ajax-merchant-products')->with('products', $products)->render();
+        //$products = BiProduct::where('bi_merchant_id', $merchant->id)->orderBy('id', 'desc')->get();
+        $order_items = BiOrderItem::where('bi_merchant_id', $merchant->id)->where('code_used_count','>','0')->orderBy('id', 'desc')->get();
+       // dd($products);
+        return view('layouts/dashboard/ajax-merchant-products')->with([
+            'order_items' => $order_items,
+            'merchant' => $merchant
+        
+        ])->render();
     }
 
     public function orders()

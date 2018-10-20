@@ -1,12 +1,13 @@
        @if(empty($errors->has('code_offer')) && empty($errors->has('notmatch')))
        <div class="panel-body">
             <div class="col-sm-9">
-                <div class="col-sm-12 " style="margin-bottom:7px;border-bottom: dashed 1px #c0c0c0;">
+                
                     <div class=" hidden-md hidden-lg col-xs-12 col-sm-12 pull-left img-pos">
                         <a href="{{ route('shop.show', $item->product->slug) }}" title="{{ $item->product->name }}">
                             <img src="{{ productImage($item->product->image) }}" title="{{ $item->product->name }}" width="100%" class="img-responsive" alt="">
                         </a>
                     </div>
+                    
                     <div class="col-md-8 col-xs-12" style="padding-left: 0px">
                                                     <label>
                                 <h4><a href="{{ route('shop.show', $item->product->slug) }}" title="{{ $item->product->name }}" class="black-color none-decoration">
@@ -18,7 +19,8 @@
                                                 </div>
                     <div class="col-md-4 col-xs-12 pull-left rate-pos" style="margin-bottom: 18px;padding-right: 0px">                  
                     </div>
-                </div>
+                    <div class="col-sm-12 " style="margin-bottom:7px;border-bottom: dashed 1px #c0c0c0;">
+                        </div>
                 <div class="col-md-12">
                     <div class="col-xs-12 mb-20 mt-20">
                         <span class="coupon-box">
@@ -64,22 +66,32 @@
                         <form class="code" method="POST" action="" enctype='multipart/form-data'>
                             {{ csrf_field() }}
                        <input type="hidden" name="code_offer" class="code_offer" value="{{ $item->code }}">
-                       <label>تعداد مصرف فعلی:<br><input style="width:100%;box-sizing:border-box" type="number" name="code_used_count" class="code_used_count" /></label><br />
+                       <p class="col-sm-6">
+                       <label>تعداد مصرف فعلی:<br><input style="width:100%;box-sizing:border-box" type="number" name="code_used_count" class="code_used_count" /></label></p>
+                       <br />
                         <p class="col-sm-6">
                         <strong>وضعیت : <span style="color:green"><?php echo $status = $item->quantity - $item->code_used_count;
-                        ?> بن قابل ابطال می باشد.</strong></span>
+                        ?> بن قابل ابطال می باشد.</span></strong>
                         </p>
+                    </p>
+                    
                         @if($item->quantity - $item->code_used_count > 0)
+                        <p class="col-sm-8">
                         <button onclick="codeValidation(event)" type="" value="" class="verify_code_offer">ابطال بن</button>
+                        </p>
                         @else
-                            <p class="alert alert-danger">
-                                <span style="text-align:center">
+                        
+                            <div class="col-sm-10">
+                                <div style="text-align:center" class="alert alert-danger">
+                                <span>
                     بن قبلا باطل شده است!
                                 </span>
-                            </p>
+                            </div>
+                        </div>
+                        
                         @endif
                     </form>
-                    </p>
+                    
                 </div>
                             </div>
             <div class=" hidden-xs hidden-sm col-md-3 pull-left img-pos">

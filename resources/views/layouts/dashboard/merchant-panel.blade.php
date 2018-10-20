@@ -311,7 +311,7 @@ jQuery.ajax({
                             <div class="dokan-dashboard-wrap">
     
 <div class="dokan-dash-sidebar">
-<ul class="dokan-dashboard-menu"><li class="active dashboard"><a href="{{ route('merchantpanel.index')}}"><i class="fa fa-tachometer"></i> پیشخوان</a></li><li class="products"><a><i class="fa fa-briefcase"></i><span onclick="products(event)">محصولات</span> </a></li><li class="withdraw"><a href="#"><i class="fa fa-upload"></i> برداشت</a></li><li class="settings"><a href="#"><i class="fa fa-cog"></i> تنظیمات</a></li><li class="dokan-common-links dokan-clearfix">
+<ul class="dokan-dashboard-menu"><li class="active dashboard"><a href="{{ route('merchantpanel.index')}}"><i class="fa fa-tachometer"></i> پیشخوان</a></li><li class="products"><a><i class="fa fa-briefcase"></i><span onclick="products(event)">بن های باطل شده</span> </a></li><li class="withdraw"><a href="#"><i class="fa fa-upload"></i> برداشت</a></li><li class="settings"><a href="#"><i class="fa fa-cog"></i> تنظیمات</a></li><li class="dokan-common-links dokan-clearfix">
             
             <a title="ویرایش حساب کاربری" class="tips" data-placement="top" href="/my-account"><i class="fa fa-user"></i></a>
             <a href="{{ url('/customer/logout') }}"
@@ -346,9 +346,9 @@ jQuery.ajax({
             <div class="count">{{toPersianNum(87)}}</div>
         </li>
         <li>
-            <div class="title">سفارش</div>
+            <div class="title">مجموع بن های ابطال شده</div>
             <div class="count">
-                {{toPersianNum(7)}}            </div>
+                {{toPersianNum($orderitem->sum('code_used_count'))}}            </div>
         </li>
 
             </ul>
