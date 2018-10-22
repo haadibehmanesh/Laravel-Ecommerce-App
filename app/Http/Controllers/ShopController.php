@@ -72,6 +72,15 @@ class ShopController extends Controller
         $product = BiProduct::where('slug', $slug_db)->firstOrFail();
         
         $ProductId = $product->id;
+        if(empty($product->getCoordinates())){
+            $lat = 29.6297833;
+            $lng = 52.5086218;
+        }else{
+            $coordinates = $product->getCoordinates();
+            $lat = $coordinates[0]['lat'];
+            $lng = $coordinates[0]['lng'];
+        }
+        
         if(Auth::guard('customer')->check()){
             $id = Auth::guard('customer')->user()->id;
         
@@ -106,6 +115,8 @@ class ShopController extends Controller
             $category = BiCategory::where('slug', $category)->get();
             return view('layouts/product/product')->with([
                 'product' => $product,
+                'lat' => $lat,
+                'lng' => $lng,
                 'reviews' => $reviews,
                 'merchant_name' => $merchant_name,
                 'mightAlsoLike' => $mightAlsoLike,
@@ -118,6 +129,8 @@ class ShopController extends Controller
         }else{
             return view('layouts/product/product')->with([
                 'product' => $product,
+                'lat' => $lat,
+                'lng' => $lng,
                 'reviews' => $reviews,
                 'merchant_name' => $merchant_name,
                 'mightAlsoLike' => $mightAlsoLike,

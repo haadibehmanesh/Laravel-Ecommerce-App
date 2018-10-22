@@ -4,10 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Nicolaslopezj\Searchable\SearchableTrait;
+use TCG\Voyager\Traits\Spatial;
 
 class BiProduct extends Model
 {
-
+    use Spatial;
+    protected $spatial = ['coordinates']; //here is going your field name; should be the point type;
+    
     use SearchableTrait;
 
     /**

@@ -58,9 +58,11 @@
                                         @endphp
 
                                         @foreach($dataTypeRows as $row)
+                                        
                                             <!-- GET THE DISPLAY OPTIONS -->
                                             @php
                                                 $options = json_decode($row->details);
+                                                
                                                 $display_options = isset($options->display) ? $options->display : NULL;
                                             @endphp
                                             @if ($options && isset($options->legend) && isset($options->legend->text))
@@ -84,8 +86,9 @@
                                                     @endforeach
                                                 </div>
                                             @endif
+                                            
                                         @endforeach
-
+                                               
                                     </div><!-- panel-body -->
                                 </div>
                             </div><!-- col-md-8 -->
@@ -93,7 +96,7 @@
                                 <div class="panel panel panel-bordered panel-warning">
                                     <div class="panel-heading">
                                         <h3 class="panel-title">
-                                            Categories
+                                            Categories 
                                         </h3>
                                         <div class="panel-actions">
                                             <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>

@@ -44,68 +44,6 @@ img.emoji {
     <link href="../../wp-content/themes/takhfifat/css/font-awesome.css" rel="stylesheet">
     <link href="../../wp-content/themes/takhfifat/stylefc99.css?ver=2.6" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="http://localhost/takhfiftest/wp-content/themes/takhfifat/js/html5shiv.min.js"></script>
-    <script src="http://localhost/takhfiftest/wp-content/themes/takhfifat/js/respond.min.js"></script>
-    <![endif]-->
-
-            	{{--<style>
-	span.price del:before{ content:'قیمت: '; }
-	span.price ins:before{ content:'با تخفیف: '; }
-			.phone,
-	input[type="submit"], input[type="button"], button,
-	.nav-tabs>li.active>a .fa, .nav-tabs>li.active>a:focus .fa, .nav-tabs>li.active>a:hover .fa,
-	.eye_buy a,
-	.price span.with_discount,
-	.title_post span.like,
-	.block_gallery .content_item .Slogan span,
-	.content_item .Discount:before,
-	.box_offer .Discount:before,
-	.box_offer .price del,
-	.title_post .Discount:before,
-	span.number_items_cart,
-	p.buttons a,
-	.wc-proceed-to-checkout .checkout-button,
-	.woocommerce a.remove:hover,
-	.post-content input[type="submit"],
-	input[type="submit"].dokan-btn-theme, a.dokan-btn-theme, .dokan-btn-theme
-	{
-		background-color:#ff5a5f !important;
-	}
-	.box_offer .price del:after{
-		border-right-color: #ff5a5f;
-	}
-	input[type="submit"]:hover, input[type="button"]:hover, button:hover,
-	.eye_buy a:hover,
-	{
-		background-color:#ff5a5f	}
-	.content_item > span a .fa,
-	.box_single .title_block span,
-	.option_item_gallery span.address .fa,
-	.item_terms_use p .fa,
-	.box_offer span.address i,
-	.cart_list.product_list_widget li.mini_cart_item a.remove,
-	.woocommerce a.remove,
-	.label_map
-	{
-		color:#ff5a5f !important
-	}
-	.top_header,
-	.title_post span.like:before,
-	.top_header, 
-	.title_post span.like:before, 
-	.nav-tabs>li.active>a, 
-	.nav-tabs>li.active>a:hover,
-	.title_post,
-	.phone,
-	.label_map,
-	.post-content input[type="submit"],
-	input[type="submit"].dokan-btn-theme, a.dokan-btn-theme, .dokan-btn-theme
-	{
-		border-color:#ff5a5f	}	
-        </style>--}}
         <script>
         jQuery( document ).ready(function() {
           //  jQuery("#input-id").rating();
@@ -536,21 +474,24 @@ img.emoji {
 
                                         <ul class='list-inline' style="z-index: 9999">
 
-                                            <li><a href="https://telegram.me/share/url?text=%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87%20%d8%a7%d9%84%d9%86%d8%a7&amp;url=http://localhost/takhfiftest/product/%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87-%d8%a7%d9%84%d9%86%d8%a7/" id=""><img src="../../wp-content/themes/takhfifat/images/social/telegram.png" alt="telegram"></a></li>
-
-                                            <li><a href="https://www.instagram.com/http://localhost/takhfiftest" id=""><img src="../../wp-content/themes/takhfifat/images/social/instagram.png" alt="instagram"></a></li>
-
-                                            <li><a href="http://www.facebook.com/sharer.php?u=http://localhost/takhfiftest/product/%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87-%d8%a7%d9%84%d9%86%d8%a7/&amp;t=%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87%20%d8%a7%d9%84%d9%86%d8%a7" title="Facebook" id=""><img src="../../wp-content/themes/takhfifat/images/social/facebook.png" alt=""></a></li>
-
-                                            <li><a title="twitter" href="http://twitter.com/share/?url=http://localhost/takhfiftest/product/%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87-%d8%a7%d9%84%d9%86%d8%a7/&amp;text=%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87%20%d8%a7%d9%84%d9%86%d8%a7" ID="twitter" target="_blank" class="twitter"><img src="../../wp-content/themes/takhfifat/images/social/twitter.png" alt=""></a></li>
+                                        {{--<li><a href="https://telegram.me/share/url?text=%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87%20%d8%a7%d9%84%d9%86%d8%a7&amp;url=http://localhost/takhfiftest/product/%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87-%d8%a7%d9%84%d9%86%d8%a7/" id=""><img src="../../wp-content/themes/takhfifat/images/social/telegram.png" alt="telegram"></a></li>
+                                        <li><a href="http://www.facebook.com/sharer.php?u=http://localhost/takhfiftest/product/%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87-%d8%a7%d9%84%d9%86%d8%a7/&amp;t=%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87%20%d8%a7%d9%84%d9%86%d8%a7" title="Facebook" id=""><img src="../../wp-content/themes/takhfifat/images/social/facebook.png" alt=""></a></li>
+                                        <li><a title="twitter" href="http://twitter.com/share/?url=http://localhost/takhfiftest/product/%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87-%d8%a7%d9%84%d9%86%d8%a7/&amp;text=%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87%20%d8%a7%d9%84%d9%86%d8%a7" ID="twitter" target="_blank" class="twitter"><img src="../../wp-content/themes/takhfifat/images/social/twitter.png" alt=""></a></li>
 
                                             <li><a title="Google+" href="https://plus.google.com/share?url=http://localhost/takhfiftest/product/%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87-%d8%a7%d9%84%d9%86%d8%a7/&amp;title=%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87%20%d8%a7%d9%84%d9%86%d8%a7" ID="GoogleP" target="_blank" class="googleplus"><img src="../../wp-content/themes/takhfifat/images/social/google%2b.png" alt=""></a></li>
 
                                             <li><a title="Google Bookmark" href="http://www.google.com/bookmarks/mark?op=edit&amp;bkmk=http://localhost/takhfiftest/product/%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87-%d8%a7%d9%84%d9%86%d8%a7/&amp;title=%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87%20%d8%a7%d9%84%d9%86%d8%a7" ID="GoogleB" target="_blank" class="googlebookmark"><img src="../../wp-content/themes/takhfifat/images/social/dropbox.png" alt=""></a></li>
 
                                             <li><a title="linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://localhost/takhfiftest/product/%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87-%d8%a7%d9%84%d9%86%d8%a7/&amp;title=%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87%20%d8%a7%d9%84%d9%86%d8%a7" ID="linkedin" target="_blank" class="linkedin"><img src="../../wp-content/themes/takhfifat/images/social/linkedin.png" alt=""></a></li>
+                                            <li><a title="Email" href="mailto:?subject=آرایشگاه النا&body= لطفا این لینک رو ببین: http://localhost/takhfiftest/product/%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87-%d8%a7%d9%84%d9%86%d8%a7/" ID="Email" target="_blank" class="email"><img src="../../wp-content/themes/takhfifat/images/social/email.png" alt=""></a></li>--}}
+                                            <li><a href="https://api.whatsapp.com/send?text={{ route('shop.show', $product->slug) }}" title="{{ $product->name }}"><img src="../../wp-content/themes/takhfifat/images/social/whatsapp.png" alt="whatsapp"></a></li>
+                                            <li><a href="https://www.instagram.com/boninjaa" id=""><img src="../../wp-content/themes/takhfifat/images/social/instagram.png" alt="instagram"></a></li>
 
-                                            <li><a title="Email" href="mailto:?subject=آرایشگاه النا&body= لطفا این لینک رو ببین: http://localhost/takhfiftest/product/%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87-%d8%a7%d9%84%d9%86%d8%a7/" ID="Email" target="_blank" class="email"><img src="../../wp-content/themes/takhfifat/images/social/email.png" alt=""></a></li>
+                                            
+
+                                            
+
+                                            
 
                                         </ul>
 
@@ -725,9 +666,11 @@ $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  '
 </div>
 <div class="clear"></div><!--address map-->
 <div class="address_map box_single">
+    
 	<div class="title_block"><span>آدرس</span></div>
 	<div class="box_map">
-		<!--map-->
+        <!--map-->
+    
 		<div id="map_sellers" style="width:100%;height:400px;"></div>
 		<div class="label_map"><i class="fa fa-map-o"></i><span>مشاهده آدرس روی نقشه</span></div>
 	</div>
@@ -736,7 +679,7 @@ $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  '
 <script>
 	function single_product_map() {
 		var mapOptions_sellers = {
-			center: new google.maps.LatLng(29.6297833,52.5086218),
+			center: new google.maps.LatLng({{$lat}},{{$lng}}),
 			zoom: 17,
 			mapTypeId: google.maps.MapTypeId.terrain,
 			mapTypeControl: true,
@@ -749,9 +692,9 @@ $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  '
 		};
 		var map_sellers = new google.maps.Map(document.getElementById("map_sellers"), mapOptions_sellers);
 		var marker_sellers = new google.maps.Marker({
-			position: new google.maps.LatLng(29.6297833,52.5086218),
+			position: new google.maps.LatLng({{$lat}},{{$lng}}),
 			map: map_sellers,
-			title: 'سامانه خرید و تخفیف گروهی بن اینجا'
+			title: '{{$product->name}}'
 		});
 	}
 	single_product_map();

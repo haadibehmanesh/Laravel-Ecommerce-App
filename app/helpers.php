@@ -90,6 +90,8 @@ function toPersianNum($number)
         return $number;
     }
 
+    
+
     function g2p($g_y, $g_m, $g_d)
     {
         $g_days_in_month = array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
