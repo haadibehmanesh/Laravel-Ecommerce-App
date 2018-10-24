@@ -217,8 +217,8 @@ return [
     'googlemaps' => [
          'key'    => env('GOOGLE_MAPS_KEY', ''),
          'center' => [
-             'lat' => env('GOOGLE_MAPS_DEFAULT_CENTER_LAT', '29.5918'),
-             'lng' => env('GOOGLE_MAPS_DEFAULT_CENTER_LNG', '52.5837'),
+             'lat' => env('GOOGLE_MAPS_DEFAULT_CENTER_LAT', '29.6297833'),
+             'lng' => env('GOOGLE_MAPS_DEFAULT_CENTER_LNG', '52.5086218'),
          ],
          'zoom' => env('GOOGLE_MAPS_DEFAULT_ZOOM', 11),
      ],
