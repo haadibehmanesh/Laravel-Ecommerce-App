@@ -493,23 +493,31 @@ img, .figure img, .page-deal #dealProperty .modal-body .dealProp.done img {
     top: 30px;
 }
 
+.more_cat_header{
+    background: #f6861f;
+    padding: 10px;
 
+}
 .more_cat {
-    box-shadow: 0 0 5px rgba(0,0,0,0.6);
-    margin-top: 10px;
     background: url(../images/pattern-1.png) repeat 0 0!important;
-    height: 0;
-    padding-top: 10px;
-    padding-bottom: 90px;
-    /*border-top: 1px solid #dcdcdc;
-    border-right: 1px solid #dcdcdc;*/
-    /* border: 1px solid #dcdcdc;*/
-    border-radius: 15px;
     text-align: center;
     overflow: hidden;
 }
+.more_cat .cat_icon{
+    font-size: 135px;
+    color: #e0353b;
+    padding: 25px;
+}
+.more_cat .cat_name{
+
+    margin: -43px 0 0 0;
+    font-size: 18px;
+}
+
+
 .button-all{
-margin-top: 10px;
+    margin-top: 23px;
+    margin-bottom: 25px;
 }
 @media (min-width: 780px) {
 .sticky {

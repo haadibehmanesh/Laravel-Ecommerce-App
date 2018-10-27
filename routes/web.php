@@ -85,7 +85,7 @@ Route::delete('/cart/{product}', 'CartController@destroy')->name('cart.destroy')
 Route::get('/products', 'ShopController@index')->name('shop.index');
 Route::get('/products/{product}/{category?}', 'ShopController@show')->name('shop.show');
 
-Route::get('/category/{category}', 'ShopController@showCategory')->name('shop.showCategory');
+Route::any('/category/{category}', 'ShopController@showCategory')->name('shop.showCategory');
 
 
 Route::group(['prefix' => 'admin'], function () {

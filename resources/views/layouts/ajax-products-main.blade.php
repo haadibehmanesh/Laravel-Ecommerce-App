@@ -1,42 +1,44 @@
 @forelse ($products as $product) 
         <div class="col-lg-3 col-md-3 col-sm-6">
-            <div class="box_offer box_offer_mini">
-                <div class="time_out">
-                    <i class="fa fa-clock-o"></i>
-                    <ul class="deal-timer countdownimxit"></ul>
-                <script>
-				                    jQuery(function() {
-                        var endDate = "2018-12-25 23:59:00";
-                        jQuery('.countdownimxit').countdown({
-                            date: endDate,
-                            render: function(data) {
-                                if ( ! data.sec  ) { data.sec = 0 };
-								var days = toPersianNum(data.days);
-								var hours = toPersianNum(data.hours);
-								var min = toPersianNum(data.min);
-								var sec = toPersianNum(data.sec);
-                                jQuery(this.el).html(
-                                    '<li><span class="num">' + days +'</span><span class="text">  روز </span></li>'+
-                                    '<li><span class="num">' + hours +'</span><span class="text"> ساعت </span></li>'+
-                                    '<li><span class="num">' + min +'</span><span class="text"> دقیقه </span></li>'+
-                                    '<li><span class="num">' + sec +'</span><span class="text"> ثانیه </span></li>'
-                                );
-                            }
-                        });
-                    });
-                </script>					
-                </div>
-                <a href="{{ route('shop.show', $product->slug) }}" title="{{$product->name}}"><img src="{{ productImage($product->image) }}" title="{{$product->name}}"></a>
-                <!-- Discount -->
-                <span class="Discount"><b>%{{ toPersianNum($product->discount)  }}</b>تخفیف</span>
-				<span class="address"><i class="fa fa-map-marker"></i></span>
-                <span class="total_sales_onliner">{{toPersianNum($product->sold)}}<i class="fa fa-shopping-basket"></i></span>
-				<!-- Info -->
-                <div class="Information">
-                    <h2 class="ellipsis"><a href="{{ route('shop.show', $product->slug) }}" title="{{ $product->name }}">{{ $product->name }}</a></h2>
-                    <span class="price"><del><span class="woocommerce-Price-amount amount">{{ toPersianNum($product->price) }}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></del> <ins><span class="woocommerce-Price-amount amount">{{ toPersianNum(presentPrice($product->price,$product->discount)) }}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></ins></span>
-                </div>
-            </div>
+                <div class="mini-card">
+                        <div class="card-header">
+                                <a href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}"><span class="card-span">{{ $product->name }}</span></a>
+                                <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp; شیراز</span>
+                        </div>
+                        <div class="card-timer">
+                                <a href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}" class="btn btn-secondary"><span class="card-span"><script>
+                                        jQuery(function() {
+                                            var endDate = "2020-1-5 23:59:00";
+                                            jQuery('.countdownqdlkp').countdown({
+                                                date: endDate,
+                                                render: function(data) {
+                                                    if ( ! data.sec  ) { data.sec = 0 };
+                                                    var days = toPersianNum(data.days);
+                                                    var hours = toPersianNum(data.hours);
+                                                    var min = toPersianNum(data.min);
+                                                    var sec = toPersianNum(data.sec);
+                                                    jQuery(this.el).html(
+                                                        '<li><span class="num">' + days +'</span><span class="text">  روز </span></li>'+
+                                                        '<li><span class="num">' + hours +'</span><span class="text"> ساعت </span></li>'+
+                                                        '<li><span class="num">' + min +'</span><span class="text"> دقیقه </span></li>'+
+                                                        '<li><span class="num">' + sec +'</span><span class="text"> ثانیه </span></li>'
+                                                    );
+                                                }
+                                            });
+                                        });
+                                    </script><span><i class="fa fa-clock-o"></i></span><ul class="deal-timer countdownqdlkp"></ul></span></a>
+                                    <span class="card-shopping"><i style="font-size: 17px;" class="fa fa-shopping-bag"></i>&nbsp;{{toPersianNum($product->sold)}}</span>
+                        </div>
+                        <a class="sb-preview-img" href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}">
+                        <img class="card-img-top" src="{{ productImage($product->image) }}" alt="{{ $product->name }}">
+                        </a>
+                        
+                        <div class="card-footer">
+                        <a href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}" class="btn btn-secondary"><span style="font-size: 14px;" class="card-span"><del>{{ toPersianNum($product->price) }} تومان</del></span></a>
+                        <span class="card-discount">%{{ toPersianNum($product->discount)  }} تخفیف</span>
+                        <span class="card-after-discount">{{ toPersianNum(presentPrice($product->price,$product->discount)) }} تومان</span>
+                        </div>
+                        </div>
         </div> 
         @empty
           <div style="text-align: left">موردی یافت نشد!</div>

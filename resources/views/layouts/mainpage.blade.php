@@ -272,6 +272,77 @@ function toPersianNum( num, dontTrim ) {
     <div class="title_block"><span>بن های ویژه</span></div>
     @foreach ($featured as $featured)
         <div class="col-lg-4 col-md-4 col-sm-6">
+       {{-- <div class="hadi_box">
+                    <div class="">
+                        <div class="hadi_title">
+                            <div class="">
+                                <div class="col-xs-10">
+                            <h5><a href="{{ route('shop.show', $featured->slug) }}" title="{{ $featured->name }}">{{ $featured->name }}</a></h5>
+                                </div>
+                                <div class="col-lg-2">
+                            <span class="">شیراز</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                    
+                        
+                    </div>
+                    <div class="">
+                            <a href="{{ route('shop.show', $featured->slug) }}" title="{{ $featured->name }}"><img src="{{ productImage($featured->image) }}" title="{{ $featured->name }}"></a>
+                        
+                </div>
+
+                <div class="" >
+                        <!-- Discount -->
+                        <span class=""><b>%{{ toPersianNum($featured->discount)  }}</b>تخفیف</span>
+                        <span class=""><i class="fa fa-map-marker"></i>امام خمینی</span>
+                        <span>{{toPersianNum($featured->sold)}}<i class="fa fa-shopping-basket"></i></span>
+                </div>
+
+
+--}}
+<div class="card">
+        <div class="card-header">
+                <a href="{{ route('shop.show', $featured->slug) }}" class="btn btn-secondary" title="{{ $featured->name }}"><span class="card-span">{{ $featured->name }}</span></a>
+                <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp; شیراز</span>
+        </div>
+        <div class="card-timer">
+                <a href="{{ route('shop.show', $featured->slug) }}" class="btn btn-secondary" title="{{ $featured->name }}" class="btn btn-secondary"><span class="card-span"><script>
+                        jQuery(function() {
+                            var endDate = "2020-1-5 23:59:00";
+                            jQuery('.countdownqdlkp').countdown({
+                                date: endDate,
+                                render: function(data) {
+                                    if ( ! data.sec  ) { data.sec = 0 };
+                                    var days = toPersianNum(data.days);
+                                    var hours = toPersianNum(data.hours);
+                                    var min = toPersianNum(data.min);
+                                    var sec = toPersianNum(data.sec);
+                                    jQuery(this.el).html(
+                                        '<li><span class="num">' + days +'</span><span class="text">  روز </span></li>'+
+                                        '<li><span class="num">' + hours +'</span><span class="text"> ساعت </span></li>'+
+                                        '<li><span class="num">' + min +'</span><span class="text"> دقیقه </span></li>'+
+                                        '<li><span class="num">' + sec +'</span><span class="text"> ثانیه </span></li>'
+                                    );
+                                }
+                            });
+                        });
+                    </script><span><i class="fa fa-clock-o"></i></span><ul class="deal-timer countdownqdlkp"></ul></span></a>
+                    <span class="card-shopping"><i class="fa fa-shopping-bag"></i>&nbsp;{{toPersianNum($featured->sold)}}</span>
+        </div>
+        <a class="sb-preview-img" href="{{ route('shop.show', $featured->slug) }}" class="btn btn-secondary" title="{{ $featured->name }}">
+        <img class="card-img-top" src="{{ productImage($featured->image) }}" alt="{{ $featured->name }}">
+        </a>
+        
+        <div class="card-footer">
+        <a href="{{ route('shop.show', $featured->slug) }}" class="btn btn-secondary" title="{{ $featured->name }}" class="btn btn-secondary"><span style="font-size: 16px;" class="card-span"><del>{{ toPersianNum($featured->price) }} تومان</del></span></a>
+        <span class="card-discount">%{{ toPersianNum($featured->discount)  }} تخفیف</span>
+        <span class="card-after-discount">{{ toPersianNum(presentPrice($featured->price,$featured->discount)) }} تومان</span>
+        </div>
+        </div>
+        {{--
             <div class="box_offer">
                 <div class="time_out">
                     <i class="fa fa-clock-o"></i>
@@ -309,14 +380,117 @@ function toPersianNum( num, dontTrim ) {
                     <span class="price"><del><span class="woocommerce-Price-amount amount">{{ toPersianNum($featured->price) }}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></del> <ins><span class="woocommerce-Price-amount amount">{{ toPersianNum(presentPrice($featured->price,$featured->discount)) }}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></ins></span>
                 </div>
             </div>
+            --}}
         </div>
         @endforeach
 </div>
     <div class="clear"></div>		
     <!--category-->
+    
 		<div class="block_category">
-			<div class="title_block"><span>دسته بندی ها</span></div>
-			<!--Right Column (2 On left)-->
+            <div class="title_block"><span>دسته بندی ها</span></div>
+            
+            <div class="cat">
+                    <div class="col-xs-12 col-md-offset-2">
+                                <div class="col-xs-2">
+                                    <a href="{{ route('shop.showCategory', 'آرایشی-و-زیبایی') }}">
+                                    <div style="background: #ee008c;" class="item_header">
+                                    <img src="{{asset('wp-content/themes/takhfifat/images/openned-scissors.png')}}">
+                                    </div>
+                                    <div style="background: #ee008c;" class="item_footer">
+                                        <span>
+                                            زیبایی و آرایشی
+                                        </span>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col-xs-2">
+                                        <a href="{{ route('shop.showCategory', 'تفریح-و-ورزش') }}">
+                                        <div style="background: #50b74a;" class="item_header">
+                                                <img src="{{asset('wp-content/themes/takhfifat/images/running.png')}}">
+                                        </div>
+                                        <div style="background: #50b74a;" class="item_footer">
+                                            <span>
+                                                تفریحی ورزشی
+                                            </span>
+                                        </div>
+                                        </a>
+                                </div>
+                                <div class="col-xs-2">
+                                        <a href="{{ route('shop.showCategory', 'آموزشی') }}">
+                                        <div style="background: #cc692e;" class="item_header">
+                                                <img src="{{asset('wp-content/themes/takhfifat/images/open-book.png')}}">
+                                        </div>
+                                        <div style="background: #cc692e;" class="item_footer">
+                                            <span>
+                                                آموزشی
+                                            </span>
+                                        </div>
+                                        </a>
+                                </div>
+                                <div class="col-xs-2">
+                                        <a href="{{ route('shop.showCategory', 'پزشکی-و-سلامت') }}">
+                                        <div style="background: #01acf1;" class="item_header">
+                                                <img src="{{asset('wp-content/themes/takhfifat/images/heartbeat.png')}}">
+                                        </div>
+                                        <div style="background: #01acf1;" class="item_footer">
+                                            <span>
+                                                پزشکی و سلامت
+                                            </span>    
+                                        </div>
+                                    </a>
+                                </div>
+                            
+
+                            </div>
+                            <div class="col-xs-12 col-md-offset-2">
+                                <div class="col-xs-2">
+                                        <a href="{{ route('shop.showCategory', 'بن-های-فروشگاهی') }}">
+                                        <div style="background: #ffb715;" class="item_header">
+                                            <img src="{{asset('wp-content/themes/takhfifat/images/shopping-purse-icon.png')}}"></div>
+                                        <div style="background: #ffb715;" class="item_footer">
+                                            <span>
+                                                بن های فروشگاهی
+                                            </span> 
+                                        </div>
+                                        </a>
+                                </div>
+                  
+                                <div class="col-xs-2">
+                                        <a href="{{ route('shop.showCategory', 'خدمات') }}">
+                                    <div style="background: #0288d1;" class="item_header"><img src="{{asset('wp-content/themes/takhfifat/images/tools.png')}}"></div>
+                                    <div style="background: #0288d1;" class="item_footer">
+                                        <span>
+                                            خدمات
+                                        </span> 
+                                    </div>
+                                        </a>
+                                </div>
+                                <div class="col-xs-2">
+                                        <a href="{{ route('shop.showCategory', 'رستوران-و-کافی-شاپ') }}">
+                                        <div style="background: #ee1b24;" class="item_header"><img src="{{asset('wp-content/themes/takhfifat/images/restaurant-interface-symbol-of-fork-and-knife-couple.png')}}"></div>
+                                        <div style="background: #ee1b24;" class="item_footer">
+                                            <span>
+                                                رستوران و کافی شاپ
+                                            </span> 
+                                        </div>
+                                        </a>
+                                </div>
+                                <div class="col-xs-2">
+                                        <a href="{{ route('shop.showCategory', 'هنر-و-تئاتر') }}">
+                                        <div style="background: #702c93;" class="item_header"><img src="{{asset('wp-content/themes/takhfifat/images/theatre-masks.png')}}"></div>
+                                        <div style="background: #702c93;" class="item_footer">
+                                            <span>
+                                                هنر و تئاتر
+                                            </span> 
+                                        </div>
+                                        </a>
+                                </div>
+                            
+                    </div>
+            </div>
+            
+            {{--<!--Right Column (2 On left)-->
 			<div class="col-lg-3 col-md-3 col1">
 				<!--Top-->
 				<div class="col-lg-12 col-md-12 col-sm-6 col3">
@@ -389,11 +563,11 @@ function toPersianNum( num, dontTrim ) {
 						<h2><a href="/" style="background-color: #008ba0 !important;"><b>تفریحی و ورزشی</b><img src="wp-content/uploads/2017/05/icoggf-1.png" style="width: 50px;height: 50px;margin:50px -100px 0 0;position: absolute;"></a></h2>
 					</div>
 				</div>
-            </div>
+            </div>--}}
 		</div>
 		
 		
-		
+	{{--
 		<div class="block_category">
 			<!--Right Column (2 On left)-->
 			<div class="col-lg-3 col-md-3 col1">
@@ -403,50 +577,54 @@ function toPersianNum( num, dontTrim ) {
 			<div class="col-lg-9 col-md-9 col2">
 							
             </div>
-		</div>		
+        </div>	
+    --}}	
 <div class="clear"></div><!--Discount other -->
 <div class="discount_other">
     <div class="title_block"><span>دیـگر بن ها</span></div>
     <div class='ajax_products'>
     @forelse ($products as $product) 
         <div class="col-lg-3 col-md-3 col-sm-6">
-            <div class="box_offer box_offer_mini">
-                <div class="time_out">
-                    <i class="fa fa-clock-o"></i>
-                    <ul class="deal-timer countdownimxit"></ul>
-                <script>
-				    jQuery(function() {
-                        var endDate = "2018-12-25 23:59:00";
-                        jQuery('.countdownimxit').countdown({
-                            date: endDate,
-                            render: function(data) {
-                                if ( ! data.sec  ) { data.sec = 0 };
-								var days = toPersianNum(data.days);
-								var hours = toPersianNum(data.hours);
-								var min = toPersianNum(data.min);
-								var sec = toPersianNum(data.sec);
-                                jQuery(this.el).html(
-                                    '<li><span class="num">' + days +'</span><span class="text">  روز </span></li>'+
-                                    '<li><span class="num">' + hours +'</span><span class="text"> ساعت </span></li>'+
-                                    '<li><span class="num">' + min +'</span><span class="text"> دقیقه </span></li>'+
-                                    '<li><span class="num">' + sec +'</span><span class="text"> ثانیه </span></li>'
-                                );
-                            }
-                        });
-                    });
-                </script>					
-                </div>
-			                <a href="{{ route('shop.show', $product->slug) }}" title="{{$product->name}}"><img src="{{ productImage($product->image) }}" title="{{$product->name}}"></a>
-                <!-- Discount -->
-                <span class="Discount"><b>%{{ toPersianNum($product->discount)  }}</b>تخفیف</span>
-				<span class="address"><i class="fa fa-map-marker"></i></span>
-                <span class="total_sales_onliner">{{toPersianNum($product->sold)}}<i class="fa fa-shopping-basket"></i></span>
-				<!-- Info -->
-                <div class="Information">
-                    <h2 class="ellipsis"><a href="{{ route('shop.show', $product->slug) }}" title="{{ $product->name }}">{{ $product->name }}</a></h2>
-                    <span class="price"><del><span class="woocommerce-Price-amount amount">{{ toPersianNum($product->price) }}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></del> <ins><span class="woocommerce-Price-amount amount">{{ toPersianNum(presentPrice($product->price,$product->discount)) }}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></ins></span>
-                </div>
-            </div>
+                <div class="mini-card">
+                        <div class="card-header">
+                                <a href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}"><span class="card-span">{{ $product->name }}</span></a>
+                                <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp; شیراز</span>
+                        </div>
+                        <div class="card-timer">
+                                <a href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}" class="btn btn-secondary"><span class="card-span"><script>
+                                        jQuery(function() {
+                                            var endDate = "2020-1-5 23:59:00";
+                                            jQuery('.countdownqdlkp').countdown({
+                                                date: endDate,
+                                                render: function(data) {
+                                                    if ( ! data.sec  ) { data.sec = 0 };
+                                                    var days = toPersianNum(data.days);
+                                                    var hours = toPersianNum(data.hours);
+                                                    var min = toPersianNum(data.min);
+                                                    var sec = toPersianNum(data.sec);
+                                                    jQuery(this.el).html(
+                                                        '<li><span class="num">' + days +'</span><span class="text">  روز </span></li>'+
+                                                        '<li><span class="num">' + hours +'</span><span class="text"> ساعت </span></li>'+
+                                                        '<li><span class="num">' + min +'</span><span class="text"> دقیقه </span></li>'+
+                                                        '<li><span class="num">' + sec +'</span><span class="text"> ثانیه </span></li>'
+                                                    );
+                                                }
+                                            });
+                                        });
+                                    </script><span><i class="fa fa-clock-o"></i></span><ul class="deal-timer countdownqdlkp"></ul></span></a>
+                                    <span class="card-shopping"><i style="font-size: 17px;" class="fa fa-shopping-bag"></i>&nbsp;{{toPersianNum($product->sold)}}</span>
+                        </div>
+                        <a class="sb-preview-img" href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}">
+                        <img class="card-img-top" src="{{ productImage($product->image) }}" alt="{{ $product->name }}">
+                        </a>
+                        
+                        <div class="card-footer">
+                        <a href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}" class="btn btn-secondary"><span style="font-size: 14px;" class="card-span"><del>{{ toPersianNum($product->price) }} تومان</del></span></a>
+                        <span class="card-discount">%{{ toPersianNum($product->discount)  }} تخفیف</span>
+                        <span class="card-after-discount">{{ toPersianNum(presentPrice($product->price,$product->discount)) }} تومان</span>
+                        </div>
+                        </div>
+           
         </div> 
         @empty
           <div style="text-align: left">موردی یافت نشد!</div>
@@ -458,8 +636,85 @@ function toPersianNum( num, dontTrim ) {
     </div>     		
                 	
 </div><div class="clear"></div>
-
-
+@foreach($allcategories as $category)
+    @if(!$category->parent && $category->products->where('index_gallery',1)->count() > 2)
+<div class="cat_show">
+    <span class="cat_show_catname">
+        <a href="{{ route('shop.showCategory', $category->slug) }}" class="article-h3">{{$category->name}}</a>
+    </span>
+    @php ($itr = 1)
+    @foreach ($category->products as $product)
+    @if($itr < 4 )
+    <div class="col-lg-3 col-md-3 col-sm-6">
+            <div class="mini-card">
+                    <div class="card-header">
+                            <a href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}"><span class="card-span">{{ $product->name }}</span></a>
+                            <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp; شیراز</span>
+                    </div>
+                    <div class="card-timer">
+                            <a href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}" class="btn btn-secondary"><span class="card-span"><script>
+                                    jQuery(function() {
+                                        var endDate = "2020-1-5 23:59:00";
+                                        jQuery('.countdownqdlkp').countdown({
+                                            date: endDate,
+                                            render: function(data) {
+                                                if ( ! data.sec  ) { data.sec = 0 };
+                                                var days = toPersianNum(data.days);
+                                                var hours = toPersianNum(data.hours);
+                                                var min = toPersianNum(data.min);
+                                                var sec = toPersianNum(data.sec);
+                                                jQuery(this.el).html(
+                                                    '<li><span class="num">' + days +'</span><span class="text">  روز </span></li>'+
+                                                    '<li><span class="num">' + hours +'</span><span class="text"> ساعت </span></li>'+
+                                                    '<li><span class="num">' + min +'</span><span class="text"> دقیقه </span></li>'+
+                                                    '<li><span class="num">' + sec +'</span><span class="text"> ثانیه </span></li>'
+                                                );
+                                            }
+                                        });
+                                    });
+                                </script><span><i class="fa fa-clock-o"></i></span><ul class="deal-timer countdownqdlkp"></ul></span></a>
+                                <span class="card-shopping"><i style="font-size: 17px;" class="fa fa-shopping-bag"></i>&nbsp;{{toPersianNum($product->sold)}}</span>
+                    </div>
+                    <a class="sb-preview-img" href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}">
+                    <img class="card-img-top" src="{{ productImage($product->image) }}" alt="{{ $product->name }}">
+                    </a>
+                    
+                    <div class="card-footer">
+                    <a href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}" class="btn btn-secondary"><span style="font-size: 14px;" class="card-span"><del>{{ toPersianNum($product->price) }} تومان</del></span></a>
+                    <span class="card-discount">%{{ toPersianNum($product->discount)  }} تخفیف</span>
+                    <span class="card-after-discount">{{ toPersianNum(presentPrice($product->price,$product->discount)) }} تومان</span>
+                    </div>
+                    </div>
+    </div>
+    @php ($itr++) 
+    @elseif ($itr == 4)
+    <div class="col-lg-3 col-md-3 col-sm-6">
+            <div class="mini-card">
+                            <div class="more_cat">
+                                    <div class="cat_icon">
+                                            <i class="fa fa-cutlery">
+                                            </i>
+                                    </div>
+                                    <div class="cat_name">
+                                        <span>
+                                                {{$category->products->count()}} پیشنهاد {{$category->name}}
+                                        </span>
+                                    </div>
+                                        <div class="button-all">
+                                            <a href="{{ route('shop.showCategory', $category->slug) }}">
+                                                <button class="nb-btn nb-btn-success">مشاهده همه</button>
+                                            </a>
+                                        </div>
+                            </div> 
+                    
+            </div>
+    </div>
+    @endif   
+    @endforeach
+</div>
+    @endif
+@endforeach
+{{--
 @foreach($allcategories as $category)
     @if(!$category->parent && $category->products->where('index_gallery',1)->count() > 2)
     
@@ -638,6 +893,7 @@ function toPersianNum( num, dontTrim ) {
 
     @endif
 @endforeach
+--}}
             </div>
         </div>
         
