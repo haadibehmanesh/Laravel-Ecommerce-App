@@ -384,7 +384,7 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
                     <ul class="deal-timer {{$product->slug}}"></ul>
                 <script>
 				                    jQuery(function() {
-                        var endDate = "{{$product->end_date}}";
+                        var endDate = "{{date('Y-m-d', strtotime($product->end_date))}}";
                         jQuery('.{{$product->slug}}').countdown({
                             date: endDate,
                             render: function(data) {

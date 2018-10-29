@@ -358,7 +358,29 @@ function toPersianNum( num, dontTrim ) {
                                         </div>
                                     </a>
                                 </div>
+                                
                                 <div class="col-xs-2">
+                                    <a href="{{ route('shop.showCategory', 'آرایشی-و-زیبایی') }}">
+                                    <div style="background: #ee008c;"  onmouseover='this.style.background="#ff0081"' onmouseout='this.style.background="#ee008c"' class="item_header">
+                                    <img src="{{asset('wp-content/themes/takhfifat/images/openned-scissors.png')}}">
+                                    </div>
+                                    <div style="background: #ee008c;" class="item_footer">
+                                        <span>
+                                            زیبایی و آرایشی
+                                        </span>
+                                    </div>
+                                    </a>
+                                </div>
+                                
+                            
+
+                            </div>
+
+                            <div class="col-xs-12 col-md-offset-2">
+                                    
+                                
+                                
+                                    <div class="col-xs-2">
                                         <a href="{{ route('shop.showCategory', 'هنر-و-تئاتر') }}">
                                         <div style="background: #702c93;" onmouseover='this.style.background="#c13fc3"' onmouseout='this.style.background="#702c93"' class="item_header"><img src="{{asset('wp-content/themes/takhfifat/images/theatre-masks.png')}}"></div>
                                         <div style="background: #702c93;" class="item_footer">
@@ -368,43 +390,23 @@ function toPersianNum( num, dontTrim ) {
                                         </div>
                                         </a>
                                 </div>
-                                
-                                
-                            
-
-                            </div>
-
-                            <div class="col-xs-12 col-md-offset-2">
-                                    <div class="col-xs-2">
-                                            <a href="{{ route('shop.showCategory', 'آموزشی') }}">
-                                            <div style="background: #cc692e;"
-                                            onmouseover='this.style.background="#f36815"' onmouseout='this.style.background="#cc692e"' class="item_header">
-                                                    <img src="{{asset('wp-content/themes/takhfifat/images/open-book.png')}}">
-                                            </div>
-                                            <div style="background: #cc692e;" class="item_footer">
-                                                <span>
-                                                    آموزشی
-                                                </span>
-                                            </div>
-                                            </a>
-                                    </div>
-                                
                                 <div class="col-xs-2">
-                                        <a href="{{ route('shop.showCategory', 'آرایشی-و-زیبایی') }}">
-                                        <div style="background: #ee008c;"  onmouseover='this.style.background="#ff0081"' onmouseout='this.style.background="#ee008c"' class="item_header">
-                                        <img src="{{asset('wp-content/themes/takhfifat/images/openned-scissors.png')}}">
-                                        </div>
-                                        <div style="background: #ee008c;" class="item_footer">
-                                            <span>
-                                                زیبایی و آرایشی
-                                            </span>
-                                        </div>
-                                        </a>
+                                    <a href="{{ route('shop.showCategory', 'آموزشی') }}">
+                                    <div style="background: #0288d1;" onmouseover='this.style.background="#0066ff"' onmouseout='this.style.background="#0288d1"' class="item_header">
+                                            <img src="{{asset('wp-content/themes/takhfifat/images/open-book.png')}}">
                                     </div>
+                                    <div style="background: #0288d1;" class="item_footer">
+                                        <span>
+                                            آموزشی
+                                        </span>
+                                    </div>
+                                    </a>
+                            </div>
                                 <div class="col-xs-2">
                                         <a href="{{ route('shop.showCategory', 'خدمات') }}">
-                                    <div style="background: #0288d1;" onmouseover='this.style.background="#0066ff"' onmouseout='this.style.background="#0288d1"' class="item_header"><img src="{{asset('wp-content/themes/takhfifat/images/tools.png')}}"></div>
-                                    <div style="background: #0288d1;" class="item_footer">
+                                    <div style="background: #cc692e;"
+                                    onmouseover='this.style.background="#f36815"' onmouseout='this.style.background="#cc692e"' class="item_header"><img src="{{asset('wp-content/themes/takhfifat/images/tools.png')}}"></div>
+                                    <div style="background: #cc692e;" class="item_footer">
                                         <span>
                                             خدمات
                                         </span> 
@@ -446,7 +448,7 @@ function toPersianNum( num, dontTrim ) {
                         <div class="card-timer">
                                 <a href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}" class="btn btn-secondary"><span class="card-span"><script>
                                         jQuery(function() {
-                                            var endDate = "{{$product->end_date}}";
+                                            var endDate = "{{date('Y-m-d', strtotime($product->end_date))}}";
                                             jQuery('.{{$product->slug}}').countdown({
                                                 date: endDate,
                                                 render: function(data) {

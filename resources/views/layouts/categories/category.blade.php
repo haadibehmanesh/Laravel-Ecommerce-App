@@ -464,7 +464,7 @@
                                     <ul class="deal-timer {{$featured_product->slug}}"><li><span class="num">۷۱</span><span class="text">  روز </span></li><li><span class="num">۷</span><span class="text"> ساعت </span></li><li><span class="num">۵۸</span><span class="text"> دقیقه </span></li><li><span class="num">۳۶</span><span class="text"> ثانیه </span></li></ul>
                                 <script>
                                                     jQuery(function() {
-                                        var endDate = "{{$featured_product->end_date}}";
+                                        var endDate = "{{date('Y-m-d', strtotime($featured_product->end_date))}}";
                                         jQuery('.{{$featured_product->slug}}').countdown({
                                             date: endDate,
                                             render: function(data) {
@@ -671,7 +671,7 @@
                     <ul class="deal-timer {{$product->slug}}"></ul>
                 <script>
 				                    jQuery(function() {
-                        var endDate = "{{$product->end_date}}";
+                        var endDate = "{{date('Y-m-d', strtotime($product->end_date))}}";
                         jQuery('.{{$product->slug}}').countdown({
                             date: endDate,
                             render: function(data) {

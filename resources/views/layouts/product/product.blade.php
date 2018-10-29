@@ -410,7 +410,7 @@ img.emoji {
 				
                     jQuery(function() {
 
-                        var endDate = "{{$product->end_date}}";
+                        var endDate = "{{date('Y-m-d', strtotime($product->end_date))}}";
 
                         jQuery('.countdown_single_product').countdown({
 
@@ -713,7 +713,7 @@ $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  '
                     <div class="card-timer">
                             <a href="{{ route('shop.show', $product->slug) }}" class="" title="{{ $product->name }}" class=""><span class="card-span"><script>
                                     jQuery(function() {
-                                        var endDate = "{{$product->end_date}}";
+                                        var endDate = "{{date('Y-m-d', strtotime($product->end_date))}}";
                                         jQuery('.{{$product->slug}}').countdown({
                                             date: endDate,
                                             render: function(data) {
