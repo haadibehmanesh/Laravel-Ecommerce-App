@@ -14,7 +14,7 @@ class SearchController extends Controller
      */
     public function index()
     {
-        $pagination = 3;
+        $pagination = 4;
         $query = Input::get('query');
         $products = BiProduct::search($query)->paginate($pagination);
         $products->appends(['query' => $query]);
