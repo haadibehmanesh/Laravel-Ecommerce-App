@@ -20,7 +20,7 @@ class AjaxController extends Controller {
     
     public function getCategory($slug)
     {  
-        $pagination = 9;
+        $pagination = 8;
         
         $slug_db = explode('/', $slug);
        
@@ -75,7 +75,7 @@ class AjaxController extends Controller {
     }
     public function getList($slug)
     {  
-        $pagination = 9;
+        $pagination = 8;
         
         $slug_db = explode('/', $slug);
        
@@ -95,7 +95,7 @@ class AjaxController extends Controller {
 
     public function getProduct()
     {  
-        $pagination = 3 ;
+        $pagination = 4 ;
         $products = BiProduct::orderBy('id', 'desc')->paginate($pagination);
         return view('layouts/shop/ajax-products')->with([
             'products' => $products         

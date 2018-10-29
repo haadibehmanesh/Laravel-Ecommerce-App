@@ -18,7 +18,7 @@ class ShopController extends Controller
      */
     public function index()
     {
-        $pagination = 3;
+        $pagination = 4;
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
 
         if(request()->category) {
@@ -145,7 +145,7 @@ class ShopController extends Controller
 
     public function showCategory($slug)
     {  
-        $pagination = 9;
+        $pagination = 8;
         
         $slug_db = explode('/', $slug);
        

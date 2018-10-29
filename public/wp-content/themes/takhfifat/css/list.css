@@ -177,7 +177,7 @@
 
 .cat-filter-box .cat-filter {
     padding: 0px 15px 15px;
-    padding-right: 17%;
+    /*padding-right: 17%;*/
     position: relative;
 }
 .cat-filter-box .cat-filter .slide3 {
