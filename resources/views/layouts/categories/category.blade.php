@@ -63,8 +63,8 @@
 
     
 <!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
-<link rel="stylesheet" type="text/css" href="../../engine1/style.css" />
-<script type="text/javascript" src="../../engine1/jquery.js"></script>
+<link rel="stylesheet" type="text/css" href="../../engine9/style.css" />
+<script type="text/javascript" src="../../engine9/jquery.js"></script>
 <!-- End WOWSlider.com HEAD section -->
     <link href="../../wp-content/themes/takhfifat/css/list.css" rel="stylesheet">
     <link href="../../wp-content/themes/takhfifat/css/bootstrap.min.css" rel="stylesheet">
@@ -425,7 +425,7 @@
                 <div class="ajax-slider">
                 @if(!$category->parent_id or empty($featured_product->gallery))
                 <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
-                    <div id="wowslider-container1">
+                    <div id="wowslider-container9">
                         <div class="ws_images">
                             <ul>
                                 @foreach ( $sliderimages as  $sliderimage )
@@ -435,8 +435,8 @@
                     <div class="ws_script" style="position:absolute;left:-99%"></div>
                         <div class="ws_shadow"></div>
                         </div>	
-                        <script type="text/javascript" src="../../engine1/wowslider.js"></script>
-                        <script type="text/javascript" src="../../engine1/script.js"></script>
+                        <script type="text/javascript" src="../../engine9/wowslider.js"></script>
+                        <script type="text/javascript" src="../../engine9/script.js"></script>
                         <!-- End WOWSlider.com BODY section -->
                         @else
                         
@@ -461,11 +461,11 @@
                                 </div>
                                 <div class="time_out">
                                     <i class="fa fa-clock-o"></i>
-                                    <ul class="deal-timer countdown_takhfifat"><li><span class="num">۷۱</span><span class="text">  روز </span></li><li><span class="num">۷</span><span class="text"> ساعت </span></li><li><span class="num">۵۸</span><span class="text"> دقیقه </span></li><li><span class="num">۳۶</span><span class="text"> ثانیه </span></li></ul>
+                                    <ul class="deal-timer {{$featured_product->slug}}"><li><span class="num">۷۱</span><span class="text">  روز </span></li><li><span class="num">۷</span><span class="text"> ساعت </span></li><li><span class="num">۵۸</span><span class="text"> دقیقه </span></li><li><span class="num">۳۶</span><span class="text"> ثانیه </span></li></ul>
                                 <script>
                                                     jQuery(function() {
-                                        var endDate = "2018-11-4 23:59:00";
-                                        jQuery('.countdown_takhfifat').countdown({
+                                        var endDate = "{{$featured_product->end_date}}";
+                                        jQuery('.{{$featured_product->slug}}').countdown({
                                             date: endDate,
                                             render: function(data) {
                                                 if ( ! data.sec  ) { data.sec = 0 };
@@ -663,15 +663,16 @@
             <div id="ajax-view">
                     <div class="cat-list">
     @forelse ($productsForCategories as $product) 
+    
         <div class="col-lg-4 col-md-4 col-sm-6">
             <div class="box_offer">
 							<div class="time_out">
                     <i class="fa fa-clock-o"></i>
-                    <ul class="deal-timer countdownhkfkk"></ul>
+                    <ul class="deal-timer {{$product->slug}}"></ul>
                 <script>
 				                    jQuery(function() {
-                        var endDate = "2018-10-22 23:59:00";
-                        jQuery('.countdownhkfkk').countdown({
+                        var endDate = "{{$product->end_date}}";
+                        jQuery('.{{$product->slug}}').countdown({
                             date: endDate,
                             render: function(data) {
                                 if ( ! data.sec  ) { data.sec = 0 };
@@ -690,6 +691,7 @@
                     });
                 </script>					
                 </div>
+                
 			    <a href="{{ route('shop.show', ['product' => $product->slug, 'category' => $category->slug] ) }}" title="{{ $product->name }}"><img src="{{ productImage($product->image) }}" title="{{ $product->name }}"></a>
                 <!-- Discount -->
                 <span class="Discount"><b>%{{ toPersianNum($product->discount)  }}</b>تخفیف</span>

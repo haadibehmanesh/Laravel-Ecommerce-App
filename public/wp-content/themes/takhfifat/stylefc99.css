@@ -134,24 +134,7 @@ margin-bottom: 10px;
     background-color: #f6861f;
     text-align: -webkit-center;
 }
-@media (max-width : 480px) {
-    .card .card-discount{
-        border: 2px solid white;
-        padding: 17px;
-        width: 100px;
-        height: 100px;
-        font-size: 21px;
-        position: absolute;
-        /* z-index: 60; */
-        color: #FFFFFF;
-        overflow: hidden;
-        border-radius: 50%;
-        top: 72%;
-        right: 32.8%;
-        background-color: #f6861f;
-        text-align: -webkit-center;
-    }
-}
+
 .card .card-after-discount{
     font-size: 18px;
     float: left;
@@ -249,8 +232,10 @@ margin-bottom: 10px;
     background-color: #f6861f;
     text-align: -webkit-center;
 }
+
+
 .mini-card .card-after-discount{
-    font-size: 15px;
+    font-size: 14px;
     float: left;
     color: white;
     padding: 5px;
@@ -298,6 +283,231 @@ margin-bottom: 10px;
     font-size: 12px;
     color: white;
 }
+/*///////////////////////////*/
+.mini-card-product {
+
+    height: 300px;
+    border: 1px solid #ededed;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.1);
+    background: #f5f5f5;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 2px solid #f6861f;
+    border-radius: .25rem;
+    margin-bottom: 20px;
+
+}
+.mini-card-product .card-header{    
+    background: #f6861f;
+    padding: 5px 5px 5px 0px;
+}
+.mini-card-product .card-location{
+    float: left;
+    font-size: 12px;
+    padding: 0px 0px 0px 10px;
+    color: white;
+}
+.mini-card-product .card-shopping{
+
+    float: left;
+    padding: 8px 0 0 8px;
+    color: white;
+
+}
+.mini-card-product .card-discount{
+    border: 2px solid white;
+    padding: 17px;
+    width: 90px;
+    height: 90px;
+    font-size: 18px;
+    position: absolute;
+    /* z-index: 60; */
+    color: #FFFFFF;
+    overflow: hidden;
+    border-radius: 50%;
+    top: 70%;
+    right: 32.80%;
+    background-color: #f6861f;
+    text-align: -webkit-center;
+}
+.mini-card-product .card-after-discount{
+    font-size: 14px;
+    float: left;
+    color: white;
+    padding: 5px;
+
+}
+.mini-card-product .sb-preview-img {
+    transition: all .2s ease-in-out;
+}
+
+.mini-card-product .card-img-top {
+    width: 100%;
+    height:180px;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+}
+.mini-card-product .img{
+    
+    vertical-align: middle;
+}
+
+.mini-card-product .card-timer{    
+    background: #005aaa;
+    color: #fff;
+    padding: 0px 5px 0px 0px;
+    z-index: 1;
+}
+.mini-card-product .card-timer a{
+
+    display: inline-block;
+    /* padding: 6px 36px; */
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+
+}
+.mini-card-product .card-timer .fa{
+
+    float: right;
+    font-size: 22px;
+    padding: 0px 0 0 5px;
+
+}
+
+
+.mini-card-product .card-footer{    
+    background: #005aaa;
+    padding: 5px;
+}
+.mini-card-product .card-span{
+
+    font-size: 12px;
+    color: white;
+}
+
+
+@media (max-width : 780px) {
+    .mini-card .card-discount{
+        border: 2px solid white;
+        padding: 17px;
+        width: 90px;
+        height: 90px;
+        font-size: 18px;
+        position: absolute;
+        /* z-index: 60; */
+        color: #FFFFFF;
+        overflow: hidden;
+        border-radius: 50%;
+        top: 70%;
+        right: 35%;
+        background-color: #f6861f;
+        text-align: -webkit-center;
+    }    
+    .card .card-discount{
+        border: 2px solid white;
+        padding: 17px;
+        width: 100px;
+        height: 100px;
+        font-size: 21px;
+        position: absolute;
+        /* z-index: 60; */
+        color: #FFFFFF;
+        overflow: hidden;
+        border-radius: 50%;
+        top: 72%;
+        right: 32.8%;
+        background-color: #f6861f;
+        text-align: -webkit-center;
+    }
+    .mini-card-product .card-discount{
+        border: 2px solid white;
+        padding: 17px;
+        width: 90px;
+        height: 90px;
+        font-size: 18px;
+        position: absolute;
+        /* z-index: 60; */
+        color: #FFFFFF;
+        overflow: hidden;
+        border-radius: 50%;
+        top: 70%;
+        right: 35%;
+        background-color: #f6861f;
+        text-align: -webkit-center;
+    }
+}
+
+@media (min-width : 481px) and (max-width : 780px) {
+    .block_category{display: none;}
+    .mini-card .card-discount{
+        border: 2px solid white;
+        padding: 17px;
+        width: 90px;
+        height: 90px;
+        font-size: 18px;
+        position: absolute;
+        /* z-index: 60; */
+        color: #FFFFFF;
+        overflow: hidden;
+        border-radius: 50%;
+        top: 70%;
+        right: 40%;
+        background-color: #f6861f;
+        text-align: -webkit-center;
+    }
+    .mini-card-product .card-discount{
+        border: 2px solid white;
+        padding: 17px;
+        width: 90px;
+        height: 90px;
+        font-size: 18px;
+        position: absolute;
+        /* z-index: 60; */
+        color: #FFFFFF;
+        overflow: hidden;
+        border-radius: 50%;
+        top: 70%;
+        right: 40%;
+        background-color: #f6861f;
+        text-align: -webkit-center;
+    }
+    .card .card-discount{
+        border: 2px solid white;
+        padding: 17px;
+        width: 100px;
+        height: 100px;
+        font-size: 21px;
+        position: absolute;
+        /* z-index: 60; */
+        color: #FFFFFF;
+        overflow: hidden;
+        border-radius: 50%;
+        right: 40%;
+        background-color: #f6861f;
+        text-align: -webkit-center;
+    }
+}
+
 .cat{
 
     overflow: hidden;
@@ -318,6 +528,7 @@ margin-bottom: 10px;
 .cat .item_footer{
     margin-top: 5px;
     margin-bottom: 10px;
+    font-size: 16px;
     padding: 15px;
     color: white;
     width: 100%;
@@ -347,7 +558,7 @@ margin-bottom: 10px;
     z-index: 1;
     
 }
-@media (max-width: 480px){
+@media (max-width: 780px){
     .cat_show{
 
         overflow: hidden;
@@ -367,7 +578,10 @@ margin-bottom: 10px;
     }
 }
 
-
+.info-counter-product{
+    padding:22px 10px 17px;
+    border-bottom:1px solid #dedede;
+}
 
 input{position:static !important;}
 *{font-weight:normal !important}

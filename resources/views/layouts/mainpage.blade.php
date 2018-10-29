@@ -272,37 +272,7 @@ function toPersianNum( num, dontTrim ) {
     <div class="title_block"><span>بن های ویژه</span></div>
     @foreach ($featured as $featured)
         <div class="col-lg-4 col-md-4 col-sm-6">
-       {{-- <div class="hadi_box">
-                    <div class="">
-                        <div class="hadi_title">
-                            <div class="">
-                                <div class="col-xs-10">
-                            <h5><a href="{{ route('shop.show', $featured->slug) }}" title="{{ $featured->name }}">{{ $featured->name }}</a></h5>
-                                </div>
-                                <div class="col-lg-2">
-                            <span class="">شیراز</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="">
-                    
-                        
-                    </div>
-                    <div class="">
-                            <a href="{{ route('shop.show', $featured->slug) }}" title="{{ $featured->name }}"><img src="{{ productImage($featured->image) }}" title="{{ $featured->name }}"></a>
-                        
-                </div>
-
-                <div class="" >
-                        <!-- Discount -->
-                        <span class=""><b>%{{ toPersianNum($featured->discount)  }}</b>تخفیف</span>
-                        <span class=""><i class="fa fa-map-marker"></i>امام خمینی</span>
-                        <span>{{toPersianNum($featured->sold)}}<i class="fa fa-shopping-basket"></i></span>
-                </div>
-
-
---}}
+       
 <div class="card">
         <div class="card-header">
                 <a href="{{ route('shop.show', $featured->slug) }}" class="btn btn-secondary" title="{{ $featured->name }}"><span class="card-span">{{ $featured->name }}</span></a>
@@ -311,8 +281,8 @@ function toPersianNum( num, dontTrim ) {
         <div class="card-timer">
                 <a href="{{ route('shop.show', $featured->slug) }}" class="btn btn-secondary" title="{{ $featured->name }}" class="btn btn-secondary"><span class="card-span"><script>
                         jQuery(function() {
-                            var endDate = "2020-1-5 23:59:00";
-                            jQuery('.countdownqdlkp').countdown({
+                            var endDate = "{{$featured->end_date}}";
+                            jQuery('.{{$featured->slug}}').countdown({
                                 date: endDate,
                                 render: function(data) {
                                     if ( ! data.sec  ) { data.sec = 0 };
@@ -329,7 +299,7 @@ function toPersianNum( num, dontTrim ) {
                                 }
                             });
                         });
-                    </script><span><i class="fa fa-clock-o"></i></span><ul class="deal-timer countdownqdlkp"></ul></span></a>
+                    </script><span><i class="fa fa-clock-o"></i></span><ul class="deal-timer {{$featured->slug}}"></ul></span></a>
                     <span class="card-shopping"><i class="fa fa-shopping-bag"></i>&nbsp;{{toPersianNum($featured->sold)}}</span>
         </div>
         <a class="sb-preview-img" href="{{ route('shop.show', $featured->slug) }}" class="btn btn-secondary" title="{{ $featured->name }}">
@@ -342,45 +312,6 @@ function toPersianNum( num, dontTrim ) {
         <span class="card-after-discount">{{ toPersianNum(presentPrice($featured->price,$featured->discount)) }} تومان</span>
         </div>
         </div>
-        {{--
-            <div class="box_offer">
-                <div class="time_out">
-                    <i class="fa fa-clock-o"></i>
-                    <ul class="deal-timer countdownqdlkp"></ul>
-                <script>
-                    jQuery(function() {
-                        var endDate = "2020-1-5 23:59:00";
-                        jQuery('.countdownqdlkp').countdown({
-                            date: endDate,
-                            render: function(data) {
-                                if ( ! data.sec  ) { data.sec = 0 };
-								var days = toPersianNum(data.days);
-								var hours = toPersianNum(data.hours);
-								var min = toPersianNum(data.min);
-								var sec = toPersianNum(data.sec);
-                                jQuery(this.el).html(
-                                    '<li><span class="num">' + days +'</span><span class="text">  روز </span></li>'+
-                                    '<li><span class="num">' + hours +'</span><span class="text"> ساعت </span></li>'+
-                                    '<li><span class="num">' + min +'</span><span class="text"> دقیقه </span></li>'+
-                                    '<li><span class="num">' + sec +'</span><span class="text"> ثانیه </span></li>'
-                                );
-                            }
-                        });
-                    });
-                </script>					
-                </div>
-                    <a href="{{ route('shop.show', $featured->slug) }}" title="{{ $featured->name }}"><img src="{{ productImage($featured->image) }}" title="{{ $featured->name }}"></a>
-                <!-- Discount -->
-                <span class="Discount"><b>%{{ toPersianNum($featured->discount)  }}</b>تخفیف</span>
-				<span class="address"><i class="fa fa-map-marker"></i>امام خمینی</span>
-                <span>{{toPersianNum($featured->sold)}}<i class="fa fa-shopping-basket"></i></span>
-				<!-- Info -->
-                <div class="Information">
-                    <h2 class="ellipsis"><a href="{{ route('shop.show', $featured->slug) }}" title="{{ $featured->name }}">{{ $featured->name }}</a></h2>
-                    <span class="price"><del><span class="woocommerce-Price-amount amount">{{ toPersianNum($featured->price) }}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></del> <ins><span class="woocommerce-Price-amount amount">{{ toPersianNum(presentPrice($featured->price,$featured->discount)) }}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></ins></span>
-                </div>
-            </div>
-            --}}
         </div>
         @endforeach
 </div>
@@ -392,21 +323,20 @@ function toPersianNum( num, dontTrim ) {
             
             <div class="cat">
                     <div class="col-xs-12 col-md-offset-2">
-                                <div class="col-xs-2">
-                                    <a href="{{ route('shop.showCategory', 'آرایشی-و-زیبایی') }}">
-                                    <div style="background: #ee008c;" class="item_header">
-                                    <img src="{{asset('wp-content/themes/takhfifat/images/openned-scissors.png')}}">
-                                    </div>
-                                    <div style="background: #ee008c;" class="item_footer">
+                            <div class="col-xs-2">
+                                    <a href="{{ route('shop.showCategory', 'رستوران-و-کافی-شاپ') }}">
+                                    <div style="background: #ee1b24;"  onmouseover='this.style.background="red"' onmouseout='this.style.background="#ee1b24"' class="item_header"><img src="{{asset('wp-content/themes/takhfifat/images/restaurant-interface-symbol-of-fork-and-knife-couple.png')}}"></div>
+                                    <div style="background: #ee1b24;" class="item_footer">
                                         <span>
-                                            زیبایی و آرایشی
-                                        </span>
+                                            رستوران و کافی شاپ
+                                        </span> 
                                     </div>
                                     </a>
-                                </div>
+                            </div>
+                                
                                 <div class="col-xs-2">
                                         <a href="{{ route('shop.showCategory', 'تفریح-و-ورزش') }}">
-                                        <div style="background: #50b74a;" class="item_header">
+                                        <div style="background: #50b74a;" onmouseover='this.style.background="#06cc06d9"' onmouseout='this.style.background="#50b74a"' class="item_header">
                                                 <img src="{{asset('wp-content/themes/takhfifat/images/running.png')}}">
                                         </div>
                                         <div style="background: #50b74a;" class="item_footer">
@@ -417,20 +347,8 @@ function toPersianNum( num, dontTrim ) {
                                         </a>
                                 </div>
                                 <div class="col-xs-2">
-                                        <a href="{{ route('shop.showCategory', 'آموزشی') }}">
-                                        <div style="background: #cc692e;" class="item_header">
-                                                <img src="{{asset('wp-content/themes/takhfifat/images/open-book.png')}}">
-                                        </div>
-                                        <div style="background: #cc692e;" class="item_footer">
-                                            <span>
-                                                آموزشی
-                                            </span>
-                                        </div>
-                                        </a>
-                                </div>
-                                <div class="col-xs-2">
                                         <a href="{{ route('shop.showCategory', 'پزشکی-و-سلامت') }}">
-                                        <div style="background: #01acf1;" class="item_header">
+                                        <div style="background: #01acf1;" onmouseover='this.style.background="#016cf1d9"' onmouseout='this.style.background="#01acf1"' class="item_header">
                                                 <img src="{{asset('wp-content/themes/takhfifat/images/heartbeat.png')}}">
                                         </div>
                                         <div style="background: #01acf1;" class="item_footer">
@@ -440,25 +358,52 @@ function toPersianNum( num, dontTrim ) {
                                         </div>
                                     </a>
                                 </div>
-                            
-
-                            </div>
-                            <div class="col-xs-12 col-md-offset-2">
                                 <div class="col-xs-2">
-                                        <a href="{{ route('shop.showCategory', 'بن-های-فروشگاهی') }}">
-                                        <div style="background: #ffb715;" class="item_header">
-                                            <img src="{{asset('wp-content/themes/takhfifat/images/shopping-purse-icon.png')}}"></div>
-                                        <div style="background: #ffb715;" class="item_footer">
+                                        <a href="{{ route('shop.showCategory', 'هنر-و-تئاتر') }}">
+                                        <div style="background: #702c93;" onmouseover='this.style.background="#c13fc3"' onmouseout='this.style.background="#702c93"' class="item_header"><img src="{{asset('wp-content/themes/takhfifat/images/theatre-masks.png')}}"></div>
+                                        <div style="background: #702c93;" class="item_footer">
                                             <span>
-                                                بن های فروشگاهی
+                                                هنر و تئاتر
                                             </span> 
                                         </div>
                                         </a>
                                 </div>
-                  
+                                
+                                
+                            
+
+                            </div>
+
+                            <div class="col-xs-12 col-md-offset-2">
+                                    <div class="col-xs-2">
+                                            <a href="{{ route('shop.showCategory', 'آموزشی') }}">
+                                            <div style="background: #cc692e;"
+                                            onmouseover='this.style.background="#f36815"' onmouseout='this.style.background="#cc692e"' class="item_header">
+                                                    <img src="{{asset('wp-content/themes/takhfifat/images/open-book.png')}}">
+                                            </div>
+                                            <div style="background: #cc692e;" class="item_footer">
+                                                <span>
+                                                    آموزشی
+                                                </span>
+                                            </div>
+                                            </a>
+                                    </div>
+                                
+                                <div class="col-xs-2">
+                                        <a href="{{ route('shop.showCategory', 'آرایشی-و-زیبایی') }}">
+                                        <div style="background: #ee008c;"  onmouseover='this.style.background="#ff0081"' onmouseout='this.style.background="#ee008c"' class="item_header">
+                                        <img src="{{asset('wp-content/themes/takhfifat/images/openned-scissors.png')}}">
+                                        </div>
+                                        <div style="background: #ee008c;" class="item_footer">
+                                            <span>
+                                                زیبایی و آرایشی
+                                            </span>
+                                        </div>
+                                        </a>
+                                    </div>
                                 <div class="col-xs-2">
                                         <a href="{{ route('shop.showCategory', 'خدمات') }}">
-                                    <div style="background: #0288d1;" class="item_header"><img src="{{asset('wp-content/themes/takhfifat/images/tools.png')}}"></div>
+                                    <div style="background: #0288d1;" onmouseover='this.style.background="#0066ff"' onmouseout='this.style.background="#0288d1"' class="item_header"><img src="{{asset('wp-content/themes/takhfifat/images/tools.png')}}"></div>
                                     <div style="background: #0288d1;" class="item_footer">
                                         <span>
                                             خدمات
@@ -467,118 +412,26 @@ function toPersianNum( num, dontTrim ) {
                                         </a>
                                 </div>
                                 <div class="col-xs-2">
-                                        <a href="{{ route('shop.showCategory', 'رستوران-و-کافی-شاپ') }}">
-                                        <div style="background: #ee1b24;" class="item_header"><img src="{{asset('wp-content/themes/takhfifat/images/restaurant-interface-symbol-of-fork-and-knife-couple.png')}}"></div>
-                                        <div style="background: #ee1b24;" class="item_footer">
+                                        <a href="{{ route('shop.showCategory', 'بن-های-فروشگاهی') }}">
+                                        <div style="background: #ffb715;" onmouseover='this.style.background="#ffd715"' onmouseout='this.style.background="#ffb715"' class="item_header">
+                                            <img src="{{asset('wp-content/themes/takhfifat/images/shopping-purse-icon.png')}}"></div>
+                                        <div style="background: #ffb715;" class="item_footer">
                                             <span>
-                                                رستوران و کافی شاپ
+                                                بن های فروشگاهی
                                             </span> 
                                         </div>
                                         </a>
                                 </div>
-                                <div class="col-xs-2">
-                                        <a href="{{ route('shop.showCategory', 'هنر-و-تئاتر') }}">
-                                        <div style="background: #702c93;" class="item_header"><img src="{{asset('wp-content/themes/takhfifat/images/theatre-masks.png')}}"></div>
-                                        <div style="background: #702c93;" class="item_footer">
-                                            <span>
-                                                هنر و تئاتر
-                                            </span> 
-                                        </div>
-                                        </a>
-                                </div>
+                                
+                                
                             
                     </div>
             </div>
             
-            {{--<!--Right Column (2 On left)-->
-			<div class="col-lg-3 col-md-3 col1">
-				<!--Top-->
-				<div class="col-lg-12 col-md-12 col-sm-6 col3">
-					<div class="box_category">
-						<h2><a href="/" style="background-color:#0dc575 !important;"><b>پزشکی</b>  <img src="wp-content/uploads/2017/05/icon-cofpy-1.png" style="width: 45px;height: 45px;margin:60px -43px 0 0;position: absolute;"></a></h2>
-						<div class="imgLabel">
-							<a href="/"  ><img src="wp-content/uploads/2017/05/a-1-1.jpg"></a>
-							<span style="color:#0dc575 !important;">  تخفیفــ <small style="background-color:#0dc575 !important;">تا 56%</small></span>
-						</div>
-					</div>
-				</div>
-                <!--Bottom-->
-				<div class="col-lg-12 col-md-12 col-sm-6 col4">
-					<div class="box_category">
-						<div class="imgLabel">
-							<a href="/" title="" ><img src="wp-content/uploads/2017/05/b-1.jpg"></a>
-								<span style="color:#e02c6d !important;">  تخفیفــ <small style="background-color:#e02c6d !important;">تا 50%</small></span>
-							<div class="details">
-								<a href="/"  style="background-color: #e02c6d;border-bottom-color: white;" class="aye_sale">مشاهـده بن ها</a>
-							</div>
-						</div>
-						<h2><a href="/" style="background-color: #e02c6d !important;"><b>زیبایی و آرایشی</b><img src="wp-content/uploads/2017/05/icoopy-1.png" style="width: 45px;height: 45px;margin:-5px 100px 0 0;position: absolute;"></a></h2>
-					</div>
-				</div>
-            </div>
-			<!--LEft Column (3 On right)-->
-			<div class="col-lg-9 col-md-9 col2">
-								<!--Top-->
-				<div class="col-lg-12 col-md-12 col-sm-12 col5">
-					<div class="box_category">
-						<div class="imgLabel">
-							<a href="/" title="هنر و تئاتر " ><img src="wp-content/uploads/2017/05/c-1-1.jpg"></a>
-								
-								<span style="color:#f86161 !important;">  تخفیفــ <small style="background-color:#f86161 !important;">تا 100%</small></span>
-								
-							<div class="details">
-								<p>توضیحاتی در مورد این دسته اینجا قرار خواهد گرفت ...</p>
-								<a href="/" style="background-color: #f86161;border-bottom-color: white;" class="aye_sale">مشاهـده بن ها</a>
-							</div>
-						</div>
-						<h2><a href="/" style="background-color: #f86161 !important;"><b>فرهنگی هنری</b><img src="wp-content/uploads/2017/05/icon-copy-2.png" style="width: 85px;height: 85px;margin:100px -107px 0 0;position: absolute;"></a></h2>
-					</div>
-				</div>
-                <!--Bottom right-->
-				<div class="col-lg-3 col-md-3 col-sm-3 col6">
-					<div class="box_category">
-						<div class="imgLabel">
-							<a href="/" title="آموزشی " ><img src="wp-content/uploads/2017/05/onlinelearning_1920-1920x620-1.jpg"></a>
-							
-								<span style="color:#c334c5 !important;">  تخفیفــ <small style="background-color:#c334c5 !important;">تا 100%</small></span>
-								
-						</div>
-						<h2><a href="/" style="background-color: #c334c5 !important;"><b>آموزشی</b><img src="wp-content/uploads/2017/05/icon-copfgy-1.png" style="width: 45px;height: 45px;margin:50px -60px 0 0;position: absolute;"></a></h2>
-					</div>
-				</div>
-                <!--Bottom left-->
-				<div class="col-lg-9 col-md-9 col-sm-9 col7">
-					<div class="box_category">
-						<div class="imgLabel">
-							<a href="/" title="تفریحی و ورزشی " ><img src="wp-content/uploads/2017/05/download-1-1.jpg"></a>
-							
-
-							<span style="color:#008ba0 !important;">  تخفیفــ <small style="background-color:#008ba0 !important;">تا 79%</small></span>
-								
-							<div class="details">
-																	<p> </p>
-																	<a href="/" style="background-color: #008ba0;border-bottom-color: white;" class="aye_sale">مشاهـده بن ها</a>
-							</div>
-						</div>
-						<h2><a href="/" style="background-color: #008ba0 !important;"><b>تفریحی و ورزشی</b><img src="wp-content/uploads/2017/05/icoggf-1.png" style="width: 50px;height: 50px;margin:50px -100px 0 0;position: absolute;"></a></h2>
-					</div>
-				</div>
-            </div>--}}
 		</div>
 		
 		
-	{{--
-		<div class="block_category">
-			<!--Right Column (2 On left)-->
-			<div class="col-lg-3 col-md-3 col1">
-				<!--Top-->
-            </div>
-			<!--LEft Column (3 On right)-->
-			<div class="col-lg-9 col-md-9 col2">
-							
-            </div>
-        </div>	
-    --}}	
+	
 <div class="clear"></div><!--Discount other -->
 <div class="discount_other">
     <div class="title_block"><span>دیـگر بن ها</span></div>
@@ -593,8 +446,8 @@ function toPersianNum( num, dontTrim ) {
                         <div class="card-timer">
                                 <a href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}" class="btn btn-secondary"><span class="card-span"><script>
                                         jQuery(function() {
-                                            var endDate = "2020-1-5 23:59:00";
-                                            jQuery('.countdownqdlkp').countdown({
+                                            var endDate = "{{$product->end_date}}";
+                                            jQuery('.{{$product->slug}}').countdown({
                                                 date: endDate,
                                                 render: function(data) {
                                                     if ( ! data.sec  ) { data.sec = 0 };
@@ -611,7 +464,7 @@ function toPersianNum( num, dontTrim ) {
                                                 }
                                             });
                                         });
-                                    </script><span><i class="fa fa-clock-o"></i></span><ul class="deal-timer countdownqdlkp"></ul></span></a>
+                                    </script><span><i class="fa fa-clock-o"></i></span><ul class="deal-timer {{$product->slug}}"></ul></span></a>
                                     <span class="card-shopping"><i style="font-size: 17px;" class="fa fa-shopping-bag"></i>&nbsp;{{toPersianNum($product->sold)}}</span>
                         </div>
                         <a class="sb-preview-img" href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}">
@@ -654,8 +507,8 @@ function toPersianNum( num, dontTrim ) {
                     <div class="card-timer">
                             <a href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}" class="btn btn-secondary"><span class="card-span"><script>
                                     jQuery(function() {
-                                        var endDate = "2020-1-5 23:59:00";
-                                        jQuery('.countdownqdlkp').countdown({
+                                        var endDate = "{{$product->end_date}}";
+                                        jQuery('.{{$product->slug}}').countdown({
                                             date: endDate,
                                             render: function(data) {
                                                 if ( ! data.sec  ) { data.sec = 0 };
@@ -672,7 +525,7 @@ function toPersianNum( num, dontTrim ) {
                                             }
                                         });
                                     });
-                                </script><span><i class="fa fa-clock-o"></i></span><ul class="deal-timer countdownqdlkp"></ul></span></a>
+                                </script><span><i class="fa fa-clock-o"></i></span><ul class="deal-timer {{$product->slug}}"></ul></span></a>
                                 <span class="card-shopping"><i style="font-size: 17px;" class="fa fa-shopping-bag"></i>&nbsp;{{toPersianNum($product->sold)}}</span>
                     </div>
                     <a class="sb-preview-img" href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}">
@@ -714,186 +567,6 @@ function toPersianNum( num, dontTrim ) {
 </div>
     @endif
 @endforeach
-{{--
-@foreach($allcategories as $category)
-    @if(!$category->parent && $category->products->where('index_gallery',1)->count() > 2)
-    
-    <article id="float-cat-restaurant" class="cat-deal-color color-rescoffee active">
-        <h3 class="hx"><span class="ir"><i class="icon icon-burger"></i></span><a href="{{ route('shop.showCategory', $category->slug) }}" class="article-h3">{{$category->name}}</a>
-        </h3>
-        </header>
-       
-            <div class="main-row clearfix">
-        @php ($itr = 1) 
-        @foreach ($category->products as $product)
-        @if($product->index_gallery == 1 )
-                @if($itr == 1)
-                <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 ">
-                    <div class="inner-box">
-    
-                    <div class="cat-deal-bigbox">
-                    <div class="cat-deal-box">
-                    <a href="{{ route('shop.show', ['product' => $product->slug, 'category' => $category->slug] ) }}" class="figure" title="{{ $product->name }}">
-                    <ul class="deal-tag list-unstyled">
-                    </ul>
-                    <img alt="{{ $product->name }}"  src="{{ productImage($product->image) }}" title="{{ $product->name }}"> </a>
-                    <div class="cat-deal-box-main clearfix">
-                    <h4 class="cdbm-title"><a href="{{ route('shop.show', ['product' => $product->slug, 'category' => $category->slug] ) }}" class="truncate">{{ $product->name }}</a>
-                    </h4>
-                    <span class="cdbm-total-buy"><span class="ir"><i class="fa fa-shopping-basket"></i></span><span class="cdbm-tb-total">
-                    {{toPersianNum($product->sold)}} </span></span>
-                     </div>
-                    <div class="cat-deal-box-footer clearfix"><span class="cdbf-takhfif"><span class="cdbft-shape"><span class="cdbft-shape-text">%{{toPersianNum($product->discount)}}</span></span></span><a href="{{ route('shop.show', ['product' => $product->slug, 'category' => $category->slug] ) }}" class="cdbf-buy-icon">
-                    <button class="nb-btn">مشاهده و خرید<i class="icon icon-shopping-cart2"></i></button>
-                    </a><span class="cdbf-price">
-                    <del class="cdbf-real-price"><span>{{ toPersianNum($product->price) }}</span></del><ins class="cdbf-netbarg-price">
-                    <span itemprop="price" content="880000">{{ toPersianNum(presentPrice($product->price,$product->discount)) }}</span><span itemprop="priceCurrency" content="IRR"> تومان</span></ins></span></div>
-                    </div>
-                    </div>
-                    </div>
-                    </div>
-                @elseif($itr == 2)
-                <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
-                    <div class="small-box-row">
-                    
-                    
-                            <div class="list-items ">
-                                    <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
-                                    <a href="{{ route('shop.show', ['product' => $product->slug, 'category' => $category->slug] ) }}" class="figure" title="{{ $product->name }}" class="figure clearfix"><img src="{{ productImage($product->image) }}" title="{{ $product->name }}"></a>   
-                                    
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
-                                    <div class="list-deal-details">
-                                        <div class="top-panel">
-                                            
-                                            <span>
-                                                <a href="{{ route('shop.show', ['product' => $product->slug, 'category' => $category->slug] ) }}" title="{{ $product->name }}"><h3 class="small-title">{{ $product->name }}</h3></a>
-                                            </span>
-                                        </div>
-                                      
-                                        <div class="bottom-panel">
-                                        </div>
-                                        <div class="price list-content list-price-single">
-                                                <span class="cdbf-takhfif"><span class="cdbft-shape"><span class="list-discount-tag">%{{toPersianNum($product->discount)}}</span></span></span>               
-                                                <span class="price price_slider price_slider_single">
-                                                        <del><span class="woocommerce-Price-amount amount">{{ toPersianNum($product->price) }}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></del> <ins><span class="woocommerce-Price-amount amount">{{ toPersianNum(presentPrice($product->price,$product->discount)) }}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></ins>
-                                                    </span>
-                                            <div class="row">
-                                                    <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
-                                                            <form class="cart" action="{{ route('cart.store') }}" method="post" enctype='multipart/form-data'>
-                                                                {{ csrf_field() }}
-                                                            <input type="hidden" name="id" value="{{ $product->id }}">
-                                                           @if($product->quantity - $product->sold > 0)
-                                                            <button type="submit" name="add-to-cart" value="96" class="nb-btn">افزودن به سبد</button>
-                                                            @else
-                                                            <div class="alert alert-danger">
-                                                                <p class="text-center">
-                                                                موجود نیست
-                                                                </p>
-                                                            </div>
-                                                            @endif
-                                                            </form>
-                                                    </div>
-                                                    <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
-                                                                            <span class="cdbm-total-buy">
-                                                                                    <i class="fa fa-shopping-basket"></i>
-                                                                                    {{$product->sold}} خرید
-                                                                            </span>
-                                                                        </div>
-            
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                    
-                                       
-                               
-            
-                                </div>
-                        
-                    </div>
-                @elseif($itr == 3)
-                <div class="small-box-row">
-                
-                
-                    <div class="list-items-second">
-                            <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
-                            <a href="{{ route('shop.show', ['product' => $product->slug, 'category' => $category->slug] ) }}" class="figure clearfix"  title="{{ $product->name }}"><img src="{{ productImage($product->image) }}" title="{{ $product->name }}"></a>   
-                            
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
-                            <div class="list-deal-details">
-                                <div class="top-panel">
-                                    
-                                    <span>
-                                        <a href="{{ route('shop.show', ['product' => $product->slug, 'category' => $category->slug] ) }}" title="{{ $product->name }}"><h3 class="small-title">{{ $product->name }}</h3></a>
-                                    </span>
-                                </div>
-                              
-                                <div class="bottom-panel">
-                                </div>
-                                <div class="price list-content list-price-single">
-                                        <span class="cdbf-takhfif"><span class="cdbft-shape"><span class="list-discount-tag">%{{toPersianNum($product->discount)}}</span></span></span>               
-                                        <span class="price price_slider price_slider_single">
-                                                <del><span class="woocommerce-Price-amount amount">{{ toPersianNum($product->price) }}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></del> <ins><span class="woocommerce-Price-amount amount">{{ toPersianNum(presentPrice($product->price,$product->discount)) }}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></ins>
-                                            </span>
-                                    <div class="row">
-                                            <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
-                                            <form class="cart" action="{{ route('cart.store') }}" method="post" enctype='multipart/form-data'>
-                                                                {{ csrf_field() }}
-                                                            <input type="hidden" name="id" value="{{ $product->id }}">
-                                                           @if($product->quantity - $product->sold > 0)
-                                                            <button type="submit" name="add-to-cart" value="96" class="nb-btn">افزودن به سبد</button>
-                                                            @else
-                                                            <div class="alert alert-danger">
-                                                                <p class="text-center">
-                                                                موجود نیست
-                                                                </p>
-                                                            </div>
-                                                            @endif
-                                                            </form>
-                                            </div>
-                                            <div class="col-lg-12 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
-                                                                    <span class="cdbm-total-buy">
-                                                                            <i class="fa fa-shopping-basket"></i>
-                                                                            {{$product->sold}} خرید
-                                                                    </span>
-                                                                </div>
-    
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                        <div class="more_cat">
-                        <div class="row">
-                                <i class="fa fa-cutlery">
-                                </i>
-                        </div>
-                        <div class="row">
-                            <span>
-                                    {{$category->products->count()}} پیشنهاد {{$category->name}}
-                            </span>
-                        </div>
-                            <div class="button-all">
-                                <a href="{{ route('shop.showCategory', $category->slug) }}">
-                                    <button class="nb-btn nb-btn-success">مشاهده همه</button>
-                                </a>
-                            </div>
-                        </div>
-                
-            </div>
-            </div>
-                @endif
-                @php ($itr++)
-            @endif
-        @endforeach
-                </div>
-    </article>
-
-    @endif
-@endforeach
---}}
             </div>
         </div>
         

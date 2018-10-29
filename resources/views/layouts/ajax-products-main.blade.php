@@ -8,8 +8,8 @@
                         <div class="card-timer">
                                 <a href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}" class="btn btn-secondary"><span class="card-span"><script>
                                         jQuery(function() {
-                                            var endDate = "2020-1-5 23:59:00";
-                                            jQuery('.countdownqdlkp').countdown({
+                                            var endDate = "{{$product->end_date}}";
+                                            jQuery('.{{$product->slug}}').countdown({
                                                 date: endDate,
                                                 render: function(data) {
                                                     if ( ! data.sec  ) { data.sec = 0 };
@@ -26,7 +26,7 @@
                                                 }
                                             });
                                         });
-                                    </script><span><i class="fa fa-clock-o"></i></span><ul class="deal-timer countdownqdlkp"></ul></span></a>
+                                    </script><span><i class="fa fa-clock-o"></i></span><ul class="deal-timer {{$product->slug}}"></ul></span></a>
                                     <span class="card-shopping"><i style="font-size: 17px;" class="fa fa-shopping-bag"></i>&nbsp;{{toPersianNum($product->sold)}}</span>
                         </div>
                         <a class="sb-preview-img" href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}">

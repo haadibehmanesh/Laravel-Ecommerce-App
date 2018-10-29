@@ -394,7 +394,7 @@ img.emoji {
                         <div class="Slogan"><span>{{ $merchant_name }}</span></div>
 
                             
-							<div class="info-counter">
+							<div class="info-counter-product">
 
 							
 
@@ -410,7 +410,7 @@ img.emoji {
 				
                     jQuery(function() {
 
-                        var endDate = "2018-11-13 23:59:00";
+                        var endDate = "{{$product->end_date}}";
 
                         jQuery('.countdown_single_product').countdown({
 
@@ -702,47 +702,50 @@ $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  '
 <div class="clear"></div><!--related product -->
 <div class="related_product box_single">
     <div class="title_block"><span>محصولات مرتبط</span></div>
-    @forelse ($mightAlsoLike as $mightAlsoLike)
+    @forelse ($mightAlsoLike as $product)
     
-		<div class="col-lg-3 col-md-3 col-sm-6">
-            <div class="box_offer box_offer_mini">
-				<div class="time_out">
-                    <i class="fa fa-clock-o"></i>
-                    <ul class="deal-timer countdownntgiu"></ul>
-                    <script>
-				    jQuery(function() {
-                        var endDate = "2018-12-25 23:59:00";
-                        jQuery('.countdownntgiu').countdown({
-                            date: endDate,
-                            render: function(data) {
-                                if ( ! data.sec  ) { data.sec = 0 };
-								var days = toPersianNum(data.days);
-								var hours = toPersianNum(data.hours);
-								var min = toPersianNum(data.min);
-								var sec = toPersianNum(data.sec);
-                                jQuery(this.el).html(
-                                    '<li><span class="num">' + days +'</span><span class="text">  روز </span></li>'+
-                                    '<li><span class="num">' + hours +'</span><span class="text"> ساعت </span></li>'+
-                                    '<li><span class="num">' + min +'</span><span class="text"> دقیقه </span></li>'+
-                                    '<li><span class="num">' + sec +'</span><span class="text"> ثانیه </span></li>'
-                                );
-                            }
-                        });
-                    });
-                    </script>					
-                </div>
-                <a href="{{ route('shop.show', $mightAlsoLike->slug) }}" title="{{ $mightAlsoLike->name }}"><img src="{{ productImage($mightAlsoLike->image) }}" title="{{ $mightAlsoLike->name }}"></a>
-                <!-- Discount -->
-                <span class="Discount"><b>%{{ toPersianNum($mightAlsoLike->discount)  }}</b>تخفیف</span>
-				<span class="address"><i class="fa fa-map-marker"></i></span>
-                <span class="total_sales_onliner">{{toPersianNum(0)}}<i class="fa fa-shopping-basket"></i></span>
-				<!-- Info -->
-                <div class="Information">
-                    <h2 class="ellipsis"><a href="{{ route('shop.show', $mightAlsoLike->slug) }}">{{ $mightAlsoLike->name }}</a></h2>
-                    <span class="price"><del><span class="woocommerce-Price-amount amount">{{ $mightAlsoLike->price }}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></del> <ins><span class="woocommerce-Price-amount amount">{{ toPersianNum(presentPrice($mightAlsoLike->price,$mightAlsoLike->discount)) }}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></ins></span>
-                </div>
-            </div>
-        </div>    
+    <div class="col-lg-3 col-md-3 col-sm-6">
+            <div class="mini-card-product">
+                    <div class="card-header">
+                            <a href="{{ route('shop.show', $product->slug) }}" class="" title="{{ $product->name }}"><span class="card-span">{{ $product->name }}</span></a>
+                            <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp; شیراز</span>
+                    </div>
+                    <div class="card-timer">
+                            <a href="{{ route('shop.show', $product->slug) }}" class="" title="{{ $product->name }}" class=""><span class="card-span"><script>
+                                    jQuery(function() {
+                                        var endDate = "{{$product->end_date}}";
+                                        jQuery('.{{$product->slug}}').countdown({
+                                            date: endDate,
+                                            render: function(data) {
+                                                if ( ! data.sec  ) { data.sec = 0 };
+                                                var days = toPersianNum(data.days);
+                                                var hours = toPersianNum(data.hours);
+                                                var min = toPersianNum(data.min);
+                                                var sec = toPersianNum(data.sec);
+                                                jQuery(this.el).html(
+                                                    '<li><span class="num">' + days +'</span><span class="text">  روز </span></li>'+
+                                                    '<li><span class="num">' + hours +'</span><span class="text"> ساعت </span></li>'+
+                                                    '<li><span class="num">' + min +'</span><span class="text"> دقیقه </span></li>'+
+                                                    '<li><span class="num">' + sec +'</span><span class="text"> ثانیه </span></li>'
+                                                );
+                                            }
+                                        });
+                                    });
+                                </script><span><i class="fa fa-clock-o"></i></span><ul class="deal-timer {{$product->slug}}"></ul></span></a>
+                                <span class="card-shopping"><i style="font-size: 17px;" class="fa fa-shopping-bag"></i>&nbsp;{{toPersianNum($product->sold)}}</span>
+                    </div>
+                    <a class="sb-preview-img" href="{{ route('shop.show', $product->slug) }}" class="" title="{{ $product->name }}">
+                    <img class="card-img-top" src="{{ productImage($product->image) }}" alt="{{ $product->name }}">
+                    </a>
+                    
+                    <div class="card-footer">
+                    <a href="{{ route('shop.show', $product->slug) }}" class="" title="{{ $product->name }}" class=""><span style="font-size: 14px;" class="card-span"><del>{{ toPersianNum($product->price) }} تومان</del></span></a>
+                    <span class="card-discount">%{{ toPersianNum($product->discount)  }} تخفیف</span>
+                    <span class="card-after-discount">{{ toPersianNum(presentPrice($product->price,$product->discount)) }} تومان</span>
+                    </div>
+                    </div>
+       
+    </div>    
         @empty
         <div style="text-align: left">موردی یافت نشد!</div>
         @endforelse       		

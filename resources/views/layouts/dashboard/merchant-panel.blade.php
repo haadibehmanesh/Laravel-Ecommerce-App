@@ -166,7 +166,7 @@ jQuery.ajax({
         <div class="row">
 
             <!--logo-->
-                            <div class="logo"  style="background: url(/wp-content/themes/takhfifat/images/logo.png) no-repeat center;" ><h1><a href=" " title="سامانه خرید و تخفیف گروهی بن اینجا"></a></h1></div>
+                            <div class="logo"  style="background: url(/wp-content/themes/takhfifat/images/logo.png) no-repeat center;" ><h1><a href="/" title="سامانه خرید و تخفیف گروهی بن اینجا"></a></h1></div>
             
             <!--select search-->
             <div id="form_header">

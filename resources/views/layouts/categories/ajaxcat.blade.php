@@ -3,11 +3,11 @@
             <div class="box_offer">
 							<div class="time_out">
                     <i class="fa fa-clock-o"></i>
-                    <ul class="deal-timer countdownhkfkk"></ul>
+                    <ul class="deal-timer {{$product->slug}}"></ul>
                 <script>
 				                    jQuery(function() {
-                        var endDate = "2018-10-22 23:59:00";
-                        jQuery('.countdownhkfkk').countdown({
+                        var endDate = "{{$product->end_date}}";
+                        jQuery('.{{$product->slug}}').countdown({
                             date: endDate,
                             render: function(data) {
                                 if ( ! data.sec  ) { data.sec = 0 };

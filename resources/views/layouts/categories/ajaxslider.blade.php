@@ -29,7 +29,7 @@
                                 <div class="option_item_gallery">
     
                                 
-                                    <span class="address"><i class="fa fa-map-marker"></i> امام خمینی </span>
+                                    <span class="address"><i class="fa fa-map-marker"></i> {{$featured_product->location}} </span>
     
                                 
                                         <span class="number-sale"><i class="fa fa-shopping-basket"></i>۰</span>
@@ -37,11 +37,11 @@
                                 </div>
                                 <div class="time_out">
                                     <i class="fa fa-clock-o"></i>
-                                    <ul class="deal-timer countdown_takhfifat"><li><span class="num">۷۱</span><span class="text">  روز </span></li><li><span class="num">۷</span><span class="text"> ساعت </span></li><li><span class="num">۵۸</span><span class="text"> دقیقه </span></li><li><span class="num">۳۶</span><span class="text"> ثانیه </span></li></ul>
+                                    <ul class="deal-timer {{$featured_product->slug}}"><li><span class="num">۷۱</span><span class="text">  روز </span></li><li><span class="num">۷</span><span class="text"> ساعت </span></li><li><span class="num">۵۸</span><span class="text"> دقیقه </span></li><li><span class="num">۳۶</span><span class="text"> ثانیه </span></li></ul>
                                 <script>
                                                     jQuery(function() {
-                                        var endDate = "2018-11-4 23:59:00";
-                                        jQuery('.countdown_takhfifat').countdown({
+                                        var endDate = "{{$featured_product->end_date}}";
+                                        jQuery('.{{$featured_product->slug}}').countdown({
                                             date: endDate,
                                             render: function(data) {
                                                 if ( ! data.sec  ) { data.sec = 0 };
