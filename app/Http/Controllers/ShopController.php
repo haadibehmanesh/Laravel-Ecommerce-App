@@ -27,7 +27,7 @@ class ShopController extends Controller
             });
             
         } else {
-            $products = BiProduct::orderBy('id', 'desc')->paginate($pagination);
+            $products = BiProduct::orderBy('id', 'desc')->where('parent_id' , 0)->paginate($pagination);
         }
         
         return view('layouts/shop/shop')->with([
@@ -161,7 +161,7 @@ class ShopController extends Controller
             $categoryParent = null;
         }
         
-        $productsForCategories = $category->products()->orderBy('id', 'desc')->paginate($pagination);
+        $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->paginate($pagination);
        
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
         
