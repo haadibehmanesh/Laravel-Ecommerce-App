@@ -3,7 +3,9 @@
 function presentPrice($price,$discount)
 { 
     $presentprice = $price - ($price*($discount/100));
-    return number_format($presentprice);
+
+    //return number_format($presentprice);
+    return $presentprice ;
 }
 
 function setActiveCategory($category, $output = 'active')
