@@ -276,7 +276,7 @@ function toPersianNum( num, dontTrim ) {
 <div class="card">
         <div class="card-header">
                 <a href="{{ route('shop.show', $featured->slug) }}" class="btn btn-secondary" title="{{ $featured->name }}"><span class="card-span">{{ $featured->name }}</span></a>
-                <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp; شیراز</span>
+        <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp; {{$featured->location}}</span>
         </div>
         <div class="card-timer">
                 <a href="{{ route('shop.show', $featured->slug) }}" class="btn btn-secondary" title="{{ $featured->name }}" class="btn btn-secondary"><span class="card-span"><script>
@@ -439,11 +439,12 @@ function toPersianNum( num, dontTrim ) {
     <div class="title_block"><span>دیـگر بن ها</span></div>
     <div class='ajax_products'>
     @forelse ($products as $product) 
+    @if(empty($product->parent_id) || $product->parent_id ==0)
         <div class="col-lg-3 col-md-3 col-sm-6">
                 <div class="mini-card">
                         <div class="card-header">
                                 <a href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}"><span class="card-span">{{ $product->name }}</span></a>
-                                <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp; شیراز</span>
+                                <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp;{{$product->location}}</span>
                         </div>
                         <div class="card-timer">
                                 <a href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}" class="btn btn-secondary"><span class="card-span"><script>
@@ -481,6 +482,7 @@ function toPersianNum( num, dontTrim ) {
                         </div>
            
         </div> 
+        @endif
         @empty
           <div style="text-align: left">موردی یافت نشد!</div>
         @endforelse 
@@ -492,19 +494,19 @@ function toPersianNum( num, dontTrim ) {
                 	
 </div><div class="clear"></div>
 @foreach($allcategories as $category)
-    @if(!$category->parent && $category->products->where('index_gallery',1)->count() > 2)
+    @if(!$category->parent && $category->products->where('cat_featured',1)->count() == 3)
 <div class="cat_show">
     <span class="cat_show_catname">
         <a href="{{ route('shop.showCategory', $category->slug) }}" class="article-h3">{{$category->name}}</a>
     </span>
     @php ($itr = 1)
-    @foreach ($category->products as $product)
+    @foreach ($category->products->where('cat_featured',1) as $product)
     @if($itr < 4 )
     <div class="col-lg-3 col-md-3 col-sm-6">
             <div class="mini-card">
                     <div class="card-header">
                             <a href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}"><span class="card-span">{{ $product->name }}</span></a>
-                            <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp; شیراز</span>
+                            <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp;{{$product->location}}</span>
                     </div>
                     <div class="card-timer">
                             <a href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}" class="btn btn-secondary"><span class="card-span"><script>
@@ -542,7 +544,11 @@ function toPersianNum( num, dontTrim ) {
                     </div>
     </div>
     @php ($itr++) 
-    @elseif ($itr == 4)
+    
+    
+    @endif  
+    
+    @endforeach
     <div class="col-lg-3 col-md-3 col-sm-6">
             <div class="mini-card">
                             <div class="more_cat">
@@ -563,9 +569,7 @@ function toPersianNum( num, dontTrim ) {
                             </div> 
                     
             </div>
-    </div>
-    @endif   
-    @endforeach
+    </div> 
 </div>
     @endif
 @endforeach
