@@ -370,8 +370,15 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
                 </div> <!-- end form-group -->
                 <!-- End custom inputs -->
         </div>--}}
-    <div class="title_block">
-        <span>
+    <div class="" style="overflow: hidden;
+    position: relative;
+    text-align: center;
+    margin: 20px 0;">
+        <span style="    padding: 0px 37px;
+        color: #005cab;
+        /* font-weight: 700; */
+        background: url(images/bg-title2.png) no-repeat center #fff;
+        font-size: 14pt;">
             همه بن ها                     
         </span>
     </div>   
