@@ -372,9 +372,10 @@ var _zxcvbnSettings = {"src":"\/wp-includes\/js\/zxcvbn.min.js"};
                                                         </td>
                                                         <td class="product-name" data-title="محصول"><a href="{{ route('shop.show', $item->model->slug) }}">{{ $item->model->name }}</a>
                                                             <dl class="variation">
-                                                                <dt class="variation-">فروشنده:</dt>
+                                                             {{-- <dt class="variation-">فروشنده:</dt>
                                                                 <dd class="variation-"><p>سید محسن فاطمی</p>
                                                                 </dd>
+                                                                --}}
                                                             </dl>
                                                         </td>
                                                         <td class="product-price" data-title="قیمت">
