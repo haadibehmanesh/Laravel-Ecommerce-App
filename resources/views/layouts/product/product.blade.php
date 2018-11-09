@@ -547,7 +547,7 @@ img.emoji {
                                                                         <b class="pull-right offer-child-title">&nbsp{{$subproduct->name}}</b>
                                                                     </div>
                                                                     <div class="row">
-                                                                        <div class="col-md-9 hidden-sm hidden-xs">
+                                                                        <div class="col-md-10 hidden-sm hidden-xs">
                                                                             <small class="text-danger modal-child-presentPrice">
                                                                                 <del>{{ toPersianNum($subproduct->price) }} تومان</del>
                                                                             </small>
@@ -558,7 +558,7 @@ img.emoji {
                                                                         </div>
                                                                         <div class="col-md-8 col-sm-8 col-xs-8 m-t-10">
                                                                             <form method="post" action="{{ route('cart.store') }}">
-                                                                            
+                                                                                {{ csrf_field() }}
                                                                                 <input type="hidden" name="id" value="{{ $subproduct->id }}">
                                                                                 <button type="submit" name="submit" class="btn btn-green btn-md white-color width-100">
                                                                                     <i class="fa fa-shopping-cart rtl-cart m-l-8 fs-18"></i>
@@ -667,7 +667,24 @@ $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  '
 <div class="clear"></div><!--address map-->
 <div class="address_map box_single">
     
-	<div class="title_block"><span>آدرس</span></div>
+    <div class="title_block"><span>آدرس</span></div>
+    <div style="font-size: 15px;
+    text-align: center;
+    padding-bottom: 15px;">
+        <span><i class="fa fa-phone"></i>&nbsp;
+       شماره تماس : {{$product->bimerchant->tel}}
+        </span>
+    
+    </div>
+    <div style="font-size: 15px;
+    text-align: center;
+    padding-bottom: 15px;">
+        <span><i class="fa fa-map-marker"></i>&nbsp;
+        {{$product->address}}
+        </span>
+    
+    </div>
+    
 	<div class="box_map">
         <!--map-->
     
