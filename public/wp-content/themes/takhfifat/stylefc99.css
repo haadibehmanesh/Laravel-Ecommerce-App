@@ -148,7 +148,7 @@ margin-bottom: 10px;
 
 .card-img-top {
     width: 100%;
-    height:244px;
+    height:246px;
     border-top-left-radius: calc(.25rem - 1px);
     border-top-right-radius: calc(.25rem - 1px);
 }
@@ -247,7 +247,7 @@ margin-bottom: 10px;
 
 .mini-card .card-img-top {
     width: 100%;
-    height:180px;
+    height:182px;
     border-top-left-radius: calc(.25rem - 1px);
     border-top-right-radius: calc(.25rem - 1px);
 }
@@ -951,7 +951,7 @@ ol.commentlist li ul.children li.depth-5{margin:20px 0 0}
 nav{height:auto}
 }
 @media only screen and (min-width: 992px) and (max-width: 1194px) {
-.block_login,.concession,.info-counter span,.box_offer .Information h3 span{display:none}
+.block_login,.social_footer,.info-counter span,.box_offer .Information h3 span{display:none}
 #form_header{margin-right:65px}
 .content_item h2 a{font-size:20px;margin:20px 0;border:none}
 .block_category .box_category h2 a{font-size:19px}
@@ -964,7 +964,7 @@ nav{height:auto}
 .block_gallery .content_item{padding:0 10px 0 0}
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-.block_login,.main_input,.content_item > span a,.concession,.col-box_use{display:none}
+.block_login,.main_input,.content_item > span a,.social_footer,.col-box_use{display:none}
 #form_header{float:left;margin:32px 30px 0 0}
 .content_mini_cart{float:left}
 .tabs,.tab-content,.block_gallery .gallery_item,.block_gallery .content_item,.block_gallery_archive .content_item,.block_gallery_archive .gallery_item{float:none;width:auto}
@@ -983,7 +983,7 @@ ol.commentlist li ul{margin:0 2% 0 0}
 .nav-tabs>li.active>a:after,.nav-tabs>li.active>a:focus :after,.nav-tabs>li.active>a:hover :after{display:none}
 }
 @media only screen and (max-width: 767px) {
-.phone,.social_header,#form_header,.title_post .Discount,.title_post span.like,.block_login,.mpm_content .banner,.concession,.col-box_use{display:none}
+.phone,.social_header,#form_header,.title_post .Discount,.title_post span.like,.block_login,.mpm_content .banner,.social_footer,.col-box_use{display:none}
 .content_mini_cart{float:left}
 .title_post{height:auto;padding-bottom:10px}
 .menu_top_header{float:none;text-align:center}
@@ -1014,7 +1014,7 @@ ol.commentlist .content_comment{margin-top:15px;border:0;padding-right:0}
 @media only screen and (max-width : 480px) {
 .block_category{display: none;}
 .mpm_content ul.table > li{display:block}
-.tabs li a .fa, .block_newsletters, .content_item .Discount, .info-counter span, .address_map, .question{display:none}
+.tabs li a .fa, .block_newsletters, .content_item .Discount, .info-counter span, .question{display:none}
 .block_category .col5 .imgLabel,.block_category .col5 h2 a{float:none;width:100%;display:block}
 .block_category .col5 .box_category{height:624px}
 .box_offer img{height:245px}
