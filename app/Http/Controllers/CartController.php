@@ -68,6 +68,42 @@ class CartController extends Controller
         return redirect()->route('cart.index')->with('error_message', 'موجودی به اتمام رسیده است');
         
     }
+    public function addtocart(Request $request){
+        $product = BiProduct::where('id', $request->id)->get();
+        
+        $id = $request->id;
+
+        $orders = BiOrder::where('order_status_id', 1)->with(['items' => function ($q) use ($id) {
+            $q->where('bi_product_id', $id);
+        }])->get();
+
+        $processingRequests = 0;
+
+        foreach ($orders as $order) {
+            
+            if (isset($order->items[0]->quantity))
+                $processingRequests += $order->items[0]->quantity;                
+        } 
+
+        $orderLimit = $product[0]->quantity - $product[0]->sold - $processingRequests;
+
+        if ($orderLimit > 0) {
+            Cart::add($request->id, $product[0]->name, 1, presentPrice($product[0]->price, $product[0]->discount), [
+                'order_limit' => $orderLimit,
+                'bi_merchant_id' => $product[0]->bi_merchant_id
+            ])->associate('App\BiProduct');
+            $message = "بن شما با موفقیت به سبد خرید اضافه شد";
+           return view('layouts/product/ajax-addtocart')->with([
+                'message' => $message
+            ])->render();
+        }
+        $message = "موجودی به اتمام رسیده است";
+        return view('layouts/product/ajax-addtocart')->with([
+            'message' => $message
+        ])->render();
+        
+        //redirect()->route('cart.index')->with('error_message', 'موجودی به اتمام رسیده است');
+    }
 
     /**
      * Display the specified resource.
