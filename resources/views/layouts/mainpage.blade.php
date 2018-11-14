@@ -104,12 +104,15 @@ function toPersianNum( num, dontTrim ) {
 <!--- Top Menu-->
 <section class="top_header">
     <div class="container">
+            <div style="width: 300px;">
+                    @include('flash-message')
+            </div>
         <div class="row">
             <ul class="menu_top_header">
                 @if (!Auth::guard('customer')->check())
                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-163"><a href="/my-account">ورود/عضویت</a></li>
                 @else
-                <li id="menu-item-163" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-163"><a href="/my-account">حساب کاربری من</a></li>
+            <li id="menu-item-163" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-163"><a href="/my-account">{{Auth::guard('customer')->user()->name}}</a></li>
                 @endif
                 <li id="menu-item-164" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164"><a href="/checkout">تسویه حساب</a></li>
                 <li id="menu-item-165" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-165"><a href="/cart">سبد خرید</a></li>
@@ -210,7 +213,9 @@ function toPersianNum( num, dontTrim ) {
 
         </div>
     </div>
+  
 </header>
+
 <!-- / Header -->    <!--Nav-->
 <nav class="nav">
     <div class="container">
@@ -251,7 +256,7 @@ function toPersianNum( num, dontTrim ) {
     <section id="wrapper">
         <div class="container">
             <div class="row">
-			
+                    
     <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
 	<div id="wowslider-container1">
         <div class="ws_images">
@@ -558,7 +563,7 @@ function toPersianNum( num, dontTrim ) {
                                     </div>
                                     <div class="cat_name">
                                         <span>
-                                                {{$category->products->count()}} پیشنهاد {{$category->name}}
+                                                {{$category->products->where('parent_id',0)->count()}} پیشنهاد {{$category->name}}
                                         </span>
                                     </div>
                                         <div class="button-all">

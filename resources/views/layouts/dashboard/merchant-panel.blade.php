@@ -6,7 +6,7 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1">
                 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
                 <title>
-                    حساب کاربری من    </title>
+                        پنل مدیریت کسب و کار    </title>
                     <link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">
                    
             
@@ -145,7 +145,7 @@ jQuery.ajax({
 			            <div class="block_login block_login_seller">
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
-                            <a href="/"><i class="fa fa-user pull-right"></i> پنل فروشندگان <strong class="takhfifat_get_seller_balance">موجودی : <span class="woocommerce-Price-amount amount">&nbsp;{{toPersianNum($totalRevenue)}}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></strong></a>
+                            <a href="/"><i class="fa fa-user pull-right"></i> پنل کسب و کار&nbsp; <strong class="takhfifat_get_seller_balance"> موجودی : <span class="woocommerce-Price-amount amount">&nbsp;{{toPersianNum($totalRevenue)}}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></strong></a>
 						</li>
                     </ul>
             </div>			
@@ -301,17 +301,17 @@ jQuery.ajax({
     <section id="wrapper">
     <div class="container">
         <div class="row">
-            <ol class="breadcrumb"><a href="/">خانه</a> &#47; پنل فروشندگان</ol>    
+            <ol class="breadcrumb"><a href="/">خانه</a> &#47; پنل مدیریت کسب و کار</ol>    
             <div class="post-content-page">
                                         
                     <!--title & discount & views-->
                     <div class="title_post">
-                        <h1>پنل فروشندگان</h1>
+                    <h1>پنل مدیریت @if($merchant->company_name)"{{$merchant->company_name}}"@endif</h1>
                     </div>
                             <div class="dokan-dashboard-wrap">
     
 <div class="dokan-dash-sidebar">
-<ul class="dokan-dashboard-menu"><li class="active dashboard"><a href="{{ route('merchantpanel.index')}}"><i class="fa fa-tachometer"></i> پیشخوان</a></li><li class="products"><a><i class="fa fa-briefcase"></i><span onclick="products(event)">بن های باطل شده</span> </a></li><li class="withdraw"><a href="#"><i class="fa fa-upload"></i> برداشت</a></li><li class="settings"><a href="#"><i class="fa fa-cog"></i> تنظیمات</a></li><li class="dokan-common-links dokan-clearfix">
+<ul class="dokan-dashboard-menu"><li class="active dashboard"><a href="{{ route('merchantpanel.index')}}"><i class="fa fa-tachometer"></i> پیشخوان</a></li><li class="products"><a><i class="fa fa-briefcase"></i><span onclick="products(event)">بن های باطل شده</span> </a></li><li class="withdraw"><a href="{{ route('merchantpanel.withdraw') }}"><i class="fa fa-upload"></i> برداشت</a></li><li class="settings"><a href="#"><i class="fa fa-cog"></i> تنظیمات</a></li><li class="dokan-common-links dokan-clearfix">
             
             <a title="ویرایش حساب کاربری" class="tips" data-placement="top" href="/my-account"><i class="fa fa-user"></i></a>
             <a href="{{ url('/customer/logout') }}"
@@ -334,16 +334,20 @@ jQuery.ajax({
                 <div class="dashboard-widget big-counter">
     <ul class="list-inline">
          <li>
-            <div class="title">فروش‌ها</div>
+            <div class="title">کل فروش</div>
             <div class="count"><span class="woocommerce-Price-amount amount">{{toPersianNum($totalSell)}}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></div>
         </li>
         <li>
-            <div class="title">درآمد</div>
+            <div class="title">کل سهم کسب و کار</div>
+            <div class="count"><span class="woocommerce-Price-amount amount">{{$completed_withdraw + $totalRevenue}}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></div>
+        </li>
+        <li>
+            <div class="title">باقیمانده حساب نزد بن اینجا</div>
             <div class="count"><span class="woocommerce-Price-amount amount">{{toPersianNum($totalRevenue)}}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></div>
         </li>
         <li>
-            <div class="title">نمایش صفحه</div>
-            <div class="count">{{toPersianNum(87)}}</div>
+            <div class="title">تسویه شده</div>
+            <div class="count"><span class="woocommerce-Price-amount amount">{{$completed_withdraw}}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></div>
         </li>
         <li>
             <div class="title">مجموع بن های ابطال شده</div>
