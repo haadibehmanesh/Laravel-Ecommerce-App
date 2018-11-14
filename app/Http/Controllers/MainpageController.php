@@ -16,12 +16,12 @@ class MainpageController extends Controller
      */
     public function index()
     {
-        $pagination = 4;
+        $pagination = 12;
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
         $slider = BiSlider::where('name' , 'index')->get();
         $sliderimages = BiSliderImage::where('bi_slider_id', $slider[0]->id)->get();
         $featuredproducts = BiProduct::where('featured','1')->get();
-        $products = BiProduct::orderBy('id', 'desc')->where('parent_id' , 0)->paginate($pagination);
+        $products = BiProduct::orderBy('id', 'desc')->where('parent_id' , 0)->where('status',1)->paginate($pagination);
         $allproducts = BiProduct::where('index_gallery', 1)->orderBy('id', 'desc')->get();
         return view('layouts/mainpage')->with([
             'products' => $products,
