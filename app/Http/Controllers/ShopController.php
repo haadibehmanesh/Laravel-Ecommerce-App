@@ -18,7 +18,7 @@ class ShopController extends Controller
      */
     public function index()
     {
-        $pagination = 4;
+        $pagination = 12;
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
 
         if(request()->category) {
@@ -72,13 +72,27 @@ class ShopController extends Controller
         $product = BiProduct::where('slug', $slug_db)->firstOrFail();
         
         $ProductId = $product->id;
-        if(empty($product->getCoordinates())){
-            $lat = 29.6297833;
-            $lng = 52.5086218;
+        $parent = BiProduct::where('id', $product->parent_id)->first();
+        if($parent){
+            if(empty($parent->getCoordinates())){
+                $lat = 29.6297833;
+                $lng = 52.5086218;
+            }else{
+                $coordinates = $parent->getCoordinates();
+               
+                $lat = $coordinates[0]['lat'];
+                $lng = $coordinates[0]['lng'];
+            }
+            
         }else{
-            $coordinates = $product->getCoordinates();
-            $lat = $coordinates[0]['lat'];
-            $lng = $coordinates[0]['lng'];
+            if(empty($product->getCoordinates())){
+                $lat = 29.6297833;
+                $lng = 52.5086218;
+            }else{
+                $coordinates = $product->getCoordinates();
+                $lat = $coordinates[0]['lat'];
+                $lng = $coordinates[0]['lng'];
+            }
         }
         
         if(Auth::guard('customer')->check()){
@@ -95,7 +109,10 @@ class ShopController extends Controller
         $categoriesForProduct = $product->categories()->get();
 
         $mightAlsoLike = BiProduct::where('slug', '!=', $slug_db)->mightAlsoLike()->get();
-        
+        $merchant_id = $product->bimerchant()->first()->id;
+        $otherproducts = BiProduct::where('bi_merchant_id',$merchant_id)->where('slug', '!=', $slug_db)->mightAlsoLike()->get();
+        //$otherproducts = $product->mer
+       // dd($otherproducts);
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
         $reviews = BiReview::where('bi_product_id',$product->id)->orderBy('id', 'desc')->get();
        
@@ -120,6 +137,7 @@ class ShopController extends Controller
                 'reviews' => $reviews,
                 'merchant_name' => $merchant_name,
                 'mightAlsoLike' => $mightAlsoLike,
+                'otherproducts' => $otherproducts,
                 'categoriesForProduct' => $categoriesForProduct,
                 'categoryslug' => $category[0]->slug,
                 'categoryname' => $category[0]->name,
@@ -134,6 +152,7 @@ class ShopController extends Controller
                 'reviews' => $reviews,
                 'merchant_name' => $merchant_name,
                 'mightAlsoLike' => $mightAlsoLike,
+                'otherproducts' => $otherproducts,
                 'categoriesForProduct' => $categoriesForProduct,
                 'categoryslug' => $category,
                 'allcategories' => $allcategories,
@@ -145,7 +164,7 @@ class ShopController extends Controller
 
     public function showCategory($slug)
     {  
-        $pagination = 8;
+        $pagination = 24;
         
         $slug_db = explode('/', $slug);
        
