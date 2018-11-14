@@ -7,6 +7,8 @@ use App\BiMerchant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\BiOrderItem;
+use Validator;
+use App\Withdraw;
 class MerchantpanelController extends Controller
 {
     /**
@@ -42,13 +44,19 @@ class MerchantpanelController extends Controller
         }
 
         
-        
+        //dd($merchant->company_name);
         $totalRevenue = $totalSell - $boninja ;
+        $completed_withdraw = Withdraw::where('status','completed')->where('bi_merchant_id',$merchant->id)->sum('quantity');
+        $merchant->total_revenue = $totalRevenue - $completed_withdraw;
+        $merchant->save();
+        $totalRevenue = $merchant->total_revenue;
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
         return view('layouts/dashboard/merchant-panel')->with([
+            'completed_withdraw' => $completed_withdraw,
             'totalSell' => $totalSell,
             'totalRevenue' => $totalRevenue,
             'allcategories' => $allcategories,
+            'merchant' => $merchant,
             'orderitem' => $orderItem
         ]);
     }
@@ -141,4 +149,77 @@ class MerchantpanelController extends Controller
 
 
     }
+    public function withdraw()
+    {
+        $customer_id = Auth::guard('customer')->user()->id;
+       
+        $merchant = BiMerchant::where('customer_id',$customer_id)->first();
+       // dd($merchant->pre_discount);
+       
+       
+        $orderItem = BiOrderItem::where('bi_merchant_id', $merchant->id)->get();
+
+        $totalSell = $orderItem->sum(function ($item) {
+            return $item->price * $item->code_used_count;
+        });
+        
+        if(!empty($merchant->pre_discount) && $merchant->pre_discount == 1){
+
+            $boninja = $orderItem->sum(function ($item) {
+                return ($item->product->price*($item->product->boninja_percent/100))* $item->code_used_count;
+            });
+
+        }else{
+
+            $boninja = $orderItem->sum(function ($item) {
+                return ($item->price*($item->product->boninja_percent/100))* $item->code_used_count;
+            });
+        }
+
+        
+        
+        $totalRevenue = $totalSell - $boninja ;
+        $completed_withdraw = Withdraw::where('status','completed')->where('bi_merchant_id',$merchant->id)->sum('quantity');
+        $merchant->total_revenue = $totalRevenue - $completed_withdraw;
+        $merchant->save();
+        $totalRevenue = $merchant->total_revenue;
+        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        return view('layouts/dashboard/withdraw')->with([
+            'completed_withdraw' => $completed_withdraw,
+            'totalSell' => $totalSell,
+            'totalRevenue' => $totalRevenue,
+            'allcategories' => $allcategories,
+            'orderitem' => $orderItem
+        ]);
+
+
+    }
+    public function sendwithdraw(Request $request){
+        $customer_id = Auth::guard('customer')->user()->id;
+        $merchant = BiMerchant::where('customer_id',$customer_id)->first();
+       
+        $messages = [
+            'required' => 'پر کردن این فیلد اجباری است!',
+            'numeric' => 'ورودی باید به صورت عدد باشد'
+        ];
+        $validatedData = Validator::make($request->all(), [
+            'witdraw_amount' => 'required|numeric'
+        ],$messages);
+        if(!$validatedData->fails()){
+          
+            $withdraw = Withdraw::firstOrNew(['bi_merchant_id' => $merchant->id ,'status' => 'processing']);
+            $withdraw->quantity = $request->witdraw_amount;
+            $withdraw->status = 'processing';
+            $withdraw->save();
+            $message="کاربر گرامی درخواست برداشت وجه شما با موفقیت ثبت شد ";
+            return redirect()->back()->withErrors([
+            'message' => $message
+            ]);
+
+        }else{
+            return redirect()->back()->withErrors($validatedData);
+        }
+    }
+   
 }
+

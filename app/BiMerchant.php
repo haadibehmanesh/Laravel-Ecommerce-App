@@ -25,4 +25,8 @@ class BiMerchant extends Model
     public function orderitems() {
         return $this->hasMany('App\BiOrderItem', 'bi_merchant_id');
     }
+
+    public function withdraws() {
+        return $this->hasMany('App\Withdraw');
+    }
 }
