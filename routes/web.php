@@ -44,10 +44,19 @@ Route::any('callback/from/bank',function(){
       try{
         $sms = \Melipayamak::sms();
         $to = Auth::guard('customer')->user()->phone;
+       
         $from = '200020001090';
-        $text = $order_item->name."\n".$order_item->product->parent->name."\n"."تعداد : ".$order_item->quantity."\n"."کد تخفیف شما : ".$order_item->code."\n"."مهلت استفاده : ".$date[0]."/".$date[1]."/".$date[2]."\n"."بن اینجا"."\n"."http://www.boninja.com/my-account";
+        if(!empty($order_item->product->parent->name)){
+          $text = $order_item->name."\n".$order_item->product->parent->name."\n"."تعداد : ".$order_item->quantity."\n"."کد تخفیف شما : ".$order_item->code."\n"."مهلت استفاده : ".$date[0]."/".$date[1]."/".$date[2]."\n"."بن اینجا"."\n"."https://www.boninja.com/my-account";
+
+        }else{
+          $text = $order_item->name."\n"."تعداد : ".$order_item->quantity."\n"."کد تخفیف شما : ".$order_item->code."\n"."مهلت استفاده : ".$date[0]."/".$date[1]."/".$date[2]."\n"."بن اینجا"."\n"."https://www.boninja.com/my-account";
+        }
+        
+       // $text = $order_item->product->parent->name;
         $response = $sms->send($to,$from,$text);
         $json = json_decode($response);
+        //dd($json);
         //echo $json->Value; //RecId or Error Number 
       }catch(Exception $e){
         echo $e->getMessage();
@@ -55,8 +64,8 @@ Route::any('callback/from/bank',function(){
     }
     Cart::destroy();  
     $message = 'پرداخت با موفقیت انجام شد!<br> 
-     کد تراکنش شما : '.$trackingCode.' <br>
-     برای پیگیری های بعدی این کد را نزد خود نگه دارید. 
+     کد پیگیری بانکی شما : '.$trackingCode.' <br>
+     برای پیگیری های  بانکی بعدی این کد را نزد خود نگه دارید. 
      ';
 
      return view('layouts/checkout/bankresult')->with([
@@ -65,10 +74,10 @@ Route::any('callback/from/bank',function(){
       ]);
     
   } catch (Exception $e) {
-    $message = $e->getMessage();
+    $error = $e->getMessage();
     return view('layouts/checkout/bankresult')->with([
       'allcategories' => $allcategories,
-      'message' => $message
+      'error' => $error
       ]);
   }
 });
@@ -78,6 +87,7 @@ Route::get('/aboutus', 'AboutusController@index')->name('aboutus.index');
 
 Route::get('/cart', 'CartController@index')->name('cart.index');
 Route::post('/cart', 'CartController@store')->name('cart.store');
+Route::post('/ajax/addtocart', 'CartController@addtocart')->name('cart.addtocart');
 Route::patch('/cart/{product}', 'CartController@update')->name('cart.update');
 Route::delete('/cart/{product}', 'CartController@destroy')->name('cart.destroy');
 
@@ -112,6 +122,8 @@ Route::post('/ajax/couponshow', 'AjaxController@couponShow')->name('merchantpane
 Route::get('/dashboard/orders', 'MerchantpanelController@orders')->name('merchantpanel.orders');
 Route::any('/dashboard/products', 'MerchantpanelController@products')->name('merchantpanel.products');
 Route::get('/dashboard/editaccount', 'MerchantpanelController@edit')->name('merchantpanel.edit');
+Route::get('/dashboard/withdraw', 'MerchantpanelController@withdraw')->name('merchantpanel.withdraw');
+Route::post('/dashboard/withdraw', 'MerchantpanelController@sendwithdraw')->name('merchantpanel.sendwithdraw');
 });
 
 Auth::routes();

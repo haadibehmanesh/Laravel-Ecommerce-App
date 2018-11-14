@@ -71,6 +71,7 @@ img.emoji {
 				res += num.charAt(i);
 		return res;
 	}
+    
     </script>
      <meta name="csrf-token" content="{{ csrf_token() }}">
     <script>
@@ -122,6 +123,24 @@ img.emoji {
                  });
              });
      </script>
+    <script>
+        jQuery(document).ready(function() {
+            jQuery(".addtocart").on("click", function() {
+                jQuery.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+                    },
+                    type: 'POST',
+                    url: '/ajax/addtocart',
+                    data: jQuery('.cart').serialize() + '&_token=<?php echo csrf_token() ?>',
+                    success:function(data){
+                        jQuery('.add_status').html(data)
+                    }
+                }); 
+            });
+        });
+          
+    </script>
 </head>
 <body class="rtl product-template-default single single-product postid-96 woocommerce woocommerce-page mega-menu-main-menu dokan-theme-takhfifat">
     <!----- Top Menu
@@ -516,8 +535,11 @@ img.emoji {
                                     @if($product->children->count() > 0)
                                     <a data-toggle="modal" href="#normalModal" class="btn btn-primary">انتخاب کنید</a>
                                     @else
-                                    <button type="submit" name="add-to-cart" value="96" class="btn">افزودن به سبد</button>
+                                    <input type="button" value='افزودن به سبد' style="border-radius: 4px;" name="addtocart" id="addtocart" class="addtocart btn">
+                                    <button type="submit" name="add-to-cart" value="" class="btn">مشاهده و خرید</button>
+                                    
                                     @endif
+                                    
                                     <div id="normalModal" class="modal fade">
                                             <div class="modal-dialog">
                                               <div class="modal-content">
@@ -554,22 +576,39 @@ img.emoji {
                                                                             <b class="text-success modal-child-offPrice">{{ toPersianNum(presentPrice($subproduct->price,$subproduct->discount)) }} تومان</b>
                                                                         </div>
                                                                         <div class="col-md-4 col-sm-4 col-xs-4 m-t-10">
-                                                                            
+                                                                                <input type="button" value='افزودن به سبد' style="border-radius: 4px;     padding: 0px 10px;    margin-top: 10px;" name="addtocart" onclick="addToCart({{ $subproduct->id }})" class="addtocartmodal btn">
                                                                         </div>
+                                                                        <script>
+                                                                                function addToCart(id) {
+                                                                                    jQuery.ajax({
+                                                                                        headers: {
+                                                                                            'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+                                                                                        },
+                                                                                        type: 'POST',
+                                                                                        url: '/ajax/addtocart',
+                                                                                        data: {id: id, _token: "{{ csrf_token() }}"} ,
+                                                                                        success:function(data){
+                                                                                            jQuery('.add_status').html(data)
+                                                                                        }
+                                                                                    });
+                                                                                }
+                                                                                </script>
                                                                         <div class="col-md-8 col-sm-8 col-xs-8 m-t-10">
-                                                                            <form method="post" action="{{ route('cart.store') }}">
+                                                                            <form class="cartmodal" method="post" action="{{ route('cart.store') }}">
                                                                                 {{ csrf_field() }}
                                                                                 <input type="hidden" name="id" value="{{ $subproduct->id }}">
-                                                                                <button type="submit" name="submit" class="btn btn-green btn-md white-color width-100">
+                                                                                
+                                                                                <button type="submit" name="submit" class="btn" style="    background: #2bcc3f; padding: 6px 10px;    margin-top: 10px;">
                                                                                     <i class="fa fa-shopping-cart rtl-cart m-l-8 fs-18"></i>
-                                                                                    همین حالا خرید کنید
+                                                                                    مشاهده و خرید
                                                                                 </button>
                                                                             </form>
                                                                         </div>
-                                    
+                                                                        
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                            <div id="add_status_modal{{ $subproduct->id }}" style="margin-top: 20px;"></div>
                                                             <hr>
                                                             @endforeach
                                                         
@@ -583,6 +622,7 @@ img.emoji {
 
                                 
                                     @else
+                                    
                                     <div class="alert alert-danger">
                                         <p class="text-center">
                                         موجود نیست
@@ -595,7 +635,11 @@ img.emoji {
 
 	
                                </div>
+                               <div class="add_status" style="
+                               margin-top: 27px;
+                           "></div>
                                </div>
+                               
 
         </div>
 
@@ -718,14 +762,63 @@ $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  '
 </script>
 <div class="clear"></div><!--related product -->
 <div class="related_product box_single">
-    <div class="title_block"><span>محصولات مرتبط</span></div>
-    @forelse ($mightAlsoLike as $product)
+    @if(!empty($otherproducts) && $otherproducts->count() > 0)
+    <div class="title_block"><span>سایر محصولات</span></div>
+
+    @foreach ($otherproducts as $product)
     
     <div class="col-lg-3 col-md-3 col-sm-6">
             <div class="mini-card-product">
                     <div class="card-header">
                             <a href="{{ route('shop.show', $product->slug) }}" class="" title="{{ $product->name }}"><span class="card-span">{{ $product->name }}</span></a>
-                            <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp; شیراز</span>
+                            <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp; {{$product->location}}</span>
+                    </div>
+                    <div class="card-timer">
+                            <a href="{{ route('shop.show', $product->slug) }}" class="" title="{{ $product->name }}" class=""><span class="card-span"><script>
+                                    jQuery(function() {
+                                        var endDate = "{{date('Y-m-d', strtotime($product->end_date))}}";
+                                        jQuery('.{{$product->slug}}').countdown({
+                                            date: endDate,
+                                            render: function(data) {
+                                                if ( ! data.sec  ) { data.sec = 0 };
+                                                var days = toPersianNum(data.days);
+                                                var hours = toPersianNum(data.hours);
+                                                var min = toPersianNum(data.min);
+                                                var sec = toPersianNum(data.sec);
+                                                jQuery(this.el).html(
+                                                    '<li><span class="num">' + days +'</span><span class="text">  روز </span></li>'+
+                                                    '<li><span class="num">' + hours +'</span><span class="text"> ساعت </span></li>'+
+                                                    '<li><span class="num">' + min +'</span><span class="text"> دقیقه </span></li>'+
+                                                    '<li><span class="num">' + sec +'</span><span class="text"> ثانیه </span></li>'
+                                                );
+                                            }
+                                        });
+                                    });
+                                </script><span><i class="fa fa-clock-o"></i></span><ul class="deal-timer {{$product->slug}}"></ul></span></a>
+                                <span class="card-shopping"><i style="font-size: 17px;" class="fa fa-shopping-bag"></i>&nbsp;{{toPersianNum($product->sold)}}</span>
+                    </div>
+                    <a class="sb-preview-img" href="{{ route('shop.show', $product->slug) }}" class="" title="{{ $product->name }}">
+                    <img class="card-img-top" src="{{ productImage($product->image) }}" alt="{{ $product->name }}">
+                    </a>
+                    
+                    <div class="card-footer">
+                    <a href="{{ route('shop.show', $product->slug) }}" class="" title="{{ $product->name }}" class=""><span style="font-size: 14px;" class="card-span"><del>{{ toPersianNum($product->price) }} تومان</del></span></a>
+                    <span class="card-discount">%{{ toPersianNum($product->discount)  }} تخفیف</span>
+                    <span class="card-after-discount">{{ toPersianNum(presentPrice($product->price,$product->discount)) }} تومان</span>
+                    </div>
+                    </div>
+       
+    </div>    
+    
+    @endforeach
+    @else
+    <div class="title_block"><span>محصولات مرتبط</span></div>
+    @forelse ($mightAlsoLike as $product)
+    <div class="col-lg-3 col-md-3 col-sm-6">
+            <div class="mini-card-product">
+                    <div class="card-header">
+                            <a href="{{ route('shop.show', $product->slug) }}" class="" title="{{ $product->name }}"><span class="card-span">{{ $product->name }}</span></a>
+                            <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp; {{$product->location}}</span>
                     </div>
                     <div class="card-timer">
                             <a href="{{ route('shop.show', $product->slug) }}" class="" title="{{ $product->name }}" class=""><span class="card-span"><script>
@@ -765,7 +858,8 @@ $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  '
     </div>    
         @empty
         <div style="text-align: left">موردی یافت نشد!</div>
-        @endforelse       		
+        @endforelse 
+        @endif      		
     </div>
     <div class="clear"></div>	
     <div class="question box_single">

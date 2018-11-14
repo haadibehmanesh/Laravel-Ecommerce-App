@@ -377,7 +377,7 @@ jQuery.ajax({
 <p>سلام</p>
 
 
-<p style="color:#4caf50">شما فروشنده هستید و اکانت شما تائید شده است </p><div class="eye_buy"><a style="color: #fff;float: right;padding: 3px 15px;margin: 10px 0 0 0;font-size: 15px;" href="/dashboard"><i class="fa fa-dashboard"></i>رفتن به پنل فروشندگان</a></div><p></p>
+<p style="color:#4caf50">شما فروشنده هستید و اکانت شما تائید شده است </p><div class="eye_buy"><a style="color: #fff;float: right;padding: 3px 15px;margin: 10px 0 0 0;font-size: 15px;" href="/dashboard"><i class="fa fa-dashboard"></i>رفتن به پنل مدیریت کسب و کار</a></div><p></p>
 </div>
     @else 
     <div class="woocommerce-MyAccount-content">

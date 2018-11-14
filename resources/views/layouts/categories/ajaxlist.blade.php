@@ -3,7 +3,7 @@
     <div class="mini-card">
             <div class="card-header">
                     <a href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}"><span class="card-span">{{ $product->name }}</span></a>
-                    <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp; شیراز</span>
+                    <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp; {{$product->location}}</span>
             </div>
             <div class="card-timer">
                     <a href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}" class="btn btn-secondary"><span class="card-span"><script>

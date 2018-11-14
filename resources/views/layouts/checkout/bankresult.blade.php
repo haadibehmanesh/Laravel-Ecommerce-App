@@ -340,11 +340,13 @@ img.emoji {
                     <div class="title_post">
                         <h1>نتیجه تراکنش</h1>
                     </div>
-                    
-
-                                            
+                    @if(!empty($message))
                     {!!$message!!}
-                    <input type="button" class="btn" value="مشاهده سفارش" onclick="window.location.href='{{route('costumerpanel.showsold')}}'">
+                    <input type="button" class="btn" value="مشاهده سفارش و کد تخفیف" onclick="window.location.href='{{route('costumerpanel.showsold')}}'">
+                    @elseif(!empty($error))
+                    {!!$error!!}
+                    @endif
+                    
             </div>
         </div>
     </div>
