@@ -377,9 +377,6 @@ jQuery.ajax({
             <label>کد تخفیف:<br><input style="width:100%;box-sizing:border-box" type="text" name="code_offer" class="code_offer" /></label><br>
             <input type="button" class="check_code_offer" value="اعتبار سنجی">
 			<div class="clear"></div>
-			<br><br>
-            
-			<br>
         </div>
     </div>
     <div class="result_ajax" style="width:100%"></div>
