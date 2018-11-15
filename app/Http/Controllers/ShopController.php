@@ -108,9 +108,9 @@ class ShopController extends Controller
 
         $categoriesForProduct = $product->categories()->get();
 
-        $mightAlsoLike = BiProduct::where('slug', '!=', $slug_db)->mightAlsoLike()->get();
+        $mightAlsoLike = BiProduct::where('id', '!=', $ProductId)->mightAlsoLike()->get();
         $merchant_id = $product->bimerchant()->first()->id;
-        $otherproducts = BiProduct::where('bi_merchant_id',$merchant_id)->where('slug', '!=', $slug_db)->mightAlsoLike()->get();
+        $otherproducts = BiProduct::where('bi_merchant_id',$merchant_id)->where('id', '!=', $ProductId)->get();
         //$otherproducts = $product->mer
        // dd($otherproducts);
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
