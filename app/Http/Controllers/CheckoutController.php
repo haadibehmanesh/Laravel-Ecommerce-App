@@ -43,10 +43,7 @@ class CheckoutController extends Controller
     {  
         $customer_id = Auth::guard('customer')->user()->id;
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
-        foreach (Cart::content() as $item) {
-            $code = randomDigits(8);
-            $total = Cart::subtotal();
-            $product = BiProduct::find($item->id);
+        $total = Cart::subtotal();
             $order_code = randomDigits(8);
             $invoice_no = randomDigits(6);
             $order_status = 'pending';
@@ -57,9 +54,14 @@ class CheckoutController extends Controller
                 'order_code' => $order_code,
                 'customer_id' => $customer_id,
             ]);
+        foreach (Cart::content() as $item) {
+            
+            $code = randomDigits(8);
+            $product = BiProduct::find($item->id);
             $productSold = (($product->quantity-$product->sold) - $item->qty) >= 0 ? $product->sold + $item->qty : -1 ;
             
             if( $productSold >= 0) {
+                
                 $orderitem = BiOrderItem::create([
                     'bi_order_id' => $order->id,
                     'code' => $code,
