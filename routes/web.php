@@ -28,14 +28,18 @@ Route::any('callback/from/bank',function(){
     $order = BiOrder::where('ref_id', $refId)->first();
     $order->update(['status' => $order_status]);     
     $order_items = BiOrderItem::where('bi_order_id', $order->id)->get();
-    foreach (Cart::content() as $item) {
-      $product = BiProduct::find($item->id);
-      $productSold = (($product->quantity-$product->sold) - $item->qty) >= 0 ? $product->sold + $item->qty : -1 ;
-      if( $productSold >= 0) {
-              $product->sold = $productSold;
-              $product->save();     
-          } 
+    
+    if($order->status == 'completed'){
+      foreach (Cart::content() as $item) {
+        $product = BiProduct::find($item->id);
+        $productSold = (($product->quantity-$product->sold) - $item->qty) >= 0 ? $product->sold + $item->qty : -1 ;
+        if( $productSold >= 0) {
+                $product->sold = $productSold;
+                $product->save();     
+            } 
+      }
     }
+    
     foreach($order_items as $order_item){ 
           $ydate = date('Y', strtotime($order_item->product->date_available));  
           $mdate = date('m', strtotime($order_item->product->date_available));  
