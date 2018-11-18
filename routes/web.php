@@ -157,3 +157,6 @@ Route::group(['prefix' => 'customer'], function () {
   Route::get('/password/reset', 'CustomerAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
   Route::get('/password/reset/{token}', 'CustomerAuth\ResetPasswordController@showResetForm');
 });
+Route::redirect('/login', 301);
+Route::redirect('/register', 301);
+Route::redirect('/home', 301);
