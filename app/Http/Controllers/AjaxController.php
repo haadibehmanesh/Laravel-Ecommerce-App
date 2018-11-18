@@ -82,7 +82,7 @@ class AjaxController extends Controller {
         $category = BiCategory::where('slug', $slug_db)->firstOrFail();
         
       
-        $productsForCategories = $category->products()->orderBy('id', 'desc')->paginate($pagination);
+        $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->paginate($pagination);
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
         
         return view('layouts/categories/ajaxlist')->with([
