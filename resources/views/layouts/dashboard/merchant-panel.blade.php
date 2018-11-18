@@ -175,16 +175,8 @@ jQuery.ajax({
                         <i class="fa fa-map-marker"></i>
                         <select id="cities_list" name="city_name">
                             <option value="all" >همه شهر ها</option>
-                            Array
-(
-    [تهران] => 9
-    [مشهد] => 39
-    [اصفهان] => 0
-    [کرج] => 2
-    [شیراز] => 0
-    [سمنان] => 1
-)
-<option value='تهران' >تهران (9)</option><option value='مشهد' >مشهد (39)</option><option value='اصفهان' >اصفهان (0)</option><option value='کرج' selected>کرج (2)</option><option value='شیراز' >شیراز (0)</option><option value='سمنان' >سمنان (1)</option>                        </select>
+                           {{--<option value='تهران' >تهران (9)</option><option value='مشهد' >مشهد (40)</option><option value='اصفهان' >اصفهان (0)</option><option value='کرج' >کرج (2)</option><option value='شیراز' >شیراز (0)</option><option value='تبریز' >تبریز (0)</option>--}}
+                         </select>
                     </form>
                     کرج                    <div class="realoading"></div>
                     <script>
@@ -311,7 +303,7 @@ jQuery.ajax({
                             <div class="dokan-dashboard-wrap">
     
 <div class="dokan-dash-sidebar">
-<ul class="dokan-dashboard-menu"><li class="active dashboard"><a href="{{ route('merchantpanel.index')}}"><i class="fa fa-tachometer"></i> پیشخوان</a></li><li class="products"><a><i class="fa fa-briefcase"></i><span onclick="products(event)">بن های باطل شده</span> </a></li><li class="withdraw"><a href="{{ route('merchantpanel.withdraw') }}"><i class="fa fa-upload"></i> برداشت</a></li><li class="settings"><a href="#"><i class="fa fa-cog"></i> تنظیمات</a></li><li class="dokan-common-links dokan-clearfix">
+<ul class="dokan-dashboard-menu"><li class="active dashboard"><a href="{{ route('merchantpanel.index')}}"><i class="fa fa-tachometer"></i> پیشخوان</a></li><li class="products"><a><i class="fa fa-briefcase"></i><span onclick="products(event)">بن های باطل شده</span> </a></li><li class="withdraw"><a href="{{ route('merchantpanel.withdraw') }}"><i class="fa fa-upload"></i>درخواست تسویه حساب</a></li><li class="settings"><a href="#"><i class="fa fa-cog"></i> تنظیمات</a></li><li class="dokan-common-links dokan-clearfix">
             
             <a title="ویرایش حساب کاربری" class="tips" data-placement="top" href="/my-account"><i class="fa fa-user"></i></a>
             <a href="{{ url('/customer/logout') }}"

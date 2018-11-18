@@ -6,7 +6,8 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1">
                 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
                 <title>
-                    برداشت   </title>
+                        درخواست تسویه حساب
+                </title>
                     <link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">
                    
             
@@ -175,16 +176,8 @@ jQuery.ajax({
                         <i class="fa fa-map-marker"></i>
                         <select id="cities_list" name="city_name">
                             <option value="all" >همه شهر ها</option>
-                            Array
-(
-    [تهران] => 9
-    [مشهد] => 39
-    [اصفهان] => 0
-    [کرج] => 2
-    [شیراز] => 0
-    [سمنان] => 1
-)
-<option value='تهران' >تهران (9)</option><option value='مشهد' >مشهد (39)</option><option value='اصفهان' >اصفهان (0)</option><option value='کرج' selected>کرج (2)</option><option value='شیراز' >شیراز (0)</option><option value='سمنان' >سمنان (1)</option>                        </select>
+                            {{--<option value='تهران' >تهران (9)</option><option value='مشهد' >مشهد (40)</option><option value='اصفهان' >اصفهان (0)</option><option value='کرج' >کرج (2)</option><option value='شیراز' >شیراز (0)</option><option value='تبریز' >تبریز (0)</option>--}}
+                        </select>
                     </form>
                     کرج                    <div class="realoading"></div>
                     <script>
@@ -301,17 +294,17 @@ jQuery.ajax({
     <section id="wrapper">
     <div class="container">
         <div class="row">
-            <ol class="breadcrumb"><a href="/">خانه</a> &#47;برداشت</ol>    
+            <ol class="breadcrumb"><a href="/">خانه</a> &#47;درخواست تسویه حساب</ol>    
             <div class="post-content-page">
                                         
                     <!--title & discount & views-->
                     <div class="title_post">
-                        <h1>برداشت</h1>
+                        <h1>درخواست تسویه حساب</h1>
                     </div>
                             <div class="dokan-dashboard-wrap">
     
 <div class="dokan-dash-sidebar">
-<ul class="dokan-dashboard-menu"><li class="dashboard"><a href="{{ route('merchantpanel.index')}}"><i class="fa fa-tachometer"></i> پیشخوان</a></li><li class="products"><a><i class="fa fa-briefcase"></i><span onclick="products(event)">بن های باطل شده</span> </a></li><li class="active withdraw"><a href="#"><i class="fa fa-upload"></i> برداشت</a></li><li class="settings"><a href="#"><i class="fa fa-cog"></i> تنظیمات</a></li><li class="dokan-common-links dokan-clearfix">
+<ul class="dokan-dashboard-menu"><li class="dashboard"><a href="{{ route('merchantpanel.index')}}"><i class="fa fa-tachometer"></i> پیشخوان</a></li><li class="products"><a><i class="fa fa-briefcase"></i><span onclick="products(event)">بن های باطل شده</span> </a></li><li class="active withdraw"><a href="#"><i class="fa fa-upload"></i> درخواست تسویه حساب</a></li><li class="settings"><a href="#"><i class="fa fa-cog"></i> تنظیمات</a></li><li class="dokan-common-links dokan-clearfix">
             
             <a title="ویرایش حساب کاربری" class="tips" data-placement="top" href="/my-account"><i class="fa fa-user"></i></a>
             <a href="{{ url('/customer/logout') }}"
@@ -330,7 +323,7 @@ jQuery.ajax({
             <article class="dokan-withdraw-area">
     
                 <header class="dokan-dashboard-header">
-        <h1 class="entry-title">برداشت</h1>
+        <h1 class="entry-title">درخواست تسویه حساب</h1>
     </header><!-- .entry-header -->
     
                 <div class="entry-content">
@@ -365,7 +358,7 @@ jQuery.ajax({
             <div class="dokan-w5 dokan-text-left">
                 <div class="dokan-input-group">
                     <span class="dokan-input-group-addon">تومان</span>
-                    <input name="witdraw_amount" required="" number="" min="50000" class="dokan-form-control" id="withdraw-amount" type="number" placeholder="0.00" value="">
+                    <input name="witdraw_amount"  class="dokan-form-control" id="withdraw-amount" type=""  value="{{$totalRevenue}}">
                     
                 </div>
                 @if($errors->has('witdraw_amount'))

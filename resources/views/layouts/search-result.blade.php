@@ -169,7 +169,7 @@ function toPersianNum( num, dontTrim ) {
                         <i class="fa fa-map-marker"></i>
                         <select id="cities_list" name="city_name">
                             <option value="all" >همه شهر ها</option>
-                            <option value='تهران' >تهران (9)</option><option value='مشهد' >مشهد (40)</option><option value='اصفهان' >اصفهان (0)</option><option value='کرج' >کرج (2)</option><option value='شیراز' >شیراز (0)</option><option value='تبریز' >تبریز (0)</option>                        </select>
+                            {{--<option value='تهران' >تهران (9)</option><option value='مشهد' >مشهد (40)</option><option value='اصفهان' >اصفهان (0)</option><option value='کرج' >کرج (2)</option><option value='شیراز' >شیراز (0)</option><option value='تبریز' >تبریز (0)</option>--}}</select>
                     </form>
                     <div class="realoading"></div>
                     <script>
@@ -298,7 +298,7 @@ function toPersianNum( num, dontTrim ) {
                 <div class="mini-card">
                         <div class="card-header">
                                 <a href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}"><span class="card-span">{{ $product->name }}</span></a>
-                                <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp; شیراز</span>
+                                <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp;{{$product->location}}</span>
                         </div>
                         <div class="card-timer">
                                 <a href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}" class="btn btn-secondary"><span class="card-span"><script>
@@ -322,7 +322,7 @@ function toPersianNum( num, dontTrim ) {
                                             });
                                         });
                                     </script><span><i class="fa fa-clock-o"></i></span><ul class="deal-timer {{$product->slug}}"></ul></span></a>
-                                    <span class="card-shopping"><i style="font-size: 17px;" class="fa fa-shopping-bag"></i>&nbsp;{{toPersianNum($product->sold)}}</span>
+                                    <span class="card-shopping"><i style="font-size: 17px;" class="fa fa-shopping-bag"></i>&nbsp;@if($product->children->sum('sold')){{toPersianNum($product->children->sum('sold'))}}@else{{toPersianNum($product->sold)}}@endif</span>
                         </div>
                         <a class="sb-preview-img" href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}">
                         <img class="card-img-top" src="{{ productImage($product->image) }}" alt="{{ $product->name }}">

@@ -67,7 +67,8 @@
                             {{ csrf_field() }}
                        <input type="hidden" name="code_offer" class="code_offer" value="{{ $item->code }}">
                        <p class="col-sm-6">
-                       <label>تعداد مصرف فعلی:<br><input style="width:100%;box-sizing:border-box" type="number" name="code_used_count" class="code_used_count" /></label></p>
+                       <label>تعداد مصرف فعلی:<br><input style="width:100%;box-sizing:border-box" type=""  value="<?php echo $status = $item->quantity - $item->code_used_count;
+                        ?>" name="code_used_count" class="code_used_count" /></label></p>
                        <br />
                         <p class="col-sm-6">
                         <strong>وضعیت : <span style="color:green"><?php echo $status = $item->quantity - $item->code_used_count;

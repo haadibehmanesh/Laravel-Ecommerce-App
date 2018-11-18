@@ -210,6 +210,29 @@ function toPersianNum( num, dontTrim ) {
                 <a class="main_title_cart" href="/cart" rel="nofollow"><i class="fa fa-shopping-cart" aria-hidden="true"></i>سبد خرید شما<span class="number_items_cart">{{ Cart::content()->count() }}</span></a>
                 
             </div>
+            <div class="searchinput" style="display:none;">
+                    <form action="{{ route('search.index') }}" id="searchform">
+                            <i class="fa fa-search"></i>
+                    <input type="text" value="{{request()->input('query')}}" style="width: 100px;
+                        border: 0;
+                        background: none;
+                        color: #c8c5c5;
+                        outline: 0;
+                        height: 34px;
+                        " name="query" id="s"  placeholder="رستوران ، سرگرمی ، خدمات ..." />
+                            <input style="background: #f6861f;
+    border-radius: 24px;
+    color: #fdefef;
+    padding: 0 0px;
+    font-size: 11px;
+    font-family: IRANSans !important;
+    /* float: none !important; */
+    /* height: 34px; */
+    border: none;
+    line-height: 34px;
+    font-weight: normal !important;" type="submit" id="searchsubmit" value="جستجو" />
+                    </form>
+            </div>
 
         </div>
     </div>
@@ -305,7 +328,7 @@ function toPersianNum( num, dontTrim ) {
                             });
                         });
                     </script><span><i class="fa fa-clock-o"></i></span><ul class="deal-timer {{$featured->slug}}"></ul></span></a>
-                    <span class="card-shopping"><i class="fa fa-shopping-bag"></i>&nbsp;{{toPersianNum($featured->sold)}}</span>
+                    <span class="card-shopping"><i class="fa fa-shopping-bag"></i>&nbsp;@if($featured->children->sum('sold')){{toPersianNum($featured->children->sum('sold'))}}@else{{toPersianNum($featured->sold)}}@endif</span>
         </div>
         <a class="sb-preview-img" href="{{ route('shop.show', $featured->slug) }}" class="btn btn-secondary" title="{{ $featured->name }}">
         <img class="card-img-top" src="{{ productImage($featured->image) }}" alt="{{ $featured->name }}">
@@ -473,7 +496,7 @@ function toPersianNum( num, dontTrim ) {
                                             });
                                         });
                                     </script><span><i class="fa fa-clock-o"></i></span><ul class="deal-timer {{$product->slug}}"></ul></span></a>
-                                    <span class="card-shopping"><i style="font-size: 17px;" class="fa fa-shopping-bag"></i>&nbsp;{{toPersianNum($product->sold)}}</span>
+                                    <span class="card-shopping"><i style="font-size: 17px;" class="fa fa-shopping-bag"></i>&nbsp;@if($product->children->sum('sold')){{toPersianNum($product->children->sum('sold'))}}@else{{toPersianNum($product->sold)}}@endif</span>
                         </div>
                         <a class="sb-preview-img" href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}">
                         <img class="card-img-top" src="{{ productImage($product->image) }}" alt="{{ $product->name }}">
@@ -535,7 +558,7 @@ function toPersianNum( num, dontTrim ) {
                                         });
                                     });
                                 </script><span><i class="fa fa-clock-o"></i></span><ul class="deal-timer {{$product->slug}}"></ul></span></a>
-                                <span class="card-shopping"><i style="font-size: 17px;" class="fa fa-shopping-bag"></i>&nbsp;{{toPersianNum($product->sold)}}</span>
+                                <span class="card-shopping"><i style="font-size: 17px;" class="fa fa-shopping-bag"></i>&nbsp;@if($product->children->sum('sold')){{toPersianNum($product->children->sum('sold'))}}@else{{toPersianNum($product->sold)}}@endif</span>
                     </div>
                     <a class="sb-preview-img" href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}">
                     <img class="card-img-top" src="{{ productImage($product->image) }}" alt="{{ $product->name }}">

@@ -10,11 +10,6 @@
     <title>
           {{ $category->name }}    </title>
           <link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">
-          <link rel="alternate" type="application/rss+xml" title="تخفیف گروهی بن اینجا &raquo; آرایشگاه النا خوراک دیدگاه‌ها" href="feed/index.html" />
-          <script type="text/javascript">
-              window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.6"}};
-              !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
-          </script>
               <style type="text/css">
       img.wp-smiley,
       img.emoji {
@@ -305,7 +300,7 @@
                         <i class="fa fa-map-marker"></i>
                         <select id="cities_list" name="city_name">
                             <option value="all" >همه شهر ها</option>
-                            <option value='تهران' >تهران (9)</option><option value='مشهد' >مشهد (40)</option><option value='اصفهان' >اصفهان (0)</option><option value='کرج' >کرج (2)</option><option value='شیراز' >شیراز (0)</option><option value='تبریز' >تبریز (0)</option>                        </select>
+                            {{--<option value='تهران' >تهران (9)</option><option value='مشهد' >مشهد (40)</option><option value='اصفهان' >اصفهان (0)</option><option value='کرج' >کرج (2)</option><option value='شیراز' >شیراز (0)</option><option value='تبریز' >تبریز (0)</option>--}}                        </select>
                     </form>
                                         <div class="realoading"></div>
                     <script>
@@ -453,7 +448,7 @@
                                 <div class="option_item_gallery">
     
                                 
-                                    <span class="address"><i class="fa fa-map-marker"></i> امام خمینی </span>
+                                    <span class="address"><i class="fa fa-map-marker"></i> {{$featured_product->location}} </span>
     
                                 
                                         <span class="number-sale"><i class="fa fa-shopping-basket"></i>۰</span>
@@ -552,7 +547,7 @@
                                             <td colspan="2"><span class="price price_slider"><del><span class="woocommerce-Price-amount amount">{{toPersianNum($featured_product->price)}}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></del> <ins><span class="woocommerce-Price-amount amount">{{toPersianNum(presentPrice($featured_product->price,$featured_product->discount))}}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></ins></span></td>
                                         </tr>
                                         <tr>
-                                            <td><span>تعداد خریداری شده<b>{{ toPersianNum($featured_product->sold)  }}</b></span></td>
+                                            <td><span>تعداد خریداری شده<b>@if($featured_product->children->sum('sold')){{toPersianNum($featured_product->children->sum('sold'))}}@else{{toPersianNum($featured_product->sold)}}@endif</b></span></td>
                                             <td><span>تعداد بازدید<b>{{ toPersianNum($featured_product->viewed)  }}</b></span></td>
                                         </tr>
                                     </tbody></table>
@@ -668,7 +663,7 @@
         <div class="mini-card">
                 <div class="card-header">
                         <a href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}"><span class="card-span">{{ $product->name }}</span></a>
-                        <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp; شیراز</span>
+                        <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp;{{$product->location}}</span>
                 </div>
                 <div class="card-timer">
                         <a href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}" class="btn btn-secondary"><span class="card-span"><script>
@@ -692,7 +687,7 @@
                                     });
                                 });
                             </script><span><i class="fa fa-clock-o"></i></span><ul class="deal-timer {{$product->slug}}"></ul></span></a>
-                            <span class="card-shopping"><i style="font-size: 17px;" class="fa fa-shopping-bag"></i>&nbsp;{{toPersianNum($product->sold)}}</span>
+                            <span class="card-shopping"><i style="font-size: 17px;" class="fa fa-shopping-bag"></i>&nbsp;@if($product->children->sum('sold')){{toPersianNum($product->children->sum('sold'))}}@else{{toPersianNum($product->sold)}}@endif</span>
                 </div>
                 <a class="sb-preview-img" href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}">
                 <img class="card-img-top" src="{{ productImage($product->image) }}" alt="{{ $product->name }}">

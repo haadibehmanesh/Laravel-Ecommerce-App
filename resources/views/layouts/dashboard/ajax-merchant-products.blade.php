@@ -5,7 +5,7 @@
             <div class="dokan-dashboard-wrap">
 
 <div class="dokan-dash-sidebar">
-<ul class="dokan-dashboard-menu"><li class="dashboard"><a href="/dashboard"><i class="fa fa-tachometer"></i> پیشخوان</a></li><li class="active products"><a><i class="fa fa-briefcase"></i><span onclick="products(event)">بن های باطل شده</span> </a></li><li class="withdraw"><a href="/dashboard/withdraw/"><i class="fa fa-upload"></i> برداشت</a></li><li class="settings"><a href="/settings/store/"><i class="fa fa-cog"></i> تنظیمات</a></li><li class="dokan-common-links dokan-clearfix">
+<ul class="dokan-dashboard-menu"><li class="dashboard"><a href="/dashboard"><i class="fa fa-tachometer"></i> پیشخوان</a></li><li class="active products"><a><i class="fa fa-briefcase"></i><span onclick="products(event)">بن های باطل شده</span> </a></li><li class="withdraw"><a href="/dashboard/withdraw/"><i class="fa fa-upload"></i> درخواست تسویه حساب</a></li><li class="settings"><a href="#"><i class="fa fa-cog"></i> تنظیمات</a></li><li class="dokan-common-links dokan-clearfix">
 
 <a title="ویرایش حساب کاربری" class="tips" data-placement="top" href="/my-account"><i class="fa fa-user"></i></a>
 <a href="/customer/logout" onclick="event.preventDefault();
@@ -30,10 +30,11 @@
                     <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-date"><span class="nobr">تعداد</span></th>
                     <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-status"><span class="nobr">قیمت واحد</span></th>
                     <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-status"><span class="nobr">درصد تخفیف</span></th>
+                    <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-status"><span class="nobr">قیمت نهایی</span></th>
                     <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-status"><span class="nobr">سهم فروشگاه</span></th>
                     <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-status"><span class="nobr">سهم بن اینجا</span></th>
                     <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-total"><span class="nobr">مجموع درآمد</span></th>
-                    <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-actions"><span class="nobr">عملیات ها</span></th>
+                    <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-total"><span class="nobr">نمایش</span></th>
                 
             </tr>
 </thead>
@@ -54,12 +55,15 @@
 
                                     </td>
                             <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-status" data-title="قیمت واحد">
-                                            {{toPersianNum($item->price)}}
+                                            {{toPersianNum($item->product->price)}}
                                     </td>
                                     <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-date" data-title="درصد تخفیف">
                                                 {{ toPersianNum((1-($item->price/$item->product->price))*100) }}
                     
                                     </td>
+                                    <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-status" data-title="قیمت نهایی">
+                                                {{toPersianNum($item->price)}}
+                                        </td>
                                     @if(!empty($merchant->pre_discount) && $merchant->pre_discount == 1)
                                     <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-total" data-title="سهم فروشگاه">
                                         <span class="woocommerce-Price-amount amount">{{toPersianNum($item->product->price-($item->product->price*(($item->product->boninja_percent+$item->product->discount)/100)))}}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>

@@ -128,7 +128,7 @@
                                             <td colspan="2"><span class="price price_slider"><del><span class="woocommerce-Price-amount amount">{{toPersianNum($featured_product->price)}}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></del> <ins><span class="woocommerce-Price-amount amount">{{toPersianNum(presentPrice($featured_product->price,$featured_product->discount))}}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></ins></span></td>
                                         </tr>
                                         <tr>
-                                            <td><span>تعداد خریداری شده<b>{{ toPersianNum($featured_product->sold)  }}</b></span></td>
+                                            <td><span>تعداد خریداری شده<b>@if($featured_product->children->sum('sold')){{toPersianNum($featured_product->children->sum('sold'))}}@else{{toPersianNum($featured_product->sold)}}@endif</b></span></td>
                                             <td><span>تعداد بازدید<b>{{ toPersianNum($featured_product->viewed)  }}</b></span></td>
                                         </tr>
                                     </tbody></table>
