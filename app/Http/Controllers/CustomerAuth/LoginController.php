@@ -31,7 +31,7 @@ class LoginController extends Controller
      * @var string
      */
     // public $redirectTo = '/customer/home';
-    public $redirectTo = '/';
+    //public $redirectTo = '/';
     
 
     /**
