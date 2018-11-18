@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'failed' => 'کاربری با این مشخصات وجود ندارد!',
+    'failed' => 'مشخصات وارد شده اشتباه است!',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
 ];

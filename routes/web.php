@@ -88,6 +88,8 @@ Route::any('callback/from/bank',function(){
 Route::get('/', 'MainpageController@index')->name('mainpage.index');
 Route::get('/rules', 'RulesController@index')->name('rules.index');
 Route::get('/aboutus', 'AboutusController@index')->name('aboutus.index');
+Route::get('/cooperation', 'CooperationController@index')->name('cooperation.index');
+Route::post('/cooperation', 'CooperationController@store')->name('cooperation.store');
 
 Route::get('/cart', 'CartController@index')->name('cart.index');
 Route::post('/cart', 'CartController@store')->name('cart.store');
@@ -152,6 +154,7 @@ Route::group(['prefix' => 'customer'], function () {
 
   //Route::post('/password/email', 'CustomerAuth\ForgotPasswordController@sendResetLinkEmail')->name('password.request');
   Route::post('/password', 'CustomerAuth\ForgotPasswordController@sendResetSms')->name('password.request');
+  Route::get('/password', 'CustomerAuth\ForgotPasswordController@redirection')->name('password.redirection');
  // Route::post('/password/reset', 'CustomerAuth\ResetPasswordController@reset')->name('password.email');
   Route::post('/password/reset', 'CustomerAuth\ForgotPasswordController@passChange')->name('password.change');
   Route::get('/password/reset', 'CustomerAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');

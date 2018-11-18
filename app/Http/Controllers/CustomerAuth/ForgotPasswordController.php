@@ -43,6 +43,11 @@ class ForgotPasswordController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function redirection(){
+
+        return abort(404);
+
+    }
     public function showLinkRequestForm()
     {   $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
         return view('customer.auth.passwords.sms')->with([
@@ -68,6 +73,7 @@ class ForgotPasswordController extends Controller
         $messages = [
             'required' => 'پر کردن این فیلد اجباری است!',
             'password.min' => 'گذر واژه باید حداقل شامل 6 کاراکتر باشد!',
+            'confirmed' => 'گذر واژه مطابقت ندارد'
         ];
         $validatedData = Validator::make($request->all(), [
             'password' => 'min:6|confirmed',
