@@ -57,6 +57,23 @@ Version: 2.6
 .star_rating{
     direction: ltr;
 }
+.searchinput{
+    display: none;
+    overflow: hidden;
+    border: 1px solid #c4c2c2;
+    border-radius: 24px;
+    float: left;
+    /* padding: 0 0px; */
+    height: 36px;
+    position: relative;
+    background: #fff;
+    font: normal 14px/30px IRANSans;
+    color: #bdbdbd;
+    margin: 5px 0 5px 0;
+    position: relative;
+
+
+}
 @media (min-width: 780px) {
 .sticky {
     position: fixed;
