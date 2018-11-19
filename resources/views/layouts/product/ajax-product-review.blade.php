@@ -13,7 +13,13 @@
             <strong class="woocommerce-review__author" style="color:#ff5a5f">{{$review->author}}</strong>
             <p class="meta">
             
-            <time class="woocommerce-review__published-date" style="color:green" datetime="1396-6-5 11:10:37 +04:30">۵ شهریور ۱۳۹۶</time>
+                    <time class="woocommerce-review__published-date" style="color:green"><?php 
+                        $ydate = date('Y', strtotime($review->created_at));  
+                        $mdate = date('m', strtotime($review->created_at));  
+                        $ddate = date('d', strtotime($review->created_at));  
+                       $date = g2p($ydate,$mdate ,$ddate);
+                   ?>
+                   {{$date[0]}}/{{$date[1]}}/{{$date[2]}}</time>
             </p>
             <p>
                 <div class="star_rating">
