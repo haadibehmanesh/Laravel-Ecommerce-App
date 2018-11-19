@@ -111,11 +111,19 @@ class ShopController extends Controller
         $mightAlsoLike = BiProduct::where('id', '!=', $ProductId)->mightAlsoLike()->get();
         $merchant_id = $product->bimerchant()->first()->id;
         $otherproducts = BiProduct::where('bi_merchant_id',$merchant_id)->where('id', '!=', $ProductId)->get();
-        //$otherproducts = $product->mer
-       // dd($otherproducts);
+        
+    
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
         $reviews = BiReview::where('bi_product_id',$product->id)->orderBy('id', 'desc')->get();
-       
+        /*if($product->parent_id != 0){
+            $reviews = BiReview::where('bi_product_parent_id',$product->parent_id)->orderBy('id', 'desc')->get();
+
+        }else{
+
+            $reviews = BiReview::where('bi_product_id',$product->id)->orderBy('id', 'desc')->get();
+
+        }*/
+    
         if(!empty($product->bimerchant()->first()->company_name)){
         $merchant_name = $product->bimerchant()->first()->company_name;
         }else{
