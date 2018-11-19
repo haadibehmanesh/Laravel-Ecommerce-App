@@ -88,6 +88,7 @@ Route::any('callback/from/bank',function(){
 Route::get('/', 'MainpageController@index')->name('mainpage.index');
 Route::get('/rules', 'RulesController@index')->name('rules.index');
 Route::get('/aboutus', 'AboutusController@index')->name('aboutus.index');
+Route::get('/contactus', 'ContactusController@index')->name('contactus.index');
 Route::get('/cooperation', 'CooperationController@index')->name('cooperation.index');
 Route::post('/cooperation', 'CooperationController@store')->name('cooperation.store');
 
