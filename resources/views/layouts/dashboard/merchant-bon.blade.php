@@ -6,37 +6,38 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1">
                 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
                 <title>
-                        پنل مدیریت کسب و کار    </title>
+                        بن های باطل شده
+                </title>
                     <link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">
                    
             
-            <link rel='stylesheet' id='validate-engine-css-css'  href='../wp-content/plugins/wysija-newsletters/css/validationEngine.jquery4dc3.css?ver=2.8.2' type='text/css' media='all' />
-            <link rel='stylesheet' id='select2-css'  href='../wp-content/plugins/woocommerce/assets/css/select26765.css?ver=3.3.3' type='text/css' media='all' />
-            <link rel='stylesheet' id='woocommerce-layout-rtl-css'  href='../wp-content/plugins/woocommerce/assets/css/woocommerce-layout-rtl6765.css?ver=3.3.3' type='text/css' media='all' />
-            <link rel='stylesheet' id='woocommerce-smallscreen-rtl-css'  href='../wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen-rtl6765.css?ver=3.3.3' type='text/css' media='only screen and (max-width: 768px)' />
-            <link rel='stylesheet' id='woocommerce-general-rtl-css'  href='../wp-content/plugins/woocommerce/assets/css/woocommerce-rtl6765.css?ver=3.3.3' type='text/css' media='all' />
-            <link rel='stylesheet' id='megamenu-css'  href='../wp-content/uploads/maxmegamenu/style3d1a.css?ver=f3e515' type='text/css' media='all' />
-            <link rel='stylesheet' id='dashicons-css'  href='../wp-includes/css/dashicons.min1845.css?ver=4.9.6' type='text/css' media='all' />
-            <link rel='stylesheet' id='dokan-style-css'  href='../wp-content/plugins/dokan-lite/assets/css/styleb246.css?ver=2.7.8' type='text/css' media='all' />
-            <link rel='stylesheet' id='dokan-fontawesome-css'  href='../wp-content/plugins/dokan-lite/assets/vendors/font-awesome/font-awesome.minb246.css?ver=2.7.8' type='text/css' media='all' />
-            <link rel='stylesheet' id='dokan-rtl-style-css'  href='../wp-content/plugins/dokan-lite/assets/css/rtlb246.css?ver=2.7.8' type='text/css' media='all' />
-            <link rel='stylesheet' id='dokan-select2-css-css'  href='../wp-content/plugins/dokan-lite/assets/vendors/select2/select2b246.css?ver=2.7.8' type='text/css' media='all' />
-            <link rel='stylesheet' id='dokan-pro-style-css'  href='../wp-content/plugins/dokan-pro/assets/css/style8046.css?ver=1529567762' type='text/css' media='all' />
-            <link rel='stylesheet' id='dokan-social-style-css'  href='../wp-content/plugins/dokan-pro/assets/css/jssocials8046.css?ver=1529567762' type='text/css' media='all' />
-            <link rel='stylesheet' id='dokan-social-theme-flat-css'  href='../wp-content/plugins/dokan-pro/assets/css/jssocials-theme-flat8046.css?ver=1529567762' type='text/css' media='all' />
+            <link rel='stylesheet' id='validate-engine-css-css'  href='{{asset('wp-content/plugins/wysija-newsletters/css/validationEngine.jquery4dc3.css?ver=2.8.2')}}' type='text/css' media='all' />
+            <link rel='stylesheet' id='select2-css'  href='{{asset('wp-content/plugins/woocommerce/assets/css/select26765.css?ver=3.3.3')}}' type='text/css' media='all' />
+            <link rel='stylesheet' id='woocommerce-layout-rtl-css'  href='{{asset('wp-content/plugins/woocommerce/assets/css/woocommerce-layout-rtl6765.css?ver=3.3.3')}}' type='text/css' media='all' />
+            <link rel='stylesheet' id='woocommerce-smallscreen-rtl-css'  href='{{asset('wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen-rtl6765.css?ver=3.3.3')}}' type='text/css' media='only screen and (max-width: 768px)' />
+            <link rel='stylesheet' id='woocommerce-general-rtl-css'  href='{{asset('wp-content/plugins/woocommerce/assets/css/woocommerce-rtl6765.css?ver=3.3.3')}}' type='text/css' media='all' />
+            <link rel='stylesheet' id='megamenu-css'  href='{{asset('wp-content/uploads/maxmegamenu/style3d1a.css?ver=f3e515')}}' type='text/css' media='all' />
+            <link rel='stylesheet' id='dashicons-css'  href='{{asset('wp-includes/css/dashicons.min1845.css?ver=4.9.6')}}' type='text/css' media='all' />
+            <link rel='stylesheet' id='dokan-style-css'  href='{{asset('wp-content/plugins/dokan-lite/assets/css/styleb246.css?ver=2.7.8')}}' type='text/css' media='all' />
+            <link rel='stylesheet' id='dokan-fontawesome-css'  href='{{asset('wp-content/plugins/dokan-lite/assets/vendors/font-awesome/font-awesome.minb246.css?ver=2.7.8')}}' type='text/css' media='all' />
+            <link rel='stylesheet' id='dokan-rtl-style-css'  href='{{asset('wp-content/plugins/dokan-lite/assets/css/rtlb246.css?ver=2.7.8')}}' type='text/css' media='all' />
+            <link rel='stylesheet' id='dokan-select2-css-css'  href='{{asset('wp-content/plugins/dokan-lite/assets/vendors/select2/select2b246.css?ver=2.7.8')}}' type='text/css' media='all' />
+            <link rel='stylesheet' id='dokan-pro-style-css'  href='{{asset('wp-content/plugins/dokan-pro/assets/css/style8046.css?ver=1529567762')}}' type='text/css' media='all' />
+            <link rel='stylesheet' id='dokan-social-style-css'  href='{{asset('wp-content/plugins/dokan-pro/assets/css/jssocials8046.css?ver=1529567762')}}' type='text/css' media='all' />
+            <link rel='stylesheet' id='dokan-social-theme-flat-css'  href='{{asset('wp-content/plugins/dokan-pro/assets/css/jssocials-theme-flat8046.css?ver=1529567762')}}' type='text/css' media='all' />
           
-            <script type='text/javascript' src='../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
-            <script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
-            <script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/accounting/accounting.minaffb.js?ver=0.4.2'></script>
-            <script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/jquery-serializejson/jquery.serializejson.minc141.js?ver=2.6.1'></script>
+            <script type='text/javascript' src='{{asset('wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4')}}'></script>
+            <script type='text/javascript' src='{{asset('wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1')}}'></script>
+            <script type='text/javascript' src='{{asset('wp-content/plugins/woocommerce/assets/js/accounting/accounting.minaffb.js?ver=0.4.2')}}'></script>
+            <script type='text/javascript' src='{{asset('wp-content/plugins/woocommerce/assets/js/jquery-serializejson/jquery.serializejson.minc141.js?ver=2.6.1')}}'></script>
                 <meta name='robots' content='noindex,follow' />
             <style type="text/css">/** Mega Menu CSS Disabled **/</style>
                 <!-- Bootstrap -->
-                <link href="../wp-content/themes/takhfifat/css/bootstrap.min.css" rel="stylesheet">
-                <link href="../wp-content/themes/takhfifat/css/bootstrap-rtl.css" rel="stylesheet">
-                <link href="../wp-content/themes/takhfifat/css/font-awesome.css" rel="stylesheet">
-                <link href="../wp-content/themes/takhfifat/stylefc99.css?ver=2.9" rel="stylesheet">
-                <script src="../wp-content/themes/takhfifat/js/parsinumber.min.js"></script>
+                <link href="{{asset('wp-content/themes/takhfifat/css/bootstrap.min.css')}}" rel="stylesheet">
+                <link href="{{asset('wp-content/themes/takhfifat/css/bootstrap-rtl.css')}}" rel="stylesheet">
+                <link href="{{asset('wp-content/themes/takhfifat/css/font-awesome.css')}}" rel="stylesheet">
+                <link href="{{asset('wp-content/themes/takhfifat/stylefc99.css?ver=2.9')}}" rel="stylesheet">
+                <script src="{{asset('wp-content/themes/takhfifat/js/parsinumber.min.js')}}"></script>
                 <script>
                 function toPersianNum( num, dontTrim ) {
                     var i = 0,
@@ -82,6 +83,7 @@
                   
                     <script>
 function products(){
+    
 
 jQuery.ajax({
     headers: {
@@ -144,7 +146,7 @@ jQuery.ajax({
 			            <div class="block_login block_login_seller">
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
-                            <a href="/"><i class="fa fa-user pull-right"></i> پنل کسب و کار&nbsp; <strong class="takhfifat_get_seller_balance"> موجودی : <span class="woocommerce-Price-amount amount">&nbsp;{{toPersianNum($totalRevenue)}}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></strong></a>
+                            <a href="/"><i class="fa fa-user pull-right"></i> پنل کسب و کار &nbsp;<strong class="takhfifat_get_seller_balance">موجودی : <span class="woocommerce-Price-amount amount">&nbsp;{{toPersianNum($totalRevenue)}}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></strong></a>
 						</li>
                     </ul>
             </div>			
@@ -178,8 +180,8 @@ jQuery.ajax({
                         <i class="fa fa-map-marker"></i>
                         <select id="cities_list" name="city_name">
                             <option value="all" >همه شهر ها</option>
-                           {{--<option value='تهران' >تهران (9)</option><option value='مشهد' >مشهد (40)</option><option value='اصفهان' >اصفهان (0)</option><option value='کرج' >کرج (2)</option><option value='شیراز' >شیراز (0)</option><option value='تبریز' >تبریز (0)</option>--}}
-                         </select>
+                            {{--<option value='تهران' >تهران (9)</option><option value='مشهد' >مشهد (40)</option><option value='اصفهان' >اصفهان (0)</option><option value='کرج' >کرج (2)</option><option value='شیراز' >شیراز (0)</option><option value='تبریز' >تبریز (0)</option>--}}
+                        </select>
                     </form>
                     کرج                    <div class="realoading"></div>
                     <script>
@@ -212,7 +214,7 @@ jQuery.ajax({
     <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{Auth::guard('customer')->user()->name}}<span class="fa fa-user pull-right"></span></a>
         <ul class="dropdown-menu">
-                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard is-active">
+                                                <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard ">
                                                 <a href="{{url('/my-account')}}">پیشخوان</a>
                 </li>
                                                 <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
@@ -299,102 +301,115 @@ jQuery.ajax({
     <section id="wrapper">
     <div class="container">
         <div class="row">
-            <ol class="breadcrumb"><a href="/">خانه</a> &#47; پنل مدیریت کسب و کار</ol>    
+            <ol class="breadcrumb"><a href="/">خانه</a> &#47;بن های باطل شده</ol>    
             <div class="post-content-page">
-                                        
-                    <!--title & discount & views-->
-                    <div class="title_post">
-                    <h1>پنل مدیریت @if($merchant->company_name)"{{$merchant->company_name}}"@endif</h1>
-                    </div>
-                            <div class="dokan-dashboard-wrap">
-    
-<div class="dokan-dash-sidebar">
-<ul class="dokan-dashboard-menu"><li class="active dashboard"><a href="{{ route('merchantpanel.index')}}"><i class="fa fa-tachometer"></i> پیشخوان</a></li><li class="products"><a href="{{ route('merchantpanel.products')}}"><i class="fa fa-briefcase"></i><span>بن های باطل شده</span> </a></li><li class="withdraw"><a href="{{ route('merchantpanel.withdraw') }}"><i class="fa fa-upload"></i>تسویه حساب</a></li><li class="settings"><a href="#"><i class="fa fa-cog"></i> تنظیمات</a></li><li class="dokan-common-links dokan-clearfix">
-            
-            <a title="ویرایش حساب کاربری" class="tips" data-placement="top" href="/my-account"><i class="fa fa-user"></i></a>
-            <a href="{{ url('/customer/logout') }}"
-                onclick="event.preventDefault();
-                         document.getElementById('logout-form').submit();">
-            
-                <i class="fa fa-power-off"></i></a>
-
-            <form id="logout-form" action="{{ url('/customer/logout') }}" method="POST" style="display: none;">
-                {{ csrf_field() }}
-            </form>
-        </li></ul></div>
-    <div class="dokan-dashboard-content">
-
-        
-        <article class="dashboard-content-area">
-
-            <div class="dokan-w6 dokan-dash-left">
-
-                <div class="dashboard-widget big-counter">
-    <ul class="list-inline">
-         <li>
-            <div class="title">کل فروش</div>
-            <div class="count"><span class="woocommerce-Price-amount amount">{{toPersianNum($totalSell)}}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></div>
-        </li>
-        <li>
-            <div class="title">کل سهم کسب و کار</div>
-            <div class="count"><span class="woocommerce-Price-amount amount">{{$completed_withdraw + $totalRevenue}}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></div>
-        </li>
-        <li>
-            <div class="title">باقیمانده حساب نزد بن اینجا</div>
-            <div class="count"><span class="woocommerce-Price-amount amount">{{toPersianNum($totalRevenue)}}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></div>
-        </li>
-        <li>
-            <div class="title">تسویه شده</div>
-            <div class="count"><span class="woocommerce-Price-amount amount">{{$completed_withdraw}}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></div>
-        </li>
-        <li>
-            <div class="title">مجموع بن های ابطال شده</div>
-            <div class="count">
-                {{toPersianNum($orderitem->sum('code_used_count'))}}            </div>
-        </li>
-
-            </ul>
-</div> <!-- .big-counter -->
-
-
-
-
-
-
-
-
-
-            </div> <!-- .col-md-6 -->
-
-            <div class="dokan-w6 dokan-dash-right">
-                    <div class="dashboard-widget">
-        <div class="widget-title">معتبر سازی کد تخفیف</div>
-        <p>برای اطمینان از صحت خرید مشتری ، تعداد بن مصرف شده و کد تخفیفی که مشتریان شما برای گرفتن خدمات به شما ارائه می نمایند را در اینجا چک بفرمائید.</p>
-        <div style="padding:10px">{{--
-            <label>تعداد:<br><input style="width:100%;box-sizing:border-box" type="number" name="code_used_count" class="code_used_count" /></label><br />--}}
-            <label>کد تخفیف:<br><input style="width:100%;box-sizing:border-box" type="text" name="code_offer" class="code_offer" /></label><br>
-            <input type="button" class="check_code_offer" value="اعتبار سنجی">
-			<div class="clear"></div>
-        </div>
-    </div>
-    <div class="result_ajax" style="width:100%"></div>
- 
-
- <!-- .products -->
-
-            </div>
-
-        </article><!-- .dashboard-content-area -->
-
          
+<div class="title_post">
+        <h1>بن های باطل شده</h1>
+    </div>
+            <div class="dokan-dashboard-wrap">
 
-    </div><!-- .dokan-dashboard-content -->
+<div class="dokan-dash-sidebar">
+<ul class="dokan-dashboard-menu"><li class="dashboard"><a href="/dashboard"><i class="fa fa-tachometer"></i> پیشخوان</a></li><li class="active products"><a href="{{ route('merchantpanel.products')}}"><i class="fa fa-briefcase"></i><span>بن های باطل شده</span> </a></li><li class="withdraw"><a href="/dashboard/withdraw/"><i class="fa fa-upload"></i> تسویه حساب</a></li><li class="settings"><a href="#"><i class="fa fa-cog"></i> تنظیمات</a></li><li class="dokan-common-links dokan-clearfix">
 
-    
-</div><!-- .dokan-dashboard-wrap -->
+<a title="ویرایش حساب کاربری" class="tips" data-placement="top" href="/my-account"><i class="fa fa-user"></i></a>
+<a href="/customer/logout" onclick="event.preventDefault();
+         document.getElementById('logout-form').submit();">
+
+<i class="fa fa-power-off"></i></a>
+
+<form id="logout-form" action="/customer/logout" method="POST" style="display: none;">
+<input type="hidden" name="_token" value="Jhrvxf9brZZlM8WS0eTc2EeHX38ojQmxeupRN5KA">
+</form>
+</li></ul></div>
+<div class="dokan-dashboard-content"><!--title & discount & views-->
+
+            <div class="woocommerce">
+<div class="woocommerce-MyAccount-content">
 
 
-                                            
+<table class="woocommerce-orders-table woocommerce-MyAccount-orders shop_table shop_table_responsive my_account_orders account-orders-table">
+<thead>
+<tr>
+                    <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-number"><span class="nobr">نام بن</span></th>
+                    <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-date"><span class="nobr">تعداد</span></th>
+                    <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-status"><span class="nobr">قیمت واحد</span></th>
+                    <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-status"><span class="nobr">درصد تخفیف</span></th>
+                    <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-status"><span class="nobr">قیمت نهایی</span></th>
+                    <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-status"><span class="nobr">سهم فروشگاه</span></th>
+                    <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-status"><span class="nobr">سهم بن اینجا</span></th>
+                    <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-total"><span class="nobr">مجموع درآمد</span></th>
+                    <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-total"><span class="nobr">نمایش</span></th>
+                
+            </tr>
+</thead>
+
+<tbody>
+
+    @foreach ($order_items as $item)
+        
+  
+            <tr class="woocommerce-orders-table__row woocommerce-orders-table__row--status-processing order">
+                            <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-number" data-title="َنام بن">
+                            <a href="{{ route('shop.show', ['product' => $item->product->slug])}}">
+                    {{$item->product->name}}								</a>
+
+                                    </td>
+                            <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-date" data-title="تعداد">
+                            {{ toPersianNum($item->code_used_count)  }}
+
+                                    </td>
+                            <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-status" data-title="قیمت واحد">
+                                            {{toPersianNum($item->product->price)}}
+                                    </td>
+                                    <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-date" data-title="درصد تخفیف">
+                                                {{ toPersianNum((1-($item->price/$item->product->price))*100) }}
+                    
+                                    </td>
+                                    <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-status" data-title="قیمت نهایی">
+                                                {{toPersianNum($item->price)}}
+                                        </td>
+                                    @if(!empty($merchant->pre_discount) && $merchant->pre_discount == 1)
+                                    <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-total" data-title="سهم فروشگاه">
+                                        <span class="woocommerce-Price-amount amount">{{toPersianNum($item->product->price-($item->product->price*(($item->product->boninja_percent+$item->product->discount)/100)))}}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>
+                                </td>
+                                <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-total" data-title="سهم بن اینجا">
+                                        <span class="woocommerce-Price-amount amount">{{toPersianNum($item->product->price*($item->product->boninja_percent/100))}}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>
+                                </td>
+                            <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-total" data-title="مجموع">
+                                            <span class="woocommerce-Price-amount amount">{{toPersianNum($item->code_used_count*($item->product->price-($item->product->price*(($item->product->boninja_percent+$item->product->discount)/100))))}}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>
+                                    </td>
+                                    @else
+                                    <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-total" data-title="سهم فروشگاه">
+                                                <span class="woocommerce-Price-amount amount">{{toPersianNum($item->price-($item->price*(($item->product->boninja_percent/100))))}}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>
+                                        </td>
+                                        <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-total" data-title="سهم بن اینجا">
+                                                <span class="woocommerce-Price-amount amount">{{toPersianNum($item->price*($item->product->boninja_percent/100))}}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>
+                                        </td>
+                                    <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-total" data-title="مجموع">
+                                                    <span class="woocommerce-Price-amount amount">{{toPersianNum($item->code_used_count*($item->price-($item->price*(($item->product->boninja_percent)/100))))}}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>
+                                            </td>
+                                        @endif
+
+                            <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-actions" data-title="عملیات ها">
+                                            <a href="{{ route('shop.show', ['product' => $item->product->slug])}} "class="woocommerce-button button view">نمایش </a>													</td>
+                            
+                    </tr>
+                    @endforeach
+            
+            
+    </tbody>
+</table>
+
+
+
+
+
+</div>
+</div>
+
+                            
+</div>                           
             </div>
 
         </div>
@@ -517,39 +532,39 @@ jQuery.ajax({
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../wp-content/themes/takhfifat/js/bootstrap.min.js"></script>
-    <script src="../wp-content/themes/takhfifat/js/jquery.countdownTimer.js"></script>
-    <script src="../wp-content/themes/takhfifat/js/custom.js"></script>
+    <script src="{{asset('wp-content/themes/takhfifat/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('wp-content/themes/takhfifat/js/jquery.countdownTimer.js')}}"></script>
+    <script src="{{asset('wp-content/themes/takhfifat/js/custom.js')}}"></script>
     
-    <script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min44fd.js?ver=2.70'></script>
-    <script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min6b25.js?ver=2.1.4'></script>
+    <script type='text/javascript' src='{{asset('wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min44fd.js?ver=2.70')}}'></script>
+    <script type='text/javascript' src='{{asset('wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min6b25.js?ver=2.1.4')}}'></script>
     
-    <script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min6765.js?ver=3.3.3'></script>
+    <script type='text/javascript' src='{{asset('wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min6765.js?ver=3.3.3')}}'></script>
     
-    <script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min6765.js?ver=3.3.3'></script>
-    <script type='text/javascript' src='../wp-includes/js/jquery/ui/core.mine899.js?ver=1.11.4'></script>
-    <script type='text/javascript' src='../wp-includes/js/jquery/ui/widget.mine899.js?ver=1.11.4'></script>
-    <script type='text/javascript' src='../wp-includes/js/jquery/ui/mouse.mine899.js?ver=1.11.4'></script>
-    <script type='text/javascript' src='../wp-includes/js/jquery/ui/sortable.mine899.js?ver=1.11.4'></script>
-    <script type='text/javascript' src='../wp-includes/js/jquery/ui/datepicker.mine899.js?ver=1.11.4'></script>
+    <script type='text/javascript' src='{{asset('wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min6765.js?ver=3.3.3')}}'></script>
+    <script type='text/javascript' src='{{asset('wp-includes/js/jquery/ui/core.mine899.js?ver=1.11.4')}}'></script>
+    <script type='text/javascript' src='{{asset('wp-includes/js/jquery/ui/widget.mine899.js?ver=1.11.4')}}'></script>
+    <script type='text/javascript' src='{{asset('wp-includes/js/jquery/ui/mouse.mine899.js?ver=1.11.4')}}'></script>
+    <script type='text/javascript' src='{{asset('wp-includes/js/jquery/ui/sortable.mine899.js?ver=1.11.4')}}'></script>
+    <script type='text/javascript' src='{{asset('wp-includes/js/jquery/ui/datepicker.mine899.js?ver=1.11.4')}}'></script>
     
-    <script type='text/javascript' src='../wp-content/plugins/dokan-lite/assets/vendors/form-validate/form-validateb246.js?ver=2.7.8'></script>
-    <script type='text/javascript' src='../wp-content/plugins/dokan-lite/assets/js/speakingurl.minb246.js?ver=2.7.8'></script>
-    <script type='text/javascript' src='../wp-includes/js/imgareaselect/jquery.imgareaselect.min1845.js?ver=4.9.6'></script>
+    <script type='text/javascript' src='{{asset('wp-content/plugins/dokan-lite/assets/vendors/form-validate/form-validateb246.js?ver=2.7.8')}}'></script>
+    <script type='text/javascript' src='{{asset('wp-content/plugins/dokan-lite/assets/js/speakingurl.minb246.js?ver=2.7.8')}}'></script>
+    <script type='text/javascript' src='{{asset('wp-includes/js/imgareaselect/jquery.imgareaselect.min1845.js?ver=4.9.6')}}'></script>
     
-    <script type='text/javascript' src='../wp-content/plugins/dokan-lite/assets/vendors/select2/select2.full.minb246.js?ver=2.7.8'></script>
-    <script type='text/javascript' src='../wp-content/plugins/dokan-pro/assets/js/dokan-pro.js'></script>
-    <script type='text/javascript' src='../wp-includes/js/hoverIntent.minc245.js?ver=1.8.1'></script>
+    <script type='text/javascript' src='{{asset('wp-content/plugins/dokan-lite/assets/vendors/select2/select2.full.minb246.js?ver=2.7.8')}}'></script>
+    <script type='text/javascript' src='{{asset('wp-content/plugins/dokan-pro/assets/js/dokan-pro.js')}}'></script>
+    <script type='text/javascript' src='{{asset('wp-includes/js/hoverIntent.minc245.js?ver=1.8.1')}}'></script>
     <script type='text/javascript'>
     /* <![CDATA[ */
     var megamenu = {"timeout":"300","interval":"100"};
     /* ]]> */
     </script>
-    <script type='text/javascript' src='../wp-content/plugins/megamenu/js/maxmegamenu9254.js?ver=2.3.6'></script>
-    <script type='text/javascript' src='../wp-includes/js/wp-embed.min1845.js?ver=4.9.6'></script>
-    <script type='text/javascript' src='../wp-includes/js/comment-reply.min1845.js?ver=4.9.6'></script>
-    <script type='text/javascript' src='../wp-content/plugins/wysija-newsletters/js/validate/languages/jquery.validationEngine-fa4dc3.js?ver=2.8.2'></script>
-    <script type='text/javascript' src='../wp-content/plugins/wysija-newsletters/js/validate/jquery.validationEngine4dc3.js?ver=2.8.2'></script>
+    <script type='text/javascript' src='{{asset('wp-content/plugins/megamenu/js/maxmegamenu9254.js?ver=2.3.6')}}')}}'></script>
+    <script type='text/javascript' src='{{asset('wp-includes/js/wp-embed.min1845.js?ver=4.9.6')}}'></script>
+    <script type='text/javascript' src='{{asset('wp-includes/js/comment-reply.min1845.js?ver=4.9.6')}}'></script>
+    <script type='text/javascript' src='{{asset('wp-content/plugins/wysija-newsletters/js/validate/languages/jquery.validationEngine-fa4dc3.js?ver=2.8.2')}}'></script>
+    <script type='text/javascript' src='{{asset('wp-content/plugins/wysija-newsletters/js/validate/jquery.validationEngine4dc3.js?ver=2.8.2')}}'></script>
     
     <script type="text/javascript">
     jQuery(document).ready(function(){

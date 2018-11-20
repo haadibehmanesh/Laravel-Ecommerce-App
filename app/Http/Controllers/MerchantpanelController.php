@@ -134,11 +134,47 @@ class MerchantpanelController extends Controller
         //$products = BiProduct::where('bi_merchant_id', $merchant->id)->orderBy('id', 'desc')->get();
         $order_items = BiOrderItem::where('bi_merchant_id', $merchant->id)->where('code_used_count','>','0')->orderBy('id', 'desc')->get();
        // dd($products);
-        return view('layouts/dashboard/ajax-merchant-products')->with([
+        /*return view('layouts/dashboard/ajax-merchant-products')->with([
             'order_items' => $order_items,
             'merchant' => $merchant
         
-        ])->render();
+        ])->render();*/
+        $orderItem = BiOrderItem::where('bi_merchant_id', $merchant->id)->get();
+
+        $totalSell = $orderItem->sum(function ($item) {
+            return $item->price * $item->code_used_count;
+        });
+        
+        if(!empty($merchant->pre_discount) && $merchant->pre_discount == 1){
+
+            $boninja = $orderItem->sum(function ($item) {
+                return ($item->product->price*($item->product->boninja_percent/100))* $item->code_used_count;
+            });
+
+        }else{
+
+            $boninja = $orderItem->sum(function ($item) {
+                return ($item->price*($item->product->boninja_percent/100))* $item->code_used_count;
+            });
+        }
+
+        
+        //dd($merchant->company_name);
+        $totalRevenue = $totalSell - $boninja ;
+        $completed_withdraw = Withdraw::where('status','completed')->where('bi_merchant_id',$merchant->id)->sum('quantity');
+        $merchant->total_revenue = $totalRevenue - $completed_withdraw;
+        $merchant->save();
+        $totalRevenue = $merchant->total_revenue;
+        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        return view('layouts/dashboard/merchant-bon')->with([
+            'completed_withdraw' => $completed_withdraw,
+            'totalSell' => $totalSell,
+            'totalRevenue' => $totalRevenue,
+            'allcategories' => $allcategories,
+            'order_items' => $order_items,
+            'merchant' => $merchant
+        
+        ]);
     }
 
     public function orders()

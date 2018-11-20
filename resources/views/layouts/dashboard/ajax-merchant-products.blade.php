@@ -5,7 +5,7 @@
             <div class="dokan-dashboard-wrap">
 
 <div class="dokan-dash-sidebar">
-<ul class="dokan-dashboard-menu"><li class="dashboard"><a href="/dashboard"><i class="fa fa-tachometer"></i> پیشخوان</a></li><li class="active products"><a><i class="fa fa-briefcase"></i><span onclick="products(event)">بن های باطل شده</span> </a></li><li class="withdraw"><a href="/dashboard/withdraw/"><i class="fa fa-upload"></i> درخواست تسویه حساب</a></li><li class="settings"><a href="#"><i class="fa fa-cog"></i> تنظیمات</a></li><li class="dokan-common-links dokan-clearfix">
+<ul class="dokan-dashboard-menu"><li class="dashboard"><a href="/dashboard"><i class="fa fa-tachometer"></i> پیشخوان</a></li><li class="active products"><a href="{{ route('merchantpanel.products')}}"><i class="fa fa-briefcase"></i><span>بن های باطل شده</span> </a></li><li class="withdraw"><a href="/dashboard/withdraw/"><i class="fa fa-upload"></i> تسویه حساب</a></li><li class="settings"><a href="#"><i class="fa fa-cog"></i> تنظیمات</a></li><li class="dokan-common-links dokan-clearfix">
 
 <a title="ویرایش حساب کاربری" class="tips" data-placement="top" href="/my-account"><i class="fa fa-user"></i></a>
 <a href="/customer/logout" onclick="event.preventDefault();
