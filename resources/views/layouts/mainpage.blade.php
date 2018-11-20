@@ -17,7 +17,7 @@
 <link href="wp-content/themes/takhfifat/css/bootstrap.min.css" rel="stylesheet">
 <link href="wp-content/themes/takhfifat/css/bootstrap-rtl.css" rel="stylesheet">
 <link href="wp-content/themes/takhfifat/css/font-awesome.css" rel="stylesheet">
-<link href="wp-content/themes/takhfifat/stylefc99.css?ver=2.6" rel="stylesheet">
+<link href="wp-content/themes/takhfifat/stylefc99.css?ver=2.8" rel="stylesheet">
 <link href="wp-content/themes/takhfifat/css/main-page.css" rel="stylesheet">
 
 
@@ -145,7 +145,7 @@ function toPersianNum( num, dontTrim ) {
                         <i class="fa fa-map-marker"></i>
                         <select id="cities_list" name="city_name">
                             <option value="all" >همه شهر ها</option>
-                            <option value='تهران' >تهران (9)</option><option value='مشهد' >مشهد (40)</option><option value='اصفهان' >اصفهان (0)</option><option value='کرج' >کرج (2)</option><option value='شیراز' >شیراز (0)</option><option value='تبریز' >تبریز (0)</option>                        </select>
+                            </select>
                     </form>
                     <div class="realoading"></div>
                     <script>
@@ -211,27 +211,13 @@ function toPersianNum( num, dontTrim ) {
                 <a class="main_title_cart" href="/cart" rel="nofollow"><i class="fa fa-shopping-cart" aria-hidden="true"></i>سبد خرید شما<span class="number_items_cart">{{ Cart::content()->count() }}</span></a>
                 
             </div>
-            <div class="searchinput" style="display:none;">
+            <div class="searchinput">
                     <form action="{{ route('search.index') }}" id="searchform">
-                            <i class="fa fa-search"></i>
-                    <input type="text" value="{{request()->input('query')}}" style="width: 100px;
-                        border: 0;
-                        background: none;
-                        color: #c8c5c5;
-                        outline: 0;
-                        height: 34px;
-                        " name="query" id="s"  placeholder="رستوران ، سرگرمی ، خدمات ..." />
-                            <input style="background: #f6861f;
-    border-radius: 24px;
-    color: #fdefef;
-    padding: 0 0px;
-    font-size: 11px;
-    font-family: IRANSans !important;
-    /* float: none !important; */
-    /* height: 34px; */
-    border: none;
-    line-height: 34px;
-    font-weight: normal !important;" type="submit" id="searchsubmit" value="جستجو" />
+                           
+                    <input type="text" value="{{request()->input('query')}}" name="query" id="s"  placeholder=" جستجو ..." />
+                            <button type="submit" id="searchsubmit" >
+                                <i style="padding-left: 10px;" class="fa fa-search"></i>
+                            </button>
                     </form>
             </div>
 

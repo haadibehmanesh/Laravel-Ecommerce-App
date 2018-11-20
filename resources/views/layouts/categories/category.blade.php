@@ -10,20 +10,7 @@
     <title>
           {{ $category->name }}    </title>
           <link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">
-              <style type="text/css">
-      img.wp-smiley,
-      img.emoji {
-          display: inline !important;
-          border: none !important;
-          box-shadow: none !important;
-          height: 1em !important;
-          width: 1em !important;
-          margin: 0 .07em !important;
-          vertical-align: -0.1em !important;
-          background: none !important;
-          padding: 0 !important;
-      }
-      </style>
+              
       <link rel='stylesheet' id='validate-engine-css-css'  href='../../wp-content/plugins/wysija-newsletters/css/validationEngine.jquery4dc3.css?ver=2.8.2' type='text/css' media='all' />
       <link rel='stylesheet' id='woocommerce-layout-rtl-css'  href='../../wp-content/plugins/woocommerce/assets/css/woocommerce-layout-rtl6765.css?ver=3.3.3' type='text/css' media='all' />
       <link rel='stylesheet' id='woocommerce-smallscreen-rtl-css'  href='../../wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen-rtl6765.css?ver=3.3.3' type='text/css' media='only screen and (max-width: 768px)' />
@@ -37,7 +24,6 @@
       
       <script type='text/javascript' src='../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
       <script type='text/javascript' src='../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
-      <script type='text/javascript' src='http://maps.google.com/maps/api/js?key=AIzaSyCKCtow0jeZibeqGsBXNsKwQxm5N8TwbRE&amp;ver=4.9.6'></script>
       <!--[if lt IE 8]>
       <script type='text/javascript' src='http://localhost/takhfiftest/wp-includes/js/json2.min.js?ver=2015-05-03'></script>
       <![endif]-->
@@ -48,10 +34,7 @@
       <meta name="generator" content="WooCommerce 3.3.3" />
       <link rel="canonical" href="index.html" />
       <link rel='shortlink' href='../../index6f72.html?p=96' />
-      <link rel="alternate" type="application/json+oembed" href="../../wp-json/oembed/1.0/embedacd7.json?url=http%3A%2F%2Flocalhost%2Ftakhfiftest%2Fproduct%2F%25d8%25a2%25d8%25b1%25d8%25a7%25db%258c%25d8%25b4%25da%25af%25d8%25a7%25d9%2587-%25d8%25a7%25d9%2584%25d9%2586%25d8%25a7%2F" />
-      <link rel="alternate" type="text/xml+oembed" href="../../wp-json/oembed/1.0/embed8cc4?url=http%3A%2F%2Flocalhost%2Ftakhfiftest%2Fproduct%2F%25d8%25a2%25d8%25b1%25d8%25a7%25db%258c%25d8%25b4%25da%25af%25d8%25a7%25d9%2587-%25d8%25a7%25d9%2584%25d9%2586%25d8%25a7%2F&amp;format=xml" />
-          <noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
-          <style type="text/css">/** Mega Menu CSS Disabled **/</style>
+      
     <!-- Bootstrap -->
     <link rel="stylesheet" href="../../wp-content/themes/takhfifat/owl.carousel.min.css">
     <link rel="stylesheet" href="../../wp-content/themes/takhfifat/owl.theme.default.min.css">
@@ -65,7 +48,7 @@
     <link href="../../wp-content/themes/takhfifat/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../wp-content/themes/takhfifat/css/bootstrap-rtl.css" rel="stylesheet">
     <link href="../../wp-content/themes/takhfifat/css/font-awesome.css" rel="stylesheet">
-    <link href="../../wp-content/themes/takhfifat/stylefc99.css?ver=2.6" rel="stylesheet">
+    <link href="../../wp-content/themes/takhfifat/stylefc99.css?ver=2.8" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -273,13 +256,14 @@
                         {{--<li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-166"><a href="/products">همه پیشنهادها</a></li>--}}
                     </ul>
             <!--phone-->
-           {{--<div class="phone"><span><i class="fa fa-book"></i>بانک جامع اطلاعاتی</span></div>--}}
+                <div class="phone"><span><i class="fa fa-phone"></i>{{ toPersianNum('09176952155')}} - {{  toPersianNum('07136265496')}}</span></div>
 			            
 			<!--social-->
             <div class="social_header">
-                                        <a href="#" title="تلگرام"><i class="fa fa-send-o"></i></a>
-                                                <a href="#" title="اینستاگرام"><i class="fa fa-instagram"></i></a>
-                                    </div>
+            {{--    <a href="" title="تلگرام"><i class="fa fa-send-o"></i></a>--}}
+                <a href="https://www.instagram.com/boninjaa/" title="اینستاگرام"><i class="fa fa-instagram"></i></a>
+                
+            </div>
         </div>
         <div>
 </section>
@@ -755,10 +739,9 @@
 
             <!--social-->
             <div class="social_footer">
-                <a target="_blank" href="#" title="" class="telegram"></a>
-                <a target="_blank" href="#" title="" class="instagram"></a>
-                <a target="_blank" href="#" title="" class="facebook"></a>
-            </div>
+                    <a target="_blank" href="https://www.instagram.com/boninjaa" title="" class="instagram"></a>
+                </div>
+
 
            <!--concession-->
            <div class="concession">
@@ -793,17 +776,13 @@
             </div>--}}
             <!--Service-->
             <div class="col-lg-5 col-md-5 block_service">
-                <div class="service"><span>فهرست</span><div class="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-container"><ul id="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7" class="menu"><li id="menu-item-187" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-187"><a href="#">آموزش مفید</a></li>
-<li id="menu-item-188" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188"><a href="#">نحوه خرید</a></li>
-<li id="menu-item-189" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-189"><a href="#">نحوه فروش</a></li>
-<li id="menu-item-190" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-190"><a href="#">کجا پیدا میشه</a></li>
-<li id="menu-item-191" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-191"><a href="#">تماس با ما</a></li>
-</ul></div></div><div class="service"><span>راهنما</span><div class="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-container"><ul id="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-1" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-187"><a href="#">آموزش مفید</a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188"><a href="#">نحوه خرید</a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-189"><a href="#">نحوه فروش</a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-190"><a href="#">کجا پیدا میشه</a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-191"><a href="#">تماس با ما</a></li>
-</ul></div></div>            </div>
+                    <div class="service"><span>درباره بن اینجا</span><div class="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-container"><ul id="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7" class="menu"><li id="menu-item-187" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-187"><a href="{{route('aboutus.index')}}">درباره ما</a></li>
+                        <li id="menu-item-188" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188"><a href="{{route('cooperation.index')}}">همکاری با بن اینجا</a></li>
+                        <li id="menu-item-191" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-191"><a href="{{route('contactus.index')}}">تماس با ما</a></li>
+                        </ul></div></div><div class="service"><span>راهنما</span><div class="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-container"><ul id="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-1" class="menu">
+                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188"><a href="#">نحوه خرید</a></li>
+                        
+                        </ul></div></div>            </div>
             <!--map-->
             <div class="col-lg-3 col-md-3">
                 <div class="map">
@@ -839,19 +818,6 @@
 <script src="../../wp-content/themes/takhfifat/js/bootstrap.min.js"></script>
 <script src="../../wp-content/themes/takhfifat/js/jquery.countdownTimer.js"></script>
 <script src="../../wp-content/themes/takhfifat/js/custom.js"></script>
-<script type='text/javascript' src='../../wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min44fd.js?ver=2.70'></script>
-<script type='text/javascript' src='../../wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min6b25.js?ver=2.1.4'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var woocommerce_params = {"ajax_url":"\/takhfiftest\/wp-admin\/admin-ajax.php","wc_ajax_url":"http:\/\/localhost\/takhfiftest\/?wc-ajax=%%endpoint%%"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='../../wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min6765.js?ver=3.3.3'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var wc_cart_fragments_params = {"ajax_url":"\/takhfiftest\/wp-admin\/admin-ajax.php","wc_ajax_url":"http:\/\/localhost\/takhfiftest\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_8a522b5bd2b8fa51ec6fe90baf0301d6","fragment_name":"wc_fragments_8a522b5bd2b8fa51ec6fe90baf0301d6"};
-/* ]]> */
-</script>
 <script type='text/javascript' src='../../wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min6765.js?ver=3.3.3'></script>
 <script type='text/javascript' src='../../wp-includes/js/hoverIntent.minc245.js?ver=1.8.1'></script>
 <script type='text/javascript'>
@@ -863,12 +829,8 @@ var megamenu = {"timeout":"300","interval":"100"};
 <script type='text/javascript' src='../../wp-includes/js/wp-embed.min1845.js?ver=4.9.6'></script>
 <script type='text/javascript' src='../../wp-content/plugins/wysija-newsletters/js/validate/languages/jquery.validationEngine-fa4dc3.js?ver=2.8.2'></script>
 <script type='text/javascript' src='../../wp-content/plugins/wysija-newsletters/js/validate/jquery.validationEngine4dc3.js?ver=2.8.2'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var wysijaAJAX = {"action":"wysija_ajax","controller":"subscribers","ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.php","loadingTrans":"\u062f\u0631 \u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc...","is_rtl":"1"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='../../wp-content/plugins/wysija-newsletters/js/front-subscribers4dc3.js?ver=2.8.2'></script>
+
+
 
 <script type="text/javascript">
     

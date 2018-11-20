@@ -55,7 +55,7 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
     <link href="../wp-content/themes/takhfifat/css/bootstrap.min.css" rel="stylesheet">
     <link href="../wp-content/themes/takhfifat/css/bootstrap-rtl.css" rel="stylesheet">
     <link href="../wp-content/themes/takhfifat/css/font-awesome.css" rel="stylesheet">
-    <link href="../wp-content/themes/takhfifat/stylefc99.css?ver=2.6" rel="stylesheet">
+    <link href="../wp-content/themes/takhfifat/stylefc99.css?ver=2.8" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -210,13 +210,14 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
                         {{--<li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-166"><a href="/products">همه پیشنهادها</a></li>--}}
                     </ul>
             <!--phone-->
-            {{--<div class="phone"><span><i class="fa fa-book"></i>بانک جامع اطلاعاتی</span></div>--}}
+            <div class="phone"><span><i class="fa fa-phone"></i>09176952155 - 07136265496</span></div>
 			            
 			<!--social-->
             <div class="social_header">
-                                        <a href="#" title="تلگرام"><i class="fa fa-send-o"></i></a>
-                                                <a href="#" title="اینستاگرام"><i class="fa fa-instagram"></i></a>
-                                    </div>
+            {{--    <a href="" title="تلگرام"><i class="fa fa-send-o"></i></a>--}}
+                <a href="https://www.instagram.com/boninjaa/" title="اینستاگرام"><i class="fa fa-instagram"></i></a>
+                
+            </div>
         </div>
         <div>
 </section>
@@ -490,10 +491,8 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
 
             <!--social-->
             <div class="social_footer">
-                <a target="_blank" href="#" title="" class="telegram"></a>
-                <a target="_blank" href="#" title="" class="instagram"></a>
-                <a target="_blank" href="#" title="" class="facebook"></a>
-            </div>
+                    <a target="_blank" href="https://www.instagram.com/boninjaa" title="" class="instagram"></a>
+                </div>
 <!--concession-->
 <div class="concession">
     <div class="post-content">
@@ -515,37 +514,33 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
 
 <!--footer-->
 <footer>
-    <div class="container">
-        <div class="row">
-             <!--about us-->
-            {{--<div class="col-lg-4 col-md-4">
-                <div class="about_us">
-                    <span class="title_about_us"><img src="#" alt=""></span>
-                    <p></p>
+        <div class="container">
+            <div class="row">
+                 <!--about us-->
+                {{--<div class="col-lg-4 col-md-4">
+                    <div class="about_us">
+                        <span class="title_about_us"><img src="#" alt=""></span>
+                        <p></p>
+                    </div>
+                </div>--}}
+                <!--Service-->
+                <div class="col-lg-5 col-md-5 block_service">
+                        <div class="service"><span>درباره بن اینجا</span><div class="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-container"><ul id="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7" class="menu"><li id="menu-item-187" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-187"><a href="{{route('aboutus.index')}}">درباره ما</a></li>
+                            <li id="menu-item-188" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188"><a href="{{route('cooperation.index')}}">همکاری با بن اینجا</a></li>
+                            <li id="menu-item-191" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-191"><a href="{{route('contactus.index')}}">تماس با ما</a></li>
+                            </ul></div></div><div class="service"><span>راهنما</span><div class="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-container"><ul id="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-1" class="menu">
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188"><a href="#">نحوه خرید</a></li>
+                            
+                            </ul></div></div>            </div>
+                <!--map-->
+                <div class="col-lg-3 col-md-3">
+                    <div class="map">
+                        <img src="wp-content/uploads/2017/05/naghshe-1.jpg" />
+                    </div>
                 </div>
-            </div>--}}
-            <!--Service-->
-            <div class="col-lg-5 col-md-5 block_service">
-                <div class="service"><span>فهرست</span><div class="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-container"><ul id="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7" class="menu"><li id="menu-item-187" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-187"><a href="#">آموزش مفید</a></li>
-<li id="menu-item-188" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188"><a href="#">نحوه خرید</a></li>
-<li id="menu-item-189" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-189"><a href="#">نحوه فروش</a></li>
-<li id="menu-item-190" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-190"><a href="#">کجا پیدا میشه</a></li>
-<li id="menu-item-191" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-191"><a href="#">تماس با ما</a></li>
-</ul></div></div><div class="service"><span>راهنما</span><div class="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-container"><ul id="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-1" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-187"><a href="#">آموزش مفید</a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188"><a href="#">نحوه خرید</a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-189"><a href="#">نحوه فروش</a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-190"><a href="#">کجا پیدا میشه</a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-191"><a href="#">تماس با ما</a></li>
-</ul></div></div>            </div>
-            <!--map-->
-            <div class="col-lg-3 col-md-3">
-                <div class="map">
-									<img src="../wp-content/uploads/2017/05/naghshe-1.jpg" />
-				                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
 <!--copyright-->
 <section id="copyright">
