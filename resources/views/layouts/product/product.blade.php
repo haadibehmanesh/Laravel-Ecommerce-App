@@ -42,7 +42,7 @@ img.emoji {
     <link href="../../wp-content/themes/takhfifat/css/bootstrap-rtl.css" rel="stylesheet">
     <link href="../../wp-content/themes/takhfifat/css/star-rating.css" media="all" rel="stylesheet" type="text/css" />
     <link href="../../wp-content/themes/takhfifat/css/font-awesome.css" rel="stylesheet">
-    <link href="../../wp-content/themes/takhfifat/stylefc99.css?ver=2.8" rel="stylesheet">
+    <link href="../../wp-content/themes/takhfifat/stylefc99.css?ver=2.9" rel="stylesheet">
 
         <script>
         jQuery( document ).ready(function() {
@@ -253,6 +253,15 @@ img.emoji {
               {{--  <div class="main_cart_list">
 	                <p class="woocommerce-mini-cart__empty-message">هیچ محصولی در سبد خرید نیست.</p>
 				</div>--}}
+            </div>
+            <div class="searchinput">
+                    <form action="{{ route('search.index') }}" id="searchform">
+                           
+                    <input type="text" value="{{request()->input('query')}}" name="query" id="s"  placeholder=" جستجو ..." />
+                            <button type="submit" id="searchsubmit" >
+                                <i style="padding-left: 10px;" class="fa fa-search"></i>
+                            </button>
+                    </form>
             </div>
 
         </div>

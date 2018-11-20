@@ -57,8 +57,16 @@ Version: 2.6
 .star_rating{
     direction: ltr;
 }
+
+@media screen and (max-width : 1920px){
+    .searchinput{
+        visibility:hidden;
+    }
+  }
+@media (max-width: 420px){
+
 .searchinput{
-    display: none;
+    visibility:visible;
     overflow: hidden;
     border: 1px solid #c4c2c2;
     border-radius: 24px;
@@ -73,6 +81,27 @@ Version: 2.6
     position: relative;
 
 
+}
+.searchinput button{
+    background: #f6861f;
+    border-radius: 0px;
+    color: #fdefef;
+    padding: 0 10px 0px 0px;
+    font-size: 13px;
+    font-family: IRANSans !important;
+    border: none;
+    line-height: 34px;
+    font-weight: normal !important;
+}
+.searchinput input {
+
+    width: 110px;
+    border: 0;
+    background: none;
+    color: #c8c5c5;
+    outline: 0;
+    height: 34px;
+}
 }
 @media (min-width: 780px) {
 .sticky {
@@ -601,6 +630,7 @@ margin-bottom: 10px;
 }
 
 
+
 input{position:static !important;}
 *{font-weight:normal !important}
 a{text-decoration:none;-webkit-transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;transition:all .2s ease-in-out}
@@ -621,7 +651,7 @@ body{font-family:IRANSans!important;cursor:default;font-weight:300}
 .social_header a .fa{font-size: 25px;}
 .social_header a :hover{color:#f6861f}
 
-.logo{overflow:hidden;margin-top:5px;margin-bottom:5px;float:right;width:155px;height:103px;background:url(images/logo.png) no-repeat center}
+.logo{overflow:hidden;margin-top:10px;margin-bottom:10px;float:right;width:155px;height:103px;background:url(images/logo.png) no-repeat center}
 .logo h1,.logo h2{margin:0}
 .logo h1 a,.logo h2 a{display:block;height:103px;text-indent:-9999px}
 #form_header{float:right;margin:33px 90px 0 0}

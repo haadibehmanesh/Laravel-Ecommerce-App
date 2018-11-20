@@ -17,7 +17,7 @@
 <link href="wp-content/themes/takhfifat/css/bootstrap.min.css" rel="stylesheet">
 <link href="wp-content/themes/takhfifat/css/bootstrap-rtl.css" rel="stylesheet">
 <link href="wp-content/themes/takhfifat/css/font-awesome.css" rel="stylesheet">
-<link href="wp-content/themes/takhfifat/stylefc99.css?ver=2.8" rel="stylesheet">
+<link href="wp-content/themes/takhfifat/stylefc99.css?ver=2.9" rel="stylesheet">
 <link href="wp-content/themes/takhfifat/css/main-page.css" rel="stylesheet">
 
 
