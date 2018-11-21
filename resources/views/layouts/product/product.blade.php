@@ -514,8 +514,8 @@ img.emoji {
                                             <li><a title="linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://localhost/takhfiftest/product/%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87-%d8%a7%d9%84%d9%86%d8%a7/&amp;title=%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87%20%d8%a7%d9%84%d9%86%d8%a7" ID="linkedin" target="_blank" class="linkedin"><img src="../../wp-content/themes/takhfifat/images/social/linkedin.png" alt=""></a></li>
                                             <li><a title="Email" href="mailto:?subject=آرایشگاه النا&body= لطفا این لینک رو ببین: http://localhost/takhfiftest/product/%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87-%d8%a7%d9%84%d9%86%d8%a7/" ID="Email" target="_blank" class="email"><img src="../../wp-content/themes/takhfifat/images/social/email.png" alt=""></a></li>--}}
                                             <li><a href="https://api.whatsapp.com/send?text={{ route('shop.show', $product->slug) }}" title="{{ $product->name }}"><img src="../../wp-content/themes/takhfifat/images/social/whatsapp.png" alt="whatsapp"></a></li>
-                                            <li><a href="https://www.instagram.com/boninjaa" id=""><img src="../../wp-content/themes/takhfifat/images/social/instagram.png" alt="instagram"></a></li>
-
+                                           {{-- <li><a href="https://www.instagram.com/boninjaa" id=""><img src="../../wp-content/themes/takhfifat/images/social/instagram.png" alt="instagram"></a></li>
+                                            --}}
                                             
 
                                             

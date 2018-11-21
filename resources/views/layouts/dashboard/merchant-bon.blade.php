@@ -339,7 +339,7 @@ jQuery.ajax({
                     <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-status"><span class="nobr">سهم فروشگاه</span></th>
                     <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-status"><span class="nobr">سهم بن اینجا</span></th>
                     <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-total"><span class="nobr">مجموع درآمد</span></th>
-                    <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-total"><span class="nobr">تاریخ ابطال</span></th>
+                    <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-total"><span class="nobr">تاریخ ابطال بن</span></th>
                     <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-total"><span class="nobr">نمایش</span></th>
                 
             </tr>
@@ -361,14 +361,14 @@ jQuery.ajax({
 
                                     </td>
                             <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-status" data-title="قیمت واحد">
-                                            {{toPersianNum($item->product->price)}}
+                                            {{toPersianNum($item->product->price)}}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span>
                                     </td>
                                     <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-date" data-title="درصد تخفیف">
-                                                {{ toPersianNum((1-($item->price/$item->product->price))*100) }}
+                                                {{ toPersianNum((1-($item->price/$item->product->price))*100) }} %
                     
                                     </td>
                                     <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-status" data-title="قیمت نهایی">
-                                                {{toPersianNum($item->price)}}
+                                                {{toPersianNum($item->price)}}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span>
                                         </td>
                                     @if(!empty($merchant->pre_discount) && $merchant->pre_discount == 1)
                                     <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-total" data-title="سهم فروشگاه">
@@ -392,8 +392,14 @@ jQuery.ajax({
                                             </td>
                                         @endif
 
-                                        <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-actions" data-title="عملیات ها">
-                                                <a href="{{ route('shop.show', ['product' => $item->product->slug])}} "class="woocommerce-button button view">{{$item->updated_at}} </a>													</td>
+                                        <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-actions" data-title="تاریخ ابطال بن">
+                                              <?php 
+                                                    $ydate = date('Y', strtotime($item->updated_at));  
+                                                    $mdate = date('m', strtotime($item->updated_at));  
+                                                    $ddate = date('d', strtotime($item->updated_at));  
+                                                   $date = g2p($ydate,$mdate ,$ddate);
+                                               ?>
+                                               {{toPersianNum($date[0])}}/{{toPersianNum($date[1])}}/{{toPersianNum($date[2])}} 							</td>
                             <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-actions" data-title="عملیات ها">
                                             <a href="{{ route('shop.show', ['product' => $item->product->slug])}} "class="woocommerce-button button view">نمایش </a>													</td>
                             

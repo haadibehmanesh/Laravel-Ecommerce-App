@@ -132,7 +132,7 @@ class MerchantpanelController extends Controller
         $customer_id = Auth::guard('customer')->user()->id;
         $merchant = BiMerchant::where('customer_id',$customer_id)->first();
         //$products = BiProduct::where('bi_merchant_id', $merchant->id)->orderBy('id', 'desc')->get();
-        $order_items = BiOrderItem::where('bi_merchant_id', $merchant->id)->where('code_used_count','>','0')->orderBy('id', 'desc')->get();
+        $order_items = BiOrderItem::where('bi_merchant_id', $merchant->id)->where('code_used_count','>','0')->orderBy('updated_at', 'desc')->get();
        // dd($products);
         /*return view('layouts/dashboard/ajax-merchant-products')->with([
             'order_items' => $order_items,
