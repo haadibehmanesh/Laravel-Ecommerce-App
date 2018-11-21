@@ -42,7 +42,7 @@ img.emoji {
     <link href="../../wp-content/themes/takhfifat/css/bootstrap-rtl.css" rel="stylesheet">
     <link href="../../wp-content/themes/takhfifat/css/star-rating.css" media="all" rel="stylesheet" type="text/css" />
     <link href="../../wp-content/themes/takhfifat/css/font-awesome.css" rel="stylesheet">
-    <link href="../../wp-content/themes/takhfifat/stylefc99.css?ver=2.9" rel="stylesheet">
+    <link href="../../wp-content/themes/takhfifat/stylefc99.css?ver=3.0" rel="stylesheet">
 
         <script>
         jQuery( document ).ready(function() {
@@ -692,11 +692,8 @@ img.emoji {
 <div class="col-lg-6 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
 <div class="Terms_Use box_single">
 		<div class="title_block"><span>شرایط استفاده</span></div>
-
-		 <p>
-			 		 </p>
-		<div class="box_terms_use">
-		<div class="item_terms_use">
+		<div class="">
+		<div class="">
 			<?php
 $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  ', explode('<p style="text-align: right;">', $product->usage_terms));
 ?>
@@ -1053,6 +1050,13 @@ $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  '
                         <div class="service"><span>درباره بن اینجا</span><div class="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-container"><ul id="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7" class="menu"><li id="menu-item-187" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-187"><a href="{{route('aboutus.index')}}">درباره ما</a></li>
                             <li id="menu-item-188" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188"><a href="{{route('cooperation.index')}}">همکاری با بن اینجا</a></li>
                             <li id="menu-item-191" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-191"><a href="{{route('contactus.index')}}">تماس با ما</a></li>
+                            <li id="menu-item-191" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-191">
+                                <span>
+                                        <i class="fa fa-phone"></i>
+                                        شماره های پشتیبانی : <br>
+                                        {{ toPersianNum('09176952155')}} - {{  toPersianNum('07136265496')}}
+                                </span>
+                            </li>
                             </ul></div></div><div class="service"><span>راهنما</span><div class="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-container"><ul id="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-1" class="menu">
                             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188"><a href="#">نحوه خرید</a></li>
                             

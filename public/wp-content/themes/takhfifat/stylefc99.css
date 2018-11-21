@@ -630,7 +630,6 @@ margin-bottom: 10px;
 }
 
 
-
 input{position:static !important;}
 *{font-weight:normal !important}
 a{text-decoration:none;-webkit-transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;transition:all .2s ease-in-out}
@@ -907,7 +906,7 @@ ol.commentlist li ul.children li.depth-5{margin:20px 0 0}
 .block_gallery .gallery_item,.block_gallery_archive .gallery_item{width:65%;border-left:0;padding:0}
 .block_gallery .carousel-inner,.block_gallery_archive .carousel-inner{border-radius:0 7px 7px 0}
 .block_gallery .carousel-indicators li,.block_gallery_archive .carousel-indicators li{width:18px!important;height:18px!important}
-.block_gallery .option_item_gallery,.block_gallery_archive .option_item_gallery{zoom:1.3;left:0}
+.block_gallery .option_item_gallery,.block_gallery_archive .option_item_gallery{zoom:1;left:0}
 .block_gallery .content_item,.block_gallery_archive .content_item{width:35%;padding:0 25px}
 .block_gallery .content_item .Slogan{text-align:center;border:1px solid #dedede;border-right:0;border-left:0;padding-bottom:9px}
 .block_gallery .content_item .Slogan span{font:15pt/34pt IRANSans;padding:0 35px;display:inline-block;border-radius:0 0 6px 6px;background:#f6861f;color:#fff}
@@ -1706,3 +1705,17 @@ button#insert-media-button{color:#fff;border: 0;}
 
 span.price del:before{ content:'قیمت: '; }
 span.price ins:before{ content:'با تخفیف: '; }
+@media (max-width: 420px){
+    .block_gallery .carousel-inner, .block_gallery_archive .carousel-inner {
+        border-radius: 0 ;
+    }
+    .carousel-inner {
+        height: 200px;
+    }
+    .carousel-inner .img_item img {
+        width: 100%;
+        height: 175px;
+        object-fit: cover;
+    }
+
+    }
