@@ -16,7 +16,10 @@
                         <!-- End WOWSlider.com BODY section -->
                         @else
                         
-                        <div class="block_gallery_archive">
+                        <div class="block_gallery_archive" style="
+                        border-radius: 0;
+                        border: none;
+                    ">
 
                             <!-- images -->
     
@@ -69,7 +72,9 @@
     
                                     <!-- Wrapper for slides -->
     
-                                    <div class="carousel-inner" role="listbox">
+                                    <div class="carousel-inner" role="listbox" style="
+                                    border-radius: 20px 0px 20px 0px;
+                                ">
     
     
     

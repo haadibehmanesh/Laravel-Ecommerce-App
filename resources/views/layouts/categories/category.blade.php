@@ -48,7 +48,7 @@
     <link href="../../wp-content/themes/takhfifat/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../wp-content/themes/takhfifat/css/bootstrap-rtl.css" rel="stylesheet">
     <link href="../../wp-content/themes/takhfifat/css/font-awesome.css" rel="stylesheet">
-    <link href="../../wp-content/themes/takhfifat/stylefc99.css?ver=3.9" rel="stylesheet">
+    <link href="../../wp-content/themes/takhfifat/stylefc99.css?ver=4.2" rel="stylesheet">
 	<script src="../../wp-content/themes/takhfifat/js/parsinumber.min.js"></script>
 	<script>
 	function toPersianNum( num, dontTrim ) {
@@ -359,7 +359,10 @@
                         <!-- End WOWSlider.com BODY section -->
                         @else
                         
-                        <div class="block_gallery_archive">
+                        <div class="block_gallery_archive" style="
+                        border-radius: 0;
+                        border: none;
+                    ">
 
                             <!-- images -->
     
@@ -390,7 +393,9 @@
     
                                     <!-- Wrapper for slides -->
     
-                                    <div class="carousel-inner" role="listbox">
+                                    <div class="carousel-inner" role="listbox" style="
+                                    border-radius: 20px 0px 20px 0px;
+                                ">
     
     
     

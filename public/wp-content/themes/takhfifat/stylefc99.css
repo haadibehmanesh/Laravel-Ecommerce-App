@@ -1753,7 +1753,7 @@ span.price ins:before{ content:'با تخفیف: '; }
         border-radius: 0 ;
     }
     .carousel-inner {
-        height: 200px;
+        height: 175px;
     }
     .carousel-inner .img_item img {
         width: 100%;

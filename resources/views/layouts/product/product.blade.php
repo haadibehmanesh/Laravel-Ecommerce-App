@@ -42,7 +42,7 @@ img.emoji {
     <link href="../../wp-content/themes/takhfifat/css/bootstrap-rtl.css" rel="stylesheet">
     <link href="../../wp-content/themes/takhfifat/css/star-rating.css" media="all" rel="stylesheet" type="text/css" />
     <link href="../../wp-content/themes/takhfifat/css/font-awesome.css" rel="stylesheet">
-    <link href="../../wp-content/themes/takhfifat/stylefc99.css?ver=4.1" rel="stylesheet">
+    <link href="../../wp-content/themes/takhfifat/stylefc99.css?ver=4.2" rel="stylesheet">
 
         <script>
         jQuery( document ).ready(function() {
@@ -371,7 +371,9 @@ img.emoji {
 
                                 <!-- Wrapper for slides -->
 
-                                <div class="carousel-inner" role="listbox">
+                                <div class="carousel-inner" role="listbox" style="
+                                border-radius: 20px 0px 20px 0;
+                            ">
 
                                     <div class="item active">
 
@@ -420,7 +422,9 @@ img.emoji {
 
                         <div class="content_item">
 
-                        <div class="Slogan"><span>{{ $merchant_name }}</span></div>
+                        <div class="Slogan" style="
+                        border: none;
+                    "><span>{{ $merchant_name }}</span></div>
 
                             
 							<div style="
@@ -517,11 +521,17 @@ img.emoji {
 							
 
                             <div class="share_gift_bye">
-                                <div class="share_btn">
+                                <div class="share_btn" style="
+                                background-color: green;
+                                padding: 5px;
+                            ">
                                     
                                 <div class="btn-group btn_social">
 
-                                    <button type="button" class="nb-btn" data-toggle="dropdown"> اشتراک <i class="fa fa-share-alt"></i> </button>
+                                    <button type="button" class="nb-btn" data-toggle="dropdown" style="
+                                    background: green;
+                                    font-size: 14px;
+                                "> اشتراک <i class="fa fa-share-alt"></i> </button>
 
                                     <ul class="dropdown-menu" id="shr_social">
 
@@ -567,7 +577,7 @@ img.emoji {
                                   @if($product->quantity - $product->sold > 0)
                     
                                     @if($product->children->count() > 0)
-                                    <a data-toggle="modal" href="#normalModal" class="btn btn-primary" style="background-color:green;">انتخاب کنید</a>
+                                    <a data-toggle="modal" href="#normalModal" class="btn btn-primary" style="background-color: #f6861f;border: none;">انتخاب کنید</a>
                                     @else
                                     <input type="button" value='افزودن به سبد' style="border-radius: 4px;" name="addtocart" id="addtocart" class="addtocart btn">
                                     <button type="submit" name="add-to-cart" value="" class="btn">مشاهده و خرید</button>
