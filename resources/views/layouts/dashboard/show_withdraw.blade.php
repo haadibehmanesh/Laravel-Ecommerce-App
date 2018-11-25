@@ -6,7 +6,7 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1">
                 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
                 <title>
-                    تسویه حساب
+                        تسویه حساب
                 </title>
                     <link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">
                    
@@ -301,12 +301,12 @@ jQuery.ajax({
     <section id="wrapper">
     <div class="container">
         <div class="row">
-            <ol class="breadcrumb"><a href="/">خانه</a> &#47;درخواست تسویه حساب</ol>    
+            <ol class="breadcrumb"><a href="/">خانه</a> &#47;لیست تسویه حسابها</ol>    
             <div class="post-content-page">
                                         
                     <!--title & discount & views-->
                     <div class="title_post">
-                        <h1>درخواست تسویه حساب</h1>
+                        <h1>لیست تسویه حسابها</h1>
                     </div>
                             <div class="dokan-dashboard-wrap">
     
@@ -330,7 +330,7 @@ jQuery.ajax({
             <article class="dokan-withdraw-area">
     
                 <header class="dokan-dashboard-header">
-        <h1 class="entry-title">درخواست تسویه حساب</h1>
+        <h1 class="entry-title">لیست تسویه حسابها</h1>
     </header><!-- .entry-header -->
     
                 <div class="entry-content">
@@ -341,54 +341,96 @@ jQuery.ajax({
     </div>
     <ul class="list-inline subsubsub">
         <li class="active">
-            <a href="{{route('merchantpanel.withdraw')}}">درخواست برداشت</a>
+            <a href="{{route('merchantpanel.withdraw')}}"> ارسال درخواست برداشت</a>
         </li>
         <li>
-            <a href="{{ route('merchantpanel.showwithdraw') }}">لیست درخواست ها</a>
+                <a href="{{ route('merchantpanel.showwithdraw') }}">لیست درخواست ها</a>
         </li>
-        {{--<li>
+         {{--<li>
             <a href="http://demo.onliner.ir/takhfifat/dashboard/withdraw/?type=cancelled">درخواست ها لغو شده است</a>
         </li>--}}
     </ul>
-    @if($errors->has('message'))
-    <div class="dokan-alert dokan-alert-success">
-        <strong>{{$errors->first('message')}}</strong>
-    </div>
-    @endif
-    <form class="dokan-form-horizontal withdraw" role="form" method="post" action="{{ route('merchantpanel.sendwithdraw') }}" novalidate="novalidate">
-            {{ csrf_field() }}
-        <div class="dokan-form-group">
-            <label for="withdraw-amount" class="dokan-w3 dokan-control-label">
-                مقدار برداشت  
-            </label>
-    
-            <div class="dokan-w5 dokan-text-left">
-                <div class="dokan-input-group">
-                    <span class="dokan-input-group-addon">تومان</span>
-                    <input name="witdraw_amount"  class="dokan-form-control" id="withdraw-amount" type=""  value="{{$totalRevenue}}">
-                    
-                </div>
-                @if($errors->has('witdraw_amount'))
-                        <div class="alert alert-danger">
-                            {{$errors->first('witdraw_amount') }}        
-                        </div>
-                @endif
-            </div>
-        </div>
-    
-    
-        <div class="dokan-form-group">
-            <div class="dokan-w3 ajax_prev" style="margin-left:19%; width: 200px;">
-                
-                <input type="submit" class="dokan-btn dokan-btn-theme" value="ثبت درخواست">
-            </div>
-        </div>
-    </form>
     
                 </div><!-- .entry-content -->
     
             </article>
-    
+            <div class="woocommerce">
+                    <div class="woocommerce-MyAccount-content">
+                    
+                    
+                    <table class="woocommerce-orders-table woocommerce-MyAccount-orders shop_table shop_table_responsive my_account_orders account-orders-table">
+                    <thead>
+                    <tr>
+                                        <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-total"><span class="nobr">مقدار</span></th>
+                                        <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-total"><span class="nobr">تاریخ </span></th>
+                                        <th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-total"><span class="nobr">وضعیت</span></th>
+                                    
+                                </tr>
+                    </thead>
+                    
+                    <tbody>
+                    
+                        @foreach ($withdraws as $withdraw)
+                            
+                      
+                                <tr class="woocommerce-orders-table__row woocommerce-orders-table__row--status-processing order">
+                                                
+                                                <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-date" data-title="مقدار">
+                                                {{ toPersianNum($withdraw->quantity)  }}
+                                                <span class="woocommerce-Price-currencySymbol">تومان</span>
+                                                </td>
+                                                
+                    
+                                                <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-actions" data-title="تاریخ">
+                                                        <?php 
+                                                            $ydate = date('Y', strtotime($withdraw->updated_at));  
+                                                            $mdate = date('m', strtotime($withdraw->updated_at));  
+                                                            $ddate = date('d', strtotime($withdraw->updated_at));  
+                                                            $date = g2p($ydate,$mdate ,$ddate);
+                                                        ?>
+                                                        {{toPersianNum($date[0])}}/{{toPersianNum($date[1])}}/{{toPersianNum($date[2])}}
+                                                </td>
+                                                <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-actions" data-title="وضعیت">	@if(!empty($withdraw->status) && $withdraw->status == 'completed')
+                                                    <span style="
+                                                    color: white;
+                                                    background-color: #14bd21;
+                                                    padding: 0 5px 0 5px;
+                                                ">
+                                                    پرداخت شده		
+                                                    </span>
+                                                    @elseif($withdraw->status == 'processing')
+                                                    <span style="
+                                                    background-color: #00c4ff;
+                                                    padding: 0 5px 0 5px;
+                                                ">
+                                                    در حال بررسی
+                                                    </span>
+                                                    @else
+                                                    <span style="
+                                                    background-color: red;
+                                                    padding: 0 5px 0 5px;
+                                                ">
+                                                    نا مشخص
+                                                    </span>
+                                                    
+                                                    @endif			
+                                                
+                                                </td>
+                                                
+                                                
+                                        </tr>
+                                        @endforeach
+                                
+                                
+                        </tbody>
+                    </table>
+                    
+                    
+                    
+                    
+                    
+                    </div>
+                    </div>
                 </div><!-- .dokan-dashboard-content -->
 
     

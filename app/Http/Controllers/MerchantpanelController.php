@@ -256,6 +256,51 @@ class MerchantpanelController extends Controller
             return redirect()->back()->withErrors($validatedData);
         }
     }
+    public function showWithdraw()
+    {
+        $customer_id = Auth::guard('customer')->user()->id;
+       
+        $merchant = BiMerchant::where('customer_id',$customer_id)->first();
+       // dd($merchant->pre_discount);
+       
+       
+        $orderItem = BiOrderItem::where('bi_merchant_id', $merchant->id)->get();
+
+        $totalSell = $orderItem->sum(function ($item) {
+            return $item->price * $item->code_used_count;
+        });
+        
+        if(!empty($merchant->pre_discount) && $merchant->pre_discount == 1){
+
+            $boninja = $orderItem->sum(function ($item) {
+                return ($item->product->price*($item->product->boninja_percent/100))* $item->code_used_count;
+            });
+
+        }else{
+
+            $boninja = $orderItem->sum(function ($item) {
+                return ($item->price*($item->product->boninja_percent/100))* $item->code_used_count;
+            });
+        }
+
+        
+        
+        $totalRevenue = $totalSell - $boninja ;
+        $withdraws = Withdraw::where('bi_merchant_id',$merchant->id)->orderBy('id','desc')->get();
+        /*$merchant->total_revenue = $totalRevenue - $completed_withdraw;
+        $merchant->save();*/
+        $totalRevenue = $merchant->total_revenue;
+        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        return view('layouts/dashboard/show_withdraw')->with([
+            'withdraws' => $withdraws,
+            'totalSell' => $totalSell,
+            'totalRevenue' => $totalRevenue,
+            'allcategories' => $allcategories,
+            'orderitem' => $orderItem
+        ]);
+
+
+    }
    
 }
 

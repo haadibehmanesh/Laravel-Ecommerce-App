@@ -131,7 +131,7 @@ Route::any('/dashboard/products', 'MerchantpanelController@products')->name('mer
 Route::get('/dashboard/editaccount', 'MerchantpanelController@edit')->name('merchantpanel.edit');
 Route::get('/dashboard/withdraw', 'MerchantpanelController@withdraw')->name('merchantpanel.withdraw');
 Route::post('/dashboard/withdraw', 'MerchantpanelController@sendwithdraw')->name('merchantpanel.sendwithdraw');
-
+Route::get('/dashboard/showwithdraw', 'MerchantpanelController@showWithdraw')->name('merchantpanel.showwithdraw');
 });
 
 Auth::routes();
