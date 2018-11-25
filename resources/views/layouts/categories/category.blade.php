@@ -44,74 +44,11 @@
 <link rel="stylesheet" type="text/css" href="../../engine1/style.css" />
 <script type="text/javascript" src="../../engine1/jquery.js"></script>
 <!-- End WOWSlider.com HEAD section -->
-    <link href="../../wp-content/themes/takhfifat/css/list.css" rel="stylesheet">
+    <link href="../../wp-content/themes/takhfifat/css/list.css?ver=1.1" rel="stylesheet">
     <link href="../../wp-content/themes/takhfifat/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../wp-content/themes/takhfifat/css/bootstrap-rtl.css" rel="stylesheet">
     <link href="../../wp-content/themes/takhfifat/css/font-awesome.css" rel="stylesheet">
-    <link href="../../wp-content/themes/takhfifat/stylefc99.css?ver=3.0" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="http://localhost/takhfiftest/wp-content/themes/takhfifat/js/html5shiv.min.js"></script>
-    <script src="http://localhost/takhfiftest/wp-content/themes/takhfifat/js/respond.min.js"></script>
-    <![endif]-->
-
-         {{--   	<style>
-	span.price del:before{ content:'قیمت: '; }
-	span.price ins:before{ content:'با تخفیف: '; }
-			.phone,
-	input[type="submit"], input[type="button"], button,
-	.nav-tabs>li.active>a .fa, .nav-tabs>li.active>a:focus .fa, .nav-tabs>li.active>a:hover .fa,
-	.eye_buy a,
-	.price span.with_discount,
-	.title_post span.like,
-	.block_gallery .content_item .Slogan span,
-	.content_item .Discount:before,
-	.box_offer .Discount:before,
-	.box_offer .price del,
-	.title_post .Discount:before,
-	span.number_items_cart,
-	p.buttons a,
-	.wc-proceed-to-checkout .checkout-button,
-	.woocommerce a.remove:hover,
-	.post-content input[type="submit"],
-	input[type="submit"].dokan-btn-theme, a.dokan-btn-theme, .dokan-btn-theme
-	{
-		background-color:#ff5a5f !important;
-	}
-	.box_offer .price del:after{
-		border-right-color: #ff5a5f;
-	}
-	input[type="submit"]:hover, input[type="button"]:hover, button:hover,
-	.eye_buy a:hover,
-	{
-		background-color:#ff5a5f	}
-	.content_item > span a .fa,
-	.box_single .title_block span,
-	.option_item_gallery span.address .fa,
-	.item_terms_use p .fa,
-	.box_offer span.address i,
-	.cart_list.product_list_widget li.mini_cart_item a.remove,
-	.woocommerce a.remove,
-	.label_map
-	{
-		color:#ff5a5f !important
-	}
-	.top_header,
-	.title_post span.like:before,
-	.top_header, 
-	.title_post span.like:before, 
-	.nav-tabs>li.active>a, 
-	.nav-tabs>li.active>a:hover,
-	.title_post,
-	.phone,
-	.label_map,
-	.post-content input[type="submit"],
-	input[type="submit"].dokan-btn-theme, a.dokan-btn-theme, .dokan-btn-theme
-	{
-		border-color:#ff5a5f	}	
-		</style>--}}
+    <link href="../../wp-content/themes/takhfifat/stylefc99.css?ver=3.9" rel="stylesheet">
 	<script src="../../wp-content/themes/takhfifat/js/parsinumber.min.js"></script>
 	<script>
 	function toPersianNum( num, dontTrim ) {
@@ -442,29 +379,7 @@
     
                                 </div>
                                 <div class="time_out">
-                                    <i class="fa fa-clock-o"></i>
-                                    <ul class="deal-timer {{$featured_product->slug}}"><li><span class="num">۷۱</span><span class="text">  روز </span></li><li><span class="num">۷</span><span class="text"> ساعت </span></li><li><span class="num">۵۸</span><span class="text"> دقیقه </span></li><li><span class="num">۳۶</span><span class="text"> ثانیه </span></li></ul>
-                                <script>
-                                                    jQuery(function() {
-                                        var endDate = "{{date('Y-m-d', strtotime($featured_product->end_date))}}";
-                                        jQuery('.{{$featured_product->slug}}').countdown({
-                                            date: endDate,
-                                            render: function(data) {
-                                                if ( ! data.sec  ) { data.sec = 0 };
-                                                var days = toPersianNum(data.days);
-                                                var hours = toPersianNum(data.hours);
-                                                var min = toPersianNum(data.min);
-                                                var sec = toPersianNum(data.sec);
-                                                jQuery(this.el).html(
-                                                    '<li><span class="num">' + days +'</span><span class="text">  روز </span></li>'+
-                                                    '<li><span class="num">' + hours +'</span><span class="text"> ساعت </span></li>'+
-                                                    '<li><span class="num">' + min +'</span><span class="text"> دقیقه </span></li>'+
-                                                    '<li><span class="num">' + sec +'</span><span class="text"> ثانیه </span></li>'
-                                                );
-                                            }
-                                        });
-                                    });
-                                </script>					
+                                    			
                                 </div>
     
     
@@ -530,14 +445,74 @@
                                 <span class="Discount"><b>%{{ toPersianNum($featured_product->discount)  }}</b>تخفیف</span>
                             <h2><a href="{{ route('shop.show', $featured_product->slug) }}" title="{{ $featured_product->name }}">{{ toPersianNum($featured_product->description)}}</a></h2>
                                     <table class="table_slider">
-                                        <tbody><tr>
-                                            <td colspan="2"><span class="price price_slider"><del><span class="woocommerce-Price-amount amount">{{toPersianNum($featured_product->price)}}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></del> <ins><span class="woocommerce-Price-amount amount">{{toPersianNum(presentPrice($featured_product->price,$featured_product->discount))}}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></ins></span></td>
+                                        <tbody>
+                                            <tr>
+                                                <td style="
+                                                background-color: #f6861f;    padding: 8px;
+                                            "><div class="timer_farsi_single" style="float: right;color: white;">
+                                            <span     style="padding-left: 10px;
+                                            font-size: 22px;">
+                                                    <i class="fa fa-clock-o"></i></span>
+                                                    <ul class="deal-timer {{$featured_product->slug}}"><li><span class="num">۷۱</span><span class="text">  روز </span></li><li><span class="num">۷</span><span class="text"> ساعت </span></li><li><span class="num">۵۸</span><span class="text"> دقیقه </span></li><li><span class="num">۳۶</span><span class="text"> ثانیه </span></li></ul>
+                                                <script>
+                                                                    jQuery(function() {
+                                                        var endDate = "{{date('Y-m-d', strtotime($featured_product->end_date))}}";
+                                                        jQuery('.{{$featured_product->slug}}').countdown({
+                                                            date: endDate,
+                                                            render: function(data) {
+                                                                if ( ! data.sec  ) { data.sec = 0 };
+                                                                var days = toPersianNum(data.days);
+                                                                var hours = toPersianNum(data.hours);
+                                                                var min = toPersianNum(data.min);
+                                                                var sec = toPersianNum(data.sec);
+                                                                jQuery(this.el).html(
+                                                                    '<li><span class="num">' + days +'</span><span class="text">  روز </span></li>'+
+                                                                    '<li><span class="num">' + hours +'</span><span class="text"> ساعت </span></li>'+
+                                                                    '<li><span class="num">' + min +'</span><span class="text"> دقیقه </span></li>'+
+                                                                    '<li><span class="num">' + sec +'</span><span class="text"> ثانیه </span></li>'
+                                                                );
+                                                            }
+                                                        });
+                                                    });
+                                                </script>		</span>
+                                                </div>
+                                            </td>
+                                            
+
+                                            </tr>
+                                            <tr>
+                                            <td style="color: white;
+                                            background-color: #19499c;    padding: 10px;
+                                        " colspan="2"><span style="
+                                                float: right;
+                                                padding-right: 40px;
+                                                color: #fb9b93;
+                                                font-size: 18px;
+                                            " class=""><del>
+                                                <span class="">{{toPersianNum($featured_product->price)}}&nbsp;
+                                                    <span class="">تومان</span>
+                                                </del>
+                                                </span>
+                                            
+                                                <span style="
+                                                float: left;
+                                                color: #bff3bf;
+                                                font-size: 18px;
+                                                padding-left: 40px;
+                                            ">{{toPersianNum(presentPrice($featured_product->price,$featured_product->discount))}}&nbsp;
+                                                    <span>تومان</span>
+                                                </span>
+                                            </span></td>
                                         </tr>
                                         <tr>
-                                            <td><span>تعداد خریداری شده<b>@if($featured_product->children->sum('sold')){{toPersianNum($featured_product->children->sum('sold'))}}@else{{toPersianNum($featured_product->sold)}}@endif</b></span></td>
-                                            <td><span>تعداد بازدید<b>{{ toPersianNum($featured_product->viewed)  }}</b></span></td>
+                                            <td style="
+                                            color: white;
+                                            background-color: #ec4436;    padding: 10px;
+                                        "><span>تعداد خریداری شده  @if($featured_product->children->sum('sold')){{toPersianNum($featured_product->children->sum('sold'))}}@else{{toPersianNum($featured_product->sold)}}@endif</span></td>
+                                            
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 <div class="eye_buy"><a href="{{ route('shop.show', ['product' => $featured_product->slug, 'category' => $category->slug] ) }}"><i class="fa fa-shopping-cart"></i>مشاهده و خرید</a></div>
                             </div>
     
@@ -550,8 +525,18 @@
 </div>
  <div class="clear"></div>
                 <!--related product -->
-<div class="block_posts box_single">
-        <div class="list_title_block">
+<div class="cat_show">
+        <span class="cat_icon_inside"><i class="fa 
+       
+            @if($category->children->count() > 0) 
+            {{$category->icon}} 
+            @elseif(empty($category->parent_id))
+            {{$category->icon}} 
+            @else
+            {{$category->parent->icon}} 
+            @endif"></i></span>
+        <span class="cat_show_catname">
+               
                 <div class="col-lg-4 col-md-4">
                     <span>@if(!empty($categoryParent))
                         {{ $categoryParent->name }}
@@ -563,7 +548,7 @@
                 </div>
                 <div class="col-lg-4 col-md-4">
                     
-                        
+                       
                     
                 </div>
                 <div class="col-lg-4 col-md-4">
@@ -582,7 +567,7 @@
             
             
             
-        </div>
+            </span>
 
 
         <div class="cat-filter-box">

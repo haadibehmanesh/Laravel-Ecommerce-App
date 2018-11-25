@@ -17,7 +17,7 @@
 <link href="wp-content/themes/takhfifat/css/bootstrap.min.css" rel="stylesheet">
 <link href="wp-content/themes/takhfifat/css/bootstrap-rtl.css" rel="stylesheet">
 <link href="wp-content/themes/takhfifat/css/font-awesome.css" rel="stylesheet">
-<link href="wp-content/themes/takhfifat/stylefc99.css?ver=2.9" rel="stylesheet">
+<link href="wp-content/themes/takhfifat/stylefc99.css?ver=3.8" rel="stylesheet">
 <link href="wp-content/themes/takhfifat/css/main-page.css" rel="stylesheet">
 
 
@@ -290,11 +290,11 @@ function toPersianNum( num, dontTrim ) {
        
 <div class="card">
         <div class="card-header">
-                <a href="{{ route('shop.show', $featured->slug) }}" class="btn btn-secondary" title="{{ $featured->name }}"><span class="card-span">{{ $featured->name }}</span></a>
+                <a href="{{ route('shop.show', $featured->slug) }}" class="" title="{{ $featured->name }}"><span class="card-span">{{ $featured->name }}</span></a>
         <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp; {{$featured->location}}</span>
         </div>
         <div class="card-timer">
-                <a href="{{ route('shop.show', $featured->slug) }}" class="btn btn-secondary" title="{{ $featured->name }}" class="btn btn-secondary"><span class="card-span"><script>
+                <a href="{{ route('shop.show', $featured->slug) }}"  title="{{ $featured->name }}" ><span class="card-span"><script>
                         jQuery(function() {
                             var endDate = "{{$featured->end_date}}";
                             jQuery('.{{$featured->slug}}').countdown({
@@ -315,7 +315,9 @@ function toPersianNum( num, dontTrim ) {
                             });
                         });
                     </script><span><i class="fa fa-clock-o"></i></span><ul class="deal-timer {{$featured->slug}}"></ul></span></a>
-                    <span class="card-shopping"><i class="fa fa-shopping-bag"></i>&nbsp;@if($featured->children->sum('sold')){{toPersianNum($featured->children->sum('sold'))}}@else{{toPersianNum($featured->sold)}}@endif</span>
+                    <span class="card-shopping"><i style="
+                        font-size: 15px;
+                    " class="fa fa-shopping-bag"></i>&nbsp;@if($featured->children->sum('sold')){{toPersianNum($featured->children->sum('sold'))}}@else{{toPersianNum($featured->sold)}}@endif</span>
         </div>
         <a class="sb-preview-img" href="{{ route('shop.show', $featured->slug) }}" class="btn btn-secondary" title="{{ $featured->name }}">
         <img class="card-img-top" src="{{ productImage($featured->image) }}" alt="{{ $featured->name }}">
@@ -483,7 +485,7 @@ function toPersianNum( num, dontTrim ) {
                                             });
                                         });
                                     </script><span><i class="fa fa-clock-o"></i></span><ul class="deal-timer {{$product->slug}}"></ul></span></a>
-                                    <span class="card-shopping"><i style="font-size: 17px;" class="fa fa-shopping-bag"></i>&nbsp;@if($product->children->sum('sold')){{toPersianNum($product->children->sum('sold'))}}@else{{toPersianNum($product->sold)}}@endif</span>
+                                    <span class="card-shopping"><i style="font-size: 14px;" class="fa fa-shopping-bag"></i>&nbsp;@if($product->children->sum('sold')){{toPersianNum($product->children->sum('sold'))}}@else{{toPersianNum($product->sold)}}@endif</span>
                         </div>
                         <a class="sb-preview-img" href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}">
                         <img class="card-img-top" src="{{ productImage($product->image) }}" alt="{{ $product->name }}">
@@ -511,6 +513,15 @@ function toPersianNum( num, dontTrim ) {
 @foreach($allcategories as $category)
     @if(!$category->parent && $category->products->where('cat_featured',1)->count() == 3)
 <div class="cat_show">
+        <span class="cat_icon_inside"><i class="fa 
+       
+            @if($category->children->count() > 0) 
+            {{$category->icon}} 
+            @elseif(empty($category->parent_id))
+            {{$category->icon}} 
+            @else
+            {{$category->parent->icon}} 
+            @endif"></i></span>
     <span class="cat_show_catname">
         <a href="{{ route('shop.showCategory', $category->slug) }}" class="article-h3">{{$category->name}}</a>
     </span>

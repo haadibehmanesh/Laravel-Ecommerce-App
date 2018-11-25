@@ -42,7 +42,7 @@ img.emoji {
     <link href="../../wp-content/themes/takhfifat/css/bootstrap-rtl.css" rel="stylesheet">
     <link href="../../wp-content/themes/takhfifat/css/star-rating.css" media="all" rel="stylesheet" type="text/css" />
     <link href="../../wp-content/themes/takhfifat/css/font-awesome.css" rel="stylesheet">
-    <link href="../../wp-content/themes/takhfifat/stylefc99.css?ver=3.0" rel="stylesheet">
+    <link href="../../wp-content/themes/takhfifat/stylefc99.css?ver=4.1" rel="stylesheet">
 
         <script>
         jQuery( document ).ready(function() {
@@ -423,7 +423,10 @@ img.emoji {
                         <div class="Slogan"><span>{{ $merchant_name }}</span></div>
 
                             
-							<div class="info-counter-product">
+							<div style="
+                            color: white;
+                            background-color: #f6861f;
+                        " class="info-counter-product">
 
 							
 
@@ -484,11 +487,32 @@ img.emoji {
 
 
 							
-							<span class="price price_slider price_slider_single">
-
+							<div style="
+                            margin: 5px 0px 0 0;
+                            padding: 10px;
+                            background-color: #19499c;
+                        " class="row">
+                                    <span style="
+                                    float: right;
+                                    padding-right: 40px;
+                                    color: #fb9b93;
+                                    font-size: 18px;
+                                " class=""><del>
+                                    <span class="">{{toPersianNum($product->price)}}&nbsp;
+                                        <span class="">تومان</span>
+                                    </del>
+                                    </span>
+                                    <span style="
+                                                float: left;
+                                                color: #bff3bf;
+                                                font-size: 18px;
+                                                padding-left: 40px;
+                                            ">{{toPersianNum(presentPrice($product->price,$product->discount))}}&nbsp;
+                                                    <span>تومان</span>
+                                                </span>
+                                            </div>
 							
-                            <del><span class="woocommerce-Price-amount amount">{{ toPersianNum($product->price) }}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></del> <ins><span class="woocommerce-Price-amount amount">{{toPersianNum(presentPrice($product->price,$product->discount))}}&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></ins>
-							</span>
+                           
 
 							
 
@@ -543,7 +567,7 @@ img.emoji {
                                   @if($product->quantity - $product->sold > 0)
                     
                                     @if($product->children->count() > 0)
-                                    <a data-toggle="modal" href="#normalModal" class="btn btn-primary">انتخاب کنید</a>
+                                    <a data-toggle="modal" href="#normalModal" class="btn btn-primary" style="background-color:green;">انتخاب کنید</a>
                                     @else
                                     <input type="button" value='افزودن به سبد' style="border-radius: 4px;" name="addtocart" id="addtocart" class="addtocart btn">
                                     <button type="submit" name="add-to-cart" value="" class="btn">مشاهده و خرید</button>

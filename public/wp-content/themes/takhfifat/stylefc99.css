@@ -63,6 +63,8 @@ Version: 2.6
         visibility:hidden;
     }
   }
+ 
+
 @media (max-width: 420px){
 
 .searchinput{
@@ -82,6 +84,7 @@ Version: 2.6
 
 
 }
+
 .searchinput button{
     background: #f6861f;
     border-radius: 0px;
@@ -203,14 +206,32 @@ margin-bottom: 10px;
     
     vertical-align: middle;
 }
+@media (max-width:360px){
+    
+    .card .card-header a{
+        width: 11em;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        display: inline-block;
+    }
+
+}
 .card .card-header{    
+    padding : 5px;
     background: #f6861f;
+}
+.card .card-header a {
+    display: inline-block;
 }
 .card .card-timer{    
     background: #005aaa;
     color: #fff;
-    padding: 0px 0px;
     z-index: 1;
+}
+.card .card-timer a{
+    display: inline-block;
+    padding: 4px 4px 0px 0px;
 }
 .card .card-timer .fa{
 
@@ -587,8 +608,16 @@ margin-bottom: 10px;
 
     overflow: hidden;
     position: relative;
-    margin: 20px 0;
+    margin: 20px -5px 0px 0px;
 
+}
+.cat_show .cat_icon_inside{
+
+    position: absolute;
+    margin-right: 3%;
+    margin-top: 18px;
+    color:#f6861f;
+    font-size: 45px;
 }
 
 .cat_show span.cat_show_catname{
@@ -598,7 +627,7 @@ margin-bottom: 10px;
     margin: 0px 0px 10px 0px;
     height: 85px;
     padding-right: 100px;
-    background: url(images/1.png) no-repeat center #fff;
+    background: url(images/2.png) no-repeat center #fff;
     font: 21px/43px IRANSans;
     color: #19499c;
     z-index: 1;
@@ -609,15 +638,23 @@ margin-bottom: 10px;
 
         overflow: hidden;
         position: relative;
-        margin: 20px 11px;
+        
     
+    }
+    .cat_show .cat_icon_inside {
+        position: absolute;
+        margin-right: 10%;
+        margin-top: 18px;
+        color: #f6861f;
+        font-size: 45px;
     }
     .cat_show span.cat_show_catname{
         display: inline-block;
         width: 320px;
+        margin-right: 10px;
         height: 85px;
-        padding: 5px 110px 0 0;
-        background: url(images/1mob.png) no-repeat center #fff;
+        padding: 5px 80px 0 0;
+        background: url(images/2mob.png) no-repeat center #fff;
         font: 21px/43px IRANSans;
         color: #19499c;
         z-index: 1;
@@ -625,7 +662,8 @@ margin-bottom: 10px;
 }
 
 .info-counter-product{
-    padding:22px 10px 17px;
+    /*padding:22px 10px 17px;*/
+    padding: 8px;
     border-bottom:1px solid #dedede;
 }
 
@@ -650,7 +688,7 @@ body{font-family:IRANSans!important;cursor:default;font-weight:300}
 .social_header a .fa{font-size: 25px;}
 .social_header a :hover{color:#f6861f}
 
-.logo{overflow:hidden;margin-top:10px;margin-bottom:10px;float:right;width:155px;height:103px;background:url(images/logo.png) no-repeat center}
+.logo{overflow:hidden;margin-top:10px;margin-bottom:10px;float:right;width:140px;height:103px;background:url(images/logo.png) no-repeat center}
 .logo h1,.logo h2{margin:0}
 .logo h1 a,.logo h2 a{display:block;height:103px;text-indent:-9999px}
 #form_header{float:right;margin:33px 90px 0 0}
@@ -720,7 +758,7 @@ nav{background:#dedede;box-shadow:0 6px 15px 0 #bfbfbf;height:59px;border-top:1p
 .content_item table.table_slider tr td{background:#f9f9f9;padding:5px;text-align:center;border:3px solid #fff;font:bold 13px/22px IRANSans;color:#4e4e4e;}
 .content_item table span b{display:block}
 .content_item table span.Profit{color:#2caa18;font-size:14px}
-.eye_buy a{display:block;background:#f6861f;border-radius:5px;text-align:center;color:#fff;font:21px/34px IRANSans;padding:9px;margin:15px 20px 0}
+.eye_buy a{display:block;background:#3fc536;text-align:center;color:#fff;font:21px/34px IRANSans;padding:10px;margin: 15px 4px 0px}
 .eye_buy a .fa{padding-left:10px;font-size:30px}
 .eye_buy a:hover{background:#d30707}
 .time_out{overflow:hidden;position:absolute;left:3px;top:0;background: rgba(0,0,0,0.2);border-radius:0 0 10px 0;color:#fff;padding:0 10px;z-index:1;}
@@ -729,7 +767,7 @@ nav{background:#dedede;box-shadow:0 6px 15px 0 #bfbfbf;height:59px;border-top:1p
 .deal-timer li{float:right;font: 11px/24px IRANSans;padding-left:7px;list-style: none !important;}
 .block_category{overflow:hidden}
 .title_block{overflow:hidden;position:relative;text-align:center;margin:20px 0}
-.title_block span{display:inline-block;width:314px;height:43px;background:url(images/bg-title.png) no-repeat center #fff;font:21px/43px IRANSans;color:#19499c;z-index:1;position:relative}
+.title_block span{display:inline-block;width: 100%;height:43px;background:url(images/bg-title.png) no-repeat center #fff;font:21px/43px IRANSans;color:#19499c;z-index:1;position:relative}
 .title_block:after{content:"";width:100%;height:0px;background:#e5e5e5;position:absolute;top:20px;right:0;z-index:0}
 .block_category .col4,.block_category .col3,.block_category .col5,.block_category .col6,.block_category .col7{padding:2px}
 .block_category .col2,.block_category .col1{padding:0}
@@ -909,7 +947,7 @@ ol.commentlist li ul.children li.depth-5{margin:20px 0 0}
 .block_gallery .option_item_gallery,.block_gallery_archive .option_item_gallery{zoom:1;left:0}
 .block_gallery .content_item,.block_gallery_archive .content_item{width:35%;padding:0 25px}
 .block_gallery .content_item .Slogan{text-align:center;border:1px solid #dedede;border-right:0;border-left:0;padding-bottom:9px}
-.block_gallery .content_item .Slogan span{font:15pt/34pt IRANSans;padding:0 35px;display:inline-block;border-radius:0 0 6px 6px;background:#f6861f;color:#fff}
+.block_gallery .content_item .Slogan span{font:15pt/34pt IRANSans;padding:0 35px;display:inline-block;border-radius:0 0 6px 6px;background:#d22926;color:#fff}
 .info-counter{overflow:hidden;padding:22px 10px 17px;border-bottom:1px solid #dedede}
 .info-counter span{float:right;font:15pt/24pt IRANSans;color:#585858}
 .info-counter span .fa{padding:6px 0 0 7px;float:right}
@@ -1124,6 +1162,11 @@ h1.post-title{font-size:16px;line-height:25px}
 .content_mini_cart{margin:32px 20px 0 0;padding:0 10px;font:13px/20px IRANSans;position:relative;overflow:visible}
 .content_mini_cart .fa{float:right;padding:9px 0 0 6px;font-size:17px}
 .content_mini_cart a.main_title_cart{color:#9a9a9a;line-height:40px;text-align:center}
+@media only screen and (max-width: 767px) {
+    .content_mini_cart{
+        margin: 32px 0px 0 0;
+    }
+}
 .main_cart_list{background:#fff;box-shadow:0 0 10px #CCC;padding:10px;display:none;list-style-type:none;position:absolute;top:140%;right:3px;width:300px;z-index:9}
 .main_cart_list:before{content:"";border-bottom:10px solid #fff;border-right:10px solid transparent;border-left:10px solid transparent;position:absolute;top:-10px;right:16px;z-index:10}
 .main_cart_list:after{content:"";border-bottom:12px solid #ccc;border-right:12px solid transparent;border-left:12px solid transparent;position:absolute;top:-12px;right:14px;z-index:9}
@@ -1631,12 +1674,12 @@ div#dokan-add-new-product-popup button.mfp-close{
 .timer_farsi_single ul li span.num{
     /* padding-left: 4px; */
     float: none;
-    color: #000000;
+    color: white;
     font-size:22px;
 }
 .timer_farsi_single ul li span.text{
     float: none;
-    color:#999;
+    color:whitesmoke;
     font-size:15px
 }
 button[value="create_and_add_new"],.sale-schedule.dokan-right{display:none !important;}
@@ -1719,3 +1762,4 @@ span.price ins:before{ content:'با تخفیف: '; }
     }
 
     }
+  

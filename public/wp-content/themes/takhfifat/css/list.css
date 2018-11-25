@@ -257,9 +257,6 @@
     padding: 0;
 }
 
-.owl-nav {
- margin-top: 10px;
-}
 .list-grid-button{
 
 float: left;
@@ -272,24 +269,37 @@ margin-top: 10px;
 }
 .owl-stage{
 
-width: 1300px !important;
+width: 1400px !important;
 
 }
 .owl-nav .owl-prev {
-        right: 0px;
-        position: absolute;
-        top: 35px;
-        cursor: pointer;
-        z-index: 3;
+    right: -45px;
+    top: 1px;
+    color: #005aaa;
+    position: absolute;
+    height: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+.owl-nav .owl-prev i:hover{
+    color: #f6861f;
 }
 
+
 .owl-nav .owl-next {
-    left: 0px;
+    left: -45px;
+    top: 1px;
+    color: #005aaa;
     position: absolute;
-    top: 35px ;
+    height: 0;
     cursor: pointer;
-    z-index: 3 ;
+    z-index: 3;
 }
+.owl-nav .owl-next i:hover {
+    color: #f6861f;
+}
+
+
 .alert-list {
 
     margin-right: 10px;
