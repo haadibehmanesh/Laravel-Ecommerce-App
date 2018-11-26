@@ -424,7 +424,14 @@ img.emoji {
 
                         <div class="Slogan" style="
                         border: none;
-                    "><span>{{ $merchant_name }}</span></div>
+                    "><span style="
+    border: none;
+    padding: 4px 0 0 0;
+    width: 100%;
+    border-radius: 0;
+    margin-top: 10px;
+    margin-bottom: -3px;
+">{{ $merchant_name }}</span></div>
 
                             
 							<div style="
@@ -520,7 +527,9 @@ img.emoji {
 
 							
 
-                            <div class="share_gift_bye">
+                            <div class="share_gift_bye" style="
+                            height: auto;
+                        ">
                                 <div class="share_btn" style="
                                 background-color: green;
                                 padding: 5px;
@@ -569,7 +578,9 @@ img.emoji {
 --}}
                                 <!-- <a href="" class="link_bye"><i class="fa fa-shopping-cart"></i>همین حالا خرید کنید</a> -->
                                 <div class="add_btn">
-                                <div class="row">
+                                <div class="row" style="
+                                margin-top: 55px;
+                            ">
                                    
                                     <form class="cart" action="{{ route('cart.store') }}" method="post" enctype='multipart/form-data'>
                                         {{ csrf_field() }}
@@ -577,10 +588,12 @@ img.emoji {
                                   @if($product->quantity - $product->sold > 0)
                     
                                     @if($product->children->count() > 0)
-                                    <a data-toggle="modal" href="#normalModal" class="btn btn-primary" style="background-color: #f6861f;border: none;">انتخاب کنید</a>
+                                    <a data-toggle="modal" href="#normalModal" class="btn btn-primary" style="width: 100%;border-radius: 0;padding: 12px;background-color: #19499c;border: none;" onmouseover='this.style.background="#f6861f"'  onmouseout='this.style.background="#19499c"'>انتخاب کنید</a>
                                     @else
-                                    <input type="button" value='افزودن به سبد' style="border-radius: 4px;" name="addtocart" id="addtocart" class="addtocart btn">
-                                    <button type="submit" name="add-to-cart" value="" class="btn">مشاهده و خرید</button>
+                                    <input type="button" value='افزودن به سبد' style="width: 100%;border-radius: 0;padding: 3px;
+                                    margin-bottom: 10px;background-color: #19499c;" onmouseover='this.style.background="#f6861f"'  onmouseout='this.style.background="#19499c"' name="addtocart" id="addtocart" class="addtocart btn">
+                                    <button type="submit" name="add-to-cart" value="" class="btn"  style="width: 100%;
+                                    margin-bottom: 10px;padding: 8px;border-radius: 0;background-color: #19499c;" onmouseover='this.style.background="#f6861f"'  onmouseout='this.style.background="#19499c"'>مشاهده و خرید</button>
                                     
                                     @endif
                                     
@@ -680,7 +693,8 @@ img.emoji {
 	
                                </div>
                                <div class="add_status" style="
-                               margin-top: 27px;
+                               margin-top: 20px;
+                               padding: 0px 0 20px 0;
                            "></div>
                                </div>
                                
