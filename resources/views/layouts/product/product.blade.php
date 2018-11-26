@@ -42,7 +42,7 @@ img.emoji {
     <link href="../../wp-content/themes/takhfifat/css/bootstrap-rtl.css" rel="stylesheet">
     <link href="../../wp-content/themes/takhfifat/css/star-rating.css" media="all" rel="stylesheet" type="text/css" />
     <link href="../../wp-content/themes/takhfifat/css/font-awesome.css" rel="stylesheet">
-    <link href="../../wp-content/themes/takhfifat/stylefc99.css?ver=4.2" rel="stylesheet">
+    <link href="../../wp-content/themes/takhfifat/stylefc99.css?ver=4.4" rel="stylesheet">
 
         <script>
         jQuery( document ).ready(function() {
@@ -335,7 +335,9 @@ img.emoji {
 
                         <h1>{{ $product->name }}</h1> | <h2> {{ strip_tags($product->description) }} </h2>
 
-                        <span class="Discount"><b>%{{ $product->discount }}</b>تخفیف</span>
+                        <span class="Discount" style="
+                        padding: 13px 0 0 19px;
+                    "><b>%{{ $product->discount }}</b>تخفیف</span>
 
                     </div>
 

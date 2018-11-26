@@ -98,6 +98,20 @@
 	border-bottom-right-radius: 40px ;
 
 }
+@media (max-width:480px){
+
+	#wowslider-container1 .ws_images .ws_list img,
+	#wowslider-container1 .ws_images > div > img{
+		width:100%;
+		border:none 0;
+		height: 130px;
+		max-width: none;
+		padding:0;
+		margin:0;
+	}
+
+
+}
 #wowslider-container1 .ws_images .ws_list img,
 #wowslider-container1 .ws_images > div > img{
 	width:100%;

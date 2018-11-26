@@ -751,7 +751,19 @@ nav{background:#dedede;box-shadow:0 6px 15px 0 #bfbfbf;height:59px;border-top:1p
 .content_item > span a{color:#2f2f2f;font:14px/30px IRANSans;border-bottom:1px solid #bfbfbf;margin:5px 10px;display:block;width:calc(100% - 50px);float:right;overflow:hidden!important;white-space:nowrap!important;text-overflow:ellipsis!important}
 .content_item > span a .fa{font-size:25px;padding:0 0 0 8px;color:#f6861f;float:right}
 .content_item h2 a:hover{color:#f6861f}
-.content_item .Discount,.box_offer .Discount,.title_post .Discount{position:absolute;top:0;left:0;color:#fff;font:11px/20px IRANSans;width:88px;height:68px;/*background:url(images/icon.png) no-repeat 0 0;*/text-align:left;padding:10px 0 0 10px;z-index: 4;}
+.content_item .Discount,.box_offer .Discount,.title_post .Discount{
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    font: 14px/20px IRANSans;
+    width: 88px;
+    height: 68px;
+    /* background: url(images/icon.png) no-repeat 0 0; */
+    text-align: left;
+    padding: 28px 0 0 44px;
+    z-index: 4;}
+
 .content_item .Discount b,.box_offer .Discount b,.title_post .Discount b{display:block;font-size:20px;font-weight: normal;}
 .content_item h2 a{font: 14px/40px IRANSans;color:#5c5c5c;border-right:5px solid #e6e6e6;margin: 25px 3px;padding: 0 8px;display:block;width: calc(100% - 6px);float:right;overflow:hidden!important;white-space:nowrap!important;text-overflow:ellipsis!important;margin-left: 0 !important;}
 .content_item table{width:100%}
@@ -1290,18 +1302,17 @@ font: 13px/20px 'IRANSans' !important;
 margin: 80px 0 0 30px;
 }
 .content_item .Discount:before{
-	content: " ";
+    content: " ";
     display: block;
     background: #f6861f;
     position: absolute;
-    width: 125px;
-    height: 97px;
+    width: 70px;
+    height: 70px;
     z-index: -1;
-    border-radius: 200%;
-    left: -41px;
-    top: -32px;
-    border: 4PX solid #e2e2e2;
-    transform: skewX(157deg);
+    border-radius: 50%;
+    left: 28px;
+    top: 12px;
+    
 }
 .box_offer .Discount:before{
 	content: " ";
@@ -1325,7 +1336,7 @@ margin: 80px 0 0 30px;
     width: 125px;
     height: 97px;
     z-index: -1;
-    border-radius: 200%;
+    /*border-radius: 200%;*/
     left: -41px;
     top: -32px;
     border: 4PX solid #e2e2e2;
