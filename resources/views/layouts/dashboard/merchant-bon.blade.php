@@ -362,7 +362,7 @@ jQuery.ajax({
   
             <tr class="woocommerce-orders-table__row woocommerce-orders-table__row--status-processing order">
                             <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-number" data-title="َنام بن">
-                            <a href="{{ route('shop.show', ['product' => $item->product->slug])}}">
+                            <a href="{{ route('shop.show', ['product' => $item->product->id])}}">
                     {{$item->product->name}}								</a>
 
                                     </td>
@@ -411,7 +411,7 @@ jQuery.ajax({
                                                ?>
                                                {{toPersianNum($date[0])}}/{{toPersianNum($date[1])}}/{{toPersianNum($date[2])}} 							</td>
                             <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-actions" data-title="عملیات ها">
-                                            <a href="{{ route('shop.show', ['product' => $item->product->slug])}} "class="woocommerce-button button view">نمایش </a>													</td>
+                                            <a href="{{ route('shop.show', ['product' => $item->product->id])}} "class="woocommerce-button button view">نمایش </a>													</td>
                             
                     </tr>
                     @endforeach

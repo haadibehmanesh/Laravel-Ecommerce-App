@@ -300,11 +300,11 @@ function toPersianNum( num, dontTrim ) {
        
 <div class="card">
         <div class="card-header">
-                <a href="{{ route('shop.show', $featured->slug) }}" class="" title="{{ $featured->name }}"><span class="card-span">{{ $featured->name }}</span></a>
+                <a href="{{ route('shop.show', $featured->id) }}" class="" title="{{ $featured->name }}"><span class="card-span">{{ $featured->name }}</span></a>
         <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp; {{$featured->location}}</span>
         </div>
         <div class="card-timer">
-                <a href="{{ route('shop.show', $featured->slug) }}"  title="{{ $featured->name }}" ><span class="card-span"><script>
+                <a href="{{ route('shop.show', $featured->id) }}"  title="{{ $featured->name }}" ><span class="card-span"><script>
                         jQuery(function() {
                             var endDate = "{{$featured->end_date}}";
                             jQuery('.{{$featured->slug}}').countdown({
@@ -329,12 +329,12 @@ function toPersianNum( num, dontTrim ) {
                         font-size: 15px;
                     " class="fa fa-shopping-bag"></i>&nbsp;@if($featured->children->sum('sold')){{toPersianNum($featured->children->sum('sold'))}}@else{{toPersianNum($featured->sold)}}@endif</span>
         </div>
-        <a class="sb-preview-img" href="{{ route('shop.show', $featured->slug) }}" class="btn btn-secondary" title="{{ $featured->name }}">
+        <a class="sb-preview-img" href="{{ route('shop.show', $featured->id) }}" class="btn btn-secondary" title="{{ $featured->name }}">
         <img class="card-img-top" src="{{ productImage($featured->image) }}" alt="{{ $featured->name }}">
         </a>
         
         <div class="card-footer">
-        <a href="{{ route('shop.show', $featured->slug) }}" class="btn btn-secondary" title="{{ $featured->name }}" class="btn btn-secondary"><span style="font-size: 16px;" class="card-span"><del>{{ toPersianNum($featured->price) }} تومان</del></span></a>
+        <a href="{{ route('shop.show', $featured->id) }}" class="btn btn-secondary" title="{{ $featured->name }}" class="btn btn-secondary"><span style="font-size: 16px;" class="card-span"><del>{{ toPersianNum($featured->price) }} تومان</del></span></a>
         <span class="card-discount">%{{ toPersianNum($featured->discount)  }} تخفیف</span>
         <span class="card-after-discount">{{ toPersianNum(presentPrice($featured->price,$featured->discount)) }} تومان</span>
         </div>
@@ -470,11 +470,11 @@ function toPersianNum( num, dontTrim ) {
         <div class="col-lg-3 col-md-3 col-sm-6">
                 <div class="mini-card">
                         <div class="card-header">
-                                <a href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}"><span class="card-span">{{ $product->name }}</span></a>
+                                <a href="{{ route('shop.show', $product->id) }}" class="btn btn-secondary" title="{{ $product->name }}"><span class="card-span">{{ $product->name }}</span></a>
                                 <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp;{{$product->location}}</span>
                         </div>
                         <div class="card-timer">
-                                <a href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}" class="btn btn-secondary"><span class="card-span"><script>
+                                <a href="{{ route('shop.show', $product->id) }}" class="btn btn-secondary" title="{{ $product->name }}" class="btn btn-secondary"><span class="card-span"><script>
                                         jQuery(function() {
                                             var endDate = "{{date('Y-m-d', strtotime($product->end_date))}}";
                                             jQuery('.{{$product->slug}}').countdown({
@@ -497,12 +497,12 @@ function toPersianNum( num, dontTrim ) {
                                     </script><span><i class="fa fa-clock-o"></i></span><ul class="deal-timer {{$product->slug}}"></ul></span></a>
                                     <span class="card-shopping"><i style="font-size: 14px;" class="fa fa-shopping-bag"></i>&nbsp;@if($product->children->sum('sold')){{toPersianNum($product->children->sum('sold'))}}@else{{toPersianNum($product->sold)}}@endif</span>
                         </div>
-                        <a class="sb-preview-img" href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}">
+                        <a class="sb-preview-img" href="{{ route('shop.show', $product->id) }}" class="btn btn-secondary" title="{{ $product->name }}">
                         <img class="card-img-top" src="{{ productImage($product->image) }}" alt="{{ $product->name }}">
                         </a>
                         
                         <div class="card-footer">
-                        <a href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}" class="btn btn-secondary"><span style="font-size: 14px;" class="card-span"><del>{{ toPersianNum($product->price) }} تومان</del></span></a>
+                        <a href="{{ route('shop.show', $product->id) }}" class="btn btn-secondary" title="{{ $product->name }}" class="btn btn-secondary"><span style="font-size: 14px;" class="card-span"><del>{{ toPersianNum($product->price) }} تومان</del></span></a>
                         <span class="card-discount">%{{ toPersianNum($product->discount)  }} تخفیف</span>
                         <span class="card-after-discount">{{ toPersianNum(presentPrice($product->price,$product->discount)) }} تومان</span>
                         </div>
@@ -541,11 +541,11 @@ function toPersianNum( num, dontTrim ) {
     <div class="col-lg-3 col-md-3 col-sm-6">
             <div class="mini-card">
                     <div class="card-header">
-                            <a href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}"><span class="card-span">{{ $product->name }}</span></a>
+                            <a href="{{ route('shop.show', $product->id) }}" class="btn btn-secondary" title="{{ $product->name }}"><span class="card-span">{{ $product->name }}</span></a>
                             <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp;{{$product->location}}</span>
                     </div>
                     <div class="card-timer">
-                            <a href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}" class="btn btn-secondary"><span class="card-span"><script>
+                            <a href="{{ route('shop.show', $product->id) }}" class="btn btn-secondary" title="{{ $product->name }}" class="btn btn-secondary"><span class="card-span"><script>
                                     jQuery(function() {
                                         var endDate = "{{$product->end_date}}";
                                         jQuery('.{{$product->slug}}').countdown({
@@ -568,12 +568,12 @@ function toPersianNum( num, dontTrim ) {
                                 </script><span><i class="fa fa-clock-o"></i></span><ul class="deal-timer {{$product->slug}}"></ul></span></a>
                                 <span class="card-shopping"><i style="font-size: 17px;" class="fa fa-shopping-bag"></i>&nbsp;@if($product->children->sum('sold')){{toPersianNum($product->children->sum('sold'))}}@else{{toPersianNum($product->sold)}}@endif</span>
                     </div>
-                    <a class="sb-preview-img" href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}">
+                    <a class="sb-preview-img" href="{{ route('shop.show', $product->id) }}" class="btn btn-secondary" title="{{ $product->name }}">
                     <img class="card-img-top" src="{{ productImage($product->image) }}" alt="{{ $product->name }}">
                     </a>
                     
                     <div class="card-footer">
-                    <a href="{{ route('shop.show', $product->slug) }}" class="btn btn-secondary" title="{{ $product->name }}" class="btn btn-secondary"><span style="font-size: 14px;" class="card-span"><del>{{ toPersianNum($product->price) }} تومان</del></span></a>
+                    <a href="{{ route('shop.show', $product->id) }}" class="btn btn-secondary" title="{{ $product->name }}" class="btn btn-secondary"><span style="font-size: 14px;" class="card-span"><del>{{ toPersianNum($product->price) }} تومان</del></span></a>
                     <span class="card-discount">%{{ toPersianNum($product->discount)  }} تخفیف</span>
                     <span class="card-after-discount">{{ toPersianNum(presentPrice($product->price,$product->discount)) }} تومان</span>
                     </div>

@@ -391,7 +391,7 @@ img.emoji {
 
                                         <div class="img_item">
 
-                                        <a href="{{ route('shop.show', $product->slug) }}" title="{{ $product->name }}"><img src="{{ productImage($product->image) }}" title="{{ $product->name }}" alt="{{ $product->name }}"></a>
+                                        <a href="{{ route('shop.show', $product->id) }}" title="{{ $product->name }}"><img src="{{ productImage($product->image) }}" title="{{ $product->name }}" alt="{{ $product->name }}"></a>
 
                                         </div>
 
@@ -404,7 +404,7 @@ img.emoji {
 
                                         <div class="img_item">
 
-                                        <a href="{{ route('shop.show', $product->slug) }}" title="{{ $product->name }}"><img src="{{ productImage($image) }}" title="{{ $product->name }}" alt="{{ $product->name }}"></a>
+                                        <a href="{{ route('shop.show', $product->id) }}" title="{{ $product->name }}"><img src="{{ productImage($image) }}" title="{{ $product->name }}" alt="{{ $product->name }}"></a>
 
                                         </div>
 
@@ -568,7 +568,7 @@ img.emoji {
 
                                             <li><a title="linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://localhost/takhfiftest/product/%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87-%d8%a7%d9%84%d9%86%d8%a7/&amp;title=%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87%20%d8%a7%d9%84%d9%86%d8%a7" ID="linkedin" target="_blank" class="linkedin"><img src="../../wp-content/themes/takhfifat/images/social/linkedin.png" alt=""></a></li>
                                             <li><a title="Email" href="mailto:?subject=آرایشگاه النا&body= لطفا این لینک رو ببین: http://localhost/takhfiftest/product/%d8%a2%d8%b1%d8%a7%db%8c%d8%b4%da%af%d8%a7%d9%87-%d8%a7%d9%84%d9%86%d8%a7/" ID="Email" target="_blank" class="email"><img src="../../wp-content/themes/takhfifat/images/social/email.png" alt=""></a></li>--}}
-                                            <li><a href="https://api.whatsapp.com/send?text={{ route('shop.show', $product->slug) }}" title="{{ $product->name }}"><img src="../../wp-content/themes/takhfifat/images/social/whatsapp.png" alt="whatsapp"></a></li>
+                                            <li><a href="https://api.whatsapp.com/send?text={{ route('shop.show', $product->id) }}" title="{{ $product->name }}"><img src="../../wp-content/themes/takhfifat/images/social/whatsapp.png" alt="whatsapp"></a></li>
                                            {{-- <li><a href="https://www.instagram.com/boninjaa" id=""><img src="../../wp-content/themes/takhfifat/images/social/instagram.png" alt="instagram"></a></li>
                                             --}}
                                             
@@ -837,11 +837,11 @@ $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  '
             <div class="col-lg-3 col-md-3 col-sm-6">
                     <div class="mini-card-product">
                             <div class="card-header">
-                                    <a href="{{ route('shop.show', $product->slug) }}" class="" title="{{ $product->name }}"><span class="card-span">{{ $product->name }}</span></a>
+                                    <a href="{{ route('shop.show', $product->id) }}" class="" title="{{ $product->name }}"><span class="card-span">{{ $product->name }}</span></a>
                                     <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp; {{$product->location}}</span>
                             </div>
                             <div class="card-timer">
-                                    <a href="{{ route('shop.show', $product->slug) }}" class="" title="{{ $product->name }}" class=""><span class="card-span"><script>
+                                    <a href="{{ route('shop.show', $product->id) }}" class="" title="{{ $product->name }}" class=""><span class="card-span"><script>
                                             jQuery(function() {
                                                 var endDate = "{{date('Y-m-d', strtotime($product->end_date))}}";
                                                 jQuery('.{{$product->slug}}').countdown({
@@ -864,12 +864,12 @@ $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  '
                                         </script><span><i class="fa fa-clock-o"></i></span><ul class="deal-timer {{$product->slug}}"></ul></span></a>
                                         <span class="card-shopping"><i style="font-size: 17px;" class="fa fa-shopping-bag"></i>&nbsp;@if($product->children->sum('sold')){{toPersianNum($product->children->sum('sold'))}}@else{{toPersianNum($product->sold)}}@endif</span>
                             </div>
-                            <a class="sb-preview-img" href="{{ route('shop.show', $product->slug) }}" class="" title="{{ $product->name }}">
+                            <a class="sb-preview-img" href="{{ route('shop.show', $product->id) }}" class="" title="{{ $product->name }}">
                             <img class="card-img-top" src="{{ productImage($product->image) }}" alt="{{ $product->name }}">
                             </a>
                             
                             <div class="card-footer">
-                            <a href="{{ route('shop.show', $product->slug) }}" class="" title="{{ $product->name }}" class=""><span style="font-size: 14px;" class="card-span"><del>{{ toPersianNum($product->price) }} تومان</del></span></a>
+                            <a href="{{ route('shop.show', $product->id) }}" class="" title="{{ $product->name }}" class=""><span style="font-size: 14px;" class="card-span"><del>{{ toPersianNum($product->price) }} تومان</del></span></a>
                             <span class="card-discount">%{{ toPersianNum($product->discount)  }} تخفیف</span>
                             <span class="card-after-discount">{{ toPersianNum(presentPrice($product->price,$product->discount)) }} تومان</span>
                             </div>
@@ -888,11 +888,11 @@ $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  '
         <div class="col-lg-3 col-md-3 col-sm-6">
                 <div class="mini-card-product">
                         <div class="card-header">
-                                <a href="{{ route('shop.show', $product->slug) }}" class="" title="{{ $product->name }}"><span class="card-span">{{ $product->name }}</span></a>
+                                <a href="{{ route('shop.show', $product->id) }}" class="" title="{{ $product->name }}"><span class="card-span">{{ $product->name }}</span></a>
                                 <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp; {{$product->location}}</span>
                         </div>
                         <div class="card-timer">
-                                <a href="{{ route('shop.show', $product->slug) }}" class="" title="{{ $product->name }}" class=""><span class="card-span"><script>
+                                <a href="{{ route('shop.show', $product->id) }}" class="" title="{{ $product->name }}" class=""><span class="card-span"><script>
                                         jQuery(function() {
                                             var endDate = "{{date('Y-m-d', strtotime($product->end_date))}}";
                                             jQuery('.{{$product->slug}}').countdown({
@@ -915,12 +915,12 @@ $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  '
                                     </script><span><i class="fa fa-clock-o"></i></span><ul class="deal-timer {{$product->slug}}"></ul></span></a>
                                     <span class="card-shopping"><i style="font-size: 17px;" class="fa fa-shopping-bag"></i>&nbsp;@if($product->children->sum('sold')){{toPersianNum($product->children->sum('sold'))}}@else{{toPersianNum($product->sold)}}@endif</span>
                         </div>
-                        <a class="sb-preview-img" href="{{ route('shop.show', $product->slug) }}" class="" title="{{ $product->name }}">
+                        <a class="sb-preview-img" href="{{ route('shop.show', $product->id) }}" class="" title="{{ $product->name }}">
                         <img class="card-img-top" src="{{ productImage($product->image) }}" alt="{{ $product->name }}">
                         </a>
                         
                         <div class="card-footer">
-                        <a href="{{ route('shop.show', $product->slug) }}" class="" title="{{ $product->name }}" class=""><span style="font-size: 14px;" class="card-span"><del>{{ toPersianNum($product->price) }} تومان</del></span></a>
+                        <a href="{{ route('shop.show', $product->id) }}" class="" title="{{ $product->name }}" class=""><span style="font-size: 14px;" class="card-span"><del>{{ toPersianNum($product->price) }} تومان</del></span></a>
                         <span class="card-discount">%{{ toPersianNum($product->discount)  }} تخفیف</span>
                         <span class="card-after-discount">{{ toPersianNum(presentPrice($product->price,$product->discount)) }} تومان</span>
                         </div>

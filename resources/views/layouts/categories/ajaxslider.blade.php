@@ -82,7 +82,7 @@
     
                                             <div class="img_item">
     
-                                                <a href="{{ route('shop.show', $featured_product->slug) }}" title="{{ $featured_product->name }}"><img src="{{ productImage($featured_product->image) }}" title="{{ $featured_product->name }}" alt="{{ $featured_product->name }}"></a>
+                                                <a href="{{ route('shop.show', $featured_product->id) }}" title="{{ $featured_product->name }}"><img src="{{ productImage($featured_product->image) }}" title="{{ $featured_product->name }}" alt="{{ $featured_product->name }}"></a>
     
                                             </div>
     
@@ -95,7 +95,7 @@
 
                                                     <div class="img_item">
             
-                                                    <a href="{{ route('shop.show', $featured_product->slug) }}" title="{{ $featured_product->name }}"><img src="{{ productImage($image) }}" title="{{ $featured_product->name }}" alt="{{ $featured_product->name }}"></a>
+                                                    <a href="{{ route('shop.show', $featured_product->id) }}" title="{{ $featured_product->name }}"><img src="{{ productImage($image) }}" title="{{ $featured_product->name }}" alt="{{ $featured_product->name }}"></a>
             
                                                     </div>
             
@@ -125,9 +125,9 @@
                             <!--details-->
     
                             <div class="content_item">
-                                <span><a href="{{ route('shop.show', $featured_product->slug) }}" title="{{ $featured_product->name }}"><i class="fa fa-home"></i>{{ $featured_product->name }}</a></span>
+                                <span><a href="{{ route('shop.show', $featured_product->id) }}" title="{{ $featured_product->name }}"><i class="fa fa-home"></i>{{ $featured_product->name }}</a></span>
                                 <span class="Discount"><b>%{{ toPersianNum($featured_product->discount)  }}</b>تخفیف</span>
-                            <h2><a href="{{ route('shop.show', $featured_product->slug) }}" title="{{ $featured_product->name }}">{{ toPersianNum($featured_product->description)}}</a></h2>
+                            <h2><a href="{{ route('shop.show', $featured_product->id) }}" title="{{ $featured_product->name }}">{{ toPersianNum($featured_product->description)}}</a></h2>
                             <table class="table_slider">
                                     <tbody>
                                         <tr>
@@ -197,7 +197,7 @@
                                     </tr>
                                     </tbody>
                                 </table>
-                                <div class="eye_buy"><a href="{{ route('shop.show', ['product' => $featured_product->slug, 'category' => $category->slug] ) }}"><i class="fa fa-shopping-cart"></i>مشاهده و خرید</a></div>
+                                <div class="eye_buy"><a href="{{ route('shop.show', ['product' => $featured_product->id, 'category' => $category->slug] ) }}"><i class="fa fa-shopping-cart"></i>مشاهده و خرید</a></div>
                             </div>
     
     

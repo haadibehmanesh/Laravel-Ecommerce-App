@@ -388,7 +388,7 @@ var _zxcvbnSettings = {"src":"\/wp-includes\/js\/zxcvbn.min.js"};
                                                         <td class="product-thumbnail">
                                                             <img width="400" height="400" src="{{ productImage($item->model->image) }}" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image" alt="" sizes="(max-width: 400px) 100vw, 400px">
                                                         </td>
-                                                        <td class="product-name" data-title="محصول"><a href="{{ route('shop.show', $item->model->slug) }}">{{ $item->model->name }}</a>
+                                                        <td class="product-name" data-title="محصول"><a href="{{ route('shop.show', $item->model->id) }}">{{ $item->model->name }}</a>
                                                             <dl class="variation">
                                                              {{-- <dt class="variation-">فروشنده:</dt>
                                                                 <dd class="variation-"><p>سید محسن فاطمی</p>

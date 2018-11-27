@@ -63,13 +63,13 @@ class ShopController extends Controller
      * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
-    public function show($slug, $category = '')
+    public function show($id, $category = '')
     {  
 
        
-        $slug_db = explode('/', $slug);
+        //$slug_db = explode('/', $slug);
        
-        $product = BiProduct::where('slug', $slug_db)->firstOrFail();
+        $product = BiProduct::where('id', $id)->firstOrFail();
         
         $ProductId = $product->id;
         $parent = BiProduct::where('id', $product->parent_id)->first();

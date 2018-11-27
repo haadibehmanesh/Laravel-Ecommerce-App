@@ -3,14 +3,14 @@
             <div class="col-sm-9">
                 
                     <div class=" hidden-md hidden-lg col-xs-12 col-sm-12 pull-left img-pos">
-                        <a href="{{ route('shop.show', $item->product->slug) }}" title="{{ $item->product->name }}">
+                        <a href="{{ route('shop.show', $item->product->id) }}" title="{{ $item->product->name }}">
                             <img src="{{ productImage($item->product->image) }}" title="{{ $item->product->name }}" width="100%" class="img-responsive" alt="">
                         </a>
                     </div>
                     
                     <div class="col-md-8 col-xs-12" style="padding-left: 0px">
                                                     <label>
-                                <h4><a href="{{ route('shop.show', $item->product->slug) }}" title="{{ $item->product->name }}" class="black-color none-decoration">
+                                <h4><a href="{{ route('shop.show', $item->product->id) }}" title="{{ $item->product->name }}" class="black-color none-decoration">
                                     {{$item->product->name}}
                                     </a>
                                 </h4>
@@ -96,7 +96,7 @@
                 </div>
                             </div>
             <div class=" hidden-xs hidden-sm col-md-3 pull-left img-pos">
-                    <a href="{{ route('shop.show', $item->product->slug) }}" title="{{ $item->product->name }}">
+                    <a href="{{ route('shop.show', $item->product->id) }}" title="{{ $item->product->name }}">
                             <img src="{{ productImage($item->product->image) }}" title="{{ $item->product->name }}" width="100%" class="img-responsive" alt="">
                         </a>
             </div>
