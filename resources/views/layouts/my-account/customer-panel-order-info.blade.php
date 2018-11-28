@@ -178,8 +178,7 @@ jQuery.ajax({
 </div>	
 			<!--social-->
             <div class="social_header">
-                                        <a href="#" title="تلگرام"><i class="fa fa-send-o"></i></a>
-                                                <a href="#" title="اینستاگرام"><i class="fa fa-instagram"></i></a>
+                                        
                                     </div>
         </div>
         <div>
@@ -201,7 +200,7 @@ jQuery.ajax({
                         <i class="fa fa-map-marker"></i>
                         <select id="cities_list" name="city_name">
                             <option value="all" >همه شهر ها</option>
-                            <option value='تهران' >تهران (9)</option><option value='مشهد' >مشهد (40)</option><option value='اصفهان' >اصفهان (0)</option><option value='کرج' >کرج (2)</option><option value='شیراز' >شیراز (0)</option><option value='تبریز' >تبریز (0)</option>                        </select>
+                            </select>
                     </form>
                                         <div class="realoading"></div>
                     <script>

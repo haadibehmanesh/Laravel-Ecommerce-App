@@ -200,17 +200,15 @@ img.emoji {
                         @else
                         <li id="menu-item-163" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-163"><a href="/my-account">حساب کاربری من</a></li>
                         @endif
-                        <li id="menu-item-164" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164"><a href="/checkout">تسویه حساب</a></li>
-                        <li id="menu-item-165" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-165"><a href="/cart">سبد خرید</a></li>
-                        {{--<li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-166"><a href="/products">همه پیشنهادها</a></li>--}}
+                        <li id="menu-item-164" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164"><a href="https://www.instagram.com/boninjaa/" title="اینستاگرام"><i class="fa fa-instagram" style="padding:0px;"></i>ما را دنبال کنید!</a></li>
+                {{--<li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-166"><a href="/products">همه پیشنهادها</a></li>--}}
                     </ul>
             <!--phone-->
             <div class="phone"><span><i class="fa fa-phone"></i>09176952155 - 07136265496</span></div>
 			            
 			<!--social-->
             <div class="social_header">
-            {{--    <a href="" title="تلگرام"><i class="fa fa-send-o"></i></a>--}}
-                <a href="https://www.instagram.com/boninjaa/" title="اینستاگرام"><i class="fa fa-instagram"></i></a>
+           
                 
             </div>
         </div>
@@ -233,7 +231,7 @@ img.emoji {
                         <i class="fa fa-map-marker"></i>
                         <select id="cities_list" name="city_name">
                             <option value="all" >همه شهر ها</option>
-                            <option value='تهران' >تهران (9)</option><option value='مشهد' >مشهد (40)</option><option value='اصفهان' >اصفهان (0)</option><option value='کرج' >کرج (2)</option><option value='شیراز' >شیراز (0)</option><option value='تبریز' >تبریز (0)</option>                        </select>
+                            </select>
                     </form>
                                         <div class="realoading"></div>
                     <script>
