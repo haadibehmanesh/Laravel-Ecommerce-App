@@ -114,15 +114,13 @@ class ShopController extends Controller
         
     
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
-        $reviews = BiReview::where('bi_product_id',$product->id)->orderBy('id', 'desc')->get();
-        /*if($product->parent_id != 0){
-            $reviews = BiReview::where('bi_product_parent_id',$product->parent_id)->orderBy('id', 'desc')->get();
-
+        if($product->children()->count() > 0){
+           $childrenId = $product->children()->where('id' ,'>' ,0)->pluck('id')->toArray();
+           $reviews = BiReview::whereIn('bi_product_id', $childrenId)->orderBy('id', 'desc')->get();
         }else{
-
             $reviews = BiReview::where('bi_product_id',$product->id)->orderBy('id', 'desc')->get();
-
-        }*/
+           
+        }
     
         if(!empty($product->bimerchant()->first()->company_name)){
         $merchant_name = $product->bimerchant()->first()->company_name;
