@@ -851,3 +851,13 @@
 #mega-menu-wrap-main-menu {
   clear: both;
 }
+.mega-sub-menu-mob{
+  display : none;
+  }
+@media only screen and (max-width: 600px){
+  .mega-sub-menu-mob{
+    display : block;
+    
+    }
+}
+

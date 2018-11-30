@@ -29,7 +29,7 @@ img.emoji {
 <link rel='stylesheet' id='woocommerce-layout-rtl-css'  href='{{asset('wp-content/plugins/woocommerce/assets/css/woocommerce-layout-rtl6765.css?ver=3.3.3')}}' type='text/css' media='all' />
 <link rel='stylesheet' id='woocommerce-smallscreen-rtl-css'  href='{{asset('wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen-rtl6765.css?ver=3.3.3')}}' type='text/css' media='only screen and (max-width: 768px)' />
 <link rel='stylesheet' id='woocommerce-general-rtl-css'  href='{{asset('wp-content/plugins/woocommerce/assets/css/woocommerce-rtl6765.css?ver=3.3.3')}}' type='text/css' media='all' />
-<link rel='stylesheet' id='megamenu-css'  href='{{asset('wp-content/uploads/maxmegamenu/style3d1a.css?ver=f3e515')}}' type='text/css' media='all' />
+<link rel='stylesheet' id='megamenu-css'  href='{{asset('wp-content/uploads/maxmegamenu/style3d1a.css?ver=1.1')}}' type='text/css' media='all' />
 <link rel='stylesheet' id='dashicons-css'  href='{{asset('wp-includes/css/dashicons.min1845.css?ver=4.9.6')}}' type='text/css' media='all' />
 <link rel='stylesheet' id='dokan-style-css'  href='{{asset('wp-content/plugins/dokan-lite/assets/css/styleb246.css?ver=2.7.8')}}' type='text/css' media='all' />
 <link rel='stylesheet' id='dokan-fontawesome-css'  href='{{asset('wp-content/plugins/dokan-lite/assets/vendors/font-awesome/font-awesome.minb246.css?ver=2.7.8')}}' type='text/css' media='all' />
@@ -69,7 +69,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
     <link href="{{asset('wp-content/themes/takhfifat/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('wp-content/themes/takhfifat/css/bootstrap-rtl.css')}}" rel="stylesheet">
     <link href="{{asset('wp-content/themes/takhfifat/css/font-awesome.css')}}" rel="stylesheet">
-    <link href="{{asset('wp-content/themes/takhfifat/stylefc99.css?ver=2.6')}}" rel="stylesheet">
+    <link href="{{asset('wp-content/themes/takhfifat/stylefc99.css?ver=4.2')}}" rel="stylesheet">
 	<script src="{{asset('wp-content/themes/takhfifat/js/parsinumber.min.js')}}"></script>
 	<script>
 	function toPersianNum( num, dontTrim ) {
@@ -226,6 +226,15 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
                 <a class="main_title_cart" href="/cart" rel="nofollow"><i class="fa fa-shopping-cart" aria-hidden="true"></i>سبد خرید شما<span class="number_items_cart">{{ Cart::content()->count() }}</span></a>
                 
             </div>
+            <div class="searchinput">
+                    <form action="{{ route('search.index') }}" id="searchform">
+                           
+                    <input type="text" value="{{request()->input('query')}}" name="query" id="s"  placeholder=" جستجو ..." />
+                            <button type="submit" id="searchsubmit" >
+                                <i style="padding-left: 10px;" class="fa fa-search"></i>
+                            </button>
+                    </form>
+            </div>
 
         </div>
     </div>
@@ -248,6 +257,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
                                 <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-megamenu mega-has-icon mega-menu-item-241' id='mega-menu-item-241'><a class=" fa {{$item->icon}}  mega-menu-link" href="{{ route('shop.showCategory', $item->slug) }}" aria-haspopup="true" tabindex="0">{{ $item->name}}</a>
                                     <ul class="mega-sub-menu">
                                         <li class='mega-menu-item mega-menu-item-type-widget widget_sp_image mega-menu-columns-1-of-4 mega-menu-item-widget_sp_image-2' id='mega-menu-item-widget_sp_image-2'><img width="100" height="100" class="attachment-shop_thumbnail" style="max-width: 100%;" srcset="{{ categoryImage($item->image) }}" /></li>
+                                        <ul class="mega-sub-menu-mob">                                          <li class='mega-menu-item'><a class="mega-menu-link" href="{{ route('shop.showCategory', $item->slug) }}" style="color: #19499c;"> همه {{$item->name}} ها</a></li></ul>
                                         @foreach ( $item->children->sortBy('sort_order') as $submenu )
                                             <ul class="mega-sub-menu">
                                                 <li class='mega-menu-item' id='mega-menu-item-243'><a class="mega-menu-link" href="{{ route('shop.showCategory', $submenu->slug) }}">{{$submenu->name}}</a></li>
@@ -408,17 +418,20 @@ jQuery('.dokan-withdraw-content .dokan-alert-warning').html(first_html);
             </div>--}}
             <!--Service-->
             <div class="col-lg-5 col-md-5 block_service">
-                <div class="service"><span>فهرست</span><div class="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-container"><ul id="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7" class="menu"><li id="menu-item-187" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-187"><a href="#">آموزش مفید</a></li>
-<li id="menu-item-188" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188"><a href="#">نحوه خرید</a></li>
-<li id="menu-item-189" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-189"><a href="#">نحوه فروش</a></li>
-<li id="menu-item-190" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-190"><a href="#">کجا پیدا میشه</a></li>
-<li id="menu-item-191" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-191"><a href="#">تماس با ما</a></li>
-</ul></div></div><div class="service"><span>راهنما</span><div class="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-container"><ul id="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-1" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-187"><a href="#">آموزش مفید</a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188"><a href="#">نحوه خرید</a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-189"><a href="#">نحوه فروش</a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-190"><a href="#">کجا پیدا میشه</a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-191"><a href="#">تماس با ما</a></li>
-</ul></div></div>            </div>
+                    <div class="service"><span>درباره بن اینجا</span><div class="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-container"><ul id="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7" class="menu"><li id="menu-item-187" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-187"><a href="{{route('aboutus.index')}}">درباره ما</a></li>
+                        <li id="menu-item-188" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188"><a href="{{route('cooperation.index')}}">همکاری با بن اینجا</a></li>
+                        <li id="menu-item-191" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-191"><a href="{{route('contactus.index')}}">تماس با ما</a></li>
+                        <li id="menu-item-191" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-191">
+                            <span>
+                                    <i class="fa fa-phone"></i>
+                                    شماره های پشتیبانی : <br>
+                                    {{ toPersianNum('09176952155')}} - {{  toPersianNum('07136265496')}}
+                            </span>
+                        </li>
+                        </ul></div></div><div class="service"><span>راهنما</span><div class="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-container"><ul id="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-1" class="menu">
+                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188"><a href="#">نحوه خرید</a></li>
+                        
+                        </ul></div></div>            </div>
             <!--map-->
             <div class="col-lg-3 col-md-3">
                 <div class="map">

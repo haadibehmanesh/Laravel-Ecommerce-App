@@ -20,7 +20,7 @@
     </title>
     <link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">
 <link rel='stylesheet' id='validate-engine-css-css'  href='wp-content/plugins/wysija-newsletters/css/validationEngine.jquery4dc3.css?ver=2.8.2' type='text/css' media='all' />
-<link rel='stylesheet' id='megamenu-css'  href='wp-content/uploads/maxmegamenu/style3d1a.css?ver=f3e515' type='text/css' media='all' />
+<link rel='stylesheet' id='megamenu-css'  href='wp-content/uploads/maxmegamenu/style3d1a.css?ver=1.1' type='text/css' media='all' />
 <link rel='stylesheet' id='dashicons-css'  href='wp-includes/css/dashicons.min1845.css?ver=4.9.6' type='text/css' media='all' />
 
 <!-- Bootstrap -->
@@ -249,6 +249,7 @@ function toPersianNum( num, dontTrim ) {
                                 <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-megamenu mega-has-icon mega-menu-item-241' id='mega-menu-item-241'><a class=" fa {{$item->icon}}  mega-menu-link" href="{{ route('shop.showCategory', $item->slug) }}" aria-haspopup="true" tabindex="0">{{ $item->name}}</a>
                                     <ul class="mega-sub-menu">
                                         <li class='mega-menu-item mega-menu-item-type-widget widget_sp_image mega-menu-columns-1-of-4 mega-menu-item-widget_sp_image-2' id='mega-menu-item-widget_sp_image-2'><img width="100" height="100" class="attachment-shop_thumbnail" style="max-width: 100%;" srcset="{{ categoryImage($item->image) }}" /></li>
+                                        <ul class="mega-sub-menu-mob">                                          <li class='mega-menu-item'><a class="mega-menu-link" href="{{ route('shop.showCategory', $item->slug) }}" style="color: #19499c;"> همه {{$item->name}} ها</a></li></ul>
                                             @foreach ( $item->children->sortBy('sort_order') as $submenu )
                                             <ul class="mega-sub-menu">
                                             <li class='mega-menu-item' id='mega-menu-item-243'><a class="mega-menu-link" href="{{ route('shop.showCategory', $submenu->slug) }}">{{$submenu->name}}</a></li>
