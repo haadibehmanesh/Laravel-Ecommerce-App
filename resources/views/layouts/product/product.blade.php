@@ -369,7 +369,13 @@ img.emoji {
                             <div class="option_item_gallery">
 
 							
-                                <span class="address"><i class="fa fa-map-marker"></i>{{ $product->location}}</span>
+                                <span class="address"><i class="fa fa-map-marker"></i>
+                                    @if(!empty($product->location))
+                                    {{ $product->location}}
+                                    @else
+                                    {{ $product->parent->location}}
+                                    @endif
+                                </span>
 
 							
 									<span class="number-sale"><i class="fa fa-shopping-basket"></i>0</span>
@@ -465,8 +471,12 @@ img.emoji {
 
 				
                     jQuery(function() {
-
-                        var endDate = "{{date('Y-m-d', strtotime($product->end_date))}}";
+                        @if(!empty($product->end_date))
+                                                var endDate = "{{date('Y-m-d', strtotime($product->end_date))}}";
+                                                @else
+                                                var endDate = "{{date('Y-m-d', strtotime($product->parent->end_date))}}";
+                                                @endif
+                        
 
                         jQuery('.countdown_single_product').countdown({
 
@@ -603,10 +613,10 @@ img.emoji {
                                     @if($product->children->count() > 0)
                                     <a data-toggle="modal" href="#normalModal" class="btn btn-primary" style="width: 100%;border-radius: 0;padding: 12px;background-color: #19499c;border: none;" onmouseover='this.style.background="#f6861f"'  onmouseout='this.style.background="#19499c"'>انتخاب کنید</a>
                                     @else
-                                    <input type="button" value='افزودن به سبد' style="width: 100%;border-radius: 0;padding: 3px;
-                                    margin-bottom: 10px;background-color: #19499c;" onmouseover='this.style.background="#f6861f"'  onmouseout='this.style.background="#19499c"' name="addtocart" id="addtocart" class="addtocart btn">
-                                    <button type="submit" name="add-to-cart" value="" class="btn"  style="width: 100%;
-                                    margin-bottom: 10px;padding: 8px;border-radius: 0;background-color: #19499c;" onmouseover='this.style.background="#f6861f"'  onmouseout='this.style.background="#19499c"'>مشاهده و خرید</button>
+                                    <a style="width:28%;border-radius: 0;padding: 8px;
+                                    margin-bottom: 10px;background-color: #f6861f;" onmouseover='this.style.background="#19499c"'  onmouseout='this.style.background="#f6861f"' name="addtocart" id="addtocart" class="addtocart btn"><i class="fa fa-shopping-cart" style="padding-right:10px;font-size: 20px;color: white;">+</i></a>
+                                    <button type="submit" name="add-to-cart" value="" class="btn"  style="width: 70%;
+                                    margin-bottom: 10px;padding: 10px;border-radius: 0;background-color: #19499c;" onmouseover='this.style.background="#f6861f"'  onmouseout='this.style.background="#19499c"'>مشاهده و خرید</button>
                                     
                                     @endif
                                     
@@ -646,6 +656,7 @@ img.emoji {
                                                                             <b class="text-success modal-child-offPrice">{{ toPersianNum(presentPrice($subproduct->price,$subproduct->discount)) }} تومان</b>
                                                                         </div>
                                                                         <div class="col-md-4 col-sm-4 col-xs-4 m-t-10">
+                                                                            
                                                                                 <input type="button" value='افزودن به سبد' style="border-radius: 4px;     padding: 0px 10px;    margin-top: 10px;" name="addtocart" onclick="addToCart({{ $subproduct->id }})" class="addtocartmodal btn">
                                                                         </div>
                                                                         <script>
@@ -746,7 +757,11 @@ img.emoji {
    
     
 <div class="content description">
+@if(!empty($product->description_details))
 {!!  $product->description_details !!}
+@else
+{!!  $product->parent->description_details !!}
+@endif
 </div>
 </div><div class="clear"></div><!--Terms of Use-->
 <div class="row">
@@ -755,8 +770,13 @@ img.emoji {
 		<div class="title_block"><span>شرایط استفاده</span></div>
 		<div class="">
 		<div class="">
-			<?php
-$items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  ', explode('<p style="text-align: right;">', $product->usage_terms));
+            <?php
+            if(!empty($product->usage_terms)){
+                $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  ', explode('<p style="text-align: right;">', $product->usage_terms));
+            }else{
+                $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  ', explode('<p style="text-align: right;">', $product->parent->usage_terms));
+            }
+
 ?>
 {!! $items !!}
 		</div>
@@ -770,7 +790,12 @@ $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  '
 	<div class="Property box_single">
 		<div class="title_block"><span>ویژگی ها</span></div>
         <?php
+        if(!empty($product->usage_terms)){
         $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  ', explode('<p style="text-align: right;">', $product->attributies));
+        }else{
+            $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  ', explode('<p style="text-align: right;">', $product->parent->attributies));
+
+        }
         ?>
         {!! $items !!}
     </div>
@@ -792,7 +817,11 @@ $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  '
     text-align: center;
     padding-bottom: 15px;">
         <span><i class="fa fa-map-marker"></i>&nbsp;
-        {{$product->address}}
+            @if(!empty($product->address))
+                {{$product->address}}
+            @else
+                {{$product->parent->address}}
+            @endif
         </span>
     
     </div>
@@ -844,6 +873,7 @@ $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  '
                             <div class="card-timer">
                                     <a href="{{ route('shop.show', $product->id) }}" class="" title="{{ $product->name }}" class=""><span class="card-span"><script>
                                             jQuery(function() {
+                                                
                                                 var endDate = "{{date('Y-m-d', strtotime($product->end_date))}}";
                                                 jQuery('.{{$product->slug}}').countdown({
                                                     date: endDate,
