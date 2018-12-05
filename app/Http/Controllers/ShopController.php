@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\BiOrder;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\BiProduct;
 use App\BiCategory;
@@ -94,7 +95,9 @@ class ShopController extends Controller
                 $lng = $coordinates[0]['lng'];
             }
         }
-        
+        $product->latitude = $lat;
+        $product->longitude = $lng;
+        $product->save();
         if(Auth::guard('customer')->check()){
             $id = Auth::guard('customer')->user()->id;
         
