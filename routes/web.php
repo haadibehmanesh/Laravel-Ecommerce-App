@@ -91,6 +91,7 @@ Route::get('/aboutus', 'AboutusController@index')->name('aboutus.index');
 Route::get('/contactus', 'ContactusController@index')->name('contactus.index');
 Route::get('/cooperation', 'CooperationController@index')->name('cooperation.index');
 Route::post('/cooperation', 'CooperationController@store')->name('cooperation.store');
+Route::get('/nearby', 'NearbyController@index')->name('nearby.index');
 
 Route::get('/cart', 'CartController@index')->name('cart.index');
 Route::post('/cart', 'CartController@store')->name('cart.store');
