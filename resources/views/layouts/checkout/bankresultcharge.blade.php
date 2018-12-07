@@ -21,10 +21,7 @@
     <title>
         سبد خرید    </title>
 	<link rel='dns-prefetch' href='/cart' />
-		<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.6"}};
-			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
-		</script>
+		
 		<style type="text/css">
 img.wp-smiley,
 img.emoji {
@@ -50,37 +47,77 @@ img.emoji {
 <link rel='stylesheet' id='dokan-style-css'  href={{ asset('wp-content/plugins/dokan-lite/assets/css/styleb246.css?ver=2.7.8') }} type='text/css' media='all' />
 <link rel='stylesheet' id='dokan-fontawesome-css'  href={{ asset('wp-content/plugins/dokan-lite/assets/vendors/font-awesome/font-awesome.minb246.css?ver=2.7.8') }} type='text/css' media='all' />
 <link rel='stylesheet' id='dokan-rtl-style-css'  href={{ asset('wp-content/plugins/dokan-lite/assets/css/rtlb246.css?ver=2.7.8') }} type='text/css' media='all' />
-<script type='text/javascript'>
-/* <![CDATA[ */
-var dokan = {"ajaxurl":"http:\/\/localhost\/wp-admin\/admin-ajax.php","nonce":"93c8ead72f","ajax_loader":"http:\/\/localhost\/wp-content\/plugins\/dokan-lite\/assets\/images\/ajax-loader.gif","seller":{"available":"\u0645\u0648\u062c\u0648\u062f","notAvailable":"\u0646\u0627\u0645\u0648\u062c\u0648\u062f"},"delete_confirm":"\u0622\u06cc\u0627 \u0645\u0637\u0645\u0626\u0646\u06cc\u062f\u061f","wrong_message":"\u0645\u0634\u06a9\u0644\u06cc \u0628\u0647 \u0648\u062c\u0648\u062f \u0622\u0645\u062f. \u0644\u0637\u0641\u0627 \u062f\u0648\u0628\u0627\u0631\u0647 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646\u06cc\u062f.","vendor_percentage":"80","commission_type":"percentage","rounding_precision":"6","mon_decimal_point":"."};
-/* ]]> */
-</script>
-<script type='text/javascript' src='../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
-<script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var _zxcvbnSettings = {"src":"\/wp-includes\/js\/zxcvbn.min.js"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='../wp-includes/js/zxcvbn-async.min5152.js?ver=1.0'></script>
-<link rel='https://api.w.org/' href='../wp-json/index.html' />
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../wp-includes/wlwmanifest.xml" /> 
-<meta name="generator" content="WordPress 4.9.6" />
-<meta name="generator" content="WooCommerce 3.3.3" />
-<link rel="canonical" href="index.html" />
-<link rel='shortlink' href='../index2df4.html?p=8' />
-<link rel="alternate" type="application/json+oembed" href="../wp-json/oembed/1.0/embed5300.json?url=http%3A%2F%2Flocalhost%2Ftakhfiftest%2Fcart%2F" />
-<link rel="alternate" type="text/xml+oembed" href="../wp-json/oembed/1.0/embed1326?url=http%3A%2F%2Flocalhost%2Ftakhfiftest%2Fcart%2F&amp;format=xml" />
-	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
-	<meta name='robots' content='noindex,follow' />
-<style type="text/css">/** Mega Menu CSS Disabled **/</style>
+<script type='text/javascript' src={{ asset('wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4')}}></script>
+<script type='text/javascript' src={{ asset('wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1')}}></script>
     <!-- Bootstrap -->
-    <link href="../wp-content/themes/takhfifat/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../wp-content/themes/takhfifat/css/bootstrap-rtl.css" rel="stylesheet">
-    <link href="../wp-content/themes/takhfifat/css/font-awesome.css" rel="stylesheet">
-    <link href="../wp-content/themes/takhfifat/stylefc99.css?ver=2.9" rel="stylesheet">
-	<script src="../../wp-content/themes/takhfifat/js/parsinumber.min.js"></script>
+    <link href={{ asset('wp-content/themes/takhfifat/css/bootstrap.min.css')}} rel="stylesheet">
+    <link href={{ asset('wp-content/themes/takhfifat/css/bootstrap-rtl.css')}} rel="stylesheet">
+    <link href={{ asset('wp-content/themes/takhfifat/css/font-awesome.css')}} rel="stylesheet">
+    <link href={{ asset('wp-content/themes/takhfifat/stylefc99.css?ver=2.9')}} rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://localhost/takhfiftest/wp-content/themes/takhfifat/js/html5shiv.min.js"></script>
+    <script src="http://localhost/takhfiftest/wp-content/themes/takhfifat/js/respond.min.js"></script>
+    <![endif]-->
+
+            {{--	<style>
+	span.price del:before{ content:'قیمت: '; }
+	span.price ins:before{ content:'با تخفیف: '; }
+			.phone,
+	input[type="submit"], input[type="button"], button,
+	.nav-tabs>li.active>a .fa, .nav-tabs>li.active>a:focus .fa, .nav-tabs>li.active>a:hover .fa,
+	.eye_buy a,
+	.price span.with_discount,
+	.title_post span.like,
+	.block_gallery .content_item .Slogan span,
+	.content_item .Discount:before,
+	.box_offer .Discount:before,
+	.box_offer .price del,
+	.title_post .Discount:before,
+	span.number_items_cart,
+	p.buttons a,
+	.wc-proceed-to-checkout .checkout-button,
+	.woocommerce a.remove:hover,
+	.post-content input[type="submit"],
+	input[type="submit"].dokan-btn-theme, a.dokan-btn-theme, .dokan-btn-theme
+	{
+		background-color:#ff5a5f !important;
+	}
+	.box_offer .price del:after{
+		border-right-color: #ff5a5f;
+	}
+	input[type="submit"]:hover, input[type="button"]:hover, button:hover,
+	.eye_buy a:hover,
+	{
+		background-color:#ff5a5f	}
+	.content_item > span a .fa,
+	.box_single .title_block span,
+	.option_item_gallery span.address .fa,
+	.item_terms_use p .fa,
+	.box_offer span.address i,
+	.cart_list.product_list_widget li.mini_cart_item a.remove,
+	.woocommerce a.remove,
+	.label_map
+	{
+		color:#ff5a5f !important
+	}
+	.top_header,
+	.title_post span.like:before,
+	.top_header, 
+	.title_post span.like:before, 
+	.nav-tabs>li.active>a, 
+	.nav-tabs>li.active>a:hover,
+	.title_post,
+	.phone,
+	.label_map,
+	.post-content input[type="submit"],
+	input[type="submit"].dokan-btn-theme, a.dokan-btn-theme, .dokan-btn-theme
+	{
+		border-color:#ff5a5f	}	
+		</style>--}}
+	<script src={{ asset('wp-content/themes/takhfifat/js/parsinumber.min.js')}}></script>
 	<script>
 	function toPersianNum( num, dontTrim ) {
 		var i = 0,
@@ -100,7 +137,7 @@ var _zxcvbnSettings = {"src":"\/wp-includes\/js\/zxcvbn.min.js"};
 		return res;
 	}
     </script>
-  <script src="../wp-content/themes/takhfifat/js/axios.js"></script>
+  <script src={{ asset('wp-content/themes/takhfifat/js/axios.js')}}></script>
     <script>
     jQuery(document).ready(function(){  
         //alert('h');
@@ -149,18 +186,6 @@ var _zxcvbnSettings = {"src":"\/wp-includes\/js\/zxcvbn.min.js"};
              });
          });
  </script>
- <script>
-        jQuery(document).ready(function() {
-        jQuery.fn.digits = function(){ 
-            return this.each(function(){ 
-                jQuery(this).text( jQuery(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") ); 
-            })
-        }
-        jQuery(".numbers").digits();
-        });
-        
-        
-</script>
 
 </head>
 <body class="rtl page-template-default page page-id-8 woocommerce-cart woocommerce-page mega-menu-main-menu dokan-theme-takhfifat">
@@ -168,9 +193,6 @@ var _zxcvbnSettings = {"src":"\/wp-includes\/js\/zxcvbn.min.js"};
 -------------------->
 <section class="top_header">
     <div class="container">
-            <div style="width: 300px;">
-                    @include('flash-message')
-            </div>
         <div class="row">
                 <ul class="menu_top_header">
                         @if (!Auth::guard('customer')->check())
@@ -186,7 +208,8 @@ var _zxcvbnSettings = {"src":"\/wp-includes\/js\/zxcvbn.min.js"};
 			            
 			<!--social-->
             <div class="social_header">
-            
+           
+                
             </div>
         </div>
         <div>
@@ -208,8 +231,7 @@ var _zxcvbnSettings = {"src":"\/wp-includes\/js\/zxcvbn.min.js"};
                         <i class="fa fa-map-marker"></i>
                         <select id="cities_list" name="city_name">
                             <option value="all" >همه شهر ها</option>
-                            {{--<option value='تهران' >تهران (9)</option><option value='مشهد' >مشهد (40)</option><option value='اصفهان' >اصفهان (0)</option><option value='کرج' >کرج (2)</option><option value='شیراز' >شیراز (0)</option><option value='تبریز' >تبریز (0)</option>--}}
-                        </select>
+                            </select>
                     </form>
                                         <div class="realoading"></div>
                     <script>
@@ -271,18 +293,18 @@ var _zxcvbnSettings = {"src":"\/wp-includes\/js\/zxcvbn.min.js"};
 			
             <!--items cart-->
             <div class="content_mini_cart">
-            <a class="main_title_cart" href="/cart" ><i class="fa fa-shopping-cart" aria-hidden="true"></i>سبد خرید شما<span class="number_items_cart">{{ Cart::content()->count() }}</span></a>
-                
-            </div>
-            <div class="searchinput">
-                    <form action="{{ route('search.index') }}" id="searchform">
-                           
-                    <input type="text" value="{{request()->input('query')}}" name="query" id="s"  placeholder=" جستجو ..." />
-                            <button type="submit" id="searchsubmit" >
-                                <i style="padding-left: 10px;" class="fa fa-search"></i>
-                            </button>
-                    </form>
-            </div>
+                    <a class="main_title_cart" href="/cart" rel="nofollow"><i class="fa fa-shopping-cart" aria-hidden="true"></i>سبد خرید شما<span class="number_items_cart">{{ Cart::content()->count() }}</span></a>
+                    
+                </div>
+                <div class="searchinput">
+                        <form action="{{ route('search.index') }}" id="searchform">
+                               
+                        <input type="text" value="{{request()->input('query')}}" name="query" id="s"  placeholder=" جستجو ..." />
+                                <button type="submit" id="searchsubmit" >
+                                    <i style="padding-left: 10px;" class="fa fa-search"></i>
+                                </button>
+                        </form>
+                </div>
 
         </div>
     </div>
@@ -305,12 +327,7 @@ var _zxcvbnSettings = {"src":"\/wp-includes\/js\/zxcvbn.min.js"};
                                 <li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-megamenu mega-has-icon mega-menu-item-241' id='mega-menu-item-241'><a class=" fa {{$item->icon}}  mega-menu-link" href="{{ route('shop.showCategory', $item->slug) }}" aria-haspopup="true" tabindex="0">{{ $item->name}}</a>
                                     <ul class="mega-sub-menu">
                                         <li class='mega-menu-item mega-menu-item-type-widget widget_sp_image mega-menu-columns-1-of-4 mega-menu-item-widget_sp_image-2' id='mega-menu-item-widget_sp_image-2'><img width="100" height="100" class="attachment-shop_thumbnail" style="max-width: 100%;" srcset="{{ categoryImage($item->image) }}" /></li>
-                            
-                                            <ul class="mega-sub-menu-mob">
-                                                    <li class='mega-menu-item'><a class="mega-menu-link" href="{{ route('shop.showCategory', $item->slug) }}" style="
-                                                            color: #19499c;
-                                                        "> همه {{$item->name}} ها</a></li>
-                                            </ul>
+                                        <ul class="mega-sub-menu-mob">                                          <li class='mega-menu-item'><a class="mega-menu-link" href="{{ route('shop.showCategory', $item->slug) }}" style="color: #19499c;"> همه {{$item->name}} ها</a></li></ul>
                                             @foreach ( $item->children->sortBy('sort_order') as $submenu )
                                             <ul class="mega-sub-menu">
                                                 <li class='mega-menu-item' id='mega-menu-item-243'><a class="mega-menu-link" href="{{ route('shop.showCategory', $submenu->slug) }}">{{$submenu->name}}</a></li>
@@ -335,200 +352,25 @@ var _zxcvbnSettings = {"src":"\/wp-includes\/js\/zxcvbn.min.js"};
     <section id="wrapper">
     <div class="container">
         <div class="row">
-                        <ol class="breadcrumb"><a href="/">خانه</a> &#47; سبد خرید</ol>            
-                    
-                        <div class="post-content-page">
-                                        
-                            <!--title & discount & views-->
-                            <div class="title_post">
-                                <h1>سبد خرید</h1>
-                            </div>
-                            <div class="woocommerce">
-                                @if (session()->has('success_message'))
-                                    <div class="alert alert-success">
-                                        {{ session()->get('success_message') }}
-                                    </div>
-                                @endif
-                                @if (session()->has('error_message'))
-                                    <div class="alert alert-danger">
-                                        {{ session()->get('error_message') }}
-                                    </div>
-                                @endif
-                    
-                                @if(count($errors) > 0)
-                                    <div class="alert alert-danger">
-                                        <ul>
-                                            @foreach ($errors->all() as $error)
-                                                <li>{{ $error }}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                @endif
-
-                                @if(isset($success_message))
-                                    <div class="alert alert-info">{{$success_message}}</div>
-                                @endif
-
-                                @if(isset($error_message))
-                                    <div class="alert alert-danger">{{$error_message}}</div>
-                                @endif
-
-                                @if (Cart::count() > 0)
-                                   {{-- <h2>{{ Cart::content()->count() }} item(s) in Shopping Cart</h2>--}}
-
-                                    <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <th class="product-remove">&nbsp;</th>
-                                                <th class="product-thumbnail">&nbsp;</th>
-                                                <th class="product-name">محصول</th>
-                                                <th class="product-price">قیمت</th>
-                                                <th class="product-quantity">تعداد</th>
-                                                <th class="product-subtotal">مجموع</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        @foreach (Cart::content() as $item )
-                                            <tr class="woocommerce-cart-form__cart-item cart_item">
-                                                        <td class="product-remove">
-                                                            
-                                                            <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
-                                                                    {{ csrf_field() }}
-                                                                    {{ method_field('DELETE') }}
-                                                                   
-                                                                    <button type="submit" class="remove">×</button>
-                                                            </form>
-                                                        </td>
-                                                        <td class="product-thumbnail">
-                                                            <img width="400" height="400" src="{{ productImage($item->model->image) }}" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image" alt="" sizes="(max-width: 400px) 100vw, 400px">
-                                                        </td>
-                                                        <td class="product-name" data-title="محصول"><a href="{{ route('shop.show', $item->model->id) }}">{{ $item->model->name }}</a>
-                                                            <dl class="variation">
-                                                             {{-- <dt class="variation-">فروشنده:</dt>
-                                                                <dd class="variation-"><p>سید محسن فاطمی</p>
-                                                                </dd>
-                                                                --}}
-                                                            </dl>
-                                                        </td>
-                                                        <td class="product-price" data-title="قیمت">
-                                                            <span class="numbers">{{ $item->price }}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>
-                                                        </td>
-                                                        <td class="product-quantity" data-title="تعداد">
-                                                            <div>
-                                                               
-                                                                <select class="select-quantity" data-id="{{ $item->rowId }}">
-                                                                        @for ($i = 1; $i <= $item->options['order_limit'] ; $i++)
-                                                                        <option value="{{ $i }}" {{ $item->qty == $i ? 'selected' : '' }}>{{ $i }}</option>
-                                                                        @endfor
-                                                                </select>
-                                
-                                                            </div>
-                                                        </td>
-                                                        <td class="product-subtotal" data-title="مجموع">
-                                                            <span class="numbers">{{ $item->subtotal }}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span>
-                                                        </td>
-                                            </tr>
-                                            @endforeach
-                                            <tr>
-                                                
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                
-        <div class="cart-collaterals">
-                <div class="col-lg-6 col-md-12 col-sm-24 col-xs-24">
-                    <h3>توجه</h3>
-                    <div class="content description" style="
-                    background-color: #f2f2f2;
-                    border-radius: 5px;
-                    padding: 5px;
-                ">
-                    <p>
-                    - کاربر عزیز در صورت بروز خطا هنگام پرداخت، مشکل از سمت درگاه بانک بوده و به حساب شما باز خواهد گشت. 
-                    <br>
-                    <hr>
-                    - در صورتیکه پس از حداکثر یک روز به حساب شما برنگشت از طریق پشتیبانی سایت اقدام نمایید. 
-                    
-                    </p>
-                </div>
-                {{--<div class="checkbox text-right" style="
-                margin-right: 20px;
-            ">
-                <input type="checkbox" id="wallet">
-                    <label for="wallet" style="
-                    padding-right: 5px;
-                    ">
-                    مایل هستم از اعتبار کیف پولم استفاده کنم
-                    (<strong>موجودی کیف پول
-                    شما : </strong><span class="numbers">{{$total}}</span> تومان)
-                    </label>
-            </div>--}}
-
-            </div>
-            <div class="col-lg-6 col-md-12 col-sm-24 col-xs-24">
-            <div class="cart_totals ">
-        
-            
-            <h2>جمع کل سبد خرید</h2>
-        
-            <table cellspacing="0" class="shop_table shop_table_responsive">
-        
-                <tbody><tr class="cart-subtotal">
-                    <th> قیمت کل </th>
-                <td data-title=" قیمت کل "><span class="numbers">{{ Cart::subtotal() }}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></td>
-                </tr>
-        
-                
-                
-                
-                
-                                    
-                <tr class="order-total">
-                    <th>مجموع</th>
-                    <td data-title="مجموع"><strong><span class="numbers">{{ Cart::subtotal() }}&nbsp;<span class="woocommerce-Price-currencySymbol">تومان</span></span></strong> </td>
-                </tr>
-        
-                
-            </tbody></table>
-        
-            <div class="wc-proceed-to-checkout">
-                    <form action="{{ route('checkout.store') }}" method="POST">
-                            {{ csrf_field() }}
-
-                            <button type="submit" class="nb-btn">نهایی کردن خرید</button>
-                    </form>
-                
-            </div>
-        
-            
-        </div>
-    </div>
-        </div>
-        
-        </div>
-        
-                                                    
-                    </div>
-                    
-            @else
+            <ol class="breadcrumb"><a href="/">خانه</a> &#47; نتیجه تراکنش</ol>        
             <div class="post-content-page">
-                <div class="woocommerce">
-                    <p class="cart-empty">سبد خرید شما در حال حاضر خالی است.</p>
-                    <p class="return-to-shop">
-                        <a class="button wc-backward" href="{{ route('shop.index') }}">بازگشت به فروشگاه</a>
-                    </p>
-                </div>                                
+                                        
+                    <!--title & discount & views-->
+                    <div class="title_post">
+                        <h1>نتیجه تراکنش</h1>
+                    </div>
+                    @if(!empty($message))
+                    {!!$message!!}
+                    <input type="button" class="btn" value="مشاهده کیف پول" onclick="window.location.href='{{route('wallet.index')}}'">
+                    @elseif(!empty($error))
+                    {!!$error!!}
+                    @endif
+                    
             </div>
-            @endif
-                        
-
         </div>
     </div>
 </section>
-<script>
-var first_html = jQuery('.dokan-withdraw-content .dokan-alert-warning').html().replace('Minimum Withdraw amount: ', 'حداقل موجودی لازم برای درخواست برداشت: ');
-jQuery('.dokan-withdraw-content .dokan-alert-warning').html(first_html);
-</script>
+
 <!--social &  Subscription-->
 <section id="social">
     <div class="container">
@@ -620,7 +462,7 @@ jQuery('.dokan-withdraw-content .dokan-alert-warning').html(first_html);
             <!--map-->
             <div class="col-lg-3 col-md-3">
                 <div class="map">
-									<img src="../wp-content/uploads/2017/05/naghshe-1.jpg" />
+									<img src={{ asset('wp-content/uploads/2017/05/naghshe-1.jpg')}} />
 				                </div>
             </div>
         </div>
@@ -647,59 +489,59 @@ jQuery('.dokan-withdraw-content .dokan-alert-warning').html(first_html);
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../wp-content/themes/takhfifat/js/bootstrap.min.js"></script>
-<script src="../wp-content/themes/takhfifat/js/jquery.countdownTimer.js"></script>
+<script src={{ asset('wp-content/themes/takhfifat/js/bootstrap.min.js')}}></script>
+<script src={{ asset('wp-content/themes/takhfifat/js/jquery.countdownTimer.js')}}></script>
 
-<script src="../wp-content/themes/takhfifat/js/custom.js"></script>
+<script src={{ asset('wp-content/themes/takhfifat/js/custom.js')}}></script>
 
-<script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/frontend/country-select.min6765.js?ver=3.3.3'></script>
+<script type='text/javascript' src={{ asset('wp-content/plugins/woocommerce/assets/js/frontend/country-select.min6765.js?ver=3.3.3')}}></script>
 
-<script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/frontend/address-i18n.min6765.js?ver=3.3.3'></script>
+<script type='text/javascript' src={{ asset('wp-content/plugins/woocommerce/assets/js/frontend/address-i18n.min6765.js?ver=3.3.3')}}></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
 var wc_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"http:\/\/localhost\/?wc-ajax=%%endpoint%%","update_shipping_method_nonce":"45f10f19e4","apply_coupon_nonce":"23b5b188e4","remove_coupon_nonce":"1ab4ef34ab"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/frontend/cart.min6765.js?ver=3.3.3'></script>
-<script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/selectWoo/selectWoo.full.min20b9.js?ver=1.0.2'></script>
+<script type='text/javascript' src={{ asset('wp-content/plugins/woocommerce/assets/js/frontend/cart.min6765.js?ver=3.3.3')}}></script>
+<script type='text/javascript' src={{ asset('wp-content/plugins/woocommerce/assets/js/selectWoo/selectWoo.full.min20b9.js?ver=1.0.2')}}></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
 var pwsL10n = {"unknown":"\u0642\u062f\u0631\u062a \u0631\u0645\u0632 \u0646\u0627\u0645\u0634\u062e\u0635","short":"\u0628\u0633\u06cc\u0627\u0631 \u0633\u0633\u062a","bad":"\u0633\u0633\u062a","good":"\u0645\u062a\u0648\u0633\u0637","strong":"\u0642\u0648\u06cc","mismatch":"\u0646\u0627\u0647\u0645\u0633\u0627\u0646"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='../wp-admin/js/password-strength-meter.min1845.js?ver=4.9.6'></script>
-<script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/frontend/password-strength-meter.min6765.js?ver=3.3.3'></script>
-<script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min44fd.js?ver=2.70'></script>
-<script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min6b25.js?ver=2.1.4'></script>
+<script type='text/javascript' src={{ asset('wp-admin/js/password-strength-meter.min1845.js?ver=4.9.6')}}></script>
+<script type='text/javascript' src={{ asset('wp-content/plugins/woocommerce/assets/js/frontend/password-strength-meter.min6765.js?ver=3.3.3')}}></script>
+<script type='text/javascript' src={{ asset('wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min44fd.js?ver=2.70')}}></script>
+<script type='text/javascript' src={{ asset('wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min6b25.js?ver=2.1.4')}}></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
 var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"http:\/\/localhost\/?wc-ajax=%%endpoint%%"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min6765.js?ver=3.3.3'></script>
+<script type='text/javascript' src={{ asset('wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min6765.js?ver=3.3.3')}}></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
 
 /* ]]> */
 </script>
 
-<script type='text/javascript' src='../wp-includes/js/hoverIntent.minc245.js?ver=1.8.1'></script>
+<script type='text/javascript' src={{ asset('wp-includes/js/hoverIntent.minc245.js?ver=1.8.1')}}></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
 var megamenu = {"timeout":"300","interval":"100"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='../wp-content/plugins/megamenu/js/maxmegamenu9254.js?ver=2.3.6'></script>
-<script type='text/javascript' src='../wp-includes/js/wp-embed.min1845.js?ver=4.9.6'></script>
-<script type='text/javascript' src='../wp-includes/js/comment-reply.min1845.js?ver=4.9.6'></script>
-<script type='text/javascript' src='../wp-content/plugins/wysija-newsletters/js/validate/languages/jquery.validationEngine-fa4dc3.js?ver=2.8.2'></script>
-<script type='text/javascript' src='../wp-content/plugins/wysija-newsletters/js/validate/jquery.validationEngine4dc3.js?ver=2.8.2'></script>
+<script type='text/javascript' src={{ asset('wp-content/plugins/megamenu/js/maxmegamenu9254.js?ver=2.3.6')}}></script>
+<script type='text/javascript' src={{ asset('wp-includes/js/wp-embed.min1845.js?ver=4.9.6')}}></script>
+<script type='text/javascript' src={{ asset('wp-includes/js/comment-reply.min1845.js?ver=4.9.6')}}></script>
+<script type='text/javascript' src={{ asset('wp-content/plugins/wysija-newsletters/js/validate/languages/jquery.validationEngine-fa4dc3.js?ver=2.8.2')}}></script>
+<script type='text/javascript' src={{ asset('wp-content/plugins/wysija-newsletters/js/validate/jquery.validationEngine4dc3.js?ver=2.8.2')}}></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
 var wysijaAJAX = {"action":"wysija_ajax","controller":"subscribers","ajaxurl":"http:\/\/localhost\/wp-admin\/admin-ajax.php","loadingTrans":"\u062f\u0631 \u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc...","is_rtl":"1"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='../wp-content/plugins/wysija-newsletters/js/front-subscribers4dc3.js?ver=2.8.2'></script>
+<script type='text/javascript' src={{ asset('wp-content/plugins/wysija-newsletters/js/front-subscribers4dc3.js?ver=2.8.2')}}></script>
 <script type="text/javascript">
 jQuery(document).ready(function(){
 	jQuery('.container').persiaNumber();

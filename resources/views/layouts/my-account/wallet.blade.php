@@ -17,7 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>
-        حساب کاربری من    </title>
+            شارژ کیف پول   </title>
         <link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">
         
 		<style type="text/css">
@@ -75,7 +75,7 @@ img.emoji {
     <link href="../wp-content/themes/takhfifat/css/bootstrap.min.css" rel="stylesheet">
     <link href="../wp-content/themes/takhfifat/css/bootstrap-rtl.css" rel="stylesheet">
     <link href="../wp-content/themes/takhfifat/css/font-awesome.css" rel="stylesheet">
-    <link href="../wp-content/themes/takhfifat/stylefc99.css?ver=2.6" rel="stylesheet">
+    <link href="../wp-content/themes/takhfifat/stylefc99.css?ver=2.9" rel="stylesheet">
 
   
 	<script src="../wp-content/themes/takhfifat/js/parsinumber.min.js"></script>
@@ -100,25 +100,34 @@ img.emoji {
     </script>
      <meta name="csrf-token" content="{{ csrf_token() }}">
 <script>
-
-function editAccount(id){
-
-jQuery.ajax({
-    headers: {
-        'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
-    },
-    type:'POST',
-    url:'/my-account/editaccount/'+id ,
-    data:'_token = <?php echo csrf_token() ?>',
-    success:function(data){
-        jQuery('#ajax-show').html(data)
-    }
-    });
+jQuery(document).ready(function() {
+jQuery.fn.digits = function(){ 
+    return this.each(function(){ 
+        jQuery(this).text( jQuery(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") ); 
+    })
 }
-
+jQuery(".numbers").digits();
+});
 
 
 </script>
+<script>
+
+        function editAccount(id){
+        
+        jQuery.ajax({
+            headers: {
+                'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+            },
+            type:'POST',
+            url:'/my-account/editaccount/'+id ,
+            data:'_token = <?php echo csrf_token() ?>',
+            success:function(data){
+                jQuery('#ajax-show').html(data)
+            }
+            });
+        }
+        </script>
   <script>
         jQuery(document).ready(function() {
            
@@ -145,18 +154,6 @@ jQuery.ajax({
              });
          });
  </script>
- <script>
-        jQuery(document).ready(function() {
-        jQuery.fn.digits = function(){ 
-            return this.each(function(){ 
-                jQuery(this).text( jQuery(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") ); 
-            })
-        }
-        jQuery(".numbers").digits();
-        });
-        
-        
-        </script>
 </head>
 <body class="rtl page-template-default page page-id-10 woocommerce-account woocommerce-page mega-menu-main-menu dokan-theme-takhfifat">
     <!----- Top Menu
@@ -171,23 +168,20 @@ jQuery.ajax({
                         <li id="menu-item-163" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-163"><a href="/my-account">حساب کاربری من</a></li>
                         @endif
                         <li id="menu-item-164" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164"><a href="https://www.instagram.com/boninjaa/" title="اینستاگرام"><i class="fa fa-instagram" style="padding:0px;"></i>ما را دنبال کنید!</a></li>
+                {{--<li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-166"><a href="/products">همه پیشنهادها</a></li>--}}
                     </ul>
             <!--phone-->
             
-           {{--<div class="phone"><span><i class="fa fa-book"></i>بانک جامع اطلاعاتی</span></div>--}}
+           <!--social-->
+           <div class="phone"><span><i class="fa fa-phone"></i>09176952155 - 07136265496</span></div>
             <div class="block_login block_login_seller">
-        @if(Auth::guard('customer')->user())
-        @if(Auth::guard('customer')->user()->is_merchant == 1)
-        {{--<ul class="nav navbar-nav">
-            <li class="dropdown">
-                <a href="/dashboard"><i class="fa fa-user pull-right"></i> پنل فروشندگان <strong class="takhfifat_get_seller_balance">موجودی: <span class="woocommerce-Price-amount amount">3,816,000&nbsp;<span class="woocommerce-Price-currencySymbol">&#x062A;&#x0648;&#x0645;&#x0627;&#x0646;</span></span></strong></a>
-            </li>
-        </ul>--}}
-        @endif
-        @endif
 </div>	
+			
+			            
 			<!--social-->
             <div class="social_header">
+            
+                
             </div>
         </div>
         <div>
@@ -209,7 +203,7 @@ jQuery.ajax({
                         <i class="fa fa-map-marker"></i>
                         <select id="cities_list" name="city_name">
                             <option value="all" >همه شهر ها</option>
-                            </select>
+                            {{--<option value='تهران' >تهران (9)</option><option value='مشهد' >مشهد (40)</option><option value='اصفهان' >اصفهان (0)</option><option value='کرج' >کرج (2)</option><option value='شیراز' >شیراز (0)</option><option value='تبریز' >تبریز (0)</option>--}}</select>
                     </form>
                                         <div class="realoading"></div>
                     <script>
@@ -247,7 +241,7 @@ jQuery.ajax({
                                                   <a href="{{url('/my-account')}}">پیشخوان</a>
                   </li>
                                                   <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
-                      <a href="{{url('/my-account')}}">سفارش ها</a>
+                      <a href="{{url('/my-account/orders')}}">سفارش ها</a>
                   </li>
                    
                   
@@ -273,6 +267,15 @@ jQuery.ajax({
             <div class="content_mini_cart">
                 <a class="main_title_cart" href="/cart" rel="nofollow"><i class="fa fa-shopping-cart" aria-hidden="true"></i>سبد خرید شما<span class="number_items_cart">{{ Cart::content()->count() }}</span></a>
                 
+            </div>
+            <div class="searchinput">
+                    <form action="{{ route('search.index') }}" id="searchform">
+                           
+                    <input type="text" value="{{request()->input('query')}}" name="query" id="s"  placeholder=" جستجو ..." />
+                            <button type="submit" id="searchsubmit" >
+                                <i style="padding-left: 10px;" class="fa fa-search"></i>
+                            </button>
+                    </form>
             </div>
 					
 
@@ -327,29 +330,29 @@ jQuery.ajax({
   <section id="wrapper">
     <div class="container">
         <div id="ajax-show" class="row">
-                        <ol class="breadcrumb"><a href="/">خانه</a> / سفارش ها</ol>            <div class="post-content-page">
+                        <ol class="breadcrumb"><a href="/">خانه</a> / شارژ کیف پول</ol>            <div class="post-content-page">
                                         
                     <!--title & discount & views-->
                     <div class="title_post">
-                    <h1>سفارش ها</h1>
+                    <h1>شارژ کیف پول</h1>
                     </div>
                    
                             <div class="woocommerce">
 <nav class="woocommerce-MyAccount-navigation">
 	<ul>
-			<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard">
-                    <a href="{{url('/my-account')}}"><span>پیشخوان</span><span class="numbers" style="
-                        background-color: #00ce19;
-                        color: white;
-                        margin-right: 10px;
-                        border-radius: 25px;
-                        padding: 0px 4px 0 4px;
-                    ">   اعتبار شما: {{$total}} تومان  </span></a>
-    </li>
-    <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard">
-    <a href="{{url('/my-account/wallet')}}"><span>افزایش اعتبار</span></a>
-    </li>
-            <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders is-active">
+					<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard">
+                            <a href="{{url('/my-account')}}"><span>پیشخوان</span><span class="numbers" style="
+                                background-color: #00ce19;
+                                color: white;
+                                margin-right: 10px;
+                                border-radius: 25px;
+                                padding: 0px 4px 0 4px;
+                            ">   اعتبار شما: {{$total}} تومان  </span></a>
+            </li>
+            <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard is-active">
+            <a href="{{url('/my-account/wallet')}}"><span>افزایش اعتبار</span></a>
+            </li>
+            <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
 				<a href="{{url('/my-account/orders')}}"><span>سفارش ها</span></a>
 			</li>
 			<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
@@ -362,112 +365,113 @@ jQuery.ajax({
                 خروج
             </a>
 
-          {{--  <form id="logout-form" action="{{ url('/customer/logout') }}" method="POST" style="display: none;">
+            <form id="logout-form" action="{{ url('/customer/logout') }}" method="POST" style="display: none;">
                 {{ csrf_field() }}
-            </form>--}}
+            </form>
         </li>
 			</ul>
 </nav>
 
-    @if(Auth::guard('customer')->user())
-<div class="woocommerce-MyAccount-content">
-    @foreach ($customerorders as $order )
-        @foreach ($order->items as $item)
-        <div class="panel-body">
-            <div class="col-sm-9">
-                <div class="col-sm-12 " style="margin-bottom:7px;border-bottom: dashed 1px #c0c0c0;">
-                    <div class=" hidden-md hidden-lg col-xs-12 col-sm-12 pull-left img-pos">
-                        <a href="{{ route('shop.show', $item->product->id) }}" title="{{ $item->product->name }}">
-                            <img src="{{ productImage($item->product->image) }}" title="{{ $item->product->name }}" width="100%" class="img-responsive" alt="">
-                        </a>
-                    </div>
-                    <div class="col-md-8 col-xs-12" style="padding-left: 0px">
-                                                    <label>
-                                <h4><a href="{{ route('shop.show', $item->product->id) }}" title="{{ $item->product->name }}" class="black-color none-decoration">
-                                    {{$item->product->name}}
-                                    </a>
-                                </h4>
-                            </label>
-                            
-                                                </div>
-                    <div class="col-md-4 col-xs-12 pull-left rate-pos" style="margin-bottom: 18px;padding-right: 0px">                  
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="col-xs-12 mb-20 mt-20">
-                        <span class="coupon-box">
-                            <span class="text-bold">کد تخفیف:</span>
-                                <span class="coupon-code">{{$item->code}}</span>
-                        </span>
-                        &nbsp;
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    &nbsp;
-                    <div class="col-sm-6">
-                    </div>
-                    <div class="col-sm-6">
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <p class="col-sm-6"><strong>تاریخ خرید:</strong>
-                        <span><?php 
-                            $ydate = date('Y', strtotime($item->updated_at));  
-                            $mdate = date('m', strtotime($item->updated_at));  
-                            $ddate = date('d', strtotime($item->updated_at));  
-                           $date = g2p($ydate,$mdate ,$ddate);
-                       ?>
-                       {{$date[0]}}/{{$date[1]}}/{{$date[2]}} </span>
-                    </p>
-                                            <p class="col-sm-6"><strong>تاریخ انقضا:</strong>
-                            <span><?php 
-                                $ydate = date('Y', strtotime($item->product->date_available));  
-                                $mdate = date('m', strtotime($item->product->date_available));  
-                                $ddate = date('d', strtotime($item->product->date_available));  
-                               $date = g2p($ydate,$mdate ,$ddate);
-                           ?>
-                           {{$date[0]}}/{{$date[1]}}/{{$date[2]}} </span>
-                        </p>
-                        
-                                    </div>
-                <div class="col-md-12">
-                    <p class="col-sm-6">
-                        <strong>تعداد کل : {{$item->quantity}} </strong>
-                    </p>
-                    <p class="col-sm-6">
-                            <strong>وضعیت بن : @if(($item->quantity - $item->code_used_count) == 0)
-                                    <span class="dokan-label dokan-label-danger">بن کاملا باطل شده</span>
-                            @else
-                            <span class="dokan-label dokan-label-success"> <?php echo $status = $item->quantity - $item->code_used_count;
-                                ?> بن باقی مانده</span> 
-                            @endif    
-                            </strong>
-                            </p>
-                    <p class="col-sm-10">
-                        <strong>مبلغ :  {{$item->total}}  تومان </strong>
-                        
-                        <form class="cart" method="POST" action="{{route('costumerpanel.orderitem')}}" enctype='multipart/form-data'>
-                            {{ csrf_field() }}
-                       <input type="hidden" name="id" value="{{ $item->id }}">
-                  
-                        <button type="submit" value="" class="btn-round-gray">مشاهده جزئیات</button>
-                    </form>
-                    
-                    </p>
-                </div>
-                            </div>
-            <div class=" hidden-xs hidden-sm col-md-3 pull-left img-pos">
-                    <a href="{{ route('shop.show', $item->product->id) }}" title="{{ $item->product->name }}">
-                            <img src="{{ productImage($item->product->image) }}" title="{{ $item->product->name }}" width="100%" class="img-responsive" alt="">
-                        </a>
-            </div>
-
+ @if(Auth::guard('customer')->user())
+ <div class="col-md-8">
+        <div class="page-header" style="
+        margin-top: 0px;
+        margin-bottom: 0;
+        border: none;
+    ">
+          <h3>شارژ کیف پول</h3>
         </div>
+        <div class="table-responsive">
+          <table class="table" style="
+          margin-top: 0;
+      ">
+            <tbody><tr>
+              <td>نام و نام خانوادگی:</td>
+              <td>{{Auth::guard('customer')->user()->name}}</td>
+            </tr>
+            <tr>
+              <td>موبایل:</td>
+              <td>{{Auth::guard('customer')->user()->phone}}</td>
+            </tr>
+
+          </tbody></table>
+        </div>
+        <form class="form-horizontal top-up payment-form" action="{{ route('wallet.charge') }}" method="POST">
+                {{ csrf_field() }}
+          <div class="form-group">
+            <span for="price" class="col-xs-3 fs-15 control-label" style="
+            padding-top: 5px;
+            width: 22%;
+        "> مبلغ :</span>
+            <div class="col-xs-6 col-sm-4 col-md-4 p-r-0 p-l-5">
+              <input type="text" class="form-control" id="price" name="price" placeholder="به تومان وارد کنید">
+            @if($errors->has('price'))
+              <div class="alert alert-danger">
+                  {{$errors->first('price') }}        
+              </div>
+            @endif
+            </div>
             
-        @endforeach
-    @endforeach
-</div>
-    @endif
+            <button type="submit" class="btn m-t-3 btn-success btn-sm" name="submit" style="
+            margin-top: 2px;
+        ">شارژ کنید</button>
+          </div>
+        </form>
+        <div class="row request-list">
+          <div class="col-md-12">
+            <div class="table-responsive">
+              <table class="woocommerce-orders-table woocommerce-MyAccount-orders shop_table shop_table_responsive my_account_orders account-orders-table" style="
+              margin-bottom: 0;
+          ">
+                <thead>
+                <tr>
+                  <th>مبلغ</th>
+                  <th>تاریخ</th>
+                  <th>وضعیت</th>
+                  <th>کل اعتبار</th>
+                  <th>کد تراکنش</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($wallets as $wallet)
+                    <tr>
+                    <td class="numbers" data-title="مبلغ">{{$wallet->balance}} تومان</td>
+                    <td data-title="تاریخ"><?php 
+                        $ydate = date('Y', strtotime($wallet->updated_at));  
+                        $mdate = date('m', strtotime($wallet->updated_at));  
+                        $ddate = date('d', strtotime($wallet->updated_at));  
+                       $date = g2p($ydate,$mdate ,$ddate);
+                   ?>
+                   {{$date[0]}}/{{$date[1]}}/{{$date[2]}} </td>
+                   @if($wallet->status == "completed")
+                    <td data-title="وضعیت"><label class="text-success" style="color:#49ad4b">تایید شده</label></td>
+                    @elseif($wallet->status == "processing")
+                    <td data-title="وضعیت"><label class="text-info">در حال بررسی</label></td>
+                    @else
+                    <td data-title="وضعیت"><label class="text-danger">تایید نشده است</label></td>
+                    @endif
+                    @if($wallet->status == "completed")
+                    <td class="numbers" data-title="کل اعتبار" style="color:#49ad4b">{{$wallet->total}} تومان</td>
+                    @elseif($wallet->status == "processing")
+                    <td class="numbers" data-title="کل اعتبار">{{$wallet->total}} تومان</td>
+                    @else
+                    <td class="numbers" data-title="کل اعتبار" style="color:red">{{$wallet->total}} تومان</td>
+                    @endif
+                    @if(!empty($wallet->tracking_code))
+                    <td data-title="کد تراکنش">{{$wallet->tracking_code}}</td>
+                    @else
+                    <td data-title="کد تراکنش">نا موفق</td>
+                    @endif
+                  </tr>
+                  @endforeach
+                
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+@endif
 </div>
 
                                             
@@ -476,10 +480,6 @@ jQuery.ajax({
         </div>
     </div>
 </section>
-<script>
-var first_html = jQuery('.dokan-withdraw-content .dokan-alert-warning').html().replace('Minimum Withdraw amount: ', 'حداقل موجودی لازم برای درخواست برداشت: ');
-jQuery('.dokan-withdraw-content .dokan-alert-warning').html(first_html);
-</script>
 <!--social &  Subscription-->
 <section id="social">
     <div class="container">
@@ -518,10 +518,8 @@ jQuery('.dokan-withdraw-content .dokan-alert-warning').html(first_html);
 
             <!--social-->
             <div class="social_footer">
-                <a target="_blank" href="#" title="" class="telegram"></a>
-                <a target="_blank" href="#" title="" class="instagram"></a>
-                <a target="_blank" href="#" title="" class="facebook"></a>
-            </div>
+                    <a target="_blank" href="https://www.instagram.com/boninjaa" title="" class="instagram"></a>
+                </div>
 
             <!--concession-->
             <div class="concession">
@@ -603,7 +601,7 @@ jQuery('.dokan-withdraw-content .dokan-alert-warning').html(first_html);
 <script src="../wp-content/themes/takhfifat/js/bootstrap.min.js"></script>
 <script src="../wp-content/themes/takhfifat/js/jquery.countdownTimer.js"></script>
 <script src="../wp-content/themes/takhfifat/js/custom.js"></script>
-<script type="application/ld+json">{"@context":"https:\/\/schema.org\/","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":"1","item":{"name":"\u062e\u0627\u0646\u0647","@id":"http:\/\/localhost\/takhfiftest"}},{"@type":"ListItem","position":"2","item":{"name":"\u062d\u0633\u0627\u0628 \u06a9\u0627\u0631\u0628\u0631\u06cc \u0645\u0646"}}]}</script><script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/selectWoo/selectWoo.full.min20b9.js?ver=1.0.2'></script>
+<script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/selectWoo/selectWoo.full.min20b9.js?ver=1.0.2'></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
 var pwsL10n = {"unknown":"\u0642\u062f\u0631\u062a \u0631\u0645\u0632 \u0646\u0627\u0645\u0634\u062e\u0635","short":"\u0628\u0633\u06cc\u0627\u0631 \u0633\u0633\u062a","bad":"\u0633\u0633\u062a","good":"\u0645\u062a\u0648\u0633\u0637","strong":"\u0642\u0648\u06cc","mismatch":"\u0646\u0627\u0647\u0645\u0633\u0627\u0646"};

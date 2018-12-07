@@ -148,6 +148,18 @@ jQuery.ajax({
 */
 
 </script>
+<script>
+        jQuery(document).ready(function() {
+        jQuery.fn.digits = function(){ 
+            return this.each(function(){ 
+                jQuery(this).text( jQuery(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") ); 
+            })
+        }
+        jQuery(".numbers").digits();
+        });
+        
+        
+        </script>
   <script>
         jQuery(document).ready(function() {
            
@@ -369,9 +381,18 @@ jQuery.ajax({
                             <div class="woocommerce">
 <nav class="woocommerce-MyAccount-navigation">
 	<ul>
-					<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard is-active">
-                            <a href="{{url('/my-account')}}"><span>پیشخوان</span></a>
-			</li>
+			<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard is-active">
+                    <a href="{{url('/my-account')}}"><span>پیشخوان</span><span class="numbers" style="
+                        background-color: #00ce19;
+                        color: white;
+                        margin-right: 10px;
+                        border-radius: 25px;
+                        padding: 0px 4px 0 4px;
+                    ">   اعتبار شما: {{$total}} تومان  </span></a>
+    </li>
+    <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard">
+    <a href="{{url('/my-account/wallet')}}"><span>افزایش اعتبار</span></a>
+    </li>
             <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
 				<a href="{{url('/my-account/orders')}}"><span>سفارش ها</span></a>
 			</li>
@@ -396,7 +417,7 @@ jQuery.ajax({
     @if(Auth::guard('customer')->user()->is_merchant == 1)
 <div class="woocommerce-MyAccount-content">
 	
-<p>سلام</p>
+<p>سلام {{Auth::guard('customer')->user()->name}} عزیز</p>
 
 
 <p style="color:#4caf50">شما فروشنده هستید و اکانت شما تائید شده است </p><div class="eye_buy"><a style="color: #fff;float: right;padding: 3px 15px;margin: 10px 0 0 0;font-size: 15px;" href="/dashboard"><i class="fa fa-dashboard"></i>رفتن به پنل مدیریت کسب و کار</a></div><p></p>

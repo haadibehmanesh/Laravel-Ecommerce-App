@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\BiCategory;
+use App\Wallet;
 use App\BiOrderItem;
 use App\BiOrder;
 use App\BiCustomer;
@@ -22,8 +23,16 @@ class CostumerpanelController extends Controller
     public function index()
     {
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $customer_id = Auth::guard('customer')->user()->id;
+        $wallet_last = Wallet::where('customer_id', $customer_id)->where('status','completed')->orderBy('id','desc')->first();
+        if(!empty($wallet_last)){
+            $total = $wallet_last->total;
+        }else{
+            $total = 0 ;
+        }
         return view('layouts/my-account/costumer-panel')->with([
         'allcategories' => $allcategories,
+        'total' => $total
         ]);
     }
 
@@ -68,14 +77,28 @@ class CostumerpanelController extends Controller
     public function edit($id)
     {   
         $customerinfo = Customer::where('id', $id)->get();
-
+        $customer_id = Auth::guard('customer')->user()->id;
+        $wallet_last = Wallet::where('customer_id', $customer_id)->where('status','completed')->orderBy('id','desc')->first();
+        if(!empty($wallet_last)){
+            $total = $wallet_last->total;
+        }else{
+            $total = 0 ;
+        }
         return view('layouts/my-account/ajax-customereditaccount')->with([
             'customerinfo' => $customerinfo,
+            'total' => $total
             ])->render();
     }
 
     public function editprofile(Request $request)
     {   
+        $customer_id = Auth::guard('customer')->user()->id;
+        $wallet_last = Wallet::where('customer_id', $customer_id)->where('status','completed')->orderBy('id','desc')->first();
+        if(!empty($wallet_last)){
+            $total = $wallet_last->total;
+        }else{
+            $total = 0 ;
+        }
         $messages = [
             'required' => 'پر کردن این فیلد اجباری است!',
             'password.min' => 'گذر واژه باید حداقل شامل 6 کاراکتر باشد!',
@@ -117,6 +140,7 @@ class CostumerpanelController extends Controller
             'customerinfo' => $customerinfo,
             'bicustomerinfo' => $bicustomerinfo,
             'errors' => $validatedData->errors(),
+            'total' => $total
             ])->render();
     }
 
@@ -144,12 +168,20 @@ class CostumerpanelController extends Controller
     }
     public function orders()
     {   
+        
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
         $id = Auth::guard('customer')->user()->id;
+        $wallet_last = Wallet::where('customer_id', $id)->where('status','completed')->orderBy('id','desc')->first();
+        if(!empty($wallet_last)){
+            $total = $wallet_last->total;
+        }else{
+            $total = 0 ;
+        }
         $customerorders = BiOrder::where('customer_id', $id)->where('status','completed')->orderBy('id','desc')->get();
         return view('layouts/my-account/customer-orders')->with([
             'customerorders' => $customerorders,
-            'allcategories' => $allcategories
+            'allcategories' => $allcategories,
+            'total' => $total
             ]);
     }
     /*public function orderInfo(Request $request)
@@ -166,6 +198,13 @@ class CostumerpanelController extends Controller
 */
     public function orderitem(Request $request)
     {   
+        $customer_id = Auth::guard('customer')->user()->id;
+        $wallet_last = Wallet::where('customer_id', $customer_id)->where('status','completed')->orderBy('id','desc')->first();
+        if(!empty($wallet_last)){
+            $total = $wallet_last->total;
+        }else{
+            $total = 0 ;
+        }
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
         $id = $request->id;
        // dd($id);
@@ -175,7 +214,8 @@ class CostumerpanelController extends Controller
         }
         return view('layouts/my-account/customer-order-item-info')->with([
             'order_item_info' => $order_item_info,
-            'allcategories' => $allcategories
+            'allcategories' => $allcategories,
+            'total' => $total
             ]);
     }
 
@@ -188,13 +228,20 @@ class CostumerpanelController extends Controller
     {
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
         $id = Auth::guard('customer')->user()->id;
+        $wallet_last = Wallet::where('customer_id', $id)->where('status','completed')->orderBy('id','desc')->first();
+        if(!empty($wallet_last)){
+            $total = $wallet_last->total;
+        }else{
+            $total = 0 ;
+        }
         $customerorders = BiOrder::where('customer_id', $id)->where('status','completed')->orderBy('id','desc')->get();
         //dd($customerorders->id);
        // $order_info = BiOrderItem::where('bi_order_id', $customerorders->id)->get();
         return view('layouts/my-account/customer-panel-order-info')->with([
         //'order_info' => $order_info,
         'customerorders' => $customerorders,
-        'allcategories'=> $allcategories
+        'allcategories'=> $allcategories,
+        'total' => $total
         ]);
     }
 }

@@ -3,6 +3,7 @@ use App\BiOrder;
 use App\BiOrderItem;
 use App\BiProduct;
 use App\BiCategory;
+use App\Wallet;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Request;
 //use Melipayamak;
@@ -16,6 +17,55 @@ use Illuminate\Support\Facades\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::any('callback/from/bank/charge',function(){
+  $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+  try {
+    $gateway = \Gateway::verify();
+    $trackingCode = $gateway->trackingCode();
+    $refId = $gateway->refId();
+    $cardNumber = $gateway->cardNumber();
+    $wallet_status = 'completed';
+    $wallet = Wallet::where('ref_id', $refId)->first();
+    $wallet->status = $wallet_status;     
+    $wallet->tracking_code = $trackingCode;     
+    $wallet->save();  
+    //dd($wallet);   
+    if($wallet->status == 'completed'){
+      try{
+        $sms = \Melipayamak::sms();
+        $to = Auth::guard('customer')->user()->phone;
+       
+        $from = '200020001090';
+        
+        $text = "شارژ شما به مبلغ :"." ".$wallet->balance." تومان "."\n"."با موفقیت انجام شد"."\n"."سامانه خرید و تخفیف گروهی بن اینجا"."\n"."https://www.boninja.com/my-account";
+        $response = $sms->send($to,$from,$text);
+        $json = json_decode($response);
+      
+      }catch(Exception $e){
+        echo $e->getMessage();
+      }
+    }
+    
+    $message = 'شارژ کیف پول با موفقیت انجام شد!<br> 
+     کد پیگیری بانکی شما : '.$trackingCode.' <br>
+     برای پیگیری های  بانکی بعدی این کد را نزد خود نگه دارید. 
+     ';
+
+     return view('layouts/checkout/bankresultcharge')->with([
+      'allcategories' => $allcategories,
+      'message' => $message
+      ]);
+    
+  } catch (Exception $e) {
+    $error = $e->getMessage();
+    return view('layouts/checkout/bankresultcharge')->with([
+      'allcategories' => $allcategories,
+      'error' => $error
+      ]);
+  }
+});
+
+
 
 Route::any('callback/from/bank',function(){
   $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
@@ -123,6 +173,9 @@ Route::post('/my-account/orderDetail', 'CostumerpanelController@orderitem')->nam
 //Route::post('/my-account/order-item-info/{id}', 'CostumerpanelController@orderitemInfo')->name('costumerpanel.orderiteminfo');
 Route::post('/my-account/editaccount/{id}', 'CostumerpanelController@edit')->name('costumerpanel.edit');
 Route::post('/my-account/editprofile/{id}', 'CostumerpanelController@editprofile')->name('costumerpanel.editprofile');
+Route::get('/my-account/wallet', 'WalletController@index')->name('wallet.index');
+Route::post('/my-account/wallet', 'WalletController@charge')->name('wallet.charge');
+
 
 Route::get('/dashboard', 'MerchantpanelController@index')->name('merchantpanel.index');
 Route::post('/ajax/codeValidation', 'AjaxController@codeValidation')->name('merchantpanel.codeValidation');

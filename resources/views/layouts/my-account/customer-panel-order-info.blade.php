@@ -145,6 +145,18 @@ jQuery.ajax({
              });
          });
  </script>
+ <script>
+        jQuery(document).ready(function() {
+        jQuery.fn.digits = function(){ 
+            return this.each(function(){ 
+                jQuery(this).text( jQuery(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") ); 
+            })
+        }
+        jQuery(".numbers").digits();
+        });
+        
+        
+        </script>
 </head>
 <body class="rtl page-template-default page page-id-10 woocommerce-account woocommerce-page mega-menu-main-menu dokan-theme-takhfifat">
     <!----- Top Menu
@@ -328,9 +340,18 @@ jQuery.ajax({
                             <div class="woocommerce">
 <nav class="woocommerce-MyAccount-navigation">
 	<ul>
-					<li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard ">
-                            <a href="{{url('/my-account')}}"><span>پیشخوان</span></a>
-			</li>
+            <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard">
+                    <a href="{{url('/my-account')}}"><span>پیشخوان</span><span class="numbers" style="
+                        background-color: #00ce19;
+                        color: white;
+                        margin-right: 10px;
+                        border-radius: 25px;
+                        padding: 0px 4px 0 4px;
+                    ">   اعتبار شما: {{$total}} تومان  </span></a>
+    </li>
+    <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard">
+    <a href="{{url('/my-account/wallet')}}"><span>افزایش اعتبار</span></a>
+    </li>
             <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders is-active">
 				<a href="{{url('/my-account/orders')}}"><span>سفارش ها</span></a>
 			</li>

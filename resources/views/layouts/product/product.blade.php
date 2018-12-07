@@ -62,6 +62,18 @@ img.emoji {
         
         
         </script>
+         <script>
+                jQuery(document).ready(function() {
+                jQuery.fn.digits = function(){ 
+                    return this.each(function(){ 
+                        jQuery(this).text( jQuery(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") ); 
+                    })
+                }
+                jQuery(".numbers").digits();
+                });
+                
+                
+        </script>
 	<script src="../../wp-content/themes/takhfifat/js/parsinumber.min.js"></script>
 	<script>
 	function toPersianNum( num, dontTrim ) {
@@ -372,8 +384,10 @@ img.emoji {
                                 <span class="address"><i class="fa fa-map-marker"></i>
                                     @if(!empty($product->location))
                                     {{ $product->location}}
-                                    @else
+                                    @elseif(!empty($product->parent->location))
                                     {{ $product->parent->location}}
+                                    @else
+                                    شیراز
                                     @endif
                                 </span>
 
@@ -473,8 +487,10 @@ img.emoji {
                     jQuery(function() {
                         @if(!empty($product->end_date))
                                                 var endDate = "{{date('Y-m-d', strtotime($product->end_date))}}";
-                                                @else
+                                                @elseif(!empty($product->parent->end_date))
                                                 var endDate = "{{date('Y-m-d', strtotime($product->parent->end_date))}}";
+                                                @else
+                                                var endDate ='2018-10-10';
                                                 @endif
                         
 
@@ -532,11 +548,11 @@ img.emoji {
                                     color: #fb9b93;
                                     font-size: 18px;
                                 " class=""><del>
-                                    <span class="">{{toPersianNum($product->price)}}&nbsp;
+                                    <span class="numbers">{{toPersianNum($product->price)}}&nbsp;
                                         <span class="">تومان</span>
                                     </del>
                                     </span>
-                                    <span style="
+                                    <span class="numbers" style="
                                                 float: left;
                                                 color: #bff3bf;
                                                 font-size: 18px;
@@ -759,8 +775,10 @@ img.emoji {
 <div class="content description">
 @if(!empty($product->description_details))
 {!!  $product->description_details !!}
-@else
+@elseif(!empty($product->parent->description_details))
 {!!  $product->parent->description_details !!}
+@else
+توضیحات وجود ندارد
 @endif
 </div>
 </div><div class="clear"></div><!--Terms of Use-->
@@ -773,8 +791,10 @@ img.emoji {
             <?php
             if(!empty($product->usage_terms)){
                 $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  ', explode('<p style="text-align: right;">', $product->usage_terms));
-            }else{
+            }elseif(!empty($product->parent->usage_terms)){
                 $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  ', explode('<p style="text-align: right;">', $product->parent->usage_terms));
+            }else{
+                $items = 'موردی یافت نشد';
             }
 
 ?>
@@ -792,8 +812,11 @@ img.emoji {
         <?php
         if(!empty($product->usage_terms)){
         $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  ', explode('<p style="text-align: right;">', $product->attributies));
-        }else{
+        }elseif(!empty($product->parent->attributies)){
             $items = implode('<i class="fa fa-check-square-o" style="color:#49c668;"></i>  ', explode('<p style="text-align: right;">', $product->parent->attributies));
+
+        }else{
+            $items = 'موردی یافت نشد';
 
         }
         ?>
@@ -819,8 +842,10 @@ img.emoji {
         <span><i class="fa fa-map-marker"></i>&nbsp;
             @if(!empty($product->address))
                 {{$product->address}}
-            @else
+            @elseif(!empty($product->parent->address))
                 {{$product->parent->address}}
+            @else
+                شیراز
             @endif
         </span>
     

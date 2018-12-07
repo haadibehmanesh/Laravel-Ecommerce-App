@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\BiProduct;
 use App\BiCategory;
 use App\BiOrder;
 use App\BiOrderItem;
+use App\Wallet;
 
 class CartController extends Controller
 {
@@ -18,8 +20,19 @@ class CartController extends Controller
      */
     public function index()
     {  
+        $customer_id = Auth::guard('customer')->user()->id;
+        $wallet_last = Wallet::where('customer_id', $customer_id)->where('status','completed')->orderBy('id','desc')->first();
+        if(!empty($wallet_last)){
+            $total = $wallet_last->total;
+        }else{
+            $total = 0 ;
+        }
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
-        return view('layouts/cart/cart')->with('allcategories', $allcategories);
+        return view('layouts/cart/cart')->with([
+            'allcategories' => $allcategories,
+            'total' => $total
+            
+        ]);
     }
 
     /**
