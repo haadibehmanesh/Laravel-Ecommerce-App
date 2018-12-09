@@ -189,7 +189,7 @@ class ShopController extends Controller
             $categoryParent = null;
         }
         
-        $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->paginate($pagination);
+        $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->get();
        
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
         

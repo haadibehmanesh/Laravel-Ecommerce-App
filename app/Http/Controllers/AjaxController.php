@@ -20,14 +20,14 @@ class AjaxController extends Controller {
     
     public function getCategory($slug)
     {  
-        $pagination = 24;
+        //$pagination = 24;
         
         $slug_db = explode('/', $slug);
        
         $category = BiCategory::where('slug', $slug_db)->firstOrFail();
        
       
-        $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' , 0)->paginate($pagination);
+        $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' , 0)->get();
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
         
         return view('layouts/categories/ajaxcat')->with([
@@ -75,14 +75,14 @@ class AjaxController extends Controller {
     }
     public function getList($slug)
     {  
-        $pagination = 24;
+        //$pagination = 24;
         
         $slug_db = explode('/', $slug);
        
         $category = BiCategory::where('slug', $slug_db)->firstOrFail();
         
       
-        $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->paginate($pagination);
+        $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->get();
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
         
         return view('layouts/categories/ajaxlist')->with([
@@ -95,7 +95,7 @@ class AjaxController extends Controller {
 
     public function getProduct()
     {  
-        $pagination = 12 ;
+        $pagination = 24 ;
         $products = BiProduct::orderBy('id', 'desc')->where('parent_id' , 0)->paginate($pagination);
         return view('layouts/shop/ajax-products')->with([
             'products' => $products         
@@ -104,7 +104,7 @@ class AjaxController extends Controller {
     }
     public function getProductMain()
     {   
-        $pagination = 12 ;
+        $pagination = 24 ;
         $products = BiProduct::orderBy('id', 'desc')->where('parent_id' , 0)->paginate($pagination);
         return view('layouts/ajax-products-main')->with([
             'products' => $products         

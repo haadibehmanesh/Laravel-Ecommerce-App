@@ -471,7 +471,9 @@ function toPersianNum( num, dontTrim ) {
         <div class="col-lg-3 col-md-3 col-sm-6">
                 <div class="mini-card">
                         <div class="card-header">
-                                <a href="{{ route('shop.show', $product->id) }}" class="btn btn-secondary" title="{{ $product->name }}"><span class="card-span">{{ $product->name }}</span></a>
+                                <a href="{{ route('shop.show', $product->id) }}" class="btn btn-secondary" title="{{ $product->name }}" style="
+                                    width: 30%;
+                                "><span class="card-span">{{ $product->name }}</span></a>
                                 <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp;{{$product->location}}</span>
                         </div>
                         <div class="card-timer">
@@ -522,7 +524,7 @@ function toPersianNum( num, dontTrim ) {
                 	
 </div><div class="clear"></div>
 @foreach($allcategories as $category)
-    @if(!$category->parent && $category->products->where('cat_featured',1)->count() == 3)
+    @if(!$category->parent && $category->products->where('index_gallery',1)->count() == 3)
 <div class="cat_show">
         <span class="cat_icon_inside"><i class="fa 
        
@@ -537,7 +539,7 @@ function toPersianNum( num, dontTrim ) {
         <a href="{{ route('shop.showCategory', $category->slug) }}" class="article-h3">{{$category->name}}</a>
     </span>
     @php ($itr = 1)
-    @foreach ($category->products->where('cat_featured',1) as $product)
+    @foreach ($category->products->where('index_gallery',1) as $product)
     @if($itr < 4 )
     <div class="col-lg-3 col-md-3 col-sm-6">
             <div class="mini-card">
@@ -589,8 +591,10 @@ function toPersianNum( num, dontTrim ) {
     <div class="col-lg-3 col-md-3 col-sm-6">
             <div class="mini-card">
                             <div class="more_cat">
-                                    <div class="cat_icon">
-                                            <i class="fa fa-cutlery">
+                                    <div class="cat_icon" style="
+                                    color: #f6861f;
+                                ">
+                                            <i class="fa {{$category->icon}}">
                                             </i>
                                     </div>
                                     <div class="cat_name">

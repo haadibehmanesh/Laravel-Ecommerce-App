@@ -649,7 +649,9 @@
     <div class="col-lg-3 col-md-3 col-sm-6">
         <div class="mini-card">
                 <div class="card-header">
-                        <a href="{{ route('shop.show', $product->id) }}" class="btn btn-secondary" title="{{ $product->name }}"><span class="card-span">{{ $product->name }}</span></a>
+                        <a href="{{ route('shop.show', $product->id) }}" class="btn btn-secondary" title="{{ $product->name }}" style="
+                            width: 50%;
+                        "><span class="card-span">{{ $product->name }}</span></a>
                         <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp;{{$product->location}}</span>
                 </div>
                 <div class="card-timer">
