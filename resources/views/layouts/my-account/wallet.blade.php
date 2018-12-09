@@ -428,18 +428,23 @@ jQuery(".numbers").digits();
                   <th>مبلغ</th>
                   <th>تاریخ</th>
                   <th>وضعیت</th>
-                  <th>کل اعتبار</th>
+                  {{--<th>کل اعتبار</th>--}}
                   <th>کد تراکنش</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($wallets as $wallet)
                     <tr>
+                    @if(empty($wallet->balance))
+                    <td class="numbers" data-title="مبلغ">-</td>    
+                    @else
                     <td class="numbers" data-title="مبلغ">{{$wallet->balance}} تومان</td>
+                    @endif
+                
                     <td data-title="تاریخ"><?php 
-                        $ydate = date('Y', strtotime($wallet->updated_at));  
-                        $mdate = date('m', strtotime($wallet->updated_at));  
-                        $ddate = date('d', strtotime($wallet->updated_at));  
+                        $ydate = date('Y', strtotime($wallet->created_at));  
+                        $mdate = date('m', strtotime($wallet->created_at));  
+                        $ddate = date('d', strtotime($wallet->created_at));  
                        $date = g2p($ydate,$mdate ,$ddate);
                    ?>
                    {{$date[0]}}/{{$date[1]}}/{{$date[2]}} </td>
@@ -448,15 +453,16 @@ jQuery(".numbers").digits();
                     @elseif($wallet->status == "processing")
                     <td data-title="وضعیت"><label class="text-info">در حال بررسی</label></td>
                     @else
-                    <td data-title="وضعیت"><label class="text-danger">تایید نشده است</label></td>
+                    <td data-title="وضعیت"><label class="text-danger">در حال بررسی</label></td>
                     @endif
+                    {{--
                     @if($wallet->status == "completed")
                     <td class="numbers" data-title="کل اعتبار" style="color:#49ad4b">{{$wallet->total}} تومان</td>
                     @elseif($wallet->status == "processing")
                     <td class="numbers" data-title="کل اعتبار">{{$wallet->total}} تومان</td>
                     @else
                     <td class="numbers" data-title="کل اعتبار" style="color:red">{{$wallet->total}} تومان</td>
-                    @endif
+                    @endif--}}
                     @if(!empty($wallet->tracking_code))
                     <td data-title="کد تراکنش">{{$wallet->tracking_code}}</td>
                     @else

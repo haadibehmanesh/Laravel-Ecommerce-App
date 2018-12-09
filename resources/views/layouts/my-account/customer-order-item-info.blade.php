@@ -321,7 +321,15 @@ jQuery.ajax({
                 <a class="main_title_cart" href="/cart" rel="nofollow"><i class="fa fa-shopping-cart" aria-hidden="true"></i>سبد خرید شما<span class="number_items_cart">{{ Cart::content()->count() }}</span></a>
                 
             </div>
-					
+            <div class="searchinput">
+                    <form action="{{ route('search.index') }}" id="searchform">
+                           
+                    <input type="text" value="{{request()->input('query')}}" name="query" id="s"  placeholder=" جستجو ..." />
+                            <button type="submit" id="searchsubmit" >
+                                <i style="padding-left: 10px;" class="fa fa-search"></i>
+                            </button>
+                    </form>
+            </div>	
 
 	
 

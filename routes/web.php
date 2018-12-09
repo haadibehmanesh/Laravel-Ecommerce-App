@@ -6,6 +6,7 @@ use App\BiCategory;
 use App\Wallet;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Auth;
 //use Melipayamak;
 /*
 |--------------------------------------------------------------------------
@@ -74,6 +75,8 @@ Route::any('callback/from/bank',function(){
     $trackingCode = $gateway->trackingCode();
     $refId = $gateway->refId();
     $cardNumber = $gateway->cardNumber();
+     
+
     $order_status = 'completed';
     $order = BiOrder::where('ref_id', $refId)->first();
     $order->update(['status' => $order_status]);     
@@ -101,10 +104,10 @@ Route::any('callback/from/bank',function(){
        
         $from = '200020001090';
         if(!empty($order_item->product->parent->name)){
-          $text = $order_item->name."\n".$order_item->product->parent->name."\n"."تعداد : ".$order_item->quantity."\n"."کد تخفیف شما : ".$order_item->code."\n"."مهلت استفاده : ".$date[0]."/".$date[1]."/".$date[2]."\n"."بن اینجا"."\n"."https://www.boninja.com/my-account";
+          $text = $order_item->name."\n".$order_item->product->parent->name."\n"."تعداد : ".$order_item->quantity."\n"."کد تخفیف شما : ".$order_item->code."\n"."مهلت استفاده : ".$date[0]."/".$date[1]."/".$date[2]."\n"."سامانه خريد و تخفيف گروهی بن اينجا"."\n"."https://www.boninja.com/my-account";
 
         }else{
-          $text = $order_item->name."\n"."تعداد : ".$order_item->quantity."\n"."کد تخفیف شما : ".$order_item->code."\n"."مهلت استفاده : ".$date[0]."/".$date[1]."/".$date[2]."\n"."بن اینجا"."\n"."https://www.boninja.com/my-account";
+          $text = $order_item->name."\n"."تعداد : ".$order_item->quantity."\n"."کد تخفیف شما : ".$order_item->code."\n"."مهلت استفاده : ".$date[0]."/".$date[1]."/".$date[2]."\n"."سامانه خريد و تخفيف گروهی بن اينجا"."\n"."https://www.boninja.com/my-account";
         }
         
        // $text = $order_item->product->parent->name;
@@ -116,6 +119,18 @@ Route::any('callback/from/bank',function(){
         echo $e->getMessage();
       }    
     }
+    $wallet_status = 'completed';
+    
+    $id = Auth::guard('customer')->user()->id;
+    
+    $wallet_last = Wallet::where('customer_id', $id)->where('ref_id', $refId)->orderBy('id','desc')->first();
+    //dd($wallet_last);
+    if(!empty($wallet_last)){
+      $wallet_last->status = $wallet_status;     
+      $wallet_last->tracking_code = $trackingCode;     
+      $wallet_last->save();
+    }
+     
     Cart::destroy();  
     $message = 'پرداخت با موفقیت انجام شد!<br> 
      کد پیگیری بانکی شما : '.$trackingCode.' <br>

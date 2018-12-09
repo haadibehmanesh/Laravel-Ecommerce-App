@@ -161,6 +161,19 @@ var _zxcvbnSettings = {"src":"\/wp-includes\/js\/zxcvbn.min.js"};
         
         
 </script>
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        jQuery('input[type="checkbox"]').click(function(){
+            if(jQuery(this).prop("checked") == true){
+                jQuery('#wallet_use').prop('checked', true);
+            }
+            else if(jQuery(this).prop("checked") == false){
+                jQuery('#wallet_use').prop('checked', false);
+                //alert("Checkbox is unchecked.");
+            }
+        });
+    });
+</script>
 
 </head>
 <body class="rtl page-template-default page page-id-8 woocommerce-cart woocommerce-page mega-menu-main-menu dokan-theme-takhfifat">
@@ -451,7 +464,8 @@ var _zxcvbnSettings = {"src":"\/wp-includes\/js\/zxcvbn.min.js"};
                     
                     </p>
                 </div>
-                {{--<div class="checkbox text-right" style="
+                @if(Auth::guard('customer')->check())
+                <div class="checkbox text-right" style="
                 margin-right: 20px;
             ">
                 <input type="checkbox" id="wallet">
@@ -462,7 +476,8 @@ var _zxcvbnSettings = {"src":"\/wp-includes\/js\/zxcvbn.min.js"};
                     (<strong>موجودی کیف پول
                     شما : </strong><span class="numbers">{{$total}}</span> تومان)
                     </label>
-            </div>--}}
+            </div>
+            @endif
 
             </div>
             <div class="col-lg-6 col-md-12 col-sm-24 col-xs-24">
@@ -494,7 +509,7 @@ var _zxcvbnSettings = {"src":"\/wp-includes\/js\/zxcvbn.min.js"};
             <div class="wc-proceed-to-checkout">
                     <form action="{{ route('checkout.store') }}" method="POST">
                             {{ csrf_field() }}
-
+                            <input type="checkbox" name="wallet" id="wallet_use" style="visibility:hidden">
                             <button type="submit" class="nb-btn">نهایی کردن خرید</button>
                     </form>
                 

@@ -9,6 +9,8 @@ use App\BiProduct;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Auth;
+use App\Wallet;
+
 
 class CheckoutController extends Controller
 {
@@ -39,11 +41,177 @@ class CheckoutController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {  
-        $customer_id = Auth::guard('customer')->user()->id;
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $customer_id = Auth::guard('customer')->user()->id;
         $total = Cart::subtotal();
+        if($request->wallet == "on"){
+            $wallet = Wallet::where('customer_id', $customer_id)->where('status','completed')->orderBy('id','desc')->first();
+            if($wallet->total >= $total){
+                $order_code = randomDigits(8);
+                $invoice_no = randomDigits(6);
+                $order_status = 'pending';
+                $order = BiOrder::create([
+                    'invoice_no' => $invoice_no,
+                    'status' => $order_status,
+                    'total' => $total,
+                    'order_code' => $order_code,
+                    'customer_id' => $customer_id,
+                ]);
+                foreach (Cart::content() as $item) {
+                    
+                    $code = randomDigits(8);
+                    $product = BiProduct::find($item->id);
+                    $productSold = (($product->quantity-$product->sold) - $item->qty) >= 0 ? $product->sold + $item->qty : -1 ;
+                    
+                    if( $productSold >= 0) {
+                        
+                        $orderitem = BiOrderItem::create([
+                            'bi_order_id' => $order->id,
+                            'code' => $code,
+                            'name' => $item->name,
+                            'price' => $item->price,
+                            'quantity' => $item->qty,
+                            'total' => $item->subtotal,
+                            'bi_product_id' => $item->id,
+                            'bi_merchant_id' => $item->options['bi_merchant_id']
+                            ]);
+                            
+                        } else {
+                            $success_message = null;
+                            $error_message = 'موجودی بن کافی نیست';
+                            return view('layouts/cart/cart')->with([
+                                'allcategories' => $allcategories,
+                                'success_message' => $success_message,
+                                'error_message' => $error_message
+                            ]);
+                        } 
+                    }
+                    $order_status = 'completed_W';
+                    $order->update(['status' => $order_status]);     
+                    $order_items = BiOrderItem::where('bi_order_id', $order->id)->get();
+                    if($order->status == 'completed_w'){
+                        foreach (Cart::content() as $item) {
+                          $product = BiProduct::find($item->id);
+                          $productSold = (($product->quantity-$product->sold) - $item->qty) >= 0 ? $product->sold + $item->qty : -1 ;
+                          if( $productSold >= 0) {
+                                  $product->sold = $productSold;
+                                  $product->save();     
+                              } 
+                        }
+                    }
+                    foreach($order_items as $order_item){ 
+                        $ydate = date('Y', strtotime($order_item->product->date_available));  
+                        $mdate = date('m', strtotime($order_item->product->date_available));  
+                        $ddate = date('d', strtotime($order_item->product->date_available));  
+                        $date = g2p($ydate,$mdate ,$ddate);
+                        try{
+                            $sms = \Melipayamak::sms();
+                            $to = Auth::guard('customer')->user()->phone;                    
+                            $from = '200020001090';
+                            if(!empty($order_item->product->parent->name)){
+                                $text = $order_item->name."\n".$order_item->product->parent->name."\n"."تعداد : ".$order_item->quantity."\n"."کد تخفیف شما : ".$order_item->code."\n"."مهلت استفاده : ".$date[0]."/".$date[1]."/".$date[2]."\n"."سامانه خريد و تخفيف گروهی بن اينجا"."\n"."https://www.boninja.com/my-account";
+                    
+                            }else{
+                                $text = $order_item->name."\n"."تعداد : ".$order_item->quantity."\n"."کد تخفیف شما : ".$order_item->code."\n"."مهلت استفاده : ".$date[0]."/".$date[1]."/".$date[2]."\n"."سامانه خريد و تخفيف گروهی بن اينجا"."\n"."https://www.boninja.com/my-account";
+                            }
+                        
+                            $response = $sms->send($to,$from,$text);
+                            $json = json_decode($response);
+                        }catch(Exception $e){
+                        echo $e->getMessage();
+                        }    
+                    }
+                    Cart::destroy();
+                    $message = 'پرداخت با موفقیت انجام شد!';
+                    $wallet->total = $wallet->total - $total;
+                    $wallet->save();
+                    //dd($wallet->total);
+                    return view('layouts/checkout/bankresult')->with([
+                        'allcategories' => $allcategories,
+                        'message' => $message
+                    ]);
+
+
+
+            }else{
+                $diff = $total - $wallet->total;
+
+                $order_code = randomDigits(8);
+                $invoice_no = randomDigits(6);
+                $order_status = 'pending';
+                $order = BiOrder::create([
+                    'invoice_no' => $invoice_no,
+                    'status' => $order_status,
+                    'total' => $diff,
+                    'order_code' => $order_code,
+                    'customer_id' => $customer_id,
+                ]);
+                foreach (Cart::content() as $item) {
+                    
+                    $code = randomDigits(8);
+                    $product = BiProduct::find($item->id);
+                    $productSold = (($product->quantity-$product->sold) - $item->qty) >= 0 ? $product->sold + $item->qty : -1 ;
+                    
+                    if( $productSold >= 0) {
+                        
+                        $orderitem = BiOrderItem::create([
+                            'bi_order_id' => $order->id,
+                            'code' => $code,
+                            'name' => $item->name,
+                            'price' => $item->price,
+                            'quantity' => $item->qty,
+                            'total' => $item->subtotal,
+                            'bi_product_id' => $item->id,
+                            'bi_merchant_id' => $item->options['bi_merchant_id']
+                            ]);
+                            
+                            //$product->sold = $productSold;
+                            //$product->save();
+                            
+                            //  $success_message = 'درحال انتقال به درگاه بانک';
+                            //  $error_message = null;
+                            //Cart::destroy();
+                            
+                        } else {
+                            $success_message = null;
+                            $error_message = 'موجودی بن کافی نیست';
+                            return view('layouts/cart/cart')->with([
+                                'allcategories' => $allcategories,
+                                'success_message' => $success_message,
+                                'error_message' => $error_message
+                            ]);
+                            //Cart::destroy();
+                        } 
+                    }
+                    $walletNew = new Wallet();
+                    $walletNew->customer_id = $customer_id; 
+                    $walletNew->total = 0 ;
+                    $walletNew->status = 'difference';
+                    $walletNew->save();
+                    try {
+                        $gateway = \Gateway::mellat();
+                        $gateway->setCallback(url('callback/from/bank'));
+                        $gateway->price($diff*10)->ready();
+                        $refId =  $gateway->refId();
+                        $transID = $gateway->transactionId();
+                        // Your code here
+                        $walletNew->update(['ref_id' => $refId]); 
+                        $order->update(['ref_id' => $refId]); 
+                        return $gateway->redirect();
+                    } catch (Exception $e) {
+                        $message = $e->getMessage();
+                        return view('layouts/checkout/bankresult')->with([
+                            'allcategories' => $allcategories,
+                            'message' => $message
+                        ]);
+                    }
+                //dd($diff);
+            }            
+           
+        }else{
+            //dd("off");
             $order_code = randomDigits(8);
             $invoice_no = randomDigits(6);
             $order_status = 'pending';
@@ -54,60 +222,63 @@ class CheckoutController extends Controller
                 'order_code' => $order_code,
                 'customer_id' => $customer_id,
             ]);
-        foreach (Cart::content() as $item) {
-            
-            $code = randomDigits(8);
-            $product = BiProduct::find($item->id);
-            $productSold = (($product->quantity-$product->sold) - $item->qty) >= 0 ? $product->sold + $item->qty : -1 ;
-            
-            if( $productSold >= 0) {
+            foreach (Cart::content() as $item) {
                 
-                $orderitem = BiOrderItem::create([
-                    'bi_order_id' => $order->id,
-                    'code' => $code,
-                    'name' => $item->name,
-                    'price' => $item->price,
-                    'quantity' => $item->qty,
-                    'total' => $item->subtotal,
-                    'bi_product_id' => $item->id,
-                    'bi_merchant_id' => $item->options['bi_merchant_id']
-                    ]);
+                $code = randomDigits(8);
+                $product = BiProduct::find($item->id);
+                $productSold = (($product->quantity-$product->sold) - $item->qty) >= 0 ? $product->sold + $item->qty : -1 ;
+                
+                if( $productSold >= 0) {
                     
-                    //$product->sold = $productSold;
-                    //$product->save();
-                    
-                    //  $success_message = 'درحال انتقال به درگاه بانک';
-                    //  $error_message = null;
-                    //Cart::destroy();
-                    
-                } else {
-                    $success_message = null;
-                    $error_message = 'موجودی بن کافی نیست';
-                    return view('layouts/cart/cart')->with([
-                        'allcategories' => $allcategories,
-                        'success_message' => $success_message,
-                        'error_message' => $error_message
-                    ]);
-                    //Cart::destroy();
+                    $orderitem = BiOrderItem::create([
+                        'bi_order_id' => $order->id,
+                        'code' => $code,
+                        'name' => $item->name,
+                        'price' => $item->price,
+                        'quantity' => $item->qty,
+                        'total' => $item->subtotal,
+                        'bi_product_id' => $item->id,
+                        'bi_merchant_id' => $item->options['bi_merchant_id']
+                        ]);
+                        
+                        //$product->sold = $productSold;
+                        //$product->save();
+                        
+                        //  $success_message = 'درحال انتقال به درگاه بانک';
+                        //  $error_message = null;
+                        //Cart::destroy();
+                        
+                    } else {
+                        $success_message = null;
+                        $error_message = 'موجودی بن کافی نیست';
+                        return view('layouts/cart/cart')->with([
+                            'allcategories' => $allcategories,
+                            'success_message' => $success_message,
+                            'error_message' => $error_message
+                        ]);
+                        //Cart::destroy();
+                    } 
                 } 
-            } 
-           
-            try {
-            $gateway = \Gateway::mellat();
-            $gateway->setCallback(url('callback/from/bank'));
-            $gateway->price($total*10)->ready();
-            $refId =  $gateway->refId();
-            $transID = $gateway->transactionId();
-            // Your code here
-            $order->update(['ref_id' => $refId]); 
-            return $gateway->redirect();
-        } catch (Exception $e) {
-            $message = $e->getMessage();
-            return view('layouts/checkout/bankresult')->with([
-                'allcategories' => $allcategories,
-                'message' => $message
-            ]);
+                
+                try {
+                $gateway = \Gateway::mellat();
+                $gateway->setCallback(url('callback/from/bank'));
+                $gateway->price($total*10)->ready();
+                $refId =  $gateway->refId();
+                $transID = $gateway->transactionId();
+                // Your code here
+                $order->update(['ref_id' => $refId]); 
+                return $gateway->redirect();
+            } catch (Exception $e) {
+                $message = $e->getMessage();
+                return view('layouts/checkout/bankresult')->with([
+                    'allcategories' => $allcategories,
+                    'message' => $message
+                ]);
+            }
+
         }
+        
     }
 
 
