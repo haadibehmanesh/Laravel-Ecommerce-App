@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Auth;
 
 use Melipayamak;
+use App\Wallet;
 class RegisterController extends Controller
 {
     /*
@@ -75,19 +76,20 @@ class RegisterController extends Controller
     protected function create(array $data)
     { 
         
-       /* try{
+       try{
 
             $sms = Melipayamak::sms();
             $to = $data['phone'];
-            $from = '500010606390';
-            $text = randomDigits(4);
+            $from = '200020001090';
+            $text = "به سامانه خرید و تخفیف گروهی 'بن اینجا' خوش آمدید"."\n"."هدیه شما "."10,000 تومان شارژ رایگان کیف پولتان"."\n"."تخفیف بگیر، لذت ببر ..."."\n"."https://boninja.com";
             $response = $sms->send($to,$from,$text);
             $json = json_decode($response);
-            echo $json->Value; //RecId or Error Number 
+            
         }catch(Exception $e){
             echo $e->getMessage();
         }
-        dd($sms);*/
+        
+      
         $customer = Customer::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -98,6 +100,14 @@ class RegisterController extends Controller
         BiCustomer::create([
             'customer_id' => $customer->id,
         ]);
+
+        $wallet = new Wallet();
+        $wallet->customer_id = $customer->id;
+        $wallet->status = 'completed';
+        $wallet->balance =  10000;
+        $wallet->total = 10000;
+        $wallet->tracking_code = 'هدیه بن اینجا به شما';
+        $wallet->save();
         return $customer;
     }
 
