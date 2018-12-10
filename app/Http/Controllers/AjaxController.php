@@ -113,9 +113,9 @@ class AjaxController extends Controller {
     }
     public function search()
     { 
-        $pagination = 12;
+        $pagination = 24;
         $query = Input::get('query');
-        $products = BiProduct::search($query)->paginate($pagination);
+        $products = BiProduct::search($query)->where('parent_id',0)->paginate($pagination);
         $products->appends(['query' => $query]);
         return view('layouts/ajax-search-result')->with([
             'products' => $products         
