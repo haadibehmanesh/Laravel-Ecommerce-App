@@ -17,7 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>
-        حساب کاربری من</title>
+        عضویت</title>
         <link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">
 
 		<style type="text/css">
@@ -291,11 +291,11 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
     <section id="wrapper">
     <div class="container">
         <div class="row">
-            <ol class="breadcrumb"><a href="/">خانه</a> / حساب کاربری من</ol>            <div class="post-content-page">
+            <ol class="breadcrumb"><a href="/">خانه</a> / عضویت</ol>            <div class="post-content-page">
                             
         <!--title & discount & views-->
         <div class="title_post">
-            <h1>حساب کاربری من</h1>
+            <h1>عضویت</h1>
         </div>
                 <div class="woocommerce">
                     @if(!empty($message))
@@ -305,24 +305,43 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
                     @endif
 <div class="u-columns col2-set" id="customer_login">
 
-<div class="u-column1 col-2">
+<div class="u-column2 col-2">
 
-
-<h2>ورود</h2>
-<form class="form-horizontal" role="form" method="POST" action="{{ url('/customer/login') }}">
+<h2>عضویت</h2>
+<form class="form-horizontal" role="form" method="POST" action="{{ url('/customer/register') }}">
     {{ csrf_field() }}
-    <div class="form-group">
-    @if (request()->has('previous'))
-        <input type="hidden" name="previous" value="{{ request()->get('previous') }}">
-    @else
-        <input type="hidden" name="previous" value="{{ url()->previous() }}">
-    @endif
-</div>
-    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-        <label for="email" class="col-md-4 control-label"> شماره همراه یا آدرس ایمیل</label>
+
+    <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+        <label for="name" class="col-md-4 control-label">نام و نام خانوادگی <span class="required">*</span></label>
 
         <div class="col-md-6">
-            <input type="text" class="form-control" name="email" placeholder="---- --- --09/ به انگلیسی وارد کنید" value="{{ old('email') }}" >
+            <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" >
+
+            @if ($errors->has('name'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('name') }}</strong>
+                </span>
+            @endif
+        </div>
+    </div>
+    <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+        <label for="phone" class="col-md-4 control-label">شماره همراه <span class="required">*</span></label>
+
+        <div class="col-md-6">
+            <input id="phone" type="text" class="form-control" placeholder="---- --- --09/ به انگلیسی وارد کنید" name="phone" value="{{ old('phone') }}">
+
+            @if ($errors->has('phone'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('phone') }}</strong>
+                </span>
+            @endif
+        </div>
+    </div>
+    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+        <label for="email" class="col-md-4 control-label">آدرس ایمیل (اختیاری)</label>
+
+        <div class="col-md-6">
+            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
 
             @if ($errors->has('email'))
                 <span class="help-block">
@@ -333,10 +352,10 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
     </div>
 
     <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-        <label for="password" class="col-md-4 control-label">رمز ورود</label>
+        <label for="password" class="col-md-4 control-label">رمز ورود <span class="required">*</span></label>
 
         <div class="col-md-6">
-            <input type="password" class="form-control" name="password">
+            <input id="password" type="password" class="form-control" name="password">
 
             @if ($errors->has('password'))
                 <span class="help-block">
@@ -345,46 +364,112 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
             @endif
         </div>
     </div>
- {{--   <div class="form-group">
+
+    <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+        <label for="password-confirm" class="col-md-4 control-label">تکرار رمز ورود <span class="required">*</span></label>
+
+        <div class="col-md-6">
+            <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
+
+            @if ($errors->has('password_confirmation'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('password_confirmation') }}</strong>
+                </span>
+            @endif
+        </div>
+    </div>
+  {{--  <div class="form-group">
             <label class="col-md-4 control-label"></label>
         <div class="col-md-6">
-        {!! NoCaptcha::renderJs('fa') !!}
-        
+        {!! NoCaptcha::renderJs() !!}
+
         {!! NoCaptcha::display() !!} 
         </div>
     </div>--}}
+
     <div class="form-group">
         <div class="col-md-6 col-md-offset-4">
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" name="remember"> مرا بخاطر بسپار
-                </label>
-            </div>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-md-8 col-md-offset-4">
             <button type="submit" class="btn">
-                ورود
+               ثبت نام
             </button>
-
-            <a class="btn btn-link" href="{{ url('/customer/password/reset') }}">
-                آیا رمز خود را فراموش کرده اید؟
-            </a>
         </div>
     </div>
 </form>
 <div>
     <div class="col-md-6 col-md-offset-4">
-           هنوز ثبت نام نکرده اید؟ 
-           <a href="/customer/register">عضو شوید</a>
+           قبلا ثبت نام کرده اید؟ 
+           <a href="/customer/login">وارد شوید</a>
     </div>
 </div>
+{{--
+<form method="post" class="register" action="{{ url('/customer/register') }}" novalidate="novalidate">
 
+    {{ csrf_field() }}
+
+<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+    <label for="reg_email">آدرس ایمیل <span class="required">*</span></label>
+    <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="reg_email" value="">			</p>
+
+
+    <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+        <label for="reg_password">گذرواژه <span class="required">*</span></label>
+        <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" id="reg_password">
+    </p>
+
+
+
+<div class="show_if_seller" style="display:none">
+
+<div class="split-row form-row-wide">
+<p class="form-row form-group">
+<label for="first-name">نام <span class="required">*</span></label>
+<input type="text" class="input-text form-control" name="fname" id="first-name" value="" required="required">
+</p>
+
+<p class="form-row form-group">
+<label for="last-name">نام خانوادگی <span class="required">*</span></label>
+<input type="text" class="input-text form-control" name="lname" id="last-name" value="" required="required">
+</p>
+</div>
+
+<p class="form-row form-group form-row-wide">
+<label for="company-name">نام مغازه <span class="required">*</span></label>
+<input type="text" class="input-text form-control" name="shopname" id="company-name" value="" required="required">
+</p>
+
+<p class="form-row form-group form-row-wide">
+<label for="seller-url" class="pull-left">آدرس مغازه <span class="required">*</span></label>
+<strong id="url-alart-mgs" class="pull-right"></strong>
+<input type="text" class="input-text form-control" name="shopurl" id="seller-url" value="" required="required">
+<small>http://localhost/takhfiftest/store/<strong id="url-alart"></strong></small>
+</p>
+
+<p class="form-row form-group form-row-wide">
+<label for="shop-phone">شماره تلفن<span class="required">*</span></label>
+<input type="text" class="input-text form-control" name="phone" id="shop-phone" value="" required="required">
+</p>
 
 </div>
 
+
+<p class="form-row form-group user-role">
+<label class="radio">
+<input type="radio" name="role" value="customer" checked="checked">
+من مشتری هستم    </label>
+
+<label class="radio">
+<input type="radio" name="role" value="seller">
+من فروشنده هستم    </label>
+</p>
+
+<p class="woocommerce-FormRow form-row">
+    <input type="hidden" id="woocommerce-register-nonce" name="woocommerce-register-nonce" value="9f36650c9b"><input type="hidden" name="_wp_http_referer" value="/takhfiftest/my-account/">				<button type="submit" class="woocommerce-Button button" name="register" value="عضویت">عضویت</button>
+</p>
+
+
+</form>--}}
+
+</div>
 
 </div>
 

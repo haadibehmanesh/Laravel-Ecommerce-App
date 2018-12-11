@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\CustomerAuth;
 use App\BiCustomer;
 use App\Customer;
+use App\BiCategory;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -118,7 +119,12 @@ class RegisterController extends Controller
      */
     public function showRegistrationForm()
     {
-        return view('layouts.my-account.authentication');
+        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        return view('layouts.my-account.registration')->with([
+            'allcategories' => $allcategories,            
+        ]);
+       // return view('layouts.my-account.authentication');
+        
     }
 
     /**

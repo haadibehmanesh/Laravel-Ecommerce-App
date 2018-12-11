@@ -120,7 +120,9 @@ function toPersianNum( num, dontTrim ) {
         <div class="row">
             <ul class="menu_top_header">
                 @if (!Auth::guard('customer')->check())
-                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-163"><a href="/my-account">ورود/عضویت</a></li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-163"><a href="/my-account">ورود</a>
+                <a href="/customer/register">عضویت رایگان</a>
+                </li>
                 @else
             <li id="menu-item-163" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-163"><a href="/my-account">{{Auth::guard('customer')->user()->name}}</a></li>
                 @endif
