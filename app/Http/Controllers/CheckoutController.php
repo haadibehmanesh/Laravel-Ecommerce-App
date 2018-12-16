@@ -52,13 +52,27 @@ class CheckoutController extends Controller
                 $order_code = randomDigits(8);
                 $invoice_no = randomDigits(6);
                 $order_status = 'pending';
-                $order = BiOrder::create([
+              
+                
+                    $order = BiOrder::create([
                     'invoice_no' => $invoice_no,
                     'status' => $order_status,
                     'total' => $total,
                     'order_code' => $order_code,
                     'customer_id' => $customer_id,
                 ]);
+                
+/*
+                $order = BiOrder::firstOrNew(
+                    ['status' => $order_status], ['customer_id' => $customer_id]
+                );
+                $order->invoice_no =  $invoice_no;
+                $order->status = $order_status;
+                $order->total = $total;
+                $order->order_code = $order_code;
+                $order->customer_id = $customer_id;
+                $order->save();
+                */
                 foreach (Cart::content() as $item) {
                     
                     $code = randomDigits(8);
@@ -66,7 +80,7 @@ class CheckoutController extends Controller
                     $productSold = (($product->quantity-$product->sold) - $item->qty) >= 0 ? $product->sold + $item->qty : -1 ;
                     
                     if( $productSold >= 0) {
-                        
+                        /*
                         $orderitem = BiOrderItem::create([
                             'bi_order_id' => $order->id,
                             'code' => $code,
@@ -77,6 +91,22 @@ class CheckoutController extends Controller
                             'bi_product_id' => $item->id,
                             'bi_merchant_id' => $item->options['bi_merchant_id']
                             ]);
+                            */
+                            $orderitem = BiOrderItem::firstOrNew(
+                                ['bi_order_id' => $order->id,
+                                    'name' => $item->name,
+                                    'quantity' => $item->qty
+                                ]
+                            );
+                            $orderitem->bi_order_id = $order->id;
+                            $orderitem->code = $code;
+                            $orderitem->name = $item->name;
+                            $orderitem->price = $item->price;
+                            $orderitem->quantity =  $item->qty;
+                            $orderitem->total = $item->subtotal;
+                            $orderitem->bi_product_id = $item->id;
+                            $orderitem->bi_merchant_id = $item->options['bi_merchant_id'];
+                            $orderitem->save();
                             
                         } else {
                             $success_message = null;
@@ -141,6 +171,7 @@ class CheckoutController extends Controller
                 $order_code = randomDigits(8);
                 $invoice_no = randomDigits(6);
                 $order_status = 'pending';
+                
                 $order = BiOrder::create([
                     'invoice_no' => $invoice_no,
                     'status' => $order_status,
@@ -148,6 +179,18 @@ class CheckoutController extends Controller
                     'order_code' => $order_code,
                     'customer_id' => $customer_id,
                 ]);
+                
+                /*
+                $order = BiOrder::firstOrNew(
+                    ['status' => $order_status], ['customer_id' => $customer_id]
+                );
+                $order->invoice_no =  $invoice_no;
+                $order->status = $order_status;
+                $order->total = $total;
+                $order->order_code = $order_code;
+                $order->customer_id = $customer_id;
+                $order->save();
+                */
                 foreach (Cart::content() as $item) {
                     
                     $code = randomDigits(8);
@@ -155,7 +198,7 @@ class CheckoutController extends Controller
                     $productSold = (($product->quantity-$product->sold) - $item->qty) >= 0 ? $product->sold + $item->qty : -1 ;
                     
                     if( $productSold >= 0) {
-                        
+                        /*
                         $orderitem = BiOrderItem::create([
                             'bi_order_id' => $order->id,
                             'code' => $code,
@@ -166,6 +209,22 @@ class CheckoutController extends Controller
                             'bi_product_id' => $item->id,
                             'bi_merchant_id' => $item->options['bi_merchant_id']
                             ]);
+                            */
+                            $orderitem = BiOrderItem::firstOrNew(
+                                ['bi_order_id' => $order->id,
+                                'name' => $item->name,
+                                'quantity' => $item->qty
+                                ]
+                            );
+                            $orderitem->bi_order_id = $order->id;
+                            $orderitem->code = $code;
+                            $orderitem->name = $item->name;
+                            $orderitem->price = $item->price;
+                            $orderitem->quantity =  $item->qty;
+                            $orderitem->total = $item->subtotal;
+                            $orderitem->bi_product_id = $item->id;
+                            $orderitem->bi_merchant_id = $item->options['bi_merchant_id'];
+                            $orderitem->save();
                             
                             //$product->sold = $productSold;
                             //$product->save();
@@ -215,6 +274,7 @@ class CheckoutController extends Controller
             $order_code = randomDigits(8);
             $invoice_no = randomDigits(6);
             $order_status = 'pending';
+            
             $order = BiOrder::create([
                 'invoice_no' => $invoice_no,
                 'status' => $order_status,
@@ -222,6 +282,18 @@ class CheckoutController extends Controller
                 'order_code' => $order_code,
                 'customer_id' => $customer_id,
             ]);
+            
+            /*
+            $order = BiOrder::firstOrNew(
+                ['status' => $order_status], ['customer_id' => $customer_id]
+            );
+            $order->invoice_no =  $invoice_no;
+            $order->status = $order_status;
+            $order->total = $total;
+            $order->order_code = $order_code;
+            $order->customer_id = $customer_id;
+            $order->save();
+            */
             foreach (Cart::content() as $item) {
                 
                 $code = randomDigits(8);
@@ -229,7 +301,7 @@ class CheckoutController extends Controller
                 $productSold = (($product->quantity-$product->sold) - $item->qty) >= 0 ? $product->sold + $item->qty : -1 ;
                 
                 if( $productSold >= 0) {
-                    
+                    /*
                     $orderitem = BiOrderItem::create([
                         'bi_order_id' => $order->id,
                         'code' => $code,
@@ -240,6 +312,22 @@ class CheckoutController extends Controller
                         'bi_product_id' => $item->id,
                         'bi_merchant_id' => $item->options['bi_merchant_id']
                         ]);
+                        */
+                        $orderitem = BiOrderItem::firstOrNew(
+                            ['bi_order_id' => $order->id,
+                            'name' => $item->name,
+                            'quantity' => $item->qty
+                            ]
+                        );
+                        $orderitem->bi_order_id = $order->id;
+                        $orderitem->code = $code;
+                        $orderitem->name = $item->name;
+                        $orderitem->price = $item->price;
+                        $orderitem->quantity =  $item->qty;
+                        $orderitem->total = $item->subtotal;
+                        $orderitem->bi_product_id = $item->id;
+                        $orderitem->bi_merchant_id = $item->options['bi_merchant_id'];
+                        $orderitem->save();
                         
                         //$product->sold = $productSold;
                         //$product->save();
