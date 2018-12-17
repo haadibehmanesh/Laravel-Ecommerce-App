@@ -17,7 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>
-        حساب کاربری من    </title>
+    سامانه خرید و تخفیف گروهی بن اینجا - جزئیات بن    </title>
         <link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">
         
 		<style type="text/css">
@@ -34,6 +34,18 @@ img.emoji {
 	padding: 0 !important;
 }
 </style>
+<style type="text/css">
+    @media print
+    { 
+        body * { visibility: hidden; }
+        nav * { display: none}
+        .woocommerce-MyAccount-content * { visibility: visible; }
+        .woocommerce-MyAccount-content { position: absolute; top: 40px; }
+        
+        .print { visibility: hidden; }
+    }
+    </style>
+
 <link rel='stylesheet' id='validate-engine-css-css'  href='../wp-content/plugins/wysija-newsletters/css/validationEngine.jquery4dc3.css?ver=2.8.2' type='text/css' media='all' />
 <link rel='stylesheet' id='select2-css'  href='../wp-content/plugins/woocommerce/assets/css/select26765.css?ver=3.3.3' type='text/css' media='all' />
 <link rel='stylesheet' id='woocommerce-layout-rtl-css'  href='../wp-content/plugins/woocommerce/assets/css/woocommerce-layout-rtl6765.css?ver=3.3.3' type='text/css' media='all' />
@@ -203,6 +215,7 @@ jQuery.ajax({
         
         
         </script>
+        
 </head>
 <body class="rtl page-template-default page page-id-10 woocommerce-account woocommerce-page mega-menu-main-menu dokan-theme-takhfifat">
     <!----- Top Menu
@@ -422,6 +435,7 @@ jQuery.ajax({
                 </li>
                 </ul>
                 </nav>
+                
                 <div class="woocommerce-MyAccount-content">
                         <p>سفارش <mark class="order-number">{{$order_item_info->name}}</mark> در تاریخ <mark class="order-date"><?php 
                             $ydate = date('Y', strtotime($order_item_info->order->created_at));  
@@ -429,7 +443,8 @@ jQuery.ajax({
                             $ddate = date('d', strtotime($order_item_info->order->created_at));  
                            $date = g2p($ydate,$mdate ,$ddate);
                        ?>
-                       {{$date[0]}}/{{$date[1]}}/{{$date[2]}}</mark> ثبت شده است .</p>
+                       {{$date[0]}}/{{$date[1]}}/{{$date[2]}}</mark> ثبت شده است .  <button class="print" onclick="window.print();return false;" >چاپ بن</button></p>
+                      
                         
                         <div class="table-responsive">
                                 <table class="table table-hover table-bordered checkout_ty">
@@ -508,6 +523,7 @@ jQuery.ajax({
                         </section>
                     
                     </div>
+                    
             </div>
             
                                             
