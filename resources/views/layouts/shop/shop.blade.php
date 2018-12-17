@@ -575,7 +575,7 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
     <div class="container">
         <div class="row">
             <p class="copyright_super_admin"><p>تمامی حقوق سایت متعلق به سامانه خرید و تخفیف گروهی بن اینجا می باشد.</p></p>
-            <span class="copyright_takhfifat"><img src="../wp-content/themes/takhfifat/images/copyright.png" /></span>
+            
         </div>
     </div>
 </section>

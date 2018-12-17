@@ -413,7 +413,7 @@ jQuery('.dokan-withdraw-content .dokan-alert-warning').html(first_html);
     <div class="container">
         <div class="row">
             <p class="copyright_super_admin"><p>تمامی حقوق سایت متعلق به قالب تخفیف گروهی بن اینجا می باشد.</p></p>
-            <span class="copyright_takhfifat"><img src="../../wp-content/themes/takhfifat/images/copyright.png" /></span>
+        
         </div>
     </div>
 </section>
