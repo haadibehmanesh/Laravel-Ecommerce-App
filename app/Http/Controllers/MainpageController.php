@@ -23,7 +23,7 @@ class MainpageController extends Controller
         $featuredproducts = BiProduct::where('featured','1')->get();
         $products = BiProduct::orderBy('id', 'desc')->where('parent_id' , 0)->where('status',1)->paginate($pagination);
         $allproducts = BiProduct::where('index_gallery', 1)->orderBy('id', 'desc')->get();
-        return view('layouts/mainpage')->with([
+        return view('layouts/landing')->with([
             'products' => $products,
             'allproducts' => $allproducts,
             'allcategories' => $allcategories,

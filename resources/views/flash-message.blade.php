@@ -29,7 +29,7 @@ transition: left 0.6s ease-out 0s;" id="noty-holder">
 </script>	
 @endif
 
-
+{{--
 @if ($message = Session::get('error'))
 <div class="alert alert-danger alert-block">
 	<button type="button" class="close" data-dismiss="alert">×</button>	
@@ -60,3 +60,4 @@ transition: left 0.6s ease-out 0s;" id="noty-holder">
 	Please check the form below for errors
 </div>
 @endif
+--}}
