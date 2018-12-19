@@ -45,7 +45,14 @@
         @empty
           <div style="text-align: left">موردی یافت نشد!</div>
         @endforelse 
-        <div class="pagination_wrapper">
+        <div class="pagination_wrapper_main" style="
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+        padding-right: 0;
+        padding-left: 0;
+    ">
             {{ $products->links() }}
     
         </div>

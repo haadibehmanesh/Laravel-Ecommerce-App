@@ -24,7 +24,7 @@
     <link rel='stylesheet' id='validate-engine-css-css'  href='{{asset('wp-content/plugins/wysija-newsletters/css/validationEngine.jquery4dc3.css?ver=2.8.2')}}' type='text/css' media='all' />
     <link rel='stylesheet' id='megamenu-css'  href='{{asset('wp-content/uploads/maxmegamenu/style3d1a.css?ver=1.1')}}' type='text/css' media='all' />
     <link rel='stylesheet' id='dashicons-css'  href='{{asset('wp-includes/css/dashicons.min1845.css?ver=4.9.6')}}' type='text/css' media='all' />
-
+{{--
 <link rel='stylesheet' id='woocommerce-layout-rtl-css'  href='{{asset('wp-content/plugins/woocommerce/assets/css/woocommerce-layout-rtl6765.css?ver=3.3.3')}}' type='text/css' media='all' />
 <link rel='stylesheet' id='woocommerce-smallscreen-rtl-css'  href='{{asset('wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen-rtl6765.css?ver=3.3.3')}}' type='text/css' media='only screen and (max-width: 768px)' />
 <link rel='stylesheet' id='woocommerce-general-rtl-css'  href='{{asset('wp-content/plugins/woocommerce/assets/css/woocommerce-rtl6765.css?ver=3.3.3')}}' type='text/css' media='all' />
@@ -34,13 +34,13 @@
 <link rel='stylesheet' id='dokan-select2-css-css'  href='{{asset('wp-content/plugins/dokan-lite/assets/vendors/select2/select2b246.css?ver=2.7.8')}}' type='text/css' media='all' />
 
 <script type='text/javascript' src='{{asset('wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4')}}'></script>
-<script type='text/javascript' src='{{asset('wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1')}}'></script>
+<script type='text/javascript' src='{{asset('wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1')}}'></script>--}}
 
     <!-- Bootstrap -->
-    <link href="{{asset('wp-content/themes/takhfifat/css/bootstrap-3.3.6.css')}}" rel="stylesheet">
+   {{-- <link href="{{asset('wp-content/themes/takhfifat/css/bootstrap-3.3.6.css')}}" rel="stylesheet">--}}
     <link href="{{asset('wp-content/themes/takhfifat/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('wp-content/themes/takhfifat/css/bootstrap-rtl.css')}}" rel="stylesheet">
-    <link href="{{asset('wp-content/themes/takhfifat/css/star-rating.css')}}" media="all" rel="stylesheet" type="text/css" />
+  {{--  <link href="{{asset('wp-content/themes/takhfifat/css/star-rating.css')}}" media="all" rel="stylesheet" type="text/css" />--}}
     <link href="{{asset('wp-content/themes/takhfifat/css/font-awesome.css')}}" rel="stylesheet">
     <link href="{{asset('wp-content/themes/takhfifat/stylefc99.css?ver=3.8')}}" rel="stylesheet">
     <link href="{{asset('wp-content/themes/takhfifat/css/main-page.css')}}" rel="stylesheet">
@@ -74,7 +74,7 @@
         
         
         <script>
-            jQuery(document).on('click','.pagination a', function(e){
+            jQuery(document).on('click','.pagination_wrapper_main a', function(e){
                 e.preventDefault();
                 var page = jQuery(this).attr('href').split('page=')[1];
                 getProducts(page);
@@ -98,7 +98,7 @@
             }
         </script>
         <script>
-                jQuery(document).on('click','.pagination a', function(e){
+                jQuery(document).on('click','.pagination_wrapper_search a', function(e){
                     e.preventDefault();
                     var page = jQuery(this).attr('href').split('page=')[1];
                     var query = jQuery('#s').attr('value');
@@ -487,7 +487,7 @@
     <span id="top-link-block" class="hidden">
         <a href="#top" class="well well-sm" style="background-color: ;"  onclick="jQuery('html,body').animate({scrollTop:0},'slow');return false;"><i class="fa fa-angle-up"></i></a>
     </span>
-    
+    {{--
     <!-- /top-link-block -->
     <script src="{{asset('wp-content/themes/takhfifat/js/star-rating.js')}}" type="text/javascript"></script>
     <script type='text/javascript' src='{{asset('wp-content/plugins/woocommerce/assets/js/frontend/single-product.min6765.js?ver=3.3.3')}}'></script>
@@ -507,8 +507,9 @@
     <script type='text/javascript' src='{{asset('wp-includes/js/underscore.min4511.js?ver=1.8.3')}}'></script>
     <script type='text/javascript' src='{{asset('wp-includes/js/customize-base.min1845.js?ver=4.9.6')}}'></script>
     <script type='text/javascript' src='{{asset('wp-includes/js/backbone.min9632.js?ver=1.2.3')}}'></script>
-    <script type='text/javascript' src='{{asset('wp-includes/js/customize-modelsb246.js?ver=2.7.8')}}'></script>
+    <script type='text/javascript' src='{{asset('wp-includes/js/customize-modelsb246.js?ver=2.7.8')}}'></script>--}}
     {{--<script type='text/javascript' src='../../wp-content/plugins/dokan-lite/assets/js/dokanb246.js?ver=2.7.8'></script>--}}
+    {{--
     <script type='text/javascript' src='{{asset('wp-content/plugins/dokan-lite/assets/vendors/select2/select2.full.minb246.js?ver=2.7.8')}}'></script>
     <script type='text/javascript' src='{{asset('wp-content/plugins/dokan-pro/assets/js/single-product-shipping.js')}}'></script>
     <script type='text/javascript'>
@@ -520,7 +521,7 @@
     <script type='text/javascript' src='{{asset('wp-includes/js/wp-embed.min1845.js?ver=4.9.6')}}'></script>
     <script type='text/javascript' src='{{asset('wp-includes/js/comment-reply.min1845.js?ver=4.9.6')}}'></script>
     <script type='text/javascript' src='{{asset('wp-content/plugins/wysija-newsletters/js/validate/languages/jquery.validationEngine-fa4dc3.js?ver=2.8.2')}}'></script>
-    <script type='text/javascript' src='{{asset('wp-content/plugins/wysija-newsletters/js/validate/jquery.validationEngine4dc3.js?ver=2.8.2')}}'></script>
+    <script type='text/javascript' src='{{asset('wp-content/plugins/wysija-newsletters/js/validate/jquery.validationEngine4dc3.js?ver=2.8.2')}}'></script>--}}
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{{ asset('wp-content/themes/takhfifat/js/bootstrap.min.js')}} "></script>

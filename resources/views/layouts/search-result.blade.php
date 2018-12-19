@@ -69,7 +69,14 @@
       <div style="text-align: center">موردی یافت نشد!</div>
     @endforelse  
     <div class="clear"></div>
-        <div class="pagination_wrapper">
+        <div class="pagination_wrapper_search" style="
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+        padding-right: 0;
+        padding-left: 0;
+    ">
                     {{ $products->links() }}
             
         </div>  
