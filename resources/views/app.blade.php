@@ -42,7 +42,7 @@
     <link href="{{asset('wp-content/themes/takhfifat/css/bootstrap-rtl.css')}}" rel="stylesheet">
   {{--  <link href="{{asset('wp-content/themes/takhfifat/css/star-rating.css')}}" media="all" rel="stylesheet" type="text/css" />--}}
     <link href="{{asset('wp-content/themes/takhfifat/css/font-awesome.css')}}" rel="stylesheet">
-    <link href="{{asset('wp-content/themes/takhfifat/stylefc99.css?ver=3.8')}}" rel="stylesheet">
+    <link href="{{asset('wp-content/themes/takhfifat/stylefc99.css?ver=4.8')}}" rel="stylesheet">
     <link href="{{asset('wp-content/themes/takhfifat/css/main-page.css')}}" rel="stylesheet">
 
 

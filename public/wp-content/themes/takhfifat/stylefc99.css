@@ -668,6 +668,20 @@ margin-bottom: 10px;
 }
 
 
+@media (max-width: 780px){
+    .initial{
+        display: none;
+    }
+}
+@media (min-width: 781px){
+    .mob{
+
+        display: none;
+        
+        }
+
+}
+
 input{position:static !important;}
 *{font-weight:normal !important}
 a{text-decoration:none;-webkit-transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;transition:all .2s ease-in-out}
