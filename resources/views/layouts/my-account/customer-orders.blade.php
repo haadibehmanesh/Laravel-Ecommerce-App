@@ -385,11 +385,16 @@ jQuery.ajax({
         <div class="panel-body">
             <div class="col-sm-9">
                 <div class="col-sm-12 " style="margin-bottom:7px;border-bottom: dashed 1px #c0c0c0;">
+                <div class="row">
                     <div class=" hidden-md hidden-lg col-xs-12 col-sm-12 pull-left img-pos">
                         <a href="{{ route('shop.show', $item->product->id) }}" title="{{ $item->product->name }}">
                             <img src="{{ productImage($item->product->image) }}" title="{{ $item->product->name }}" width="100%" class="img-responsive" alt="">
                         </a>
                     </div>
+                </div>
+                <div class="row" style="
+                padding-bottom: 5px;
+            ">
                     <div class="col-md-8 col-xs-12" style="padding-left: 0px">
                                                     <label>
                                 <h4><a href="{{ route('shop.show', $item->product->id) }}" title="{{ $item->product->name }}" class="black-color none-decoration">
@@ -398,7 +403,8 @@ jQuery.ajax({
                                 </h4>
                             </label>
                             
-                                                </div>
+                    </div>
+                    </div>
                     <div class="col-md-4 col-xs-12 pull-left rate-pos" style="margin-bottom: 18px;padding-right: 0px">                  
                     </div>
                 </div>
