@@ -7,6 +7,7 @@ use App\BiOrderItem;
 use App\BiOrder;
 use App\BiCustomer;
 use App\Customer;
+use App\Score;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Validator;
@@ -24,15 +25,23 @@ class CostumerpanelController extends Controller
     {
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
         $customer_id = Auth::guard('customer')->user()->id;
+        $score = Score::where('customer_id', $customer_id)->first();
         $wallet_last = Wallet::where('customer_id', $customer_id)->where('status','completed')->orderBy('id','desc')->first();
         if(!empty($wallet_last)){
             $total = $wallet_last->total;
         }else{
             $total = 0 ;
         }
+        
+        if(!empty($score)){
+            $score = $score->value;
+        }else{
+            $score = 0 ;
+        }
         return view('layouts/my-account/costumer-panel')->with([
         'allcategories' => $allcategories,
-        'total' => $total
+        'total' => $total,
+        'score' => $score
         ]);
     }
 

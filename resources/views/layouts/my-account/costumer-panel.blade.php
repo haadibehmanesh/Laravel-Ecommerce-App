@@ -376,6 +376,19 @@ jQuery.ajax({
                     <!--title & discount & views-->
                     <div class="title_post">
                     <h1>حساب کاربری من</h1>
+                    <span class="numbers" style="
+                    background-color: #f6861f;
+                    color: white;
+                    margin-right: 10px;
+                    border-radius: 25px;
+                    padding: 0px 7px 0 7px;
+                ">   امتیاز شما: 
+                @if(!empty($score))
+                {{$score}}
+                @else
+                {{0}}
+                @endif
+              </span>
                     </div>
                    
                             <div class="woocommerce">
