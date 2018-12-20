@@ -381,7 +381,7 @@ jQuery.ajax({
                     color: white;
                     margin-right: 10px;
                     border-radius: 25px;
-                    padding: 0px 7px 0 7px;
+                    padding: 0px 20px 0 20px;
                 ">   امتیاز شما: 
                 @if(!empty($score))
                 {{$score}}
