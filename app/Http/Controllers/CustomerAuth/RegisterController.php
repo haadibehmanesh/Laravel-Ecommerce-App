@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Auth;
 
 use Melipayamak;
 use App\Wallet;
+use App\Invitation;
+use App\Score;
 class RegisterController extends Controller
 {
     /*
@@ -54,9 +56,16 @@ class RegisterController extends Controller
     {
         $messages = [
             'required' => 'پر کردن این فیلد اجباری است!',
+            'invitation.max' =>  'کد دعوت باید حداکثر  :max کاراکتر باشد .',
+            'password.min' =>  'رمز ورود باید حداقل   :min کاراکتر باشد .',
+            'password.confirmed' =>  'رمز ورود مطابقت ندارد .',
+            'phone.digits' =>  'شماره همراه باید  :digits رقم باشد .',
+            'phone.unique' =>  'این شماره قبلا ثبت شده است!',
+            'email.unique' =>  'این ایمیل قبلا ثبت شده است!',
         ];
         return Validator::make($data, [
             'name' => 'required|max:255',
+            'invitation' => 'max:8',
             'email' => 'email|max:255|unique:customers|nullable',
             'phone' => 'required|digits:11|unique:customers',
             'password' => 'required|min:6|confirmed',
@@ -90,17 +99,40 @@ class RegisterController extends Controller
             echo $e->getMessage();
         }
         
+        
+      
+        $result = md5(uniqid(rand(), true));
+        $code = substr($result, 0, 8);
+        if(empty($code)){
+            $code = null;
+        }
       
         $customer = Customer::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'phone' => $data['phone'],
+            'invitation_code' => $code,
             'password' => bcrypt($data['password']),
         ]);
 
         BiCustomer::create([
             'customer_id' => $customer->id,
         ]);
+
+        if(!empty($data['invitation'])){
+            $invitation = new Invitation();
+            $invitation->customer_id = $customer->id;
+            $invitation->code = $data['invitation'];
+            $invitation->save();
+        }
+
+        $inviter = Customer::where('invitation_code', $data['invitation'])->first();
+        if(!empty($inviter->id)){
+            $score = Score::firstOrNew(['customer_id' => $inviter->id]);
+            $score->value = $score->value + 1;
+            $score->save();
+        }
+        
 
         $wallet = new Wallet();
         $wallet->customer_id = $customer->id;
@@ -117,11 +149,13 @@ class RegisterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showRegistrationForm()
+    public function showRegistrationForm($invitation = null)
     {
+        
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
         return view('layouts.my-account.registration')->with([
-            'allcategories' => $allcategories,            
+            'allcategories' => $allcategories, 
+            'invitation'  => $invitation
         ]);
        // return view('layouts.my-account.authentication');
         

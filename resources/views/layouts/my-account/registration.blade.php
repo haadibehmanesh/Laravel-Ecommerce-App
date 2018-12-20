@@ -378,6 +378,20 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
             @endif
         </div>
     </div>
+    <div class="form-group{{ $errors->has('invitation') ? ' has-error' : '' }}">
+        <label for="invitation" class="col-md-4 control-label">کد دعوت</label>
+
+        <div class="col-md-6">
+            <input id="invitation" type="text" class="form-control" name="invitation" value="{{ $invitation }}" >
+
+            @if ($errors->has('invitation'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('invitation') }}</strong>
+                </span>
+            @endif
+        </div>
+    </div>
+   
   {{--  <div class="form-group">
             <label class="col-md-4 control-label"></label>
         <div class="col-md-6">

@@ -416,21 +416,47 @@ jQuery.ajax({
  @if(Auth::guard('customer')->user())
     @if(Auth::guard('customer')->user()->is_merchant == 1)
 <div class="woocommerce-MyAccount-content">
+    
 	
 <p>سلام، {{Auth::guard('customer')->user()->name}} عزیز</p>
-
-
 <p style="color:#4caf50">شما فروشنده هستید و اکانت شما تائید شده است </p><div class="eye_buy"><a style="color: #fff;float: right;padding: 3px 15px;margin: 10px 0 0 0;font-size: 15px;" href="/dashboard"><i class="fa fa-dashboard"></i>رفتن به پنل مدیریت کسب و کار</a></div><p></p>
+
 </div>
     @else 
+    
+    <div class="">
     <div class="woocommerce-MyAccount-content" style="text-align:center;">
 	
         <p>سلام، {{Auth::guard('customer')->user()->name}} عزیز</p>
-            
-            
-            <p style="color:#4caf50">به بن اینجا خوش آمدید</p>
+            <p style="color:#19499c">به بن اینجا خوش آمدید</p>
+            @if(!empty(Auth::guard('customer')->user()->invitation_code))
+            <p style="color:#4caf50">از طریق لینک زیر دوستات رو دعوت کن</p>
+            <div class="share_btn" style="
+                                padding: 10px;
+                            ">
+                                <div class="btn-group btn_social">
+                                    <button type="button" class="nb-btn" data-toggle="dropdown" style="
+                                    background: green;
+                                    font-size: 14px;
+                                "> دعوت از دوستان <i class="fa fa-share-alt"></i> </button>
+
+                                    <ul class="dropdown-menu" id="shr_social">
+
+                                        <ul class='list-inline' style="z-index: 9999">
+
+                                        
+                                        <li><a href="https://api.whatsapp.com/send?text=https://www.boninja.com/customer/register/{{Auth::guard('customer')->user()->invitation_code}}"><img src="../../wp-content/themes/takhfifat/images/social/whatsapp.png" alt="whatsapp"></a></li>
+                                        </ul>
+
+                                    </ul>
+
+                                </div>
+                                </div>
+                            <p>کد دعوت شما : {{Auth::guard('customer')->user()->invitation_code}}</p>
+            @endif
             <p style="color:#005aaa">تخفیف بگیر ، لذت ببر ...</p>
     </div>
+                            </div>
     @endif
 @endif
 </div>

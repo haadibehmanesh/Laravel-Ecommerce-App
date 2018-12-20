@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::any('callback/from/bank/charge',function(){
   $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
   try {
@@ -220,8 +221,8 @@ Route::group(['prefix' => 'customer'], function () {
   Route::get('/login', 'CustomerAuth\LoginController@showLoginForm')->name('login');
   Route::post('/login', 'CustomerAuth\LoginController@login');
   Route::post('/logout', 'CustomerAuth\LoginController@logout')->name('logout');
-
-  Route::get('/register', 'CustomerAuth\RegisterController@showRegistrationForm')->name('register');
+  
+  Route::get('/register/{invitation?}', 'CustomerAuth\RegisterController@showRegistrationForm')->name('register');
   Route::post('/register', 'CustomerAuth\RegisterController@register');
 
   //Route::post('/password/email', 'CustomerAuth\ForgotPasswordController@sendResetLinkEmail')->name('password.request');
