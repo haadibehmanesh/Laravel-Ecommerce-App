@@ -450,9 +450,18 @@ jQuery.ajax({
                         </p>
                                     </div>
                 <div class="col-md-12">
-                    <p class="col-sm-4">
+                    <p class="col-sm-6">
                         <strong>تعداد کل : {{$item->quantity}} </strong>
                     </p>
+                    <p class="col-sm-6">
+                        <strong>وضعیت بن : @if(($item->quantity - $item->code_used_count) == 0)
+                                <span class="dokan-label dokan-label-danger">بن کاملا باطل شده</span>
+                        @else
+                        <span class="dokan-label dokan-label-success"> <?php echo $status = $item->quantity - $item->code_used_count;
+                            ?> بن باقی مانده</span> 
+                        @endif    
+                        </strong>
+                        </p>
                     <p class="col-sm-10">
                         <strong>مبلغ :  {{$item->total}}  تومان </strong>
                         <form class="cart" method="POST" action="{{route('costumerpanel.orderitem')}}" enctype='multipart/form-data'>
