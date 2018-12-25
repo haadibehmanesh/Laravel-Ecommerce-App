@@ -485,10 +485,13 @@ jQuery.ajax({
                                            <br> </td>
                                         <td colspan="2"><i class="fa fa-calendar-minus-o"></i> تاریخ پایان: 
                                             <?php 
-                $ydate = date('Y', strtotime($order_item_info->product->date_available));  
-                $mdate = date('m', strtotime($order_item_info->product->date_available));  
-                $ddate = date('d', strtotime($order_item_info->product->date_available));  
-               $date = g2p($ydate,$mdate ,$ddate);
+                $dbdate = $order_item_info->product->end_date;
+                $dbdate = date('Y/m/d', strtotime($dbdate));
+                $dbdate = date('Y/m/d', strtotime($dbdate. ' + 10 days'));
+                $ydate = date('Y', strtotime($dbdate));  
+                $mdate = date('m', strtotime($dbdate));  
+                $ddate = date('d', strtotime($dbdate));  
+                $date = g2p($ydate,$mdate ,$ddate);
            ?>
            {{$date[0]}}/{{$date[1]}}/{{$date[2]}}
                                            </td>

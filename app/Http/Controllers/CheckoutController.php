@@ -132,9 +132,12 @@ class CheckoutController extends Controller
                         }
                     }
                     foreach($order_items as $order_item){ 
-                        $ydate = date('Y', strtotime($order_item->product->date_available));  
-                        $mdate = date('m', strtotime($order_item->product->date_available));  
-                        $ddate = date('d', strtotime($order_item->product->date_available));  
+                        $dbdate = $order_item->product->end_date;
+                        $dbdate = date('Y/m/d', strtotime($dbdate));
+                        $dbdate = date('Y/m/d', strtotime($dbdate. ' + 10 days'));
+                        $ydate = date('Y', strtotime($dbdate));  
+                        $mdate = date('m', strtotime($dbdate));  
+                        $ddate = date('d', strtotime($dbdate)); 
                         $date = g2p($ydate,$mdate ,$ddate);
                         try{
                             $sms = \Melipayamak::sms();

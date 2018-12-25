@@ -49,10 +49,13 @@
                     </p>
                     <p class="col-sm-6"><strong>تاریخ انقضا:</strong>
                             <span><?php 
-                                $ydate = date('Y', strtotime($item->product->date_available));  
-                                $mdate = date('m', strtotime($item->product->date_available));  
-                                $ddate = date('d', strtotime($item->product->date_available));  
-                               $date = g2p($ydate,$mdate ,$ddate);
+                                $dbdate = $item->product->end_date;
+                                $dbdate = date('Y/m/d', strtotime($dbdate));
+                                $dbdate = date('Y/m/d', strtotime($dbdate. ' + 10 days'));
+                                $ydate = date('Y', strtotime($dbdate));  
+                                $mdate = date('m', strtotime($dbdate));  
+                                $ddate = date('d', strtotime($dbdate));
+                                $date = g2p($ydate,$mdate ,$ddate);
                            ?>
                            {{$date[0]}}/{{$date[1]}}/{{$date[2]}} </span>
                         </p>
