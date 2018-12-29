@@ -6,6 +6,8 @@ use App\BiCategory;
 use App\BiSlider;
 use App\BiSliderImage;
 use Illuminate\Http\Request;
+use App\Http\Requests;
+use App\Http\Resources\Aboutus as AboutusResource;
 
 class AboutusController extends Controller
 {
@@ -91,5 +93,12 @@ class AboutusController extends Controller
     public function destroy($id)
     {
         //
+    }
+    //Api
+    public function ApiIndex()
+    {
+        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+    
+        return AboutusResource::collection($allcategories);
     }
 }
