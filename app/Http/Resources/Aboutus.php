@@ -17,9 +17,7 @@ class Aboutus extends JsonResource
        // return parent::toArray($request);
        return [
         'id' => $this->id,
-        'name' => $this->name,
-        'version' => '1.0.0'
-
+        'name' => $this->name
        ];
     }
 }

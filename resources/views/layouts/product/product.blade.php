@@ -645,7 +645,7 @@ img.emoji {
                                                 </div>
                                                 @if($product->children->count() > 0)
                                                 <div class="modal-body">
-                                                        @foreach ( $product->children as $subproduct )
+                                                        @foreach ( $product->children->where('status',1) as $subproduct )
                                                         <div class="row">
                                                                 <div class="col-md-3 col-xs-3">
                                                                     <img width="150" class="choose-child-img loading" alt="{{$subproduct->name}}" src="{{ productImage($subproduct->image) }}" title="{{$subproduct->name}}" data-was-processed="true">

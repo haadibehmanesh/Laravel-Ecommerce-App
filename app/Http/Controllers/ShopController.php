@@ -28,7 +28,7 @@ class ShopController extends Controller
             });
             
         } else {
-            $products = BiProduct::orderBy('id', 'desc')->where('parent_id' , 0)->paginate($pagination);
+            $products = BiProduct::orderBy('id', 'desc')->where('parent_id' , 0)->where('status',1)->paginate($pagination);
         }
         
         return view('layouts/shop/shop')->with([
@@ -111,9 +111,9 @@ class ShopController extends Controller
 
         $categoriesForProduct = $product->categories()->get();
 
-        $mightAlsoLike = BiProduct::where('id', '!=', $ProductId)->mightAlsoLike()->get();
+        $mightAlsoLike = BiProduct::where('id', '!=', $ProductId)->where('status',1)->mightAlsoLike()->get();
         $merchant_id = $product->bimerchant()->first()->id;
-        $otherproducts = BiProduct::where('bi_merchant_id',$merchant_id)->where('id', '!=', $ProductId)->get();
+        $otherproducts = BiProduct::where('bi_merchant_id',$merchant_id)->where('id', '!=', $ProductId)->where('status',1)->get();
         
     
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
@@ -189,7 +189,7 @@ class ShopController extends Controller
             $categoryParent = null;
         }
         
-        $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->get();
+        $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->where('status',1)->get();
        
         $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
         
