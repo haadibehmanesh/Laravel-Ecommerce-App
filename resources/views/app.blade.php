@@ -16,6 +16,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="لذت یک تخفیف خوب" />
+    <meta name="og:title" property="og:title" content="سامانه خرید و تخفیف گروهی بن اینجا">
+    <meta name="robots" content="index, follow">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>
         سامانه خرید و تخفیف گروهی بن اینجا    
