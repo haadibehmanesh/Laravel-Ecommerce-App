@@ -242,15 +242,22 @@ class MerchantpanelController extends Controller
             'witdraw_amount' => 'required|numeric'
         ],$messages);
         if(!$validatedData->fails()){
-          
-            $withdraw = Withdraw::firstOrNew(['bi_merchant_id' => $merchant->id ,'status' => 'processing']);
-            $withdraw->quantity = $request->witdraw_amount;
-            $withdraw->status = 'processing';
-            $withdraw->save();
-            $message="کاربر گرامی درخواست برداشت وجه شما با موفقیت ثبت شد ";
-            return redirect()->back()->withErrors([
-            'message' => $message
-            ]);
+            if(!empty($request->witdraw_amount) && $request->witdraw_amount <= $merchant->total_revenue){
+                $withdraw = Withdraw::firstOrNew(['bi_merchant_id' => $merchant->id ,'status' => 'processing']);
+                $withdraw->quantity = $request->witdraw_amount;
+                $withdraw->status = 'processing';
+                $withdraw->save();
+                $message = "کاربر گرامی درخواست برداشت وجه شما با موفقیت ثبت شد ";
+                return redirect()->back()->withErrors([
+                'message' => $message
+                ]);
+            }else{
+                $message = "عدد وارد شده در حد مجاز برای تسویه حساب نیست!";
+                return redirect()->back()->withErrors([
+                    'errorMessage' => $message
+                    ]);
+            }
+            
 
         }else{
             return redirect()->back()->withErrors($validatedData);

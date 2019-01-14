@@ -381,6 +381,11 @@ jQuery.ajax({
                             {{$errors->first('witdraw_amount') }}        
                         </div>
                 @endif
+                @if($errors->has('errorMessage'))
+                        <div class="alert alert-danger">
+                            {{$errors->first('errorMessage') }}        
+                        </div>
+                @endif
             </div>
         </div>
     
