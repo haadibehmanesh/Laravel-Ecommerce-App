@@ -95,13 +95,46 @@ Route::any('callback/from/bank',function(){
     }
     
     foreach($order_items as $order_item){ 
-      $dbdate = $order_item->product->end_date;
-      $dbdate = date('Y/m/d', strtotime($dbdate));
-      $dbdate = date('Y/m/d', strtotime($dbdate. ' + 10 days'));
-      $ydate = date('Y', strtotime($dbdate));  
-      $mdate = date('m', strtotime($dbdate));  
-      $ddate = date('d', strtotime($dbdate));  
-      $date = g2p($ydate,$mdate ,$ddate);
+      if(empty($order_item->product->date_available)){ 
+        if(empty($order_item->product->end_date)){
+            if($order_item->product->parent_id != 0){
+                if(empty($order_item->product->parent->date_available)){
+                $dbdate = $order_item->product->parent->end_date;
+                $dbdate = date('Y/m/d', strtotime($dbdate));
+                $dbdate = date('Y/m/d', strtotime($dbdate. ' + 10 days'));
+                $ydate = date('Y', strtotime($dbdate));  
+                $mdate = date('m', strtotime($dbdate));  
+                $ddate = date('d', strtotime($dbdate)); 
+                $date = g2p($ydate,$mdate ,$ddate); 
+                }else{
+                $dbdate = $order_item->product->parent->date_available;
+                $dbdate = date('Y/m/d', strtotime($dbdate));
+                //$dbdate = date('Y/m/d', strtotime($dbdate. ' + 10 days'));
+                $ydate = date('Y', strtotime($dbdate));  
+                $mdate = date('m', strtotime($dbdate));  
+                $ddate = date('d', strtotime($dbdate)); 
+                $date = g2p($ydate,$mdate ,$ddate);
+                }  
+            }
+        }else{
+            $dbdate = $order_item->product->end_date;
+            $dbdate = date('Y/m/d', strtotime($dbdate));
+            $dbdate = date('Y/m/d', strtotime($dbdate. ' + 10 days'));
+            $ydate = date('Y', strtotime($dbdate));  
+            $mdate = date('m', strtotime($dbdate));  
+            $ddate = date('d', strtotime($dbdate)); 
+            $date = g2p($ydate,$mdate ,$ddate);
+        }
+      }else{
+        $dbdate = $order_item->product->date_available;
+        $dbdate = date('Y/m/d', strtotime($dbdate));
+        //$dbdate = date('Y/m/d', strtotime($dbdate. ' + 10 days'));
+        $ydate = date('Y', strtotime($dbdate));  
+        $mdate = date('m', strtotime($dbdate));  
+        $ddate = date('d', strtotime($dbdate)); 
+        $date = g2p($ydate,$mdate ,$ddate);
+      }
+
       try{
         $sms = \Melipayamak::sms();
         $to = Auth::guard('customer')->user()->phone;

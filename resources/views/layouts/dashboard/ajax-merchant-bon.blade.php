@@ -49,13 +49,45 @@
                     </p>
                     <p class="col-sm-6"><strong>تاریخ انقضا:</strong>
                             <span><?php 
-                                $dbdate = $item->product->end_date;
-                                $dbdate = date('Y/m/d', strtotime($dbdate));
-                                $dbdate = date('Y/m/d', strtotime($dbdate. ' + 10 days'));
-                                $ydate = date('Y', strtotime($dbdate));  
-                                $mdate = date('m', strtotime($dbdate));  
-                                $ddate = date('d', strtotime($dbdate));
-                                $date = g2p($ydate,$mdate ,$ddate);
+                            if(empty($item->product->date_available)){ 
+                                if(empty($item->product->end_date)){
+                                    if($item->product->parent_id != 0){
+                                        if(empty($item->product->parent->date_available)){
+                                        $dbdate = $item->product->parent->end_date;
+                                        $dbdate = date('Y/m/d', strtotime($dbdate));
+                                        $dbdate = date('Y/m/d', strtotime($dbdate. ' + 10 days'));
+                                        $ydate = date('Y', strtotime($dbdate));  
+                                        $mdate = date('m', strtotime($dbdate));  
+                                        $ddate = date('d', strtotime($dbdate)); 
+                                        $date = g2p($ydate,$mdate ,$ddate); 
+                                        }else{
+                                        $dbdate = $item->product->parent->date_available;
+                                        $dbdate = date('Y/m/d', strtotime($dbdate));
+                                        //$dbdate = date('Y/m/d', strtotime($dbdate. ' + 10 days'));
+                                        $ydate = date('Y', strtotime($dbdate));  
+                                        $mdate = date('m', strtotime($dbdate));  
+                                        $ddate = date('d', strtotime($dbdate)); 
+                                        $date = g2p($ydate,$mdate ,$ddate);
+                                        }  
+                                    }
+                                }else{
+                                    $dbdate = $item->product->end_date;
+                                    $dbdate = date('Y/m/d', strtotime($dbdate));
+                                    $dbdate = date('Y/m/d', strtotime($dbdate. ' + 10 days'));
+                                    $ydate = date('Y', strtotime($dbdate));  
+                                    $mdate = date('m', strtotime($dbdate));  
+                                    $ddate = date('d', strtotime($dbdate)); 
+                                    $date = g2p($ydate,$mdate ,$ddate);
+                                }
+                        }else{
+                            $dbdate = $item->product->date_available;
+                            $dbdate = date('Y/m/d', strtotime($dbdate));
+                            //$dbdate = date('Y/m/d', strtotime($dbdate. ' + 10 days'));
+                            $ydate = date('Y', strtotime($dbdate));  
+                            $mdate = date('m', strtotime($dbdate));  
+                            $ddate = date('d', strtotime($dbdate)); 
+                            $date = g2p($ydate,$mdate ,$ddate);
+                        }
                            ?>
                            {{$date[0]}}/{{$date[1]}}/{{$date[2]}} </span>
                         </p>
