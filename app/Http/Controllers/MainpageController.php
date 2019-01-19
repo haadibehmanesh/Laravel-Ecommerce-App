@@ -17,7 +17,7 @@ class MainpageController extends Controller
     public function index()
     {
         $pagination = 24;
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
         $slider = BiSlider::where('name' , 'index')->get();
         $sliderimages = BiSliderImage::where('bi_slider_id', $slider[0]->id)->get();
         $featuredproducts = BiProduct::where('featured','1')->get();

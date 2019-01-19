@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\BiProduct;
+use App\BiCoupon;
 use App\BiCategory;
 use App\BiOrder;
 use App\BiOrderItem;
@@ -180,5 +181,42 @@ class CartController extends Controller
         Cart::remove($id);
 
         return back()->with('success_message', 'حذف با موفقیت انجام شد!');
+    }
+    public function checkCoupon(Request $request){
+
+        $validator = Validator::make($request->all(), [
+            'coupon_code' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            
+            return back()->with('coupon_message', 'لطفا کد تخفیف را وارد کنید!');
+        }else{
+            $coupon = BiCoupon::where('code', $request->coupon_code)->first();
+            if(!empty($coupon)){
+                $categoriesForCoupon = $coupon->categories()->get();
+                foreach (Cart::content() as $item ){
+                    $product = BiProduct::where('id',$item->id)->first();
+                    $categoriesForProduct = $product->categories()->get();
+                    $result = array_intersect($categoriesForCoupon, $array2);
+                    dd($result);
+                    foreach($categoriesForProduct as $categoriesForProduct){
+                       
+                        //$check = $coupon->categories()->find($productCat->id);
+                        dd($check);
+                    }
+                    
+                    //dd($check);
+
+                }
+                
+                //dd($categoriesForCoupon);
+                return back()->with(['coupon_message' => $coupon->code]);
+            }else{
+                return back()->with('coupon_message', 'کد تخفیف معتبر نیست!');
+            }
+            
+
+        }
     }
 }

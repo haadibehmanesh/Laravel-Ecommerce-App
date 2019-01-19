@@ -198,6 +198,7 @@ Route::get('/nearby', 'NearbyController@index')->name('nearby.index');
 
 Route::get('/cart', 'CartController@index')->name('cart.index');
 Route::post('/cart', 'CartController@store')->name('cart.store');
+Route::post('/checkcoupon', 'CartController@checkCoupon')->name('cart.coupon');
 Route::post('/ajax/addtocart', 'CartController@addtocart')->name('cart.addtocart');
 Route::patch('/cart/{product}', 'CartController@update')->name('cart.update');
 Route::delete('/cart/{product}', 'CartController@destroy')->name('cart.destroy');

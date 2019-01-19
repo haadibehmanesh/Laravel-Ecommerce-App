@@ -481,6 +481,23 @@ var _zxcvbnSettings = {"src":"\/wp-includes\/js\/zxcvbn.min.js"};
 
             </div>
             <div class="col-lg-6 col-md-12 col-sm-24 col-xs-24">
+                <div class="cart_coupon">
+                    <h3>کد تخفیف: </h3>
+                        <form action="{{ route('cart.coupon') }}" method="POST">
+                                {{ csrf_field() }}
+                               
+                                <input type="text" name="coupon_code" style="border: 1px solid #c4c2c2;
+                                border-radius: 24px;padding: 5px;margin:5px">
+                                
+                                @if(session()->has('coupon_message'))
+                                <div class="alert alert-danger">
+                                {{ session()->get('coupon_message') }}
+                                </div>
+                                @endif
+                                
+                                <button type="submit" class="nb-btn" style="background: green;margin-top: 5px">بررسی کد تخفیف</button>
+                        </form>
+                </div>
             <div class="cart_totals ">
         
             
