@@ -57,7 +57,11 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+        if(session()->has('coupon')){
+            Cart::destroy();
+            session()->forget('coupon');
+        }
         $product = BiProduct::where('id', $request->id)->get();
         
         $id = $request->id;
@@ -81,12 +85,17 @@ class CartController extends Controller
                 'order_limit' => $orderLimit,
                 'bi_merchant_id' => $product[0]->bi_merchant_id
             ])->associate('App\BiProduct');
+            session()->forget('coupon');
             return redirect()->route('cart.index')->with('success_message', 'بن شما با موفقیت اضافه شد');
         }
         return redirect()->route('cart.index')->with('error_message', 'موجودی به اتمام رسیده است');
         
     }
     public function addtocart(Request $request){
+        if(session()->has('coupon')){
+            Cart::destroy();
+            session()->forget('coupon');
+        }
         $product = BiProduct::where('id', $request->id)->get();
         
         $id = $request->id;
@@ -180,7 +189,12 @@ class CartController extends Controller
     public function destroy($id)
     {   
         Cart::remove($id);
-        session()->forget('coupon');
+        if(session()->has('coupon')){
+            Cart::destroy();
+            session()->forget('coupon');
+        }
+        
+        
         return back()->with('success_message', 'حذف با موفقیت انجام شد!');
     }
 
@@ -210,41 +224,35 @@ class CartController extends Controller
                             
                                 if($coupon->type == 'fixed'){
 
-                                    
+                                    $adapt = true;
                                     $discount = $coupon->value;
                                     session()->put('coupon' , ['name' => $coupon->name ,'code' => $coupon->code , 'discount' => $discount ,'customer_id' => $customer_id , 'coupon_id' => $coupon->id]);
                                     $item->price = $item->price - $coupon->value;
-                                    //dd(session()->get('coupon'));
-                                    /*
-                                    $customerCouponNew = new CustomerBiCoupon;
-                                    $customerCouponNew->customer_id = $customer_id;
-                                    $customerCouponNew->bi_coupon_id = $coupon->id;
-                                    $customerCouponNew->save();
-                                    */
+                                   
 
                                 }elseif($coupon->type == 'percent'){
+                                    $adapt = true;
                                     $discount = round(($coupon->percent_off / 100) * $item->price);
                                     session()->put('coupon' , ['name' => $coupon->name ,'code' => $coupon->code , 'discount' => $discount,'customer_id' => $customer_id , 'coupon_id' => $coupon->id]);
-                                    //dd(session()->get('coupon'));
+                                   
                                     $item->price = $item->price - round(($coupon->percent_off / 100) * $item->price);
-                                    /*
-                                    $customerCouponNew = new CustomerBiCoupon;
-                                    $customerCouponNew->customer_id = $customer_id;
-                                    $customerCouponNew->bi_coupon_id = $coupon->id;
-                                    $customerCouponNew->save();
-                                    */
+                                   
                             
                                 }
                                
                             }
                         }
                     }
+                    if(empty($adapt)){
+
+                        return back()->with('error_message', 'کاربر گرامی ، کد  تخفیف وارد شده با محصولات موجود در سبد خرید، مطابقت ندارد!');
+                    }
                 }else{
                     
                     return back()->with('coupon_message', 'کاربر گرامی ، شما قبلا از این کد استفاده کرده اید!');
 
                 }
-                return back()->with(['coupon_message' => $coupon->code]);
+                return back()->with(['success_message' => 'کد تخفیف با موفقیت اعمال شد']);
             }else{
                 return back()->with('coupon_message', 'کد تخفیف معتبر نیست!');
             }

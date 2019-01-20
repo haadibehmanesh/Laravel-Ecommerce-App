@@ -179,7 +179,10 @@ Route::any('callback/from/bank',function(){
     }
      
     Cart::destroy();  
-    session()->forget('coupon');
+    if(session()->has('coupon')){
+      session()->forget('coupon');
+    }
+    
     $message = 'پرداخت با موفقیت انجام شد!<br> 
      کد پیگیری بانکی شما : '.$trackingCode.' <br>
      برای پیگیری های  بانکی بعدی این کد را نزد خود نگه دارید. 
