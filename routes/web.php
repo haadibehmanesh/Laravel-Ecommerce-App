@@ -4,6 +4,7 @@ use App\BiOrderItem;
 use App\BiProduct;
 use App\BiCategory;
 use App\Wallet;
+use App\CustomerBiCoupon;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Auth;
@@ -84,6 +85,15 @@ Route::any('callback/from/bank',function(){
     $order_items = BiOrderItem::where('bi_order_id', $order->id)->get();
     
     if($order->status == 'completed'){
+      if(session()->has('coupon')){
+        $customer_id = session()->get('coupon')['customer_id'];
+        $coupon_id = session()->get('coupon')['coupon_id'];
+        $customerCouponNew = new CustomerBiCoupon;
+        $customerCouponNew->customer_id = $customer_id;
+        $customerCouponNew->bi_coupon_id = $coupon_id;
+        $customerCouponNew->save();
+
+      }
       foreach (Cart::content() as $item) {
         $product = BiProduct::find($item->id);
         $productSold = (($product->quantity-$product->sold) - $item->qty) >= 0 ? $product->sold + $item->qty : -1 ;
@@ -169,6 +179,7 @@ Route::any('callback/from/bank',function(){
     }
      
     Cart::destroy();  
+    session()->forget('coupon');
     $message = 'پرداخت با موفقیت انجام شد!<br> 
      کد پیگیری بانکی شما : '.$trackingCode.' <br>
      برای پیگیری های  بانکی بعدی این کد را نزد خود نگه دارید. 
@@ -198,7 +209,7 @@ Route::get('/nearby', 'NearbyController@index')->name('nearby.index');
 
 Route::get('/cart', 'CartController@index')->name('cart.index');
 Route::post('/cart', 'CartController@store')->name('cart.store');
-Route::post('/checkcoupon', 'CartController@checkCoupon')->name('cart.coupon');
+
 Route::post('/ajax/addtocart', 'CartController@addtocart')->name('cart.addtocart');
 Route::patch('/cart/{product}', 'CartController@update')->name('cart.update');
 Route::delete('/cart/{product}', 'CartController@destroy')->name('cart.destroy');
@@ -215,6 +226,7 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::group(['middleware' => 'customer' ], function() {
+Route::post('/checkcoupon', 'CartController@checkCoupon')->name('cart.coupon');
 Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
 Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
 Route::post('/product/review', 'AjaxController@createReview')->name('review.create');

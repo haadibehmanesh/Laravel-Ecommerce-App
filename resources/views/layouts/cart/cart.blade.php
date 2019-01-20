@@ -481,6 +481,8 @@ var _zxcvbnSettings = {"src":"\/wp-includes\/js\/zxcvbn.min.js"};
 
             </div>
             <div class="col-lg-6 col-md-12 col-sm-24 col-xs-24">
+                
+            @if (! session()->has('coupon'))
                 <div class="cart_coupon">
                     <h3>کد تخفیف: </h3>
                         <form action="{{ route('cart.coupon') }}" method="POST">
@@ -498,6 +500,7 @@ var _zxcvbnSettings = {"src":"\/wp-includes\/js\/zxcvbn.min.js"};
                                 <button type="submit" class="nb-btn" style="background: green;margin-top: 5px">بررسی کد تخفیف</button>
                         </form>
                 </div>
+            @endif
             <div class="cart_totals ">
         
             
@@ -513,7 +516,13 @@ var _zxcvbnSettings = {"src":"\/wp-includes\/js\/zxcvbn.min.js"};
                 
                 
                 
-                
+                @if (session()->has('coupon'))
+                <tr class="order-total">
+                        <th>نوع تخفیف</th>
+                        <td data-title="مجموع"><strong><span style="color: green">{{ session()->get('coupon')['name'] }}&nbsp;</span></strong> 
+                        </td>
+                </tr>
+                @endif
                                     
                 <tr class="order-total">
                     <th>مجموع</th>

@@ -11,6 +11,7 @@ use App\BiCategory;
 use App\BiOrder;
 use App\BiOrderItem;
 use App\Wallet;
+use App\CustomerBiCoupon;
 
 class CartController extends Controller
 {
@@ -179,11 +180,15 @@ class CartController extends Controller
     public function destroy($id)
     {   
         Cart::remove($id);
-
+        session()->forget('coupon');
         return back()->with('success_message', 'حذف با موفقیت انجام شد!');
     }
-    public function checkCoupon(Request $request){
 
+
+    public function checkCoupon(Request $request){
+        if(Auth::guard('customer')->check()){
+            $customer_id = Auth::guard('customer')->user()->id;
+        }
         $validator = Validator::make($request->all(), [
             'coupon_code' => 'required'
         ]);
@@ -194,23 +199,51 @@ class CartController extends Controller
         }else{
             $coupon = BiCoupon::where('code', $request->coupon_code)->first();
             if(!empty($coupon)){
-                $categoriesForCoupon = $coupon->categories()->get();
-                foreach (Cart::content() as $item ){
-                    $product = BiProduct::where('id',$item->id)->first();
-                    $categoriesForProduct = $product->categories()->get();
-                    $result = array_intersect($categoriesForCoupon, $array2);
-                    dd($result);
-                    foreach($categoriesForProduct as $categoriesForProduct){
-                       
-                        //$check = $coupon->categories()->find($productCat->id);
-                        dd($check);
+                $customerCoupon = CustomerBiCoupon::where('customer_id',$customer_id)->where('bi_coupon_id',$coupon->id)->first();
+                if(empty($customerCoupon)){
+                    $categoriesForCoupon = $coupon->categories()->get();
+                    foreach (Cart::content() as $item ){
+                        $product = BiProduct::where('id',$item->id)->first();
+                        $categoriesForProduct = $product->categories()->get();
+                        foreach($categoriesForProduct as $catProduct){
+                            if($categoriesForCoupon->contains($catProduct)){
+                            
+                                if($coupon->type == 'fixed'){
+
+                                    
+                                    $discount = $coupon->value;
+                                    session()->put('coupon' , ['name' => $coupon->name ,'code' => $coupon->code , 'discount' => $discount ,'customer_id' => $customer_id , 'coupon_id' => $coupon->id]);
+                                    $item->price = $item->price - $coupon->value;
+                                    //dd(session()->get('coupon'));
+                                    /*
+                                    $customerCouponNew = new CustomerBiCoupon;
+                                    $customerCouponNew->customer_id = $customer_id;
+                                    $customerCouponNew->bi_coupon_id = $coupon->id;
+                                    $customerCouponNew->save();
+                                    */
+
+                                }elseif($coupon->type == 'percent'){
+                                    $discount = round(($coupon->percent_off / 100) * $item->price);
+                                    session()->put('coupon' , ['name' => $coupon->name ,'code' => $coupon->code , 'discount' => $discount,'customer_id' => $customer_id , 'coupon_id' => $coupon->id]);
+                                    //dd(session()->get('coupon'));
+                                    $item->price = $item->price - round(($coupon->percent_off / 100) * $item->price);
+                                    /*
+                                    $customerCouponNew = new CustomerBiCoupon;
+                                    $customerCouponNew->customer_id = $customer_id;
+                                    $customerCouponNew->bi_coupon_id = $coupon->id;
+                                    $customerCouponNew->save();
+                                    */
+                            
+                                }
+                               
+                            }
+                        }
                     }
+                }else{
                     
-                    //dd($check);
+                    return back()->with('coupon_message', 'کاربر گرامی ، شما قبلا از این کد استفاده کرده اید!');
 
                 }
-                
-                //dd($categoriesForCoupon);
                 return back()->with(['coupon_message' => $coupon->code]);
             }else{
                 return back()->with('coupon_message', 'کد تخفیف معتبر نیست!');
@@ -219,4 +252,5 @@ class CartController extends Controller
 
         }
     }
+    
 }
