@@ -3,7 +3,7 @@
 function presentPrice($price,$discount)
 { 
     $presentprice = $price - ($price*($discount/100));
-
+    $presentprice = round($presentprice);
     //return number_format($presentprice);
     return $presentprice ;
 }
