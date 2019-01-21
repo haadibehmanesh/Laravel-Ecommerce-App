@@ -32,7 +32,7 @@ class CartController extends Controller
             $total = 0 ;
         }
         
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
         return view('layouts/cart/cart')->with([
             'allcategories' => $allcategories,
             'total' => $total
