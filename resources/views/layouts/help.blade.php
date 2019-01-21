@@ -1,5 +1,5 @@
 @extends('app')
- 
+@section('pageTitle', 'راهنما خرید')
 @section('content')
 <section id="wrapper">
         <div class="container">

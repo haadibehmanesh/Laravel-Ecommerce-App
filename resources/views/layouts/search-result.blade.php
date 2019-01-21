@@ -1,5 +1,5 @@
 @extends('app')
- 
+@section('pageTitle', 'نتیجه جستجو برای')
 @section('content')
 <section id="wrapper">
         <div class="container">

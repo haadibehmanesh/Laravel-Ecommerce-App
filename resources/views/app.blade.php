@@ -16,12 +16,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="لذت یک تخفیف خوب" />
+    <meta name="keywords" content="بن اینجا,boninja,خرید گروهی,زیبایی,تخفیف,تخفیف گروهی,سایت خرید گروهی,پزشکی,تخفیف اینجا,آنلاین,فروش آنلاین,حراج,حراجی,کوپن,بن,رستوران,شیراز,کالا,تفریح"/>
+    <meta name="description" content="بهترین تخفیف های شیراز در وب سایت تخفیف و خرید گروهی بن اینجا لذت یک تخفیف خوب" />
+    <meta name="og:type" content="website"/>
+    <meta name="og:site_name" content="boninja"/>
     <meta name="og:title" property="og:title" content="سامانه خرید و تخفیف گروهی بن اینجا">
     <meta name="robots" content="index, follow">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>
-        سامانه خرید و تخفیف گروهی بن اینجا    
+        @yield('pageTitle') - سامانه خرید و تخفیف گروهی بن اینجا
     </title>
     <link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">
     <link rel='stylesheet' id='validate-engine-css-css'  href='{{asset('wp-content/plugins/wysija-newsletters/css/validationEngine.jquery4dc3.css?ver=2.8.2')}}' type='text/css' media='all' />

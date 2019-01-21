@@ -1,5 +1,4 @@
 @extends('app')
- 
 @section('content')
             
                         <section id="wrapper">
