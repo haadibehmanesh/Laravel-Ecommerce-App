@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::any('callback/from/bank/charge',function(){
-  $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+  $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
   try {
     $gateway = \Gateway::verify();
     $trackingCode = $gateway->trackingCode();
@@ -71,7 +71,7 @@ Route::any('callback/from/bank/charge',function(){
 
 
 Route::any('callback/from/bank',function(){
-  $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+  $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
   try {
     $gateway = \Gateway::verify();
     $trackingCode = $gateway->trackingCode();
