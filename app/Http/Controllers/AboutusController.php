@@ -20,7 +20,7 @@ class AboutusController extends Controller
     {
         $slider = BiSlider::where('name' , 'index')->get();
         $sliderimages = BiSliderImage::where('bi_slider_id', $slider[0]->id)->get();
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
     
         return view('layouts/aboutus')->with([
             'sliderimages' =>  $sliderimages,
@@ -97,7 +97,7 @@ class AboutusController extends Controller
     //Api
     public function ApiIndex()
     {
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
     
         return AboutusResource::collection($allcategories);
     }

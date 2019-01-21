@@ -55,7 +55,7 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
         return view('layouts.my-account.authentication')->with([
             'allcategories' => $allcategories,            
         ]);

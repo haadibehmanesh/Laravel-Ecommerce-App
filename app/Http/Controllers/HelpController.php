@@ -18,7 +18,7 @@ class HelpController extends Controller
     {
         $slider = BiSlider::where('name' , 'index')->get();
         $sliderimages = BiSliderImage::where('bi_slider_id', $slider[0]->id)->get();
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
     
         return view('layouts/help')->with([
             'sliderimages' =>  $sliderimages,

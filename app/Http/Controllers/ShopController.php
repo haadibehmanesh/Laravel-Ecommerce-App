@@ -20,7 +20,7 @@ class ShopController extends Controller
     public function index()
     {
         $pagination = 24;
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
 
         if(request()->category) {
             $products = BiProduct::with('categories')->whereHas('categories', function ($query) {
@@ -116,7 +116,7 @@ class ShopController extends Controller
         $otherproducts = BiProduct::where('bi_merchant_id',$merchant_id)->where('id', '!=', $ProductId)->where('status',1)->get();
         
     
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
         if($product->children()->count() > 0){
            $childrenId = $product->children()->where('id' ,'>' ,0)->pluck('id')->toArray();
            $reviews = BiReview::whereIn('bi_product_id', $childrenId)->orderBy('id', 'desc')->get();
@@ -191,7 +191,7 @@ class ShopController extends Controller
         
         $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->where('status',1)->get();
        
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
         
         $slider = BiSlider::where('name' , $category->name )->get();
         

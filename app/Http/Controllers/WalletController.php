@@ -21,7 +21,7 @@ class WalletController extends Controller
      */
     public function index()
     {
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
         $customer_id = Auth::guard('customer')->user()->id;
         $wallets = Wallet::where('customer_id', $customer_id)->orderBy('id','desc')->get();
         $wallet_last = Wallet::where('customer_id', $customer_id)->where('status','completed')->orderBy('id','desc')->first();
@@ -109,7 +109,7 @@ class WalletController extends Controller
             return redirect()->back()->withErrors($validatedData);
         }
        
-       /* $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+       /* $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
             $wallet_status = 'pending';
             $wallet = BiOrder::create([
                 'customer_id' => $customer_id,

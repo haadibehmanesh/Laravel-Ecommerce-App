@@ -18,7 +18,7 @@ class SearchController extends Controller
         $query = Input::get('query');
         $products = BiProduct::search($query)->where('parent_id',0)->where('status',1)->paginate($pagination);
         $products->appends(['query' => $query]);
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
         return view('layouts/search-result')->with([
             'query' => $query,
             'products' => $products,

@@ -152,7 +152,7 @@ class RegisterController extends Controller
     public function showRegistrationForm($invitation = null)
     {
         
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
         return view('layouts.my-account.registration')->with([
             'allcategories' => $allcategories, 
             'invitation'  => $invitation

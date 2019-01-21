@@ -17,7 +17,7 @@ class ContactusController extends Controller
     public function index()
     {
         
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
     
         return view('layouts/contactus')->with([
             'allcategories' => $allcategories,

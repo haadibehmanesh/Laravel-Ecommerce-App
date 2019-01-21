@@ -28,7 +28,7 @@ class AjaxController extends Controller {
        
       
         $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' , 0)->where('status',1)->get();
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
         
         return view('layouts/categories/ajaxcat')->with([
             'category' => $category,
@@ -83,7 +83,7 @@ class AjaxController extends Controller {
         
       
         $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->where('status',1)->get();
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
         
         return view('layouts/categories/ajaxlist')->with([
             'category' => $category,

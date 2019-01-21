@@ -50,7 +50,7 @@ class MerchantpanelController extends Controller
         $merchant->total_revenue = $totalRevenue - $completed_withdraw;
         $merchant->save();
         $totalRevenue = $merchant->total_revenue;
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
         return view('layouts/dashboard/merchant-panel')->with([
             'completed_withdraw' => $completed_withdraw,
             'totalSell' => $totalSell,
@@ -165,7 +165,7 @@ class MerchantpanelController extends Controller
         $merchant->total_revenue = $totalRevenue - $completed_withdraw;
         $merchant->save();
         $totalRevenue = $merchant->total_revenue;
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
         return view('layouts/dashboard/merchant-bon')->with([
             'completed_withdraw' => $completed_withdraw,
             'totalSell' => $totalSell,
@@ -180,7 +180,7 @@ class MerchantpanelController extends Controller
     public function orders()
     {
 
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
         return view('layouts/dashboard/merchant-orders')->with('allcategories', $allcategories);
 
 
@@ -219,7 +219,7 @@ class MerchantpanelController extends Controller
         $merchant->total_revenue = $totalRevenue - $completed_withdraw;
         $merchant->save();
         $totalRevenue = $merchant->total_revenue;
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
         return view('layouts/dashboard/withdraw')->with([
             'completed_withdraw' => $completed_withdraw,
             'totalSell' => $totalSell,
@@ -297,7 +297,7 @@ class MerchantpanelController extends Controller
         /*$merchant->total_revenue = $totalRevenue - $completed_withdraw;
         $merchant->save();*/
         $totalRevenue = $merchant->total_revenue;
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
         return view('layouts/dashboard/show_withdraw')->with([
             'withdraws' => $withdraws,
             'totalSell' => $totalSell,

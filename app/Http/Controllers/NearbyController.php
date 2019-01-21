@@ -16,7 +16,7 @@ class NearbyController extends Controller{
     {
         $lat =29.6297833;
         $lng = 52.5086218;
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
         $nearby = BiProduct::select(DB::raw('*, ( 6367 * acos( cos( radians('.$lat.') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$lng.') ) + sin( radians('.$lat.') ) * sin( radians( latitude ) ) ) ) AS distance'))->having('distance', '<', 100)->where('parent_id',0)->orderBy('distance')->get();
         
         $nearby = $nearby->map(function ($nearby) {

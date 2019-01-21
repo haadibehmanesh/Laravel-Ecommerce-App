@@ -23,7 +23,7 @@ class CostumerpanelController extends Controller
      */
     public function index()
     {
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
         $customer_id = Auth::guard('customer')->user()->id;
         $score = Score::where('customer_id', $customer_id)->first();
         $wallet_last = Wallet::where('customer_id', $customer_id)->where('status','completed')->orderBy('id','desc')->first();
@@ -178,7 +178,7 @@ class CostumerpanelController extends Controller
     public function orders()
     {   
         
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
         $id = Auth::guard('customer')->user()->id;
         $wallet_last = Wallet::where('customer_id', $id)->where('status','completed')->orderBy('id','desc')->first();
         if(!empty($wallet_last)){
@@ -215,7 +215,7 @@ class CostumerpanelController extends Controller
         }else{
             $total = 0 ;
         }
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
         $id = $request->id;
        // dd($id);
         if($id){
@@ -236,7 +236,7 @@ class CostumerpanelController extends Controller
     */
     public function showsold()
     {
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
         $id = Auth::guard('customer')->user()->id;
         $wallet_last = Wallet::where('customer_id', $id)->where('status','completed')->orderBy('id','desc')->first();
         if(!empty($wallet_last)){

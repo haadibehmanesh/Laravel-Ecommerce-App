@@ -49,7 +49,7 @@ class ForgotPasswordController extends Controller
 
     }
     public function showLinkRequestForm()
-    {   $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+    {   $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
         return view('customer.auth.passwords.sms')->with([
     
             'allcategories' => $allcategories,
@@ -69,7 +69,7 @@ class ForgotPasswordController extends Controller
     }
     public function passChange(Request $request){
        
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
         $messages = [
             'required' => 'پر کردن این فیلد اجباری است!',
             'password.min' => 'گذر واژه باید حداقل شامل 6 کاراکتر باشد!',
