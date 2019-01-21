@@ -43,7 +43,7 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {  
-        $allcategories = BiCategory::orderBy('sort_order', 'asc')->get();
+        $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
         $customer_id = Auth::guard('customer')->user()->id;
         $total = Cart::subtotal();
         if($request->wallet == "on"){
