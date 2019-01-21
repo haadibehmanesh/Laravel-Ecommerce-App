@@ -19,6 +19,7 @@
     <meta name="keywords" content="بن اینجا,boninja,خرید گروهی,زیبایی,تخفیف,تخفیف گروهی,سایت خرید گروهی,پزشکی,تخفیف اینجا,آنلاین,فروش آنلاین,حراج,حراجی,کوپن,بن,رستوران,شیراز,کالا,تفریح"/>
     <meta name="description" content="بهترین تخفیف های شیراز در وب سایت تخفیف و خرید گروهی بن اینجا لذت یک تخفیف خوب" />
     <meta name="og:type" content="website"/>
+    <meta property="og:url" content="https://boninja.com" />
     <meta name="og:site_name" content="boninja"/>
     <meta name="og:title" property="og:title" content="سامانه خرید و تخفیف گروهی بن اینجا">
     <meta name="robots" content="index, follow">
@@ -27,7 +28,7 @@
         @yield('pageTitle') - سامانه خرید و تخفیف گروهی بن اینجا
     </title>
     <link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">
-    <link rel='stylesheet' id='validate-engine-css-css'  href='{{asset('wp-content/plugins/wysija-newsletters/css/validationEngine.jquery4dc3.css?ver=2.8.2')}}' type='text/css' media='all' />
+    {{--{{--<link rel='stylesheet' id='validate-engine-css-css'  href='{{asset('wp-content/plugins/wysija-newsletters/css/validationEngine.jquery4dc3.css?ver=2.8.2')}}' type='text/css' media='all' />--}}
     <link rel='stylesheet' id='megamenu-css'  href='{{asset('wp-content/uploads/maxmegamenu/style3d1a.css?ver=1.1')}}' type='text/css' media='all' />
     <link rel='stylesheet' id='dashicons-css'  href='{{asset('wp-includes/css/dashicons.min1845.css?ver=4.9.6')}}' type='text/css' media='all' />
 {{--
@@ -92,8 +93,10 @@
                         'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
                     },
                     type:'POST',
-                    url:'/ajax/products/main/?page='+page,
-                    data:'_token = <?php echo csrf_token() ?>'
+                    url:'/ajax/products/main',
+                    data:{
+                        page : page,
+                    }
 
                 }).done(function(data){
                 
@@ -112,14 +115,16 @@
                     search(page,query);
                 });
                 function search(page,query){
-                    
                     jQuery.ajax({
                         headers: {
                             'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
                         },
                         type:'POST',
-                        url:'/ajax/search/?query='+query+'&page='+page,
-                        data:'_token = <?php echo csrf_token() ?>'
+                        url:'/ajax/search',
+                        data:{ 
+                            query : query,
+                            page : page,
+                        }
         
                     }).done(function(data){
                        
@@ -385,7 +390,7 @@
     
                 <!--Newsletters-->
                 <div class="block_newsletters">
-    
+    {{--
     <div class="widget_wysija_cont shortcode_wysija"><div id="msg-form-wysija-shortcode5b2b59fce5ec2-1" class="wysija-msg ajax"></div>
     <form id="form1" method="post" action="#" class="widget_wysija shortcode_wysija">
     <p class="wysija-paragraph">
@@ -412,7 +417,7 @@
             <input type="hidden" name="wysija[user_list][list_ids]" value="1" />
         
      </form>
-    </div>				
+    </div>--}}				
                     
                 </div>
     

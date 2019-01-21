@@ -28,7 +28,7 @@ img.emoji {
 	padding: 0 !important;
 }
 </style>
-<link rel='stylesheet' id='validate-engine-css-css'  href='../../wp-content/plugins/wysija-newsletters/css/validationEngine.jquery4dc3.css?ver=2.8.2' type='text/css' media='all' />
+{{--<link rel='stylesheet' id='validate-engine-css-css'  href='../../wp-content/plugins/wysija-newsletters/css/validationEngine.jquery4dc3.css?ver=2.8.2' type='text/css' media='all' />--}}
 <link rel='stylesheet' id='select2-css'  href='../../wp-content/plugins/woocommerce/assets/css/select26765.css?ver=3.3.3' type='text/css' media='all' />
 <link rel='stylesheet' id='woocommerce-layout-rtl-css'  href='../../wp-content/plugins/woocommerce/assets/css/woocommerce-layout-rtl6765.css?ver=3.3.3' type='text/css' media='all' />
 <link rel='stylesheet' id='woocommerce-smallscreen-rtl-css'  href='../../wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen-rtl6765.css?ver=3.3.3' type='text/css' media='only screen and (max-width: 768px)' />
@@ -327,7 +327,7 @@ jQuery('.dokan-withdraw-content .dokan-alert-warning').html(first_html);
             <!--Newsletters-->
             <div class="block_newsletters">
 
-<div class="widget_wysija_cont shortcode_wysija"><div id="msg-form-wysija-shortcode5b2b5b4b3f074-1" class="wysija-msg ajax"></div><form id="form-wysija-shortcode5b2b5b4b3f074-1" method="post" action="#wysija" class="widget_wysija shortcode_wysija">
+<div class="widget_wysija_cont shortcode_wysija" style="display:none;"><div id="msg-form-wysija-shortcode5b2b5b4b3f074-1" class="wysija-msg ajax"></div><form id="form-wysija-shortcode5b2b5b4b3f074-1" method="post" action="#wysija" class="widget_wysija shortcode_wysija">
 <p class="wysija-paragraph">
     <label>ایمیل <span class="wysija-required">*</span></label>
     

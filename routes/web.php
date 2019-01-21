@@ -264,8 +264,8 @@ Route::post('/getcategory/{category}','AjaxController@getCategory');
 Route::post('/getcategory-slider/{category}','AjaxController@getCategorySlider');
 Route::post('/getlist/{category}','AjaxController@getList');
 Route::any('/ajax/products', 'AjaxController@getProduct');
-Route::any('/ajax/products/main', 'AjaxController@getProductMain');
-Route::any('/ajax/search', 'AjaxController@search');
+Route::post('/ajax/products/main', 'AjaxController@getProductMain');
+Route::post('/ajax/search', 'AjaxController@search');
 Route::any('/search', 'SearchController@index')->name('search.index');
 
 
