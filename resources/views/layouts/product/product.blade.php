@@ -15,6 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ strip_tags($product->description) }}" />
+    <meta name="keywords" content="بن اینجا,boninja,خرید گروهی,زیبایی,تخفیف,تخفیف گروهی,سایت خرید گروهی,پزشکی,تخفیف اینجا,آنلاین,فروش آنلاین,حراج,حراجی,کوپن,بن,رستوران,شیراز,کالا,تفریح"/>
     <meta name="og:title" property="og:title" content="{{ $product->name }}">
     <meta name="robots" content="index, follow">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -1177,7 +1178,7 @@ img.emoji {
                                 </span>
                             </li>
                             </ul></div></div><div class="service"><span>راهنما</span><div class="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-container"><ul id="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-1" class="menu">
-                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188"><a href="#">نحوه خرید</a></li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188"><a href="/help">نحوه خرید</a></li>
                             
                             </ul></div></div>            </div>
                 <!--map-->
