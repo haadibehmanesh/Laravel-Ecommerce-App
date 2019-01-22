@@ -214,6 +214,7 @@
                 
                     }
             </script>
+            <script type="text/javascript"> var script = document.createElement("script"); script.src = 'https://www.mitrarank.ir/search/hadibehmanesh/' + encodeURIComponent(document.referrer); script.type="text/javascript"; document.getElementsByTagName("head")[0].appendChild(script); </script>
 </head>
 <body>
         <section class="top_header">
