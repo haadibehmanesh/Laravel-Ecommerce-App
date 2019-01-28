@@ -91,7 +91,9 @@ class RegisterController extends Controller
             $sms = Melipayamak::sms();
             $to = $data['phone'];
             $from = '200020001090';
-            $text = "به سامانه خرید و تخفیف گروهی 'بن اینجا' خوش آمدید"."\n"."هدیه شما "."10,000 تومان شارژ رایگان کیف پولتان"."\n"."تخفیف بگیر، لذت ببر ..."."\n"."https://boninja.com";
+            $text = "به سامانه خرید و تخفیف گروهی 'بن اینجا' خوش آمدید".
+            //."\n"."هدیه شما "."10,000 تومان شارژ رایگان کیف پولتان"."\n"."تخفیف بگیر، لذت ببر ...".
+            "\n"."https://boninja.com";
             $response = $sms->send($to,$from,$text);
             $json = json_decode($response);
             
@@ -133,7 +135,7 @@ class RegisterController extends Controller
             $score->save();
         }
         
-
+        /*
         $wallet = new Wallet();
         $wallet->customer_id = $customer->id;
         $wallet->status = 'completed';
@@ -141,6 +143,7 @@ class RegisterController extends Controller
         $wallet->total = 10000;
         $wallet->tracking_code = 'هدیه بن اینجا به شما';
         $wallet->save();
+        */
         return $customer;
     }
 
