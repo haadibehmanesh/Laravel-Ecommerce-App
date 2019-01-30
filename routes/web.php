@@ -224,7 +224,7 @@ Route::get('/products/{product}/{category?}', 'ShopController@show')->name('shop
 Route::any('/category/{category}', 'ShopController@showCategory')->name('shop.showCategory');
 
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin5530'], function () {
   Voyager::routes();
 });
 
