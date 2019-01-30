@@ -38,13 +38,6 @@
       <!--[if lt IE 8]>
       <script type='text/javascript' src='http://localhost/takhfiftest/wp-includes/js/json2.min.js?ver=2015-05-03'></script>
       <![endif]-->
-      <link rel='https://api.w.org/' href='../../wp-json/index.html' />
-      <link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../xmlrpc0db0.php?rsd" />
-      <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../wp-includes/wlwmanifest.xml" /> 
-      <meta name="generator" content="WordPress 4.9.6" />
-      <meta name="generator" content="WooCommerce 3.3.3" />
-      <link rel="canonical" href="index.html" />
-      <link rel='shortlink' href='../../index6f72.html?p=96' />
       
     <!-- Bootstrap -->
     <link rel="stylesheet" href="../../wp-content/themes/takhfifat/owl.carousel.min.css">

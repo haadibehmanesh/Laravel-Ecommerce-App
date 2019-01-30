@@ -63,18 +63,7 @@ var _zxcvbnSettings = {"src":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/
 <![endif]-->
 <script type='text/javascript' src='{{asset('wp-content/plugins/woocommerce/assets/js/accounting/accounting.minaffb.js?ver=0.4.2')}}'></script>
 <script type='text/javascript' src='{{asset('wp-content/plugins/woocommerce/assets/js/jquery-serializejson/jquery.serializejson.minc141.js?ver=2.6.1')}}'></script>
-<link rel='https://api.w.org/' href='{{asset('wp-json/index.html')}}' />
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href='{{asset('xmlrpc0db0.php?rsd')}}' />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href='{{asset('wp-includes/wlwmanifest.xml')}}' /> 
-<meta name="generator" content="WordPress 4.9.6" />
-<meta name="generator" content="WooCommerce 3.3.3" />
-<link rel="canonical" href="index.html" />
-<link rel='shortlink' href='{{asset('index64b4.html?p=10')}}' />
-<link rel="alternate" type="application/json+oembed" href="{{asset('wp-json/oembed/1.0/embedafc8.json?url=http%3A%2F%2Flocalhost%2Ftakhfiftest%2Fmy-account%2F')}}" />
-<link rel="alternate" type="text/xml+oembed" href="{{asset('wp-json/oembed/1.0/embedfda5?url=http%3A%2F%2Flocalhost%2Ftakhfiftest%2Fmy-account%2F&amp;format=xml')}}" />
-	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
-	<meta name='robots' content='noindex,follow' />
-<style type="text/css">/** Mega Menu CSS Disabled **/</style>
+
     <!-- Bootstrap -->
     <link href="{{asset('wp-content/themes/takhfifat/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('wp-content/themes/takhfifat/css/bootstrap-rtl.css')}}" rel="stylesheet">

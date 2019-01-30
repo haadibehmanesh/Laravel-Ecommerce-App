@@ -63,18 +63,7 @@ var _zxcvbnSettings = {"src":"\/wp-includes\/js\/zxcvbn.min.js"};
 /* ]]> */
 </script>
 <script type='text/javascript' src='../wp-includes/js/zxcvbn-async.min5152.js?ver=1.0'></script>
-<link rel='https://api.w.org/' href='../wp-json/index.html' />
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../wp-includes/wlwmanifest.xml" /> 
-<meta name="generator" content="WordPress 4.9.6" />
-<meta name="generator" content="WooCommerce 3.3.3" />
-<link rel="canonical" href="index.html" />
-<link rel='shortlink' href='../index2df4.html?p=8' />
-<link rel="alternate" type="application/json+oembed" href="../wp-json/oembed/1.0/embed5300.json?url=http%3A%2F%2Flocalhost%2Ftakhfiftest%2Fcart%2F" />
-<link rel="alternate" type="text/xml+oembed" href="../wp-json/oembed/1.0/embed1326?url=http%3A%2F%2Flocalhost%2Ftakhfiftest%2Fcart%2F&amp;format=xml" />
-	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
-	<meta name='robots' content='noindex,follow' />
-<style type="text/css">/** Mega Menu CSS Disabled **/</style>
+
     <!-- Bootstrap -->
     <link href="../wp-content/themes/takhfifat/css/bootstrap.min.css" rel="stylesheet">
     <link href="../wp-content/themes/takhfifat/css/bootstrap-rtl.css" rel="stylesheet">
