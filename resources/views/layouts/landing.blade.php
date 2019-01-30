@@ -1,4 +1,5 @@
 @extends('app')
+@section('pageTitle', 'Boninja')
 @section('content')
             
                         <section id="wrapper">
