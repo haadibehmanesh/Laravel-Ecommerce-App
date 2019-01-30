@@ -8,8 +8,9 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Auth;
-
-use Melipayamak;
+//require __DIR__ . '/vendor/autoload.php';
+use Melipayamak\MelipayamakApi;
+//use Melipayamak;
 use App\Wallet;
 use App\Invitation;
 use App\Score;
@@ -86,21 +87,39 @@ class RegisterController extends Controller
     protected function create(array $data)
     { 
         
+        try{
+            $username = '09177105063';
+            $password = '8063';
+            $api = new MelipayamakApi($username,$password);
+            $sms = $api->sms('soap');;
+            $to = $data['phone'];
+            $bodyId = 2947;
+            $text = $data['name'];
+            $response = $sms->sendByBaseNumber($text,$to,$bodyId);
+            $json = json_decode($response);
+        }catch(Exception $e){
+            echo $e->getMessage();
+        }
+        /*
        try{
 
             $sms = Melipayamak::sms();
+            dd($sms);
             $to = $data['phone'];
             $from = '200020001090';
+            $bodyId = 2947;
             $text = "به سامانه خرید و تخفیف گروهی 'بن اینجا' خوش آمدید".
             //."\n"."هدیه شما "."10,000 تومان شارژ رایگان کیف پولتان"."\n"."تخفیف بگیر، لذت ببر ...".
             "\n"."https://boninja.com";
-            $response = $sms->send($to,$from,$text);
+            //$response = $sms->send($to,$from,$text); 
+            $response = $sms->sendByBaseNumber($text,$to,$bodyId);
+            //$response = $sms->send($to,$from,$text);
             $json = json_decode($response);
             
         }catch(Exception $e){
             echo $e->getMessage();
         }
-        
+        */
         
       
         $result = md5(uniqid(rand(), true));
