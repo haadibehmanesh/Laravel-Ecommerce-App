@@ -19,7 +19,7 @@
     <meta name="description" content="بهترین تخفیف های {{ $category->name }} در شیراز" />
     <meta name="keywords" content="بن اینجا,boninja,خرید گروهی,زیبایی,تخفیف,تخفیف گروهی,سایت خرید گروهی,پزشکی,تخفیف اینجا,آنلاین,فروش آنلاین,حراج,حراجی,کوپن,بن,رستوران,شیراز,کالا,تفریح"/>
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>تخفیف {{ $category->name }} در شیراز</title>
+    <title>تخفیف {{ $category->name }} در شیراز - سایت تخفیف گروهی بن اینجا</title>
           <link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">
               
       {{--<link rel='stylesheet' id='validate-engine-css-css'  href='../../wp-content/plugins/wysija-newsletters/css/validationEngine.jquery4dc3.css?ver=2.8.2' type='text/css' media='all' />--}}

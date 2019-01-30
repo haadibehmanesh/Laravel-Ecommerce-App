@@ -19,7 +19,7 @@
     <meta name="og:title" property="og:title" content="{{ $product->name }}">
     <meta name="robots" content="index, follow">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>تخفیف {{ $product->name }} در شیراز</title>
+    <title>تخفیف {{ $product->name }} در شیراز - بن اینجا</title>
         <style type="text/css">
 img.wp-smiley,
 img.emoji {
