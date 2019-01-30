@@ -17,7 +17,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="بن اینجا,boninja,خرید گروهی,زیبایی,تخفیف,تخفیف گروهی,سایت خرید گروهی,پزشکی,تخفیف اینجا,آنلاین,فروش آنلاین,حراج,حراجی,کوپن,بن,رستوران,شیراز,کالا,تفریح"/>
-    <meta name="description" content="بهترین تخفیف های شیراز در وب سایت تخفیف و خرید گروهی بن اینجا لذت یک تخفیف خوب" />
+    <meta name="description" content="سایت تخفیف گروهی بن اینجا ارائه دهنده بهترین تخفیف های شیراز ، لذت یک تخفیف خوب با سایت تخفیفی بن اینجا" />
     <meta name="og:type" content="website"/>
     <meta property="og:url" content="https://boninja.com" />
     <meta name="og:site_name" content="boninja"/>
