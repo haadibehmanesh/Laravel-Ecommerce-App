@@ -115,11 +115,14 @@ class AjaxController extends Controller {
     { 
         $pagination = 24;
         $query = Input::get('query');
+    
         $products = BiProduct::search($query)->where('parent_id',0)->where('status',1)->paginate($pagination);
         $products->appends(['query' => $query]);
         return view('layouts/ajax-search-result')->with([
             'products' => $products         
         ])->render();
+    
+        
         
     }
     public function couponShow(Request $request){

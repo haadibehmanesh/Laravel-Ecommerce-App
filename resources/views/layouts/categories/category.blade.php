@@ -19,7 +19,7 @@
     <meta name="description" content="بهترین تخفیف های {{ $category->name }} در شیراز" />
     <meta name="keywords" content="بن اینجا,boninja,خرید گروهی,زیبایی,تخفیف,تخفیف گروهی,سایت خرید گروهی,پزشکی,تخفیف اینجا,آنلاین,فروش آنلاین,حراج,حراجی,کوپن,بن,رستوران,شیراز,کالا,تفریح"/>
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>تخفیف {{ $category->name }} در شیراز - سایت تخفیف گروهی بن اینجا</title>
+    <title>تخفیف {{ $category->name }} در شیراز - بن اینجا</title>
           <link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">
               
       {{--<link rel='stylesheet' id='validate-engine-css-css'  href='../../wp-content/plugins/wysija-newsletters/css/validationEngine.jquery4dc3.css?ver=2.8.2' type='text/css' media='all' />--}}
@@ -344,7 +344,13 @@
     <section id="wrapper">
         <div class="container">
             <div class="row">
-                <ol class="breadcrumb"><a href="/">خانه</a> &#47; {{ $category->name }}</ol> 
+                <ol class="breadcrumb"><a href="/">خانه</a> &#47; <h1 style="
+                    font-size: 16px;
+                    display: inline;
+                    line-height: 29px;
+                    font-weight: normal;
+                    color: #000;
+                ">{{ $category->name }}</h1></ol> 
                 <div class="ajax-slider">
                 @if(!$category->parent_id or empty($featured_product->gallery))
                 <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->

@@ -15,15 +15,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="سایت تخفیف گروهی بن اینجا ارائه دهنده بهترین تخفیف های شیراز ، لذت یک تخفیف خوب با سایت تخفیفی بن اینجا" />
+    <meta name="og:type" content="website"/>
+    <meta property="og:url" content="https://boninja.com" />
+    <meta name="og:site_name" content="boninja"/>
+    <meta name="og:title" property="og:title" content="سامانه خرید و تخفیف گروهی بن اینجا">
+    <meta name="robots" content="index, follow">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>
-          محصولات    </title>
+          همه بن های تخفیف - سایت تخفیف گروهی بن اینجا    </title>
           <link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">
-<link rel="alternate" type="application/rss+xml" title="سامانه خرید و تخفیف گروهی بن اینجا &raquo; محصولات خوراک" href="feed/index.html" />
-		<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost\/takhfiftest\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.6"}};
-			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
-		</script>
+
 		<style type="text/css">
 img.wp-smiley,
 img.emoji {
@@ -47,32 +49,14 @@ img.emoji {
 <link rel='stylesheet' id='dokan-style-css'  href='../wp-content/plugins/dokan-lite/assets/css/styleb246.css?ver=2.7.8' type='text/css' media='all' />
 <link rel='stylesheet' id='dokan-fontawesome-css'  href='../wp-content/plugins/dokan-lite/assets/vendors/font-awesome/font-awesome.minb246.css?ver=2.7.8' type='text/css' media='all' />
 <link rel='stylesheet' id='dokan-rtl-style-css'  href='../wp-content/plugins/dokan-lite/assets/css/rtlb246.css?ver=2.7.8' type='text/css' media='all' />
-<script type='text/javascript'>
-/* <![CDATA[ */
-var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.php","nonce":"93c8ead72f","ajax_loader":"http:\/\/localhost\/takhfiftest\/wp-content\/plugins\/dokan-lite\/assets\/images\/ajax-loader.gif","seller":{"available":"\u0645\u0648\u062c\u0648\u062f","notAvailable":"\u0646\u0627\u0645\u0648\u062c\u0648\u062f"},"delete_confirm":"\u0622\u06cc\u0627 \u0645\u0637\u0645\u0626\u0646\u06cc\u062f\u061f","wrong_message":"\u0645\u0634\u06a9\u0644\u06cc \u0628\u0647 \u0648\u062c\u0648\u062f \u0622\u0645\u062f. \u0644\u0637\u0641\u0627 \u062f\u0648\u0628\u0627\u0631\u0647 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646\u06cc\u062f.","vendor_percentage":"80","commission_type":"percentage","rounding_precision":"6","mon_decimal_point":"."};
-/* ]]> */
-</script>
+
 <script type='text/javascript' src='../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
 <script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
-<link rel='https://api.w.org/' href='../wp-json/index.html' />
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../wp-includes/wlwmanifest.xml" /> 
-<meta name="generator" content="WordPress 4.9.6" />
-<meta name="generator" content="WooCommerce 3.3.3" />
-	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
-	<style type="text/css">/** Mega Menu CSS Disabled **/</style>
     <!-- Bootstrap -->
     <link href="../wp-content/themes/takhfifat/css/bootstrap.min.css" rel="stylesheet">
     <link href="../wp-content/themes/takhfifat/css/bootstrap-rtl.css" rel="stylesheet">
     <link href="../wp-content/themes/takhfifat/css/font-awesome.css" rel="stylesheet">
     <link href="../wp-content/themes/takhfifat/stylefc99.css?ver=2.9" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="http://localhost/takhfiftest/wp-content/themes/takhfifat/js/html5shiv.min.js"></script>
-    <script src="http://localhost/takhfiftest/wp-content/themes/takhfifat/js/respond.min.js"></script>
-    <![endif]-->
 
             	{{--<style>
 	span.price del:before{ content:'قیمت: '; }
@@ -159,7 +143,14 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
             getProducts(page);
         });
         function getProducts(page){
-            
+            var title = jQuery(document).prop('title'); 
+                
+                if(!title.includes('|')){
+                   var  maintitle = title;
+                }else{
+                    var maintitle = title;
+                    maintitle = maintitle.split("|").pop();
+                }
             jQuery.ajax({
                 headers: {
                     'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
@@ -169,7 +160,8 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
                 data:'_token = <?php echo csrf_token() ?>'
 
             }).done(function(data){
-               
+                jQuery('title').remove();
+                document.title =  page+' | '+maintitle;
                 jQuery('.ajax_products').html(data);
 
 
@@ -478,38 +470,8 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
 <section id="social">
     <div class="container">
         <div class="row">
-
-            <!--Newsletters-->
             <div class="block_newsletters">
-
-<div class="widget_wysija_cont shortcode_wysija" style="display:none;"><div id="msg-form-wysija-shortcode5b2b5a2411758-1" class="wysija-msg ajax"></div><form id="form-wysija-shortcode5b2b5a2411758-1" method="post" action="#wysija" class="widget_wysija shortcode_wysija">
-<p class="wysija-paragraph">
-    <label>ایمیل <span class="wysija-required">*</span></label>
-    
-    	<input type="text" name="wysija[user][email]" class="wysija-input validate[required,custom[email]]" title="ایمیل"  value="" />
-    
-    
-    
-    <span class="abs-req">
-        <input type="text" name="wysija[user][abs][email]" class="wysija-input validated[abs][email]" value="" />
-    </span>
-    
-</p>
-
-<input class="wysija-submit wysija-submit-field" type="submit" value="مشترک شدن!" />
-
-    <input type="hidden" name="form_id" value="1" />
-    <input type="hidden" name="action" value="save" />
-    <input type="hidden" name="controller" value="subscribers" />
-    <input type="hidden" value="1" name="wysija-page" />
-
-    
-        <input type="hidden" name="wysija[user_list][list_ids]" value="1" />
-    
- </form></div>				
-				
             </div>
-
             <!--social-->
             <div class="social_footer">
                     <a target="_blank" href="https://www.instagram.com/boninjaa" title="" class="instagram"></a>
@@ -557,7 +519,7 @@ var dokan = {"ajaxurl":"http:\/\/localhost\/takhfiftest\/wp-admin\/admin-ajax.ph
                                 </span>
                             </li>
                             </ul></div></div><div class="service"><span>راهنما</span><div class="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-container"><ul id="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-1" class="menu">
-                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188"><a href="#">نحوه خرید</a></li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188"><a href="/help">نحوه خرید</a></li>
                             
                             </ul></div></div>            </div>
                 <!--map-->

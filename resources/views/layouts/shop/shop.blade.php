@@ -1,5 +1,5 @@
 @extends('app')
- 
+@section('pageTitle', 'همه بن های تخفیف')
 @section('content')
 <section id="wrapper">
         <div class="container">

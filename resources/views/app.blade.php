@@ -87,6 +87,14 @@
                 getProducts(page);
             });
             function getProducts(page){
+                var title = jQuery(document).prop('title'); 
+                
+                if(!title.includes('|')){
+                   var  maintitle = title;
+                }else{
+                    var maintitle = title;
+                    maintitle = maintitle.split("|").pop();
+                }
                 
                 jQuery.ajax({
                     headers: {
@@ -99,7 +107,8 @@
                     }
 
                 }).done(function(data){
-                
+                    jQuery('title').remove();
+                    document.title =  page+' | '+maintitle;
                     jQuery('.ajax_products').html(data);
 
 
@@ -115,6 +124,14 @@
                     search(page,query);
                 });
                 function search(page,query){
+                    var title = jQuery(document).prop('title'); 
+                
+                    if(!title.includes('|')){
+                        var  maintitle = title;
+                    }else{
+                        var maintitle = title;
+                        maintitle = maintitle.split("|").pop();
+                    }
                     jQuery.ajax({
                         headers: {
                             'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
@@ -127,7 +144,8 @@
                         }
         
                     }).done(function(data){
-                       
+                        jQuery('title').remove();
+                        document.title =  page+' | '+maintitle;
                         jQuery('.ajax_search').html(data);
         
         
