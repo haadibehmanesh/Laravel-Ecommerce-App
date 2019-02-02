@@ -832,6 +832,16 @@ img.emoji {
 <div class="address_map box_single">
     
     <div class="title_block"><span>آدرس</span></div>
+    @if(!empty($product->bimerchant->instagram))
+    <div style="font-size: 15px;
+    text-align: center;
+    padding-bottom: 15px;">
+        <span><i class="fa fa-instagram"></i>&nbsp;
+        <a href="{{$product->bimerchant->instagram}}">صفحه اینستاگرام {{$merchant_name}}</a>
+        </span>
+    
+    </div>
+    @endif
     <div style="font-size: 15px;
     text-align: center;
     padding-bottom: 15px;">
