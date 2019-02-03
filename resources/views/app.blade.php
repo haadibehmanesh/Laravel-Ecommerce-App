@@ -39,7 +39,7 @@ xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
     {{--<link href="{{asset('wp-content/themes/takhfifat/css/bootstrap-rtl.css')}}" rel="stylesheet">--}}
   {{--  <link href="{{asset('wp-content/themes/takhfifat/css/star-rating.css')}}" media="all" rel="stylesheet" type="text/css" />--}}
     {{--<link href="{{asset('wp-content/themes/takhfifat/css/font-awesome.css')}}" rel="stylesheet">--}}
-    <link href="{{asset('wp-content/themes/takhfifat/stylefc99.css?ver=5.1')}}" rel="stylesheet">
+    <link href="{{asset('wp-content/themes/takhfifat/stylefc99.css?ver=5.2')}}" rel="stylesheet">
 
 
 
@@ -47,7 +47,7 @@ xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
     <link rel="stylesheet" type="text/css" href="{{asset('engine1/style.css')}}" />
     <script type="text/javascript" src="{{asset('engine1/jquery.js')}}"></script>
     <!-- End WOWSlider.com HEAD section -->
-    <script src="{{ asset('wp-content/themes/takhfifat/js/parsinumber.min.js') }}"></script>
+    {{--<script src="{{ asset('wp-content/themes/takhfifat/js/parsinumber.min.js') }}"></script>--}}
     <script>
     function toPersianNum( num, dontTrim ) {
         var i = 0,
@@ -507,46 +507,10 @@ xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
     <span id="top-link-block" class="hidden">
         <a href="#top" class="well well-sm" style="background-color: ;"  onclick="jQuery('html,body').animate({scrollTop:0},'slow');return false;"><i class="fa fa-angle-up"></i></a>
     </span>
-    {{--
-    <!-- /top-link-block -->
-    <script src="{{asset('wp-content/themes/takhfifat/js/star-rating.js')}}" type="text/javascript"></script>
-    <script type='text/javascript' src='{{asset('wp-content/plugins/woocommerce/assets/js/frontend/single-product.min6765.js?ver=3.3.3')}}'></script>
-    <script type='text/javascript' src='{{asset('wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min44fd.js?ver=2.70')}}'></script>
-    <script type='text/javascript' src='{{asset('wp-includes/js/jquery/ui/core.mine899.js?ver=1.11.4')}}'></script>
-    <script type='text/javascript' src='{{asset('wp-includes/js/jquery/ui/widget.mine899.js?ver=1.11.4')}}'></script>
-    <script type='text/javascript' src='{{asset('wp-includes/js/jquery/ui/mouse.mine899.js?ver=1.11.4')}}'></script>
-    <script type='text/javascript' src='{{asset('wp-includes/js/jquery/ui/sortable.mine899.js?ver=1.11.4')}}'></script>
-    <script type='text/javascript' src='{{asset('wp-includes/js/jquery/ui/datepicker.mine899.js?ver=1.11.4')}}'></script>
-
-    <script type='text/javascript' src='{{asset('wp-content/plugins/dokan-lite/assets/vendors/tooltips/tooltipsb246.js?ver=2.7.8')}}'></script>
-    <script type='text/javascript' src='{{asset('wp-content/plugins/dokan-lite/assets/vendors/chosen/chosen.jquery.minb246.js?ver=2.7.8')}}'></script>
-
-    <script type='text/javascript' src='{{asset('wp-content/plugins/dokan-lite/assets/vendors/form-validate/form-validateb246.js?ver=2.7.8')}}'></script>
-    <script type='text/javascript' src='{{asset('wp-content/plugins/dokan-lite/assets/js/speakingurl.minb246.js?ver=2.7.8')}}'></script>
-    <script type='text/javascript' src='{{asset('wp-includes/js/imgareaselect/jquery.imgareaselect.min1845.js?ver=4.9.')}}'></script>
-    <script type='text/javascript' src='{{asset('wp-includes/js/underscore.min4511.js?ver=1.8.3')}}'></script>
-    <script type='text/javascript' src='{{asset('wp-includes/js/customize-base.min1845.js?ver=4.9.6')}}'></script>
-    <script type='text/javascript' src='{{asset('wp-includes/js/backbone.min9632.js?ver=1.2.3')}}'></script>
-    <script type='text/javascript' src='{{asset('wp-includes/js/customize-modelsb246.js?ver=2.7.8')}}'></script>--}}
-    {{--<script type='text/javascript' src='../../wp-content/plugins/dokan-lite/assets/js/dokanb246.js?ver=2.7.8'></script>--}}
-    {{--
-    <script type='text/javascript' src='{{asset('wp-content/plugins/dokan-lite/assets/vendors/select2/select2.full.minb246.js?ver=2.7.8')}}'></script>
-    <script type='text/javascript' src='{{asset('wp-content/plugins/dokan-pro/assets/js/single-product-shipping.js')}}'></script>
-    <script type='text/javascript'>
-    /* <![CDATA[ */
-    var megamenu = {"timeout":"300","interval":"100"};
-    /* ]]> */
-    </script>
-    <script type='text/javascript' src='{{asset('wp-content/plugins/megamenu/js/maxmegamenu9254.js?ver=2.3.6')}}'></script>
-    <script type='text/javascript' src='{{asset('wp-includes/js/wp-embed.min1845.js?ver=4.9.6')}}'></script>
-    <script type='text/javascript' src='{{asset('wp-includes/js/comment-reply.min1845.js?ver=4.9.6')}}'></script>
-    <script type='text/javascript' src='{{asset('wp-content/plugins/wysija-newsletters/js/validate/languages/jquery.validationEngine-fa4dc3.js?ver=2.8.2')}}'></script>
-    <script type='text/javascript' src='{{asset('wp-content/plugins/wysija-newsletters/js/validate/jquery.validationEngine4dc3.js?ver=2.8.2')}}'></script>--}}
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="{{ asset('wp-content/themes/takhfifat/js/bootstrap.min.js')}} "></script>
-    <script src="{{ asset('wp-content/themes/takhfifat/js/jquery.countdownTimer.js')}} "></script>
-    <script src="{{ asset('wp-content/themes/takhfifat/js/custom.js')}} "></script>
+    
+    <script src="{{ asset('wp-content/themes/takhfifat/js/bootstrap.min.js?ver=1.1.2')}} "></script>
+    {{--<script src="{{ asset('wp-content/themes/takhfifat/js/jquery.countdownTimer.js')}} "></script>
+    <script src="{{ asset('wp-content/themes/takhfifat/js/custom.js')}} "></script>--}}
     <script type='text/javascript' src='{{ asset('wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min6b25.js?ver=2.1.4')}} '></script>
     <script type='text/javascript' src='{{ asset('wp-includes/js/hoverIntent.minc245.js?ver=1.8.1')}} '></script>
     <script type='text/javascript'>
