@@ -11,7 +11,7 @@
                                 <div class="ws_images">
                                     <ul>
                                         @foreach ( $sliderimages as  $sliderimage )
-                                            <li><a href="{{$sliderimage->url}}"><img src="{{ productImage($sliderimage->image) }}"  /></a></li>
+                                            <li><a href="{{$sliderimage->url}}"><img src="{{ productImage($sliderimage->image) }}" alt="سایت تخفیف گروهی بن اینجا"  /></a></li>
                                         @endforeach
                                     </ul></div>
                             <div class="ws_script" style="position:absolute;left:-99%"></div>
@@ -23,7 +23,7 @@
                             <div class="clear"></div>
                             <!--special offer -->
                         <div class="special_offer">
-                            <div class="title_block"><span>بن های ویژه</span></div>
+                            <div class="title_block"><span>تخفیفهای ویژه</span></div>
                             @foreach ($featured as $featured)
                                 <div class="col-lg-4 col-md-4 col-sm-6">
                                
@@ -59,7 +59,7 @@
                                             " class="fa fa-shopping-bag"></i>&nbsp;@if($featured->children->sum('sold')){{toPersianNum($featured->children->sum('sold'))}}@else{{toPersianNum($featured->sold)}}@endif</span>
                                 </div>
                                 <a class="sb-preview-img" href="{{ route('shop.show', $featured->id) }}" class="btn btn-secondary" title="{{ $featured->name }}">
-                                <img class="card-img-top" src="{{ productImage($featured->image) }}" alt="{{ $featured->name }}">
+                                <img class="card-img-top" src="{{ productImage($featured->image) }}" title=" تخفیف {{ $featured->name }}" alt=" تخفیف {{ $featured->name }}">
                                 </a>
                                 
                                 <div class="card-footer">
@@ -81,7 +81,8 @@
                                             <div class="col-xs-12 col-md-offset-2">
                                                     <div class="col-xs-2">
                                                             <a href="{{ route('shop.showCategory', 'رستوران-و-کافی-شاپ') }}">
-                                                            <div style="background: #ee1b24;"  onmouseover='this.style.background="red"' onmouseout='this.style.background="#ee1b24"' class="item_header"><img src="{{asset('wp-content/themes/takhfifat/images/restaurant-interface-symbol-of-fork-and-knife-couple.png')}}"></div>
+                                                            <div style="background: #ee1b24;"  onmouseover='this.style.background="red"' onmouseout='this.style.background="#ee1b24"' class="item_header"><img src="{{asset('wp-content/themes/takhfifat/images/restaurant-interface-symbol-of-fork-and-knife-couple.png')}}"
+                                                                alt="رستوران و کافی شاپ"></div>
                                                             <div style="background: #ee1b24;" class="item_footer">
                                                                 <span>
                                                                     رستوران و کافی شاپ
@@ -93,7 +94,7 @@
                                                         <div class="col-xs-2">
                                                                 <a href="{{ route('shop.showCategory', 'تفریح-و-ورزش') }}">
                                                                 <div style="background: #50b74a;" onmouseover='this.style.background="#06cc06d9"' onmouseout='this.style.background="#50b74a"' class="item_header">
-                                                                        <img src="{{asset('wp-content/themes/takhfifat/images/running.png')}}">
+                                                                        <img src="{{asset('wp-content/themes/takhfifat/images/running.png')}}" alt="تفریحی ورزشی">
                                                                 </div>
                                                                 <div style="background: #50b74a;" class="item_footer">
                                                                     <span>
@@ -105,7 +106,7 @@
                                                         <div class="col-xs-2">
                                                                 <a href="{{ route('shop.showCategory', 'پزشکی-و-سلامت') }}">
                                                                 <div style="background: #01acf1;" onmouseover='this.style.background="#016cf1d9"' onmouseout='this.style.background="#01acf1"' class="item_header">
-                                                                        <img src="{{asset('wp-content/themes/takhfifat/images/heartbeat.png')}}">
+                                                                        <img src="{{asset('wp-content/themes/takhfifat/images/heartbeat.png')}}" alt="پزشکی و سلامت">
                                                                 </div>
                                                                 <div style="background: #01acf1;" class="item_footer">
                                                                     <span>
@@ -118,7 +119,7 @@
                                                         <div class="col-xs-2">
                                                             <a href="{{ route('shop.showCategory', 'آرایشی-و-زیبایی') }}">
                                                             <div style="background: #ee008c;"  onmouseover='this.style.background="#ff0081"' onmouseout='this.style.background="#ee008c"' class="item_header">
-                                                            <img src="{{asset('wp-content/themes/takhfifat/images/openned-scissors.png')}}">
+                                                            <img src="{{asset('wp-content/themes/takhfifat/images/openned-scissors.png')}}" alt="زیبایی و آرایشی">
                                                             </div>
                                                             <div style="background: #ee008c;" class="item_footer">
                                                                 <span>
@@ -138,7 +139,7 @@
                                                         
                                                             <div class="col-xs-2">
                                                                 <a href="{{ route('shop.showCategory', 'هنر-و-تئاتر') }}">
-                                                                <div style="background: #702c93;" onmouseover='this.style.background="#c13fc3"' onmouseout='this.style.background="#702c93"' class="item_header"><img src="{{asset('wp-content/themes/takhfifat/images/theatre-masks.png')}}"></div>
+                                                                <div style="background: #702c93;" onmouseover='this.style.background="#c13fc3"' onmouseout='this.style.background="#702c93"' class="item_header"><img src="{{asset('wp-content/themes/takhfifat/images/theatre-masks.png')}}" alt="هنر و تئاتر"></div>
                                                                 <div style="background: #702c93;" class="item_footer">
                                                                     <span>
                                                                         هنر و تئاتر
@@ -149,7 +150,7 @@
                                                         <div class="col-xs-2">
                                                             <a href="{{ route('shop.showCategory', 'آموزشی') }}">
                                                             <div style="background: #0288d1;" onmouseover='this.style.background="#0066ff"' onmouseout='this.style.background="#0288d1"' class="item_header">
-                                                                    <img src="{{asset('wp-content/themes/takhfifat/images/open-book.png')}}">
+                                                                    <img src="{{asset('wp-content/themes/takhfifat/images/open-book.png')}}" alt="آموزشی">
                                                             </div>
                                                             <div style="background: #0288d1;" class="item_footer">
                                                                 <span>
@@ -161,7 +162,7 @@
                                                         <div class="col-xs-2">
                                                                 <a href="{{ route('shop.showCategory', 'خدمات') }}">
                                                             <div style="background: #cc692e;"
-                                                            onmouseover='this.style.background="#f36815"' onmouseout='this.style.background="#cc692e"' class="item_header"><img src="{{asset('wp-content/themes/takhfifat/images/tools.png')}}"></div>
+                                                            onmouseover='this.style.background="#f36815"' onmouseout='this.style.background="#cc692e"' class="item_header"><img src="{{asset('wp-content/themes/takhfifat/images/tools.png')}}" alt="خدمات"></div>
                                                             <div style="background: #cc692e;" class="item_footer">
                                                                 <span>
                                                                     خدمات
@@ -172,7 +173,7 @@
                                                         <div class="col-xs-2">
                                                                 <a href="{{ route('shop.showCategory', 'بن-های-فروشگاهی') }}">
                                                                 <div style="background: #ffb715;" onmouseover='this.style.background="#ffd715"' onmouseout='this.style.background="#ffb715"' class="item_header">
-                                                                    <img src="{{asset('wp-content/themes/takhfifat/images/shopping-purse-icon.png')}}"></div>
+                                                                    <img src="{{asset('wp-content/themes/takhfifat/images/shopping-purse-icon.png')}}" alt="بن های فروشگاهی"></div>
                                                                 <div style="background: #ffb715;" class="item_footer">
                                                                     <span>
                                                                         بن های فروشگاهی
@@ -192,7 +193,7 @@
                             
                         <div class="clear"></div><!--Discount other -->
                         <div class="discount_other">
-                            <div class="title_block"><span>دیـگر بن ها</span></div>
+                            <div class="title_block"><span>دیـگر تخفیف ها</span></div>
                             <div class='ajax_products'>
                             @forelse ($products as $product) 
                             @if(empty($product->parent_id) || $product->parent_id ==0)
@@ -229,7 +230,7 @@
                                                             <span class="card-shopping"><i style="font-size: 14px;" class="fa fa-shopping-bag"></i>&nbsp;@if($product->children->sum('sold')){{toPersianNum($product->children->sum('sold'))}}@else{{toPersianNum($product->sold)}}@endif</span>
                                                 </div>
                                                 <a class="sb-preview-img" href="{{ route('shop.show', $product->id) }}" class="btn btn-secondary" title="{{ $product->name }}">
-                                                <img class="card-img-top" src="{{ productImage($product->image) }}" alt="{{ $product->name }}">
+                                                <img class="card-img-top" src="{{ productImage($product->image) }}" title=" تخفیف {{ $product->name }}" alt=" تخفیف {{ $product->name }}">
                                                 </a>
                                                 
                                                 <div class="card-footer">
@@ -307,7 +308,7 @@
                                                         <span class="card-shopping"><i style="font-size: 17px;" class="fa fa-shopping-bag"></i>&nbsp;@if($product->children->sum('sold')){{toPersianNum($product->children->sum('sold'))}}@else{{toPersianNum($product->sold)}}@endif</span>
                                             </div>
                                             <a class="sb-preview-img" href="{{ route('shop.show', $product->id) }}" class="btn btn-secondary" title="{{ $product->name }}">
-                                            <img class="card-img-top" src="{{ productImage($product->image) }}" alt="{{ $product->name }}">
+                                            <img class="card-img-top" src="{{ productImage($product->image) }}" title=" تخفیف {{ $product->name }}" alt=" تخفیف {{ $product->name }}">
                                             </a>
                                             
                                             <div class="card-footer">

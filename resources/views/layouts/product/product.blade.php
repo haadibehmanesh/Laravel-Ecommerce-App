@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="fa_IR">
+<html
+xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129893987-1"></script>
@@ -204,7 +205,7 @@ img.emoji {
         <div class="row">
 
             <!--logo-->
-            <div class="logo" ><h1><a href="/" title="سامانه خرید و تخفیف گروهی بن اینجا"></a></h1></div>
+        <div class="logo" ><a href="https://boninja.com" title="سامانه خرید و تخفیف گروهی بن اینجا"><h1 style="visibility:hidden">تخفیف {{ $product->name }} در شیراز - بن اینجا</h1></a></div>
             
             <!--select search-->
             <div id="form_header">
@@ -360,7 +361,7 @@ img.emoji {
 
                         <!--<span class="like"><i class="fa fa-eye"></i></span>-->
 
-                        <h1>{{ $product->name }}</h1> | <h2> {{ strip_tags($product->description) }} </h2>
+                        <h2>{{ $product->name }}</h2> | <h2> {{ strip_tags($product->description) }} </h2>
 
                         <span class="Discount" style="
                         padding: 13px 0 0 19px;
@@ -416,7 +417,7 @@ img.emoji {
 
                                         <div class="img_item">
 
-                                        <a href="{{ route('shop.show', $product->id) }}" title="{{ $product->name }}"><img src="{{ productImage($product->image) }}" title="{{ $product->name }}" alt="{{ $product->name }}"></a>
+                                        <a href="{{ route('shop.show', $product->id) }}" title="{{ $product->name }}"><img src="{{ productImage($product->image) }}" title=" تخفیف {{ $product->name }}" alt=" تخفیف {{ $product->name }}"></a>
 
                                         </div>
 
@@ -429,7 +430,7 @@ img.emoji {
 
                                         <div class="img_item">
 
-                                        <a href="{{ route('shop.show', $product->id) }}" title="{{ $product->name }}"><img src="{{ productImage($image) }}" title="{{ $product->name }}" alt="{{ $product->name }}"></a>
+                                        <a href="{{ route('shop.show', $product->id) }}" title="{{ $product->name }}"><img src="{{ productImage($image) }}" title=" تخفیف {{ $product->name }}" alt=" تخفیف {{ $product->name }}"></a>
 
                                         </div>
 
@@ -645,14 +646,14 @@ img.emoji {
                                               <div class="modal-content">
                                                 <div class="modal-header">
                                                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                  <h4 class="modal-title">انتخاب ها</h4>
+                                                  <h3 class="modal-title">انتخاب ها</h3>
                                                 </div>
                                                 @if($product->children->count() > 0)
                                                 <div class="modal-body">
                                                         @foreach ( $product->children->where('status',1)->sortBy('sort_order') as $subproduct )
                                                         <div class="row">
                                                                 <div class="col-md-3 col-xs-3">
-                                                                    <img width="150" class="choose-child-img loading" alt="{{$subproduct->name}}" src="{{ productImage($subproduct->image) }}" title="{{$subproduct->name}}" data-was-processed="true">
+                                                                    <img width="150" class="choose-child-img loading" alt=" تخفیف {{$subproduct->name}}" src="{{ productImage($subproduct->image) }}" title=" تخفیف {{$subproduct->name}}" data-was-processed="true">
                                                                 </div>
                                                                 <div class="col-xs-7 hidden-md hidden-lg mb-5 mr-20">
                                                                     <span class="badge background-color-orange pull-right">%{{ toPersianNum($subproduct->discount)  }}</span>
@@ -763,7 +764,9 @@ img.emoji {
 	<!--details more-->
 <div class="details_more box_single">
     <div class="title_block"><span>توضیحات تکمیلی</span></div>
-    <div class="col-lg-6 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox"><h2>{{ $product->name }}</h2></div>
+    <div class="col-lg-6 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox" style="
+    padding: 0;
+"><h2>{{ $product->name }}</h2></div>
     <div class="col-lg-6 col-md-12 col-sm-24 col-xs-24 cat-deal-smallbox">
         <p>
            {{--   @if(Auth::guard('customer')->check())--}}
@@ -935,7 +938,7 @@ img.emoji {
                                         <span class="card-shopping"><i style="font-size: 17px;" class="fa fa-shopping-bag"></i>&nbsp;@if($product->children->sum('sold')){{toPersianNum($product->children->sum('sold'))}}@else{{toPersianNum($product->sold)}}@endif</span>
                             </div>
                             <a class="sb-preview-img" href="{{ route('shop.show', $product->id) }}" class="" title="{{ $product->name }}">
-                            <img class="card-img-top" src="{{ productImage($product->image) }}" alt="{{ $product->name }}">
+                            <img class="card-img-top" src="{{ productImage($product->image) }}" title=" تخفیف {{ $product->name }}" alt=" تخفیف {{ $product->name }}">
                             </a>
                             
                             <div class="card-footer">
@@ -986,7 +989,7 @@ img.emoji {
                                     <span class="card-shopping"><i style="font-size: 17px;" class="fa fa-shopping-bag"></i>&nbsp;@if($product->children->sum('sold')){{toPersianNum($product->children->sum('sold'))}}@else{{toPersianNum($product->sold)}}@endif</span>
                         </div>
                         <a class="sb-preview-img" href="{{ route('shop.show', $product->id) }}" class="" title="{{ $product->name }}">
-                        <img class="card-img-top" src="{{ productImage($product->image) }}" alt="{{ $product->name }}">
+                        <img class="card-img-top" src="{{ productImage($product->image) }}" title=" تخفیف {{ $product->name }}" alt=" تخفیف {{ $product->name }}">
                         </a>
                         
                         <div class="card-footer">

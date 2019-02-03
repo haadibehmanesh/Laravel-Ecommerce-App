@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="fa_IR">
+<html
+xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
 {{--<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">--}}
 <head>
 
@@ -28,29 +29,18 @@
         @yield('pageTitle') - سامانه خرید و تخفیف گروهی بن اینجا
     </title>
     <link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">
-    {{--{{--<link rel='stylesheet' id='validate-engine-css-css'  href='{{asset('wp-content/plugins/wysija-newsletters/css/validationEngine.jquery4dc3.css?ver=2.8.2')}}' type='text/css' media='all' />--}}
-    <link rel='stylesheet' id='megamenu-css'  href='{{asset('wp-content/uploads/maxmegamenu/style3d1a.css?ver=1.1')}}' type='text/css' media='all' />
-    <link rel='stylesheet' id='dashicons-css'  href='{{asset('wp-includes/css/dashicons.min1845.css?ver=4.9.6')}}' type='text/css' media='all' />
-{{--
-<link rel='stylesheet' id='woocommerce-layout-rtl-css'  href='{{asset('wp-content/plugins/woocommerce/assets/css/woocommerce-layout-rtl6765.css?ver=3.3.3')}}' type='text/css' media='all' />
-<link rel='stylesheet' id='woocommerce-smallscreen-rtl-css'  href='{{asset('wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen-rtl6765.css?ver=3.3.3')}}' type='text/css' media='only screen and (max-width: 768px)' />
-<link rel='stylesheet' id='woocommerce-general-rtl-css'  href='{{asset('wp-content/plugins/woocommerce/assets/css/woocommerce-rtl6765.css?ver=3.3.3')}}' type='text/css' media='all' />
-<link rel='stylesheet' id='dokan-style-css'  href='{{asset('wp-content/plugins/dokan-lite/assets/css/styleb246.css?ver=2.7.8')}}' type='text/css' media='all' />
-<link rel='stylesheet' id='dokan-fontawesome-css'  href='{{asset('wp-content/plugins/dokan-lite/assets/vendors/font-awesome/font-awesome.minb246.css?ver=2.7.8')}}' type='text/css' media='all' />
-<link rel='stylesheet' id='dokan-rtl-style-css'  href='{{asset('wp-content/plugins/dokan-lite/assets/css/rtlb246.css?ver=2.7.8')}}' type='text/css' media='all' />
-<link rel='stylesheet' id='dokan-select2-css-css'  href='{{asset('wp-content/plugins/dokan-lite/assets/vendors/select2/select2b246.css?ver=2.7.8')}}' type='text/css' media='all' />
-
-<script type='text/javascript' src='{{asset('wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4')}}'></script>
-<script type='text/javascript' src='{{asset('wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1')}}'></script>--}}
+    
+    <link rel='stylesheet' id='megamenu-css'  href='{{asset('wp-content/uploads/maxmegamenu/style3d1a.css?ver=1.2')}}' type='text/css' media='all' />
+    
 
     <!-- Bootstrap -->
    {{-- <link href="{{asset('wp-content/themes/takhfifat/css/bootstrap-3.3.6.css')}}" rel="stylesheet">--}}
-    <link href="{{asset('wp-content/themes/takhfifat/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{asset('wp-content/themes/takhfifat/css/bootstrap-rtl.css')}}" rel="stylesheet">
+   
+    {{--<link href="{{asset('wp-content/themes/takhfifat/css/bootstrap-rtl.css')}}" rel="stylesheet">--}}
   {{--  <link href="{{asset('wp-content/themes/takhfifat/css/star-rating.css')}}" media="all" rel="stylesheet" type="text/css" />--}}
-    <link href="{{asset('wp-content/themes/takhfifat/css/font-awesome.css')}}" rel="stylesheet">
-    <link href="{{asset('wp-content/themes/takhfifat/stylefc99.css?ver=4.8')}}" rel="stylesheet">
-    <link href="{{asset('wp-content/themes/takhfifat/css/main-page.css')}}" rel="stylesheet">
+    {{--<link href="{{asset('wp-content/themes/takhfifat/css/font-awesome.css')}}" rel="stylesheet">--}}
+    <link href="{{asset('wp-content/themes/takhfifat/stylefc99.css?ver=5.1')}}" rel="stylesheet">
+
 
 
     <!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
@@ -271,7 +261,7 @@
                 <div class="container">
                     <div class="row">
                         <!--logo-->
-                        <div class="logo" ><h1><a href="/" title="سامانه خرید و تخفیف گروهی بن اینجا"></a></h1></div>
+                        <div class="logo" ><a href="https://boninja.com" title="سامانه خرید و تخفیف گروهی بن اینجا"><h1 style="visibility:hidden">سایت تخفیف گروهی بن اینجا در شیراز</h1></a></div>
                         
                         <!--select search-->
                         <div id="form_header">
@@ -454,7 +444,7 @@
                 <!--concession-->
                 <div class="concession">
                     <div class="post-content">
-                        <p><img src="https://trustseal.enamad.ir/logo.aspx?id=102812&amp;p=kKwVU4anvepH2HDY" alt="" onclick="window.open(&quot;https://trustseal.enamad.ir/Verify.aspx?id=102812&amp;p=kKwVU4anvepH2HDY&quot;, &quot;Popup&quot;,&quot;toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=580, height=600, top=30&quot;)" style="cursor:pointer" id="kKwVU4anvepH2HDY"></p>
+                        <p><img src="https://trustseal.enamad.ir/logo.aspx?id=102812&amp;p=kKwVU4anvepH2HDY" alt="نماد الکترونیکی سایت تخفیف گروهی بن اینجا" onclick="window.open(&quot;https://trustseal.enamad.ir/Verify.aspx?id=102812&amp;p=kKwVU4anvepH2HDY&quot;, &quot;Popup&quot;,&quot;toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=580, height=600, top=30&quot;)" style="cursor:pointer" id="kKwVU4anvepH2HDY"></p>
         
                     </div>
                 </div>
@@ -493,7 +483,7 @@
                 <!--map-->
                 <div class="col-lg-3 col-md-3">
                     <div class="map">
-                            <img src="{{asset('wp-content/uploads/2017/05/naghshe-1.jpg') }}" />
+                            <img src="{{asset('wp-content/uploads/2017/05/naghshe-1.jpg') }}" alt="آدرس سایت تخفیف گروهی بن اینجا"/>
                     </div>
                 </div>
             </div>

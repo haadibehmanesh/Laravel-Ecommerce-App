@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="fa_IR">
+<html
+xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
 
 <!-- Boninja.com --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Boninja.com -->
 <head>
@@ -214,7 +215,7 @@
         <div class="row">
 
             <!--logo-->
-                            <div class="logo" ><h1><a href="/" title="سامانه خرید و تخفیف گروهی بن اینجا"></a></h1></div>
+                            <div class="logo" ><a href="https://boninja.com" title="سامانه خرید و تخفیف گروهی بن اینجا"></a></div>
             
             <!--select search-->
             <div id="form_header">
@@ -350,7 +351,7 @@
                     line-height: 29px;
                     font-weight: normal;
                     color: #000;
-                ">{{ $category->name }}</h1></ol> 
+                ">تخفیف {{ $category->name }}</h1></ol> 
                 <div class="ajax-slider">
                 @if(!$category->parent_id or empty($featured_product->gallery))
                 <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
@@ -413,7 +414,7 @@
     
                                             <div class="img_item">
     
-                                                <a href="{{ route('shop.show', $featured_product->id) }}" title="{{ $featured_product->name }}"><img src="{{ productImage($featured_product->image) }}" title="{{ $featured_product->name }}" alt="{{ $featured_product->name }}"></a>
+                                                <a href="{{ route('shop.show', $featured_product->id) }}" title="{{ $featured_product->name }}"><img src="{{ productImage($featured_product->image) }}" title="تخفیف {{ $featured_product->name }}" alt="تخفیف {{ $featured_product->name }}"></a>
     
                                             </div>
     
@@ -426,7 +427,7 @@
 
                                                     <div class="img_item">
             
-                                                    <a href="{{ route('shop.show', $featured_product->id) }}" title="{{ $featured_product->name }}"><img src="{{ productImage($image) }}" title="{{ $featured_product->name }}" alt="{{ $featured_product->name }}"></a>
+                                                    <a href="{{ route('shop.show', $featured_product->id) }}" title="{{ $featured_product->name }}"><img src="{{ productImage($image) }}" title="تخفیف {{ $featured_product->name }}" alt="تخفیف {{ $featured_product->name }}"></a>
             
                                                     </div>
             
@@ -679,7 +680,7 @@
                             <span class="card-shopping"><i style="font-size: 17px;" class="fa fa-shopping-bag"></i>&nbsp;@if($product->children->sum('sold')){{toPersianNum($product->children->sum('sold'))}}@else{{toPersianNum($product->sold)}}@endif</span>
                 </div>
                 <a class="sb-preview-img" href="{{ route('shop.show', $product->id) }}" class="btn btn-secondary" title="{{ $product->name }}">
-                <img class="card-img-top" src="{{ productImage($product->image) }}" alt="{{ $product->name }}">
+                <img class="card-img-top" src="{{ productImage($product->image) }}" title="تخفیف {{ $product->name }}" alt="تخفیف {{ $product->name }}">
                 </a>
                 
                 <div class="card-footer">
