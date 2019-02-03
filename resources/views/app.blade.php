@@ -39,7 +39,7 @@ xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
     {{--<link href="{{asset('wp-content/themes/takhfifat/css/bootstrap-rtl.css')}}" rel="stylesheet">--}}
   {{--  <link href="{{asset('wp-content/themes/takhfifat/css/star-rating.css')}}" media="all" rel="stylesheet" type="text/css" />--}}
     {{--<link href="{{asset('wp-content/themes/takhfifat/css/font-awesome.css')}}" rel="stylesheet">--}}
-    <link href="{{asset('wp-content/themes/takhfifat/stylefc99.css?ver=5.2')}}" rel="stylesheet">
+    <link href="{{asset('wp-content/themes/takhfifat/style.css?ver=5.3')}}" rel="stylesheet">
 
 
 

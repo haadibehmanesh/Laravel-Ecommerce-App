@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html
-xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
+<html lang="fa_IR">
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129893987-1"></script>
@@ -205,7 +204,7 @@ img.emoji {
         <div class="row">
 
             <!--logo-->
-        <div class="logo" ><a href="https://boninja.com" title="سامانه خرید و تخفیف گروهی بن اینجا"><h1 style="visibility:hidden">تخفیف {{ $product->name }} در شیراز - بن اینجا</h1></a></div>
+            <div class="logo" ><h1><a href="/" title="سامانه خرید و تخفیف گروهی بن اینجا"></a></h1></div>
             
             <!--select search-->
             <div id="form_header">
@@ -361,7 +360,7 @@ img.emoji {
 
                         <!--<span class="like"><i class="fa fa-eye"></i></span>-->
 
-                        <h2>{{ $product->name }}</h2> | <h2> {{ strip_tags($product->description) }} </h2>
+                        <h1>{{ $product->name }}</h1> | <h2> {{ strip_tags($product->description) }} </h2>
 
                         <span class="Discount" style="
                         padding: 13px 0 0 19px;
@@ -417,7 +416,7 @@ img.emoji {
 
                                         <div class="img_item">
 
-                                        <a href="{{ route('shop.show', $product->id) }}" title="{{ $product->name }}"><img src="{{ productImage($product->image) }}" title=" تخفیف {{ $product->name }}" alt=" تخفیف {{ $product->name }}"></a>
+                                        <a href="{{ route('shop.show', $product->id) }}" title="{{ $product->name }}"><img src="{{ productImage($product->image) }}" title="{{ $product->name }}" alt="{{ $product->name }}"></a>
 
                                         </div>
 
@@ -430,7 +429,7 @@ img.emoji {
 
                                         <div class="img_item">
 
-                                        <a href="{{ route('shop.show', $product->id) }}" title="{{ $product->name }}"><img src="{{ productImage($image) }}" title=" تخفیف {{ $product->name }}" alt=" تخفیف {{ $product->name }}"></a>
+                                        <a href="{{ route('shop.show', $product->id) }}" title="{{ $product->name }}"><img src="{{ productImage($image) }}" title="{{ $product->name }}" alt="{{ $product->name }}"></a>
 
                                         </div>
 
@@ -646,14 +645,14 @@ img.emoji {
                                               <div class="modal-content">
                                                 <div class="modal-header">
                                                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                  <h3 class="modal-title">انتخاب ها</h3>
+                                                  <h4 class="modal-title">انتخاب ها</h4>
                                                 </div>
                                                 @if($product->children->count() > 0)
                                                 <div class="modal-body">
                                                         @foreach ( $product->children->where('status',1)->sortBy('sort_order') as $subproduct )
                                                         <div class="row">
                                                                 <div class="col-md-3 col-xs-3">
-                                                                    <img width="150" class="choose-child-img loading" alt=" تخفیف {{$subproduct->name}}" src="{{ productImage($subproduct->image) }}" title=" تخفیف {{$subproduct->name}}" data-was-processed="true">
+                                                                    <img width="150" class="choose-child-img loading" alt="{{$subproduct->name}}" src="{{ productImage($subproduct->image) }}" title="{{$subproduct->name}}" data-was-processed="true">
                                                                 </div>
                                                                 <div class="col-xs-7 hidden-md hidden-lg mb-5 mr-20">
                                                                     <span class="badge background-color-orange pull-right">%{{ toPersianNum($subproduct->discount)  }}</span>
@@ -938,7 +937,7 @@ img.emoji {
                                         <span class="card-shopping"><i style="font-size: 17px;" class="fa fa-shopping-bag"></i>&nbsp;@if($product->children->sum('sold')){{toPersianNum($product->children->sum('sold'))}}@else{{toPersianNum($product->sold)}}@endif</span>
                             </div>
                             <a class="sb-preview-img" href="{{ route('shop.show', $product->id) }}" class="" title="{{ $product->name }}">
-                            <img class="card-img-top" src="{{ productImage($product->image) }}" title=" تخفیف {{ $product->name }}" alt=" تخفیف {{ $product->name }}">
+                            <img class="card-img-top" src="{{ productImage($product->image) }}" alt="{{ $product->name }}">
                             </a>
                             
                             <div class="card-footer">
@@ -989,7 +988,7 @@ img.emoji {
                                     <span class="card-shopping"><i style="font-size: 17px;" class="fa fa-shopping-bag"></i>&nbsp;@if($product->children->sum('sold')){{toPersianNum($product->children->sum('sold'))}}@else{{toPersianNum($product->sold)}}@endif</span>
                         </div>
                         <a class="sb-preview-img" href="{{ route('shop.show', $product->id) }}" class="" title="{{ $product->name }}">
-                        <img class="card-img-top" src="{{ productImage($product->image) }}" title=" تخفیف {{ $product->name }}" alt=" تخفیف {{ $product->name }}">
+                        <img class="card-img-top" src="{{ productImage($product->image) }}" alt="{{ $product->name }}">
                         </a>
                         
                         <div class="card-footer">
@@ -1224,7 +1223,7 @@ img.emoji {
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../../wp-content/themes/takhfifat/js/star-rating.js" type="text/javascript"></script>
-<script src="../../wp-content/themes/takhfifat/js/bootstrap.min.js?ver=1.1.4"></script>
+<script src="../../wp-content/themes/takhfifat/js/bootstrap.min.js"></script>
 <script src="../../wp-content/themes/takhfifat/js/jquery.countdownTimer.js"></script>
 <script src="../../wp-content/themes/takhfifat/js/custom.js"></script>
 <script type='text/javascript' src='../../wp-content/plugins/woocommerce/assets/js/frontend/single-product.min6765.js?ver=3.3.3'></script>

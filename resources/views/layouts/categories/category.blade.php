@@ -53,7 +53,7 @@ xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
     <link href="../../wp-content/themes/takhfifat/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../wp-content/themes/takhfifat/css/bootstrap-rtl.css" rel="stylesheet">
     <link href="../../wp-content/themes/takhfifat/css/font-awesome.css" rel="stylesheet">
-    <link href="../../wp-content/themes/takhfifat/stylefc99.css?ver=4.4" rel="stylesheet">
+    <link href="../../wp-content/themes/takhfifat/stylefc99.css?ver=4.5" rel="stylesheet">
 	<script src="../../wp-content/themes/takhfifat/js/parsinumber.min.js"></script>
 	<script>
 	function toPersianNum( num, dontTrim ) {
