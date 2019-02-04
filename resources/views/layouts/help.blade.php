@@ -8,7 +8,7 @@
             </div>
             
             <div class="title_post">
-                <h1>راهنما خرید</h1>
+                <h2>راهنما خرید</h2>
                 
                 
             </div>

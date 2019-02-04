@@ -215,7 +215,7 @@ xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
         <div class="row">
 
             <!--logo-->
-                            <div class="logo" ><a href="https://boninja.com" title="سامانه خرید و تخفیف گروهی بن اینجا"></a></div>
+                            <div class="logo" ><a href="https://boninja.com" title="سامانه خرید و تخفیف گروهی بن اینجا"><span style="visibility: hidden">سایت تخفیف گروهی و خرید در شیراز - بن اینجا</span></a></div>
             
             <!--select search-->
             <div id="form_header">
@@ -348,10 +348,10 @@ xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
                 <ol class="breadcrumb"><a href="/">خانه</a> &#47; <h1 style="
                     font-size: 16px;
                     display: inline;
-                    line-height: 29px;
+                    line-height: 0px;
                     font-weight: normal;
                     color: #000;
-                ">تخفیف {{ $category->name }}</h1></ol> 
+                ">تخفیف {{ $category->name }} <span style="visibility:hidden;line-height: 0;">در شیراز - سایت تخفیف گروهی بن اینجا</span></h1></ol> 
                 <div class="ajax-slider">
                 @if(!$category->parent_id or empty($featured_product->gallery))
                 <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->

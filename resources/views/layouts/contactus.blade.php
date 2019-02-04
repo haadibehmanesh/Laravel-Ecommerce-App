@@ -8,7 +8,7 @@
             </div>
             
             <div class="title_post">
-                <h1>تماس با ما</h1>
+                <h2>تماس با ما</h2>
                 
                
             </div>
