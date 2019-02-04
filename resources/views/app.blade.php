@@ -29,7 +29,7 @@ xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
         @yield('pageTitle') - سامانه خرید و تخفیف گروهی بن اینجا
     </title>
     <link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">
-    
+    <link rel="apple-touch-icon" href="{{{ asset('img/favicon.png') }}}"/>
     <link rel='stylesheet' id='megamenu-css'  href='{{asset('wp-content/uploads/maxmegamenu/style3d1a.css?ver=1.2')}}' type='text/css' media='all' />
     
 
@@ -39,7 +39,7 @@ xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
     {{--<link href="{{asset('wp-content/themes/takhfifat/css/bootstrap-rtl.css')}}" rel="stylesheet">--}}
   {{--  <link href="{{asset('wp-content/themes/takhfifat/css/star-rating.css')}}" media="all" rel="stylesheet" type="text/css" />--}}
     {{--<link href="{{asset('wp-content/themes/takhfifat/css/font-awesome.css')}}" rel="stylesheet">--}}
-    <link href="{{asset('wp-content/themes/takhfifat/style.css?ver=5.3')}}" rel="stylesheet">
+    <link href="{{asset('wp-content/themes/takhfifat/style.css?ver=5.7')}}" rel="stylesheet">
 
 
 
@@ -47,7 +47,7 @@ xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
     <link rel="stylesheet" type="text/css" href="{{asset('engine1/style.css')}}" />
     <script type="text/javascript" src="{{asset('engine1/jquery.js')}}"></script>
     <!-- End WOWSlider.com HEAD section -->
-    {{--<script src="{{ asset('wp-content/themes/takhfifat/js/parsinumber.min.js') }}"></script>--}}
+    <script src="{{ asset('wp-content/themes/takhfifat/js/parsinumber.min.js') }}"></script>
     <script>
     function toPersianNum( num, dontTrim ) {
         var i = 0,
@@ -242,6 +242,7 @@ xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
                             <li id="menu-item-164" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164"><a href="https://www.instagram.com/boninjaa/" title="اینستاگرام"><i class="fa fa-instagram" style="padding:0px;"></i>ما را دنبال کنید!</a></li>
                             {{--<li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-166"><a href="/products">همه پیشنهادها</a></li>--}}
                         </ul>
+                        
                         <!--phone-->
                         <div class="phone"><span><i class="fa fa-phone"></i>09176952155 - 07136265496</span></div>
                                     
@@ -387,6 +388,7 @@ xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
                 </div>
             
             </nav>
+            
             <div class="clear"></div>
    
             @yield('content')
@@ -488,6 +490,7 @@ xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
                 </div>
             </div>
         </div>
+        <strong style="visibility:hidden">بهترین تخفیف های شیراز - سایت تخفیف گروهی بن اینجا</strong>
     </footer>
     
     <!--copyright-->

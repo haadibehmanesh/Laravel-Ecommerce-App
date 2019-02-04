@@ -23,7 +23,10 @@
                             <div class="clear"></div>
                             <!--special offer -->
                         <div class="special_offer">
-                            <div class="title_block"><span>تخفیفهای ویژه</span></div>
+                            <div class="title_block"><span><h2 style="
+                                font-size: 20px;
+                                line-height: 0.1;
+                            ">تخفیفهای ویژه</h2></span></div>
                             @foreach ($featured as $featured)
                                 <div class="col-lg-4 col-md-4 col-sm-6">
                                
@@ -62,8 +65,7 @@
                                 <img class="card-img-top" src="{{ productImage($featured->image) }}" title=" تخفیف {{ $featured->name }}" alt=" تخفیف {{ $featured->name }}">
                                 </a>
                                 
-                                <div class="card-footer">
-                                <a href="{{ route('shop.show', $featured->id) }}" class="btn btn-secondary" title="{{ $featured->name }}" class="btn btn-secondary"><span style="font-size: 16px;" class="card-span"><del>{{ toPersianNum($featured->price) }} تومان</del></span></a>
+                                <div class="card-footer"><span style="font-size: 16px;" class="card-span"><del>{{ toPersianNum($featured->price) }} تومان</del></span>
                                 <span class="card-discount">%{{ toPersianNum($featured->discount)  }} تخفیف</span>
                                 <span class="card-after-discount">{{ toPersianNum(presentPrice($featured->price,$featured->discount)) }} تومان</span>
                                 </div>
@@ -75,7 +77,10 @@
                             <!--category-->
                             
                                 <div class="block_category">
-                                    <div class="title_block"><span>دسته بندی ها</span></div>
+                                    <div class="title_block"><span><h2 style="
+                                        font-size: 20px;
+                                        line-height: 0.1;
+                                    ">دسته بندی ها</h2></span></div>
                                     
                                     <div class="cat">
                                             <div class="col-xs-12 col-md-offset-2">
@@ -193,7 +198,10 @@
                             
                         <div class="clear"></div><!--Discount other -->
                         <div class="discount_other">
-                            <div class="title_block"><span>دیـگر تخفیف ها</span></div>
+                            <div class="title_block"><span><h2 style="
+                                font-size: 20px;
+                                line-height: 0.1;
+                            ">دیـگر تخفیف ها</h2></span></div>
                             <div class='ajax_products'>
                             @forelse ($products as $product) 
                             @if(empty($product->parent_id) || $product->parent_id ==0)
