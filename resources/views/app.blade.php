@@ -306,19 +306,35 @@ xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{Auth::guard('customer')->user()->name}}<span class="fa fa-user pull-right"></span></a>
                     <ul class="dropdown-menu">
                                                             <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard is-active">
-                                                            <a href="{{url('/my-account')}}">پیشخوان</a>
+                                                            <a href="{{url('/my-account')}}" style="
+                                                            transition: all .1s ease-in-out;
+                                                            padding: 10px 10px 10px 0;
+                                                            border-bottom: 1px solid #eaeaea;
+                                                        ">پیشخوان</a>
                             </li>
                                                             <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
-                                <a href="{{url('/my-account')}}">سفارش ها</a>
+                                <a href="{{url('/my-account/orders')}}" style="
+                                transition: all .1s ease-in-out;
+                                padding: 10px 10px 10px 0;
+                                border-bottom: 1px solid #eaeaea;
+                            ">سفارش ها</a>
                             </li>
                              
                             
                                                             <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
-                                <a href="{{url('/my-account')}}">جزئیات حساب</a>
+                                <a href="{{url('/my-account')}}" style="
+                                transition: all .1s ease-in-out;
+                                padding: 10px 10px 10px 0;
+                                border-bottom: 1px solid #eaeaea;
+                            ">جزئیات حساب</a>
                             </li>
                                                             <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout"><a href="{{ url('/customer/logout') }}"
                                                                 onclick="event.preventDefault();
-                                                                         document.getElementById('logout-form').submit();">
+                                                                         document.getElementById('logout-form').submit();" style="
+    transition: all .1s ease-in-out;
+    padding: 10px 10px 10px 0;
+    border-bottom: 1px solid #eaeaea;
+">
                                                                 خروج
                                                             </a>
                         
