@@ -18,15 +18,24 @@ class AboutusController extends Controller
      */
     public function index()
     {
-        $slider = BiSlider::where('name' , 'index')->get();
-        $sliderimages = BiSliderImage::where('bi_slider_id', $slider[0]->id)->get();
-        $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
-    
-        return view('layouts/aboutus')->with([
-            'sliderimages' =>  $sliderimages,
-            'allcategories' => $allcategories,
+        if (\Request::isJson()) {
+            
+            $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
+            return AboutusResource::collection($allcategories);
 
-        ]);
+        } else {
+
+            $slider = BiSlider::where('name' , 'index')->get();
+            $sliderimages = BiSliderImage::where('bi_slider_id', $slider[0]->id)->get();
+            $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
+        
+            return view('layouts/aboutus')->with([
+                'sliderimages' =>  $sliderimages,
+                'allcategories' => $allcategories,
+    
+            ]);
+        }
+        
     }
 
     /**
@@ -97,8 +106,13 @@ class AboutusController extends Controller
     //Api
     public function ApiIndex()
     {
-        $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
+        if (\Request::isJson()) {
+            $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
     
-        return AboutusResource::collection($allcategories);
+            return AboutusResource::collection($allcategories);
+        } else {
+            dd('no');
+        }
+        
     }
 }
