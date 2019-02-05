@@ -22,6 +22,7 @@ xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>تخفیف {{ $category->name }} در شیراز - بن اینجا</title>
           <link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">
+          <link rel="apple-touch-icon" href="{{{ asset('img/favicon.png') }}}"/>
               
       {{--<link rel='stylesheet' id='validate-engine-css-css'  href='../../wp-content/plugins/wysija-newsletters/css/validationEngine.jquery4dc3.css?ver=2.8.2' type='text/css' media='all' />--}}
       <link rel='stylesheet' id='woocommerce-layout-rtl-css'  href='../../wp-content/plugins/woocommerce/assets/css/woocommerce-layout-rtl6765.css?ver=3.3.3' type='text/css' media='all' />
@@ -700,7 +701,11 @@ xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
 
     </div>
         </div>
-			    </div>                <div class="clear"></div>
+        <p style="
+        visibility: hidden;"> <strong>بهترین تخفیف های {{$category->name}} در شهر شیراز </strong>با وب سایت تخفیف و خرید گروهی بن اینجا</p>
+                </div>   
+                       
+        <div class="clear"></div>
                 
 <!--text_short_category-->
 
