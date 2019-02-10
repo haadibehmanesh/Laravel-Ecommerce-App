@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fa_IR">
+<html lang="fa">
 
 <!-- Boninja.com -->
 <!-- Boninja.com --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Boninja.com -->
@@ -19,7 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>
-        سبد خرید    </title>
+        سبد خرید - سایت تخفیف گروهی بن اینجا در شیراز   </title>
 	<link rel='dns-prefetch' href='/cart' />
 		<script type="text/javascript">
 			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.6"}};

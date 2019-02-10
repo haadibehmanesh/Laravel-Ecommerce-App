@@ -16,12 +16,14 @@
         "hesto/multi-auth": "^2.0",
         "larabook/gateway": "^3.3",
         "laravel/framework": "5.6.*",
+        "laravel/passport": "^7.1",
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^5.5",
         "melipayamak/laravel": "^0.1.0",
         "nicolaslopezj/searchable": "1.*",
         "tartan/laravel-online-payment": "^5.0",
-        "tcg/voyager": "1.1.3"
+        "tcg/voyager": "1.1.3",
+        "tymon/jwt-auth": "^0.5.12"
     },
     "require-dev": {
         "filp/whoops": "^2.0",

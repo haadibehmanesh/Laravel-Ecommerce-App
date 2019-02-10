@@ -17,4 +17,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post('login', 'API\CustomerController@login');
+Route::post('register', 'API\CustomerController@register');
+Route::group(['middleware' => 'auth:api'], function(){
+Route::post('details', 'API\CustomerController@details');
+});
+
 Route::get('/aboutus', 'AboutusController@index')->name('Api.index');

@@ -126,6 +126,7 @@ return [
          */
         Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
         Bhavinjr\Wishlist\Providers\WishlistServiceProvider::class,
+        Laravel\Passport\PassportServiceProvider::class,
      //   Mews\Captcha\CaptchaServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
