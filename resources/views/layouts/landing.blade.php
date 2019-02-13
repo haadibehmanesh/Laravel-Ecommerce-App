@@ -17,8 +17,9 @@
                             <div class="ws_script" style="position:absolute;left:-99%"></div>
                                 <div class="ws_shadow"></div>
                                 </div>	
-                                <script type="text/javascript" src="engine1/wowslider.js"></script>
-                                <script type="text/javascript" src="engine1/script.js"></script>
+                                {{--<script type="text/javascript" src="engine1/wowslider.js"></script>
+                                <script type="text/javascript" src="engine1/script.js"></script>--}}
+                                <script type="text/javascript" src="engine1/compressed.js?ver=1.1"></script>
                                 <!-- End WOWSlider.com BODY section --><div class="row">
                             <div class="clear"></div>
                             <!--special offer -->

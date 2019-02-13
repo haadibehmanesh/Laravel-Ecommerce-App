@@ -33,21 +33,32 @@ xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
     <link rel='stylesheet' id='megamenu-css'  href='{{asset('wp-content/uploads/maxmegamenu/style3d1a.css?ver=1.2')}}' type='text/css' media='all' />
     
 
-    <!-- Bootstrap -->
-   {{-- <link href="{{asset('wp-content/themes/takhfifat/css/bootstrap-3.3.6.css')}}" rel="stylesheet">--}}
    
-    {{--<link href="{{asset('wp-content/themes/takhfifat/css/bootstrap-rtl.css')}}" rel="stylesheet">--}}
-  {{--  <link href="{{asset('wp-content/themes/takhfifat/css/star-rating.css')}}" media="all" rel="stylesheet" type="text/css" />--}}
-    {{--<link href="{{asset('wp-content/themes/takhfifat/css/font-awesome.css')}}" rel="stylesheet">--}}
     <link href="{{asset('wp-content/themes/takhfifat/style.css?ver=5.7')}}" rel="stylesheet">
 
-
+   
 
     <!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
     <link rel="stylesheet" type="text/css" href="{{asset('engine1/style.css')}}" />
-    <script type="text/javascript" src="{{asset('engine1/jquery.js')}}"></script>
+    {{--
+    <script type="text/javascript" src="{{asset('engine1/jquery.js')}}"></script>--}}
+    
     <!-- End WOWSlider.com HEAD section -->
-    <script src="{{ asset('wp-content/themes/takhfifat/js/parsinumber.min.js') }}"></script>
+    <script src="{{ asset('wp-content/themes/takhfifat/js/compressed.js?ver=1.1') }}"></script>
+   {{-- <script src="{{ asset('wp-content/themes/takhfifat/js/parsinumber.min.js') }}"></script>
+    
+    
+    <script src="{{ asset('wp-content/themes/takhfifat/js/bootstrap.min.js?ver=1.1.2')}} "></script>
+    <script type='text/javascript' src='{{ asset('wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min6b25.js?ver=2.1.4')}} '></script>
+    <script type='text/javascript' src='{{ asset('wp-includes/js/hoverIntent.minc245.js?ver=1.8.1')}} '></script>--}}
+    <script type='text/javascript'>
+    /* <![CDATA[ */
+    var megamenu = {"timeout":"300","interval":"100"};
+    /* ]]> */
+    </script>
+    {{--<script type='text/javascript' src='{{ asset('wp-content/plugins/megamenu/js/maxmegamenu9254.js?ver=2.3.6')}} '>
+    </script>
+    <script type='text/javascript' src='{{ asset('wp-includes/js/wp-embed.min1845.js?ver=4.9.6')}} '></script>--}}
     <script>
     function toPersianNum( num, dontTrim ) {
         var i = 0,
@@ -527,19 +538,7 @@ xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
         <a href="#top" class="well well-sm" style="background-color: ;"  onclick="jQuery('html,body').animate({scrollTop:0},'slow');return false;"><i class="fa fa-angle-up"></i></a>
     </span>
     
-    <script src="{{ asset('wp-content/themes/takhfifat/js/bootstrap.min.js?ver=1.1.2')}} "></script>
-    {{--<script src="{{ asset('wp-content/themes/takhfifat/js/jquery.countdownTimer.js')}} "></script>
-    <script src="{{ asset('wp-content/themes/takhfifat/js/custom.js')}} "></script>--}}
-    <script type='text/javascript' src='{{ asset('wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min6b25.js?ver=2.1.4')}} '></script>
-    <script type='text/javascript' src='{{ asset('wp-includes/js/hoverIntent.minc245.js?ver=1.8.1')}} '></script>
-    <script type='text/javascript'>
-    /* <![CDATA[ */
-    var megamenu = {"timeout":"300","interval":"100"};
-    /* ]]> */
-    </script>
-    <script type='text/javascript' src='{{ asset('wp-content/plugins/megamenu/js/maxmegamenu9254.js?ver=2.3.6')}} '>
-    </script>
-    <script type='text/javascript' src='{{ asset('wp-includes/js/wp-embed.min1845.js?ver=4.9.6')}} '></script>
+   
     
     <script type="text/javascript">
     jQuery(document).ready(function(){
