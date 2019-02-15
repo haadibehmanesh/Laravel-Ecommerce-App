@@ -518,7 +518,7 @@ xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
                 </div>
             </div>
         </div>
-        <strong style="visibility:hidden">بهترین تخفیف های شیراز - سایت تخفیف گروهی بن اینجا</strong>
+        <strong style="visibility:hidden">بهترین تخفیف ها در شیراز - سایت تخفیف گروهی بن اینجا Boninja.com</strong>
     </footer>
     
     <!--copyright-->
