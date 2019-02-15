@@ -360,7 +360,7 @@ xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
                         <div class="ws_images">
                             <ul>
                                 @foreach ( $sliderimages as  $sliderimage )
-                                    <li><a href="{{$sliderimage->url}}"><img src="{{ productImage($sliderimage->image) }}"  /></a></li>
+                                    <li><a href="{{$sliderimage->url}}"><img src="{{ productImage($sliderimage->image) }}" alt="تخفیف {{$sliderimage->name}} " /></a></li>
                                 @endforeach
                             </ul></div>
                     <div class="ws_script" style="position:absolute;left:-99%"></div>
