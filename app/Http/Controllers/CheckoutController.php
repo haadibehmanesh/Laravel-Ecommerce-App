@@ -121,7 +121,7 @@ class CheckoutController extends Controller
                     $order_status = 'completed_W';
                     $order->update(['status' => $order_status]);     
                     $order_items = BiOrderItem::where('bi_order_id', $order->id)->get();
-                    if($order->status == 'completed_w'){
+                    if($order->status == 'completed_W'){
                         foreach (Cart::content() as $item) {
                           $product = BiProduct::find($item->id);
                           $productSold = (($product->quantity-$product->sold) - $item->qty) >= 0 ? $product->sold + $item->qty : -1 ;
