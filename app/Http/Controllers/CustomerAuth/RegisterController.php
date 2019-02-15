@@ -139,6 +139,9 @@ class RegisterController extends Controller
         BiCustomer::create([
             'customer_id' => $customer->id,
         ]);
+        $score = Score::firstOrNew(['customer_id' => $customer->id]);
+        $score->value = $score->value + 1;
+        $score->save();
 
         if(!empty($data['invitation'])){
             $invitation = new Invitation();
