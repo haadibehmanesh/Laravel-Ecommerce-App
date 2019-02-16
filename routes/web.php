@@ -1,4 +1,7 @@
 <?php
+use App\Score;
+use App\Invitation;
+use App\Customer;
 use App\BiOrder;
 use App\BiOrderItem;
 use App\BiProduct;
@@ -177,7 +180,23 @@ Route::any('callback/from/bank',function(){
       $wallet_last->tracking_code = $trackingCode;     
       $wallet_last->save();
     }
-     
+    $total = Cart::subtotal();
+    $portion = floor($total/10000);
+    if($portion > 0){
+      $score = Score::firstOrNew(['customer_id' => Auth::guard('customer')->user()->id]);
+      $score->value = $score->value + 5;
+      $score->save();
+  
+      $invitation = Invitation::where('customer_id',Auth::guard('customer')->user()->id)->first();
+      if(!empty($invitation->code)){
+          $inviter = Customer::where('invitation_code', $invitation->code)->first();
+          if(!empty($inviter->id)){
+              $score = Score::firstOrNew(['customer_id' => $inviter->id]);
+              $score->value = $score->value + 5;
+              $score->save();
+          }
+      }
+    } 
     Cart::destroy();  
     if(session()->has('coupon')){
       session()->forget('coupon');

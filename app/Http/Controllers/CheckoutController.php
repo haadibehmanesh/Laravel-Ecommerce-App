@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Customer;
 use App\BiOrder;
 use App\BiCategory;
 use App\BiOrderItem;
@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Auth;
 use App\Wallet;
+use App\Score;
+use App\Invitation;
 
 
 class CheckoutController extends Controller
@@ -46,6 +48,7 @@ class CheckoutController extends Controller
         $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
         $customer_id = Auth::guard('customer')->user()->id;
         $total = Cart::subtotal();
+        $portion = floor($total/10000);
         if($request->wallet == "on"){
             $wallet = Wallet::where('customer_id', $customer_id)->where('status','completed')->orderBy('id','desc')->first();
             if($wallet->total >= $total){
@@ -193,6 +196,21 @@ class CheckoutController extends Controller
                     $message = 'پرداخت با موفقیت انجام شد!';
                     $wallet->total = $wallet->total - $total;
                     $wallet->save();
+                    if($portion > 0){
+                        $score = Score::firstOrNew(['customer_id' => $customer_id]);
+                        $score->value = $score->value + 5;
+                        $score->save();
+                    
+                        $invitation = Invitation::where('customer_id',$customer_id)->first();
+                        if(!empty($invitation->code)){
+                            $inviter = Customer::where('invitation_code', $invitation->code)->first();
+                            if(!empty($inviter->id)){
+                                $score = Score::firstOrNew(['customer_id' => $inviter->id]);
+                                $score->value = $score->value + 5;
+                                $score->save();
+                            }
+                        }
+                    }
                     //dd($wallet->total);
                     return view('layouts/checkout/bankresult')->with([
                         'allcategories' => $allcategories,
