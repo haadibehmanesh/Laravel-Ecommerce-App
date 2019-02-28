@@ -23,6 +23,8 @@ xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
     <meta property="og:url" content="https://boninja.com" />
     <meta name="og:site_name" content="boninja"/>
     <meta name="og:title" property="og:title" content="سامانه خرید و تخفیف گروهی بن اینجا">
+    <meta property="og:description" content="تخفیف های فوق العاده تا 90 درصد از بهترین رستوران و کافی شاپ ها , مراکز تفریحی و ورزشی , پزشکی و سلامت , آرایشی و بهداشتی و .... را در سایت تخفیف و خرید گروهی بن اینجا مشاهده و خرید نمایید."/>
+    <meta property="og:image" content="{{{ asset('img/og_image.png') }}}" />
     <meta name="robots" content="index, follow">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>
@@ -30,11 +32,11 @@ xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
     </title>
     <link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">
     <link rel="apple-touch-icon" href="{{{ asset('img/favicon.png') }}}"/>
-    <link rel='stylesheet' id='megamenu-css'  href='{{asset('wp-content/uploads/maxmegamenu/style3d1a.css?ver=1.2')}}' type='text/css' media='all' />
+    <link rel='stylesheet' id='megamenu-css'  href='{{asset('wp-content/uploads/maxmegamenu/style3d1a.css')}}' type='text/css' media='all' />
     
 
    
-    <link href="{{asset('wp-content/themes/takhfifat/style.css?ver=5.7')}}" rel="stylesheet">
+    <link href="{{asset('wp-content/themes/takhfifat/style.css')}}" rel="stylesheet">
 
    
 
@@ -44,7 +46,7 @@ xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
     <script type="text/javascript" src="{{asset('engine1/jquery.js')}}"></script>--}}
     
     <!-- End WOWSlider.com HEAD section -->
-    <script src="{{ asset('wp-content/themes/takhfifat/js/compressed.js?ver=1.1') }}"></script>
+    <script src="{{ asset('wp-content/themes/takhfifat/js/compressed.js') }}"></script>
    {{-- <script src="{{ asset('wp-content/themes/takhfifat/js/parsinumber.min.js') }}"></script>
     
     
