@@ -24,16 +24,16 @@ xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
           <link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">
           <link rel="apple-touch-icon" href="{{{ asset('img/favicon.png') }}}"/>
               
-      {{--<link rel='stylesheet' id='validate-engine-css-css'  href='../../wp-content/plugins/wysija-newsletters/css/validationEngine.jquery4dc3.css?ver=2.8.2' type='text/css' media='all' />--}}
+      {{--<link rel='stylesheet' id='validate-engine-css-css'  href='../../wp-content/plugins/wysija-newsletters/css/validationEngine.jquery4dc3.css?ver=2.8.2' type='text/css' media='all' />
       <link rel='stylesheet' id='woocommerce-layout-rtl-css'  href='../../wp-content/plugins/woocommerce/assets/css/woocommerce-layout-rtl6765.css?ver=3.3.3' type='text/css' media='all' />
       <link rel='stylesheet' id='woocommerce-smallscreen-rtl-css'  href='../../wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen-rtl6765.css?ver=3.3.3' type='text/css' media='only screen and (max-width: 768px)' />
-      <link rel='stylesheet' id='woocommerce-general-rtl-css'  href='../../wp-content/plugins/woocommerce/assets/css/woocommerce-rtl6765.css?ver=3.3.3' type='text/css' media='all' />
+      <link rel='stylesheet' id='woocommerce-general-rtl-css'  href='../../wp-content/plugins/woocommerce/assets/css/woocommerce-rtl6765.css?ver=3.3.3' type='text/css' media='all' />--}}
       <link rel='stylesheet' id='megamenu-css'  href='../../wp-content/uploads/maxmegamenu/style3d1a.css?ver=1.1' type='text/css' media='all' />
-      <link rel='stylesheet' id='dashicons-css'  href='../../wp-includes/css/dashicons.min1845.css?ver=4.9.6' type='text/css' media='all' />
+     {{-- <link rel='stylesheet' id='dashicons-css'  href='../../wp-includes/css/dashicons.min1845.css?ver=4.9.6' type='text/css' media='all' />
       <link rel='stylesheet' id='dokan-style-css'  href='../../wp-content/plugins/dokan-lite/assets/css/styleb246.css?ver=2.7.8' type='text/css' media='all' />
       <link rel='stylesheet' id='dokan-fontawesome-css'  href='../../wp-content/plugins/dokan-lite/assets/vendors/font-awesome/font-awesome.minb246.css?ver=2.7.8' type='text/css' media='all' />
       <link rel='stylesheet' id='dokan-rtl-style-css'  href='../../wp-content/plugins/dokan-lite/assets/css/rtlb246.css?ver=2.7.8' type='text/css' media='all' />
-      <link rel='stylesheet' id='dokan-select2-css-css'  href='../../wp-content/plugins/dokan-lite/assets/vendors/select2/select2b246.css?ver=2.7.8' type='text/css' media='all' />
+      <link rel='stylesheet' id='dokan-select2-css-css'  href='../../wp-content/plugins/dokan-lite/assets/vendors/select2/select2b246.css?ver=2.7.8' type='text/css' media='all' />--}}
       
       <script type='text/javascript' src='../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
       <script type='text/javascript' src='../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
@@ -42,19 +42,19 @@ xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
       <![endif]-->
       
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="../../wp-content/themes/takhfifat/owl.carousel.min.css">
-    <link rel="stylesheet" href="../../wp-content/themes/takhfifat/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../../wp-content/themes/takhfifat/owl.carousel.min.css?ver=1.1">
+    {{--<link rel="stylesheet" href="../../wp-content/themes/takhfifat/owl.theme.default.min.css">--}}
 
     
 <!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
 <link rel="stylesheet" type="text/css" href="../../engine1/style.css" />
 <script type="text/javascript" src="../../engine1/jquery.js"></script>
-<!-- End WOWSlider.com HEAD section -->
+<!-- End WOWSlider.com HEAD section -->{{--
     <link href="../../wp-content/themes/takhfifat/css/list.css?ver=1.1" rel="stylesheet">
     <link href="../../wp-content/themes/takhfifat/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../wp-content/themes/takhfifat/css/bootstrap-rtl.css" rel="stylesheet">
     <link href="../../wp-content/themes/takhfifat/css/font-awesome.css" rel="stylesheet">
-    <link href="../../wp-content/themes/takhfifat/stylefc99.css?ver=4.5" rel="stylesheet">
+   <link href="../../wp-content/themes/takhfifat/stylefc99.css?ver=4.5" rel="stylesheet">--}}
 	<script src="../../wp-content/themes/takhfifat/js/parsinumber.min.js"></script>
 	<script>
 	function toPersianNum( num, dontTrim ) {
