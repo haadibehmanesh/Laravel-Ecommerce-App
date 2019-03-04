@@ -184,7 +184,7 @@ Route::any('callback/from/bank',function(){
     $portion = floor($total/10000);
     if($portion > 0){
       $score = Score::firstOrNew(['customer_id' => Auth::guard('customer')->user()->id]);
-      $score->value = $score->value + 5;
+      $score->value = $score->value + (5*$portion);
       $score->save();
   
       $invitation = Invitation::where('customer_id',Auth::guard('customer')->user()->id)->first();
@@ -192,7 +192,7 @@ Route::any('callback/from/bank',function(){
           $inviter = Customer::where('invitation_code', $invitation->code)->first();
           if(!empty($inviter->id)){
               $score = Score::firstOrNew(['customer_id' => $inviter->id]);
-              $score->value = $score->value + 5;
+              $score->value = $score->value + (5*$portion);
               $score->save();
           }
       }

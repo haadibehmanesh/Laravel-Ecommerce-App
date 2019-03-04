@@ -20,8 +20,8 @@ class AboutusController extends Controller
     {
         if (\Request::isJson()) {
             
-            $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
-            return AboutusResource::collection($allcategories);
+            $allproducts = BiProduct::where('status',1)->where('parent_id', 0)->orderBy('id', 'asc')->get();
+            return AboutusResource::collection($allproducts);
 
         } else {
 

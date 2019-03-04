@@ -198,7 +198,7 @@ class CheckoutController extends Controller
                     $wallet->save();
                     if($portion > 0){
                         $score = Score::firstOrNew(['customer_id' => $customer_id]);
-                        $score->value = $score->value + 5;
+                        $score->value = $score->value + (5*$portion);
                         $score->save();
                     
                         $invitation = Invitation::where('customer_id',$customer_id)->first();
@@ -206,7 +206,7 @@ class CheckoutController extends Controller
                             $inviter = Customer::where('invitation_code', $invitation->code)->first();
                             if(!empty($inviter->id)){
                                 $score = Score::firstOrNew(['customer_id' => $inviter->id]);
-                                $score->value = $score->value + 5;
+                                $score->value = $score->value + (5*$portion);
                                 $score->save();
                             }
                         }
