@@ -23,4 +23,5 @@ Route::group(['middleware' => 'auth:api'], function(){
 Route::post('details', 'API\CustomerController@details');
 });
 
-Route::get('/aboutus', 'AboutusController@index')->name('Api.index');
+//Route::get('/aboutus', 'AboutusController@index')->name('Api.index');
+Route::get('/featuredProducts', 'ApiController@fetchFeatured')->name('Api.fetchFeatured');
