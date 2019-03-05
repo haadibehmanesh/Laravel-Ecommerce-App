@@ -20,6 +20,7 @@
                                 {{--<script type="text/javascript" src="engine1/wowslider.js"></script>
                                 <script type="text/javascript" src="engine1/script.js"></script>--}}
                                 <script type="text/javascript" src="engine1/compressed.js"></script>
+                               
                                 <!-- End WOWSlider.com BODY section --><div class="row">
                             <div class="clear"></div>
                             <!--special offer -->

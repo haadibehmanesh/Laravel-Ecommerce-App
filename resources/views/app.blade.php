@@ -47,6 +47,7 @@ xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
     
     <!-- End WOWSlider.com HEAD section -->
     <script src="{{ asset('wp-content/themes/takhfifat/js/compressed.js') }}"></script>
+ 
    {{-- <script src="{{ asset('wp-content/themes/takhfifat/js/parsinumber.min.js') }}"></script>
     
     
