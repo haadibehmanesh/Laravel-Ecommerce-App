@@ -41,7 +41,7 @@ class ApiController extends Controller
 
         if (\Request::isJson()) {
             $category = BiCategory::where('slug', $slug)->firstOrFail();
-            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->where('status',1)->get();
+            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->where('status',1)->take(7)->get();
            // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
             return FetchRestaurantsResource::collection($productsForCategories);
 
@@ -55,7 +55,7 @@ class ApiController extends Controller
         if (\Request::isJson()) {
             $category = BiCategory::where('slug', $slug)->firstOrFail();
          
-            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->where('status',1)->get();
+            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->where('status',1)->take(7)->get();
            // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
             return FetchEntertainmentsResource::collection($productsForCategories);
 
@@ -69,7 +69,7 @@ class ApiController extends Controller
         if (\Request::isJson()) {
             $category = BiCategory::where('slug', $slug)->firstOrFail();
          
-            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->where('status',1)->get();
+            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->where('status',1)->take(7)->get();
            // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
             return fetchHealthResource::collection($productsForCategories);
 
@@ -82,7 +82,7 @@ class ApiController extends Controller
         if (\Request::isJson()) {
             $category = BiCategory::where('slug', $slug)->firstOrFail();
          
-            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->where('status',1)->get();
+            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->where('status',1)->take(7)->get();
            // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
             return fetchBeautyResource::collection($productsForCategories);
 
@@ -95,7 +95,7 @@ class ApiController extends Controller
         if (\Request::isJson()) {
             $category = BiCategory::where('slug', $slug)->firstOrFail();
          
-            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->where('status',1)->get();
+            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->where('status',1)->take(7)->get();
            // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
             return FetchTrainingResource::collection($productsForCategories);
 
@@ -108,7 +108,7 @@ class ApiController extends Controller
         if (\Request::isJson()) {
             $category = BiCategory::where('slug', $slug)->firstOrFail();
          
-            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->where('status',1)->get();
+            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->where('status',1)->take(7)->get();
            // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
             return FetchCinemaResource::collection($productsForCategories);
 
@@ -121,7 +121,7 @@ class ApiController extends Controller
         if (\Request::isJson()) {
             $category = BiCategory::where('slug', $slug)->firstOrFail();
          
-            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->where('status',1)->get();
+            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->where('status',1)->take(7)->get();
            // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
             return FetchServiceResource::collection($productsForCategories);
 
@@ -134,7 +134,7 @@ class ApiController extends Controller
         if (\Request::isJson()) {
             $category = BiCategory::where('slug', $slug)->firstOrFail();
          
-            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->where('status',1)->get();
+            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->where('status',1)->take(7)->get();
            // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
             return FetchShopsResource::collection($productsForCategories);
 
