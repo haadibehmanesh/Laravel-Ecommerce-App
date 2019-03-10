@@ -3,7 +3,7 @@
 xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
 {{--<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">--}}
 <head>
-
+{{--
         <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129893987-1"></script>
     <script>
@@ -13,13 +13,13 @@ xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
 
     gtag('config', 'UA-129893987-1');
     </script>
-
+--}}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="بن اینجا,boninja,خرید گروهی,زیبایی,تخفیف,تخفیف گروهی,سایت خرید گروهی,پزشکی,تخفیف اینجا,آنلاین,فروش آنلاین,حراج,حراجی,کوپن,بن,رستوران,شیراز,کالا,تفریح"/>
     <meta name="description" content="سایت تخفیف گروهی بن اینجا ارائه دهنده بهترین تخفیف های شیراز ، لذت یک تخفیف خوب با سایت تخفیفی بن اینجا" />
-    <meta name="og:type" content="website"/>
+    <meta property="og:type" content="product" />
     <meta property="og:url" content="https://boninja.com" />
     <meta name="og:site_name" content="boninja"/>
     <meta name="og:title" property="og:title" content="سامانه خرید و تخفیف گروهی بن اینجا">
@@ -477,7 +477,8 @@ xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
                 <!--concession-->
                 <div class="concession">
                     <div class="post-content">
-                        <p><img src="https://trustseal.enamad.ir/logo.aspx?id=102812&amp;p=kKwVU4anvepH2HDY" alt="نماد الکترونیکی سایت تخفیف گروهی بن اینجا" onclick="window.open(&quot;https://trustseal.enamad.ir/Verify.aspx?id=102812&amp;p=kKwVU4anvepH2HDY&quot;, &quot;Popup&quot;,&quot;toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=580, height=600, top=30&quot;)" style="cursor:pointer" id="kKwVU4anvepH2HDY"></p>
+                       {{-- <p><img src="https://trustseal.enamad.ir/logo.aspx?id=102812&amp;p=kKwVU4anvepH2HDY" alt="نماد الکترونیکی سایت تخفیف گروهی بن اینجا" onclick="window.open(&quot;https://trustseal.enamad.ir/Verify.aspx?id=102812&amp;p=kKwVU4anvepH2HDY&quot;, &quot;Popup&quot;,&quot;toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=580, height=600, top=30&quot;)" style="cursor:pointer" id="kKwVU4anvepH2HDY"></p>--}}
+                       <p><img src="{{{ asset('img/enamad.png') }}}" alt="نماد الکترونیکی سایت تخفیف گروهی بن اینجا" onclick="window.open(&quot;https://trustseal.enamad.ir/Verify.aspx?id=102812&amp;p=kKwVU4anvepH2HDY&quot;, &quot;Popup&quot;,&quot;toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=580, height=600, top=30&quot;)" style="cursor:pointer" id="kKwVU4anvepH2HDY"></p>
         
                     </div>
                 </div>
@@ -548,6 +549,11 @@ xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
     jQuery(document).ready(function(){
         jQuery('.container').persiaNumber();
     });
+    </script>
+    <script src="https://cdn.jsdelivr.net/ga-lite/latest/ga-lite.min.js" async></script>
+    <script>
+        var galite = galite || {};
+        galite.UA = 'UA-129893987-1'; // Insert your tracking code here
     </script>
     </body>
 </html>
