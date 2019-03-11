@@ -37,28 +37,32 @@ img.emoji {
 </style>
 <link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">
 {{--<link rel='stylesheet' id='validate-engine-css-css'  href='../../wp-content/plugins/wysija-newsletters/css/validationEngine.jquery4dc3.css?ver=2.8.2' type='text/css' media='all' />--}}
-<link rel='stylesheet' id='woocommerce-layout-rtl-css'  href='../../wp-content/plugins/woocommerce/assets/css/woocommerce-layout-rtl6765.css?ver=3.3.3' type='text/css' media='all' />
+
+{{--
 <link rel='stylesheet' id='woocommerce-smallscreen-rtl-css'  href='../../wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen-rtl6765.css?ver=3.3.3' type='text/css' media='only screen and (max-width: 768px)' />
-<link rel='stylesheet' id='woocommerce-general-rtl-css'  href='../../wp-content/plugins/woocommerce/assets/css/woocommerce-rtl6765.css?ver=3.3.3' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-general-rtl-css'  href='../../wp-content/plugins/woocommerce/assets/css/woocommerce-rtl6765.css?ver=3.3.3' type='text/css' media='all' />--}}
 <link rel='stylesheet' id='megamenu-css'  href='../../wp-content/uploads/maxmegamenu/style3d1a.css?ver=1.1' type='text/css' media='all' />
-<link rel='stylesheet' id='dashicons-css'  href='../../wp-includes/css/dashicons.min1845.css?ver=4.9.6' type='text/css' media='all' />
+{{-- <link rel='stylesheet' id='dashicons-css'  href='../../wp-includes/css/dashicons.min1845.css?ver=4.9.6' type='text/css' media='all' />
 <link rel='stylesheet' id='dokan-style-css'  href='../../wp-content/plugins/dokan-lite/assets/css/styleb246.css?ver=2.7.8' type='text/css' media='all' />
 <link rel='stylesheet' id='dokan-fontawesome-css'  href='../../wp-content/plugins/dokan-lite/assets/vendors/font-awesome/font-awesome.minb246.css?ver=2.7.8' type='text/css' media='all' />
 <link rel='stylesheet' id='dokan-rtl-style-css'  href='../../wp-content/plugins/dokan-lite/assets/css/rtlb246.css?ver=2.7.8' type='text/css' media='all' />
 <link rel='stylesheet' id='dokan-select2-css-css'  href='../../wp-content/plugins/dokan-lite/assets/vendors/select2/select2b246.css?ver=2.7.8' type='text/css' media='all' />
-
+   --}}
 <script type='text/javascript' src='../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
 <script type='text/javascript' src='../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
 {{--<script type='text/javascript' src='http://maps.google.com/maps/api/js?key=AIzaSyCKCtow0jeZibeqGsBXNsKwQxm5N8TwbRE&amp;ver=4.9.6'></script>--}}
 
 	<style type="text/css">/** Mega Menu CSS Disabled **/</style>
     <!-- Bootstrap -->
-    <link href="../../wp-content/themes/takhfifat/css/bootstrap-3.3.6.css" rel="stylesheet">
+   <link href="../../wp-content/themes/takhfifat/css/product-style-min.css" rel="stylesheet">
+ {{--<link rel='stylesheet' id='woocommerce-layout-rtl-css'  href='../../wp-content/plugins/woocommerce/assets/css/woocommerce-layout-rtl6765.css?ver=3.3.3' type='text/css' media='all' />
+   <link href="../../wp-content/themes/takhfifat/css/bootstrap-3.3.6.css" rel="stylesheet">
     <link href="../../wp-content/themes/takhfifat/css/bootstrap-rtl.css" rel="stylesheet">
     <link href="../../wp-content/themes/takhfifat/css/star-rating.css" media="all" rel="stylesheet" type="text/css" />
     <link href="../../wp-content/themes/takhfifat/css/font-awesome.css" rel="stylesheet">
-    <link href="../../wp-content/themes/takhfifat/stylefc99.css?ver=4.4" rel="stylesheet">
-
+   
+    <link href="../../wp-content/themes/takhfifat/stylefc99.css?ver=4.4" rel="stylesheet"> 
+    --}}
         <script>
         jQuery( document ).ready(function() {
           //  jQuery("#input-id").rating();
