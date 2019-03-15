@@ -87,19 +87,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     { 
         
-        try{
-            $username = '09177105063';
-            $password = '8063';
-            $api = new MelipayamakApi($username,$password);
-            $sms = $api->sms('soap');;
-            $to = $data['phone'];
-            $bodyId = 2947;
-            $text = $data['name'];
-            $response = $sms->sendByBaseNumber($text,$to,$bodyId);
-            $json = json_decode($response);
-        }catch(Exception $e){
-            echo $e->getMessage();
-        }
+        
         /*
        try{
 
@@ -155,6 +143,19 @@ class RegisterController extends Controller
             $score = Score::firstOrNew(['customer_id' => $inviter->id]);
             $score->value = $score->value + 1;
             $score->save();
+        }
+        try{
+            $username = '09177105063';
+            $password = '8063';
+            $api = new MelipayamakApi($username,$password);
+            $sms = $api->sms('soap');;
+            $to = $data['phone'];
+            $bodyId = 2947;
+            $text = $data['name'];
+            $response = $sms->sendByBaseNumber($text,$to,$bodyId);
+            $json = json_decode($response);
+        }catch(Exception $e){
+            echo $e->getMessage();
         }
         
         /*
