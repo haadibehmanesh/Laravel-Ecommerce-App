@@ -32,9 +32,9 @@
                             @foreach ($featured as $featured)
                                 <div class="col-lg-4 col-md-4 col-sm-6">
                                
-                        <div itemscope itemtype="https://schema.org/Product" class="card">
+                        <div itemscope itemtype="https://schema.org/Offer" class="card">
                                 <div class="card-header">
-                                        <a itemprop="offers" itemscope itemtype="https://schema.org/Offer" href="{{ route('shop.show', $featured->id) }}" class="" title="{{ $featured->name }}"><span itemprop="name" class="card-span">{{ $featured->name }}</span></a>
+                                        <a itemprop="url" href="{{ route('shop.show', $featured->id) }}" class="" title="{{ $featured->name }}"><span itemprop="name" class="card-span">{{ $featured->name }}</span></a>
                                 <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp; {{$featured->location}}</span>
                                 </div>
                                 <div class="card-timer">
@@ -67,9 +67,11 @@
                                 <img itemprop="image" class="card-img-top" src="{{ productImage($featured->image) }}" title=" تخفیف {{ $featured->name }}" alt=" تخفیف {{ $featured->name }}">
                                 </a>
                                 
-                                <div itemprop="offers" itemscope itemtype="https://schema.org/AggregateOffer" class="card-footer"><span itemprop="highPrice" style="font-size: 16px;" class="card-span"><del>{{ toPersianNum($featured->price) }} تومان</del></span>
+                                <div class="card-footer"><span  style="font-size: 16px;" class="card-span"><del>{{ toPersianNum($featured->price) }} تومان</del></span>
                                 <span class="card-discount">%{{ toPersianNum($featured->discount)  }} تخفیف</span>
-                                <span itemprop="lowPrice" class="card-after-discount">{{ toPersianNum(presentPrice($featured->price,$featured->discount)) }} تومان</span>
+                                <span itemprop="price"
+                                content="{{presentPrice($featured->price,$featured->discount) }}0" class="card-after-discount">{{ toPersianNum(presentPrice($featured->price,$featured->discount)) }}<span
+                                itemprop="priceCurrency" content="IRR"> تومان</span></span>
                                 </div>
                                 </div>
                                 </div>
@@ -208,9 +210,9 @@
                             @forelse ($products as $product) 
                             @if(empty($product->parent_id) || $product->parent_id ==0)
                                 <div class="col-lg-3 col-md-3 col-sm-6">
-                                        <div itemscope itemtype="https://schema.org/Product" class="mini-card">
+                                        <div itemscope itemtype="https://schema.org/Offer" class="mini-card">
                                                 <div class="card-header">
-                                                        <a itemprop="offers" itemscope itemtype="https://schema.org/Offer" href="{{ route('shop.show', $product->id) }}" class="btn btn-secondary" title="{{ $product->name }}" style="
+                                                        <a itemprop="url" href="{{ route('shop.show', $product->id) }}" class="btn btn-secondary" title="{{ $product->name }}" style="
                                                             width: 30%;
                                                         "><span itemprop="name" class="card-span">{{ $product->name }}</span></a>
                                                         <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp;{{$product->location}}</span>
@@ -243,10 +245,12 @@
                                                 <img itemprop="image" class="card-img-top" src="{{ productImage($product->image) }}" title=" تخفیف {{ $product->name }}" alt=" تخفیف {{ $product->name }}">
                                                 </a>
                                                 
-                                                <div itemprop="offers" itemscope itemtype="https://schema.org/AggregateOffer" class="card-footer">
-                                                <a href="{{ route('shop.show', $product->id) }}" class="btn btn-secondary" title="{{ $product->name }}" class="btn btn-secondary"><span itemprop="highPrice" style="font-size: 14px;" class="card-span"><del>{{ toPersianNum($product->price) }} تومان</del></span></a>
+                                                <div class="card-footer">
+                                                <a itemprop="url" href="{{ route('shop.show', $product->id) }}" class="btn btn-secondary" title="{{ $product->name }}" class="btn btn-secondary"><span style="font-size: 14px;" class="card-span"><del>{{ toPersianNum($product->price) }} تومان</del></span></a>
                                                 <span class="card-discount">%{{ toPersianNum($product->discount)  }} تخفیف</span>
-                                                <span itemprop="lowPrice" class="card-after-discount">{{ toPersianNum(presentPrice($product->price,$product->discount)) }} تومان</span>
+                                                <span itemprop="price"
+                                                content="{{presentPrice($product->price,$product->discount)}}0" class="card-after-discount">{{ toPersianNum(presentPrice($product->price,$product->discount)) }} <span
+                                                    itemprop="priceCurrency" content="IRR"> تومان</span></span>
                                                 </div>
                                                 </div>
                                    
@@ -288,9 +292,9 @@
                             @foreach ($category->products->where('index_gallery',1) as $product)
                             @if($itr < 4 )
                             <div class="col-lg-3 col-md-3 col-sm-6">
-                                    <div class="mini-card">
+                                    <div itemscope itemtype="https://schema.org/Offer" class="mini-card">
                                             <div class="card-header">
-                                                    <a href="{{ route('shop.show', $product->id) }}" class="btn btn-secondary" title="{{ $product->name }}"><span class="card-span">{{ $product->name }}</span></a>
+                                                    <a itemprop="url" href="{{ route('shop.show', $product->id) }}" class="btn btn-secondary" title="{{ $product->name }}"><span itemprop="name" class="card-span">{{ $product->name }}</span></a>
                                                     <span class="card-location"><i class="fa fa-map-marker"></i>&nbsp;{{$product->location}}</span>
                                             </div>
                                             <div class="card-timer">
@@ -318,13 +322,15 @@
                                                         <span class="card-shopping"><i style="font-size: 17px;" class="fa fa-shopping-bag"></i>&nbsp;@if($product->children->sum('sold')){{toPersianNum($product->children->sum('sold'))}}@else{{toPersianNum($product->sold)}}@endif</span>
                                             </div>
                                             <a class="sb-preview-img" href="{{ route('shop.show', $product->id) }}" class="btn btn-secondary" title="{{ $product->name }}">
-                                            <img class="card-img-top" src="{{ productImage($product->image) }}" title=" تخفیف {{ $product->name }}" alt=" تخفیف {{ $product->name }}">
+                                            <img itemprop="image" class="card-img-top" src="{{ productImage($product->image) }}" title=" تخفیف {{ $product->name }}" alt=" تخفیف {{ $product->name }}">
                                             </a>
                                             
                                             <div class="card-footer">
                                             <a href="{{ route('shop.show', $product->id) }}" class="btn btn-secondary" title="{{ $product->name }}" class="btn btn-secondary"><span style="font-size: 14px;" class="card-span"><del>{{ toPersianNum($product->price) }} تومان</del></span></a>
                                             <span class="card-discount">%{{ toPersianNum($product->discount)  }} تخفیف</span>
-                                            <span class="card-after-discount">{{ toPersianNum(presentPrice($product->price,$product->discount)) }} تومان</span>
+                                            <span itemprop="price"
+                                            content="{{presentPrice($product->price,$product->discount)}}0" class="card-after-discount">{{ toPersianNum(presentPrice($product->price,$product->discount)) }} <span
+                                            itemprop="priceCurrency" content="IRR"> تومان</span></span>
                                             </div>
                                             </div>
                             </div>
