@@ -22,126 +22,231 @@ class ApiController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+    { }
+    public function fetchFeatured()
     {
-        
-    }
-    public function fetchFeatured(){
 
 
         if (\Request::isJson()) {
-            
-            $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
+
+            $featuredProducts = BiProduct::where('status', 1)->where('parent_id', 0)->where('featured', '1')->orderBy('id', 'asc')->get();
             return FeaturedProductsResource::collection($featuredProducts);
-
-        } 
-
+        }
     }
-    public function fetchRestaurants(){
+    public function fetchRestaurants()
+    {
         $slug = 'رستوران-و-کافی-شاپ';
 
         if (\Request::isJson()) {
             $category = BiCategory::where('slug', $slug)->firstOrFail();
-            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->where('status',1)->take(7)->get();
-           // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
+            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id', 0)->where('status', 1)->take(7)->get();
+            // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
             return FetchRestaurantsResource::collection($productsForCategories);
-
-        } 
-
+        }
     }
-    public function fetchEntertainments(){
-        
+    public function fetchEntertainments()
+    {
+
         $slug = 'تفریح-و-ورزش';
 
         if (\Request::isJson()) {
             $category = BiCategory::where('slug', $slug)->firstOrFail();
-         
-            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->where('status',1)->take(7)->get();
-           // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
+
+            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id', 0)->where('status', 1)->take(7)->get();
+            // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
             return FetchEntertainmentsResource::collection($productsForCategories);
-
-        } 
-
+        }
     }
-    public function fetchHealth(){
-        
+    public function fetchHealth()
+    {
+
         $slug = 'پزشکی-و-سلامت';
 
         if (\Request::isJson()) {
             $category = BiCategory::where('slug', $slug)->firstOrFail();
-         
-            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->where('status',1)->take(7)->get();
-           // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
+
+            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id', 0)->where('status', 1)->take(7)->get();
+            // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
             return fetchHealthResource::collection($productsForCategories);
+        }
+    }
+    public function fetchBeauty()
+    {
 
-        } 
-
-    }public function fetchBeauty(){
-        
         $slug = 'آرایشی-و-زیبایی';
 
         if (\Request::isJson()) {
             $category = BiCategory::where('slug', $slug)->firstOrFail();
-         
-            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->where('status',1)->take(7)->get();
-           // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
+
+            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id', 0)->where('status', 1)->take(7)->get();
+            // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
             return fetchBeautyResource::collection($productsForCategories);
+        }
+    }
+    public function fetchTraining()
+    {
 
-        } 
-
-    }public function fetchTraining(){
-        
         $slug = 'آموزشی';
 
         if (\Request::isJson()) {
             $category = BiCategory::where('slug', $slug)->firstOrFail();
-         
-            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->where('status',1)->take(7)->get();
-           // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
+
+            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id', 0)->where('status', 1)->take(7)->get();
+            // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
             return FetchTrainingResource::collection($productsForCategories);
+        }
+    }
+    public function fetchCinema()
+    {
 
-        } 
-
-    }public function fetchCinema(){
-        
         $slug = 'هنر-و-تئاتر';
 
         if (\Request::isJson()) {
             $category = BiCategory::where('slug', $slug)->firstOrFail();
-         
-            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->where('status',1)->take(7)->get();
-           // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
+
+            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id', 0)->where('status', 1)->take(7)->get();
+            // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
             return FetchCinemaResource::collection($productsForCategories);
+        }
+    }
+    public function fetchService()
+    {
 
-        } 
-
-    }public function fetchService(){
-        
         $slug = 'خدمات';
 
         if (\Request::isJson()) {
             $category = BiCategory::where('slug', $slug)->firstOrFail();
-         
-            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->where('status',1)->take(7)->get();
-           // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
+
+            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id', 0)->where('status', 1)->take(7)->get();
+            // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
             return FetchServiceResource::collection($productsForCategories);
+        }
+    }
+    public function fetchShops()
+    {
 
-        } 
-
-    }public function fetchShops(){
-        
         $slug = 'بن-های-فروشگاهی';
 
         if (\Request::isJson()) {
             $category = BiCategory::where('slug', $slug)->firstOrFail();
-         
-            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->where('status',1)->take(7)->get();
-           // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
+
+            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id', 0)->where('status', 1)->take(7)->get();
+            // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
             return FetchShopsResource::collection($productsForCategories);
-
-        } 
-
+        }
     }
-    
+
+    /////for all products in categories
+
+    public function allfetchShops()
+    {
+
+        $slug = 'بن-های-فروشگاهی';
+
+        if (\Request::isJson()) {
+            $category = BiCategory::where('slug', $slug)->firstOrFail();
+
+            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id', 0)->where('status', 1)->get();
+            // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
+            return FetchShopsResource::collection($productsForCategories);
+        }
+    }
+    public function allfetchService()
+    {
+
+        $slug = 'خدمات';
+
+        if (\Request::isJson()) {
+            $category = BiCategory::where('slug', $slug)->firstOrFail();
+
+            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id', 0)->where('status', 1)->get();
+            // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
+            return FetchServiceResource::collection($productsForCategories);
+        }
+    }
+
+    public function allfetchCinema()
+    {
+
+        $slug = 'هنر-و-تئاتر';
+
+        if (\Request::isJson()) {
+            $category = BiCategory::where('slug', $slug)->firstOrFail();
+
+            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id', 0)->where('status', 1)->get();
+            // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
+            return FetchCinemaResource::collection($productsForCategories);
+        }
+    }
+
+    public function allfetchTraining()
+    {
+
+        $slug = 'آموزشی';
+
+        if (\Request::isJson()) {
+            $category = BiCategory::where('slug', $slug)->firstOrFail();
+
+            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id', 0)->where('status', 1)->get();
+            // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
+            return FetchTrainingResource::collection($productsForCategories);
+        }
+    }
+    public function allfetchBeauty()
+    {
+
+        $slug = 'آرایشی-و-زیبایی';
+
+        if (\Request::isJson()) {
+            $category = BiCategory::where('slug', $slug)->firstOrFail();
+
+            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id', 0)->where('status', 1)->get();
+            // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
+            return fetchBeautyResource::collection($productsForCategories);
+        }
+    }
+
+    public function allfetchHealth()
+    {
+
+        $slug = 'پزشکی-و-سلامت';
+
+        if (\Request::isJson()) {
+            $category = BiCategory::where('slug', $slug)->firstOrFail();
+
+            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id', 0)->where('status', 1)->get();
+            // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
+            return fetchHealthResource::collection($productsForCategories);
+        }
+    }
+
+    public function allfetchEntertainments()
+    {
+
+        $slug = 'تفریح-و-ورزش';
+
+        if (\Request::isJson()) {
+            $category = BiCategory::where('slug', $slug)->firstOrFail();
+
+            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id', 0)->where('status', 1)->get();
+            // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
+            return FetchEntertainmentsResource::collection($productsForCategories);
+        }
+    }
+
+    public function allfetchRestaurants()
+    {
+        $slug = 'رستوران-و-کافی-شاپ';
+
+        if (\Request::isJson()) {
+            $category = BiCategory::where('slug', $slug)->firstOrFail();
+            $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id', 0)->where('status', 1)->get();
+            // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
+            return FetchRestaurantsResource::collection($productsForCategories);
+        }
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -211,12 +316,11 @@ class ApiController extends Controller
     public function ApiIndex()
     {
         if (\Request::isJson()) {
-            $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
-    
+            $allcategories = BiCategory::where('state', 'MainMenu')->orderBy('sort_order', 'asc')->get();
+
             return AboutusResource::collection($allcategories);
         } else {
             dd('no');
         }
-        
     }
 }

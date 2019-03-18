@@ -33,3 +33,14 @@ Route::get('/training', 'ApiController@fetchTraining')->name('Api.fetchTraining'
 Route::get('/cinema', 'ApiController@fetchCinema')->name('Api.fetchCinema');
 Route::get('/service', 'ApiController@fetchService')->name('Api.fetchService');
 Route::get('/shops', 'ApiController@fetchShops')->name('Api.fetchShops');
+///for all products in categories
+Route::get('/allfeaturedProducts', 'ApiController@allfetchFeatured')->name('Api.allfetchFeatured');
+Route::get('/allrestaurants', 'ApiController@allfetchRestaurants')->name('Api.allfetchRestaurants');
+Route::get('/allentertainments', 'ApiController@allfetchEntertainments')->name('Api.allfetchEntertainments');
+Route::get('/allhealth', 'ApiController@allfetchHealth')->name('Api.allfetchHealth');
+Route::get('/allbeauty', 'ApiController@allfetchBeauty')->name('Api.allfetchBeauty');
+Route::get('/alltraining', 'ApiController@allfetchTraining')->name('Api.allfetchTraining');
+Route::get('/allcinema', 'ApiController@allfetchCinema')->name('Api.allfetchCinema');
+Route::get('/allservice', 'ApiController@allfetchService')->name('Api.allfetchService');
+Route::get('/allshops', 'ApiController@allfetchShops')->name('Api.allfetchShops');
+
