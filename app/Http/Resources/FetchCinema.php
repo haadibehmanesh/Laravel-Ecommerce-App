@@ -24,6 +24,7 @@ class FetchCinema extends JsonResource
         'parent_id' => $this->parent_id,
         'quantity' => $this->quantity,
         'image' => $this->image,
+        'gallery' => $this->gallery,
     
        ];
     }
