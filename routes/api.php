@@ -44,3 +44,6 @@ Route::get('/allcinema', 'ApiController@allfetchCinema')->name('Api.allfetchCine
 Route::get('/allservice', 'ApiController@allfetchService')->name('Api.allfetchService');
 Route::get('/allshops', 'ApiController@allfetchShops')->name('Api.allfetchShops');
 
+
+Route::post('children', 'ApiController@fetchChildren');
+

@@ -13,6 +13,7 @@ use App\Http\Resources\FetchTraining as FetchTrainingResource;
 use App\Http\Resources\FetchCinema as FetchCinemaResource;
 use App\Http\Resources\FetchService as FetchServiceResource;
 use App\Http\Resources\FetchShops as FetchShopsResource;
+use App\Http\Resources\Children as ChildrenResource;
 
 class ApiController extends Controller
 {
@@ -244,6 +245,18 @@ class ApiController extends Controller
             // $featuredProducts = BiProduct::where('status',1)->where('parent_id', 0)->where('featured','1')->orderBy('id', 'asc')->get();
             return FetchRestaurantsResource::collection($productsForCategories);
         }
+    }
+
+    public function fetchChildren(Request $request){
+       
+      
+           // dd($request);
+            $children = BiProduct::where('parent_id', $request->id)->orderBy('sort_order','desc')->where('status', 1)->get();
+           // dd($children);
+            return ChildrenResource::collection($children);
+        
+
+
     }
 
 
