@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 use App\BiProduct;
 use App\BiCategory;
 use Illuminate\Http\Request;
+use App\BiOrder;
+use App\BiOrderItem;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Resources\FeaturedProducts as FeaturedProductsResource;
 use App\Http\Resources\FetchRestaurants as FetchRestaurantsResource;
 use App\Http\Resources\FetchEntertainments as FetchEntertainmentsResource;
@@ -14,6 +17,7 @@ use App\Http\Resources\FetchCinema as FetchCinemaResource;
 use App\Http\Resources\FetchService as FetchServiceResource;
 use App\Http\Resources\FetchShops as FetchShopsResource;
 use App\Http\Resources\Children as ChildrenResource;
+use App\Http\Resources\Order as OrderResource;
 
 class ApiController extends Controller
 {
@@ -247,17 +251,35 @@ class ApiController extends Controller
         }
     }
 
-    public function fetchChildren(Request $request){
-       
-      
-           // dd($request);
-            $children = BiProduct::where('parent_id', $request->id)->orderBy('sort_order','desc')->where('status', 1)->get();
-           // dd($children);
-            return ChildrenResource::collection($children);
-        
+    public function fetchChildren(Request $request)
+    {
 
 
+        // dd($request);
+        $children = BiProduct::where('parent_id', $request->id)->orderBy('sort_order', 'desc')->where('status', 1)->get();
+        // dd($children);
+        return ChildrenResource::collection($children);
     }
+    public function fetchOrders(Request $request)
+    {
+
+        $id = $request->id;
+        $customerorders = BiOrder::where('customer_id', $id)->whereIn('status', ['completed', 'completed_W'])->orderBy('id', 'desc')->get();
+
+        $orderitems = $customerorders->first()->items;
+
+
+        foreach ($customerorders as $order) {
+            foreach ($order->items as $item) {
+
+                $orderitems->push($item);
+            }
+        }
+        $orderitems->shift();
+
+        return OrderResource::collection($orderitems);
+    }
+
 
 
     /**
