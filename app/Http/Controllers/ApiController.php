@@ -271,7 +271,65 @@ class ApiController extends Controller
 
         foreach ($customerorders as $order) {
             foreach ($order->items as $item) {
-
+                $img = $item->product->image;
+                $Sydate = date('Y', strtotime($item->updated_at));
+                $Smdate = date('m', strtotime($item->updated_at));
+                $Sddate = date('d', strtotime($item->updated_at));
+                $Sdate = g2p($Sydate, $Smdate, $Sddate);
+                $Sdate = array_slice($Sdate, 0, 3);
+                $Sdate = join("/", $Sdate);
+                $item->setAttribute('startDate', $Sdate);
+                //
+                if (empty($item->product->date_available)) {
+                    if (empty($item->product->end_date)) {
+                        if ($item->product->parent_id != 0) {
+                            if (empty($item->product->parent->date_available)) {
+                                $dbdate = $item->product->parent->end_date;
+                                $dbdate = date('Y/m/d', strtotime($dbdate));
+                                $dbdate = date('Y/m/d', strtotime($dbdate . ' + 10 days'));
+                                $ydate = date('Y', strtotime($dbdate));
+                                $mdate = date('m', strtotime($dbdate));
+                                $ddate = date('d', strtotime($dbdate));
+                                $date = g2p($ydate, $mdate, $ddate);
+                                $date = array_slice($date, 0, 3);
+                                $date = join("/", $date);
+                            } else {
+                                $dbdate = $item->product->parent->date_available;
+                                $dbdate = date('Y/m/d', strtotime($dbdate));
+                                //$dbdate = date('Y/m/d', strtotime($dbdate. ' + 10 days'));
+                                $ydate = date('Y', strtotime($dbdate));
+                                $mdate = date('m', strtotime($dbdate));
+                                $ddate = date('d', strtotime($dbdate));
+                                $date = g2p($ydate, $mdate, $ddate);
+                                $date = array_slice($date, 0, 3);
+                                $date = join("/", $date);
+                            }
+                        }
+                    } else {
+                        $dbdate = $item->product->end_date;
+                        $dbdate = date('Y/m/d', strtotime($dbdate));
+                        $dbdate = date('Y/m/d', strtotime($dbdate . ' + 10 days'));
+                        $ydate = date('Y', strtotime($dbdate));
+                        $mdate = date('m', strtotime($dbdate));
+                        $ddate = date('d', strtotime($dbdate));
+                        $date = g2p($ydate, $mdate, $ddate);
+                        $date = array_slice($date, 0, 3);
+                        $date = join("/", $date);
+                    }
+                } else {
+                    $dbdate = $item->product->date_available;
+                    $dbdate = date('Y/m/d', strtotime($dbdate));
+                    //$dbdate = date('Y/m/d', strtotime($dbdate. ' + 10 days'));
+                    $ydate = date('Y', strtotime($dbdate));
+                    $mdate = date('m', strtotime($dbdate));
+                    $ddate = date('d', strtotime($dbdate));
+                    $date = g2p($ydate, $mdate, $ddate);
+                    $date = array_slice($date, 0, 3);
+                    $date = join("/", $date);
+                }
+                
+                $item->setAttribute('endDate', $date);
+                $item->setAttribute('image', $img);
                 $orderitems->push($item);
             }
         }
