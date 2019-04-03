@@ -47,4 +47,5 @@ Route::get('/allshops', 'ApiController@allfetchShops')->name('Api.allfetchShops'
 
 Route::post('children', 'ApiController@fetchChildren');
 Route::post('order', 'ApiController@fetchOrders');
+Route::post('search', 'ApiController@fetchSearch');
 

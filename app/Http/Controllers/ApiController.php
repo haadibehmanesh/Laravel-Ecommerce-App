@@ -18,6 +18,7 @@ use App\Http\Resources\FetchService as FetchServiceResource;
 use App\Http\Resources\FetchShops as FetchShopsResource;
 use App\Http\Resources\Children as ChildrenResource;
 use App\Http\Resources\Order as OrderResource;
+use App\Http\Resources\Search as SearchResource;
 
 class ApiController extends Controller
 {
@@ -339,6 +340,13 @@ class ApiController extends Controller
     }
 
 
+    public function fetchSearch(Request $request)
+    {
+      
+        $products = BiProduct::search($request->text)->where('parent_id',0)->where('status',1)->get();
+      
+        return SearchResource::collection($products);
+    }
 
     /**
      * Show the form for creating a new resource.
