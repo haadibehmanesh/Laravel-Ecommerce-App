@@ -22,6 +22,7 @@ class FeaturedProducts extends JsonResource
         'discount' => $this->discount,
         'description' => $this->description,
         'parent_id' => $this->parent_id,
+        'bi_merchant_id' => $this->bi_merchant_id,
         'quantity' => $this->quantity,
         'image' => $this->image,
         'gallery' => $this->gallery,

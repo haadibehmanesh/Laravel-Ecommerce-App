@@ -22,6 +22,7 @@ class Order extends JsonResource
         'code' => $this->code,
         'total' => $this->total,
         'code_used_count' => $this->code_used_count,
+        'bi_merchant_id' => $this->bi_merchant_id,
         'image' => $this->image,
         'startDate' => $this->startDate,
         'endDate' => $this->endDate,
