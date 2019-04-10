@@ -633,8 +633,8 @@ img.emoji {
                                     <form class="cart" action="{{ route('cart.store') }}" method="post" enctype='multipart/form-data'>
                                         {{ csrf_field() }}
                                     <input type="hidden" name="id" value="{{ $product->id }}">
-                                  @if($product->quantity - $product->sold > 0)
-                    
+                                  @if($product->quantity - $product->sold > 0 && $product->status == 1)
+                                    
                                     @if($product->children->count() > 0)
                                     <a data-toggle="modal" href="#normalModal" class="btn btn-primary" style="width: 100%;border-radius: 0;padding: 12px;background-color: #19499c;border: none;" onmouseover='this.style.background="#f6861f"'  onmouseout='this.style.background="#19499c"'>انتخاب کنید</a>
                                     @else
@@ -734,6 +734,7 @@ img.emoji {
                                         موجود نیست
                                         </p>
                                     </div>
+                                   
                                     @endif
                                    
                                     </form>
