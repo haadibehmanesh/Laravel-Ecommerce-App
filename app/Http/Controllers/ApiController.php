@@ -6,6 +6,7 @@ use App\BiCategory;
 use Illuminate\Http\Request;
 use App\BiOrder;
 use App\BiOrderItem;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Resources\FeaturedProducts as FeaturedProductsResource;
 use App\Http\Resources\FetchRestaurants as FetchRestaurantsResource;
@@ -19,6 +20,7 @@ use App\Http\Resources\FetchShops as FetchShopsResource;
 use App\Http\Resources\Children as ChildrenResource;
 use App\Http\Resources\Order as OrderResource;
 use App\Http\Resources\Search as SearchResource;
+use App\Http\Resources\Checkout as CheckoutResource;
 
 class ApiController extends Controller
 {
@@ -328,7 +330,7 @@ class ApiController extends Controller
                     $date = array_slice($date, 0, 3);
                     $date = join("/", $date);
                 }
-                
+
                 $item->setAttribute('endDate', $date);
                 $item->setAttribute('image', $img);
                 $orderitems->push($item);
@@ -342,12 +344,102 @@ class ApiController extends Controller
 
     public function fetchSearch(Request $request)
     {
-      
-        $products = BiProduct::search($request->text)->where('parent_id',0)->where('status',1)->get();
-      
+
+        $products = BiProduct::search($request->text)->where('parent_id', 0)->where('status', 1)->get();
+
         return SearchResource::collection($products);
     }
 
+    public function checkout(Request $request)
+    {
+
+        $customer_id = $request->id;
+        $total = $request->price;
+        if(!empty($customer_id) && !empty($total)){
+            $cartProducts = $request->cartProducts;
+
+            $order_code = randomDigits(8);
+            $invoice_no = randomDigits(6);
+            $order_status = 'pending';
+    
+            $order = BiOrder::create([
+                'invoice_no' => $invoice_no,
+                'status' => $order_status,
+                'total' => $total,
+                'order_code' => $order_code,
+                'customer_id' => $customer_id,
+            ]);
+    
+    
+            foreach ($cartProducts as $item) {
+    
+                $code = randomDigits(8);
+    
+                $product = BiProduct::find($item['id']);
+                $productSold = (($product->quantity - $product->sold) - $item['qty']) >= 0 ? $product->sold + $item['qty'] : -1;
+    
+                if ($productSold >= 0) {
+    
+                    $orderitem = BiOrderItem::firstOrNew(
+                        [
+                            'bi_order_id' => $order->id,
+                            'name' => $item['name'],
+                            'quantity' => $item['qty']
+                        ]
+                    );
+                    $orderitem->bi_order_id = $order->id;
+                    $orderitem->code = $code;
+                    $orderitem->name = $item['name'];
+                    $orderitem->price = $item['price'];
+                    $orderitem->quantity =  $item['qty'];
+                    $orderitem->total = $item['qty'] * $item['price'];
+                    $orderitem->bi_product_id = $item['id'];
+                    $orderitem->bi_merchant_id = $item['bi_merchant_id'];
+                    $orderitem->save();
+                } else {
+                    $success_message = null;
+                    $error_message = 'موجودی بن کافی نیست';
+                    return view('layouts/cart/cart')->with([
+                        'allcategories' => $allcategories,
+                        'success_message' => $success_message,
+                        'error_message' => $error_message
+                    ]);
+                }
+            }
+        }
+        
+        
+            
+    }
+    public function sendToBank(){
+        $customer_id = (int)Input::get('id');
+        $total = Input::get('total');
+        $total = (int)$total;
+        if(!empty($customer_id) && !empty($total) && $total != 0){
+          
+        $order = BiOrder::where('customer_id',$customer_id)->where('total',$total)->orderBy('id', 'desc')->first();
+        //dd($order);
+        try {
+            $gateway = \Gateway::mellat();
+            $gateway->setCallback(url('api/callback/from/bank'));
+            $gateway->price($total*10)->ready();
+            $refId =  $gateway->refId();
+            $transID = $gateway->transactionId();
+            // Your code here
+            $order->update(['ref_id' => $refId]); 
+            return $gateway->redirect();
+        } catch (Exception $e) {
+            $message = $e->getMessage();
+            //dd($message);
+            return view('layouts/checkout/bankresult')->with([
+                'allcategories' => $allcategories,
+                'message' => $message
+            ]);
+        }
+    }
+
+
+    }
     /**
      * Show the form for creating a new resource.
      *
