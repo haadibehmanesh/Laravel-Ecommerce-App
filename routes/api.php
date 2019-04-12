@@ -50,6 +50,7 @@ Route::get('/sendtobank', 'ApiController@sendToBank')->name('Api.sendToBank');
 
 
 Route::post('children', 'ApiController@fetchChildren');
+Route::post('productinfo', 'ApiController@fetchProductInfo');
 Route::post('order', 'ApiController@fetchOrders');
 Route::post('search', 'ApiController@fetchSearch');
 Route::post('checkout', 'ApiController@checkout');

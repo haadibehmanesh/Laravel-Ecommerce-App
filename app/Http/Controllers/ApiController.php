@@ -21,6 +21,7 @@ use App\Http\Resources\Children as ChildrenResource;
 use App\Http\Resources\Order as OrderResource;
 use App\Http\Resources\Search as SearchResource;
 use App\Http\Resources\Checkout as CheckoutResource;
+use App\Http\Resources\ProductInfo as ProductInfoResource;
 
 class ApiController extends Controller
 {
@@ -439,6 +440,16 @@ class ApiController extends Controller
     }
 
 
+    }
+
+    public function fetchProductInfo(Request $request)
+    {
+
+
+        // dd($request);
+        $info = BiProduct::where('id', $request->id)->where('status', 1)->get();
+        // dd($children);
+        return ProductInfoResource::collection($info);
     }
     /**
      * Show the form for creating a new resource.

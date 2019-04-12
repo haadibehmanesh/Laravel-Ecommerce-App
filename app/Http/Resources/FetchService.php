@@ -26,7 +26,8 @@ class FetchService extends JsonResource
         'quantity' => $this->quantity,
         'image' => $this->image,
         'gallery' => $this->gallery,
-    
+        'location' =>$this->location,
+        
        ];
     }
 }
