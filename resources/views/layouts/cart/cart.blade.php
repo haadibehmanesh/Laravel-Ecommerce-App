@@ -4,65 +4,29 @@
 <!-- Boninja.com -->
 <!-- Boninja.com --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Boninja.com -->
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129893987-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-129893987-1');
-</script>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    
     <title>
         سبد خرید - سایت تخفیف گروهی بن اینجا در شیراز   </title>
-	<link rel='dns-prefetch' href='/cart' />
-		<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.6"}};
-			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
-		</script>
-		<style type="text/css">
-img.wp-smiley,
-img.emoji {
-	display: inline !important;
-	border: none !important;
-	box-shadow: none !important;
-	height: 1em !important;
-	width: 1em !important;
-	margin: 0 .07em !important;
-	vertical-align: -0.1em !important;
-	background: none !important;
-	padding: 0 !important;
-}
-</style>
+	
+
 <link rel="shortcut icon" href="{{{ asset('img/favicon.png') }}}">
-<link rel='stylesheet' id='validate-engine-css-css'  href={{ asset('wp-content/plugins/wysija-newsletters/css/validationEngine.jquery4dc3.css?ver=2.8.2') }} type='text/css' media='all' />
-<link rel='stylesheet' id='select2-css'  href={{ asset('wp-content/plugins/woocommerce/assets/css/select26765.css?ver=3.3.3') }} type='text/css' media='all' />
+{{--<link rel='stylesheet' id='select2-css'  href={{ asset('wp-content/plugins/woocommerce/assets/css/select26765.css?ver=3.3.3') }} type='text/css' media='all' />--}}
 <link rel='stylesheet' id='woocommerce-layout-rtl-css'  href={{ asset('wp-content/plugins/woocommerce/assets/css/woocommerce-layout-rtl6765.css?ver=3.3.3') }} type='text/css' media='all' />
 <link rel='stylesheet' id='woocommerce-smallscreen-rtl-css'  href={{ asset('wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen-rtl6765.css?ver=3.3.3') }} type='text/css' media='only screen and (max-width: 768px)' />
 <link rel='stylesheet' id='woocommerce-general-rtl-css'  href={{ asset('wp-content/plugins/woocommerce/assets/css/woocommerce-rtl6765.css?ver=3.3.3') }} type='text/css' media='all' />
-<link rel='stylesheet' id='megamenu-css'  href={{ asset('wp-content/uploads/maxmegamenu/style3d1a.css?ver=1.1') }} type='text/css' media='all' />
+<link rel='stylesheet' id='megamenu-css'  href={{ asset('wp-content/uploads/maxmegamenu/style3d1a.css?ver=1.1') }} type='text/css' media='all' />{{--
 <link rel='stylesheet' id='dashicons-css'  href={{ asset('wp-includes/css/dashicons.min1845.css?ver=4.9.6') }} type='text/css' media='all' />
 <link rel='stylesheet' id='dokan-style-css'  href={{ asset('wp-content/plugins/dokan-lite/assets/css/styleb246.css?ver=2.7.8') }} type='text/css' media='all' />
 <link rel='stylesheet' id='dokan-fontawesome-css'  href={{ asset('wp-content/plugins/dokan-lite/assets/vendors/font-awesome/font-awesome.minb246.css?ver=2.7.8') }} type='text/css' media='all' />
-<link rel='stylesheet' id='dokan-rtl-style-css'  href={{ asset('wp-content/plugins/dokan-lite/assets/css/rtlb246.css?ver=2.7.8') }} type='text/css' media='all' />
-<script type='text/javascript'>
-/* <![CDATA[ */
-var dokan = {"ajaxurl":"http:\/\/localhost\/wp-admin\/admin-ajax.php","nonce":"93c8ead72f","ajax_loader":"http:\/\/localhost\/wp-content\/plugins\/dokan-lite\/assets\/images\/ajax-loader.gif","seller":{"available":"\u0645\u0648\u062c\u0648\u062f","notAvailable":"\u0646\u0627\u0645\u0648\u062c\u0648\u062f"},"delete_confirm":"\u0622\u06cc\u0627 \u0645\u0637\u0645\u0626\u0646\u06cc\u062f\u061f","wrong_message":"\u0645\u0634\u06a9\u0644\u06cc \u0628\u0647 \u0648\u062c\u0648\u062f \u0622\u0645\u062f. \u0644\u0637\u0641\u0627 \u062f\u0648\u0628\u0627\u0631\u0647 \u0627\u0645\u062a\u062d\u0627\u0646 \u06a9\u0646\u06cc\u062f.","vendor_percentage":"80","commission_type":"percentage","rounding_precision":"6","mon_decimal_point":"."};
-/* ]]> */
-</script>
+<link rel='stylesheet' id='dokan-rtl-style-css'  href={{ asset('wp-content/plugins/dokan-lite/assets/css/rtlb246.css?ver=2.7.8') }} type='text/css' media='all' />--}}
+
 <script type='text/javascript' src='../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
-<script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var _zxcvbnSettings = {"src":"\/wp-includes\/js\/zxcvbn.min.js"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='../wp-includes/js/zxcvbn-async.min5152.js?ver=1.0'></script>
+{{--<script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>--}}
+
+
 
     <!-- Bootstrap -->
     <link href="../wp-content/themes/takhfifat/css/bootstrap.min.css" rel="stylesheet">
@@ -555,10 +519,7 @@ var _zxcvbnSettings = {"src":"\/wp-includes\/js\/zxcvbn.min.js"};
         </div>
     </div>
 </section>
-<script>
-var first_html = jQuery('.dokan-withdraw-content .dokan-alert-warning').html().replace('Minimum Withdraw amount: ', 'حداقل موجودی لازم برای درخواست برداشت: ');
-jQuery('.dokan-withdraw-content .dokan-alert-warning').html(first_html);
-</script>
+
 <!--social &  Subscription-->
 <section id="social">
     <div class="container">
@@ -567,19 +528,7 @@ jQuery('.dokan-withdraw-content .dokan-alert-warning').html(first_html);
             <!--Newsletters-->
             <div class="block_newsletters">
 
-<div class="widget_wysija_cont shortcode_wysija" style="display:none;"><div id="msg-form-wysija-shortcode5b2b5a1f853e2-1" class="wysija-msg ajax"></div><form id="form-wysija-shortcode5b2b5a1f853e2-1" method="post" action="#wysija" class="widget_wysija shortcode_wysija">
-<p class="wysija-paragraph">
-    <label>ایمیل <span class="wysija-required">*</span></label>
-    
-    	<input type="text" name="wysija[user][email]" class="wysija-input validate[required,custom[email]]" title="ایمیل"  value="" />
-    
-    
-    
-    <span class="abs-req">
-        <input type="text" name="wysija[user][abs][email]" class="wysija-input validated[abs][email]" value="" />
-    </span>
-    
-</p>
+<div class="widget_wysija_cont shortcode_wysija" style="display:none;"><div id="msg-form-wysija-shortcode5b2b5a1f853e2-1" class="wysija-msg ajax"></div><form id="form-wysija-shortcode5b2b5a1f853e2-1" method="post" action="#wysija" class="widget_wysija">
 
 <input class="wysija-submit wysija-submit-field" type="submit" value="مشترک شدن!" />
 
@@ -603,7 +552,8 @@ jQuery('.dokan-withdraw-content .dokan-alert-warning').html(first_html);
            <!--concession-->
            <div class="concession">
             <div class="post-content">
-                <p><img id='jxlzesgtjxlzrgvjnbqergvjrgvj' style='cursor:pointer' onclick='window.open("https://logo.samandehi.ir/Verify.aspx?id=1013233&p=rfthobpdrfthxlaouiwkxlaoxlao", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")' alt='logo-samandehi' src='https://logo.samandehi.ir/logo.aspx?id=1013233&p=nbpdlymanbpdqftiodrfqftiqfti'/></p>
+               {{-- <p><img id='jxlzesgtjxlzrgvjnbqergvjrgvj' style='cursor:pointer' onclick='window.open("https://logo.samandehi.ir/Verify.aspx?id=1013233&p=rfthobpdrfthxlaouiwkxlaoxlao", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")' alt='logo-samandehi' src='https://logo.samandehi.ir/logo.aspx?id=1013233&p=nbpdlymanbpdqftiodrfqftiqfti'/></p>--}}
+               <p><img id='jxlzesgtjxlzrgvjnbqergvjrgvj' style='cursor:pointer' onclick='window.open("https://logo.samandehi.ir/Verify.aspx?id=1013233&p=rfthobpdrfthxlaouiwkxlaoxlao", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")' alt='logo-samandehi' src='{{{ asset('img/samandehi.png') }}}'/></p>
             </div>
         </div>
         <!--concession-->
@@ -644,7 +594,7 @@ jQuery('.dokan-withdraw-content .dokan-alert-warning').html(first_html);
                             </span>
                         </li>
                         </ul></div></div><div class="service"><span>راهنما</span><div class="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-container"><ul id="menu-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d9%80%d8%a7-1" class="menu">
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188"><a href="#">نحوه خرید</a></li>
+                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-188"><a href="/help">نحوه خرید</a></li>
                         
                         </ul></div></div>            </div>
             <!--map-->
@@ -677,41 +627,10 @@ jQuery('.dokan-withdraw-content .dokan-alert-warning').html(first_html);
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <!-- Include all compiled plugins (below), or include individual files as needed -->
+
 <script src="../wp-content/themes/takhfifat/js/bootstrap.min.js"></script>
-<script src="../wp-content/themes/takhfifat/js/jquery.countdownTimer.js"></script>
-
-<script src="../wp-content/themes/takhfifat/js/custom.js"></script>
-
-<script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/frontend/country-select.min6765.js?ver=3.3.3'></script>
-
-<script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/frontend/address-i18n.min6765.js?ver=3.3.3'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var wc_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"http:\/\/localhost\/?wc-ajax=%%endpoint%%","update_shipping_method_nonce":"45f10f19e4","apply_coupon_nonce":"23b5b188e4","remove_coupon_nonce":"1ab4ef34ab"};
-/* ]]> */
-</script>
 <script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/frontend/cart.min6765.js?ver=3.3.3'></script>
-<script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/selectWoo/selectWoo.full.min20b9.js?ver=1.0.2'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var pwsL10n = {"unknown":"\u0642\u062f\u0631\u062a \u0631\u0645\u0632 \u0646\u0627\u0645\u0634\u062e\u0635","short":"\u0628\u0633\u06cc\u0627\u0631 \u0633\u0633\u062a","bad":"\u0633\u0633\u062a","good":"\u0645\u062a\u0648\u0633\u0637","strong":"\u0642\u0648\u06cc","mismatch":"\u0646\u0627\u0647\u0645\u0633\u0627\u0646"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='../wp-admin/js/password-strength-meter.min1845.js?ver=4.9.6'></script>
-<script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/frontend/password-strength-meter.min6765.js?ver=3.3.3'></script>
-<script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min44fd.js?ver=2.70'></script>
 <script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min6b25.js?ver=2.1.4'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"http:\/\/localhost\/?wc-ajax=%%endpoint%%"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min6765.js?ver=3.3.3'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-
-/* ]]> */
-</script>
 
 <script type='text/javascript' src='../wp-includes/js/hoverIntent.minc245.js?ver=1.8.1'></script>
 <script type='text/javascript'>
@@ -720,16 +639,6 @@ var megamenu = {"timeout":"300","interval":"100"};
 /* ]]> */
 </script>
 <script type='text/javascript' src='../wp-content/plugins/megamenu/js/maxmegamenu9254.js?ver=2.3.6'></script>
-<script type='text/javascript' src='../wp-includes/js/wp-embed.min1845.js?ver=4.9.6'></script>
-<script type='text/javascript' src='../wp-includes/js/comment-reply.min1845.js?ver=4.9.6'></script>
-<script type='text/javascript' src='../wp-content/plugins/wysija-newsletters/js/validate/languages/jquery.validationEngine-fa4dc3.js?ver=2.8.2'></script>
-<script type='text/javascript' src='../wp-content/plugins/wysija-newsletters/js/validate/jquery.validationEngine4dc3.js?ver=2.8.2'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var wysijaAJAX = {"action":"wysija_ajax","controller":"subscribers","ajaxurl":"http:\/\/localhost\/wp-admin\/admin-ajax.php","loadingTrans":"\u062f\u0631 \u062d\u0627\u0644 \u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc...","is_rtl":"1"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='../wp-content/plugins/wysija-newsletters/js/front-subscribers4dc3.js?ver=2.8.2'></script>
 <script type="text/javascript">
 jQuery(document).ready(function(){
 	jQuery('.container').persiaNumber();
