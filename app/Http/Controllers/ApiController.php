@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 use App\BiProduct;
 use App\BiCategory;
 use Illuminate\Http\Request;
+use Validator;
+use App\Wallet;
 use App\BiOrder;
 use App\BiOrderItem;
+use App\Score;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Resources\FeaturedProducts as FeaturedProductsResource;
@@ -22,6 +25,8 @@ use App\Http\Resources\Order as OrderResource;
 use App\Http\Resources\Search as SearchResource;
 use App\Http\Resources\Checkout as CheckoutResource;
 use App\Http\Resources\ProductInfo as ProductInfoResource;
+use App\Http\Resources\UserInfo as UserInfoResource;
+use App\Customer;
 
 class ApiController extends Controller
 {
@@ -356,13 +361,13 @@ class ApiController extends Controller
 
         $customer_id = $request->id;
         $total = $request->price;
-        if(!empty($customer_id) && !empty($total)){
+        if (!empty($customer_id) && !empty($total)) {
             $cartProducts = $request->cartProducts;
 
             $order_code = randomDigits(8);
             $invoice_no = randomDigits(6);
             $order_status = 'pending';
-    
+
             $order = BiOrder::create([
                 'invoice_no' => $invoice_no,
                 'status' => $order_status,
@@ -370,17 +375,17 @@ class ApiController extends Controller
                 'order_code' => $order_code,
                 'customer_id' => $customer_id,
             ]);
-    
-    
+
+
             foreach ($cartProducts as $item) {
-    
+
                 $code = randomDigits(8);
-    
+
                 $product = BiProduct::find($item['id']);
                 $productSold = (($product->quantity - $product->sold) - $item['qty']) >= 0 ? $product->sold + $item['qty'] : -1;
-    
+
                 if ($productSold >= 0) {
-    
+
                     $orderitem = BiOrderItem::firstOrNew(
                         [
                             'bi_order_id' => $order->id,
@@ -398,48 +403,43 @@ class ApiController extends Controller
                     $orderitem->bi_merchant_id = $item['bi_merchant_id'];
                     $orderitem->save();
                 } else {
-                    $success_message = null;
-                    $error_message = 'موجودی بن کافی نیست';
-                    return view('layouts/cart/cart')->with([
-                        'allcategories' => $allcategories,
-                        'success_message' => $success_message,
-                        'error_message' => $error_message
-                    ]);
+                   // $success_message = null;
+                    $error = 'موجودی بن کافی نیست';
+                   // $error = $e->getMessage();
+                return view('layouts/api/callback')->with([
+            
+                  'error' => $error
+                ]);
                 }
             }
         }
-        
-        
-            
     }
-    public function sendToBank(){
+    public function sendToBank()
+    {
         $customer_id = (int)Input::get('id');
         $total = Input::get('total');
         $total = (int)$total;
-        if(!empty($customer_id) && !empty($total) && $total != 0){
-          
-        $order = BiOrder::where('customer_id',$customer_id)->where('total',$total)->orderBy('id', 'desc')->first();
-        //dd($order);
-        try {
-            $gateway = \Gateway::mellat();
-            $gateway->setCallback(url('api/callback/from/bank'));
-            $gateway->price($total*10)->ready();
-            $refId =  $gateway->refId();
-            $transID = $gateway->transactionId();
-            // Your code here
-            $order->update(['ref_id' => $refId]); 
-            return $gateway->redirect();
-        } catch (Exception $e) {
-            $message = $e->getMessage();
-            //dd($message);
-            return view('layouts/checkout/bankresult')->with([
-                'allcategories' => $allcategories,
-                'message' => $message
-            ]);
+        if (!empty($customer_id) && !empty($total) && $total != 0) {
+
+            $order = BiOrder::where('customer_id', $customer_id)->where('total', $total)->orderBy('id', 'desc')->first();
+            //dd($order);
+            try {
+                $gateway = \Gateway::mellat();
+                $gateway->setCallback(url('api/callback/from/bank'));
+                $gateway->price($total * 10)->ready();
+                $refId =  $gateway->refId();
+                $transID = $gateway->transactionId();
+                // Your code here
+                $order->update(['ref_id' => $refId]);
+                return $gateway->redirect();
+            } catch (Exception $e) {
+                $error = $e->getMessage();
+                return view('layouts/api/callback')->with([
+            
+                  'error' => $error
+                ]);
+            }
         }
-    }
-
-
     }
 
     public function fetchProductInfo(Request $request)
@@ -450,6 +450,126 @@ class ApiController extends Controller
         $info = BiProduct::where('id', $request->id)->where('status', 1)->get();
         // dd($children);
         return ProductInfoResource::collection($info);
+    }
+
+    public function addToWallet(Request $request)
+    {
+        $customer_id = $request->id;
+        $messages = [
+            'required' => 'پر کردن این فیلد اجباری است!',
+            'numeric' => 'ورودی باید به صورت عدد باشد',
+            'integer' => 'ورودی باید به صورت عدد باشد',
+            'min' => 'ورودی نمی تواند 0 یا منفی باشد',
+        ];
+        $validatedData = Validator::make($request->all(), [
+            'price' => 'required|numeric|integer|min:1'
+        ], $messages);
+        if (!$validatedData->fails()) {
+            $wallet = Wallet::where('customer_id', $customer_id)->where('status', 'completed')->orderBy('updated_at', 'desc')->first();
+
+            if (!empty($wallet)) {
+                $total = $wallet->total;
+            } else {
+                $total = 0;
+            }
+            $wallet = new Wallet();
+            $wallet->customer_id = $customer_id;
+            $wallet->status = 'processing';
+            $wallet->balance =  $request->price;
+            $wallet->total = $total + $request->price;
+            $wallet->save();
+            /*
+            try {
+                $gateway = \Gateway::mellat();
+                $gateway->setCallback(url('callback/from/bank/charge'));
+                $gateway->price($wallet->balance*10)->ready();
+                $refId =  $gateway->refId();
+                $transID = $gateway->transactionId();
+                // Your code here
+                $wallet->update(['ref_id' => $refId]); 
+                return $gateway->redirect();
+            } catch (Exception $e) {
+                $message = $e->getMessage();
+                return view('layouts/checkout/bankresult')->with([
+                    'allcategories' => $allcategories,
+                    'message' => $message
+                ]);
+            }
+         
+               
+            $message="";
+            return redirect()->back()->withErrors([
+            'message' => $message
+            ]);
+ */
+        } else {
+            //return redirect()->back()->withErrors($validatedData);
+        }
+    }
+
+
+    public function sendToBankCharge()
+    {
+        $customer_id = (int)Input::get('id');
+        $total = Input::get('total');
+        $total = (int)$total;
+        if (!empty($customer_id) && !empty($total) && $total != 0) {
+
+            $wallet = Wallet::where('customer_id', $customer_id)->where('status', 'processing')->orderBy('updated_at', 'desc')->first();
+            // dd($wallet->total);
+            try {
+                $gateway = \Gateway::mellat();
+                $gateway->setCallback(url('api/callback/from/bank/charge'));
+                $gateway->price($total * 10)->ready();
+                $refId =  $gateway->refId();
+                $transID = $gateway->transactionId();
+                // Your code here
+                $wallet->update(['ref_id' => $refId]);
+                return $gateway->redirect();
+            } catch (Exception $e) {
+                $error = $e->getMessage();
+                return view('layouts/api/callback')->with([
+            
+                  'error' => $error
+                ]);
+            }
+        }
+    }
+
+
+
+    public function fetchUserInfo(Request $request)
+    {
+       
+        $customer = Customer::where('id',$request->id)->first();
+        if($customer){
+
+            $wallet = Wallet::where('customer_id', $customer->id)->where('status','completed')->orderBy('id','desc')->first();
+           
+            $score = Score::where('customer_id', $customer->id)->first();
+            if (!empty($wallet)) {
+                $total = $wallet->total;
+                $customer->setAttribute('totalWallet', $total);
+            } else {
+                $total = 0;
+            }
+    
+            if(!empty($score)){
+                $score = $score->value;
+                $customer->setAttribute('score', $score);
+            }else{
+                $score = 0 ;
+            }
+        }
+       
+     
+       
+      
+       // $collection = collect(['score' => $score,'total' =>$total]);
+     //  dd($customer);
+      return new UserInfoResource($customer);
+       // return UserInfoResource::collection($score);
+        
     }
     /**
      * Show the form for creating a new resource.

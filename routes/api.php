@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use App\Http\Resources\Checkout as CheckoutResource;
 use App\BiOrder;
 use App\BiOrderItem;
+use App\Wallet;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,13 +18,13 @@ use App\BiOrderItem;
 */
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+  return $request->user();
 });
 
 Route::post('login', 'API\CustomerController@login');
 Route::post('register', 'API\CustomerController@register');
-Route::group(['middleware' => 'auth:api'], function(){
-Route::post('details', 'API\CustomerController@details');
+Route::group(['middleware' => 'auth:api'], function () {
+  Route::post('details', 'API\CustomerController@details');
 });
 
 //Route::get('/aboutus', 'AboutusController@index')->name('Api.index');
@@ -47,27 +48,77 @@ Route::get('/allcinema', 'ApiController@allfetchCinema')->name('Api.allfetchCine
 Route::get('/allservice', 'ApiController@allfetchService')->name('Api.allfetchService');
 Route::get('/allshops', 'ApiController@allfetchShops')->name('Api.allfetchShops');
 Route::get('/sendtobank', 'ApiController@sendToBank')->name('Api.sendToBank');
+Route::get('/sendtobankwallet', 'ApiController@sendToBankCharge')->name('Api.sendToBankCharge');
 
 
 Route::post('children', 'ApiController@fetchChildren');
+Route::post('userinfo', 'ApiController@fetchUserInfo');
 Route::post('productinfo', 'ApiController@fetchProductInfo');
 Route::post('order', 'ApiController@fetchOrders');
 Route::post('search', 'ApiController@fetchSearch');
+Route::post('charge', 'ApiController@addToWallet');
+Route::any('callback/from/bank/charge', function () {
+  //$allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
+  try {
+    $gateway = \Gateway::verify();
+    $trackingCode = $gateway->trackingCode();
+    $refId = $gateway->refId();
+    $cardNumber = $gateway->cardNumber();
+    $wallet_status = 'completed';
+    $wallet = Wallet::where('ref_id', $refId)->first();
+    $wallet->status = $wallet_status;
+    $wallet->tracking_code = $trackingCode;
+    $wallet->save();
+    //dd($wallet);   
+    /*  if($wallet->status == 'completed'){
+      try{
+        $sms = \Melipayamak::sms();
+        $to = Auth::guard('customer')->user()->phone;
+       
+        $from = '200020001090';
+        
+        $text = "شارژ شما به مبلغ :"." ".$wallet->balance." تومان "."\n"."با موفقیت انجام شد"."\n"."سامانه خرید و تخفیف گروهی بن اینجا"."\n"."https://www.boninja.com/my-account";
+        $response = $sms->send($to,$from,$text);
+        $json = json_decode($response);
+      
+      }catch(Exception $e){
+        echo $e->getMessage();
+      }
+    }*/
+
+    $message = 'شارژ کیف پول با موفقیت انجام شد!<br> 
+     کد پیگیری بانکی شما : ' . $trackingCode . ' <br>
+     برای پیگیری های  بانکی بعدی این کد را نزد خود نگه دارید. 
+     ';
+
+    return view('layouts/api/callback')->with([
+
+      'message' => $message
+    ]);
+  } catch (Exception $e) {
+    $error = $e->getMessage();
+    return view('layouts/api/callback')->with([
+
+      'error' => $error
+    ]);
+  }
+});
+
 Route::post('checkout', 'ApiController@checkout');
-Route::any('callback/from/bank',function(){
+Route::any('callback/from/bank', function () {
   //  $allcategories = BiCategory::where('state','MainMenu')->orderBy('sort_order', 'asc')->get();
-    try {
-      $gateway = \Gateway::verify();
-      $trackingCode = $gateway->trackingCode();
-      $refId = $gateway->refId();
-      $cardNumber = $gateway->cardNumber();
-      // dd($trackingCode);
-  
-      $order_status = 'completed';
-      $order = BiOrder::where('ref_id', $refId)->first();
-      $order->update(['status' => $order_status]);     
-      $order_items = BiOrderItem::where('bi_order_id', $order->id)->get();
-      /*
+  try {
+    $gateway = \Gateway::verify();
+    $trackingCode = $gateway->trackingCode();
+    $refId = $gateway->refId();
+    $cardNumber = $gateway->cardNumber();
+    // dd($trackingCode);
+
+    $order_status = 'completed';
+    $order = BiOrder::where('ref_id', $refId)->first();
+    $order->update(['status' => $order_status]);
+    $order_items = BiOrderItem::where('bi_order_id', $order->id)->get();
+    /*
       if($order->status == 'completed'){
         if(session()->has('coupon')){
           $customer_id = session()->get('coupon')['customer_id'];
@@ -182,33 +233,34 @@ Route::any('callback/from/bank',function(){
       if(session()->has('coupon')){
         session()->forget('coupon');
       }*/
-      
-      $message = 'پرداخت با موفقیت انجام شد!<br> 
-       کد پیگیری بانکی شما : '.$trackingCode.' <br>
+
+    $message = 'پرداخت با موفقیت انجام شد!<br> 
+       کد پیگیری بانکی شما : ' . $trackingCode . ' <br>
        برای پیگیری های  بانکی بعدی این کد را نزد خود نگه دارید. 
        ';
-       return view('layouts/api/callback')->with([
-        
-        'message' => $message
-        ]);
-  /*
+    return view('layouts/api/callback')->with([
+
+      'message' => $message
+    ]);
+    /*
        return view('layouts/checkout/bankresult')->with([
         'allcategories' => $allcategories,
         'message' => $message
         ]);
     */
-   // return CheckoutResource::collection($message);
+    // return CheckoutResource::collection($message);
 
-    } catch (Exception $e) {
-      $error = $e->getMessage();return view('layouts/api/callback')->with([
-        
-        'error' => $error
-        ]);
-     /* return view('layouts/checkout/bankresult')->with([
+  } catch (Exception $e) {
+    $error = $e->getMessage();
+    return view('layouts/api/callback')->with([
+
+      'error' => $error
+    ]);
+    /* return view('layouts/checkout/bankresult')->with([
         'allcategories' => $allcategories,
         'error' => $error
         ]);*/
-      //  dd($error);
-       // return CheckoutResource::collection($error);
-    }
-  });
+    //  dd($error);
+    // return CheckoutResource::collection($error);
+  }
+});
