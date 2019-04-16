@@ -5,6 +5,10 @@ use App\Http\Resources\Checkout as CheckoutResource;
 use App\BiOrder;
 use App\BiOrderItem;
 use App\Wallet;
+use App\BiProduct;
+use App\Score;
+use App\Invitation;
+use App\Customer;
 
 /*
 |--------------------------------------------------------------------------
@@ -116,10 +120,13 @@ Route::any('callback/from/bank', function () {
 
     $order_status = 'completed';
     $order = BiOrder::where('ref_id', $refId)->first();
+    $customer_id = $order->customer_id;
+    $customer = Customer::where('id',$customer_id)->first();
     $order->update(['status' => $order_status]);
     $order_items = BiOrderItem::where('bi_order_id', $order->id)->get();
-    /*
+    
       if($order->status == 'completed'){
+        /*
         if(session()->has('coupon')){
           $customer_id = session()->get('coupon')['customer_id'];
           $coupon_id = session()->get('coupon')['coupon_id'];
@@ -129,7 +136,8 @@ Route::any('callback/from/bank', function () {
           $customerCouponNew->save();
   
         }
-        foreach (Cart::content() as $item) {
+        */
+        foreach ($order_items as $item) {
           $product = BiProduct::find($item->id);
           $productSold = (($product->quantity-$product->sold) - $item->qty) >= 0 ? $product->sold + $item->qty : -1 ;
           if( $productSold >= 0) {
@@ -138,7 +146,7 @@ Route::any('callback/from/bank', function () {
               } 
         }
       }
-      
+     
       foreach($order_items as $order_item){ 
         if(empty($order_item->product->date_available)){ 
           if(empty($order_item->product->end_date)){
@@ -182,7 +190,7 @@ Route::any('callback/from/bank', function () {
   
         try{
           $sms = \Melipayamak::sms();
-          $to = Auth::guard('customer')->user()->phone;
+          $to = $customer->phone;
          
           $from = '200020001090';
           if(!empty($order_item->product->parent->name)){
@@ -203,7 +211,7 @@ Route::any('callback/from/bank', function () {
       }
       $wallet_status = 'completed';
       
-      $id = Auth::guard('customer')->user()->id;
+      $id = $customer->id;
       
       $wallet_last = Wallet::where('customer_id', $id)->where('ref_id', $refId)->orderBy('id','desc')->first();
       //dd($wallet_last);
@@ -212,14 +220,14 @@ Route::any('callback/from/bank', function () {
         $wallet_last->tracking_code = $trackingCode;     
         $wallet_last->save();
       }
-      $total = Cart::subtotal();
+      $total = $order->total;
       $portion = floor($total/10000);
       if($portion > 0){
-        $score = Score::firstOrNew(['customer_id' => Auth::guard('customer')->user()->id]);
+        $score = Score::firstOrNew(['customer_id' => $customer->id]);
         $score->value = $score->value + (5*$portion);
         $score->save();
     
-        $invitation = Invitation::where('customer_id',Auth::guard('customer')->user()->id)->first();
+        $invitation = Invitation::where('customer_id',$customer->id)->first();
         if(!empty($invitation->code)){
             $inviter = Customer::where('invitation_code', $invitation->code)->first();
             if(!empty($inviter->id)){
@@ -229,11 +237,11 @@ Route::any('callback/from/bank', function () {
             }
         }
       } 
-      Cart::destroy();  
+      /*Cart::destroy();  
       if(session()->has('coupon')){
         session()->forget('coupon');
-      }*/
-
+      }
+*/
     $message = 'پرداخت با موفقیت انجام شد!<br> 
        کد پیگیری بانکی شما : ' . $trackingCode . ' <br>
        برای پیگیری های  بانکی بعدی این کد را نزد خود نگه دارید. 
