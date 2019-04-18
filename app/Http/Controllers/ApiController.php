@@ -26,6 +26,8 @@ use App\Http\Resources\Search as SearchResource;
 use App\Http\Resources\Checkout as CheckoutResource;
 use App\Http\Resources\ProductInfo as ProductInfoResource;
 use App\Http\Resources\UserInfo as UserInfoResource;
+use App\Http\Resources\FetchSubCats as FetchSubCatsResource;
+use App\Http\Resources\FetchSubCatProducts as FetchSubCatProductsResource;
 use App\Customer;
 
 class ApiController extends Controller
@@ -570,6 +572,27 @@ class ApiController extends Controller
       return new UserInfoResource($customer);
        // return UserInfoResource::collection($score);
         
+    }
+
+
+
+
+    public function fetchSubCats(Request $request){
+
+       // dd($request->slug);
+        $category = BiCategory::where('slug', $request->slug)->first();
+        //dd($category->id);
+        $categories = BiCategory::where('parent_id', $category->id)->get();
+       // dd($categories);
+        return FetchSubCatsResource::collection($categories);
+        
+    }
+
+
+    public function fetchSubCatProducts(Request $request){
+        $category = BiCategory::where('slug', $request->slug)->firstOrFail();
+        $productsForCategories = $category->products()->orderBy('id', 'desc')->where('parent_id' ,0)->where('status',1)->get();
+        return FetchSubCatProductsResource::collection($productsForCategories);
     }
     /**
      * Show the form for creating a new resource.

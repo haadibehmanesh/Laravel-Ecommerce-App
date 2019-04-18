@@ -70,14 +70,16 @@ Route::any('callback/from/bank/charge', function () {
     $cardNumber = $gateway->cardNumber();
     $wallet_status = 'completed';
     $wallet = Wallet::where('ref_id', $refId)->first();
+    $customer_id = $wallet->customer_id;
+    $customer = Customer::where('id',$customer_id)->first();
     $wallet->status = $wallet_status;
     $wallet->tracking_code = $trackingCode;
     $wallet->save();
     //dd($wallet);   
-    /*  if($wallet->status == 'completed'){
+     if($wallet->status == 'completed'){
       try{
         $sms = \Melipayamak::sms();
-        $to = Auth::guard('customer')->user()->phone;
+        $to = $customer->phone;
        
         $from = '200020001090';
         
@@ -88,7 +90,7 @@ Route::any('callback/from/bank/charge', function () {
       }catch(Exception $e){
         echo $e->getMessage();
       }
-    }*/
+    }
 
     $message = 'شارژ کیف پول با موفقیت انجام شد!<br> 
      کد پیگیری بانکی شما : ' . $trackingCode . ' <br>
@@ -272,3 +274,8 @@ Route::any('callback/from/bank', function () {
     // return CheckoutResource::collection($error);
   }
 });
+
+
+
+Route::post('subcat', 'ApiController@fetchSubCats');
+Route::post('subcatproducts', 'ApiController@fetchSubCatProducts')->name('Api.fetchSubCatProducts');
