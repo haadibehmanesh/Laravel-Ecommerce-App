@@ -187,7 +187,7 @@ class CostumerpanelController extends Controller
             $total = 0 ;
         }
         $customerorders = BiOrder::where('customer_id', $id)->whereIn('status',['completed','completed_W'])->orderBy('id','desc')->get();
-        
+        //dd($customerorders);
         return view('layouts/my-account/customer-orders')->with([
             'customerorders' => $customerorders,
             'allcategories' => $allcategories,

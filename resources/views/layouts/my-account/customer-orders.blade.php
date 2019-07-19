@@ -369,8 +369,11 @@ jQuery.ajax({
 
     @if(Auth::guard('customer')->user())
 <div class="woocommerce-MyAccount-content">
+      
     @foreach ($customerorders as $order )
+    
         @foreach ($order->items as $item)
+        @if(!empty($item->product->id))
         <div class="panel-body">
             <div class="col-sm-9">
                 <div class="col-sm-12 " style="margin-bottom:7px;border-bottom: dashed 1px #c0c0c0;">
@@ -386,6 +389,7 @@ jQuery.ajax({
             ">
                     <div class="col-md-8 col-xs-12" style="padding-left: 0px">
                                                     <label>
+
                                 <h4><a href="{{ route('shop.show', $item->product->id) }}" title="{{ $item->product->name }}" class="black-color none-decoration">
                                     {{$item->product->name}}
                                     </a>
@@ -502,7 +506,7 @@ jQuery.ajax({
             </div>
 
         </div>
-            
+           @endif 
         @endforeach
     @endforeach
 </div>
